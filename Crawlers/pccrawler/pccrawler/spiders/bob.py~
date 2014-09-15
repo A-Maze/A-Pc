@@ -20,7 +20,7 @@ class BobSpider(scrapy.Spider):
             item['subnaam'] = sel.xpath('a/span/span/h2//span[contains(concat(" ", normalize-space(@class), " "), " additional ")]/text()').extract()
             item['info'] = sel.xpath('a/span[contains(concat(" ", normalize-space(@class), " "), " info ")]/text()').extract()
             item['stock'] = sel.xpath('a/span[contains(concat(" ", normalize-space(@class), " "), " stockStatusContainer ")]/strong/text()').extract()
-            item['categorie'] = sel.xpath('//h1[contains(concat(" ", normalize-space(@class), " "), " seoListingHeadline ")]/text()').extract()
+            item['categorie'] = sel.xpath('h1[contains(concat(" ", normalize-space(@class), " "), " seoListingHeadline ")]/text()').extract()
             yield item
             
        

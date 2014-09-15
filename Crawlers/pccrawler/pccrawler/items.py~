@@ -7,17 +7,13 @@
 
 import scrapy
 
+
+
 class BobItem(scrapy.Item):
-<<<<<<< HEAD
+    artikel = scrapy.Field()
     naam = scrapy.Field()
     subnaam = scrapy.Field()
     info = scrapy.Field()
     stock = scrapy.Field()
-=======
-    category = scrapy.Field()
-    manufacturerName = scrapy.Field()
-    specs = scrapy.Field()
-
-class ParadigitItem(scrapy.Item):
-    category = scrapy.Field()
->>>>>>> 4fb2c8e467e52d47629e8bb0661e4cf90aa5af1d
+    
+    

@@ -10,8 +10,10 @@ import scrapy
 
 
 class BobItem(scrapy.Item):
+    categorie = scrapy.Field()
     naam = scrapy.Field()
     subnaam = scrapy.Field()
     info = scrapy.Field()
     stock = scrapy.Field()
+    
     
