@@ -15,5 +15,6 @@ class BobItem(scrapy.Item):
     subnaam = scrapy.Field()
     info = scrapy.Field()
     stock = scrapy.Field()
+    prijs = scrapy.Field()
     
     

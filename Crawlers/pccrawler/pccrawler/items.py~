@@ -10,7 +10,7 @@ import scrapy
 
 
 class BobItem(scrapy.Item):
-    artikel = scrapy.Field()
+    categorie = scrapy.Field()
     naam = scrapy.Field()
     subnaam = scrapy.Field()
     info = scrapy.Field()
