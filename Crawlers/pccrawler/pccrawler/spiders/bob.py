@@ -11,6 +11,8 @@ class BobSpider(scrapy.Spider):
     start_urls = (
         'http://www.alternate.nl/html/product/listing.html?filter_5=&filter_4=&filter_3=&filter_2=&filter_1=&size=500&bgid=10846&lk=9487&tk=7&navId=11572#listingResult',
         'http://www.alternate.nl/html/product/listing.html?size=500&lk=9884&tk=7&navId=14418#listingResult',
+        'http://www.alternate.nl/html/product/listing.html?filter_5=&filter_4=&filter_3=&filter_2=&filter_1=&size=500&bgid=8148&lk=9309&tk=7&navId=2436#listingResult',
+        
     )
 
     def parse(self, response):
@@ -23,6 +25,9 @@ class BobSpider(scrapy.Spider):
             item['categorie'] = sel.xpath('//h1[contains(concat(" ", normalize-space(@class), " "), " seoListingHeadline ")]/text()').extract()
             item['prijs'] = sel.xpath('div/p/span[contains(concat(" ", normalize-space(@class), " "), " price right right10 ")]/text()').extract()
             yield item
+            
+  
+
             
        
 
