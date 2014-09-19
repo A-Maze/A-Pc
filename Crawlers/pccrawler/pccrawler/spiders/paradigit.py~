@@ -18,6 +18,6 @@ class ParadigitSpider(scrapy.Spider):
       
 	for sel in response.xpath("//div[contains(concat(' ', normalize-space(@class), ' '), ' itemlistcombined-productrowcontainer-210 ')]"):
 	    item = ParadigitItem()
-	    item['naam'] = sel.xpath('div/div[contains(concat(" ", normalize-space(@class), " "), " itemlistcombined-titlecontainer ")]/a/span/text()').extract()
+	    item['naam'] = sel.xpath('/div[contains(concat(" ", normalize-space(@class), " "), " itemlistcombined-titlecontainer ")]/a/span/text()').extract()
 
 	    yield item
