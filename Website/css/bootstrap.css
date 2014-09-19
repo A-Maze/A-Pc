@@ -1,0 +1,11 @@
+.sb-page-header {
+    position: relative;
+    padding: 30px 15px;
+    text-align: center;
+    color: rgba(255,255,255,.8);
+    background-color: #b84d45;
+    background-image: url(../img/bg.png);
+    margin-bottom: 40px;
+    margin-top: 40px;
+    font-size: 20px;
+}
