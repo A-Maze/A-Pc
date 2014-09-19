@@ -21,6 +21,7 @@ class BobSpider(CrawlSpider):
     Rule(LinkExtractor(restrict_xpaths =('//div[@id="navTree"]/ul/li/ul/li[contains(concat(" ", normalize-space(@class), "  "), " subLevel2 ")]/a', )),callback='parse_item',follow=True),
     Rule(LinkExtractor(restrict_xpaths =('//div[@id="navTree"]/ul/li/ul/li[contains(concat(" ", normalize-space(@class), "  "), " subLevel3 ")]/a', )),callback='parse_item',follow=True),
     Rule(LinkExtractor(restrict_xpaths =('//div[@id="navTree"]/ul/li/ul/li[contains(concat(" ", normalize-space(@class), "  "), " subLevel4 ")]/a', )),callback='parse_item',follow=True),
+    Rule(LinkExtractor(restrict_xpaths =('//div[contains(concat(" ", normalize-space(@class), "  "), " articleSizePerSite ")]/a', )),callback='parse_item',follow=True),
     )
 
  
