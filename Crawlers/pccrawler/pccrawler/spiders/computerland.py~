@@ -18,21 +18,21 @@ class BobSpider(CrawlSpider):
     
     rules = (
 
-    Rule(LinkExtractor(restrict_xpaths =('//div[@id="navTree"]/ul/li/ul/li[contains(concat(" ", normalize-space(@class), "  "), " subLevel2 ")]/a', )),callback='parse_item',follow=True),
+    Rule(LinkExtractor(restrict_xpaths =('//div[contains(concat(" ", normalize-space(@class), "  "), " dropdown_3columns no_padding_top dropdown_container ")][1]/ul/li/a', )),callback='parse_item',follow=True),
     )
 
  
     
     def parse_item(self, response):
 
-        for sel in response.xpath('//div[contains(concat(" ", normalize-space(@class), "  "), " listRow ")]'):
+        for sel in response.xpath('//div[contains(concat(" ", normalize-space(@class), "  "), " itemlistcombined-productrowcontainer-210 ")]'):
             item = BobItem()
-            item['naam'] =  sel.xpath('a/span/span/h2/span[contains(concat(" ", normalize-space(@class), " "), " name ")]/span/text()').extract()
-            item['subnaam'] = sel.xpath('a/span/span/h2/span[contains(concat(" ", normalize-space(@class), " "), " additional ")]/text()').extract()
-            item['info'] = sel.xpath('a/span[contains(concat(" ", normalize-space(@class), " "), " info ")]/text()').extract()
-            item['stock'] = sel.xpath('a/span[contains(concat(" ", normalize-space(@class), " "), " stockStatusContainer ")]/strong/text()').extract()
-            item['categorie'] = sel.xpath('//h1[contains(concat(" ", normalize-space(@class), " "), " seoListingHeadline ")]/text()').extract()
-            item['prijs'] = sel.xpath('div/p/span[contains(concat(" ", normalize-space(@class), " "), " price right right10 ")]/text()').extract()
+            item['naam'] =  sel.xpath('div/div/a/span["@id=ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_titleDescriptionLabel"]/text()').extract()
+            item['subnaam'] = sel.xpath('div/div/a/span["@id=ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_shortSummaryLabel"]/text()').extract()
+            item['info'] = sel.xpath('div/div/a/span["@id=ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_shortSummaryLabel"]/text()').extract()
+            item['stock'] = sel.xpath('div/div/div/span["@id=ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_warehouseDeliveryTimeLabel"]/text()').extract()
+            item['categorie'] = sel.xpath('//a[contains(concat(" ", normalize-space(@class), " "), " activebreadcrumbhyperlink ")]/@title').extract()
+            item['prijs'] = sel.xpath('div[contains(concat(" ", normalize-space(@class), " "), "itemlistcombined-salespriceincludingvatcontainer")]/div/meta[2]/@content').extract()
             yield item
             
   

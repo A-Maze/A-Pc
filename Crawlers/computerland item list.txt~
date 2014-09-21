@@ -1,1 +1,109 @@
- 
+<div id="ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_productRowContainer" class="itemlistcombined-productrowcontainer-210">
+  
+  <div class="itemlistcombined-productimagecontainer">
+    
+    <a id="ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_productImageHyperlink" href="http://www.computerland.nl/zkb-01com/20428020/asus-radeon-r5230-sl-1gd3-l-1gb-pci-e/details.aspx">
+      &nbsp;
+      <img id="ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_productImage" src="../../components/webhandlers/pimpicture.ashx?productnumber=20428020&amp;catalogcode=CL&amp;maximumwidth=200&amp;maximumheight=150&amp;picturetypecode=highresolution" alt="ASUS Radeon R5230-SL-1GD3-L - 1GB - PCI-E" />
+      &nbsp;
+    </a>
+  </div>
+  
+  
+  <div id="ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_itemCompareContainer" class="itemlistcombined-itemcomparecontainer">
+    <div class="itemlistcombined-itemcompareborder">
+      <div class="itemlistcombined-comparecheckboxcontainer">
+        <span comparecheckbox="true" CProductNumber="20428020">
+          <input id="ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_compareCheckBox" type="checkbox" name="ctl00$ContentPlaceHolder1$itemListCombined$itemListTiledASPxCallbackPanel$itemListRepeater$ctl16$compareCheckBox" onclick="UpdateCheckBoxCount(&#39;20428020&#39;, &#39;ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_compareCheckBox&#39;, &#39;ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemComparisationLinkButton&#39;);" />
+          <label for="ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_compareCheckBox">
+            vergelijk
+          </label>
+        </span>
+      </div>
+      <div class="itemlistcombined-comparebuttoncontainer">
+        <input type="image" name="ctl00$ContentPlaceHolder1$itemListCombined$itemListTiledASPxCallbackPanel$itemListRepeater$ctl16$compareImageButton" id="ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_compareImageButton" ProductNumber="20428020" CompareButton="true" src="../../content/website/theme/cl_button_vergelijk_producten.png" onclick="NavigateToComparePage(&#39;/catalog/&#39;); return false;" />
+      </div>
+    </div>
+  </div>
+  <div class="itemlistcombined-descriptioncontainer">
+    <div class="itemlistcombined-titlecontainer">
+      <a id="ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_titleDescriptionHyperLink" href="http://www.computerland.nl/zkb-01com/20428020/asus-radeon-r5230-sl-1gd3-l-1gb-pci-e/details.aspx">
+        <span id="ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_titleDescriptionLabel">
+          ASUS Radeon R5230-SL-1GD3-L - 1GB - PCI-E
+        </span>
+      </a>
+    </div>
+    <div class="itemlistcombined-warehousedeliverycontainer">
+      <div class="itemlistcombined-warehousedeliverytextcontainer">
+        <span id="ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_orderDirectlyLabel">
+          Direct bestellen:
+        </span>
+      </div>
+      <div class="itemlistcombined-warehousedeliverytimecontainer">
+        <img id="ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_warehouseStockIndicatorImage" src="../../app_themes/computerland/images/stockindicators/stocked.gif" alt="Vandaag besteld, morgen in huis" />
+        &nbsp;
+        <span id="ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_warehouseDeliveryTimeLabel">
+          Vandaag besteld, morgen in huis
+        </span>
+      </div>
+    </div>
+    
+    <div class="itemlistcombined-shortsummarycontainer">
+      <a id="ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_shortSummaryHyperLink" href="http://www.computerland.nl/zkb-01com/20428020/asus-radeon-r5230-sl-1gd3-l-1gb-pci-e/details.aspx">
+        <span id="ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_shortSummaryLabel">
+          VGA / DVI / HDMI
+        </span>
+      </a>
+    </div>
+    <div class="itemlistcombined-itemnumbercontainer">
+      <span id="ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_itemNumberLabel">
+        20428020 / 90YV06B0-M0NA00
+      </span>
+    </div>
+  </div>
+  <div class="itemlistcombined-advicepricecontainer">
+    <div id="ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_advicePriceLabel_pricePlaceHolder" class="productprice-container">
+    </div>
+  </div>
+  <div class="itemlistcombined-salespriceincludingvatcontainer">
+    <div id="ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_salespriceIncludingVATPriceLabel_pricePlaceHolder" class="productprice-container">
+      <DIV>
+        <DIV class="productprice-digitcontainer">
+          <img src="../../app_themes/computerland/images/paradigit/priceimages/36px/images/4_groot.gif" alt="94,99" />
+          <img src="../../app_themes/computerland/images/paradigit/priceimages/36px/images/4_groot.gif" alt="94,99" />
+          <img src="../../app_themes/computerland/images/paradigit/priceimages/36px/images/comma_groot.gif" alt="94,99" />
+          <img src="../../app_themes/computerland/images/paradigit/priceimages/36px/images/9_klein.gif" alt="94,99" />
+          <img src="../../app_themes/computerland/images/paradigit/priceimages/36px/images/9_klein.gif" alt="94,99" />
+        </DIV>
+      </DIV>
+      <meta itemprop="currency" content="EUR">
+    </meta>
+    <meta itemprop="price" content="44.99000000000000000000">
+  </meta>
+</div>
+</div>
+<div class="itemlistcombined-salespriceexcludingvatcontainer">
+  <div id="ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_salespriceExcludingVATPriceLabel_pricePlaceHolder" class="productprice-container">
+    <DIV>
+      <DIV class="productprice-digitcontainer">
+        <img src="../../app_themes/computerland/images/paradigit/priceimages/11px-btw/images/3_klein.gif" alt="342,98" />
+        <img src="../../app_themes/computerland/images/paradigit/priceimages/11px-btw/images/7_klein.gif" alt="78,50" />
+        <img src="../../app_themes/computerland/images/paradigit/priceimages/11px-btw/images/comma_klein.gif" alt="342,98" />
+        <img src="../../app_themes/computerland/images/paradigit/priceimages/11px-btw/images/1_klein.gif" alt="81,82" />
+        <img src="../../app_themes/computerland/images/paradigit/priceimages/11px-btw/images/8_klein.gif" alt="342,98" />
+        <img src="../../app_themes/computerland/images/paradigit/priceimages/11px-btw/images/ex_btw.gif" alt="342,98" />
+      </DIV>
+    </DIV>
+    <meta itemprop="currency" content="EUR">
+  </meta>
+  <meta itemprop="price" content="37.18180000000000000000">
+</meta>
+</div>
+</div>
+<div class="itemlistcombined-moreinfocontainer">
+  <a id="ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_moreInfoHyperLink" href="http://www.computerland.nl/zkb-01com/20428020/asus-radeon-r5230-sl-1gd3-l-1gb-pci-e/details.aspx">
+    <img id="ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_moreInfoImage" src="../../content/website/theme/cl_button_meer_info.png" />
+  </a>
+</div>
+</div>
+
