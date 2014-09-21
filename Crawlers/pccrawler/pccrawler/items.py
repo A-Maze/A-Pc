@@ -19,3 +19,10 @@ class ParadigitItem(scrapy.Item):
     naam = scrapy.Field()
     
     
+class ComputerlandItem(scrapy.Item):
+    categorie = scrapy.Field()
+    naam = scrapy.Field()
+    subnaam = scrapy.Field()
+    info = scrapy.Field()
+    stock = scrapy.Field()
+    prijs = scrapy.Field()

@@ -7,8 +7,6 @@
 
 import scrapy
 
-
-
 class BobItem(scrapy.Item):
     categorie = scrapy.Field()
     naam = scrapy.Field()
@@ -16,5 +14,8 @@ class BobItem(scrapy.Item):
     info = scrapy.Field()
     stock = scrapy.Field()
     prijs = scrapy.Field()
+
+class ParadigitItem(scrapy.Item):
+    naam = scrapy.Field()
     
     
