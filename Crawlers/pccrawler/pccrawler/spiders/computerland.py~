@@ -19,6 +19,7 @@ class BobSpider(CrawlSpider):
     rules = (
 
     Rule(LinkExtractor(restrict_xpaths =('//div[contains(concat(" ", normalize-space(@class), "  "), " dropdown_3columns no_padding_top dropdown_container ")][1]/ul/li/a', )),callback='parse_item',follow=True),
+    Rule(LinkExtractor(restrict_xpaths =('//a[contains(concat(" ", normalize-space(@class), "  "), " PagerHyperlinkStyle ")]', )),callback='parse_item',follow=True),
     )
 
  
