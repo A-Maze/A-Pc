@@ -17,8 +17,7 @@ class BobItem(scrapy.Item):
 
 class ParadigitItem(scrapy.Item):
     naam = scrapy.Field()
-    
-    
+
 class ComputerlandItem(scrapy.Item):
     categorie = scrapy.Field()
     naam = scrapy.Field()
