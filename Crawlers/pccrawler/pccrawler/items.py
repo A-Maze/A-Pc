@@ -30,3 +30,11 @@ class ComputerlandItem(scrapy.Item):
     info = scrapy.Field()
     stock = scrapy.Field()
     prijs = scrapy.Field()
+
+class InformatiqueItem(scrapy.Item):
+    categorie = scrapy.Field()
+    naam = scrapy.Field()
+    subnaam = scrapy.Field()
+    info = scrapy.Field()
+    stock = scrapy.Field()
+    prijs = scrapy.Field()
