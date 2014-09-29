@@ -21,7 +21,10 @@ class ParadigitSpider(CrawlSpider):
       
         for sel in response.xpath("//div[contains(concat(' ', normalize-space(@class), ' '), ' itemlistcombined-productrowcontainer-210 ')]"):
             item = ParadigitItem()
-            item['categorie'] = sel.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " activebreadcrumbhyperlink ")]/text()').extract()[0]
+            item['categorie'] = sel.xpath('//a[contains(concat(" ", normalize-space(@class), " "), " activebreadcrumbhyperlink ")]/text()').extract()[0]
             item['naam'] = sel.xpath('div/div[contains(concat(" ", normalize-space(@class), " "), " itemlistcombined-titlecontainer ")]/a/span/text()').extract()[0]
+            item['info'] = sel.xpath('div/div[contains(concat(" ", normalize-space(@class), " "), " itemlistcombined-shortsummarycontainer ")]/a/span/text()').extract()[0]
+            item['stock'] = sel.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " itemlistcombined-warehousedeliverytimecontainer ")]/span/text()').extract()[0]
+            item['prijs'] = round(float(sel.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " itemlistcombined-salespriceincludingvatcontainer ")]/div/meta[2]/@content').extract()[0]), 2)
 
             yield item

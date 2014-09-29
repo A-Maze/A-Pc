@@ -18,7 +18,7 @@ class BobItem(scrapy.Item):
 class ParadigitItem(scrapy.Item):
     categorie = scrapy.Field()
     naam = scrapy.Field()
-    subnaam = scrapy.Field()
+    #subnaam = scrapy.Field()
     info = scrapy.Field()
     stock = scrapy.Field()
     prijs = scrapy.Field()
