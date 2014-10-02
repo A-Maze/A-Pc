@@ -38,3 +38,11 @@ class InformatiqueItem(scrapy.Item):
     info = scrapy.Field()
     stock = scrapy.Field()
     prijs = scrapy.Field()
+
+class BolItem(scrapy.Item):
+    categorie = scrapy.Field()
+    naam = scrapy.Field()
+    #subnaam = scrapy.Field()
+    info = scrapy.Field()
+    stock = scrapy.Field()
+    prijs = scrapy.Field()
