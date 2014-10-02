@@ -19,7 +19,7 @@ class BolSpider(CrawlSpider):
 
     rules = (
 
-    Rule(LinkExtractor(restrict_xpaths =('//div[contains(concat(" ", normalize-space(@class), "  "), " cont_station ")]/a', )),callback='parse_item',follow=True),
+    Rule(LinkExtractor(restrict_xpaths =('//ul[1]/li/span[contains(concat(" ", normalize-space(@class), "  "), " po_enda_fftftf.enav.leftnav ")]/a', )),callback='parse_item',follow=True),
     Rule(LinkExtractor(restrict_xpaths =('//span[contains(concat(" ", normalize-space(@class), "  "), " po_enda_fftftf.enav.next ")]/a', )),callback='parse_item',follow=True),
     )
 
@@ -35,9 +35,6 @@ class BolSpider(CrawlSpider):
             item['categorie'] = sel.xpath('//span[contains(concat(" ", normalize-space(@class), "  "), " bol_header ")]/text()').extract()
             item['prijs'] = sel.xpath('.//div[contains(concat(" ", normalize-space(@class), "  "), " price_block ")]/strong/text()').extract()
             yield item
-
-
-
 
 
 
