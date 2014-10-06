@@ -54,3 +54,11 @@ class AfutureItem(scrapy.Item):
     info = scrapy.Field()
     stock = scrapy.Field()
     prijs = scrapy.Field()
+
+class AzertyItem(scrapy.Item):
+    titel = scrapy.Field()
+    omschrijving = scrapy.Field()
+    prijs = scrapy.Field()
+    categorie = scrapy.Field()
+    image = scrapy.Field()
+
