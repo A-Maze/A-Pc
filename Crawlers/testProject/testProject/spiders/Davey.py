@@ -8,15 +8,13 @@ from scrapy.contrib.linkextractors import LinkExtractor
 
 class Davey(CrawlSpider):
 	name = "Davey"
-	allowed_domains = ["http://www.azerty.nl"]
+	allowed_domains = ["www.azerty.nl"]
 	start_urls = (
-        'http://azerty.nl/8-5824/-met-cpu.html',
+        'http://azerty.nl/8/componenten.html',
     )
     
 	rules = (
-
-    Rule(LinkExtractor(restrict_xpaths =('/html/body/div[2]/div[5]/div/ul/li/ul/li[4]/ul/li[1]/ul/li[1]/a', )),callback='parse_item',follow=True),
-    #Rule(LinkExtractor(restrict_xpaths =('//div[contains(concat(" ", normalize-space(@class), "  "), " articleSizePerSite ")]/a', )),callback='parse_item',follow=True),
+    Rule(LinkExtractor(restrict_xpaths =('//li[contains(concat(" ", normalize-space(@class), "  "), " menu ")]//a', )),callback='parse_item',follow=True),
     )
 
 	def parse_item(self, response):

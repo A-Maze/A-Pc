@@ -10,7 +10,7 @@
     <link rel="stylesheet" href='{% static "css/ripples.css" %}'/>
     <link rel="stylesheet" href='{% static "css/style.css" %}'/>
 
-    <script src='{% static "s/jquery-2.1.1.min.js" %}'></script>
+    <script src='{% static "js/jquery-2.1.1.min.js" %}'></script>
     <script src='{% static "js/bootstrap.min.js" %}'></script>
     <script src='{% static "js/material.js" %}'></script>
     <script src='{% static "js/ripples.js" %}'></script>
@@ -73,11 +73,15 @@
 
 
 
+    {% block slider %}
 
+    {% endblock %}
 <!-- Page Content -->
 <div class="container top-margin">
     {% block content %}
-        
+
+
+
     {% endblock %}
 
 </div>

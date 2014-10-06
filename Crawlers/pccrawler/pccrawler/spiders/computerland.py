@@ -2,12 +2,12 @@
 import scrapy
 
 from scrapy.http import Request
-from pccrawler.items import BobItem
+from pccrawler.items import ComputerlandItem
 from scrapy.selector import HtmlXPathSelector
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors import LinkExtractor
 
-class BobSpider(CrawlSpider):
+class ComputerlandSpider(CrawlSpider):
     name = "computerland"
     allowed_domains = ["www.computerland.nl"]
     start_urls = (
@@ -27,7 +27,7 @@ class BobSpider(CrawlSpider):
     def parse_item(self, response):
 
         for sel in response.xpath('//div[contains(concat(" ", normalize-space(@class), "  "), " itemlistcombined-productrowcontainer-210 ")]'):
-            item = BobItem()
+            item = ComputerlandItem()
             item['naam'] =  sel.xpath('div/div/a/span["@id=ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_titleDescriptionLabel"]/text()').extract()
             item['subnaam'] = sel.xpath('div/div/a/span["@id=ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_shortSummaryLabel"]/text()').extract()
             item['info'] = sel.xpath('div/div/a/span["@id=ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_shortSummaryLabel"]/text()').extract()
