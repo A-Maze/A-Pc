@@ -35,6 +35,7 @@ class InformatiqueSpider(CrawlSpider):
 
     Rule(LinkExtractor(restrict_xpaths =('//td[contains(concat(" ", normalize-space(@class), "  "), " kopsf ")]/a', )),callback='parse_item',follow=True),
     Rule(LinkExtractor(restrict_xpaths =('//ul[@id="pages"]/li[1]/a', )),callback='parse_item',follow=True),
+    
     )
 
 
