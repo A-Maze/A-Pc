@@ -1,0 +1,2 @@
+scrapy crawl Davey -o Processoren.json;
+scrapy crawl AzertyMoederbord -o Moederborden.json;
