@@ -1,0 +1,12 @@
+.col-centered {
+float: none;
+margin: 0 auto;
+}
+
+.component:hover {
+    background-color: #39D1B4;
+}
+
+.top-margin {
+    margin-top:50px;
+}
