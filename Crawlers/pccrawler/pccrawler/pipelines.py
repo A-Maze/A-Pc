@@ -22,12 +22,9 @@ class PccrawlerPipeline(object):
 		for data in item:
           # here we only check if the data is not null
           # but we could do any crazy validation we want
-			if not data:
-		    	valid = False
-		    	raise DropItem("Missing %s of blogpost from %s" %(data, item['url']))
-		if valid:
-			self.collection.insert(dict(item))
-			log.msg("Item wrote to MongoDB database %s/%s" %
+			if valid:
+				self.collection.insert(dict(item))
+				log.msg("Item wrote to MongoDB database %s/%s" %
 		    	(settings['MONGODB_DB'], settings['MONGODB_COLLECTION']),
 		    	level=log.DEBUG, spider=spider) 
-		return item
+			return item

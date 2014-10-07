@@ -2,24 +2,28 @@
 {% load static %}
 {% block content %}
 <div class="container">
-    <div class="col-md-4">
+    <div class="col-md-4 col-lg-2">
 
 
 
     </div>
 
-    <div class="col-md-8">
+    <div class="col-md-8 col-lg-10">
+
         <div class=" top-margin">
-            {% for processoren in Processoren %}
+            
+            <h1>Processoren</h1>
+            {% for processor in Processoren %}
             <div class="list-group">
-                <div class="list-group-item">
-                    <div class="row-picture">
+                <div class="list-group-item"
+>                    <div class="row-picture">
                         <img class="square" src="http://lorempixel.com/56/56/people/1" alt="icon">
                     </div>
                     <div class="row-content">
-                        <h4 class="list-group-item-heading">{{ processoren.titel }}</h4>
-                        <p class="list-group-item-text">{{ processoren.omschrijving }}</p>
-                        <p class="list-group-item-text pull-right">{{ processoren.prijs }}</p>
+                        <h4 class="list-group-item-heading">{{ processor.naam }}</h4>
+                        <p class="list-group-item-text">{{ processor.info }}</p>
+                        <p class="list-group-item-text pull-right">{{ processor.prijs }}</p>
+                        <p class="list-group-item-text pull-right">{{ processor.stock }}</p>
                     </div>
                 </div>
 
