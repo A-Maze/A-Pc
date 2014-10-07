@@ -13,5 +13,13 @@ BOT_NAME = 'pccrawler'
 SPIDER_MODULES = ['pccrawler.spiders']
 NEWSPIDER_MODULE = 'pccrawler.spiders'
 
+
+ITEM_PIPELINES = ['pccrawler.pipelines.PccrawlerPipeline',]
+
+MONGODB_SERVER = "localhost"
+MONGODB_PORT = 27017
+MONGODB_DB = "components"
+MONGODB_COLLECTION = "Processoren"
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'pccrawler (+http://www.yourdomain.com)'
