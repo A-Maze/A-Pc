@@ -44,3 +44,4 @@ def processoren(request):
     processoren = Processoren.objects 
     return render_to_response('processoren.html', {'Processoren': processoren},
                               context_instance=RequestContext(request))
+
