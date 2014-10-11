@@ -96,3 +96,91 @@ STATICFILES_FINDERS = (
 )
 
 SITE_ID = 0
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+
+    # How to format the output
+    'formatters': {
+        'standard': {
+            'format' : "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
+            'datefmt' : "%d/%b/%Y %H:%M:%S"
+        },
+        },
+
+    # Log handlers (where to go)
+    'handlers': {
+        'null': {
+            'level':'DEBUG',
+            'class':'django.utils.log.NullHandler',
+            },
+        'logfile': {
+            'level':'DEBUG',
+            'class':'logging.handlers.RotatingFileHandler',
+            'filename': "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/APc/logs/repackager.log",
+            'maxBytes': 50000,
+            'backupCount': 2,
+            'formatter': 'standard',
+            },
+        'console':{
+            'level':'INFO',
+            'class':'logging.StreamHandler',
+            'formatter': 'standard'
+        },
+        'celery': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/APc/logs/celery.log",
+            'formatter': 'standard',
+            'maxBytes': 1024 * 1024 * 100,  # 100 mb
+        },
+        },
+
+    # Loggers (where does the log come from)
+    'loggers': {
+        'repackager': {
+            'handlers': ['console', 'logfile'],
+            'level': 'DEBUG',
+            'propagate': True,
+            },
+        'django': {
+            'handlers':['console'],
+            'propagate': True,
+            'level':'WARN',
+            },
+        'django.db.backends': {
+            'handlers': ['console', 'logfile'],
+            'level': 'WARN',
+            'propagate': False,
+            },
+        '': {
+            'handlers': ['console', 'logfile'],
+            'level': 'DEBUG',
+            },
+        'raven': {
+            'level': 'DEBUG',
+            'handlers': ['console'],
+            'propagate': False,
+            },
+        'sentry.errors': {
+            'level': 'DEBUG',
+            'handlers': ['console'],
+            'propagate': False,
+            },
+        'gunicorn.error': {
+            'level': 'INFO',
+            'handlers': ['logfile'],
+            'propagate': True,
+            },
+        'gunicorn.access': {
+            'level': 'INFO',
+            'handlers': ['logfile'],
+            'propagate': False,
+            },
+        'celery': {
+            'handlers': ['celery'],
+            'level': 'DEBUG',
+            },
+        }
+}
