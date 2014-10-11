@@ -4,6 +4,7 @@
 import os
 APP_DIR = os.path.dirname( globals()['__file__'] )
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+this_directory = os.path.dirname(__file__)
 
 DBNAME = 'components'
 
@@ -118,7 +119,7 @@ LOGGING = {
         'logfile': {
             'level':'DEBUG',
             'class':'logging.handlers.RotatingFileHandler',
-            'filename': "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/APc/logs/repackager.log",
+            'filename': this_directory + "/log.log",
             'maxBytes': 50000,
             'backupCount': 2,
             'formatter': 'standard',
@@ -131,7 +132,7 @@ LOGGING = {
         'celery': {
             'level': 'DEBUG',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/APc/logs/celery.log",
+            'filename': this_directory + "/celery.log",
             'formatter': 'standard',
             'maxBytes': 1024 * 1024 * 100,  # 100 mb
         },
