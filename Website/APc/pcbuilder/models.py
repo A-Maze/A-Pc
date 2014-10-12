@@ -1,20 +1,23 @@
 from django.db import models
+
 from mongoengine import *
-from django.conf import settings
-result = connect(settings.DBNAME)
+from APc.settings import DBNAME
+
+connect(DBNAME)
+
+class Processor(Document):
+    categorie = StringField(max_length=120, required=True)
+    naam = StringField(max_length=500, required=True)
 
 
-class Processor(models.Model):
-    categorie = models.CharField(max_length=120)
-    naam = models.CharField(max_length=500)
-    subnaam = models.CharField(max_length=500)
-    info = models.CharField(max_length=500)
-    stock = models.CharField(max_length=500)
-    prijs = models.CharField(max_length=120)
+'''   subnaam = StringField(max_length=500)
+   info = StringField(max_length=500)
+   stock = StringField(max_length=500)
+   prijs = StringField(max_length=120)
 
 
 
-'''
+
 from django.db import models
 
 from mongoengine import *

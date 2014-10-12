@@ -1,6 +1,4 @@
-# Django settings for APc project.
-
-
+# Django settings for blog project.
 import os
 APP_DIR = os.path.dirname( globals()['__file__'] )
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -13,11 +11,9 @@ STATICFILES_DIRS = (
     BASE_DIR + '/static/',  # or project_static, whatever
 )
 
-STATIC_URL = "/static/"
-
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates'),)
-
+    os.path.join(BASE_DIR, 'templates'),
+)
 
 
 
@@ -43,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pcbuilder',
@@ -90,13 +87,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
-)
+STATIC_URL = '/static/'
 
-SITE_ID = 0
 
 LOGGING = {
     'version': 1,
