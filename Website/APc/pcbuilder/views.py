@@ -14,7 +14,7 @@ def index(request):
 def processoren(request):
 
     # Get all posts from DB
-    processoren = Processoren.objects[:5]
+    processoren = Processoren.objects(categorie__contains='Processor')[:10]
     return render_to_response('processoren.html', {'Processoren': processoren},
                               context_instance=RequestContext(request))
 
