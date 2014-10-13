@@ -271,3 +271,11 @@ Traceback (most recent call last):
 TemplateSyntaxError: Could not parse the remainder: '[0]' from 'processor.naam[0]'
 [13/Oct/2014 17:04:18] WARNING [django.request:143] Not Found: /favicon.ico
 [13/Oct/2014 17:08:22] WARNING [django.request:143] Not Found: /processor
+[13/Oct/2014 17:10:17] WARNING [django.request:143] Not Found: /hardeschijf
+[13/Oct/2014 17:10:46] WARNING [django.request:143] Not Found: /hardeschijf/
+[13/Oct/2014 17:11:12] WARNING [django.request:143] Not Found: /hardeschijf/
+[13/Oct/2014 17:11:18] WARNING [django.request:143] Not Found: /koeling/
+[13/Oct/2014 17:12:22] WARNING [django.request:143] Not Found: /moederbord/
+[13/Oct/2014 17:12:31] WARNING [django.request:143] Not Found: /voeding/
+[13/Oct/2014 17:13:02] WARNING [django.request:143] Not Found: /moederbord/
+[13/Oct/2014 17:14:16] WARNING [django.request:143] Not Found: /optischeschijf/
