@@ -13,4 +13,3 @@ class Processoren(Document):
     stock = StringField(max_length=500)
     prijs = StringField(max_length=120)
 
-

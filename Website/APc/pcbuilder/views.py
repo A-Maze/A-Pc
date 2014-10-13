@@ -3,6 +3,7 @@ from django.template import RequestContext
 from django.template import loader
 from models import Processoren
 import logging
+import json
 
 def index(request):
     # Get all posts from DB
@@ -15,7 +16,8 @@ def index(request):
 def processoren(request):
 
     # Get all posts from DB
-    processoren = Processoren.objects(categorie__contains='Processor')[:10]
+    processoren = Processoren.objects.filter(categorie__contains='Processor')[:10]
+    #processoren = json.dumps(list(uniArray))
     return render_to_response('processoren.html', {'Processoren': processoren},
                               context_instance=RequestContext(request))
 
