@@ -73,7 +73,7 @@ def optischeschijf(request):
 def voedingen(request):
 
     # Get all posts from DB
-    processoren = Processoren.objects(categorie__contains='Voedingen')[:10]
+    processoren = Processoren.objects(categorie__contains='Voeding')[:10]
     return render_to_response('voeding.html', {'Processoren': processoren},
                               context_instance=RequestContext(request))
 
