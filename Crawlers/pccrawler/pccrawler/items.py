@@ -7,9 +7,57 @@
 
 import scrapy
 
-class TestprojectItem(scrapy.Item):
-	titel = scrapy.Field()
-	omschrijving = scrapy.Field()
-	prijs = scrapy.Field()
-	categorie = scrapy.Field()
-	image = scrapy.Field()
+class BobItem(scrapy.Item):
+    categorie = scrapy.Field()
+    naam = scrapy.Field()
+    subnaam = scrapy.Field()
+    info = scrapy.Field()
+    stock = scrapy.Field()
+    prijs = scrapy.Field()
+
+class ParadigitItem(scrapy.Item):
+    categorie = scrapy.Field()
+    naam = scrapy.Field()
+    #subnaam = scrapy.Field()
+    info = scrapy.Field()
+    stock = scrapy.Field()
+    prijs = scrapy.Field()
+
+class ComputerlandItem(scrapy.Item):
+    categorie = scrapy.Field()
+    naam = scrapy.Field()
+    subnaam = scrapy.Field()
+    info = scrapy.Field()
+    stock = scrapy.Field()
+    prijs = scrapy.Field()
+
+class InformatiqueItem(scrapy.Item):
+    categorie = scrapy.Field()
+    naam = scrapy.Field()
+    subnaam = scrapy.Field()
+    info = scrapy.Field()
+    stock = scrapy.Field()
+    prijs = scrapy.Field()
+
+class BolItem(scrapy.Item):
+    categorie = scrapy.Field()
+    naam = scrapy.Field()
+    #subnaam = scrapy.Field()
+    info = scrapy.Field()
+    stock = scrapy.Field()
+    prijs = scrapy.Field()
+
+class AfutureItem(scrapy.Item):
+    categorie = scrapy.Field()
+    naam = scrapy.Field()
+    #subnaam = scrapy.Field()
+    info = scrapy.Field()
+    stock = scrapy.Field()
+    prijs = scrapy.Field()
+
+class AzertyItem(scrapy.Item):
+    titel = scrapy.Field()
+    omschrijving = scrapy.Field()
+    prijs = scrapy.Field()
+    categorie = scrapy.Field()
+    image = scrapy.Field()
