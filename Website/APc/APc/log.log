@@ -269,3 +269,5 @@ Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 588, in __init__
     "from '%s'" % (token[upto:], token))
 TemplateSyntaxError: Could not parse the remainder: '[0]' from 'processor.naam[0]'
+[13/Oct/2014 17:04:18] WARNING [django.request:143] Not Found: /favicon.ico
+[13/Oct/2014 17:08:22] WARNING [django.request:143] Not Found: /processor
