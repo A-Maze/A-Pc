@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="col-md-4 col-lg-2">
+
+
+
+    </div>
+
+    <div class="col-md-8 col-lg-10">
+
+        <div class=" top-margin">
+            
+            <h1>Koeling</h1>
+            {% for processor in Processoren %}
+            <div class="list-group">
+                <div class="list-group-item"
+>                    <div class="row-picture">
+                        <img class="square" src="http://lorempixel.com/56/56/people/1" alt="icon">
+                    </div>
+                    <div class="row-content">
+                        <h4 class="list-group-item-heading">{{ processor.naam }}</h4>
+                        <p class="list-group-item-text">{{ processor.info }}</p>
+                        <p class="list-group-item-text pull-right">{{ processor.prijs }}</p>
+                        <p class="list-group-item-text pull-right">{{ processor.stock }}</p>
+                    </div>
+                </div>
+
+
+
+            </div>
+            {% endfor %}
+
+        </div>
+
+
+    </div>
+</div>
+{% endblock %}
