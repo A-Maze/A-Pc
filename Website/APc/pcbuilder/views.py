@@ -1,5 +1,6 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+from django.template import loader
 from models import Processoren
 import logging
 

@@ -4,15 +4,29 @@
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
+import pymongo
 
+from scrapy.exceptions import DropItem
+from scrapy.conf import settings
+from scrapy import log
+import json
+import codecs
 
 class PccrawlerPipeline(object):
-    def __init__(self):
-        self.names_seen = set()
 
-    def process_item(self, item, spider):
-        if item['name'] in self.names_seen:
-            raise DropItem("Duplicate item found: %s" % item)
-        else:
-            self.names_see .add(item['name'])
-            return item
+	def __init__(self):
+		connection = pymongo.Connection(settings['MONGODB_SERVER'], settings['MONGODB_PORT'])
+		db = connection[settings['MONGODB_DB']]
+		self.collection = db[settings['MONGODB_COLLECTION']]
+        
+        def process_item(self, item, spider):
+		valid = True
+		for data in item:
+          # here we only check if the data is not null
+          # but we could do any crazy validation we want
+			if valid:
+				self.collection.insert(dict(item))
+				log.msg("Item wrote to MongoDB database %s/%s" %
+		    	(settings['MONGODB_DB'], settings['MONGODB_COLLECTION']),
+		    	level=log.DEBUG, spider=spider) 
+			return item
