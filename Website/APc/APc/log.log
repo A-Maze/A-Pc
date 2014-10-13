@@ -275,6 +275,7 @@ Traceback (most recent call last):
     return FilterExpression(token, self)
   File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 588, in __init__
     "from '%s'" % (token[upto:], token))
+<<<<<<< HEAD
 TemplateSyntaxError: Could not parse the remainder: ' processor.naam.1 processor.naam.2 processor.naam.3' from 'processor.naam.0 processor.naam.1 processor.naam.2 processor.naam.3'
 [13/Oct/2014 17:25:03] ERROR [django.request:231] Internal Server Error: /processoren/
 Traceback (most recent call last):
@@ -346,3 +347,16 @@ Traceback (most recent call last):
   File "/usr/lib/python2.7/json/encoder.py", line 178, in default
     raise TypeError(repr(o) + " is not JSON serializable")
 TypeError: <Processoren: Processoren object> is not JSON serializable
+=======
+TemplateSyntaxError: Could not parse the remainder: '[0]' from 'processor.naam[0]'
+[13/Oct/2014 17:04:18] WARNING [django.request:143] Not Found: /favicon.ico
+[13/Oct/2014 17:08:22] WARNING [django.request:143] Not Found: /processor
+[13/Oct/2014 17:10:17] WARNING [django.request:143] Not Found: /hardeschijf
+[13/Oct/2014 17:10:46] WARNING [django.request:143] Not Found: /hardeschijf/
+[13/Oct/2014 17:11:12] WARNING [django.request:143] Not Found: /hardeschijf/
+[13/Oct/2014 17:11:18] WARNING [django.request:143] Not Found: /koeling/
+[13/Oct/2014 17:12:22] WARNING [django.request:143] Not Found: /moederbord/
+[13/Oct/2014 17:12:31] WARNING [django.request:143] Not Found: /voeding/
+[13/Oct/2014 17:13:02] WARNING [django.request:143] Not Found: /moederbord/
+[13/Oct/2014 17:14:16] WARNING [django.request:143] Not Found: /optischeschijf/
+>>>>>>> 3ffd1e4479d1d663832a7fa8c32831921dc1abcf
