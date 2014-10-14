@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+<head lang="en">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" /> 
+    <title>A-Pc</title>
+    <link rel="stylesheet" href='{% static "css/bootstrap.min.css" %}'/>
+    <link rel="stylesheet" href='{% static "css/bootstrap.css" %}'/>
+    <link rel="stylesheet" href='{% static "css/material.css" %}'/>
+    <link rel="stylesheet" href='{% static "css/ripples.css" %}'/>
+
+    <link rel="stylesheet" href='{% static "css/style.css" %}'/>
+
+    <script src='{% static "js/jquery-2.1.1.min.js" %}'></script>
+    <script src='{% static "js/bootstrap.min.js" %}'></script>
+    <script src='{% static "js/material.js" %}'></script>
+    <script src='{% static "js/ripples.js" %}'></script>
+    <script src='{% static "js/jquery.nouislider.all.min.js" %}'></script>
+</head>
+<body>
+
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">A-Pc
+                <small>by A-Maze</small>
+            </a>
+
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#">Overzicht</a>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Bootstrap Related Resources">Producten<b
+                            class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="/processoren/"><i class="fa fa-list fa-fw"></i>processor</a>
+                        </li>
+                        <li class="divider/"></li>
+                        <li>
+                            <a href="/moederborden/"><i class="fa fa-desktop fa-fw"></i>moederbord</a>
+                        </li>
+                        <li class="divider/"></li>
+                        <li>
+                            <a href="/gpu/"><i class="fa fa-desktop fa-fw"></i>grafische kaart</a>
+                        </li>
+                        <li class="divider/"></li>
+                        <li>
+                            <a href="/hardeschijven/"><i class="fa fa-desktop fa-fw"></i>harde schijf</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="/optischeschijven/"><i class="fa fa-desktop fa-fw"></i>optische drives</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="/koelingen/"><i class="fa fa-desktop fa-fw"></i>koeling</a>
+                        </li>
+                        <li class="divider/"></li>
+                        <li>
+                            <a href="/geheugen/"><i class="fa fa-desktop fa-fw"></i>geheugen</a>
+                        </li>
+                        <li class="divider/"></li>
+                        <li>
+                            <a href="/voedingen/"><i class="fa fa-desktop fa-fw"></i>voeding</a>
+                        </li>
+                        <li class="divider/"></li>
+                        <li>
+                            <a href="/behuizingen/"><i class="fa fa-desktop fa-fw"></i>behuizing</a>
+                        </li>
+                    </ul>
+            </li>
+
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+                <form class="navbar-form navbar-left">
+                    <input class="form-control col-lg-8" placeholder="Search" type="text">
+                </form>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+
+
+
+</nav>
+
+
+
+
+    {% block slider %}
+
+    {% endblock %}
+<!-- Page Content -->
+<div class="container top-margin">
+    {% block content %}
+
+
+
+    {% endblock %}
+
+</div>
+
+</body>
+</html>
