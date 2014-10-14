@@ -438,3 +438,4 @@ Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 588, in __init__
     "from '%s'" % (token[upto:], token))
 TemplateSyntaxError: Could not parse the remainder: '(' ', 1)[0]' from 'Processoren.0.categorie.0.split(' ', 1)[0]'
+[14/Oct/2014 08:43:12] WARNING [django.request:143] Not Found: /favicon.ico
