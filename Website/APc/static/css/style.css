@@ -24,3 +24,12 @@ background-color:black;
 .body-toggled {}
 
 .float-right {float:right}
+
+.sliderheight {
+    height:10px;
+}
+
+.customcheck:not(:last-child) {
+    margin-bottom:20px;
+}
+

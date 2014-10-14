@@ -13,11 +13,26 @@ $(document).ready(function(){
   $(switcher).toggleClass("dropup");
   });
 
+    $(".slider").noUiSlider({
+	start: [20, 80],
+	connect: true,
+	range: {
+		'min': 0,
+		'max': 100
+	}
+
+
+
+});
+
 });
 
 </script>
 
+
 <div class="container">
+
+
     <div class="col-md-4 col-lg-3 ">
 
         <div class="panel panel-primary top-margin  ">
@@ -30,11 +45,63 @@ $(document).ready(function(){
                 <div class="panel panel-default">
                     <div class="panel-heading toggle">Panel heading   <div class="pull-right"><span class="switcher dropup"><span class="caret"></span></span> </div></div>
                     <div class="panel-body body-toggled">
-                        dfdfdf
-                        <div class="slider"></div>
 
+                        <div class="checkbox customcheck">
+                            <label>
+                                <input type="checkbox"> Checkbox
+                            </label>
+                        </div>
+                        <div class="checkbox customcheck">
+                            <label>
+                                <input type="checkbox"> Checkbox
+                            </label>
+                        </div>
+                        <div class="checkbox customcheck">
+                            <label>
+                                <input type="checkbox"> Checkbox
+                            </label>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading toggle">Panel heading   <div class="pull-right"><span class="switcher dropup"><span class="caret"></span></span> </div></div>
+                    <div class="panel-body body-toggled">
+                        <div class="slider"></div>
+                    </div>
+
+
+
+                </div>
+
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading toggle">Panel heading   <div class="pull-right"><span class="switcher dropup"><span class="caret"></span></span> </div></div>
+                    <div class="panel-body body-toggled">
+
+                        <div class="checkbox customcheck">
+                            <label>
+                                <input type="checkbox"> Checkbox
+                            </label>
+                        </div>
+                        <div class="checkbox customcheck">
+                            <label>
+                                <input type="checkbox"> Checkbox
+                            </label>
+                        </div>
+                        <div class="checkbox customcheck">
+                            <label>
+                                <input type="checkbox"> Checkbox
+                            </label>
+                        </div>
                     </div>
                 </div>
+
+
 
 
             </div>
@@ -78,5 +145,10 @@ $(document).ready(function(){
 
 
     </div>
+
+
 </div>
+
+
+
 {% endblock %}
