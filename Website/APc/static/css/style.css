@@ -14,3 +14,13 @@ margin: 0 auto;
 .jumbotron{
 	margin-top:50px;
 }
+
+.blackbg {
+background-color:black;
+}
+
+.toggle {}
+
+.body-toggled {}
+
+.float-right {float:right}
