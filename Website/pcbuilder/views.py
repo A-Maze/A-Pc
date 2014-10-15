@@ -59,7 +59,10 @@ def koeling(request):
 def moederborden(request):
 
     # Get all posts from DB
-    processoren = Processoren.objects(categorie__contains='Moederborden')[:10]
+    aantal = request.GET.get('aantal', '10')
+    logging.info(aantal)
+    aantal = int(aantal)
+    processoren = Processoren.objects(categorie__contains='Moederborden')[:aantal]
     return render_to_response('moederbord.html', {'Processoren': processoren},
                               context_instance=RequestContext(request))
 
@@ -76,8 +79,5 @@ def voedingen(request):
     processoren = Processoren.objects(categorie__contains='Voeding')[:10]
     return render_to_response('voeding.html', {'Processoren': processoren},
                               context_instance=RequestContext(request))
-
-
-
 
 

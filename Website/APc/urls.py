@@ -13,5 +13,5 @@ urlpatterns = patterns('',
     url(r'^moederborden/', 'pcbuilder.views.moederborden'),
     url(r'^optischeschijven/', 'pcbuilder.views.optischeschijf'),
     url(r'^voedingen/', 'pcbuilder.views.voedingen'),
-
+    url(r'^user/(?P<aantal>\w{0,50})/$', 'pcbuilder.views.moederborden'),
 )

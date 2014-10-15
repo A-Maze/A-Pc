@@ -1,137 +1,27 @@
-[15/Oct/2014 13:10:26] ERROR [django.request:231] Internal Server Error: /cover
+[15/Oct/2014 14:17:43] ERROR [django.request:240] Internal Server Error: /moederborden/
 Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 87, in get_response
-    response = middleware_method(request)
-  File "/usr/local/lib/python2.7/dist-packages/django/middleware/common.py", line 73, in process_request
-    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 614, in is_valid_path
-    resolve(path, urlconf)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 489, in resolve
-    return get_resolver(urlconf).resolve(path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/programs/A-Pc/Website/APc/pcbuilder/views.py", line 81
-    def cover()
-              ^
-SyntaxError: invalid syntax
-[15/Oct/2014 13:10:26] ERROR [django.request:231] Internal Server Error: /cover
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 64, in moederborden
+    processoren = Processoren.objects(categorie__contains='Moederborden')[:aantal]
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 125, in __getitem__
+    queryset._cursor_obj = queryset._cursor[key]
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 575, in __getitem__
+    limit = index.stop - skip
+TypeError: unsupported operand type(s) for -: 'str' and 'int'
+[15/Oct/2014 14:17:44] INFO [root:63] 5
+[15/Oct/2014 14:17:44] ERROR [django.request:240] Internal Server Error: /moederborden/
 Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 87, in get_response
-    response = middleware_method(request)
-  File "/usr/local/lib/python2.7/dist-packages/django/middleware/common.py", line 73, in process_request
-    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 614, in is_valid_path
-    resolve(path, urlconf)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 489, in resolve
-    return get_resolver(urlconf).resolve(path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/programs/A-Pc/Website/APc/pcbuilder/views.py", line 81
-    def cover()
-              ^
-SyntaxError: invalid syntax
-[15/Oct/2014 13:11:09] ERROR [django.request:231] Internal Server Error: /cover
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 87, in get_response
-    response = middleware_method(request)
-  File "/usr/local/lib/python2.7/dist-packages/django/middleware/common.py", line 73, in process_request
-    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 614, in is_valid_path
-    resolve(path, urlconf)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 489, in resolve
-    return get_resolver(urlconf).resolve(path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 118, in get_callable
-    (lookup_view, mod_name))
-ViewDoesNotExist: Could not import pcbuilder.views.cover. View does not exist in module pcbuilder.views.
-[15/Oct/2014 13:11:26] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:01] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:01] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:02] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:02] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:02] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:02] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:03] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:03] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:03] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:03] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:03] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:03] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:04] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:04] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:05] ERROR [django.request:231] Internal Server Error: /cover
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 87, in get_response
-    response = middleware_method(request)
-  File "/usr/local/lib/python2.7/dist-packages/django/middleware/common.py", line 73, in process_request
-    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 614, in is_valid_path
-    resolve(path, urlconf)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 489, in resolve
-    return get_resolver(urlconf).resolve(path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/programs/A-Pc/Website/APc/pcbuilder/views.py", line 16
-    def processoren(request):
-      ^
-IndentationError: expected an indented block
-[15/Oct/2014 13:13:05] ERROR [django.request:231] Internal Server Error: /cover
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 87, in get_response
-    response = middleware_method(request)
-  File "/usr/local/lib/python2.7/dist-packages/django/middleware/common.py", line 72, in process_request
-    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 614, in is_valid_path
-    resolve(path, urlconf)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 489, in resolve
-    return get_resolver(urlconf).resolve(path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 338, in resolve
-    for pattern in self.url_patterns:
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 367, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 361, in urlconf_module
-    self._urlconf_module = import_module(self.urlconf_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/programs/A-Pc/Website/APc/APc/urls.py", line 16, in <module>
-    url(r'^cover/'),
-TypeError: url() takes at least 2 arguments (1 given)
-[15/Oct/2014 13:20:48] WARNING [django.request:143] Not Found: /favicon.ico
-[15/Oct/2014 13:20:48] WARNING [django.request:143] Not Found: /favicon.ico
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 64, in moederborden
+    processoren = Processoren.objects(categorie__contains='Moederborden')[:aantal]
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 125, in __getitem__
+    queryset._cursor_obj = queryset._cursor[key]
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 575, in __getitem__
+    limit = index.stop - skip
+TypeError: unsupported operand type(s) for -: 'str' and 'int'
+[15/Oct/2014 14:19:36] INFO [root:63] 5
+[15/Oct/2014 14:19:37] INFO [root:63] 5
+[15/Oct/2014 14:19:45] INFO [root:63] 10
+[15/Oct/2014 14:19:51] INFO [root:63] 1
