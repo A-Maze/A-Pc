@@ -114,7 +114,7 @@ $(document).ready(function(){
 
     <div class="col-md-8 col-lg-9">
 
-        <div class=" top-margin">
+        <div class=" top-margin ">
             
             <h1>{{Processoren.0.categorie.0|truncatewords:1|slice:"-4" }}</h1>
             {% for processor in Processoren %}
@@ -146,6 +146,15 @@ $(document).ready(function(){
 
         </div>
 
+        <ul class="pagination pull-right">
+            <li class="disabled"><a href="javascript:void(0)">«</a></li>
+            <li class="active"><a href="javascript:void(0)">1</a></li>
+            <li ><a href="javascript:void(0)">2</a></li>
+            <li><a href="javascript:void(0)">3</a></li>
+            <li><a href="javascript:void(0)">4</a></li>
+            <li><a href="javascript:void(0)">5</a></li>
+            <li><a href="javascript:void(0)">»</a></li>
+        </ul>
 
     </div>
 
