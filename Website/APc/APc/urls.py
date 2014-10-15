@@ -13,4 +13,5 @@ urlpatterns = patterns('',
     url(r'^moederborden/', 'pcbuilder.views.moederborden'),
     url(r'^optischeschijven/', 'pcbuilder.views.optischeschijf'),
     url(r'^voedingen/', 'pcbuilder.views.voedingen'),
+
 )

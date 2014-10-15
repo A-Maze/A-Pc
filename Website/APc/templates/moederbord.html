@@ -118,19 +118,22 @@ $(document).ready(function(){
             
             <h1>{{Processoren.0.categorie.0|truncatewords:1|slice:"-4" }}</h1>
             {% for processor in Processoren %}
-            <div class="list-group">
-                <div class="list-group-item">                    
+            <div class="list-group table-border">
+                <div class="list-group-item">
                     <div class="row-picture">
                         <img class="square" src="http://lorempixel.com/56/56/people/1" alt="icon">
                     </div>
 
                     <div class="row-content">
+                        <div class="col-md-10 col-lg-10">
                         <h4 class="list-group-item-heading">{% for name in processor.naam %}{{ name }}{% endfor %}</h4>
                         <p class="list-group-item-text">{% for desc in processor.info %} {{ desc }} {% endfor %} </p>
-                        <div class="pull-right">
-                             <p class="list-group-item-text ">{{ processor.stock }}</p>
-                            <p class="list-group-item-text ">{{ processor.prijs.0 }}</p>
+                        </div>
+                        <div class=" col-md-2 col-lg-2  ">
+                            <p class="list-group-item-text pull-right ">{{ processor.prijs.0 }}</p>
+                             <p class="list-group-item-text  ">{{ processor.stock }}</p>
 
+                            <a href="javascript:void(0)" class="btn btn-primary">details</a>
                         </div>
                     </div>
 

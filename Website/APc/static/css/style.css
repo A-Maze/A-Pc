@@ -25,6 +25,8 @@ background-color:black;
 
 .float-right {float:right}
 
+.float-left {float:left}
+
 .sliderheight {
     height:10px;
 }
@@ -32,4 +34,11 @@ background-color:black;
 .customcheck:not(:last-child) {
     margin-bottom:20px;
 }
+
+.table-border {
+
+      border-top: 1px solid #428BCA;
+      border-bottom: 1px solid #428BCA;
+}
+
 
