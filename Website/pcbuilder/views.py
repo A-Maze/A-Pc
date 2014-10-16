@@ -8,6 +8,10 @@ import json
 # Global vars
 
 # Strandaard aantal per pagina
+#end = 25
+#start = 0
+#sl = "0:%d" % (end)
+#Dit bovenstaande is voor later om alleen de div te veranderen en niet de hele pagina
 app = 15
 
 def index(request):
@@ -85,7 +89,7 @@ def moederborden(request):
     # Aantal per pagina en pagina nummer
     start, end = limits(request)
 
-    processoren = Processoren.objects(categorie__contains='Moederborden')
+    processoren = Processoren.objects(categorie__contains='Moederborden')[start:end]
     return render_to_response('moederbord.html', {'Processoren': processoren},
                               context_instance=RequestContext(request))
 

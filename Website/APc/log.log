@@ -1,13 +1,7 @@
-[15/Oct/2014 13:10:26] ERROR [django.request:231] Internal Server Error: /cover
+[16/Oct/2014 16:06:33] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 87, in get_response
-    response = middleware_method(request)
-  File "/usr/local/lib/python2.7/dist-packages/django/middleware/common.py", line 73, in process_request
-    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 614, in is_valid_path
-    resolve(path, urlconf)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 489, in resolve
-    return get_resolver(urlconf).resolve(path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
   File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
     sub_match = pattern.resolve(new_path)
   File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
@@ -20,20 +14,14 @@ Traceback (most recent call last):
     mod = import_module(mod_name)
   File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
     __import__(name)
-  File "/home/rik/programs/A-Pc/Website/APc/pcbuilder/views.py", line 81
-    def cover()
-              ^
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 31
+    return render_to_response('processoren.html', {'Processoren': processoren, start, end, sl},
+                                                                                    ^
 SyntaxError: invalid syntax
-[15/Oct/2014 13:10:26] ERROR [django.request:231] Internal Server Error: /cover
+[16/Oct/2014 16:08:28] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 87, in get_response
-    response = middleware_method(request)
-  File "/usr/local/lib/python2.7/dist-packages/django/middleware/common.py", line 73, in process_request
-    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 614, in is_valid_path
-    resolve(path, urlconf)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 489, in resolve
-    return get_resolver(urlconf).resolve(path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
   File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
     sub_match = pattern.resolve(new_path)
   File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
@@ -46,56 +34,14 @@ Traceback (most recent call last):
     mod = import_module(mod_name)
   File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
     __import__(name)
-  File "/home/rik/programs/A-Pc/Website/APc/pcbuilder/views.py", line 81
-    def cover()
-              ^
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 91
+    return render_to_response('moederbord.html', {'Processoren': processoren, start, end, sl},
+                                                                                   ^
 SyntaxError: invalid syntax
-[15/Oct/2014 13:11:09] ERROR [django.request:231] Internal Server Error: /cover
+[16/Oct/2014 16:11:34] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 87, in get_response
-    response = middleware_method(request)
-  File "/usr/local/lib/python2.7/dist-packages/django/middleware/common.py", line 73, in process_request
-    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 614, in is_valid_path
-    resolve(path, urlconf)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 489, in resolve
-    return get_resolver(urlconf).resolve(path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 118, in get_callable
-    (lookup_view, mod_name))
-ViewDoesNotExist: Could not import pcbuilder.views.cover. View does not exist in module pcbuilder.views.
-[15/Oct/2014 13:11:26] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:01] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:01] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:02] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:02] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:02] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:02] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:03] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:03] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:03] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:03] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:03] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:03] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:04] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:04] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:05] ERROR [django.request:231] Internal Server Error: /cover
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 87, in get_response
-    response = middleware_method(request)
-  File "/usr/local/lib/python2.7/dist-packages/django/middleware/common.py", line 73, in process_request
-    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 614, in is_valid_path
-    resolve(path, urlconf)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 489, in resolve
-    return get_resolver(urlconf).resolve(path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
   File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
     sub_match = pattern.resolve(new_path)
   File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
@@ -108,549 +54,91 @@ Traceback (most recent call last):
     mod = import_module(mod_name)
   File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
     __import__(name)
-  File "/home/rik/programs/A-Pc/Website/APc/pcbuilder/views.py", line 16
-    def processoren(request):
-      ^
-IndentationError: expected an indented block
-[15/Oct/2014 13:13:05] ERROR [django.request:231] Internal Server Error: /cover
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 13, in <module>
+    sl = (start) % ":%d" % (end)
+TypeError: unsupported operand type(s) for %: 'int' and 'str'
+[16/Oct/2014 16:27:24] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 87, in get_response
-    response = middleware_method(request)
-  File "/usr/local/lib/python2.7/dist-packages/django/middleware/common.py", line 72, in process_request
-    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 614, in is_valid_path
-    resolve(path, urlconf)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 489, in resolve
-    return get_resolver(urlconf).resolve(path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 338, in resolve
-    for pattern in self.url_patterns:
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 367, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 361, in urlconf_module
-    self._urlconf_module = import_module(self.urlconf_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/programs/A-Pc/Website/APc/APc/urls.py", line 16, in <module>
-    url(r'^cover/'),
-TypeError: url() takes at least 2 arguments (1 given)
-[15/Oct/2014 13:20:48] WARNING [django.request:143] Not Found: /favicon.ico
-[15/Oct/2014 13:20:48] WARNING [django.request:143] Not Found: /favicon.ico
-[15/Oct/2014 14:24:49] INFO [root:63] 3
-[15/Oct/2014 14:24:53] INFO [root:63] 10
-[15/Oct/2014 14:24:57] INFO [root:63] 400
-[15/Oct/2014 14:25:08] INFO [root:63] 1000
-[15/Oct/2014 14:25:24] INFO [root:63] 4
-[15/Oct/2014 14:25:28] INFO [root:63] 9000
-[15/Oct/2014 14:25:36] INFO [root:63] 15
-[15/Oct/2014 14:26:05] INFO [root:63] 15
-[15/Oct/2014 14:26:13] INFO [root:63] 15
-[15/Oct/2014 14:26:45] INFO [root:63] 15
-[15/Oct/2014 14:26:53] INFO [root:63] 15
-[16/Oct/2014 10:42:18] WARNING [django.request:143] Not Found: /favicon.ico
-[16/Oct/2014 10:42:22] INFO [root:63] 10
-[16/Oct/2014 11:13:16] INFO [root:63] 10
-[16/Oct/2014 11:24:30] INFO [root:63] 10
-[16/Oct/2014 12:04:55] ERROR [django.request:231] Internal Server Error: /moederborden/
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 89, in moederborden
+    start, end = limits(request)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 123, in limits
+    app, pagina = pages(request)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 116, in pages
+    aantal = request.GET.get('aantal', app)
+NameError: global name 'app' is not defined
+[16/Oct/2014 17:06:44] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
   File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 90, in moederborden
-    context_instance=RequestContext(request))
-  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
-    nodelist = parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
-    nodelist = parser.parse(('endblock',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 830, in do_for
-    " %s" % token.contents)
-TemplateSyntaxError: 'for' tag received an invalid argument: for processor < 10 in Processoren
-[16/Oct/2014 12:05:57] ERROR [django.request:231] Internal Server Error: /
+    start, end = limits(request)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 124, in limits
+    app, pagina = pages(request)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 120, in pages
+    pagina = int(pagina) - 1
+ValueError: invalid literal for int() with base 10: '2/'
+[16/Oct/2014 17:39:48] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 17, in index
-    context_instance=RequestContext(request))
-  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 178, in render_to_string
-    return t.render(context_instance)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 148, in render
-    return self._render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
-    return self.nodelist.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 104, in render
-    compiled_parent = self.get_parent(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 101, in get_parent
-    return get_template(parent)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1119, in load
-    (taglib, e))
-TemplateSyntaxError: 'paginarefresh' is not a valid tag library: Template library paginarefresh not found, tried django.templatetags.paginarefresh,django.contrib.admin.templatetags.paginarefresh,django.contrib.staticfiles.templatetags.paginarefresh
-[16/Oct/2014 12:06:17] ERROR [django.request:231] Internal Server Error: /
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 92, in moederborden
+    processoren = Processoren.objects(categorie__contains='Moederborden')[start:end]
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 139, in __getitem__
+    raise err
+IndexError: Cursor instances do not supportnegative indices
+[16/Oct/2014 17:59:52] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 17, in index
-    context_instance=RequestContext(request))
-  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 178, in render_to_string
-    return t.render(context_instance)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 148, in render
-    return self._render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
-    return self.nodelist.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 104, in render
-    compiled_parent = self.get_parent(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 101, in get_parent
-    return get_template(parent)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1119, in load
-    (taglib, e))
-TemplateSyntaxError: 'paginarefresh' is not a valid tag library: Template library paginarefresh not found, tried django.templatetags.paginarefresh,django.contrib.admin.templatetags.paginarefresh,django.contrib.staticfiles.templatetags.paginarefresh
-[16/Oct/2014 12:06:51] ERROR [django.request:231] Internal Server Error: /
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 92, in moederborden
+    processoren = Processoren.objects(categorie__contains='Moederborden')[start:end]
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 139, in __getitem__
+    raise err
+IndexError: Cursor instances do not supportnegative indices
+[16/Oct/2014 17:59:59] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 17, in index
-    context_instance=RequestContext(request))
-  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 178, in render_to_string
-    return t.render(context_instance)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 148, in render
-    return self._render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
-    return self.nodelist.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 104, in render
-    compiled_parent = self.get_parent(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 101, in get_parent
-    return get_template(parent)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1119, in load
-    (taglib, e))
-TemplateSyntaxError: 'paginarefresh' is not a valid tag library: Template library paginarefresh not found, tried django.templatetags.paginarefresh,django.contrib.admin.templatetags.paginarefresh,django.contrib.staticfiles.templatetags.paginarefresh
-[16/Oct/2014 12:06:56] ERROR [django.request:231] Internal Server Error: /
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 92, in moederborden
+    processoren = Processoren.objects(categorie__contains='Moederborden')[start:end]
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 139, in __getitem__
+    raise err
+IndexError: Cursor instances do not supportnegative indices
+[16/Oct/2014 18:00:07] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 17, in index
-    context_instance=RequestContext(request))
-  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 178, in render_to_string
-    return t.render(context_instance)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 148, in render
-    return self._render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
-    return self.nodelist.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 104, in render
-    compiled_parent = self.get_parent(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 101, in get_parent
-    return get_template(parent)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1119, in load
-    (taglib, e))
-TemplateSyntaxError: 'paginarefresh' is not a valid tag library: Template library paginarefresh not found, tried django.templatetags.paginarefresh,django.contrib.admin.templatetags.paginarefresh,django.contrib.staticfiles.templatetags.paginarefresh
-[16/Oct/2014 12:06:59] ERROR [django.request:231] Internal Server Error: /
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 92, in moederborden
+    processoren = Processoren.objects(categorie__contains='Moederborden')[start:end]
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 139, in __getitem__
+    raise err
+IndexError: Cursor instances do not supportnegative indices
+[16/Oct/2014 18:00:53] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 17, in index
-    context_instance=RequestContext(request))
-  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 178, in render_to_string
-    return t.render(context_instance)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 148, in render
-    return self._render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
-    return self.nodelist.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 104, in render
-    compiled_parent = self.get_parent(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 101, in get_parent
-    return get_template(parent)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1119, in load
-    (taglib, e))
-TemplateSyntaxError: 'paginarefresh' is not a valid tag library: Template library paginarefresh not found, tried django.templatetags.paginarefresh,django.contrib.admin.templatetags.paginarefresh,django.contrib.staticfiles.templatetags.paginarefresh
-[16/Oct/2014 12:07:26] ERROR [django.request:231] Internal Server Error: /moederborden/
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 92, in moederborden
+    processoren = Processoren.objects(categorie__contains='Moederborden')[start:end]
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 139, in __getitem__
+    raise err
+IndexError: Cursor instances do not supportnegative indices
+[16/Oct/2014 18:01:05] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 90, in moederborden
-    context_instance=RequestContext(request))
-  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
-    nodelist = parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
-    nodelist = parser.parse(('endblock',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 832, in do_for
-    sequence = parser.compile_filter(bits[in_index + 1])
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 372, in compile_filter
-    return FilterExpression(token, self)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 588, in __init__
-    "from '%s'" % (token[upto:], token))
-TemplateSyntaxError: Could not parse the remainder: '[0:10]' from 'Processoren[0:10]'
-[16/Oct/2014 12:14:28] ERROR [django.request:231] Internal Server Error: /moederborden/
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 92, in moederborden
+    processoren = Processoren.objects(categorie__contains='Moederborden')[start:end]
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 139, in __getitem__
+    raise err
+IndexError: Cursor instances do not supportnegative indices
+[16/Oct/2014 18:01:38] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 90, in moederborden
-    context_instance=RequestContext(request))
-  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
-    nodelist = parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
-    nodelist = parser.parse(('endblock',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1459, in do_with
-    nodelist = parser.parse(('endwith',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 288, in parse
-    self.invalid_block_tag(token, command, parse_until)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 343, in invalid_block_tag
-    (command, get_text_list(["'%s'" % p for p in parse_until])))
-TemplateSyntaxError: Invalid block tag: 'endblock', expected 'endwith'
-[16/Oct/2014 12:15:24] ERROR [django.request:231] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 90, in moederborden
-    context_instance=RequestContext(request))
-  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
-    nodelist = parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
-    nodelist = parser.parse(('endblock',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1459, in do_with
-    nodelist = parser.parse(('endwith',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 832, in do_for
-    sequence = parser.compile_filter(bits[in_index + 1])
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 372, in compile_filter
-    return FilterExpression(token, self)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 588, in __init__
-    "from '%s'" % (token[upto:], token))
-TemplateSyntaxError: Could not parse the remainder: ':end' from 'Processoren|slice:start:end'
-[16/Oct/2014 12:15:45] ERROR [django.request:231] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 90, in moederborden
-    context_instance=RequestContext(request))
-  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
-    nodelist = parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
-    nodelist = parser.parse(('endblock',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1459, in do_with
-    nodelist = parser.parse(('endwith',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 832, in do_for
-    sequence = parser.compile_filter(bits[in_index + 1])
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 372, in compile_filter
-    return FilterExpression(token, self)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 588, in __init__
-    "from '%s'" % (token[upto:], token))
-TemplateSyntaxError: Could not parse the remainder: ':"end"' from 'Processoren|slice:"start":"end"'
-[16/Oct/2014 12:21:33] ERROR [django.request:231] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 90, in moederborden
-    context_instance=RequestContext(request))
-  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
-    nodelist = parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
-    nodelist = parser.parse(('endblock',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1459, in do_with
-    nodelist = parser.parse(('endwith',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 832, in do_for
-    sequence = parser.compile_filter(bits[in_index + 1])
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 372, in compile_filter
-    return FilterExpression(token, self)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 561, in __init__
-    token[start:]))
-TemplateSyntaxError: Could not parse some characters: Processoren|slice:add|:start|":"||add:end
-[16/Oct/2014 12:22:44] ERROR [django.request:231] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 90, in moederborden
-    context_instance=RequestContext(request))
-  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
-    nodelist = parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
-    nodelist = parser.parse(('endblock',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1459, in do_with
-    nodelist = parser.parse(('endwith',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 832, in do_for
-    sequence = parser.compile_filter(bits[in_index + 1])
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 372, in compile_filter
-    return FilterExpression(token, self)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 561, in __init__
-    token[start:]))
-TemplateSyntaxError: Could not parse some characters: Processoren|slice:add|:start|":"||add:end
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 92, in moederborden
+    processoren = Processoren.objects(categorie__contains='Moederborden')[start:end]
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 139, in __getitem__
+    raise err
+IndexError: Cursor instances do not supportnegative indices

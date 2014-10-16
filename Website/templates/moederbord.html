@@ -114,10 +114,9 @@ $(document).ready(function(){
 
     <div class="col-md-8 col-lg-9">
 
-        <div class=" top-margin ">
-            {% with start=0 end=15 %}     
+        <div class=" top-margin ">    
             <h1>{{Processoren.0.categorie.0|truncatewords:1|slice:"-4" }}</h1>
-            {% for processor in Processoren|slice:"0:15" %}
+            {% for processor in Processoren %}
             <div class="list-group table-border">
                 <div class="list-group-item">
                     <div class="row-picture">
@@ -143,18 +142,17 @@ $(document).ready(function(){
 
             </div>
             {% endfor %}
-            {% endwith %}
 
         </div>
 
         <ul class="pagination pull-right">
-            <li class="disabled"><a href="javascript:void(0)">«</a></li>
-            <li class="active"><a href="javascript:void(0)">1</a></li>
-            <li ><a href="javascript:void(0)">2</a></li>
-            <li><a href="javascript:void(0)">3</a></li>
-            <li><a href="javascript:void(0)">4</a></li>
-            <li><a href="javascript:void(0)">5</a></li>
-            <li><a href="javascript:void(0)">»</a></li>
+            <li><a href="javascript:pagineren(5,'back')">«</a></li>
+            <li class="active"><a href="javascript:pagineren(1)">1</a></li>
+            <li ><a href="javascript:pagineren(2)">2</a></li>
+            <li><a href="javascript:pagineren(3)">3</a></li>
+            <li><a href="javascript:pagineren(4)">4</a></li>
+            <li><a href="javascript:pagineren(5)">5</a></li>
+            <li><a href="javascript:pagineren(0,'forward')">»</a></li>
         </ul>
 
     </div>
