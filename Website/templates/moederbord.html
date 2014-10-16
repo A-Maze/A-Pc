@@ -146,13 +146,11 @@ $(document).ready(function(){
         </div>
 
         <ul class="pagination pull-right">
-            <li><a href="javascript:pagineren(5,'back')">«</a></li>
-            <li class="active"><a href="javascript:pagineren(1)">1</a></li>
-            <li ><a href="javascript:pagineren(2)">2</a></li>
-            <li><a href="javascript:pagineren(3)">3</a></li>
-            <li><a href="javascript:pagineren(4)">4</a></li>
-            <li><a href="javascript:pagineren(5)">5</a></li>
-            <li><a href="javascript:pagineren(0,'forward')">»</a></li>
+            {% if Processoren.has_previous %}<li ><a href="?pagina={{ Processoren.previous_page_number }}">«</a></li> {% endif %}
+            {% for page in Processoren.paginator.page_range %}
+            <li><a href="?pagina={{page}}">{{page}}</a></li>
+            {% endfor %}
+            {% if Processoren.has_next %}<li><a href="?pagina={{ Processoren.next_page_number }}">»</a></li> {% endif %}
         </ul>
 
     </div>
