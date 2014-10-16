@@ -149,3 +149,262 @@ TypeError: url() takes at least 2 arguments (1 given)
 [16/Oct/2014 10:42:18] WARNING [django.request:143] Not Found: /favicon.ico
 [16/Oct/2014 10:42:22] INFO [root:63] 10
 [16/Oct/2014 11:13:16] INFO [root:63] 10
+[16/Oct/2014 11:45:09] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/programs/A-Pc/Website/pcbuilder/views.py", line 90, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 171, in do_block
+    raise TemplateSyntaxError("'%s' tag with name '%s' appears more than once" % (bits[0], block_name))
+TemplateSyntaxError: 'block' tag with name 'content' appears more than once
+[16/Oct/2014 11:45:24] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/programs/A-Pc/Website/pcbuilder/views.py", line 90, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 171, in do_block
+    raise TemplateSyntaxError("'%s' tag with name '%s' appears more than once" % (bits[0], block_name))
+TemplateSyntaxError: 'block' tag with name 'content' appears more than once
+[16/Oct/2014 11:45:25] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/programs/A-Pc/Website/pcbuilder/views.py", line 90, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 171, in do_block
+    raise TemplateSyntaxError("'%s' tag with name '%s' appears more than once" % (bits[0], block_name))
+TemplateSyntaxError: 'block' tag with name 'content' appears more than once
+[16/Oct/2014 11:45:25] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/programs/A-Pc/Website/pcbuilder/views.py", line 90, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 171, in do_block
+    raise TemplateSyntaxError("'%s' tag with name '%s' appears more than once" % (bits[0], block_name))
+TemplateSyntaxError: 'block' tag with name 'content' appears more than once
+[16/Oct/2014 11:45:25] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/programs/A-Pc/Website/pcbuilder/views.py", line 90, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 171, in do_block
+    raise TemplateSyntaxError("'%s' tag with name '%s' appears more than once" % (bits[0], block_name))
+TemplateSyntaxError: 'block' tag with name 'content' appears more than once
+[16/Oct/2014 11:45:25] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/programs/A-Pc/Website/pcbuilder/views.py", line 90, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 171, in do_block
+    raise TemplateSyntaxError("'%s' tag with name '%s' appears more than once" % (bits[0], block_name))
+TemplateSyntaxError: 'block' tag with name 'content' appears more than once
+[16/Oct/2014 11:45:25] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/programs/A-Pc/Website/pcbuilder/views.py", line 90, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 171, in do_block
+    raise TemplateSyntaxError("'%s' tag with name '%s' appears more than once" % (bits[0], block_name))
+TemplateSyntaxError: 'block' tag with name 'content' appears more than once
