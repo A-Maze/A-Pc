@@ -146,3 +146,6 @@ TypeError: url() takes at least 2 arguments (1 given)
 [15/Oct/2014 14:26:13] INFO [root:63] 15
 [15/Oct/2014 14:26:45] INFO [root:63] 15
 [15/Oct/2014 14:26:53] INFO [root:63] 15
+[16/Oct/2014 10:42:18] WARNING [django.request:143] Not Found: /favicon.ico
+[16/Oct/2014 10:42:22] INFO [root:63] 10
+[16/Oct/2014 11:13:16] INFO [root:63] 10
