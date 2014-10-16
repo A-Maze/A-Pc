@@ -85,7 +85,7 @@ def moederborden(request):
     # Aantal per pagina en pagina nummer
     start, end = limits(request)
 
-    processoren = Processoren.objects(categorie__contains='Moederborden')[start:end]
+    processoren = Processoren.objects(categorie__contains='Moederborden')
     return render_to_response('moederbord.html', {'Processoren': processoren},
                               context_instance=RequestContext(request))
 

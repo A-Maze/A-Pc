@@ -115,9 +115,9 @@ $(document).ready(function(){
     <div class="col-md-8 col-lg-9">
 
         <div class=" top-margin ">
-            
+            {% with start=0 end=15 %}     
             <h1>{{Processoren.0.categorie.0|truncatewords:1|slice:"-4" }}</h1>
-            {% for processor in Processoren %}
+            {% for processor in Processoren|slice:"0:15" %}
             <div class="list-group table-border">
                 <div class="list-group-item">
                     <div class="row-picture">
@@ -143,6 +143,7 @@ $(document).ready(function(){
 
             </div>
             {% endfor %}
+            {% endwith %}
 
         </div>
 
