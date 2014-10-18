@@ -301,3 +301,62 @@ Traceback (most recent call last):
   File "/home/robin/Work/School/A-Pc/Website/pcbuilder/templatetags/range.py", line 9, in render
     context[self.context_name] = range(int(self.num))
 ValueError: invalid literal for int() with base 10: 'processoren.num_pages'
+[16/Oct/2014 19:34:21] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 100, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 178, in render_to_string
+    return t.render(context_instance)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 142, in render
+    template = get_template(template)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 832, in do_for
+    sequence = parser.compile_filter(bits[in_index + 1])
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 372, in compile_filter
+    return FilterExpression(token, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 583, in __init__
+    self.args_check(filter_name, filter_func, args)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 645, in args_check
+    (name, alen - dlen, plen))
+TemplateSyntaxError: slice requires 2 arguments, 1 provided
