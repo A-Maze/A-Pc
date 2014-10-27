@@ -16,6 +16,7 @@ urlpatterns = patterns('',
     url(r'^detail/', 'pcbuilder.views.detail'),
 
     #geen idee wat dit allemaal is
+    url(r'^user/(?P<product>\w{0,50})/$', 'pcbuilder.views.pages'),
     url(r'^user/(?P<aantal>\w{0,50})/$', 'pcbuilder.views.pages'),
     url(r'^user/(?P<pagina>\w{0,50})/$', 'pcbuilder.views.pages'),
 )

@@ -1,151 +1,648 @@
-[15/Oct/2014 13:10:26] ERROR [django.request:231] Internal Server Error: /cover
+[27/Oct/2014 16:12:51] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 87, in get_response
-    response = middleware_method(request)
-  File "/usr/local/lib/python2.7/dist-packages/django/middleware/common.py", line 73, in process_request
-    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 614, in is_valid_path
-    resolve(path, urlconf)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 489, in resolve
-    return get_resolver(urlconf).resolve(path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/programs/A-Pc/Website/APc/pcbuilder/views.py", line 81
-    def cover()
-              ^
-SyntaxError: invalid syntax
-[15/Oct/2014 13:10:26] ERROR [django.request:231] Internal Server Error: /cover
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/programs/A-Pc/Website/pcbuilder/views.py", line 104, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 288, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 343, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+TemplateSyntaxError: Invalid block tag: 'processor._id', expected 'empty' or 'endfor'
+[27/Oct/2014 16:12:52] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 87, in get_response
-    response = middleware_method(request)
-  File "/usr/local/lib/python2.7/dist-packages/django/middleware/common.py", line 73, in process_request
-    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 614, in is_valid_path
-    resolve(path, urlconf)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 489, in resolve
-    return get_resolver(urlconf).resolve(path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/programs/A-Pc/Website/APc/pcbuilder/views.py", line 81
-    def cover()
-              ^
-SyntaxError: invalid syntax
-[15/Oct/2014 13:11:09] ERROR [django.request:231] Internal Server Error: /cover
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/programs/A-Pc/Website/pcbuilder/views.py", line 104, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 288, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 343, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+TemplateSyntaxError: Invalid block tag: 'processor._id', expected 'empty' or 'endfor'
+[27/Oct/2014 16:12:52] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 87, in get_response
-    response = middleware_method(request)
-  File "/usr/local/lib/python2.7/dist-packages/django/middleware/common.py", line 73, in process_request
-    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 614, in is_valid_path
-    resolve(path, urlconf)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 489, in resolve
-    return get_resolver(urlconf).resolve(path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 118, in get_callable
-    (lookup_view, mod_name))
-ViewDoesNotExist: Could not import pcbuilder.views.cover. View does not exist in module pcbuilder.views.
-[15/Oct/2014 13:11:26] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:01] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:01] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:02] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:02] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:02] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:02] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:03] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:03] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:03] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:03] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:03] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:03] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:04] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:04] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:05] ERROR [django.request:231] Internal Server Error: /cover
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/programs/A-Pc/Website/pcbuilder/views.py", line 104, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 288, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 343, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+TemplateSyntaxError: Invalid block tag: 'processor._id', expected 'empty' or 'endfor'
+[27/Oct/2014 16:12:52] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 87, in get_response
-    response = middleware_method(request)
-  File "/usr/local/lib/python2.7/dist-packages/django/middleware/common.py", line 73, in process_request
-    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 614, in is_valid_path
-    resolve(path, urlconf)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 489, in resolve
-    return get_resolver(urlconf).resolve(path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/programs/A-Pc/Website/APc/pcbuilder/views.py", line 16
-    def processoren(request):
-      ^
-IndentationError: expected an indented block
-[15/Oct/2014 13:13:05] ERROR [django.request:231] Internal Server Error: /cover
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/programs/A-Pc/Website/pcbuilder/views.py", line 104, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 288, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 343, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+TemplateSyntaxError: Invalid block tag: 'processor._id', expected 'empty' or 'endfor'
+[27/Oct/2014 16:13:18] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 87, in get_response
-    response = middleware_method(request)
-  File "/usr/local/lib/python2.7/dist-packages/django/middleware/common.py", line 72, in process_request
-    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 614, in is_valid_path
-    resolve(path, urlconf)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 489, in resolve
-    return get_resolver(urlconf).resolve(path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 338, in resolve
-    for pattern in self.url_patterns:
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 367, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 361, in urlconf_module
-    self._urlconf_module = import_module(self.urlconf_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/programs/A-Pc/Website/APc/APc/urls.py", line 16, in <module>
-    url(r'^cover/'),
-TypeError: url() takes at least 2 arguments (1 given)
-[15/Oct/2014 13:20:48] WARNING [django.request:143] Not Found: /favicon.ico
-[15/Oct/2014 13:20:48] WARNING [django.request:143] Not Found: /favicon.ico
-[15/Oct/2014 14:24:49] INFO [root:63] 3
-[15/Oct/2014 14:24:53] INFO [root:63] 10
-[15/Oct/2014 14:24:57] INFO [root:63] 400
-[15/Oct/2014 14:25:08] INFO [root:63] 1000
-[15/Oct/2014 14:25:24] INFO [root:63] 4
-[15/Oct/2014 14:25:28] INFO [root:63] 9000
-[15/Oct/2014 14:25:36] INFO [root:63] 15
-[15/Oct/2014 14:26:05] INFO [root:63] 15
-[15/Oct/2014 14:26:13] INFO [root:63] 15
-[15/Oct/2014 14:26:45] INFO [root:63] 15
-[15/Oct/2014 14:26:53] INFO [root:63] 15
-[16/Oct/2014 10:42:18] WARNING [django.request:143] Not Found: /favicon.ico
-[16/Oct/2014 10:42:22] INFO [root:63] 10
-[16/Oct/2014 11:13:16] INFO [root:63] 10
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/programs/A-Pc/Website/pcbuilder/views.py", line 104, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 288, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 343, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+TemplateSyntaxError: Invalid block tag: 'processor.naam', expected 'empty' or 'endfor'
+[27/Oct/2014 16:13:19] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/programs/A-Pc/Website/pcbuilder/views.py", line 104, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 288, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 343, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+TemplateSyntaxError: Invalid block tag: 'processor.naam', expected 'empty' or 'endfor'
+[27/Oct/2014 16:13:19] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/programs/A-Pc/Website/pcbuilder/views.py", line 104, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 288, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 343, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+TemplateSyntaxError: Invalid block tag: 'processor.naam', expected 'empty' or 'endfor'
+[27/Oct/2014 16:13:19] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/programs/A-Pc/Website/pcbuilder/views.py", line 104, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 288, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 343, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+TemplateSyntaxError: Invalid block tag: 'processor.naam', expected 'empty' or 'endfor'
+[27/Oct/2014 16:13:20] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/programs/A-Pc/Website/pcbuilder/views.py", line 104, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 288, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 343, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+TemplateSyntaxError: Invalid block tag: 'processor.naam', expected 'empty' or 'endfor'
+[27/Oct/2014 16:13:20] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/programs/A-Pc/Website/pcbuilder/views.py", line 104, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 288, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 343, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+TemplateSyntaxError: Invalid block tag: 'processor.naam', expected 'empty' or 'endfor'
+[27/Oct/2014 16:13:30] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/programs/A-Pc/Website/pcbuilder/views.py", line 104, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 288, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 343, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+TemplateSyntaxError: Invalid block tag: 'processor.naam', expected 'empty' or 'endfor'
+[27/Oct/2014 16:13:30] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/programs/A-Pc/Website/pcbuilder/views.py", line 104, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 288, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 343, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+TemplateSyntaxError: Invalid block tag: 'processor.naam', expected 'empty' or 'endfor'
+[27/Oct/2014 16:13:30] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/programs/A-Pc/Website/pcbuilder/views.py", line 104, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 288, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 343, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+TemplateSyntaxError: Invalid block tag: 'processor.naam', expected 'empty' or 'endfor'
+[27/Oct/2014 16:13:31] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/programs/A-Pc/Website/pcbuilder/views.py", line 104, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 288, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 343, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+TemplateSyntaxError: Invalid block tag: 'processor.naam', expected 'empty' or 'endfor'
+[27/Oct/2014 16:13:48] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/programs/A-Pc/Website/pcbuilder/views.py", line 104, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 178, in render_to_string
+    return t.render(context_instance)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 201, in render
+    nodelist.append(node.render(context))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 161, in render
+    values = list(values)
+TypeError: 'ObjectId' object is not iterable
+[27/Oct/2014 16:13:49] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/programs/A-Pc/Website/pcbuilder/views.py", line 104, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 178, in render_to_string
+    return t.render(context_instance)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 201, in render
+    nodelist.append(node.render(context))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 161, in render
+    values = list(values)
+TypeError: 'ObjectId' object is not iterable
