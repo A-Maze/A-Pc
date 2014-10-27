@@ -1,0 +1,7 @@
+<ul class="pagination pull-right">
+            {% if Processoren.has_previous %}<li ><a href="?pagina={{ Processoren.previous_page_number }}">«</a></li> {% endif %}
+            {% for page in Processoren.paginator.page_range %}
+            <li><a href="?pagina={{page}}">{{page}}</a></li>
+            {% endfor %}
+            {% if Processoren.has_next %}<li><a href="?pagina={{ Processoren.next_page_number }}">»</a></li> {% endif %}
+</ul>

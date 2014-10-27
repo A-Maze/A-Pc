@@ -1,13 +1,7 @@
-[15/Oct/2014 13:10:26] ERROR [django.request:231] Internal Server Error: /cover
+[16/Oct/2014 16:06:33] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 87, in get_response
-    response = middleware_method(request)
-  File "/usr/local/lib/python2.7/dist-packages/django/middleware/common.py", line 73, in process_request
-    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 614, in is_valid_path
-    resolve(path, urlconf)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 489, in resolve
-    return get_resolver(urlconf).resolve(path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
   File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
     sub_match = pattern.resolve(new_path)
   File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
@@ -20,20 +14,14 @@ Traceback (most recent call last):
     mod = import_module(mod_name)
   File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
     __import__(name)
-  File "/home/rik/programs/A-Pc/Website/APc/pcbuilder/views.py", line 81
-    def cover()
-              ^
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 31
+    return render_to_response('processoren.html', {'Processoren': processoren, start, end, sl},
+                                                                                    ^
 SyntaxError: invalid syntax
-[15/Oct/2014 13:10:26] ERROR [django.request:231] Internal Server Error: /cover
+[16/Oct/2014 16:08:28] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 87, in get_response
-    response = middleware_method(request)
-  File "/usr/local/lib/python2.7/dist-packages/django/middleware/common.py", line 73, in process_request
-    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 614, in is_valid_path
-    resolve(path, urlconf)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 489, in resolve
-    return get_resolver(urlconf).resolve(path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
   File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
     sub_match = pattern.resolve(new_path)
   File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
@@ -46,56 +34,14 @@ Traceback (most recent call last):
     mod = import_module(mod_name)
   File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
     __import__(name)
-  File "/home/rik/programs/A-Pc/Website/APc/pcbuilder/views.py", line 81
-    def cover()
-              ^
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 91
+    return render_to_response('moederbord.html', {'Processoren': processoren, start, end, sl},
+                                                                                   ^
 SyntaxError: invalid syntax
-[15/Oct/2014 13:11:09] ERROR [django.request:231] Internal Server Error: /cover
+[16/Oct/2014 16:11:34] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 87, in get_response
-    response = middleware_method(request)
-  File "/usr/local/lib/python2.7/dist-packages/django/middleware/common.py", line 73, in process_request
-    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 614, in is_valid_path
-    resolve(path, urlconf)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 489, in resolve
-    return get_resolver(urlconf).resolve(path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 118, in get_callable
-    (lookup_view, mod_name))
-ViewDoesNotExist: Could not import pcbuilder.views.cover. View does not exist in module pcbuilder.views.
-[15/Oct/2014 13:11:26] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:01] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:01] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:02] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:02] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:02] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:02] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:03] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:03] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:03] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:03] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:03] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:03] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:04] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:04] WARNING [django.request:143] Not Found: /cover.html
-[15/Oct/2014 13:12:05] ERROR [django.request:231] Internal Server Error: /cover
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 87, in get_response
-    response = middleware_method(request)
-  File "/usr/local/lib/python2.7/dist-packages/django/middleware/common.py", line 73, in process_request
-    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 614, in is_valid_path
-    resolve(path, urlconf)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 489, in resolve
-    return get_resolver(urlconf).resolve(path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
   File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
     sub_match = pattern.resolve(new_path)
   File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
@@ -108,569 +54,614 @@ Traceback (most recent call last):
     mod = import_module(mod_name)
   File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
     __import__(name)
-  File "/home/rik/programs/A-Pc/Website/APc/pcbuilder/views.py", line 16
-    def processoren(request):
-      ^
-IndentationError: expected an indented block
-[15/Oct/2014 13:13:05] ERROR [django.request:231] Internal Server Error: /cover
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 13, in <module>
+    sl = (start) % ":%d" % (end)
+TypeError: unsupported operand type(s) for %: 'int' and 'str'
+[16/Oct/2014 16:27:24] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 87, in get_response
-    response = middleware_method(request)
-  File "/usr/local/lib/python2.7/dist-packages/django/middleware/common.py", line 72, in process_request
-    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 614, in is_valid_path
-    resolve(path, urlconf)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 489, in resolve
-    return get_resolver(urlconf).resolve(path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 338, in resolve
-    for pattern in self.url_patterns:
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 367, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 361, in urlconf_module
-    self._urlconf_module = import_module(self.urlconf_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 89, in moederborden
+    start, end = limits(request)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 123, in limits
+    app, pagina = pages(request)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 116, in pages
+    aantal = request.GET.get('aantal', app)
+NameError: global name 'app' is not defined
+[16/Oct/2014 17:06:44] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 90, in moederborden
+    start, end = limits(request)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 124, in limits
+    app, pagina = pages(request)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 120, in pages
+    pagina = int(pagina) - 1
+ValueError: invalid literal for int() with base 10: '2/'
+[16/Oct/2014 17:39:48] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 92, in moederborden
+    processoren = Processoren.objects(categorie__contains='Moederborden')[start:end]
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 139, in __getitem__
+    raise err
+IndexError: Cursor instances do not supportnegative indices
+[16/Oct/2014 17:59:52] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 92, in moederborden
+    processoren = Processoren.objects(categorie__contains='Moederborden')[start:end]
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 139, in __getitem__
+    raise err
+IndexError: Cursor instances do not supportnegative indices
+[16/Oct/2014 17:59:59] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 92, in moederborden
+    processoren = Processoren.objects(categorie__contains='Moederborden')[start:end]
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 139, in __getitem__
+    raise err
+IndexError: Cursor instances do not supportnegative indices
+[16/Oct/2014 18:00:07] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 92, in moederborden
+    processoren = Processoren.objects(categorie__contains='Moederborden')[start:end]
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 139, in __getitem__
+    raise err
+IndexError: Cursor instances do not supportnegative indices
+[16/Oct/2014 18:00:53] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 92, in moederborden
+    processoren = Processoren.objects(categorie__contains='Moederborden')[start:end]
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 139, in __getitem__
+    raise err
+IndexError: Cursor instances do not supportnegative indices
+[16/Oct/2014 18:01:05] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 92, in moederborden
+    processoren = Processoren.objects(categorie__contains='Moederborden')[start:end]
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 139, in __getitem__
+    raise err
+IndexError: Cursor instances do not supportnegative indices
+[16/Oct/2014 18:01:38] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 92, in moederborden
+    processoren = Processoren.objects(categorie__contains='Moederborden')[start:end]
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 139, in __getitem__
+    raise err
+IndexError: Cursor instances do not supportnegative indices
+[16/Oct/2014 18:29:44] ERROR [django.request:231] Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
   File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
     __import__(name)
-  File "/home/rik/programs/A-Pc/Website/APc/APc/urls.py", line 16, in <module>
-    url(r'^cover/'),
-TypeError: url() takes at least 2 arguments (1 given)
-[15/Oct/2014 13:20:48] WARNING [django.request:143] Not Found: /favicon.ico
-[15/Oct/2014 13:20:48] WARNING [django.request:143] Not Found: /favicon.ico
-[15/Oct/2014 13:49:23] ERROR [django.request:240] Internal Server Error: /moederborden/
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 128
+    def listing(request, processorenlijst, aantal){
+                                                  ^
+SyntaxError: invalid syntax
+[16/Oct/2014 18:30:12] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 64, in moederborden
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 91, in moederborden
+    processoren = listing(request, processorenlijst, 15)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 129, in listing
+    paginator = Paginator(processorenlijst,15)
+NameError: global name 'Paginator' is not defined
+[16/Oct/2014 18:30:35] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 92, in moederborden
+    processoren = listing(request, processorenlijst, 15)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 134, in listing
+    processoren = paginator.page(page)
+NameError: global name 'page' is not defined
+[16/Oct/2014 18:30:37] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 92, in moederborden
+    processoren = listing(request, processorenlijst, 15)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 134, in listing
+    processoren = paginator.page(page)
+NameError: global name 'page' is not defined
+[16/Oct/2014 18:39:49] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 94, in moederborden
     context_instance=RequestContext(request))
-  File "/home/sander/Downloads/django-trunk/django/shortcuts.py", line 23, in render_to_response
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
     return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 185, in render_to_string
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 824, in do_for
+    " 'for x in y': %s" % token.contents)
+TemplateSyntaxError: 'for' statements should use the format 'for x in y': for page in range(1, processoren.num_pages)
+[16/Oct/2014 18:40:33] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 94, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 824, in do_for
+    " 'for x in y': %s" % token.contents)
+TemplateSyntaxError: 'for' statements should use the format 'for x in y': for page in range(1, {{processoren.num_pages}})
+[16/Oct/2014 18:42:53] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 94, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 288, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 343, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+TemplateSyntaxError: Invalid block tag: 'endblock', expected 'empty' or 'endfor'
+[16/Oct/2014 18:46:19] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 94, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 178, in render_to_string
     return t.render(context_instance)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 150, in render
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 148, in render
     return self._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
     return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
     bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
     return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 109, in render
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 104, in render
     compiled_parent = self.get_parent(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 106, in get_parent
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 101, in get_parent
     return get_template(parent)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 151, in get_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
     template, origin = find_template(template_name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 139, in find_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
     source, display_name = loader(name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 44, in __call__
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
     return self.load_template(template_name, template_dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 50, in load_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
     template = get_template_from_string(source, origin, template_name)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 163, in get_template_from_string
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
     return Template(source, origin, name)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 134, in __init__
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
     self.nodelist = compile_string(template_string, origin)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 164, in compile_string
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
     return parser.parse()
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 296, in parse
-    self.extend_nodelist(nodelist, compiled_result, token)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 61, in extend_nodelist
-    super(DebugParser, self).extend_nodelist(nodelist, node, token)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 322, in extend_nodelist
-    "in the template." % node)
-TemplateSyntaxError: <ExtendsNode: extends crumbpath> must be the first tag in the template.
-[15/Oct/2014 13:49:25] ERROR [django.request:240] Internal Server Error: /moederborden/
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1119, in load
+    (taglib, e))
+TemplateSyntaxError: 'range' is not a valid tag library: Template library range not found, tried django.templatetags.range,django.contrib.admin.templatetags.range,django.contrib.staticfiles.templatetags.range
+[16/Oct/2014 18:50:53] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 64, in moederborden
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 94, in moederborden
     context_instance=RequestContext(request))
-  File "/home/sander/Downloads/django-trunk/django/shortcuts.py", line 23, in render_to_response
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
     return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 185, in render_to_string
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 178, in render_to_string
     return t.render(context_instance)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 150, in render
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 148, in render
     return self._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
     return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
     bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
     return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 109, in render
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 104, in render
     compiled_parent = self.get_parent(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 106, in get_parent
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 101, in get_parent
     return get_template(parent)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 151, in get_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
     template, origin = find_template(template_name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 139, in find_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
     source, display_name = loader(name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 44, in __call__
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
     return self.load_template(template_name, template_dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 50, in load_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
     template = get_template_from_string(source, origin, template_name)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 163, in get_template_from_string
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
     return Template(source, origin, name)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 134, in __init__
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
     self.nodelist = compile_string(template_string, origin)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 164, in compile_string
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
     return parser.parse()
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 296, in parse
-    self.extend_nodelist(nodelist, compiled_result, token)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 61, in extend_nodelist
-    super(DebugParser, self).extend_nodelist(nodelist, node, token)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 322, in extend_nodelist
-    "in the template." % node)
-TemplateSyntaxError: <ExtendsNode: extends crumbpath> must be the first tag in the template.
-[15/Oct/2014 13:55:48] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 64, in moederborden
-    context_instance=RequestContext(request))
-  File "/home/sander/Downloads/django-trunk/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 177, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 151, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 139, in find_template
-    source, display_name = loader(name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 163, in get_template_from_string
-    return Template(source, origin, name)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 134, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 164, in compile_string
-    return parser.parse()
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 292, in parse
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
     compiled_result = compile_func(self, token)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 206, in do_extends
-    nodelist = parser.parse()
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 292, in parse
-    compiled_result = compile_func(self, token)
-  File "/home/sander/Downloads/django-trunk/django/template/defaulttags.py", line 1139, in load
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1119, in load
     (taglib, e))
-TemplateSyntaxError: 'crumbpath' is not a valid tag library: Template library crumbpath not found, tried django.templatetags.crumbpath,django.contrib.admin.templatetags.crumbpath,django.contrib.staticfiles.templatetags.crumbpath
-[15/Oct/2014 13:55:50] ERROR [django.request:240] Internal Server Error: /moederborden/
+TemplateSyntaxError: 'range' is not a valid tag library: Template library range not found, tried django.templatetags.range,django.contrib.admin.templatetags.range,django.contrib.staticfiles.templatetags.range
+[16/Oct/2014 18:52:07] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 64, in moederborden
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 94, in moederborden
     context_instance=RequestContext(request))
-  File "/home/sander/Downloads/django-trunk/django/shortcuts.py", line 23, in render_to_response
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
     return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 177, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 151, in get_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 178, in render_to_string
+    return t.render(context_instance)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 104, in render
+    compiled_parent = self.get_parent(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 101, in get_parent
+    return get_template(parent)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
     template, origin = find_template(template_name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 139, in find_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
     source, display_name = loader(name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 44, in __call__
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
     return self.load_template(template_name, template_dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 50, in load_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
     template = get_template_from_string(source, origin, template_name)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 163, in get_template_from_string
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
     return Template(source, origin, name)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 134, in __init__
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
     self.nodelist = compile_string(template_string, origin)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 164, in compile_string
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
     return parser.parse()
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 292, in parse
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
     compiled_result = compile_func(self, token)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 206, in do_extends
-    nodelist = parser.parse()
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 292, in parse
-    compiled_result = compile_func(self, token)
-  File "/home/sander/Downloads/django-trunk/django/template/defaulttags.py", line 1139, in load
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1119, in load
     (taglib, e))
-TemplateSyntaxError: 'crumbpath' is not a valid tag library: Template library crumbpath not found, tried django.templatetags.crumbpath,django.contrib.admin.templatetags.crumbpath,django.contrib.staticfiles.templatetags.crumbpath
-[15/Oct/2014 13:58:00] ERROR [django.request:240] Internal Server Error: /moederborden/
+TemplateSyntaxError: 'range' is not a valid tag library: Template library range not found, tried django.templatetags.range,django.contrib.admin.templatetags.range,django.contrib.staticfiles.templatetags.range
+[16/Oct/2014 18:54:43] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 64, in moederborden
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 94, in moederborden
     context_instance=RequestContext(request))
-  File "/home/sander/Downloads/django-trunk/django/shortcuts.py", line 23, in render_to_response
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
     return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 177, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 151, in get_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 178, in render_to_string
+    return t.render(context_instance)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 104, in render
+    compiled_parent = self.get_parent(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 101, in get_parent
+    return get_template(parent)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
     template, origin = find_template(template_name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 139, in find_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
     source, display_name = loader(name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 44, in __call__
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
     return self.load_template(template_name, template_dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 50, in load_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
     template = get_template_from_string(source, origin, template_name)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 163, in get_template_from_string
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
     return Template(source, origin, name)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 134, in __init__
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
     self.nodelist = compile_string(template_string, origin)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 164, in compile_string
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
     return parser.parse()
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 292, in parse
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
     compiled_result = compile_func(self, token)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 206, in do_extends
-    nodelist = parser.parse()
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 290, in parse
-    self.invalid_block_tag(token, command, parse_until)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 346, in invalid_block_tag
-    raise self.error(token, "Invalid block tag: '%s'" % command)
-TemplateSyntaxError: Invalid block tag: 'placeholder'
-[15/Oct/2014 13:58:01] ERROR [django.request:240] Internal Server Error: /moederborden/
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1119, in load
+    (taglib, e))
+TemplateSyntaxError: 'range' is not a valid tag library: Template library range not found, tried django.templatetags.range,django.contrib.admin.templatetags.range,django.contrib.staticfiles.templatetags.range
+[16/Oct/2014 18:57:05] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 64, in moederborden
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 94, in moederborden
     context_instance=RequestContext(request))
-  File "/home/sander/Downloads/django-trunk/django/shortcuts.py", line 23, in render_to_response
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
     return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 177, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 151, in get_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 178, in render_to_string
+    return t.render(context_instance)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 104, in render
+    compiled_parent = self.get_parent(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 101, in get_parent
+    return get_template(parent)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
     template, origin = find_template(template_name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 139, in find_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
     source, display_name = loader(name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 44, in __call__
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
     return self.load_template(template_name, template_dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 50, in load_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
     template = get_template_from_string(source, origin, template_name)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 163, in get_template_from_string
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
     return Template(source, origin, name)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 134, in __init__
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
     self.nodelist = compile_string(template_string, origin)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 164, in compile_string
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
     return parser.parse()
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 292, in parse
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
     compiled_result = compile_func(self, token)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 206, in do_extends
-    nodelist = parser.parse()
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 290, in parse
-    self.invalid_block_tag(token, command, parse_until)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 346, in invalid_block_tag
-    raise self.error(token, "Invalid block tag: '%s'" % command)
-TemplateSyntaxError: Invalid block tag: 'placeholder'
-[15/Oct/2014 13:58:43] ERROR [django.request:240] Internal Server Error: /moederborden/
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1119, in load
+    (taglib, e))
+TemplateSyntaxError: 'ranging' is not a valid tag library: Template library ranging not found, tried django.templatetags.ranging,django.contrib.admin.templatetags.ranging,django.contrib.staticfiles.templatetags.ranging
+[16/Oct/2014 18:59:08] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 64, in moederborden
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 94, in moederborden
     context_instance=RequestContext(request))
-  File "/home/sander/Downloads/django-trunk/django/shortcuts.py", line 23, in render_to_response
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
     return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 177, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 151, in get_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 178, in render_to_string
+    return t.render(context_instance)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 104, in render
+    compiled_parent = self.get_parent(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 101, in get_parent
+    return get_template(parent)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
     template, origin = find_template(template_name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 139, in find_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
     source, display_name = loader(name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 44, in __call__
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
     return self.load_template(template_name, template_dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 50, in load_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
     template = get_template_from_string(source, origin, template_name)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 163, in get_template_from_string
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
     return Template(source, origin, name)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 134, in __init__
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
     self.nodelist = compile_string(template_string, origin)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 164, in compile_string
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
     return parser.parse()
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 292, in parse
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
     compiled_result = compile_func(self, token)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 206, in do_extends
-    nodelist = parser.parse()
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 290, in parse
-    self.invalid_block_tag(token, command, parse_until)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 346, in invalid_block_tag
-    raise self.error(token, "Invalid block tag: '%s'" % command)
-TemplateSyntaxError: Invalid block tag: 'static_placeholder'
-[15/Oct/2014 13:58:44] ERROR [django.request:240] Internal Server Error: /moederborden/
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1119, in load
+    (taglib, e))
+TemplateSyntaxError: 'ranging' is not a valid tag library: Template library ranging not found, tried django.templatetags.ranging,django.contrib.admin.templatetags.ranging,django.contrib.staticfiles.templatetags.ranging
+[16/Oct/2014 19:01:19] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 64, in moederborden
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 94, in moederborden
     context_instance=RequestContext(request))
-  File "/home/sander/Downloads/django-trunk/django/shortcuts.py", line 23, in render_to_response
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
     return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 177, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 151, in get_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 178, in render_to_string
+    return t.render(context_instance)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 104, in render
+    compiled_parent = self.get_parent(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 101, in get_parent
+    return get_template(parent)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
     template, origin = find_template(template_name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 139, in find_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
     source, display_name = loader(name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 44, in __call__
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
     return self.load_template(template_name, template_dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 50, in load_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
     template = get_template_from_string(source, origin, template_name)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 163, in get_template_from_string
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
     return Template(source, origin, name)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 134, in __init__
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
     self.nodelist = compile_string(template_string, origin)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 164, in compile_string
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
     return parser.parse()
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 292, in parse
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
     compiled_result = compile_func(self, token)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 206, in do_extends
-    nodelist = parser.parse()
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 290, in parse
-    self.invalid_block_tag(token, command, parse_until)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 346, in invalid_block_tag
-    raise self.error(token, "Invalid block tag: '%s'" % command)
-TemplateSyntaxError: Invalid block tag: 'static_placeholder'
-[15/Oct/2014 14:04:23] ERROR [django.request:240] Internal Server Error: /moederborden/
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1119, in load
+    (taglib, e))
+TemplateSyntaxError: 'ranging' is not a valid tag library: Template library ranging not found, tried django.templatetags.ranging,django.contrib.admin.templatetags.ranging,django.contrib.staticfiles.templatetags.ranging
+[16/Oct/2014 19:01:48] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 64, in moederborden
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 94, in moederborden
     context_instance=RequestContext(request))
-  File "/home/sander/Downloads/django-trunk/django/shortcuts.py", line 23, in render_to_response
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
     return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 177, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 151, in get_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 178, in render_to_string
+    return t.render(context_instance)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 104, in render
+    compiled_parent = self.get_parent(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 101, in get_parent
+    return get_template(parent)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
     template, origin = find_template(template_name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 139, in find_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
     source, display_name = loader(name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 44, in __call__
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
     return self.load_template(template_name, template_dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 50, in load_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
     template = get_template_from_string(source, origin, template_name)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 163, in get_template_from_string
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
     return Template(source, origin, name)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 134, in __init__
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
     self.nodelist = compile_string(template_string, origin)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 164, in compile_string
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
     return parser.parse()
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 292, in parse
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
     compiled_result = compile_func(self, token)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 206, in do_extends
-    nodelist = parser.parse()
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 290, in parse
-    self.invalid_block_tag(token, command, parse_until)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 346, in invalid_block_tag
-    raise self.error(token, "Invalid block tag: '%s'" % command)
-TemplateSyntaxError: Invalid block tag: 'static_placeholder'
-[15/Oct/2014 14:04:36] ERROR [django.request:240] Internal Server Error: /moederborden/
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1119, in load
+    (taglib, e))
+TemplateSyntaxError: 'ranging' is not a valid tag library: Template library ranging not found, tried django.templatetags.ranging,django.contrib.admin.templatetags.ranging,django.contrib.staticfiles.templatetags.ranging
+[16/Oct/2014 19:02:46] ERROR [django.request:231] Internal Server Error: /moederborden/
 Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 64, in moederborden
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 94, in moederborden
     context_instance=RequestContext(request))
-  File "/home/sander/Downloads/django-trunk/django/shortcuts.py", line 23, in render_to_response
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
     return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 177, in render_to_string
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
     t = get_template(template_name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 151, in get_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
     template, origin = find_template(template_name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 139, in find_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
     source, display_name = loader(name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 44, in __call__
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
     return self.load_template(template_name, template_dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 50, in load_template
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
     template = get_template_from_string(source, origin, template_name)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 163, in get_template_from_string
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
     return Template(source, origin, name)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 134, in __init__
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
     self.nodelist = compile_string(template_string, origin)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 164, in compile_string
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
     return parser.parse()
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 292, in parse
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
     compiled_result = compile_func(self, token)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 206, in do_extends
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
     nodelist = parser.parse()
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 290, in parse
-    self.invalid_block_tag(token, command, parse_until)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 346, in invalid_block_tag
-    raise self.error(token, "Invalid block tag: '%s'" % command)
-TemplateSyntaxError: Invalid block tag: 'static_placeholder'
-[15/Oct/2014 14:10:45] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 112, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 367, in resolve
-    for pattern in self.url_patterns:
-  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 403, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 397, in urlconf_module
-    self._urlconf_module = import_module(self.urlconf_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/APc/urls.py", line 16, in <module>
-    url(r'^user/(?P<aantalPerPagina>\w{0,50})/$', views.pages,),
-NameError: name 'views' is not defined
-[15/Oct/2014 14:10:59] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 112, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 367, in resolve
-    for pattern in self.url_patterns:
-  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 403, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 397, in urlconf_module
-    self._urlconf_module = import_module(self.urlconf_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/APc/urls.py", line 16, in <module>
-    url(r'^user/(?P<aantalPerPagina>\w{0,50})/$', views.pages,),
-NameError: name 'views' is not defined
-[15/Oct/2014 14:11:00] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 112, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 367, in resolve
-    for pattern in self.url_patterns:
-  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 403, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 397, in urlconf_module
-    self._urlconf_module = import_module(self.urlconf_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/APc/urls.py", line 16, in <module>
-    url(r'^user/(?P<aantalPerPagina>\w{0,50})/$'),
-TypeError: url() takes at least 2 arguments (1 given)
-[15/Oct/2014 14:11:22] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-TypeError: moederborden() takes exactly 2 arguments (1 given)
-[15/Oct/2014 14:11:23] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-TypeError: moederborden() takes exactly 2 arguments (1 given)
-[15/Oct/2014 14:12:42] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-TypeError: moederborden() takes exactly 2 arguments (1 given)
-[15/Oct/2014 14:12:43] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-TypeError: moederborden() takes exactly 2 arguments (1 given)
-[15/Oct/2014 14:12:45] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-TypeError: moederborden() takes exactly 2 arguments (1 given)
-[15/Oct/2014 14:13:37] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-TypeError: moederborden() takes exactly 2 arguments (1 given)
-[15/Oct/2014 14:13:39] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-TypeError: moederborden() takes exactly 2 arguments (1 given)
-[15/Oct/2014 14:13:40] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-TypeError: moederborden() takes exactly 2 arguments (1 given)
-[15/Oct/2014 14:13:43] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-TypeError: moederborden() takes exactly 2 arguments (1 given)
-[15/Oct/2014 14:13:44] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 62, in moederborden
-    processoren = Processoren.objects(categorie__contains='Moederborden')[:aantal]
-NameError: global name 'aantal' is not defined
-[15/Oct/2014 14:13:44] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 62, in moederborden
-    processoren = Processoren.objects(categorie__contains='Moederborden')[:aantal]
-NameError: global name 'aantal' is not defined
-[15/Oct/2014 14:14:12] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 63, in moederborden
-    processoren = Processoren.objects(categorie__contains='Moederborden')[:aantal]
-  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 125, in __getitem__
-    queryset._cursor_obj = queryset._cursor[key]
-  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 575, in __getitem__
-    limit = index.stop - skip
-TypeError: unsupported operand type(s) for -: 'str' and 'int'
-[15/Oct/2014 14:14:13] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 63, in moederborden
-    processoren = Processoren.objects(categorie__contains='Moederborden')[:aantal]
-  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 125, in __getitem__
-    queryset._cursor_obj = queryset._cursor[key]
-  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 575, in __getitem__
-    limit = index.stop - skip
-TypeError: unsupported operand type(s) for -: 'str' and 'int'
-[15/Oct/2014 14:14:36] INFO [root:63] 1
-[15/Oct/2014 14:14:36] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 64, in moederborden
-    processoren = Processoren.objects(categorie__contains='Moederborden')[:aantal]
-  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 125, in __getitem__
-    queryset._cursor_obj = queryset._cursor[key]
-  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 575, in __getitem__
-    limit = index.stop - skip
-TypeError: unsupported operand type(s) for -: 'str' and 'int'
-[15/Oct/2014 14:14:38] INFO [root:63] 1
-[15/Oct/2014 14:14:38] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 64, in moederborden
-    processoren = Processoren.objects(categorie__contains='Moederborden')[:aantal]
-  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 125, in __getitem__
-    queryset._cursor_obj = queryset._cursor[key]
-  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 575, in __getitem__
-    limit = index.stop - skip
-TypeError: unsupported operand type(s) for -: 'str' and 'int'
-[15/Oct/2014 14:14:49] INFO [root:63] 1
-[15/Oct/2014 14:14:49] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 64, in moederborden
-    processoren = Processoren.objects(categorie__contains='Moederborden')[:aantal]
-  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 125, in __getitem__
-    queryset._cursor_obj = queryset._cursor[key]
-  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 575, in __getitem__
-    limit = index.stop - skip
-TypeError: unsupported operand type(s) for -: 'str' and 'int'
-[15/Oct/2014 14:15:05] INFO [root:63] 1
-[15/Oct/2014 14:15:05] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 64, in moederborden
-    aantal = 5
-  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 125, in __getitem__
-    queryset._cursor_obj = queryset._cursor[key]
-  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 575, in __getitem__
-    limit = index.stop - skip
-TypeError: unsupported operand type(s) for -: 'str' and 'int'
-[15/Oct/2014 14:15:06] INFO [root:63] 1
-[15/Oct/2014 14:15:08] INFO [root:63] 1
-[15/Oct/2014 14:17:32] INFO [root:63] 1
-[15/Oct/2014 14:17:32] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 65, in moederborden
-    processoren = Processoren.objects(categorie__contains='Moederborden')[:aantal]
-  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 125, in __getitem__
-    queryset._cursor_obj = queryset._cursor[key]
-  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 575, in __getitem__
-    limit = index.stop - skip
-TypeError: unsupported operand type(s) for -: 'str' and 'int'
-[15/Oct/2014 14:17:43] INFO [root:63] 5
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1119, in load
+    (taglib, e))
+TemplateSyntaxError: 'ranging' is not a valid tag library: Template library ranging not found, tried django.templatetags.ranging,django.contrib.admin.templatetags.ranging,django.contrib.staticfiles.templatetags.ranging

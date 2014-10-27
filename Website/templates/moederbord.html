@@ -113,7 +113,7 @@ $(document).ready(function(){
     </div>
 
     <div class="col-md-8 col-lg-9">
-        {% block products %}
+
         <div class=" top-margin ">
             
             <h1>{{Processoren.0.categorie.0|truncatewords:1|slice:"-4" }}</h1>
@@ -143,13 +143,13 @@ $(document).ready(function(){
 
             </div>
             {% endfor %}
-            {% endblock %}
+
         </div>
 
         <ul class="pagination pull-right">
             <li class="disabled"><a href="javascript:void(0)">«</a></li>
             <li class="active"><a href="javascript:void(0)">1</a></li>
-            <li ><a href="?pagina=2"> <!-- django code die variable pagina in views.py omhoog doet --> 2</a></li>
+            <li ><a href="javascript:void(0)">2</a></li>
             <li><a href="javascript:void(0)">3</a></li>
             <li><a href="javascript:void(0)">4</a></li>
             <li><a href="javascript:void(0)">5</a></li>
