@@ -22,6 +22,11 @@ def index(request):
                               context_instance=RequestContext(request))
 
 
+def detail(request):
+    processoren = Processoren.objects
+    product = request.GET.get('product')
+    return render_to_response('detail.html', {'Processoren': processoren},
+                                  context_instance=RequestContext(request))
 
 def processoren(request):
 
@@ -148,3 +153,4 @@ def listing(request, processorenlijst, aantal):
         processoren = paginator.page(paginator.num_pages)
 
     return processoren
+

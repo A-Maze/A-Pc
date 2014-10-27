@@ -13,8 +13,10 @@ urlpatterns = patterns('',
     url(r'^moederborden/', 'pcbuilder.views.moederborden'),
     url(r'^optischeschijven/', 'pcbuilder.views.optischeschijf'),
     url(r'^voedingen/', 'pcbuilder.views.voedingen'),
+    url(r'^detail/', 'pcbuilder.views.detail'),
 
     #geen idee wat dit allemaal is
+    url(r'^user/(?P<product>\w{0,50})/$', 'pcbuilder.views.pages'),
     url(r'^user/(?P<aantal>\w{0,50})/$', 'pcbuilder.views.pages'),
     url(r'^user/(?P<pagina>\w{0,50})/$', 'pcbuilder.views.pages'),
     url(r'^user', 'pcbuilder.templatetags.keyvalue'),
