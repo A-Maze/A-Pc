@@ -24,6 +24,7 @@ def index(request):
 
 def detail(request):
     processoren = Processoren.objects
+    product = request.GET.get('product')
     return render_to_response('detail.html', {'Processoren': processoren},
                                   context_instance=RequestContext(request))
 
