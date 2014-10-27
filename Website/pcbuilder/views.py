@@ -107,7 +107,8 @@ def moederborden(request):
     current_page = processoren.number
 
     # Difference between current page
-    diff = []
+    # Fill with 0 because pages start at 1
+    diff = [0]
     for p in pages:
         diff.append(int(p - current_page))
 
