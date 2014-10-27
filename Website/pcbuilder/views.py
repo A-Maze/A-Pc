@@ -96,7 +96,19 @@ def moederborden(request):
     # Aantal per pagina en pagina nummer
     processorenlijst = Processoren.objects(categorie__contains='Moederborden').all()
     processoren = listing(request, processorenlijst, 15)
-    return render_to_response('moederbord.html', {'Processoren': processoren},
+    
+    range = [-2, -1, 0, 1, 2]
+    pages = Paginator(processorenlijst, 15).page_range
+    current_page = processoren.number
+
+    # Difference between current page
+    diff = []
+    for p in pages:
+        diff.append(int(p - current_page))
+
+
+
+    return render_to_response('moederbord.html', {'Processoren': processoren, 'Range':range, 'Diff':diff},
                               context_instance=RequestContext(request))
 
 def optischeschijf(request):

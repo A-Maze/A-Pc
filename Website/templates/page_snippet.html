@@ -1,7 +1,25 @@
 <ul class="pagination pull-right">
-            {% if Processoren.has_previous %}<li ><a href="?pagina={{ Processoren.previous_page_number }}">«</a></li> {% endif %}
-            {% for page in Processoren.paginator.page_range %}
-            <li><a href="?pagina={{page}}">{{page}}</a></li>
-            {% endfor %}
-            {% if Processoren.has_next %}<li><a href="?pagina={{ Processoren.next_page_number }}">»</a></li> {% endif %}
+    {% load filters %}
+
+    {% if Processoren.has_previous %}
+        <li><a href="?pagina={{ Processoren.previous_page_number }}">«</a></li>
+    {% else %}
+        <li class="disabled"><a href="javascript:void(0);">«</a></li>
+    {% endif %}
+
+    {% for page in Processoren.paginator.page_range %}
+        {% if Diff|get_at_index:page|subtract in Range %}
+            {% if Diff|get_at_index:page|subtract == 0 %}
+                <li class="active"><a href="?pagina={{page}}">{{ page }} </a></li>
+            {% else %}
+                <li><a href="?pagina={{page}}">{{ page }} </a></li>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+
+    {% if Processoren.has_previous %}
+        <li><a href="?pagina={{ Processoren.next_page_number }}">»</a></li>
+    {% else %}
+        <li class="disabled"><a href="javascript:void(0);">»</a></li>
+    {% endif %}
 </ul>
