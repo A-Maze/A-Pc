@@ -102,7 +102,7 @@ def moederborden(request):
     processorenlijst = Processoren.objects(categorie__contains='Moederborden').all()
     processoren = listing(request, processorenlijst, 15)
     
-    range = [-2, -1, 0, 1, 2]
+    range = [-3, -2, -1, 0, 1, 2, 3]
     pages = Paginator(processorenlijst, 15).page_range
     current_page = processoren.number
 

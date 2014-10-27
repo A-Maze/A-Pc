@@ -2,7 +2,8 @@
     {% load filters %}
 
     {% if Processoren.has_previous %}
-        <li><a href="?pagina={{ Processoren.previous_page_number }}">«</a></li>
+        <li><a href="?pagina=1">«</a></li>
+        <li><a href="?pagina={{ Processoren.previous_page_number }}">‹</a></li>
     {% else %}
         <li class="disabled"><a href="javascript:void(0);">«</a></li>
     {% endif %}
@@ -18,7 +19,8 @@
     {% endfor %}
 
     {% if Processoren.has_next %}
-        <li><a href="?pagina={{ Processoren.next_page_number }}">»</a></li>
+        <li><a href="?pagina={{ Processoren.next_page_number }}">›</a></li>
+        <li><a href="?pagina={{ Processoren.paginator.num_pages }}">»</a></li>
     {% else %}
         <li class="disabled"><a href="javascript:void(0);">»</a></li>
     {% endif %}
