@@ -26,14 +26,21 @@ def select(request):
     product = request.GET.get('product')
     categorie = request.GET.get('categorie')
     request.session[categorie] = True
-    request.session[categorie + "naam"] = product
+    #request.session[categorie + "naam"] = product
+    variabel = request.session["Moederborden"]
+    logger = logging.getLogger(__name__)
+    logger.info(variabel)
+    logger.info("test")
     return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
+    
 
 
 def detail(request):
     processoren = Processoren.objects
     product = request.GET.get('product')
-    return render_to_response('detail.html', {'Processoren': processoren},
+    categorie = request.GET.get('categorie')
+
+    return render_to_response('detail.html', {'Processoren': processoren, 'Categorie' : categorie, 'Product': product},
                                   context_instance=RequestContext(request))
 
 def processoren(request):

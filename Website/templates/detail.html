@@ -7,11 +7,11 @@
                     <img src="#" class="col-lg-4">
                     <div class="panel panel-default col-lg-8">
                         <div class="panel-body">
-                        <h1>=====productnaam=====</h1>
+                        <h1>{{ Product }}</h1>
                         </div>
                     </div>
                 </div>
-                <a href="/select/?next={{request.path}}">Selecteer</a>
+                <a href="/select/?product={{ Product }}&amp;categorie={{ Categorie }}">Selecteer</a>
 </div>
 
 {% endblock %}
