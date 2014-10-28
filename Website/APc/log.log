@@ -1,671 +1,125 @@
-[27/Oct/2014 16:25:20] ERROR [django.request:240] Internal Server Error: /moederborden/
+[28/Oct/2014 10:02:37] ERROR [django.request:231] Internal Server Error: /detail/
 Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 111, in moederborden
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 29, in detail
     context_instance=RequestContext(request))
-  File "/home/sander/Downloads/django-trunk/django/shortcuts.py", line 23, in render_to_response
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
     return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 185, in render_to_string
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 178, in render_to_string
     return t.render(context_instance)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 150, in render
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 148, in render
     return self._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
     return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
     bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
     return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 131, in render
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 126, in render
     return compiled_parent._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
     return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
     bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
     return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 65, in render
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 65, in render
     result = block.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
     bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
     return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 147, in render
-    template = get_template(template)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 151, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 139, in find_template
-    source, display_name = loader(name, dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 163, in get_template_from_string
-    return Template(source, origin, name)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 134, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 164, in compile_string
-    return parser.parse()
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 292, in parse
-    compiled_result = compile_func(self, token)
-  File "/home/sander/Downloads/django-trunk/django/template/defaulttags.py", line 853, in do_for
-    nodelist_loop = parser.parse(('empty', 'endfor',))
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 292, in parse
-    compiled_result = compile_func(self, token)
-  File "/home/sander/Downloads/django-trunk/django/template/defaulttags.py", line 995, in do_if
-    nodelist = parser.parse(('elif', 'else', 'endif'))
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 290, in parse
-    self.invalid_block_tag(token, command, parse_until)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 345, in invalid_block_tag
-    (command, get_text_list(["'%s'" % p for p in parse_until])))
-TemplateSyntaxError: Invalid block tag: 'endfor', expected 'elif', 'else' or 'endif'
-[27/Oct/2014 17:33:48] ERROR [django.request:240] Internal Server Error: /moederborden/
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 444, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=context.current_app)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 546, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 410, in _reverse_with_prefix
+    self._populate()
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 303, in _populate
+    lookups.appendlist(pattern.callback, (bits, p_pattern, pattern.default_args))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 118, in get_callable
+    (lookup_view, mod_name))
+ViewDoesNotExist: Could not import pcbuilder.templatetags.keyvalue. View does not exist in module pcbuilder.templatetags.
+[28/Oct/2014 10:02:39] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:03:39] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:03:42] ERROR [django.request:231] Internal Server Error: /select/
 Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 117, in moederborden
-    context_instance=RequestContext(request))
-  File "/home/sander/Downloads/django-trunk/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 185, in render_to_string
-    return t.render(context_instance)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 150, in render
-    return self._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 131, in render
-    return compiled_parent._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 65, in render
-    result = block.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 155, in render
-    return template.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 150, in render
-    return self._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/defaulttags.py", line 328, in render
-    return nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 90, in render
-    output = self.filter_expression.resolve(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 598, in resolve
-    obj = self.var.resolve(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 739, in resolve
-    value = self._resolve_lookup(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 799, in _resolve_lookup
-    current = current()
-  File "/home/sander/Downloads/django-trunk/django/core/paginator.py", line 138, in next_page_number
-    return self.paginator.validate_number(self.number + 1)
-  File "/home/sander/Downloads/django-trunk/django/core/paginator.py", line 43, in validate_number
-    raise EmptyPage('That page contains no results')
-EmptyPage: That page contains no results
-[27/Oct/2014 17:33:51] ERROR [django.request:240] Internal Server Error: /moederborden/
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 118, in get_callable
+    (lookup_view, mod_name))
+ViewDoesNotExist: Could not import pcbuilder.views.select. View does not exist in module pcbuilder.views.
+[28/Oct/2014 10:03:42] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:04:49] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:04:50] ERROR [django.request:231] Internal Server Error: /select/
 Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 117, in moederborden
-    context_instance=RequestContext(request))
-  File "/home/sander/Downloads/django-trunk/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 185, in render_to_string
-    return t.render(context_instance)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 150, in render
-    return self._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 131, in render
-    return compiled_parent._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 65, in render
-    result = block.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 155, in render
-    return template.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 150, in render
-    return self._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/defaulttags.py", line 328, in render
-    return nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 90, in render
-    output = self.filter_expression.resolve(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 598, in resolve
-    obj = self.var.resolve(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 739, in resolve
-    value = self._resolve_lookup(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 799, in _resolve_lookup
-    current = current()
-  File "/home/sander/Downloads/django-trunk/django/core/paginator.py", line 138, in next_page_number
-    return self.paginator.validate_number(self.number + 1)
-  File "/home/sander/Downloads/django-trunk/django/core/paginator.py", line 43, in validate_number
-    raise EmptyPage('That page contains no results')
-EmptyPage: That page contains no results
-[27/Oct/2014 17:33:54] ERROR [django.request:240] Internal Server Error: /moederborden/
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 25, in select
+    product = product.GET.get('product')
+UnboundLocalError: local variable 'product' referenced before assignment
+[28/Oct/2014 10:04:51] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:05:50] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:05:51] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:05:52] ERROR [django.request:231] Internal Server Error: /select/
 Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 117, in moederborden
-    context_instance=RequestContext(request))
-  File "/home/sander/Downloads/django-trunk/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 185, in render_to_string
-    return t.render(context_instance)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 150, in render
-    return self._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 131, in render
-    return compiled_parent._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 65, in render
-    result = block.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 155, in render
-    return template.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 150, in render
-    return self._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/defaulttags.py", line 328, in render
-    return nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 90, in render
-    output = self.filter_expression.resolve(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 598, in resolve
-    obj = self.var.resolve(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 739, in resolve
-    value = self._resolve_lookup(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 799, in _resolve_lookup
-    current = current()
-  File "/home/sander/Downloads/django-trunk/django/core/paginator.py", line 138, in next_page_number
-    return self.paginator.validate_number(self.number + 1)
-  File "/home/sander/Downloads/django-trunk/django/core/paginator.py", line 43, in validate_number
-    raise EmptyPage('That page contains no results')
-EmptyPage: That page contains no results
-[27/Oct/2014 17:34:16] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 117, in moederborden
-    context_instance=RequestContext(request))
-  File "/home/sander/Downloads/django-trunk/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 185, in render_to_string
-    return t.render(context_instance)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 150, in render
-    return self._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 131, in render
-    return compiled_parent._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 65, in render
-    result = block.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 155, in render
-    return template.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 150, in render
-    return self._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/defaulttags.py", line 328, in render
-    return nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 90, in render
-    output = self.filter_expression.resolve(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 598, in resolve
-    obj = self.var.resolve(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 739, in resolve
-    value = self._resolve_lookup(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 799, in _resolve_lookup
-    current = current()
-  File "/home/sander/Downloads/django-trunk/django/core/paginator.py", line 138, in next_page_number
-    return self.paginator.validate_number(self.number + 1)
-  File "/home/sander/Downloads/django-trunk/django/core/paginator.py", line 43, in validate_number
-    raise EmptyPage('That page contains no results')
-EmptyPage: That page contains no results
-[27/Oct/2014 17:34:19] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 117, in moederborden
-    context_instance=RequestContext(request))
-  File "/home/sander/Downloads/django-trunk/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 185, in render_to_string
-    return t.render(context_instance)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 150, in render
-    return self._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 131, in render
-    return compiled_parent._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 65, in render
-    result = block.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 155, in render
-    return template.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 150, in render
-    return self._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/defaulttags.py", line 328, in render
-    return nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 90, in render
-    output = self.filter_expression.resolve(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 598, in resolve
-    obj = self.var.resolve(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 739, in resolve
-    value = self._resolve_lookup(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 799, in _resolve_lookup
-    current = current()
-  File "/home/sander/Downloads/django-trunk/django/core/paginator.py", line 138, in next_page_number
-    return self.paginator.validate_number(self.number + 1)
-  File "/home/sander/Downloads/django-trunk/django/core/paginator.py", line 43, in validate_number
-    raise EmptyPage('That page contains no results')
-EmptyPage: That page contains no results
-[27/Oct/2014 17:34:25] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 117, in moederborden
-    context_instance=RequestContext(request))
-  File "/home/sander/Downloads/django-trunk/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 185, in render_to_string
-    return t.render(context_instance)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 150, in render
-    return self._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 131, in render
-    return compiled_parent._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 65, in render
-    result = block.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 155, in render
-    return template.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 150, in render
-    return self._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/defaulttags.py", line 328, in render
-    return nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 90, in render
-    output = self.filter_expression.resolve(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 598, in resolve
-    obj = self.var.resolve(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 739, in resolve
-    value = self._resolve_lookup(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 799, in _resolve_lookup
-    current = current()
-  File "/home/sander/Downloads/django-trunk/django/core/paginator.py", line 138, in next_page_number
-    return self.paginator.validate_number(self.number + 1)
-  File "/home/sander/Downloads/django-trunk/django/core/paginator.py", line 43, in validate_number
-    raise EmptyPage('That page contains no results')
-EmptyPage: That page contains no results
-[27/Oct/2014 17:34:34] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 117, in moederborden
-    context_instance=RequestContext(request))
-  File "/home/sander/Downloads/django-trunk/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 185, in render_to_string
-    return t.render(context_instance)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 150, in render
-    return self._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 131, in render
-    return compiled_parent._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 65, in render
-    result = block.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 155, in render
-    return template.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 150, in render
-    return self._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/defaulttags.py", line 328, in render
-    return nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 90, in render
-    output = self.filter_expression.resolve(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 598, in resolve
-    obj = self.var.resolve(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 739, in resolve
-    value = self._resolve_lookup(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 799, in _resolve_lookup
-    current = current()
-  File "/home/sander/Downloads/django-trunk/django/core/paginator.py", line 138, in next_page_number
-    return self.paginator.validate_number(self.number + 1)
-  File "/home/sander/Downloads/django-trunk/django/core/paginator.py", line 43, in validate_number
-    raise EmptyPage('That page contains no results')
-EmptyPage: That page contains no results
-[27/Oct/2014 17:34:37] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 117, in moederborden
-    context_instance=RequestContext(request))
-  File "/home/sander/Downloads/django-trunk/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 185, in render_to_string
-    return t.render(context_instance)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 150, in render
-    return self._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 131, in render
-    return compiled_parent._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 65, in render
-    result = block.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 155, in render
-    return template.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 150, in render
-    return self._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/defaulttags.py", line 328, in render
-    return nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 90, in render
-    output = self.filter_expression.resolve(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 598, in resolve
-    obj = self.var.resolve(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 739, in resolve
-    value = self._resolve_lookup(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 799, in _resolve_lookup
-    current = current()
-  File "/home/sander/Downloads/django-trunk/django/core/paginator.py", line 138, in next_page_number
-    return self.paginator.validate_number(self.number + 1)
-  File "/home/sander/Downloads/django-trunk/django/core/paginator.py", line 43, in validate_number
-    raise EmptyPage('That page contains no results')
-EmptyPage: That page contains no results
-[27/Oct/2014 17:34:58] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 117, in moederborden
-    context_instance=RequestContext(request))
-  File "/home/sander/Downloads/django-trunk/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 185, in render_to_string
-    return t.render(context_instance)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 150, in render
-    return self._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 131, in render
-    return compiled_parent._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 65, in render
-    result = block.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 155, in render
-    return template.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 150, in render
-    return self._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/defaulttags.py", line 328, in render
-    return nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 90, in render
-    output = self.filter_expression.resolve(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 598, in resolve
-    obj = self.var.resolve(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 739, in resolve
-    value = self._resolve_lookup(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 799, in _resolve_lookup
-    current = current()
-  File "/home/sander/Downloads/django-trunk/django/core/paginator.py", line 138, in next_page_number
-    return self.paginator.validate_number(self.number + 1)
-  File "/home/sander/Downloads/django-trunk/django/core/paginator.py", line 43, in validate_number
-    raise EmptyPage('That page contains no results')
-EmptyPage: That page contains no results
-[27/Oct/2014 17:35:12] ERROR [django.request:240] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 117, in moederborden
-    context_instance=RequestContext(request))
-  File "/home/sander/Downloads/django-trunk/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/home/sander/Downloads/django-trunk/django/template/loader.py", line 185, in render_to_string
-    return t.render(context_instance)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 150, in render
-    return self._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 131, in render
-    return compiled_parent._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 65, in render
-    result = block.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/loader_tags.py", line 155, in render
-    return template.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 150, in render
-    return self._render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 144, in _render
-    return self.nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/defaulttags.py", line 328, in render
-    return nodelist.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 855, in render
-    bit = self.render_node(node, context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/home/sander/Downloads/django-trunk/django/template/debug.py", line 90, in render
-    output = self.filter_expression.resolve(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 598, in resolve
-    obj = self.var.resolve(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 739, in resolve
-    value = self._resolve_lookup(context)
-  File "/home/sander/Downloads/django-trunk/django/template/base.py", line 799, in _resolve_lookup
-    current = current()
-  File "/home/sander/Downloads/django-trunk/django/core/paginator.py", line 138, in next_page_number
-    return self.paginator.validate_number(self.number + 1)
-  File "/home/sander/Downloads/django-trunk/django/core/paginator.py", line 43, in validate_number
-    raise EmptyPage('That page contains no results')
-EmptyPage: That page contains no results
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 27, in select
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
+NameError: global name 'HttpResponseRedirect' is not defined
+[28/Oct/2014 10:05:53] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:06:31] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:06:33] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:06:34] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:08:21] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:09:12] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:12:38] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:12:39] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:15:16] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:15:18] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:15:19] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:15:32] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:15:34] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:15:36] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:15:38] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:15:44] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:15:45] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:15:50] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:15:52] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:15:54] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:15:56] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:15:58] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:15:59] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:16:01] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:16:06] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:16:08] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:16:09] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:16:10] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:16:11] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:16:30] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:16:33] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:16:50] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:17:04] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:17:12] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:19:08] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:20:26] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:20:44] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:20:46] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:20:47] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:22:46] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:22:48] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Oct/2014 10:24:36] WARNING [django.request:143] Not Found: /favicon.ico

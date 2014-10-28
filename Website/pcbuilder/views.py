@@ -1,4 +1,5 @@
 from django.shortcuts import render_to_response
+from django.shortcuts import HttpResponseRedirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.template import RequestContext
 from django.template import loader
@@ -20,6 +21,13 @@ def index(request):
     processoren = Processoren.objects
     return render_to_response('index.html', {'Processoren': processoren},
                               context_instance=RequestContext(request))
+
+def select(request):
+    product = request.GET.get('product')
+    categorie = request.GET.get('categorie')
+    request.session[categorie] = True
+    request.session[categorie + "naam"] = product
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
 
 
 def detail(request):
