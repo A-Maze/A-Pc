@@ -11,9 +11,7 @@
                         </div>
                     </div>
                 </div>
-                {% if request.session.Categorie %}
-                	<a href="/select/?product={{ Product }}&amp;categorie={{ Categorie }}">Selecteer</a>
-                {% endif %}
+                <a href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}">Deselecteer</a>
                 <a href="/select/?product={{ Product }}&amp;categorie={{ Categorie }}">Selecteer</a>
 
 </div>

@@ -32,6 +32,12 @@ def select(request):
     logger.info(variabel)
     logger.info("test")
     return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
+
+def deselect(request):
+    product = request.GET.get('product')
+    categorie = request.GET.get('categorie')
+    del request.session[categorie]
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
     
 
 
