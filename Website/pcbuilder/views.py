@@ -26,11 +26,8 @@ def select(request):
     product = request.GET.get('product')
     categorie = request.GET.get('categorie')
     request.session[categorie] = True
-    #request.session[categorie + "naam"] = product
-    variabel = request.session["Moederborden"]
-    logger = logging.getLogger(__name__)
-    logger.info(variabel)
-    logger.info("test")
+    productstring = categorie + "naam"
+    request.session[productstring] = product
     return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
 
 def deselect(request):
