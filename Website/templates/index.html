@@ -215,7 +215,7 @@ window.location = newLocation;
             <td></td>
             <td></td>
         </tr>
-        <tr>
+        <tr {% if request.session.Moederbord = true %} class="info" {% endif %} >
             <td>2</td>
             <td>Moederbord</td>
             <td>{{ request.session.Moederbordennaam }}</td>
