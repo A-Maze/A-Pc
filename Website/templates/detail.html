@@ -8,7 +8,6 @@
                     <div class="panel panel-default col-lg-8">
                         <div class="panel-body">
                         <h1>{{ Product }}</h1>
-                        <h1>{{ Product }}</h1>
                         </div>
                     </div>
                 </div>
@@ -17,12 +16,12 @@
                 {% if Categorie = "Moederborden" %}
                     {% if request.session.Moederborden = True %}
                         {% if request.session.Moederbordennaam = Product %}
-                         <a href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}">Deselecteer</a>
+                         <a class="btn btn-primary pull-right" href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Deselecteer</a>
                         {% endif %}
                     {% endif %}
                 {% endif %}
 
-                <a href="/select/?product={{ Product }}&amp;categorie={{ Categorie }}">Selecteer</a>
+                <a class="btn btn-primary pull-right"href="/select/?product={{ Product }}&amp;categorie={{ Categorie }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Selecteer</a>
                 
 
 </div>
