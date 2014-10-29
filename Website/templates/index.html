@@ -48,13 +48,14 @@
             <div class="panel panel-default component">
                 <div class="panel-body">
                     <a href="/moederborden/"><img class="center-block" src='{% static "img/motherboard.png" %}'></a>
+                    {% if request.session.Moederborden = True %}
+                    <img class="cover" src='{% static "img/succes.png" %}' />
+                    {% endif %}
                 </div>
                 <div class="panel-footer ">
                     <h4 class="text-center"><a href="/moederborden/">moederbord</a> </h4>
-                    {% if request.session.Moederborden = True %}
-                    <h4> JAAAAA </h4>
-                    {% endif %}
                 </div>
+
             </div>
 
 

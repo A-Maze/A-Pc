@@ -41,6 +41,14 @@ background-color:black;
       border-bottom: 1px solid #428BCA;
 }
 
+.panel-body .cover{
+	position: absolute;
+    /* position in top left of #tobecovered */
+    top: 0; /* top of #tobecovered */
+    margin:0 auto;
+    width: 85%;
+}
+
 
 
 
