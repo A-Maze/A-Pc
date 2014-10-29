@@ -1,5 +1,34 @@
 {% extends "base.html" %}
 {% load static %}
+{% block scripts %}
+<script>
+$(document).ready(function() {
+
+$('.component').css('display', 'none');
+
+$('.component').fadeIn(1000);
+
+
+
+$('.link').click(function() {
+
+event.preventDefault();
+
+newLocation = this.href;
+
+$('.component').fadeOut(1000, newpage);
+
+});
+
+function newpage() {
+
+window.location = newLocation;
+
+}
+
+});
+</script>
+{% endblock %}
 {% block slider %}
   <div class="jumbotron">
       <div class="container">
@@ -18,8 +47,8 @@
 
 
 <div class="btn-group btn-group-justified">
-    <a href="javascript:void(0)" class="btn btn-default">Left</a>
-    <a href="javascript:void(0)" class="btn btn-default">Right</a>
+    <a href="javascript:void(0)" class="btn btn-default">Zelf samenstellen</a>
+    <a href="javascript:void(0)" class="btn btn-default">Vooraf samengesteld</a>
 </div>
     
     <div class="progress">

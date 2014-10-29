@@ -62,3 +62,6 @@ KeyError: u'Moederborden'
 [29/Oct/2014 12:52:58] INFO [pcbuilder.views:33] test
 [29/Oct/2014 12:54:05] INFO [pcbuilder.views:32] True
 [29/Oct/2014 12:54:05] INFO [pcbuilder.views:33] test
+[29/Oct/2014 13:08:44] WARNING [django.request:143] Not Found: /favicon.ico
+[29/Oct/2014 13:09:16] INFO [pcbuilder.views:32] True
+[29/Oct/2014 13:09:16] INFO [pcbuilder.views:33] test
