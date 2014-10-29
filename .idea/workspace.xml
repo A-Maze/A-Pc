@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9b433c9-adef-4891-afff-f63ac76183b4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Website/db.sqlite3" afterPath="$PROJECT_DIR$/Website/db.sqlite3" />
+    <list default="true" id="a9b433c9-adef-4891-afff-f63ac76183b4" name="Default" comment="RANDOM">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Website/APc/log.log" afterPath="$PROJECT_DIR$/Website/APc/log.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Website/static/css/style.css" afterPath="$PROJECT_DIR$/Website/static/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -83,8 +82,8 @@
       <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Website/static/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46728972" vertical-offset="0" max-vertical-offset="1152">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.11214953" vertical-offset="0" max-vertical-offset="1098">
+              <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -414,7 +413,7 @@
       <created>1413276498492</created>
       <updated>1413276498492</updated>
       <workItem from="1414427642191" duration="2382000" />
-      <workItem from="1414589806633" duration="175000" />
+      <workItem from="1414589806633" duration="313000" />
     </task>
     <task id="LOCAL-00001" summary="updatejee">
       <created>1413283808267</created>
@@ -444,11 +443,15 @@
       <created>1414431895608</created>
       <updated>1414431895608</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="RANDOM">
+      <created>1414590000494</created>
+      <updated>1414590000494</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2557000" />
+    <option name="totallyTimeSpent" value="2695000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="45" y="0" width="1922" height="1081" extended-state="6" />
@@ -457,6 +460,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -477,7 +481,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -503,7 +506,8 @@
     <MESSAGE value="detail pagina update" />
     <MESSAGE value="link naar detail pagina" />
     <MESSAGE value="Pagination laatste pagina fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pagination laatste pagina fix" />
+    <MESSAGE value="RANDOM" />
+    <option name="LAST_COMMIT_MESSAGE" value="RANDOM" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -856,8 +860,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Website/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46728972" vertical-offset="0" max-vertical-offset="1152">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.11214953" vertical-offset="0" max-vertical-offset="1098">
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
           <folding />
         </state>
       </provider>
