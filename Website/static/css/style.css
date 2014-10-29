@@ -44,7 +44,6 @@ background-color:black;
 .panel-body .cover{
 	position: absolute;
     /* position in top left of #tobecovered */
-    z-index: 9999
     top: 0; /* top of #tobecovered */
     margin:0 auto;
     width: 85%;
