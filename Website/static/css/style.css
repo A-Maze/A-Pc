@@ -4,7 +4,10 @@ margin: 0 auto;
 }
 
 .component:hover {
-    background-color: #39D1B4;
+    background-color: #f44336;
+    background-color: rgba(0, 0, 0, 0.84);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
 
 .top-margin {
