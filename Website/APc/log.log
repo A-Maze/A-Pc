@@ -122,3 +122,12 @@ Traceback (most recent call last):
     del request.session[productstring] = product
                                        ^
 SyntaxError: invalid syntax
+[29/Oct/2014 13:22:07] ERROR [django.request:231] Internal Server Error: /deselect/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 36, in deselect
+    del request.session[categorie]
+  File "/usr/local/lib/python2.7/dist-packages/django/contrib/sessions/backends/base.py", line 56, in __delitem__
+    del self._session[key]
+KeyError: u'Moederborden'

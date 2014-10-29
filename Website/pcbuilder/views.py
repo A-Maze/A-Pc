@@ -34,6 +34,9 @@ def deselect(request):
     product = request.GET.get('product')
     categorie = request.GET.get('categorie')
     del request.session[categorie]
+    productstring = categorie + "naam"
+    if request.session[productstring] == product:
+        del request.session[productstring]
     return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
     
 
