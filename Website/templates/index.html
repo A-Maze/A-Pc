@@ -29,6 +29,11 @@ window.location = newLocation;
 });
 </script>
 {% endblock %}
+{% block overlay %}
+<div class="overlay">
+            text
+    </div>
+    {% endblock %}
 {% block slider %}
   <div class="jumbotron">
       <div class="container">
@@ -50,7 +55,7 @@ window.location = newLocation;
     <a href="javascript:void(0)" class="btn btn-default">Zelf samenstellen</a>
     <a href="javascript:void(0)" class="btn btn-default">Vooraf samengesteld</a>
 </div>
-    
+
     <div class="progress">
         <div class="progress-bar progress-bar-striped active block-center text-center col-md-12" role="progressbar" style="width: 100%">
             60%
