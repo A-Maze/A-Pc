@@ -64,6 +64,9 @@ window.location = newLocation;
             <div class="panel panel-default component">
                 <div class="panel-body">
                     <a href="/processoren/"><img class="center-block" src='{% static "img/cpu.png" %}'></a>
+                    {% if request.session.Processor = True %}
+                    <img class="cover" src='{% static "img/succes.png" %}' />
+                    {% endif %}
                 </div>
                 <div class="panel-footer ">
                     <h4 class="text-center"><a href="/processoren/">processor</a></h4>
@@ -94,6 +97,9 @@ window.location = newLocation;
             <div class="panel panel-default component">
                 <div class="panel-body">
                     <a href="/gpu/"><img class="center-block" src='{% static "img/gpu.png" %}'></a>
+                    {% if request.session.Grafischekaarten = True %}
+                    <img class="cover" src='{% static "img/succes.png" %}' />
+                    {% endif %}
                 </div>
                 <div class="panel-footer ">
                     <h4 class="text-center"><a href="/gpu/">grafische kaart</a> </h4>
@@ -113,6 +119,9 @@ window.location = newLocation;
             <div class="panel panel-default component">
                 <div class="panel-body">
                     <a href="/hardeschijven/"><img class="center-block" src='{% static "img/harddrive.png" %}'></a>
+                    {% if request.session.Hardeschijven = True %}
+                    <img class="cover" src='{% static "img/succes.png" %}' />
+                    {% endif %}
                 </div>
                 <div class="panel-footer ">
                     <h4 class="text-center"><a href="/hardeschijven/">harde schijf </a></h4>
@@ -126,6 +135,9 @@ window.location = newLocation;
             <div class="panel panel-default component">
                 <div class="panel-body">
                     <a href="/optischeschijven/"><img class="center-block" src='{% static "img/opticaldrive.png" %}'></a>
+                    {% if request.session.DVDBluraybackup = True %}
+                    <img class="cover" src='{% static "img/succes.png" %}' />
+                    {% endif %}
                 </div>
                 <div class="panel-footer ">
                     <h4 class="text-center"><a href="/optischeschijven/">optische drives </a></h4>
@@ -139,6 +151,9 @@ window.location = newLocation;
             <div class="panel panel-default component">
                 <div class="panel-body">
                     <a href="/koelingen/"><img class="center-block" src='{% static "img/cooler.png" %}'></a>
+                    {% if request.session.Koeling = True %}
+                    <img class="cover" src='{% static "img/succes.png" %}' />
+                    {% endif %}
                 </div>
                 <div class="panel-footer ">
                     <h4 class="text-center"><a href="/koelingen/">koeling </a></h4>
@@ -158,6 +173,9 @@ window.location = newLocation;
             <div class="panel panel-default component">
                 <div class="panel-body">
                     <a href="/geheugen/"><img class="center-block" src='{% static "img/ram.png" %}'></a>
+                    {% if request.session.Geheugen = True %}
+                    <img class="cover" src='{% static "img/succes.png" %}' />
+                    {% endif %}
                 </div>
                 <div class="panel-footer ">
                     <h4 class="text-center"><a href="/geheugen/">geheugen </a></h4>
@@ -171,6 +189,9 @@ window.location = newLocation;
             <div class="panel panel-default component">
                 <div class="panel-body">
                     <a href="/voedingen/"><img class="center-block" src='{% static "img/powersupply.png" %}'></a>
+                    {% if request.session.Voeding = True %}
+                    <img class="cover" src='{% static "img/succes.png" %}' />
+                    {% endif %}
                 </div>
                 <div class="panel-footer ">
                     <h4 class="text-center"><a href="/voedingen/">voeding </a></h4>
@@ -186,6 +207,9 @@ window.location = newLocation;
                     <a href="/behuizingen/"><img class="center-block" src='{% static "img/case.png" %}'></a>
                 </div>
                 <div class="panel-footer ">
+                    {% if request.session.Behuizing = True %}
+                    <img class="cover" src='{% static "img/succes.png" %}' />
+                    {% endif %}
                     <h4 class="text-center"><a href="/behuizingen/">behuizing </a></h4>
                 </div>
             </div>
