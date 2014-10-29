@@ -1,0 +1,3 @@
+function deloverlay(){
+	$(".overlay").remove();
+}
