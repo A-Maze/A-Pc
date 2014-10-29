@@ -44,8 +44,11 @@ background-color:black;
 .panel-body .cover{
 	position: absolute;
     /* position in top left of #tobecovered */
-    top: 0; /* top of #tobecovered */
+    top: -20px; /* top of #tobecovered */
     margin:0 auto;
+    padding-bottom:50px;
+
+
     width: 85%;
     pointer-events:none;
 }
