@@ -8,10 +8,20 @@
                     <div class="panel panel-default col-lg-8">
                         <div class="panel-body">
                         <h1>{{ Product }}</h1>
+                        <h1>{{ Product }}</h1>
                         </div>
                     </div>
                 </div>
-                <a href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}">Deselecteer</a>
+
+                <!-- checken of je bij het juiste product bent voor de selecteer knop -->
+                {% if Categorie = "Moederborden" %}
+                    {% if request.session.Moederborden = True %}
+                        {% if request.session.Moederbordennaam = Product %}
+                         <a href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}">Deselecteer</a>
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+
                 <a href="/select/?product={{ Product }}&amp;categorie={{ Categorie }}">Selecteer</a>
 
 </div>
