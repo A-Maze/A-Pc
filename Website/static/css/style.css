@@ -47,6 +47,7 @@ background-color:black;
     top: 0; /* top of #tobecovered */
     margin:0 auto;
     width: 85%;
+    pointer-events:none;
 }
 
 
