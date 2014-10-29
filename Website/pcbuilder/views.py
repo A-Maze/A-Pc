@@ -25,6 +25,7 @@ def index(request):
 def select(request):
     product = request.GET.get('product')
     categorie = request.GET.get('categorie')
+    categorie.replace(" ", "")
     request.session[categorie] = True
     productstring = categorie + "naam"
     request.session[productstring] = product
@@ -33,6 +34,7 @@ def select(request):
 def deselect(request):
     product = request.GET.get('product')
     categorie = request.GET.get('categorie')
+    categorie.replace(" ", "")
     del request.session[categorie]
     productstring = categorie + "naam"
     if request.session[productstring] == product:
