@@ -23,9 +23,66 @@
                     {% endif %}
                 {% endif %}
 
+
+    {% if Categorie = "Processoren" %}
+    {% if request.session.Processoren = True %}
+    {% if request.session.Processorennaam = Product %}
+    <a class="btn btn-primary pull-right" href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Deselecteer</a>
+    {% endif %}
+    {% endif %}
+    {% endif %}
+
     {% if Categorie = "Koeling" %}
     {% if request.session.Koeling = True %}
     {% if request.session.Koelingnaam = Product %}
+    <a class="btn btn-primary pull-right" href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Deselecteer</a>
+    {% endif %}
+    {% endif %}
+    {% endif %}
+
+    {% if Categorie = "Grafisch" %}
+    {% if request.session.Grafisch = True %}
+    {% if request.session.Grafischnaam = Product %}
+    <a class="btn btn-primary pull-right" href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Deselecteer</a>
+    {% endif %}
+    {% endif %}
+    {% endif %}
+
+    {% if Categorie = "Geheugen" %}
+    {% if request.session.Geheugen = True %}
+    {% if request.session.Geheugennaam = Product %}
+    <a class="btn btn-primary pull-right" href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Deselecteer</a>
+    {% endif %}
+    {% endif %}
+    {% endif %}
+
+    {% if Categorie = "Voeding" %}
+    {% if request.session.Voeding = True %}
+    {% if request.session.Voedingnaam = Product %}
+    <a class="btn btn-primary pull-right" href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Deselecteer</a>
+    {% endif %}
+    {% endif %}
+    {% endif %}
+
+    {% if Categorie = "Behuizingen" %}
+    {% if request.session.Behuizingen = True %}
+    {% if request.session.Behuizingennaam = Product %}
+    <a class="btn btn-primary pull-right" href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Deselecteer</a>
+    {% endif %}
+    {% endif %}
+    {% endif %}
+
+    {% if Categorie = "Koeling" %}
+    {% if request.session.Koeling = True %}
+    {% if request.session.Koelingnaam = Product %}
+    <a class="btn btn-primary pull-right" href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Deselecteer</a>
+    {% endif %}
+    {% endif %}
+    {% endif %}
+
+    {% if Categorie = "Harde" %}
+    {% if request.session.Harde = True %}
+    {% if request.session.Hardenaam = Product %}
     <a class="btn btn-primary pull-right" href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Deselecteer</a>
     {% endif %}
     {% endif %}

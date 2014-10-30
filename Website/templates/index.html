@@ -250,11 +250,12 @@ window.location = newLocation;
             <div class="panel panel-default component">
                 <div class="panel-body">
                     <a href="/behuizingen/"><img class="center-block" src='{% static "img/case.png" %}'></a>
-                </div>
-                <div class="panel-footer ">
-                    {% if request.session.Behuizing = True %}
+                    {% if request.session.Behuizingen = True %}
                     <img class="cover" src='{% static "img/succes.png" %}' />
                     {% endif %}
+                </div>
+                <div class="panel-footer ">
+
                     <h4 class="text-center"><a href="/behuizingen/">behuizing </a></h4>
                 </div>
             </div>
