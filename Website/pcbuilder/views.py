@@ -46,6 +46,7 @@ def select(request):
     product = request.GET.get('product')
     categorie = request.GET.get('categorie')
     categorie.replace(" ", "")
+    categorie.replace(",", "")
     request.session[categorie] = True
     productstring = categorie + "naam"
     request.session[productstring] = product

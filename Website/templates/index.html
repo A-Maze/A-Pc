@@ -60,19 +60,19 @@ window.location = newLocation;
     function loadProgress(){
         var percentage = 0;
         var progress = document.getElementById("progress-bar");
-        {% if request.session.Processor == True %}
+        {% if request.session.Processoren == True %}
             percentage += 11;
         {% endif %}
         {% if request.session.Moederborden == True %}
             percentage += 11;
         {% endif %}
-        {% if request.session.Grafischekaarten == True %}
+        {% if request.session.Grafische == True %}
             percentage += 11;
         {% endif %}
-        {% if request.session.Hardeschijven == True %}
+        {% if request.session.Harde == True %}
             percentage += 11;
         {% endif %}
-        {% if request.session.DVDBluraybackup == True %}
+        {% if request.session.DVD == True %}
             percentage += 11;
         {% endif %}
         {% if request.session.Koeling == True %}
@@ -84,7 +84,7 @@ window.location = newLocation;
         {% if request.session.Voeding == True %}
             percentage += 11;
         {% endif %}
-        {% if request.session.Behuizing == True %}
+        {% if request.session.Behuizingen == True %}
             percentage += 11;
         {% endif %}
 
@@ -109,7 +109,7 @@ window.location = newLocation;
             <div class="panel panel-default component">
                 <div class="panel-body">
                     <a href="/processoren/"><img class="center-block" src='{% static "img/cpu.png" %}'></a>
-                    {% if request.session.Processor = True %}
+                    {% if request.session.Processoren = True %}
                     <img class="cover" src='{% static "img/succes.png" %}' />
                     {% endif %}
                 </div>
@@ -281,7 +281,7 @@ window.location = newLocation;
         <tr {% if request.session.Processoren == True %} class="info" {% endif %} >
             <td>1</td>
             <td>Processor</td>
-            <td>{{ request.session.Processorennaam }}</td>
+            <td><a href="/detail/?product={{ request.session.Processorennaam }}&amp;categorie=Processoren">{{ request.session.Processorennaam }}</a></td>
             <td></td>
         </tr>
         <tr {% if request.session.Moederborden == True %} class="info" {% endif %} >
@@ -293,43 +293,43 @@ window.location = newLocation;
         <tr {% if request.session.Grafische == True %} class="info" {% endif %} >
             <td>3</td>
             <td>Grafische Kaart</td>
-            <td>{{ request.session.Grafischenaam }}</td>
+            <td><a href="/detail/?product={{ request.session.Grafischenaam }}&amp;categorie=Grafische">{{ request.session.Grafischenaam }}</a></td>
             <td></td>
         </tr>
         <tr {% if request.session.Harde == True %} class="info" {% endif %} >
             <td>4</td>
             <td>Harde Schijf</td>
-            <td>{{ request.session.Hardenaam }}</td>
+            <td><a href="/detail/?product={{ request.session.Hardenaam }}&amp;categorie=Harde">{{ request.session.Hardenaam }}</a></td>
             <td></td>
         </tr>
         <tr {% if request.session.DVD == True %} class="info" {% endif %} >
             <td>5</td>
             <td>Optische Drive</td>
-            <td>{{ request.session.DVD }}</td>
+            <td><a href="/detail/?product={{ request.session.DVDnaam }}&amp;categorie=DVD">{{ request.session.DVDnaam }}</a></td>
             <td></td>
         </tr>
         <tr {% if request.session.Koeling == True %} class="info" {% endif %} >
             <td>6</td>
             <td>Koeling</td>
-            <td>{{ request.session.Koelingnaam }}</td>
+            <td><a href="/detail/?product={{ request.session.Koelingnaam }}&amp;categorie=Koeling">{{ request.session.Koelingnaam }}</a></td>
             <td></td>
         </tr>
         <tr {% if request.session.Geheugen == True %} class="info" {% endif %} >
             <td>7</td>
             <td>Geheugen</td>
-            <td>{{ request.session.Geheugennaam }}</td>
+            <td><a href="/detail/?product={{ request.session.Geheugennaam }}&amp;categorie=Geheugen">{{ request.session.Geheugennaam }}</a></td>
             <td></td>
         </tr>
         <tr {% if request.session.Voeding == True %} class="info" {% endif %} >
             <td>8</td>
             <td>Voeding</td>
-            <td>{{ request.session.Voedingnaam }}</td>
+            <td><a href="/detail/?product={{ request.session.Voedingnaam }}&amp;categorie=Voeding">{{ request.session.Voedingnaam }}</a></td>
             <td></td>
         </tr>
         <tr {% if request.session.Behuizingen == True %} class="info" {% endif %} >
             <td>9</td>
             <td>Behuizing</td>
-            <td>{{ request.session.Behuizingennaam }}</td>
+            <td><a href="/detail/?product={{ request.session.Behuizingennaam }}&amp;categorie=Behuizingen">{{ request.session.Behuizingennaam }}</a></td>
             <td></td>
         </tr>
 
