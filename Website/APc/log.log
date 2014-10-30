@@ -136,3 +136,4 @@ KeyError: u'Moederborden'
 [30/Oct/2014 11:24:52] WARNING [django.request:143] Not Found: /favicon.ico
 [30/Oct/2014 12:52:55] WARNING [django.request:143] Not Found: /favicon.ico
 [30/Oct/2014 12:53:25] WARNING [django.request:143] Not Found: /favicon.ico
+[30/Oct/2014 13:07:08] WARNING [django.request:143] Not Found: /favicon.ico

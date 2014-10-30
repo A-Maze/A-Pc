@@ -3,31 +3,7 @@
 {% block content %}
 
 <script>
-$(document).ready(function() {
 
-$('.component').css('display', 'none');
-
-$('.component').fadeIn(1000);
-
-
-
-$('.link').click(function() {
-
-event.preventDefault();
-
-newLocation = this.href;
-
-$('.component').fadeOut(1000, newpage);
-
-});
-
-function newpage() {
-
-window.location = newLocation;
-
-}
-
-});
 
 $(document).ready(function(){
   $(".toggle").click(function(){
