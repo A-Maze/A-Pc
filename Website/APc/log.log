@@ -385,3 +385,5 @@ Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 343, in invalid_block_tag
     (command, get_text_list(["'%s'" % p for p in parse_until])))
 TemplateSyntaxError: Invalid block tag: 'endblock', expected 'elif', 'else' or 'endif'
+[30/Oct/2014 16:26:34] WARNING [django.request:143] Not Found: /favicon.ico
+[30/Oct/2014 16:26:34] WARNING [django.request:143] Not Found: /favicon.ico
