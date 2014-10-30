@@ -87,6 +87,9 @@ window.location = newLocation;
         {% if request.session.Behuizingen == True %}
             percentage += 11;
         {% endif %}
+    if(percentage == 99){
+        percentage = 100;
+    }
 
         progress.innerHTML = percentage+'%';
         $(".progress-bar-striped").width(''+percentage+"%");
