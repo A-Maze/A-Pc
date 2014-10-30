@@ -234,58 +234,58 @@ window.location = newLocation;
         </tr>
         </thead>
         <tbody>
-        <tr>
+        <tr {% if request.session.Processoren == True %} class="info" {% endif %} >
             <td>1</td>
             <td>Processor</td>
-            <td></td>
+            <td>{{ request.session.Processorennaam }}</td>
             <td></td>
         </tr>
-        <tr {% if request.session.Moederbord = true %} class="info" {% endif %} >
+        <tr {% if request.session.Moederborden == True %} class="info" {% endif %} >
             <td>2</td>
             <td>Moederbord</td>
             <td>{{ request.session.Moederbordennaam }}</td>
             <td></td>
         </tr>
-        <tr>
+        <tr {% if request.session.Grafischekaarten == True %} class="info" {% endif %} >
             <td>3</td>
             <td>Grafische Kaart</td>
-            <td></td>
+            <td>{{ request.session.Grafischekaartennaam }}</td>
             <td></td>
         </tr>
-        <tr>
+        <tr {% if request.session.Hardeschijven == True %} class="info" {% endif %} >
             <td>4</td>
             <td>Harde Schijf</td>
-            <td></td>
+            <td>{{ request.session.Hardeschijvennaam }}</td>
             <td></td>
         </tr>
-        <tr>
+        <tr {% if request.session.DVDBluraybackup == True %} class="info" {% endif %} >
             <td>5</td>
             <td>Optische Drive</td>
-            <td></td>
+            <td>{{ request.session.DVDBluraybackupnaam }}</td>
             <td></td>
         </tr>
-        <tr>
+        <tr {% if request.session.Koeling == True %} class="info" {% endif %} >
             <td>6</td>
             <td>Koeling</td>
-            <td></td>
+            <td>{{ request.session.Koelingnaam }}</td>
             <td></td>
         </tr>
-        <tr>
+        <tr {% if request.session.Geheugen == True %} class="info" {% endif %} >
             <td>7</td>
             <td>Geheugen</td>
-            <td></td>
+            <td>{{ request.session.Geheugennaam }}</td>
             <td></td>
         </tr>
-        <tr>
+        <tr {% if request.session.Voedingen == True %} class="info" {% endif %} >
             <td>8</td>
             <td>Voeding</td>
-            <td></td>
+            <td>{{ request.session.Voedingennaam }}</td>
             <td></td>
         </tr>
-        <tr>
+        <tr {% if request.session.Behuizingen == True %} class="info" {% endif %} >
             <td>9</td>
             <td>Behuizing</td>
-            <td></td>
+            <td>{{ request.session.Behuizingennaam }}</td>
             <td></td>
         </tr>
 
