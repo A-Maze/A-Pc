@@ -1,32 +1,65 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+
+<script>
+
+
+$(document).ready(function(){
+  $(".toggle").click(function(){
+  var parent = $(this).parent();
+  var child = parent.children(".body-toggled");
+    $(child).slideToggle(100);
+  var pull = $(this).children(".pull-right ");
+  var switcher = $(pull).children(".switcher ");
+  $(switcher).toggleClass("dropup");
+  });
+
+    $(".slider").noUiSlider({
+	start: [20, 80],
+	connect: true,
+	range: {
+		'min': 0,
+		'max': 100
+	}
+
+
+
+});
+
+});
+
+
+</script>
+
+
+
 <div class="container">
-    <div class="col-md-4 col-lg-2">
 
 
+    {% include "filter.html" %}
 
-    </div>
+    <div class="col-md-8 col-lg-9">
 
-    <div class="col-md-8 col-lg-10">
-
-        <div class=" top-margin">
-            
-            <h1>{{Processoren.0.categorie.0|truncatewords:1|slice:"-4" }}</h1>
+        <div class=" top-margin ">
+            <h1>{{Processoren.categorie.0|truncatewords:1|slice:"-4" }}</h1>
             {% for processor in Processoren %}
-            <div class="list-group">
-                <div class="list-group-item">                    
+            <div class="list-group table-border">
+                <div class="list-group-item">
                     <div class="row-picture">
                         <img class="square" src="http://lorempixel.com/56/56/people/1" alt="icon">
                     </div>
 
                     <div class="row-content">
-                        <h4 class="list-group-item-heading">{% for name in processor.naam %}{{ name }}{% endfor %}</h4>
-                        <p class="list-group-item-text">{% for desc in processor.info %} {{ desc }} {% endfor %} </p>
-                        <div class="pull-right">
-                             <p class="list-group-item-text ">{{ processor.stock }}</p>
-                            <p class="list-group-item-text ">{{ processor.prijs.0 }}</p>
+                        <div class="col-md-10 col-lg-10">
+                            <h4 class="list-group-item-heading">{% for name in processor.naam %}{{ name }}{% endfor %}</h4>
+                            <p class="list-group-item-text">{% for desc in processor.info %} {{ desc }} {% endfor %} </p>
+                        </div>
+                        <div class=" col-md-2 col-lg-2  ">
+                            <p class="list-group-item-text pull-right ">{{ processor.prijs.0 }}</p>
+                            <p class="list-group-item-text  ">{{ processor.stock }}</p>
 
+                            <a href="/detail/?product={% for name in processor.naam %}{{ name }} {% endfor %}&amp;categorie={{processor.categorie.0|truncatewords:1|slice:'-4' }}" class="btn btn-primary">details</a>
                         </div>
                     </div>
 
@@ -39,7 +72,13 @@
 
         </div>
 
+        {% include "page_snippet.html" %}
 
     </div>
+
+
 </div>
+
+
+
 {% endblock %}

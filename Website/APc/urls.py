@@ -16,6 +16,8 @@ urlpatterns = patterns('',
     url(r'^detail/', 'pcbuilder.views.detail'),
     url(r'^select/', 'pcbuilder.views.select'),
     url(r'^deselect/', 'pcbuilder.views.deselect'),
+    url(r'^contact/', 'pcbuilder.views.contact'),
+    url(r'^mail/', 'pcbuilder.views.mail'),
 
     #geen idee wat dit allemaal is
     url(r'^user/(?P<product>\w{0,50})/$', 'pcbuilder.views.pages'),

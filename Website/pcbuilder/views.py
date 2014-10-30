@@ -22,6 +22,26 @@ def index(request):
     return render_to_response('index.html', {'Processoren': processoren},
                               context_instance=RequestContext(request))
 
+def contact(request):
+    return render_to_response('contact.html',
+                              context_instance=RequestContext(request))
+
+def mail(request):
+    name = request.POST.get('name', '')
+    subject = request.POST.get('type', '')
+    message = request.POST.get('message', '')
+    from_email = request.POST.get('email', '')
+    if subject and message and from_email:
+        try:
+            send_mail(subject, message, from_email, ['admin@example.com'])
+        except BadHeaderError:
+            return HttpResponse('Invalid header found.')
+        return HttpResponseRedirect('/contact/thanks/')
+    else:
+        # In reality we'd use a form class
+        # to get proper validation errors.
+        return HttpResponse('Make sure all fields are entered and valid.')
+
 def select(request):
     product = request.GET.get('product')
     categorie = request.GET.get('categorie')
