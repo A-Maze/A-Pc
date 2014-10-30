@@ -98,7 +98,7 @@ window.location = newLocation;
             <div class="panel panel-default component">
                 <div class="panel-body">
                     <a href="/gpu/"><img class="center-block" src='{% static "img/gpu.png" %}'></a>
-                    {% if request.session.Grafischekaarten = True %}
+                    {% if request.session.Grafische = True %}
                     <img class="cover" src='{% static "img/succes.png" %}' />
                     {% endif %}
                 </div>
@@ -120,7 +120,7 @@ window.location = newLocation;
             <div class="panel panel-default component">
                 <div class="panel-body">
                     <a href="/hardeschijven/"><img class="center-block" src='{% static "img/harddrive.png" %}'></a>
-                    {% if request.session.Hardeschijven = True %}
+                    {% if request.session.Harde = True %}
                     <img class="cover" src='{% static "img/succes.png" %}' />
                     {% endif %}
                 </div>
@@ -136,7 +136,7 @@ window.location = newLocation;
             <div class="panel panel-default component">
                 <div class="panel-body">
                     <a href="/optischeschijven/"><img class="center-block" src='{% static "img/opticaldrive.png" %}'></a>
-                    {% if request.session.DVDBluraybackup = True %}
+                    {% if request.session.DVD = True %}
                     <img class="cover" src='{% static "img/succes.png" %}' />
                     {% endif %}
                 </div>
@@ -246,22 +246,22 @@ window.location = newLocation;
             <td>{{ request.session.Moederbordennaam }}</td>
             <td></td>
         </tr>
-        <tr {% if request.session.Grafischekaarten == True %} class="info" {% endif %} >
+        <tr {% if request.session.Grafische == True %} class="info" {% endif %} >
             <td>3</td>
             <td>Grafische Kaart</td>
-            <td>{{ request.session.Grafischekaartennaam }}</td>
+            <td>{{ request.session.Grafischenaam }}</td>
             <td></td>
         </tr>
-        <tr {% if request.session.Hardeschijven == True %} class="info" {% endif %} >
+        <tr {% if request.session.Harde == True %} class="info" {% endif %} >
             <td>4</td>
             <td>Harde Schijf</td>
-            <td>{{ request.session.Hardeschijvennaam }}</td>
+            <td>{{ request.session.Hardeaam }}</td>
             <td></td>
         </tr>
-        <tr {% if request.session.DVDBluraybackup == True %} class="info" {% endif %} >
+        <tr {% if request.session.DVD == True %} class="info" {% endif %} >
             <td>5</td>
             <td>Optische Drive</td>
-            <td>{{ request.session.DVDBluraybackupnaam }}</td>
+            <td>{{ request.session.DVD }}</td>
             <td></td>
         </tr>
         <tr {% if request.session.Koeling == True %} class="info" {% endif %} >
