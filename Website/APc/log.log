@@ -131,3 +131,43 @@ Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/contrib/sessions/backends/base.py", line 56, in __delitem__
     del self._session[key]
 KeyError: u'Moederborden'
+[30/Oct/2014 11:24:29] WARNING [django.request:143] Not Found: /favicon.ico
+[30/Oct/2014 11:32:59] WARNING [django.request:143] Not Found: /favicon.ico
+[30/Oct/2014 11:34:28] ERROR [django.request:231] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 23, in index
+    context_instance=RequestContext(request))
+  File "/Library/Python/2.7/site-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 264, in parse
+    self.empty_variable(token)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 335, in empty_variable
+    raise self.error(token, "Empty variable tag")
+TemplateSyntaxError: Empty variable tag
+[30/Oct/2014 12:27:52] WARNING [django.request:143] Not Found: /favicon.ico

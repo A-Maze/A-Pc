@@ -56,9 +56,53 @@ window.location = newLocation;
     <a href="javascript:void(0)" class="btn btn-default">Vooraf samengesteld</a>
 </div>
 
+    <script>
+    $( document ).ready(function() {
+        loadProgress();
+    });
+
+    function loadProgress(){
+        var percentage = 0;
+        var progress = document.getElementById("progress-bar");
+        {% if request.session.Processor == True %}
+            percentage += 11;
+        {% endif %}
+        {% if request.session.Moederborden == True %}
+            percentage += 11;
+        {% endif %}
+        {% if request.session.Grafischekaarten == True %}
+            percentage += 11;
+        {% endif %}
+        {% if request.session.Hardeschijven == True %}
+            percentage += 11;
+        {% endif %}
+        {% if request.session.DVDBluraybackup == True %}
+            percentage += 11;
+        {% endif %}
+        {% if request.session.Koeling == True %}
+            percentage += 11;
+        {% endif %}
+        {% if request.session.Geheugen == True %}
+            percentage += 11;
+        {% endif %}
+        {% if request.session.Voeding == True %}
+            percentage += 11;
+        {% endif %}
+        {% if request.session.Behuizing == True %}
+            percentage += 11;
+        {% endif %}
+
+        progress.innerHTML = percentage+'%';
+        $(".progress-bar-striped").width(''+percentage+"%");
+        $(".progress-bar").width(''+percentage+'%');
+
+
+    }
+    </script>
+
     <div class="progress">
-        <div class="progress-bar progress-bar-striped active block-center text-center col-md-12" role="progressbar" style="width: 100%">
-            60%
+        <div class="progress-bar progress-bar-striped active block-center text-center" id="progress-bar" role="progressbar" style='width: 100%;'>
+                5%
         </div>
     </div>
     
@@ -247,7 +291,7 @@ window.location = newLocation;
         <tr {% if request.session.Moederbord = true %} class="info" {% endif %} >
             <td>2</td>
             <td>Moederbord</td>
-            <td>{{ request.session.Moederbordennaam }}</td>
+            <td><a href="/detail/?product={{ request.session.Moederbordennaam }}&amp;categorie=Moederborden">{{ request.session.Moederbordennaam }}</a></td>
             <td></td>
         </tr>
         <tr>
