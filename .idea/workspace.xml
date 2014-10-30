@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9b433c9-adef-4891-afff-f63ac76183b4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Website/db.sqlite3" afterPath="$PROJECT_DIR$/Website/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Website/templates/detail.html" afterPath="$PROJECT_DIR$/Website/templates/detail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Website/templates/index.html" afterPath="$PROJECT_DIR$/Website/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Website/APc/log.log" afterPath="$PROJECT_DIR$/Website/APc/log.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Website/templates/moederbord.html" afterPath="$PROJECT_DIR$/Website/templates/moederbord.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="A-Pc.iws" />
@@ -29,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="moederbord.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="moederbord.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Website/templates/moederbord.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="572" max-vertical-offset="1602">
-              <caret line="49" column="50" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.14183553" vertical-offset="763" max-vertical-offset="1602">
+              <caret line="49" column="104" selection-start-line="49" selection-start-column="104" selection-end-line="49" selection-end-column="104" />
               <folding />
             </state>
           </provider>
@@ -49,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Website/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5977654" vertical-offset="5387" max-vertical-offset="6282">
-              <caret line="329" column="56" selection-start-line="329" selection-start-column="56" selection-end-line="329" selection-end-column="56" />
+            <state vertical-scroll-proportion="-10.0" vertical-offset="810" max-vertical-offset="6300">
+              <caret line="60" column="4" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -72,8 +70,8 @@
       <file leaf-file-name="detail.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Website/templates/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-31.333334" vertical-offset="486" max-vertical-offset="3006">
-              <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+            <state vertical-scroll-proportion="-0.33333334" vertical-offset="0" max-vertical-offset="3006">
+              <caret line="1" column="9" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -123,7 +121,6 @@
         <option value="$PROJECT_DIR$/Website/templates/base.html" />
         <option value="$PROJECT_DIR$/Website/static/css/style.css" />
         <option value="$PROJECT_DIR$/Website/templates/filter.html" />
-        <option value="$PROJECT_DIR$/Website/templates/moederbord.html" />
         <option value="$PROJECT_DIR$/Website/templates/gpu.html" />
         <option value="$PROJECT_DIR$/Website/templates/behuizing.html" />
         <option value="$PROJECT_DIR$/Website/templates/geheugen.html" />
@@ -134,6 +131,7 @@
         <option value="$PROJECT_DIR$/Website/templates/processoren.html" />
         <option value="$PROJECT_DIR$/Website/templates/detail.html" />
         <option value="$PROJECT_DIR$/Website/templates/index.html" />
+        <option value="$PROJECT_DIR$/Website/templates/moederbord.html" />
       </list>
     </option>
   </component>
@@ -664,7 +662,11 @@
       <created>1414677275049</created>
       <updated>1414677275049</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="bij verwijderen van product. ook de prijs uit de tabel verwijderd want die bleef staan">
+      <created>1414683459549</created>
+      <updated>1414683459549</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -684,6 +686,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -697,7 +700,6 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
@@ -730,7 +732,8 @@
     <MESSAGE value="vinkje bij koeling" />
     <MESSAGE value="update" />
     <MESSAGE value="grafische update" />
-    <option name="LAST_COMMIT_MESSAGE" value="grafische update" />
+    <MESSAGE value="bij verwijderen van product. ook de prijs uit de tabel verwijderd want die bleef staan" />
+    <option name="LAST_COMMIT_MESSAGE" value="bij verwijderen van product. ook de prijs uit de tabel verwijderd want die bleef staan" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1087,22 +1090,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Website/templates/moederbord.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="572" max-vertical-offset="1602">
-          <caret line="49" column="50" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/templates/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-31.333334" vertical-offset="486" max-vertical-offset="3006">
-          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Website/templates/processoren.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-53.814816" vertical-offset="41" max-vertical-offset="1602">
@@ -1113,8 +1100,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Website/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5977654" vertical-offset="5387" max-vertical-offset="6282">
-          <caret line="329" column="56" selection-start-line="329" selection-start-column="56" selection-end-line="329" selection-end-column="56" />
+        <state vertical-scroll-proportion="-10.0" vertical-offset="810" max-vertical-offset="6300">
+          <caret line="60" column="4" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Website/templates/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.33333334" vertical-offset="0" max-vertical-offset="3006">
+          <caret line="1" column="9" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Website/templates/moederbord.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14183553" vertical-offset="763" max-vertical-offset="1602">
+          <caret line="49" column="104" selection-start-line="49" selection-start-column="104" selection-end-line="49" selection-end-column="104" />
           <folding />
         </state>
       </provider>
