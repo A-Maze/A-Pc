@@ -40,9 +40,9 @@
     {% endif %}
     {% endif %}
 
-    {% if Categorie = "Grafisch" %}
-    {% if request.session.Grafisch = True %}
-    {% if request.session.Grafischnaam = Product %}
+    {% if Categorie = "Grafische" %}
+    {% if request.session.Grafische = True %}
+    {% if request.session.Grafischenaam = Product %}
     <a class="btn btn-primary pull-right" href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Deselecteer</a>
     {% endif %}
     {% endif %}
