@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="19c07224-5379-4854-b723-068f25b90f44" name="Default" comment="" />
+    <list default="true" id="19c07224-5379-4854-b723-068f25b90f44" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="Website.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,10 +28,10 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5296167" vertical-offset="1151" max-vertical-offset="5265">
-              <caret line="97" column="27" selection-start-line="97" selection-start-column="27" selection-end-line="97" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.5034843" vertical-offset="1091" max-vertical-offset="5190">
+              <caret line="92" column="52" selection-start-line="92" selection-start-column="52" selection-end-line="92" selection-end-column="52" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -60,8 +62,8 @@
       <file leaf-file-name="moederbord.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/moederbord.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.0" vertical-offset="120" max-vertical-offset="900">
-              <caret line="32" column="139" selection-start-line="32" selection-start-column="124" selection-end-line="32" selection-end-column="139" />
+            <state vertical-scroll-proportion="-15.0" vertical-offset="555" max-vertical-offset="1335">
+              <caret line="61" column="139" selection-start-line="61" selection-start-column="124" selection-end-line="61" selection-end-column="139" />
               <folding />
             </state>
           </provider>
@@ -624,7 +626,7 @@
       <changelist id="19c07224-5379-4854-b723-068f25b90f44" name="Default" comment="" />
       <created>1414668418969</created>
       <updated>1414668418969</updated>
-      <workItem from="1414668420604" duration="5058000" />
+      <workItem from="1414668420604" duration="5226000" />
     </task>
     <task id="LOCAL-00001" summary="message">
       <created>1414675818379</created>
@@ -634,11 +636,15 @@
       <created>1414675948523</created>
       <updated>1414675948523</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="message">
+      <created>1414676157994</created>
+      <updated>1414676157994</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5058000" />
+    <option name="totallyTimeSpent" value="5226000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="708" extended-state="0" />
@@ -734,8 +740,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/moederbord.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.0" vertical-offset="120" max-vertical-offset="900">
-          <caret line="32" column="139" selection-start-line="32" selection-start-column="124" selection-end-line="32" selection-end-column="139" />
+        <state vertical-scroll-proportion="-15.0" vertical-offset="555" max-vertical-offset="1335">
+          <caret line="61" column="139" selection-start-line="61" selection-start-column="124" selection-end-line="61" selection-end-column="139" />
           <folding />
         </state>
       </provider>
@@ -760,10 +766,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5296167" vertical-offset="1151" max-vertical-offset="5265">
-          <caret line="97" column="27" selection-start-line="97" selection-start-column="27" selection-end-line="97" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.5034843" vertical-offset="1091" max-vertical-offset="5190">
+          <caret line="92" column="52" selection-start-line="92" selection-start-column="52" selection-end-line="92" selection-end-column="52" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
