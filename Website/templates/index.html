@@ -285,55 +285,55 @@ window.location = newLocation;
             <td>1</td>
             <td>Processor</td>
             <td><a href="/detail/?product={{ request.session.Processorennaam }}&amp;categorie=Processoren&amp;prijs={{ request.session.Processorenprijs }}">{{ request.session.Processorennaam }}</a></td>
-            <td>{{ request.session.Processorenprijs }}</td>
+            <td>{% if request.session.Processoren == True %}{{ request.session.Processorenprijs }}{% endif %}</td>
         </tr>
         <tr {% if request.session.Moederborden == True %} class="info" {% endif %} >
             <td>2</td>
             <td>Moederbord</td>
             <td><a href="/detail/?product={{ request.session.Moederbordennaam }}&amp;categorie=Moederborden&amp;prijs={{ request.session.Moederbordenprijs }}">{{ request.session.Moederbordennaam }}</a></td>
-            <td>{{ request.session.Moederbordenprijs }}</td>
+            <td>{% if request.session.Moederborden == True %}{{ request.session.Moederbordenprijs }} {% endif %}</td>
         </tr>
         <tr {% if request.session.Grafische == True %} class="info" {% endif %} >
             <td>3</td>
             <td>Grafische Kaart</td>
             <td><a href="/detail/?product={{ request.session.Grafischenaam }}&amp;categorie=Grafische&amp;prijs={{ request.session.Moederbordenprijs }}">{{ request.session.Grafischenaam }}</a></td>
-            <td>{{ request.session.Grafischeprijs }}</td>
+            <td>{% if request.session.Grafische == True %}{{ request.session.Grafischeprijs }}{% endif %}</td>
         </tr>
         <tr {% if request.session.Harde == True %} class="info" {% endif %} >
             <td>4</td>
             <td>Harde Schijf</td>
             <td><a href="/detail/?product={{ request.session.Hardenaam }}&amp;categorie=Harde&amp;prijs={{ request.session.Hardeprijs }}">{{ request.session.Hardenaam }}</a></td>
-            <td>{{ request.session.Hardeprijs }}</td>
+            <td>{% if request.session.Harde == True %}{{ request.session.Hardeprijs }}{% endif %}</td>
         </tr>
         <tr {% if request.session.DVD == True %} class="info" {% endif %} >
             <td>5</td>
             <td>Optische Drive</td>
             <td><a href="/detail/?product={{ request.session.DVDnaam }}&amp;categorie=DVD&amp;prijs={{ request.session.DVDprijs }}">{{ request.session.DVDnaam }}</a></td>
-            <td>{{ request.session.DVDprijs }}</td>
+            <td>{% if request.session.DVD == True %}{{ request.session.DVDprijs }}{% endif %}</td>
         </tr>
         <tr {% if request.session.Koeling == True %} class="info" {% endif %} >
             <td>6</td>
             <td>Koeling</td>
             <td><a href="/detail/?product={{ request.session.Koelingnaam }}&amp;categorie=Koeling&amp;prijs={{ request.session.Koelingprijs }}">{{ request.session.Koelingnaam }}</a></td>
-            <td>{{ request.session.Koelingprijs }}</td>
+            <td>{% if request.session.Koeling == True %}{{ request.session.Koelingprijs }}{% endif %}</td>
         </tr>
         <tr {% if request.session.Geheugen == True %} class="info" {% endif %} >
             <td>7</td>
             <td>Geheugen</td>
             <td><a href="/detail/?product={{ request.session.Geheugennaam }}&amp;categorie=Geheugen&amp;prijs={{ request.session.Geheugenprijs }}">{{ request.session.Geheugennaam }}</a></td>
-            <td>{{ request.session.Geheugenprijs }}</td>
+            <td>{% if request.session.Geheugen == True %}{{ request.session.Geheugenprijs }}{% endif %}</td>
         </tr>
         <tr {% if request.session.Voeding == True %} class="info" {% endif %} >
             <td>8</td>
             <td>Voeding</td>
             <td><a href="/detail/?product={{ request.session.Voedingnaam }}&amp;categorie=Voeding&amp;prijs={{ request.session.Voedingprijs }}">{{ request.session.Voedingnaam }}</a></td>
-            <td>{{ request.session.Voedingprijs }}</td>
+            <td>{% if request.session.Voeding == True %}{{ request.session.Voedingprijs }}{% endif %}</td>
         </tr>
         <tr {% if request.session.Behuizingen == True %} class="info" {% endif %} >
             <td>9</td>
             <td>Behuizing</td>
             <td><a href="/detail/?product={{ request.session.Behuizingennaam }}&amp;categorie=Behuizingen&amp;prijs={{ request.session.Behuizingenprijs }}">{{ request.session.Behuizingennaam }}</a></td>
-            <td>{{ request.session.Behuizingenprijs }}</td>
+            <td>{% if request.session.Behuizingen == True %}{{ request.session.Behuizingenprijs }}{% endif %}</td>
         </tr>
 
         </tbody>
