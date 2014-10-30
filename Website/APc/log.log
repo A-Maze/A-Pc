@@ -131,3 +131,6 @@ Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/contrib/sessions/backends/base.py", line 56, in __delitem__
     del self._session[key]
 KeyError: u'Moederborden'
+[30/Oct/2014 11:17:52] WARNING [django.request:143] Not Found: /favicon.ico
+[30/Oct/2014 11:24:52] WARNING [django.request:143] Not Found: /favicon.ico
+[30/Oct/2014 11:24:52] WARNING [django.request:143] Not Found: /favicon.ico

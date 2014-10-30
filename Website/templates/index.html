@@ -30,18 +30,12 @@ window.location = newLocation;
 </script>
 {% endblock %}
 {% block overlay %}
-<div class="overlay">
-            <a href="javascript:deloverlay()" class="btn btn-primary">Begin met bouwen!</a>
-    </div>
-    {% endblock %}
+<!--<div class="overlay">
+    <a href="javascript:deloverlay()" class="btn btn-primary">Begin met bouwen!</a>
+</div> -->
+{% endblock %}
 {% block slider %}
-  <div class="jumbotron">
-      <div class="container">
-        <h1>Bouw je eigen pc!</h1>
-        <p>Geil he?</p>
-        <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
-      </div>
-    </div>
+
  {% endblock %}
 
 
@@ -61,10 +55,10 @@ window.location = newLocation;
             60%
         </div>
     </div>
-    
 
 
-    <div class="row">
+<div class="col-md-12 shadow bottom-margin">
+    <div class="row top-margin2">
         <div class="col-md-4 ">
             <div class="panel panel-default component">
                 <div class="panel-body">
@@ -224,10 +218,10 @@ window.location = newLocation;
 
 
 
-
     </div>
+</div>
 
-<div class="container top-margin">
+<div class="container top-margin ">
     <table class="table table-striped table-hover ">
         <thead>
         <tr>
@@ -295,6 +289,6 @@ window.location = newLocation;
 
         </tbody>
     </table>
-
 </div>
+
 {% endblock %}
