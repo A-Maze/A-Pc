@@ -59,7 +59,7 @@ $(document).ready(function(){
                             <p class="list-group-item-text pull-right ">{{ processor.prijs.0 }}</p>
                             <p class="list-group-item-text  ">{{ processor.stock }}</p>
 
-                            <a href="/detail/?product={% for name in processor.naam %}{{ name }} {% endfor %}&amp;categorie={{processor.categorie.0|truncatewords:1|slice:'-4' }}" class="btn btn-primary">details</a>
+                            <a href="/detail/?product={% for name in processor.naam %}{{ name }} {% endfor %}&amp;categorie={{processor.categorie.0|truncatewords:1|slice:'-3' }}&amp;prijs={{ processor.prijs.0|slice:'-1' }}" class="btn btn-primary">details</a>
                         </div>
                     </div>
 

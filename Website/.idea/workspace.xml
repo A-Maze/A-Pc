@@ -3,7 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="19c07224-5379-4854-b723-068f25b90f44" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/behuizing.html" afterPath="$PROJECT_DIR$/templates/behuizing.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/detail.html" afterPath="$PROJECT_DIR$/templates/detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/geheugen.html" afterPath="$PROJECT_DIR$/templates/geheugen.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/gpu.html" afterPath="$PROJECT_DIR$/templates/gpu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/hardeschijf.html" afterPath="$PROJECT_DIR$/templates/hardeschijf.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/koeling.html" afterPath="$PROJECT_DIR$/templates/koeling.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/APc/log.log" afterPath="$PROJECT_DIR$/APc/log.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/moederbord.html" afterPath="$PROJECT_DIR$/templates/moederbord.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/optischeschijf.html" afterPath="$PROJECT_DIR$/templates/optischeschijf.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/processoren.html" afterPath="$PROJECT_DIR$/templates/processoren.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pcbuilder/views.py" afterPath="$PROJECT_DIR$/pcbuilder/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/voeding.html" afterPath="$PROJECT_DIR$/templates/voeding.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Website.iws" />
@@ -30,8 +42,8 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.7916665" vertical-offset="4451" max-vertical-offset="5190">
-              <caret line="306" column="35" selection-start-line="306" selection-start-column="35" selection-end-line="306" selection-end-column="35" />
+            <state vertical-scroll-proportion="-15.166667" vertical-offset="4616" max-vertical-offset="5190">
+              <caret line="332" column="59" selection-start-line="332" selection-start-column="59" selection-end-line="332" selection-end-column="59" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
               </folding>
@@ -39,21 +51,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="optischeschijf.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/optischeschijf.html">
+      <file leaf-file-name="behuizing.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/behuizing.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.916667" vertical-offset="581" max-vertical-offset="1335">
-              <caret line="61" column="174" selection-start-line="61" selection-start-column="174" selection-end-line="61" selection-end-column="174" />
+            <state vertical-scroll-proportion="0.646098" vertical-offset="559" max-vertical-offset="1335">
+              <caret line="61" column="222" selection-start-line="61" selection-start-column="222" selection-end-line="61" selection-end-column="222" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pcbuilder/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46644846" vertical-offset="450" max-vertical-offset="3105">
-              <caret line="49" column="37" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="3180">
+              <caret line="49" column="30" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
               </folding>
@@ -61,11 +73,41 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="detail.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/detail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.375" vertical-offset="1155" max-vertical-offset="2595">
+              <caret line="92" column="41" selection-start-line="92" selection-start-column="41" selection-end-line="92" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-17.5" vertical-offset="0" max-vertical-offset="2010">
+              <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hardeschijf.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/hardeschijf.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.916667" vertical-offset="581" max-vertical-offset="1335">
+              <caret line="61" column="177" selection-start-line="61" selection-start-column="177" selection-end-line="61" selection-end-column="222" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="processoren.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/processoren.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="21.083334" vertical-offset="506" max-vertical-offset="1335">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-14.541667" vertical-offset="566" max-vertical-offset="1335">
+              <caret line="61" column="222" selection-start-line="61" selection-start-column="222" selection-end-line="61" selection-end-column="222" />
               <folding />
             </state>
           </provider>
@@ -83,28 +125,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detail.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/detail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="135" max-vertical-offset="2475">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding>
-                <marker date="1414677470000" expanded="true" signature="778:1305" placeholder="{% if Categorie = &quot;Moederborden&quot; ... %}" />
-                <marker date="1414677470000" expanded="true" signature="834:1277" placeholder="{% if request.session.Moederborden = True ... %}" />
-                <marker date="1414677470000" expanded="true" signature="903:1245" placeholder="{% if request.session.Moederbordennaam = Product ... %}" />
-                <marker date="1414677470000" expanded="true" signature="4338:4637" placeholder="{% if Categorie = &quot;Koeling&quot; ... %}" />
-                <marker date="1414677470000" expanded="true" signature="4338:4621" placeholder="{% if request.session.Koeling = True ... %}" />
-                <marker date="1414677470000" expanded="true" signature="4338:4605" placeholder="{% if request.session.Koelingnaam = Product ... %}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="moederbord.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/moederbord.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.0" vertical-offset="555" max-vertical-offset="1335">
-              <caret line="61" column="139" selection-start-line="61" selection-start-column="124" selection-end-line="61" selection-end-column="139" />
+            <state vertical-scroll-proportion="-13.75" vertical-offset="585" max-vertical-offset="1335">
+              <caret line="61" column="222" selection-start-line="61" selection-start-column="222" selection-end-line="61" selection-end-column="222" />
               <folding />
             </state>
           </provider>
@@ -124,9 +149,18 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/templates/base.html" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/templates/optischeschijf.html" />
+        <option value="$PROJECT_DIR$/templates/hardeschijf.html" />
         <option value="$PROJECT_DIR$/pcbuilder/views.py" />
+        <option value="$PROJECT_DIR$/templates/processoren.html" />
+        <option value="$PROJECT_DIR$/templates/moederbord.html" />
+        <option value="$PROJECT_DIR$/templates/gpu.html" />
+        <option value="$PROJECT_DIR$/templates/detail.html" />
+        <option value="$PROJECT_DIR$/templates/optischeschijf.html" />
+        <option value="$PROJECT_DIR$/templates/koeling.html" />
+        <option value="$PROJECT_DIR$/templates/geheugen.html" />
+        <option value="$PROJECT_DIR$/templates/voeding.html" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/templates/behuizing.html" />
       </list>
     </option>
   </component>
@@ -669,7 +703,7 @@
       <changelist id="19c07224-5379-4854-b723-068f25b90f44" name="Default" comment="" />
       <created>1414668418969</created>
       <updated>1414668418969</updated>
-      <workItem from="1414668420604" duration="6499000" />
+      <workItem from="1414668420604" duration="8485000" />
     </task>
     <task id="LOCAL-00001" summary="message">
       <created>1414675818379</created>
@@ -695,11 +729,15 @@
       <created>1414677487094</created>
       <updated>1414677487094</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Optische schijven kunnen toegevoegt worden">
+      <created>1414677635287</created>
+      <updated>1414677635287</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6499000" />
+    <option name="totallyTimeSpent" value="8485000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="708" extended-state="0" />
@@ -750,7 +788,8 @@
     </option>
     <MESSAGE value="message" />
     <MESSAGE value="Vinkjes en percentage aangepast" />
-    <option name="LAST_COMMIT_MESSAGE" value="Vinkjes en percentage aangepast" />
+    <MESSAGE value="Optische schijven kunnen toegevoegt worden" />
+    <option name="LAST_COMMIT_MESSAGE" value="Optische schijven kunnen toegevoegt worden" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -786,26 +825,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/moederbord.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.0" vertical-offset="555" max-vertical-offset="1335">
-          <caret line="61" column="139" selection-start-line="61" selection-start-column="124" selection-end-line="61" selection-end-column="139" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/material.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33216783" vertical-offset="5900" max-vertical-offset="47340">
           <caret line="406" column="4" selection-start-line="406" selection-start-column="0" selection-end-line="406" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/processoren.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="21.083334" vertical-offset="506" max-vertical-offset="1335">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -818,35 +841,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/APc/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.7086883" vertical-offset="1423" max-vertical-offset="2010">
-          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/material.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1350">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="135" max-vertical-offset="2475">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <marker date="1414677470000" expanded="true" signature="778:1305" placeholder="{% if Categorie = &quot;Moederborden&quot; ... %}" />
-            <marker date="1414677470000" expanded="true" signature="834:1277" placeholder="{% if request.session.Moederborden = True ... %}" />
-            <marker date="1414677470000" expanded="true" signature="903:1245" placeholder="{% if request.session.Moederbordennaam = Product ... %}" />
-            <marker date="1414677470000" expanded="true" signature="4338:4637" placeholder="{% if Categorie = &quot;Koeling&quot; ... %}" />
-            <marker date="1414677470000" expanded="true" signature="4338:4621" placeholder="{% if request.session.Koeling = True ... %}" />
-            <marker date="1414677470000" expanded="true" signature="4338:4605" placeholder="{% if request.session.Koelingnaam = Product ... %}" />
+            <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -861,31 +861,153 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/pcbuilder/tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.7916665" vertical-offset="4451" max-vertical-offset="5190">
-          <caret line="306" column="35" selection-start-line="306" selection-start-column="35" selection-end-line="306" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pcbuilder/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pcbuilder/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/APc/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2970">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/material.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1350">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.5" vertical-offset="0" max-vertical-offset="2010">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/processoren.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.541667" vertical-offset="566" max-vertical-offset="1335">
+          <caret line="61" column="222" selection-start-line="61" selection-start-column="222" selection-end-line="61" selection-end-column="222" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/moederbord.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.75" vertical-offset="585" max-vertical-offset="1335">
+          <caret line="61" column="222" selection-start-line="61" selection-start-column="222" selection-end-line="61" selection-end-column="222" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/gpu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.958333" vertical-offset="604" max-vertical-offset="1335">
+          <caret line="61" column="177" selection-start-line="61" selection-start-column="177" selection-end-line="61" selection-end-column="177" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/optischeschijf.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.916667" vertical-offset="581" max-vertical-offset="1335">
-          <caret line="61" column="174" selection-start-line="61" selection-start-column="174" selection-end-line="61" selection-end-column="174" />
+        <state vertical-scroll-proportion="-10.791667" vertical-offset="656" max-vertical-offset="1335">
+          <caret line="61" column="173" selection-start-line="61" selection-start-column="173" selection-end-line="61" selection-end-column="173" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.375" vertical-offset="1155" max-vertical-offset="2595">
+          <caret line="92" column="41" selection-start-line="92" selection-start-column="41" selection-end-line="92" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pcbuilder/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46644846" vertical-offset="450" max-vertical-offset="3105">
-          <caret line="49" column="37" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="3180">
+          <caret line="49" column="30" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/hardeschijf.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.916667" vertical-offset="581" max-vertical-offset="1335">
+          <caret line="61" column="177" selection-start-line="61" selection-start-column="177" selection-end-line="61" selection-end-column="222" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/koeling.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.458333" vertical-offset="664" max-vertical-offset="1335">
+          <caret line="61" column="222" selection-start-line="61" selection-start-column="222" selection-end-line="61" selection-end-column="222" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/geheugen.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.9583335" vertical-offset="724" max-vertical-offset="1335">
+          <caret line="61" column="222" selection-start-line="61" selection-start-column="222" selection-end-line="61" selection-end-column="222" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/voeding.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3738657" vertical-offset="709" max-vertical-offset="1335">
+          <caret line="61" column="222" selection-start-line="61" selection-start-column="222" selection-end-line="61" selection-end-column="222" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.166667" vertical-offset="4616" max-vertical-offset="5190">
+          <caret line="332" column="59" selection-start-line="332" selection-start-column="59" selection-end-line="332" selection-end-column="59" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/behuizing.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.646098" vertical-offset="559" max-vertical-offset="1335">
+          <caret line="61" column="222" selection-start-line="61" selection-start-column="222" selection-end-line="61" selection-end-column="222" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -12,7 +12,7 @@
                     </div>
                 </div>
 
-    <a class="btn btn-primary pull-right"href="/select/?product={{ Product }}&amp;categorie={{ Categorie }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Selecteer</a>
+    <a class="btn btn-primary pull-right"href="/select/?product={{ Product }}&amp;categorie={{ Categorie }}&amp;prijs={{ Prijs }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Selecteer</a>
 
                 <!-- checken of je bij het juiste product bent voor de selecteer knop -->
                 {% if Categorie = "Moederborden" %}
@@ -86,6 +86,14 @@
     <a class="btn btn-primary pull-right" href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Deselecteer</a>
     {% endif %}
     {% endif %}
+    {% endif %}
+
+    {% if Categorie = "DVD" %}
+        {% if request.session.DVD = True %}
+            {% if request.session.DVDnaam = Product %}
+                <a class="btn btn-primary pull-right" href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Deselecteer</a>
+            {% endif %}
+        {% endif %}
     {% endif %}
 
 

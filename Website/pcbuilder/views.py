@@ -45,11 +45,15 @@ def mail(request):
 def select(request):
     product = request.GET.get('product')
     categorie = request.GET.get('categorie')
+    prijs = request.GET.get('prijs')
     categorie.replace(" ", "")
     categorie.replace(",", "")
+    prijs.replace(" ","")
     request.session[categorie] = True
     productstring = categorie + "naam"
+    categorieprijs = categorie + "prijs"
     request.session[productstring] = product
+    request.session[categorieprijs] = prijs
     return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
 
 def deselect(request):
@@ -68,8 +72,9 @@ def detail(request):
     processoren = Processoren.objects
     product = request.GET.get('product')
     categorie = request.GET.get('categorie')
+    prijs = request.GET.get('prijs')
 
-    return render_to_response('detail.html', {'Processoren': processoren, 'Categorie' : categorie, 'Product': product},
+    return render_to_response('detail.html', {'Processoren': processoren, 'Categorie' : categorie, 'Product': product, 'Prijs': prijs},
                                   context_instance=RequestContext(request))
 
 def processoren(request):

@@ -248,3 +248,57 @@ Traceback (most recent call last):
   File "/Library/Python/2.7/site-packages/django/template/base.py", line 588, in __init__
     "from '%s'" % (token[upto:], token))
 TemplateSyntaxError: Could not parse the remainder: ',naam' from 'request.session.DVD,naam'
+[30/Oct/2014 14:14:45] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/Library/Python/2.7/site-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 52
+SyntaxError: Non-ASCII character '\xe2' in file /Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py on line 52, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
+[30/Oct/2014 14:14:52] ERROR [django.request:231] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/Library/Python/2.7/site-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 52
+SyntaxError: Non-ASCII character '\xe2' in file /Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py on line 52, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
+[30/Oct/2014 14:14:52] ERROR [django.request:231] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/Library/Python/2.7/site-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 52
+SyntaxError: Non-ASCII character '\xe2' in file /Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py on line 52, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
