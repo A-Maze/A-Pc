@@ -2,6 +2,59 @@
 {% load static %}
 {% block content %}
 
+<script>
+$(document).ready(function() {
+
+$('.component').css('display', 'none');
+
+$('.component').fadeIn(1000);
+
+
+
+$('.link').click(function() {
+
+event.preventDefault();
+
+newLocation = this.href;
+
+$('.component').fadeOut(1000, newpage);
+
+});
+
+function newpage() {
+
+window.location = newLocation;
+
+}
+
+});
+
+$(document).ready(function(){
+  $(".toggle").click(function(){
+  var parent = $(this).parent();
+  var child = parent.children(".body-toggled");
+    $(child).slideToggle(100);
+  var pull = $(this).children(".pull-right ");
+  var switcher = $(pull).children(".switcher ");
+  $(switcher).toggleClass("dropup");
+  });
+
+    $(".slider").noUiSlider({
+	start: [20, 80],
+	connect: true,
+	range: {
+		'min': 0,
+		'max': 100
+	}
+
+
+
+});
+
+});
+
+
+</script>
 
 
 
