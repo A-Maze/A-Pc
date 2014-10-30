@@ -134,6 +134,7 @@ KeyError: u'Moederborden'
 [30/Oct/2014 11:17:52] WARNING [django.request:143] Not Found: /favicon.ico
 [30/Oct/2014 11:24:52] WARNING [django.request:143] Not Found: /favicon.ico
 [30/Oct/2014 11:24:52] WARNING [django.request:143] Not Found: /favicon.ico
+<<<<<<< HEAD
 [30/Oct/2014 12:19:45] ERROR [django.request:231] Internal Server Error: /
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
@@ -154,3 +155,8 @@ Traceback (most recent call last):
     return render_to_response('contact.html',,
                                              ^
 SyntaxError: invalid syntax
+=======
+[30/Oct/2014 12:52:55] WARNING [django.request:143] Not Found: /favicon.ico
+[30/Oct/2014 12:53:25] WARNING [django.request:143] Not Found: /favicon.ico
+[30/Oct/2014 13:07:08] WARNING [django.request:143] Not Found: /favicon.ico
+>>>>>>> 5bedcb49e4401c00134814afc9fb85a7bb65087b
