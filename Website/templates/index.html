@@ -256,7 +256,7 @@ window.location = newLocation;
         <tr {% if request.session.Harde == True %} class="info" {% endif %} >
             <td>4</td>
             <td>Harde Schijf</td>
-            <td>{{ request.session.Hardeaam }}</td>
+            <td>{{ request.session.Hardenaam }}</td>
             <td></td>
         </tr>
         <tr {% if request.session.DVD == True %} class="info" {% endif %} >
@@ -277,10 +277,10 @@ window.location = newLocation;
             <td>{{ request.session.Geheugennaam }}</td>
             <td></td>
         </tr>
-        <tr {% if request.session.Voedingen == True %} class="info" {% endif %} >
+        <tr {% if request.session.Voeding == True %} class="info" {% endif %} >
             <td>8</td>
             <td>Voeding</td>
-            <td>{{ request.session.Voedingennaam }}</td>
+            <td>{{ request.session.Voedingnaam }}</td>
             <td></td>
         </tr>
         <tr {% if request.session.Behuizingen == True %} class="info" {% endif %} >
