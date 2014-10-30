@@ -22,6 +22,10 @@ def index(request):
     return render_to_response('index.html', {'Processoren': processoren},
                               context_instance=RequestContext(request))
 
+def contact(request):
+    return render_to_response('contact.html',
+                              context_instance=RequestContext(request))
+
 def select(request):
     product = request.GET.get('product')
     categorie = request.GET.get('categorie')

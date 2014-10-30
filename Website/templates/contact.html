@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<form class="form-horizontal">
+    <fieldset>
+
+        <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Naam</label>
+            <div class="col-lg-10">
+                <input class="form-control" id="inputName" placeholder="Naam" type="name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+            <div class="col-lg-10">
+                <input class="form-control" id="inputEmail" placeholder="Email" type="email">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="textArea" class="col-lg-2 control-label">Tekst</label>
+            <div class="col-lg-10">
+                <textarea class="form-control" rows="3" id="textArea"></textarea>
+                
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label">Type bericht</label>
+            <div class="col-lg-10">
+                <div class="radio radio-primary">
+                    <label>
+                        <input name="optionsRadios" id="optionsRadios1" value="option1" checked="" type="radio">
+                        Klacht
+                    </label>
+                </div>
+                <div class="radio radio-primary">
+                    <label>
+                        <input name="optionsRadios" id="optionsRadios2" value="option2" type="radio">
+                        Opmerking
+                    </label>
+                </div>
+                <div class="radio radio-primary">
+                    <label>
+                        <input name="optionsRadios" id="optionsRadios2" value="option2" type="radio">
+                        Suggestie
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="submit" class="btn btn-primary pull-right">Submit</button>
+            </div>
+        </div>
+    </fieldset>
+</form>
+{% endblock %}
