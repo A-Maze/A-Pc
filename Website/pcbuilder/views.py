@@ -59,11 +59,14 @@ def select(request):
 def deselect(request):
     product = request.GET.get('product')
     categorie = request.GET.get('categorie')
+    prijs = request.GET.get('prijs')
     categorie.replace(" ", "")
     del request.session[categorie]
     productstring = categorie + "naam"
+    productprijs = categorie + "prijs"
     if request.session[productstring] == product:
         del request.session[productstring]
+        del request.session[productprijs]
     return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
     
 

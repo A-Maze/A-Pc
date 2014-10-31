@@ -32,14 +32,6 @@
     {% endif %}
     {% endif %}
 
-    {% if Categorie = "Koeling" %}
-    {% if request.session.Koeling = True %}
-    {% if request.session.Koelingnaam = Product %}
-    <a class="btn btn-primary pull-right" href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Deselecteer</a>
-    {% endif %}
-    {% endif %}
-    {% endif %}
-
     {% if Categorie = "Grafische" %}
     {% if request.session.Grafische = True %}
     {% if request.session.Grafischenaam = Product %}
@@ -72,7 +64,13 @@
     {% endif %}
     {% endif %}
 
-
+    {% if Categorie = "Koeling" %}
+    {% if request.session.Koeling = True %}
+    {% if request.session.Koelingnaam = Product %}
+    <a class="btn btn-primary pull-right" href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Deselecteer</a>
+    {% endif %}
+    {% endif %}
+    {% endif %}
 
     {% if Categorie = "Harde" %}
     {% if request.session.Harde = True %}
