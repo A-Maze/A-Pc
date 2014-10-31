@@ -387,3 +387,5 @@ Traceback (most recent call last):
 TemplateSyntaxError: Invalid block tag: 'endblock', expected 'elif', 'else' or 'endif'
 [30/Oct/2014 16:26:34] WARNING [django.request:143] Not Found: /favicon.ico
 [30/Oct/2014 16:26:34] WARNING [django.request:143] Not Found: /favicon.ico
+[31/Oct/2014 08:23:07] WARNING [django.request:143] Not Found: /favicon.ico
+[31/Oct/2014 08:23:07] WARNING [django.request:143] Not Found: /favicon.ico
