@@ -329,7 +329,7 @@ window.location = newLocation;
             <td><a href="/detail/?product={{ request.session.Koelingnaam }}&amp;categorie=Koeling&amp;prijs={{ request.session.Koelingprijs }}">{{ request.session.Koelingnaam }}</a></td>
             <td>{{ request.session.Koelingprijs }}</td>
             <td>{% if request.session.Koeling == True %}<a href="/deselect/?product={{ request.session.Koelingnaam }}&amp;categorie=Koeling&amp;prijs={{ request.session.Koelingprijs }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0"><img src="./static/img/action/svg/ic_highlight_remove_24px.svg" /></a>
-            {% else  %} <a href="/koeling/"><img src="./static/img/action/svg/ic_add_shopping_cart_24px.svg" /></a> {% endif %}</td>
+            {% else  %} <a href="/koelingen/"><img src="./static/img/action/svg/ic_add_shopping_cart_24px.svg" /></a> {% endif %}</td>
         </tr>
         <tr {% if request.session.Geheugen == True %} class="info" {% endif %} >
             <td>7</td>
