@@ -234,18 +234,18 @@ class Voeding(scrapy.Item):
     SKU = scrapy.Field()
 
 class Koeling(scrapy.Item):   
-    Socket
-    Aansluiting_processorkoeling
-    Heatpipes
-    Geluidssterkte
-    Rotatiesnelheid_min
-    Rotatiesnelheid_max
-    Type_koeling
-    Hoogte
-    Diameter
-    Kleuren
-    Materialen
-    Fabrieksgarantie
-    Bijzonderheden  
-    EAN
-    SKU
+    Socket = scrapy.Field()
+    Aansluiting_processorkoeling = scrapy.Field()
+    Heatpipes = scrapy.Field()
+    Geluidssterkte = scrapy.Field()
+    Rotatiesnelheid_min = scrapy.Field()
+    Rotatiesnelheid_max = scrapy.Field()
+    Type_koeling = scrapy.Field()
+    Hoogte = scrapy.Field()
+    Diameter = scrapy.Field()
+    Kleuren = scrapy.Field()
+    Materialen = scrapy.Field()
+    Fabrieksgarantie = scrapy.Field()
+    Bijzonderheden = scrapy.Field()
+    EAN = scrapy.Field()
+    SKU = scrapy.Field()
