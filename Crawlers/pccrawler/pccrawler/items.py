@@ -232,3 +232,20 @@ class Voeding(scrapy.Item):
     Bijzonderheden = scrapy.Field()
     EAN = scrapy.Field()
     SKU = scrapy.Field()
+
+class Koeling(scrapy.Item):   
+    Socket
+    Aansluiting_processorkoeling
+    Heatpipes
+    Geluidssterkte
+    Rotatiesnelheid_min
+    Rotatiesnelheid_max
+    Type_koeling
+    Hoogte
+    Diameter
+    Kleuren
+    Materialen
+    Fabrieksgarantie
+    Bijzonderheden  
+    EAN
+    SKU
