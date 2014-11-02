@@ -512,3 +512,5 @@ TemplateSyntaxError: Invalid block tag: 'endif', expected 'endblock'
 [31/Oct/2014 08:23:07] WARNING [django.request:143] Not Found: /favicon.ico
 >>>>>>> 4f0141c77feed7722b4b45e6992e0accae7af1e6
 >>>>>>> b27d90803346c360aa4f745fa010bba0ca15143a
+[02/Nov/2014 23:33:50] WARNING [django.request:143] Not Found: /favicon.ico
+[02/Nov/2014 23:33:50] WARNING [django.request:143] Not Found: /favicon.ico

@@ -30,23 +30,23 @@ class PccrawlerPipeline(object):
 
 				langeNaam = item["categorie"][0]
 				if "Moederborden" in langeNaam:
-					self.collection = db["Moederborden"]
+					self.collection = db["moederborden"]
 				elif "Processoren" in langeNaam:
-					self.collection = db["Processoren"]
+					self.collection = db["processoren"]
 				elif "Koeling" in langeNaam:
-					self.collection = db["Koeling"]
+					self.collection = db["koeling"]
 				elif "Behuizingen" in langeNaam:
-					self.collection = db["Behuizingen"]
+					self.collection = db["behuizingen"]
 				elif "Grafische" in langeNaam:
-					self.collection = db["Grafische"]
+					self.collection = db["grafische"]
 				elif "Harde" in langeNaam:
-					self.collection = db["Harde"]
+					self.collection = db["harde"]
 				elif "DVD" in langeNaam:
-					self.collection = db["DVD"]
+					self.collection = db["dvd"]
 				elif "Geheugen" in langeNaam:
-					self.collection = db["Geheugen"]
+					self.collection = db["geheugen"]
 				elif "Voeding" in langeNaam:
-					self.collection = db["Voeding"]
+					self.collection = db["voeding"]
 				
 
 				self.collection.insert(dict(item))
