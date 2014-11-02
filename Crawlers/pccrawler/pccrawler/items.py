@@ -250,8 +250,8 @@ class Koeling(scrapy.Item):
     EAN = scrapy.Field()
     SKU = scrapy.Field()
 
-class Barebones(scrapy.Items):  
-    Barebonetype  
+class Barebones(scrapy.Item):  
+    Barebonetype = scrapy.Field()
     Socket = scrapy.Field()
     CPU_SoC = scrapy.Field()
     Geheugentype_moederbord = scrapy.Field()
