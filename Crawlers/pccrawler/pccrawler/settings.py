@@ -17,7 +17,11 @@ ITEM_PIPELINES = ['pccrawler.pipelines.PccrawlerPipeline',]
 
 MONGODB_SERVER = "localhost"
 MONGODB_PORT = 27017
+
 MONGODB_DB = "components"
+
+
+
 MONGODB_COLLECTION = "processoren"
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'pccrawler (+http://www.yourdomain.com)'

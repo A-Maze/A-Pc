@@ -28,6 +28,7 @@ window.location = newLocation;
 
 });
 </script>
+    <script src="{% static 'js/ScrollBar.js' %}"></script>
 
 
 {% endblock %}
@@ -58,7 +59,6 @@ window.location = newLocation;
     });
 
     function loadProgress(){
-    
         var percentage = 0;
         var progress = document.getElementById("progress-bar");
         {% if request.session.Processoren == True %}
@@ -279,6 +279,7 @@ window.location = newLocation;
             <th>Component</th>
             <th>Product</th>
             <th>Prijs</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -286,55 +287,73 @@ window.location = newLocation;
             <td>1</td>
             <td>Processor</td>
             <td><a href="/detail/?product={{ request.session.Processorennaam }}&amp;categorie=Processoren&amp;prijs={{ request.session.Processorenprijs }}">{{ request.session.Processorennaam }}</a></td>
-            <td>{% if request.session.Processoren == True %}{{ request.session.Processorenprijs }}{% endif %}</td>
+            <td>{{ request.session.Processorenprijs }}</td>
+            <td>{% if request.session.Processoren == True %}<a href="/deselect/?product={{ request.session.Processorennaam }}&amp;categorie=Processoren&amp;prijs={{ request.session.Processorenprijs }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0"><img src="./static/img/action/svg/ic_highlight_remove_24px.svg" /></a>
+            {% else  %} <a href="/processoren/"><img src="./static/img/action/svg/ic_add_shopping_cart_24px.svg" /></a> {% endif %}</td>
         </tr>
         <tr {% if request.session.Moederborden == True %} class="info" {% endif %} >
             <td>2</td>
             <td>Moederbord</td>
             <td><a href="/detail/?product={{ request.session.Moederbordennaam }}&amp;categorie=Moederborden&amp;prijs={{ request.session.Moederbordenprijs }}">{{ request.session.Moederbordennaam }}</a></td>
-            <td>{% if request.session.Moederborden == True %}{{ request.session.Moederbordenprijs }} {% endif %}</td>
+            <td>{{ request.session.Moederbordenprijs }}</td>
+            <td>{% if request.session.Moederborden == True %}<a href="/deselect/?product={{ request.session.Moederbordennaam }}&amp;categorie=Moederborden&amp;prijs={{ request.session.Moederbordenprijs }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0"><img src="./static/img/action/svg/ic_highlight_remove_24px.svg" /></a>
+            {% else  %} <a href="/moederborden/"><img src="./static/img/action/svg/ic_add_shopping_cart_24px.svg" /></a> {% endif %}</td>
         </tr>
         <tr {% if request.session.Grafische == True %} class="info" {% endif %} >
             <td>3</td>
             <td>Grafische Kaart</td>
             <td><a href="/detail/?product={{ request.session.Grafischenaam }}&amp;categorie=Grafische&amp;prijs={{ request.session.Moederbordenprijs }}">{{ request.session.Grafischenaam }}</a></td>
-            <td>{% if request.session.Grafische == True %}{{ request.session.Grafischeprijs }}{% endif %}</td>
+            <td>{{ request.session.Grafischeprijs }}</td>
+            <td>{% if request.session.Grafische == True %}<a href="/deselect/?product={{ request.session.Grafischenaam }}&amp;categorie=Grafische&amp;prijs={{ request.session.Grafischeprijs }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0"><img src="./static/img/action/svg/ic_highlight_remove_24px.svg" /></a>
+            {% else  %} <a href="/gpu/"><img src="./static/img/action/svg/ic_add_shopping_cart_24px.svg" /></a> {% endif %}</td>
         </tr>
         <tr {% if request.session.Harde == True %} class="info" {% endif %} >
             <td>4</td>
             <td>Harde Schijf</td>
             <td><a href="/detail/?product={{ request.session.Hardenaam }}&amp;categorie=Harde&amp;prijs={{ request.session.Hardeprijs }}">{{ request.session.Hardenaam }}</a></td>
-            <td>{% if request.session.Harde == True %}{{ request.session.Hardeprijs }}{% endif %}</td>
+            <td>{{ request.session.Hardeprijs }}</td>
+            <td>{% if request.session.Harde == True %}<a href="/deselect/?product={{ request.session.Hardenaam }}&amp;categorie=Harde&amp;prijs={{ request.session.Hardeprijs }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0"><img src="./static/img/action/svg/ic_highlight_remove_24px.svg" /></a>
+            {% else  %} <a href="/hardeschijven/"><img src="./static/img/action/svg/ic_add_shopping_cart_24px.svg" /></a> {% endif %}</td>
         </tr>
         <tr {% if request.session.DVD == True %} class="info" {% endif %} >
             <td>5</td>
             <td>Optische Drive</td>
             <td><a href="/detail/?product={{ request.session.DVDnaam }}&amp;categorie=DVD&amp;prijs={{ request.session.DVDprijs }}">{{ request.session.DVDnaam }}</a></td>
-            <td>{% if request.session.DVD == True %}{{ request.session.DVDprijs }}{% endif %}</td>
+            <td>{{ request.session.DVDprijs }}</td>
+            <td>{% if request.session.DVD == True %}<a href="/deselect/?product={{ request.session.DVDnaam }}&amp;categorie=DVD&amp;prijs={{ request.session.DVDprijs }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0"><img src="./static/img/action/svg/ic_highlight_remove_24px.svg" /></a>
+            {% else  %} <a href="/optischeschijven/"><img src="./static/img/action/svg/ic_add_shopping_cart_24px.svg" /></a> {% endif %}</td>
         </tr>
         <tr {% if request.session.Koeling == True %} class="info" {% endif %} >
             <td>6</td>
             <td>Koeling</td>
             <td><a href="/detail/?product={{ request.session.Koelingnaam }}&amp;categorie=Koeling&amp;prijs={{ request.session.Koelingprijs }}">{{ request.session.Koelingnaam }}</a></td>
-            <td>{% if request.session.Koeling == True %}{{ request.session.Koelingprijs }}{% endif %}</td>
+            <td>{{ request.session.Koelingprijs }}</td>
+            <td>{% if request.session.Koeling == True %}<a href="/deselect/?product={{ request.session.Koelingnaam }}&amp;categorie=Koeling&amp;prijs={{ request.session.Koelingprijs }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0"><img src="./static/img/action/svg/ic_highlight_remove_24px.svg" /></a>
+            {% else  %} <a href="/koelingen/"><img src="./static/img/action/svg/ic_add_shopping_cart_24px.svg" /></a> {% endif %}</td>
         </tr>
         <tr {% if request.session.Geheugen == True %} class="info" {% endif %} >
             <td>7</td>
             <td>Geheugen</td>
             <td><a href="/detail/?product={{ request.session.Geheugennaam }}&amp;categorie=Geheugen&amp;prijs={{ request.session.Geheugenprijs }}">{{ request.session.Geheugennaam }}</a></td>
-            <td>{% if request.session.Geheugen == True %}{{ request.session.Geheugenprijs }}{% endif %}</td>
+            <td>{{ request.session.Geheugenprijs }}</td>
+            <td>{% if request.session.Geheugen == True %}<a href="/deselect/?product={{ request.session.Geheugennaam }}&amp;categorie=Geheugen&amp;prijs={{ request.session.Geheugenprijs }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0"><img src="./static/img/action/svg/ic_highlight_remove_24px.svg" /></a>
+            {% else  %} <a href="/geheugen/"><img src="./static/img/action/svg/ic_add_shopping_cart_24px.svg" /></a> {% endif %}</td>
         </tr>
         <tr {% if request.session.Voeding == True %} class="info" {% endif %} >
             <td>8</td>
             <td>Voeding</td>
             <td><a href="/detail/?product={{ request.session.Voedingnaam }}&amp;categorie=Voeding&amp;prijs={{ request.session.Voedingprijs }}">{{ request.session.Voedingnaam }}</a></td>
-            <td>{% if request.session.Voeding == True %}{{ request.session.Voedingprijs }}{% endif %}</td>
+            <td>{{ request.session.Voedingprijs }}</td>
+            <td>{% if request.session.Voeding == True %}<a href="/deselect/?product={{ request.session.Voedingnaam }}&amp;categorie=Voeding&amp;prijs={{ request.session.Voedingprijs }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0"><img src="./static/img/action/svg/ic_highlight_remove_24px.svg" /></a>
+            {% else  %} <a href="/voedingen/"><img src="./static/img/action/svg/ic_add_shopping_cart_24px.svg" /></a> {% endif %}</td>
         </tr>
         <tr {% if request.session.Behuizingen == True %} class="info" {% endif %} >
             <td>9</td>
             <td>Behuizing</td>
             <td><a href="/detail/?product={{ request.session.Behuizingennaam }}&amp;categorie=Behuizingen&amp;prijs={{ request.session.Behuizingenprijs }}">{{ request.session.Behuizingennaam }}</a></td>
-            <td>{% if request.session.Behuizingen == True %}{{ request.session.Behuizingenprijs }}{% endif %}</td>
+            <td>{{ request.session.Behuizingenprijs }}</td>
+            <td>{% if request.session.Behuizingen == True %}<a href="/deselect/?product={{ request.session.Behuizingennaam }}&amp;categorie=Behuizingen&amp;prijs={{ request.session.Behuizingenprijs }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0"><img src="./static/img/action/svg/ic_highlight_remove_24px.svg" /></a>
+            {% else  %} <a href="/behuizingen/"><img src="./static/img/action/svg/ic_add_shopping_cart_24px.svg" /></a> {% endif %}</td>
         </tr>
 
         </tbody>
