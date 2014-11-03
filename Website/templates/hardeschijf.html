@@ -42,8 +42,8 @@ $(document).ready(function(){
     <div class="col-md-8 col-lg-9">
 
         <div class=" top-margin ">
-            <h1>{{Processoren.categorie.0|truncatewords:2|slice:"-4" }}</h1>
-            {% for processor in Processoren %}
+            <h1>{{Componenten.categorie.0|truncatewords:2|slice:"-4" }}</h1>
+            {% for component in Componenten %}
             <div class="list-group table-border">
                 <div class="list-group-item">
                     <div class="row-picture">
@@ -52,14 +52,14 @@ $(document).ready(function(){
 
                     <div class="row-content">
                         <div class="col-md-10 col-lg-10">
-                            <h4 class="list-group-item-heading">{% for name in processor.naam %}{{ name }}{% endfor %}</h4>
-                            <p class="list-group-item-text">{% for desc in processor.info %} {{ desc }} {% endfor %} </p>
+                            <h4 class="list-group-item-heading">{% for name in component.naam %}{{ name }}{% endfor %}</h4>
+                            <p class="list-group-item-text">{% for desc in component.info %} {{ desc }} {% endfor %} </p>
                         </div>
                         <div class=" col-md-2 col-lg-2  ">
-                            <p class="list-group-item-text pull-right ">{{ processor.prijs.0 }}</p>
-                            <p class="list-group-item-text  ">{{ processor.stock }}</p>
+                            <p class="list-group-item-text pull-right ">{{ component.prijs.0 }}</p>
+                            <p class="list-group-item-text  ">{{ component.stock }}</p>
 
-                            <a href="/detail/?product={% for name in processor.naam %}{{ name }} {% endfor %}&amp;categorie={{processor.categorie.0|truncatewords:1|slice:'-4' }}&amp;prijs={{ processor.prijs.0|slice:'-1' }}" class="btn btn-primary">details</a>
+                            <a href="/detail/?product={% for name in component.naam %}{{ name }} {% endfor %}&amp;categorie={{component.categorie.0|truncatewords:1|slice:'-4' }}&amp;prijs={{ component.prijs.0|slice:'-1' }}" class="btn btn-primary">details</a>
                         </div>
                     </div>
 
