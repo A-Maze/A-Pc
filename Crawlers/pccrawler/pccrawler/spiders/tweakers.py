@@ -36,20 +36,20 @@ class TweakersSpider(CrawlSpider):
 
         for sel in response.xpath('//*[@id="tab:specificaties"]'):
             category = sel.xpath('table/tbody/tr[2]/td[2]/a/text()').extract()
-            logging.warning(category)
-            if category == "Videokaarten":
-                logging.warning("Videokaart")
-            elif category == "Geheugen intern":
-                logging.warning("Geheugen")
-            elif category == "Moederborden":
-                logging.warning("Moederbord")
-            elif category == "Behuizingen":
-                logging.warning("Behuizing")
-            elif category == "Processors":
-                logging.warning("Processor")
-            elif category == "Voedingen":
-                logging.warning("Voeding")
-            elif category == "Processorkoeling":
-                logging.warning("Processorkoeling")
-            elif category == "Barebones":
-                logging.warning("Barebone")
+            print category
+            if "Videokaarten" in category:
+                print "Videokaart"
+            elif "Geheugen intern" in category:
+                print "Geheugen"
+            elif "Moederborden" in category:
+                print "Moederbord"
+            elif "Behuizingen" in category:
+                print "Behuizing"
+            elif "Processors" in category:
+                print "Processor"
+            elif "Voedingen" in category:
+                print "Voeding"
+            elif "Processorkoeling" in category:
+                print "Processorkoeling"
+            elif "Barebones" in category:
+                print "Barebone"
