@@ -9,3 +9,11 @@
 [03/Nov/2014 09:34:37] WARNING [django.request:143] Not Found: /favicon.ico
 [03/Nov/2014 09:36:34] WARNING [django.request:143] Not Found: /favicon.ico
 [03/Nov/2014 09:36:36] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Nov/2014 09:38:21] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Nov/2014 09:39:11] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Nov/2014 09:40:27] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Nov/2014 09:40:28] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Nov/2014 09:40:31] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Nov/2014 09:40:32] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Nov/2014 09:49:07] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Nov/2014 10:02:14] WARNING [django.request:143] Not Found: /favicon.ico

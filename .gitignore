@@ -3,7 +3,7 @@ db.sqlite3
 
 .idea/
 
-log.log
+*.log
 
 *.json
 
