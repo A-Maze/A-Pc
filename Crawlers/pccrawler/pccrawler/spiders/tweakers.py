@@ -35,7 +35,7 @@ class TweakersSpider(CrawlSpider):
     def parse_item(self, response):
 
         for sel in response.xpath('//*[@id="tab:specificaties"]'):
-            category = sel.xpath('table/tbody/tr[2]/td[2]/a/text()').extract()
+            category = sel.xpath('//*[@id="tweakbaseBreadcrumbCategory"]/a/text()').extract()
             print category
             if "Videokaarten" in category:
                 print "Videokaart"
@@ -53,3 +53,4 @@ class TweakersSpider(CrawlSpider):
                 print "Processorkoeling"
             elif "Barebones" in category:
                 print "Barebone"
+
