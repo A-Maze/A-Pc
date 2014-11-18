@@ -31,28 +31,37 @@ class PccrawlerPipeline(object):
 				langeNaam = item["categorie"][0]
 				if "Moederborden" in langeNaam:
 					self.collection = db["moederborden"]
+					pleurindedb()
 				elif "Processoren" in langeNaam:
 					self.collection = db["processoren"]
+					pleurindedb()
 				elif "Koeling" in langeNaam:
 					self.collection = db["koeling"]
+					pleurindedb()
 				elif "Behuizingen" in langeNaam:
 					self.collection = db["behuizingen"]
+					pleurindedb()
 				elif "Grafische" in langeNaam:
 					self.collection = db["grafische"]
+					pleurindedb()
 				elif "Harde" in langeNaam:
 					self.collection = db["harde"]
+					pleurindedb()
 				elif "DVD" in langeNaam:
 					self.collection = db["dvd"]
+					pleurindedb()
 				elif "Geheugen" in langeNaam:
 					self.collection = db["geheugen"]
+					pleurindedb()
 				elif "Voeding" in langeNaam:
 					self.collection = db["voeding"]
+					pleurindedb()
 				
-
-				self.collection.insert(dict(item))
-				log.msg("Item wrote to MongoDB database %s/%s/%s" %
-		    	(settings['MONGODB_DB'], settings['MONGODB_COLLECTION'], item['categorie'][0]),
-		    	level=log.DEBUG, spider=spider) 
+				def pleurindedb():
+					self.collection.insert(dict(item))
+					log.msg("Item wrote to MongoDB database %s/%s/%s" %
+			    	(settings['MONGODB_DB'], settings['MONGODB_COLLECTION'], item['categorie'][0]),
+			    	level=log.DEBUG, spider=spider) 
 		    	
 		    	
 			return item
