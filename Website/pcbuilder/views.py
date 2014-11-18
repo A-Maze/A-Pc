@@ -3,7 +3,7 @@ from django.shortcuts import HttpResponseRedirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.template import RequestContext
 from django.template import loader
-from models import Processoren
+from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding
 import logging
 import json
 
@@ -72,13 +72,15 @@ def deselect(request):
 
 
 def detail(request):
-    processoren = Processoren.objects
     product = request.GET.get('product')
     categorie = request.GET.get('categorie')
     prijs = request.GET.get('prijs')
 
+
+
+
     return render_to_response('detail.html', {'Processoren': processoren, 'Categorie' : categorie, 'Product': product, 'Prijs': prijs},
-                                  context_instance=RequestContext(request))
+context_instance=RequestContext(request))
 
 def processoren(request):
 
@@ -86,10 +88,14 @@ def processoren(request):
     # Aantal per pagina en pagina nummer
 
 
-    processorenlijst = Processoren.objects.filter(categorie__contains='Processor').all()
+    processorenlijst = Processoren.objects
     processoren = listing(request, processorenlijst, 15)
     #processoren = json.dumps(list(uniArray))
-    return render_to_response('processoren.html', {'Processoren': processoren},
+    
+    bereik, diff = paginas(processorenlijst, processoren)
+
+
+    return render_to_response('processoren.html', {'Componenten': processoren, 'Range':bereik, 'Diff':diff},
                               context_instance=RequestContext(request))
 
 def behuizingen(request):
@@ -98,9 +104,15 @@ def behuizingen(request):
     # Aantal per pagina en pagina nummer
 
 
-    processorenlijst = Processoren.objects(categorie__contains='Behuizing').all()
-    processoren = listing(request, processorenlijst, 15)
-    return render_to_response('behuizing.html', {'Processoren': processoren},
+    behuizingenlijst = Behuizingen.objects
+    behuizingen = listing(request, behuizingenlijst, 15)
+
+    
+    bereik, diff = paginas(behuizingenlijst, behuizingen)
+
+
+
+    return render_to_response('behuizing.html', {'Componenten': behuizingen, 'Range':bereik, 'Diff':diff},
                               context_instance=RequestContext(request))
 
 def geheugen(request):
@@ -109,9 +121,15 @@ def geheugen(request):
     # Aantal per pagina en pagina nummer
 
 
-    processorenlijst = Processoren.objects(categorie__contains='Geheugen').all()
-    processoren = listing(request, processorenlijst, 15)
-    return render_to_response('geheugen.html', {'Processoren': processoren},
+    geheugenlijst = Geheugen.objects
+    geheugen = listing(request, geheugenlijst, 15)
+
+    
+    bereik, diff = paginas(geheugenlijst, geheugen)
+
+
+
+    return render_to_response('geheugen.html', {'Componenten': geheugen, 'Range':bereik, 'Diff':diff},
                               context_instance=RequestContext(request))
 
 def gpu(request):
@@ -120,20 +138,31 @@ def gpu(request):
     # Aantal per pagina en pagina nummer
 
 
-    processorenlijst = Processoren.objects(categorie__contains='Grafische kaarten').all()
-    processoren = listing(request, processorenlijst, 15)
-    return render_to_response('gpu.html', {'Processoren': processoren},
-                              context_instance=RequestContext(request))
+    grafischelijst = Grafische.objects
+    grafische = listing(request, grafischelijst, 15)
 
+    
+    bereik, diff = paginas(grafischelijst, grafische)
+
+
+
+    return render_to_response('gpu.html', {'Componenten': grafische, 'Range':bereik, 'Diff':diff},
+                              context_instance=RequestContext(request))
 def hardeschijf(request):
 
     # Get all posts from DB
     # Aantal per pagina en pagina nummer
 
 
-    processorenlijst = Processoren.objects(categorie__contains='Harde schijven').all()
-    processoren = listing(request, processorenlijst, 15)
-    return render_to_response('hardeschijf.html', {'Processoren': processoren},
+    hardelijst = Harde.objects
+    harde = listing(request, hardelijst, 15)
+
+    
+    bereik, diff = paginas(hardelijst, harde)
+
+
+
+    return render_to_response('hardeschijf.html', {'Componenten': harde, 'Range':bereik, 'Diff':diff},
                               context_instance=RequestContext(request))
 
 def koeling(request):
@@ -142,31 +171,30 @@ def koeling(request):
     # Aantal per pagina en pagina nummer
 
 
-    processorenlijst = Processoren.objects(categorie__contains='Koeling').all()
-    processoren = listing(request, processorenlijst, 15)
-    return render_to_response('koeling.html', {'Processoren': processoren},
+    koelinglijst = Koeling.objects
+    koeling = listing(request, koelinglijst, 15)
+
+    
+    bereik, diff = paginas(koelinglijst, koeling)
+
+
+
+    return render_to_response('koeling.html', {'Componenten': koeling, 'Range':bereik, 'Diff':diff},
                               context_instance=RequestContext(request))
 
 def moederborden(request):
 
     # Get all posts from DB
     # Aantal per pagina en pagina nummer
-    processorenlijst = Processoren.objects(categorie__contains='Moederborden').all()
-    processoren = listing(request, processorenlijst, 15)
+    moederbordenlijst = Moederborden.objects
+    moederborden = listing(request, moederbordenlijst, 15)
     
-    range = [-3, -2, -1, 0, 1, 2, 3]
-    pages = Paginator(processorenlijst, 15).page_range
-    current_page = processoren.number
-
-    # Difference between current page
-    # Fill with 0 because pages start at 1
-    diff = [0]
-    for p in pages:
-        diff.append(int(p - current_page))
+   
+    bereik, diff = paginas(moederbordenlijst, moederborden)
 
 
 
-    return render_to_response('moederbord.html', {'Processoren': processoren, 'Range':range, 'Diff':diff},
+    return render_to_response('moederbord.html', {'Componenten': moederborden, 'Range':bereik, 'Diff':diff},
                               context_instance=RequestContext(request))
 
 def optischeschijf(request):
@@ -175,9 +203,15 @@ def optischeschijf(request):
     # Aantal per pagina en pagina nummer
 
 
-    processorenlijst = Processoren.objects(categorie__contains='DVD, Blu-ray & backup').all()
-    processoren = listing(request, processorenlijst, 15)
-    return render_to_response('optischeschijf.html', {'Processoren': processoren},
+    dvdlijst = Dvd.objects
+    dvd = listing(request, dvdlijst, 15)
+
+
+    bereik, diff = paginas(dvdlijst, dvd)
+
+
+
+    return render_to_response('optischeschijf.html', {'Componenten': dvd, 'Range':bereik, 'Diff':diff},
                               context_instance=RequestContext(request))
 
 def voedingen(request):
@@ -186,24 +220,43 @@ def voedingen(request):
     # Aantal per pagina en pagina nummer
 
 
-    processorenlijst = Processoren.objects(categorie__contains='Voeding').all()
-    processoren = listing(request, processorenlijst, 15)
-    return render_to_response('voeding.html', {'Processoren': processoren},
+    voedinglijst = Voeding.objects
+    voeding = listing(request, voedinglijst, 15)
+
+    bereik,diff = paginas(voedinglijst, voeding)
+
+
+
+    return render_to_response('voeding.html', {'Componenten': voedingen, 'Range':bereik, 'Diff':diff},
                               context_instance=RequestContext(request))
 
 
-def listing(request, processorenlijst, aantal):
-    paginator = Paginator(processorenlijst,15)
+def listing(request, componentenlijst, aantal):
+    paginator = Paginator(componentenlijst,15)
     pagina = request.GET.get('pagina')
 
     try:
-        processoren = paginator.page(pagina)
+        componenten = paginator.page(pagina)
     except PageNotAnInteger:
         # If page is not an integer, deliver first page.
-        processoren = paginator.page(1)
+        componenten = paginator.page(1)
     except EmptyPage:
-        # If page is out of range (e.g. 9999), deliver last page of results.
-        processoren = paginator.page(paginator.num_pages)
+        # If page is out of bereik (e.g. 9999), deliver last page of results.
+        componenten = paginator.page(paginator.num_pages)
 
-    return processoren
+    return componenten
+
+def paginas(componentenlijst, componenten):
+    bereik = [-3, -2, -1, 0, 1, 2, 3]
+    pages = Paginator(componentenlijst, 15).page_range
+    current_page = componenten.number
+
+    # Difference between current page
+    # Fill with 0 because pages start at 1
+    diff = [0]
+    for p in pages:
+        diff.append(int(p - current_page))
+
+    return bereik, diff
+
 

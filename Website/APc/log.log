@@ -1,161 +1,25 @@
-[29/Oct/2014 11:38:48] ERROR [django.request:231] Internal Server Error: /deselect/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 39, in deselect
-    del request.session[categorie]
-  File "/usr/local/lib/python2.7/dist-packages/django/contrib/sessions/backends/base.py", line 56, in __delitem__
-    del self._session[key]
-KeyError: u'Moederborden'
-[29/Oct/2014 11:38:55] ERROR [django.request:231] Internal Server Error: /deselect/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 39, in deselect
-    del request.session[categorie]
-  File "/usr/local/lib/python2.7/dist-packages/django/contrib/sessions/backends/base.py", line 56, in __delitem__
-    del self._session[key]
-KeyError: u'Moederborden'
-[29/Oct/2014 11:47:41] ERROR [django.request:231] Internal Server Error: /deselect/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 39, in deselect
-    del request.session[categorie[1]]
-  File "/usr/local/lib/python2.7/dist-packages/django/contrib/sessions/backends/base.py", line 56, in __delitem__
-    del self._session[key]
-KeyError: u'o'
-[29/Oct/2014 11:47:48] ERROR [django.request:231] Internal Server Error: /deselect/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 39, in deselect
-    del request.session[categorie[1]]
-  File "/usr/local/lib/python2.7/dist-packages/django/contrib/sessions/backends/base.py", line 56, in __delitem__
-    del self._session[key]
-KeyError: u'o'
-[29/Oct/2014 11:48:28] ERROR [django.request:231] Internal Server Error: /deselect/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 39, in deselect
-    del request.session[categorie]
-  File "/usr/local/lib/python2.7/dist-packages/django/contrib/sessions/backends/base.py", line 56, in __delitem__
-    del self._session[key]
-KeyError: u'Moederborden'
-[29/Oct/2014 12:18:33] ERROR [django.request:231] Internal Server Error: /deselect/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 39, in deselect
-    del request.session[categorie]
-  File "/usr/local/lib/python2.7/dist-packages/django/contrib/sessions/backends/base.py", line 56, in __delitem__
-    del self._session[key]
-KeyError: u'Moederborden'
-[29/Oct/2014 12:19:10] INFO [pcbuilder.views:32] True
-[29/Oct/2014 12:19:10] INFO [pcbuilder.views:33] test
-[29/Oct/2014 12:30:35] INFO [pcbuilder.views:32] True
-[29/Oct/2014 12:30:35] INFO [pcbuilder.views:33] test
-[29/Oct/2014 12:39:16] WARNING [django.request:143] Not Found: /favicon.ico
-[29/Oct/2014 12:39:16] WARNING [django.request:143] Not Found: /favicon.ico
-[29/Oct/2014 12:52:58] INFO [pcbuilder.views:32] True
-[29/Oct/2014 12:52:58] INFO [pcbuilder.views:33] test
-[29/Oct/2014 12:54:05] INFO [pcbuilder.views:32] True
-[29/Oct/2014 12:54:05] INFO [pcbuilder.views:33] test
-[29/Oct/2014 12:59:41] ERROR [django.request:231] Internal Server Error: /
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 36
-    del request.session[productstring] = product
-                                       ^
-SyntaxError: invalid syntax
-[29/Oct/2014 12:59:45] ERROR [django.request:231] Internal Server Error: /
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 36
-    del request.session[productstring] = product
-                                       ^
-SyntaxError: invalid syntax
-[29/Oct/2014 13:00:29] ERROR [django.request:231] Internal Server Error: /
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 36
-    del request.session[productstring] = product
-                                       ^
-SyntaxError: invalid syntax
-[29/Oct/2014 13:22:07] ERROR [django.request:231] Internal Server Error: /deselect/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 36, in deselect
-    del request.session[categorie]
-  File "/usr/local/lib/python2.7/dist-packages/django/contrib/sessions/backends/base.py", line 56, in __delitem__
-    del self._session[key]
-KeyError: u'Moederborden'
-[30/Oct/2014 11:17:52] WARNING [django.request:143] Not Found: /favicon.ico
-[30/Oct/2014 11:24:52] WARNING [django.request:143] Not Found: /favicon.ico
-[30/Oct/2014 11:24:52] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Nov/2014 09:32:43] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Nov/2014 09:32:44] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Nov/2014 09:32:46] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Nov/2014 09:32:49] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Nov/2014 09:32:53] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Nov/2014 09:32:54] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Nov/2014 09:32:58] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Nov/2014 09:34:29] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Nov/2014 09:34:37] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Nov/2014 09:36:34] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Nov/2014 09:36:36] WARNING [django.request:143] Not Found: /favicon.ico
 <<<<<<< HEAD
-[30/Oct/2014 12:19:45] ERROR [django.request:231] Internal Server Error: /
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 26
-    return render_to_response('contact.html',,
-                                             ^
-SyntaxError: invalid syntax
+[03/Nov/2014 09:38:21] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Nov/2014 09:39:11] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Nov/2014 09:40:27] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Nov/2014 09:40:28] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Nov/2014 09:40:31] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Nov/2014 09:40:32] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Nov/2014 09:49:07] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Nov/2014 10:02:14] WARNING [django.request:143] Not Found: /favicon.ico
 =======
+<<<<<<< HEAD
 [30/Oct/2014 12:52:55] WARNING [django.request:143] Not Found: /favicon.ico
 [30/Oct/2014 12:53:25] WARNING [django.request:143] Not Found: /favicon.ico
 [30/Oct/2014 13:07:08] WARNING [django.request:143] Not Found: /favicon.ico
@@ -302,3 +166,7 @@ Traceback (most recent call last):
     __import__(name)
   File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 52
 SyntaxError: Non-ASCII character '\xe2' in file /Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py on line 52, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
+=======
+[16/Nov/2014 17:33:58] WARNING [django.request:143] Not Found: /favicon.ico
+>>>>>>> 4ceb59a7a857375ae062df204b0e83c231561615
+>>>>>>> d452ba923118df57d04a576421e8f7bfecc8196a
