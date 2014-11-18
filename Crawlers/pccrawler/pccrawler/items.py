@@ -14,6 +14,7 @@ class BobItem(scrapy.Item):
     info = scrapy.Field()
     stock = scrapy.Field()
     prijs = scrapy.Field()
+    link = scrapy.Field()
 
 class ParadigitItem(scrapy.Item):
     categorie = scrapy.Field()

@@ -36,6 +36,9 @@ class BobSpider(CrawlSpider):
             item['stock'] = sel.xpath('a/span[contains(concat(" ", normalize-space(@class), " "), " stockStatusContainer ")]/strong/text()').extract()
             item['categorie'] = sel.xpath('//h1[contains(concat(" ", normalize-space(@class), " "), " seoListingHeadline ")]/text()').extract()
             item['prijs'] = sel.xpath('div/p/span[contains(concat(" ", normalize-space(@class), " "), " price right right10 ")]/text()').extract()
+            
+            item['link'] = "http://www.alternate.nl" + sel.xpath('a[@class="productLink"]/@href').extract()[0]
+
             yield item
             
   
