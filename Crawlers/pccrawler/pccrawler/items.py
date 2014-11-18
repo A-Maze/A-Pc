@@ -14,6 +14,7 @@ class BobItem(scrapy.Item):
     info = scrapy.Field()
     stock = scrapy.Field()
     prijs = scrapy.Field()
+    link = scrapy.Field()
 
 class ParadigitItem(scrapy.Item):
     categorie = scrapy.Field()
@@ -64,7 +65,7 @@ class AzertyItem(scrapy.Item):
 
 #specificatie items
 class GPU(scrapy.Item):
-    Categorie = scrapy.Field()
+    categorie = scrapy.Field()
     Merk = scrapy.Field()
     Product = scrapy.Field()
     Uitvoering = scrapy.Field()
