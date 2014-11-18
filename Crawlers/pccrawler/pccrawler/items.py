@@ -64,7 +64,7 @@ class AzertyItem(scrapy.Item):
 
 #specificatie items
 class GPU(scrapy.Item):
-    Categorie = scrapy.Field()
+    categorie = scrapy.Field()
     Merk = scrapy.Field()
     Product = scrapy.Field()
     Uitvoering = scrapy.Field()

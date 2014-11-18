@@ -21,3 +21,4 @@
 =======
 [16/Nov/2014 17:33:58] WARNING [django.request:143] Not Found: /favicon.ico
 >>>>>>> 4ceb59a7a857375ae062df204b0e83c231561615
+[18/Nov/2014 08:25:05] WARNING [django.request:143] Not Found: /favicon.ico
