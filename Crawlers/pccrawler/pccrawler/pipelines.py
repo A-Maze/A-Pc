@@ -32,16 +32,16 @@ class PccrawlerPipeline(object):
 				if "Moederborden" in langeNaam:
 					self.collection = db["moederborden"]
 					pleurindedb()
-				elif "Processoren" in langeNaam:
+				elif "Processoren" || "CPU" in langeNaam:
 					self.collection = db["processoren"]
 					pleurindedb()
-				elif "Koeling" in langeNaam:
+				elif "Koeling" || "Koelers" in langeNaam:
 					self.collection = db["koeling"]
 					pleurindedb()
 				elif "Behuizingen" in langeNaam:
 					self.collection = db["behuizingen"]
 					pleurindedb()
-				elif "Grafische" in langeNaam:
+				elif "Grafische" || "GPU" in langeNaam:
 					self.collection = db["grafische"]
 					pleurindedb()
 				elif "Harde" in langeNaam:
@@ -50,7 +50,7 @@ class PccrawlerPipeline(object):
 				elif "DVD" in langeNaam:
 					self.collection = db["dvd"]
 					pleurindedb()
-				elif "Geheugen" in langeNaam:
+				elif "Geheugen" || "RAM" in langeNaam:
 					self.collection = db["geheugen"]
 					pleurindedb()
 				elif "Voeding" in langeNaam:
