@@ -77,10 +77,14 @@ class TweakersSpider(CrawlSpider):
                 item['SKU'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
                 yield item
                 print "Videokaart"
-            elif "Geheugen intern" in category:
 
+            elif "Geheugen intern" in category:
+                #item naam, komt overeen met de naam in items.py
                 item = Geheugen()
 
+                #item attributen komt overeen met de inhoud van het item op items.py.
+                #sel.xpath moet overeenkomen met de tweakers html structuur.
+                #hier moet tr[1], "Modulegrootte" bijvoorbeeld Uitvoering worden aangepast naar hoe het op tweakers staat voor dit item.
                 item['categorie'] = sel.xpath('//*[@id="tweakbaseBreadcrumbCategory"]/a/text()').extract()
                 item['Merk'] = sel.xpath('//tr[contains(td[1], "Merk")]/td[2]/a/text()').extract()
                 item['Serie'] = sel.xpath('//tr[contains(td[1], "Serie")]/td[2]/a/text()').extract()
