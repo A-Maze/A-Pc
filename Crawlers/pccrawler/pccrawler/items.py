@@ -107,6 +107,7 @@ class Geheugen(scrapy.Item):
     Serie = scrapy.Field()
     Uitvoering = scrapy.Field()
     Afbeelding = scrapy.Field()
+    Product = scrapy.Field()
     Geheugengrootte = scrapy.Field()
     Aantal_pins = scrapy.Field()
     Modulegrootte = scrapy.Field()
@@ -122,6 +123,12 @@ class Geheugen(scrapy.Item):
     SKu = scrapy.Field()
 
 class Moederbord(scrapy.Item):
+    categorie = scrapy.Field()
+    Merk = scrapy.Field()
+    Serie = scrapy.Field()
+    Uitvoering = scrapy.Field()
+    Afbeelding = scrapy.Field()
+    Product = scrapy.Field()
     Socket = scrapy.Field()
     Aantal_socket = scrapy.Field()
     Form_Factor = scrapy.Field()
