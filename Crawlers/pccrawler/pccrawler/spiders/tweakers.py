@@ -33,62 +33,61 @@ class TweakersSpider(CrawlSpider):
  
     
     def parse_item(responsef, response):
-        category = response.xpath('//*[@id="tweakbaseBreadcrumbCategory"]/a/text()').extract()
-        print category
-        if "Videokaarten" in category:
-            item = GPU()
 
-            item['categorie'] = response.xpath('//*[@id="tweakbaseBreadcrumbCategory"]/a/text()').extract()
-            item['Merk'] = response.xpath('//tr[contains(td[1], "Merk")]/td[2]/a/text()').extract()
-            item['Product'] = response.xpath('//tr[contains(td[1], "Product")]/td[2]/a/text()').extract()
-            item['Uitvoering'] = response.xpath('//tr[contains(td[1], "Uitvoering")]/td[2]/a/text()').extract()
-            item['Afbeelding'] = response.xpath('//tr[contains(td[1], "Afbeelding")]/td[2]/a/text()').extract()
-            item['Videochip'] = response.xpath('//tr[contains(td[1], "Videochip")]/td[2]/a/text()').extract()
-            item['Chipset_generatie'] = response.xpath('//tr[contains(td[1], "Chipset generatie")]/td[2]/a/text()').extract()
-            item['Videochipfabrikant'] = response.xpath('//tr[contains(td[1], "Videochipfabrikant")]/td[2]/a/text()').extract()
-            item['Nominale_snelheid_videochip'] = response.xpath('//tr[contains(td[1], "Nominale snelheid videochip")]/td[2]/a/text()').extract()
-            item['Maximale_turbo_frequentie'] = response.xpath('//tr[contains(td[1], "Maximale turbo frequentie")]/td[2]/a/text()').extract()
-            item['Rekenkernen'] = response.xpath('//tr[contains(td[1], "Rekenkernen")]/td[2]/a/text()').extract()
-            item['Geheugengrootte'] = response.xpath('//tr[contains(td[1], "Geheugengrootte")]/td[2]/a/text()').extract()
-            item['Geheugen_Type'] = response.xpath('//tr[contains(td[1], "Geheugen Type (videokaarten)")]/td[2]/a/text()').extract()
-            item['Geheugen_Nominale_snelheid_videochip'] = response.xpath('//tr[contains(td[1], "Geheugen Snelheid")]/td[2]/a/text()').extract()
-            item['Geheugen_Busbreedte'] = response.xpath('//tr[contains(td[1], "Geheugen Busbreedte")]/td[2]/a/text()').extract()
-            item['Card_Interface'] = response.xpath('//tr[contains(td[1], "Card Interface (Video)")]/td[2]/a/text()').extract()
-            item['Video_uit'] = response.xpath('//tr[contains(td[1], "Video uit")]/td[2]/a/text()').extract()
-            item['Hoogste_HDMI_versie'] = response.xpath('//tr[contains(td[1], "Hoogste HDMI-versie")]/td[2]/a/text()').extract()
-            item['Hoogste_DisplayPort_versie'] = response.xpath('//tr[contains(td[1], "Hoogste DisplayPort versie")]/td[2]/a/text()').extract()
-            item['Video_Adapter'] = response.xpath('//tr[contains(td[1], "Video Adapter")]/td[2]/a/text()').extract()
-            item['DirectX_versie'] = response.xpath('//tr[contains(td[1], "DirectX versie")]/td[2]/a/text()').extract()
-            item['OpenGL_versie'] = response.xpath('//tr[contains(td[1], "OpenGL versie")]/td[2]/a/text()').extract()
-            item['Shader_model'] = response.xpath('//tr[contains(td[1], "Shader model")]/td[2]/a/text()').extract()
-            item['Lengte'] = response.xpath('//tr[contains(td[1], "Lengte")]/td[2]/a/text()').extract()
-            item['Hoogte'] = response.xpath('//tr[contains(td[1], "Hoogte")]/td[2]/a/text()').extract()
-            item['Breedte'] = response.xpath('//tr[contains(td[1], "Breedte")]/td[2]/a/text()').extract()
-            item['Aantal_slots'] = response.xpath('//tr[contains(td[1], "Aantal slots")]/td[2]/a/text()').extract()
-            item['Aantal_pins'] = response.xpath('//tr[contains(td[1], "Aantal pins")]/td[2]/a/text()').extract()
-            item['Aantal_6_pins'] = response.xpath('//tr[contains(td[1], "Aantal 6 pins")]/td[2]/a/text()').extract()
-            item['Aantal_8_pins'] = response.xpath('//tr[contains(td[1], "Aantal 8 pins")]/td[2]/a/text()').extract()
-            item['Stroomverbruik'] = response.xpath('//tr[contains(td[1], "Stroomverbruik")]/td[2]/a/text()').extract()
-            item['Type_koeling'] = response.xpath('//tr[contains(td[1], "Type koeling")]/td[2]/a/text()').extract()
-            item['Link_Interface'] = response.xpath('//tr[contains(td[1], "Link Interface")]/td[2]/a/text()').extract()
-            item['EAN'] = response.xpath('//tr[contains(td[1], "EAN")]/td[2]/a/text()').extract()
-            item['SKU'] = response.xpath('//tr[contains(td[1], "SKU")]/td[2]/a/text()').extract()
-            yield item
-            print "Videokaart"
-        elif "Geheugen intern" in category:
-            print "Geheugen"
-        elif "Moederborden" in category:
-            print "Moederbord"
-        elif "Behuizingen" in category:
-            print "Behuizing"
-        elif "Processors" in category:
-            print "Processor"
-        elif "Voedingen" in category:
-            print "Voeding"
-        elif "Processorkoeling" in category:
-            print "Processorkoeling"
-        elif "Barebones" in category:
-            print "Barebone"
+        for sel in response.xpath('//div[@id="tab:specificaties"]'):
+            category = response.xpath('//*[@id="tweakbaseBreadcrumbCategory"]/a/text()').extract()
+            print category
+            if "Videokaarten" in category:
+                item = GPU()
 
-
-
+                item['categorie'] = sel.xpath('//*[@id="tweakbaseBreadcrumbCategory"]/a/text()').extract()
+                item['Merk'] = sel.xpath('//tr[contains(td[1], "Merk")]/td[2]/a/text()').extract()
+                item['Product'] = sel.xpath('//tr[contains(td[1], "Product")]/td[2]/a/text()').extract()
+                item['Uitvoering'] = sel.xpath('//tr[contains(td[1], "Uitvoering")]/td[2]/a/text()').extract()
+                item['Afbeelding'] = sel.xpath('//tr[contains(td[1], "Afbeelding")]/td[2]/a/@href').extract()
+                item['Videochip'] = sel.xpath('//tr[contains(td[1], "Videochip")]/td[2]/text()').extract()
+                item['Chipset_generatie'] = sel.xpath('//tr[contains(td[1], "Chipset generatie")]/td[2]/text()').extract()
+                item['Videochipfabrikant'] = sel.xpath('//tr[contains(td[1], "Videochipfabrikant")]/td[2]/text()').extract()
+                item['Nominale_snelheid_videochip'] = sel.xpath('//tr[contains(td[1], "Nominale snelheid videochip")]/td[2]/text()').extract()
+                item['Maximale_turbo_frequentie'] = sel.xpath('//tr[contains(td[1], "Maximale turbo frequentie")]/td[2]/text()').extract()
+                item['Rekenkernen'] = sel.xpath('//tr[contains(td[1], "Rekenkernen")]/td[2]/text()').extract()
+                item['Geheugengrootte'] = sel.xpath('//tr[contains(td[1], "Geheugengrootte")]/td[2]/text()').extract()
+                item['Geheugen_Type'] = sel.xpath('//tr[contains(td[1], "Geheugen Type (videokaarten)")]/td[2]/text()').extract()
+                item['Geheugen_Nominale_snelheid_videochip'] = sel.xpath('//tr[contains(td[1], "Geheugen Snelheid")]/td[2]/text()').extract()
+                item['Geheugen_Busbreedte'] = sel.xpath('//tr[contains(td[1], "Geheugen Busbreedte")]/td[2]/text()').extract()
+                item['Card_Interface'] = sel.xpath('//tr[contains(td[1], "Card Interface (Video)")]/td[2]/text()').extract()
+                item['Video_uit'] = sel.xpath('//tr[contains(td[1], "Video uit")]/td[2]/text()').extract()
+                item['Hoogste_HDMI_versie'] = sel.xpath('//tr[contains(td[1], "Hoogste HDMI-versie")]/td[2]/text()').extract()
+                item['Hoogste_DisplayPort_versie'] = sel.xpath('//tr[contains(td[1], "Hoogste DisplayPort versie")]/td[2]/text()').extract()
+                item['Video_Adapter'] = sel.xpath('//tr[contains(td[1], "Video Adapter")]/td[2]/text()').extract()
+                item['DirectX_versie'] = sel.xpath('//tr[contains(td[1], "DirectX versie")]/td[2]/text()').extract()
+                item['OpenGL_versie'] = sel.xpath('//tr[contains(td[1], "OpenGL versie")]/td[2]/text()').extract()
+                item['Shader_model'] = sel.xpath('//tr[contains(td[1], "Shader model")]/td[2]/text()').extract()
+                item['Lengte'] = sel.xpath('//tr[contains(td[1], "Lengte")]/td[2]/text()').extract()
+                item['Hoogte'] = sel.xpath('//tr[contains(td[1], "Hoogte")]/td[2]/text()').extract()
+                item['Breedte'] = sel.xpath('//tr[contains(td[1], "Breedte")]/td[2]/text()').extract()
+                item['Aantal_slots'] = sel.xpath('//tr[contains(td[1], "Aantal slots")]/td[2]/text()').extract()
+                item['Aantal_pins'] = sel.xpath('//tr[contains(td[1], "Aantal pins")]/td[2]/text()').extract()
+                item['Aantal_6_pins'] = sel.xpath('//tr[contains(td[1], "Aantal 6 pins")]/td[2]/text()').extract()
+                item['Aantal_8_pins'] = sel.xpath('//tr[contains(td[1], "Aantal 8 pins")]/td[2]/text()').extract()
+                item['Stroomverbruik'] = sel.xpath('//tr[contains(td[1], "Stroomverbruik")]/td[2]/text()').extract()
+                item['Type_koeling'] = sel.xpath('//tr[contains(td[1], "Type koeling")]/td[2]/text()').extract()
+                item['Link_Interface'] = sel.xpath('//tr[contains(td[1], "Link Interface")]/td[2]/text()').extract()
+                item['EAN'] = sel.xpath('//tr[contains(td[1], "EAN")]/td[2]/text()').extract()
+                item['SKU'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
+                yield item
+                print "Videokaart"
+            elif "Geheugen intern" in category:
+                print "Geheugen"
+            elif "Moederborden" in category:
+                print "Moederbord"
+            elif "Behuizingen" in category:
+                print "Behuizing"
+            elif "Processors" in category:
+                print "Processor"
+            elif "Voedingen" in category:
+                print "Voeding"
+            elif "Processorkoeling" in category:
+                print "Processorkoeling"
+            elif "Barebones" in category:
+                print "Barebone"
