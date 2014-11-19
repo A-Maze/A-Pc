@@ -102,8 +102,14 @@ class GPU(scrapy.Item):
     SKU = scrapy.Field()
 
 class Geheugen(scrapy.Item):
+    categorie = scrapy.Field()
+    Merk = scrapy.Field()
+    Serie = scrapy.Field()
+    Uitvoering = scrapy.Field()
+    Afbeelding = scrapy.Field()
     Geheugengrootte = scrapy.Field()
-    Aantal_pinsModulegrootte = scrapy.Field()
+    Aantal_pins = scrapy.Field()
+    Modulegrootte = scrapy.Field()
     Prijs_per_GB = scrapy.Field()
     Geheugentype = scrapy.Field()
     Geheugen_Specificatie = scrapy.Field()

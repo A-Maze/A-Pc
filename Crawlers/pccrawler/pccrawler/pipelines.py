@@ -28,6 +28,12 @@ class PccrawlerPipeline(object):
 				connection = pymongo.Connection(settings['MONGODB_SERVER'], settings['MONGODB_PORT'])
 				db = connection[settings['MONGODB_DB']]
 
+				def pleurindedb():
+					self.collection.insert(dict(item))
+					log.msg("Item wrote to MongoDB database %s/%s/%s" %
+			    	(settings['MONGODB_DB'], settings['MONGODB_COLLECTION'], item['categorie'][0]),
+			    	level=log.DEBUG, spider=spider) 
+
 				langeNaam = item["categorie"][0]
 				if "Moederborden" in langeNaam:
 					self.collection = db["moederborden"]
@@ -57,11 +63,7 @@ class PccrawlerPipeline(object):
 					self.collection = db["voeding"]
 					pleurindedb()
 				
-				def pleurindedb():
-					self.collection.insert(dict(item))
-					log.msg("Item wrote to MongoDB database %s/%s/%s" %
-			    	(settings['MONGODB_DB'], settings['MONGODB_COLLECTION'], item['categorie'][0]),
-			    	level=log.DEBUG, spider=spider) 
+				
 		    	
 		    	
 			return item
