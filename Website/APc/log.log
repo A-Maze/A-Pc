@@ -173,4 +173,8 @@ SyntaxError: Non-ASCII character '\xe2' in file /Users/Davey/Documents/school/Ja
 [18/Nov/2014 08:25:05] WARNING [django.request:143] Not Found: /favicon.ico
 =======
 >>>>>>> d452ba923118df57d04a576421e8f7bfecc8196a
+<<<<<<< HEAD
+[18/Nov/2014 10:57:08] WARNING [django.request:143] Not Found: /favicon.ico
+=======
 >>>>>>> 111b7718d8eef20c64b04cd1e34b927f2feec3e8
+>>>>>>> 0192f63f0d96a985fad6a99f06a8d80c2310f79c
