@@ -28,20 +28,26 @@ class PccrawlerPipeline(object):
 				connection = pymongo.Connection(settings['MONGODB_SERVER'], settings['MONGODB_PORT'])
 				db = connection[settings['MONGODB_DB']]
 
+				def pleurindedb():
+					self.collection.insert(dict(item))
+					log.msg("Item wrote to MongoDB database %s/%s/%s" %
+			    	(settings['MONGODB_DB'], settings['MONGODB_COLLECTION'], item['categorie'][0]),
+			    	level=log.DEBUG, spider=spider) 
+
 				langeNaam = item["categorie"][0]
 				if "Moederborden" in langeNaam:
 					self.collection = db["moederborden"]
 					pleurindedb()
-				elif "Processoren" || "CPU" in langeNaam:
+				elif "Processoren" or "CPU" in langeNaam:
 					self.collection = db["processoren"]
 					pleurindedb()
-				elif "Koeling" || "Koelers" in langeNaam:
+				elif "Koeling" or "Koelers" in langeNaam:
 					self.collection = db["koeling"]
 					pleurindedb()
 				elif "Behuizingen" in langeNaam:
 					self.collection = db["behuizingen"]
 					pleurindedb()
-				elif "Grafische" || "GPU" in langeNaam:
+				elif "Grafische" or "GPU" in langeNaam:
 					self.collection = db["grafische"]
 					pleurindedb()
 				elif "Harde" in langeNaam:
@@ -50,18 +56,14 @@ class PccrawlerPipeline(object):
 				elif "DVD" in langeNaam:
 					self.collection = db["dvd"]
 					pleurindedb()
-				elif "Geheugen" || "RAM" in langeNaam:
+				elif "Geheugen" or "RAM" in langeNaam:
 					self.collection = db["geheugen"]
 					pleurindedb()
 				elif "Voeding" in langeNaam:
 					self.collection = db["voeding"]
 					pleurindedb()
 				
-				def pleurindedb():
-					self.collection.insert(dict(item))
-					log.msg("Item wrote to MongoDB database %s/%s/%s" %
-			    	(settings['MONGODB_DB'], settings['MONGODB_COLLECTION'], item['categorie'][0]),
-			    	level=log.DEBUG, spider=spider) 
+				
 		    	
 		    	
 			return item
