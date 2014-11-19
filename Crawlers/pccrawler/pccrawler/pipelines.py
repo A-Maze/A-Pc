@@ -17,7 +17,7 @@ class PccrawlerPipeline(object):
 	
 
 	def __init__(self):
-		poep = "kaas"
+		
         def process_item(self, item, spider):
 
 		valid = True
@@ -35,22 +35,22 @@ class PccrawlerPipeline(object):
 			    	level=log.DEBUG, spider=spider) 
 
 				langeNaam = item["categorie"][0]
-				if "Moederborden" in langeNaam:
+				if "Moederbord" or "moederborden" in langeNaam:
 					self.collection = db["moederborden"]
 					pleurindedb()
-				elif "Processoren" or "CPU" in langeNaam:
+				elif "Processoren" or "CPU" or "Processors" in langeNaam:
 					self.collection = db["processoren"]
 					pleurindedb()
-				elif "Koeling" or "Koelers" in langeNaam:
+				elif "Koeling" or "Koelers" or "Processorkoeling" in langeNaam:
 					self.collection = db["koeling"]
 					pleurindedb()
-				elif "Behuizingen" in langeNaam:
+				elif "Behuizingen" or "Barebones" in langeNaam:
 					self.collection = db["behuizingen"]
 					pleurindedb()
-				elif "Grafische" or "GPU" in langeNaam:
+				elif "Grafische" or "GPU" or "Videokaarten" in langeNaam:
 					self.collection = db["grafische"]
 					pleurindedb()
-				elif "Harde" in langeNaam:
+				elif "Harde" or "Geheugen intern" in langeNaam:
 					self.collection = db["harde"]
 					pleurindedb()
 				elif "DVD" in langeNaam:
@@ -59,7 +59,7 @@ class PccrawlerPipeline(object):
 				elif "Geheugen" or "RAM" in langeNaam:
 					self.collection = db["geheugen"]
 					pleurindedb()
-				elif "Voeding" in langeNaam:
+				elif "Voeding" or "Voedingen" in langeNaam:
 					self.collection = db["voeding"]
 					pleurindedb()
 				
