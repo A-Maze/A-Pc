@@ -98,12 +98,12 @@ class TweakersSpider(CrawlSpider):
                 item['Fabrieksgarantie'] = sel.xpath('//tr[contains(td[1], "Fabrieksgarantie")]/td[2]/text()').extract()
                 item['Bijzonderheden'] = sel.xpath('//tr[contains(td[1], "Bijzonderheden")]/td[2]/text()').extract()
                 item['EAN'] = sel.xpath('//tr[contains(td[1], "EAN")]/td[2]/text()').extract()
-                item['SKu'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
+                item['SKU'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
                 yield item
 
                 print "Geheugen"
             elif "Moederborden" in category:
-           """     item['categorie'] = sel.xpath('//*[@id="tweakbaseBreadcrumbCategory"]/a/text()').extract()
+           """  item['categorie'] = sel.xpath('//*[@id="tweakbaseBreadcrumbCategory"]/a/text()').extract()
                 item['Merk'] = sel.xpath('//table/tbody/tr[contains(td[1], "Merk")]/td[2]/a/text()').extract()
                 item['Product'] = sel.xpath('//table/tbody/tr[contains(td[1], "Product")]/td[2]/a/text()').extract()
                 item['Uitvoering'] = sel.xpath('//table/tbody/tr[contains(td[1], "Uitvoering")]/td[2]/a/text()').extract()
