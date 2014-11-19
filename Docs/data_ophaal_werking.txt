@@ -1,0 +1,15 @@
+Eerst crawler begint met lege db en zet hier alle opgehaalde items in
+	Volgende crawlers checken of het item al in de db voorkomt:
+		Ja:
+			Alleen prijs, product detail link en naam webwinkel aan item toevoegen
+
+		Nee:
+			Heel het item toevoegen
+
+Tweakers:
+	Haalt specs op
+	Als het item in de db voorkomt:
+		Specs toevoegen aan item
+	Zo niet:
+		Overslaan
+		(Anders zijn er items die niet te verkrijgen zijn bij de webwinkels. Weet niet of dit gewenst is?)
