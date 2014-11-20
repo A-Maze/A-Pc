@@ -23,7 +23,6 @@ class BobSpider(CrawlSpider):
     Rule(LinkExtractor(restrict_xpaths =('//div[@id="navTree"]/ul/li[position()>=4 and position()<=19 or position() = 28 or position() = 29 or position = 36]/ul/li[contains(concat(" ", normalize-space(@class), "  "), " subLevel4 ")]/a', )),callback='parse_item',follow=True),
     Rule(LinkExtractor(restrict_xpaths =('//div[contains(concat(" ", normalize-space(@class), "  "), " articleSizePerSite ")]/a', )),callback='parse_item',follow=True),
     Rule(LinkExtractor(restrict_xpaths =('//a[@class="productLink"]',)),callback='parse_item',follow=True),
-    Rule(LinkExtractor(restrict_xpaths =('', )),callback='parse_item',follow=True),
     )
 
     
@@ -32,15 +31,15 @@ class BobSpider(CrawlSpider):
     
     def parse_item(self, response):
 
-        for sel in response.xpath('//div[@id="coreProductInfos"]'):
+        for sel in response.xpath('//div[@id="details"]'):
             item = BobItem()
-            item['naam'] =  sel.xpath('a/span/span/h2/span[contains(concat(" ", normalize-space(@class), " "), " name ")]/span/text()').extract()
-            item['subnaam'] = sel.xpath('a/span/span/h2/span[contains(concat(" ", normalize-space(@class), " "), " additional ")]/text()').extract()
-            item['info'] = sel.xpath('a/span[contains(concat(" ", normalize-space(@class), " "), " info ")]/text()').extract()
-            item['stock'] = sel.xpath('a/span[contains(concat(" ", normalize-space(@class), " "), " stockStatusContainer ")]/strong/text()').extract()
-            item['categorie'] = sel.xpath('//h1[contains(concat(" ", normalize-space(@class), " "), " seoListingHeadline ")]/text()').extract()
-            item['prijs'] = sel.xpath('div/p/span[contains(concat(" ", normalize-space(@class), " "), " price right right10 ")]/text()').extract()
-            item['link'] = "http://www.alternate.nl" + sel.xpath('a[@class="productLink"]/@href').extract()[0]
+            item['naam'] =  sel.xpath('//div[@class="productNameContainer"]/h1/span[position() = 2]/text()').extract()
+            item['subnaam'] = sel.xpath('//div[@class="productNameContainer"]/h1/span[position() = 3]/text()').extract()
+            item['info'] = sel.xpath('//div[@class="productShort"]/ul/li/text()').extract()
+            item['stock'] = sel.xpath('//div[@class="availability"]/p/text()').extract()
+            item['categorie'] = sel.xpath('//div[@class="breadCrumbs"]/span[position() = 2]/a/span/text()').extract()
+            item['prijs'] = sel.xpath('//span[@itemprop="price"]/@content').extract()
+            item['link'] = response.url
             item['EAN'] = sel.xpath('//head/script[position() = 1]/@src').extract()[0].split('ean=', 1)
             yield item
             
