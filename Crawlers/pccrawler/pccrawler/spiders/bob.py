@@ -7,6 +7,15 @@ from scrapy.selector import HtmlXPathSelector
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors import LinkExtractor
 
+def find_between( s, first, last ):
+        try:
+            start = s.index( first ) + len( first )
+            end = s.index( last, start )
+            return s[start:end]
+        except ValueError:
+            return ""
+
+
 class BobSpider(CrawlSpider):
     name = "bob"
     allowed_domains = ["www.alternate.nl"]
@@ -26,7 +35,7 @@ class BobSpider(CrawlSpider):
     )
 
     
-
+    
         
     
     def parse_item(self, response):
@@ -40,7 +49,7 @@ class BobSpider(CrawlSpider):
             item['categorie'] = sel.xpath('//div[@class="breadCrumbs"]/span[position() = 2]/a/span/text()').extract()
             item['prijs'] = sel.xpath('//span[@itemprop="price"]/@content').extract()
             item['link'] = response.url
-            item['EAN'] = sel.xpath('//script[contains(. , "upcean")]/text()').extract()
+            item['EAN'] = find_between(sel.xpath('//script[contains(. , "upcean")]/text()').extract()[0], "'upcean', '","']);")
             yield item
             
 
