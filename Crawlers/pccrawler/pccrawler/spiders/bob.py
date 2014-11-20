@@ -26,12 +26,17 @@ class BobSpider(CrawlSpider):
     Rule(LinkExtractor(restrict_xpaths =('', )),callback='parse_item',follow=True),
     )
 
- 
+    
+
+        
     
     def parse_item(self, response):
+        
+        
 
         for sel in response.xpath('//div[contains(concat(" ", normalize-space(@class), "  "), " listRow ")]'):
             item = BobItem()
+            
             item['naam'] =  sel.xpath('a/span/span/h2/span[contains(concat(" ", normalize-space(@class), " "), " name ")]/span/text()').extract()
             item['subnaam'] = sel.xpath('a/span/span/h2/span[contains(concat(" ", normalize-space(@class), " "), " additional ")]/text()').extract()
             item['info'] = sel.xpath('a/span[contains(concat(" ", normalize-space(@class), " "), " info ")]/text()').extract()
@@ -41,9 +46,12 @@ class BobSpider(CrawlSpider):
             
             item['link'] = "http://www.alternate.nl" + sel.xpath('a[@class="productLink"]/@href').extract()[0]
             
-
             for sel in response.xpath('//div[@id="coreProductInfos"]'):
-                item['EAN'] = sel.xpath('//head/script[position() = 1]/@src').extract()[0].split('ean=', 1)
+                item['EAN'] = sel.xpath('//head/script[position() = 1]/@src').extract()[0]
+                
+           
+           
+
             yield item
 
 
