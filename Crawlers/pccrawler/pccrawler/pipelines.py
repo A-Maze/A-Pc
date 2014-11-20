@@ -34,33 +34,56 @@ class PccrawlerPipeline(object):
 			    	(settings['MONGODB_DB'], settings['MONGODB_COLLECTION'], item['categorie'][0]),
 			    	level=log.DEBUG, spider=spider) 
 
+				
+
+					
+
+
 				langeNaam = item["categorie"][0]
 				if "Moederbord" or "moederborden" in langeNaam:
 					self.collection = db["moederborden"]
+					for e in self.collection.find({"EAN": item["EAN"] }):
+						print e
 					pleurindedb()
 				elif "Processoren" or "CPU" or "Processors" in langeNaam:
 					self.collection = db["processoren"]
+					for e in self.collection.find({"EAN": item["EAN"] }):
+						print e
 					pleurindedb()
 				elif "Koeling" or "Koelers" or "Processorkoeling" in langeNaam:
 					self.collection = db["koeling"]
+					for e in self.collection.find({"EAN": item["EAN"] }):
+						print e
 					pleurindedb()
 				elif "Behuizingen" or "Barbones" in langeNaam:
 					self.collection = db["behuizingen"]
+					for e in self.collection.find({"EAN": item["EAN"] }):
+						print e
 					pleurindedb()
 				elif "Grafische" or "GPU" or "Videokaarten" in langeNaam:
 					self.collection = db["grafische"]
+					for e in self.collection.find({"EAN": item["EAN"] }):
+						print e
 					pleurindedb()
 				elif "Harde" or "Geheugen intern" in langeNaam:
 					self.collection = db["harde"]
+					for e in self.collection.find({"EAN": item["EAN"] }):
+						print e
 					pleurindedb()
 				elif "DVD" in langeNaam:
 					self.collection = db["dvd"]
+					for e in self.collection.find({"EAN": item["EAN"] }):
+						print e
 					pleurindedb()
 				elif "Geheugen" or "RAM" in langeNaam:
 					self.collection = db["geheugen"]
+					for e in self.collection.find({"EAN": item["EAN"] }):
+						print e
 					pleurindedb()
 				elif "Voeding" or "Voedingen" in langeNaam:
 					self.collection = db["voeding"]
+					for e in self.collection.find({"EAN": item["EAN"] }):
+						print e
 					pleurindedb()
 				
 				
