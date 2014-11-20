@@ -40,7 +40,7 @@ class BobSpider(CrawlSpider):
             item['categorie'] = sel.xpath('//div[@class="breadCrumbs"]/span[position() = 2]/a/span/text()').extract()
             item['prijs'] = sel.xpath('//span[@itemprop="price"]/@content').extract()
             item['link'] = response.url
-            item['EAN'] = sel.xpath('//head/script[position() = 1]/@src').extract()[0].split('ean=', 1)
+            item['EAN'] = sel.xpath('//script[contains(. , "upcean")]/text()').extract()
             yield item
             
 
