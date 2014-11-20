@@ -15,6 +15,7 @@ class BobItem(scrapy.Item):
     stock = scrapy.Field()
     prijs = scrapy.Field()
     link = scrapy.Field()
+    EAN = scrapy.Field()
 
 class ParadigitItem(scrapy.Item):
     categorie = scrapy.Field()
@@ -247,7 +248,13 @@ class Voeding(scrapy.Item):
     EAN = scrapy.Field()
     SKU = scrapy.Field()
 
-class Koeling(scrapy.Item):   
+class Koeling(scrapy.Item):  
+    categorie = scrapy.Field()
+    Merk = scrapy.Field()
+    Serie = scrapy.Field()
+    Uitvoering = scrapy.Field()
+    Afbeelding = scrapy.Field()
+    Product = scrapy.Field() 
     Socket = scrapy.Field()
     Aansluiting_processorkoeling = scrapy.Field()
     Heatpipes = scrapy.Field()

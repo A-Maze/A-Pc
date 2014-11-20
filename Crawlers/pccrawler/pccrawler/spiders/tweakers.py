@@ -11,6 +11,7 @@ class TweakersSpider(CrawlSpider):
     name = "tweakers"
     allowed_domains = ["tweakers.net"]
     start_urls = (
+
         'http://tweakers.net/categorie/49/videokaarten/producten/',
         'http://tweakers.net/categorie/545/geheugen-intern/producten/',
         'http://tweakers.net/categorie/47/moederborden/producten/',

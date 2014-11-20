@@ -17,9 +17,9 @@ class PccrawlerPipeline(object):
 	
 
 	def __init__(self):
+		poep = "kaas"
 		
         def process_item(self, item, spider):
-
 		valid = True
 		for data in item:
           # here we only check if the data is not null
@@ -44,7 +44,7 @@ class PccrawlerPipeline(object):
 				elif "Koeling" or "Koelers" or "Processorkoeling" in langeNaam:
 					self.collection = db["koeling"]
 					pleurindedb()
-				elif "Behuizingen" or "Barebones" in langeNaam:
+				elif "Behuizingen" or "Barbones" in langeNaam:
 					self.collection = db["behuizingen"]
 					pleurindedb()
 				elif "Grafische" or "GPU" or "Videokaarten" in langeNaam:

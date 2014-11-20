@@ -22,6 +22,8 @@ class BobSpider(CrawlSpider):
     Rule(LinkExtractor(restrict_xpaths =('//div[@id="navTree"]/ul/li[position()>=4 and position()<=19 or position() = 28 or position() = 29 or position = 36]/ul/li[contains(concat(" ", normalize-space(@class), "  "), " subLevel3 ")]/a', )),callback='parse_item',follow=True),
     Rule(LinkExtractor(restrict_xpaths =('//div[@id="navTree"]/ul/li[position()>=4 and position()<=19 or position() = 28 or position() = 29 or position = 36]/ul/li[contains(concat(" ", normalize-space(@class), "  "), " subLevel4 ")]/a', )),callback='parse_item',follow=True),
     Rule(LinkExtractor(restrict_xpaths =('//div[contains(concat(" ", normalize-space(@class), "  "), " articleSizePerSite ")]/a', )),callback='parse_item',follow=True),
+    Rule(LinkExtractor(restrict_xpaths =('//a[@class="productLink"]',)),callback='parse_item',follow=True),
+    Rule(LinkExtractor(restrict_xpaths =('', )),callback='parse_item',follow=True),
     )
 
  
@@ -38,8 +40,13 @@ class BobSpider(CrawlSpider):
             item['prijs'] = sel.xpath('div/p/span[contains(concat(" ", normalize-space(@class), " "), " price right right10 ")]/text()').extract()
             
             item['link'] = "http://www.alternate.nl" + sel.xpath('a[@class="productLink"]/@href').extract()[0]
+            
 
+            for sel in response.xpath('//div[@id="coreProductInfos"]'):
+                item['EAN'] = sel.xpath('//head/script[position() = 1]/@src').extract()[0].split('ean=', 1)
             yield item
+
+
             
   
 
