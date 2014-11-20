@@ -34,7 +34,7 @@ class BobSpider(CrawlSpider):
         
         
 
-        for sel in response.xpath('//div[contains(concat(" ", normalize-space(@class), "  "), " listRow ")]'):
+        for sel in response.xpath('//div[@id="coreProductInfos"]'):
             item = BobItem()
             
             item['naam'] =  sel.xpath('a/span/span/h2/span[contains(concat(" ", normalize-space(@class), " "), " name ")]/span/text()').extract()
@@ -43,9 +43,13 @@ class BobSpider(CrawlSpider):
             item['stock'] = sel.xpath('a/span[contains(concat(" ", normalize-space(@class), " "), " stockStatusContainer ")]/strong/text()').extract()
             item['categorie'] = sel.xpath('//h1[contains(concat(" ", normalize-space(@class), " "), " seoListingHeadline ")]/text()').extract()
             item['prijs'] = sel.xpath('div/p/span[contains(concat(" ", normalize-space(@class), " "), " price right right10 ")]/text()').extract()
-            
             item['link'] = "http://www.alternate.nl" + sel.xpath('a[@class="productLink"]/@href').extract()[0]
+            item['EAN'] = sel.xpath('//head/script[position() = 1]/@src').extract()[0].split('ean=', 1)
+            yield item
             
+            
+            
+
             for sel in response.xpath('//div[@id="coreProductInfos"]'):
                 item['EAN'] = sel.xpath('//head/script[position() = 1]/@src').extract()[0]
                 
@@ -53,6 +57,10 @@ class BobSpider(CrawlSpider):
            
 
             yield item
+
+
+            
+
 
 
             
