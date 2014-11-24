@@ -227,7 +227,7 @@ def voedingen(request):
 
 
 
-    return render_to_response('voeding.html', {'Componenten': voedingen, 'Range':bereik, 'Diff':diff},
+    return render_to_response('voeding.html', {'Componenten': voeding, 'Range':bereik, 'Diff':diff},
                               context_instance=RequestContext(request))
 
 

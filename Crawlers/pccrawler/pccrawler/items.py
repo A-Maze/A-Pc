@@ -225,7 +225,8 @@ class Processor(scrapy.Item):
     EAN = scrapy.Field()
     SKU = scrapy.Field()
 
-class Voeding(scrapy.Item): 
+class Voeding(scrapy.Item):
+    categorie = scrapy.Field()
     Vermogen_watt = scrapy.Field()
     _12V_Rails = scrapy.Field()
     Capaciteit_12V1_rail = scrapy.Field()

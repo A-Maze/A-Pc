@@ -179,4 +179,133 @@ SyntaxError: Non-ASCII character '\xe2' in file /Users/Davey/Documents/school/Ja
 >>>>>>> 111b7718d8eef20c64b04cd1e34b927f2feec3e8
 >>>>>>> 0192f63f0d96a985fad6a99f06a8d80c2310f79c
 [20/Nov/2014 10:54:31] WARNING [django.request:143] Not Found: /favicon.ico
+<<<<<<< HEAD
 [24/Nov/2014 10:30:52] WARNING [django.request:143] Not Found: /favicon.ico
+=======
+[24/Nov/2014 10:31:23] WARNING [django.request:143] Not Found: /favicon.ico
+[24/Nov/2014 11:09:23] WARNING [django.request:143] Not Found: /favicon.ico
+[24/Nov/2014 12:49:36] WARNING [django.request:143] Not Found: /favicon.ico
+[24/Nov/2014 13:09:14] ERROR [django.request:231] Internal Server Error: /optischeschijven/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 215, in optischeschijf
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 178, in render_to_string
+    return t.render(context_instance)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 201, in render
+    nodelist.append(node.render(context))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 90, in render
+    output = self.filter_expression.resolve(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 624, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaultfilters.py", line 616, in slice_filter
+    for x in arg.split(':'):
+AttributeError: 'int' object has no attribute 'split'
+[24/Nov/2014 13:09:17] ERROR [django.request:231] Internal Server Error: /optischeschijven/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 215, in optischeschijf
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 178, in render_to_string
+    return t.render(context_instance)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 201, in render
+    nodelist.append(node.render(context))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 90, in render
+    output = self.filter_expression.resolve(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 624, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaultfilters.py", line 616, in slice_filter
+    for x in arg.split(':'):
+AttributeError: 'int' object has no attribute 'split'
+[24/Nov/2014 13:09:55] ERROR [django.request:231] Internal Server Error: /optischeschijven/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 215, in optischeschijf
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 178, in render_to_string
+    return t.render(context_instance)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 201, in render
+    nodelist.append(node.render(context))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 90, in render
+    output = self.filter_expression.resolve(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 624, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaultfilters.py", line 616, in slice_filter
+    for x in arg.split(':'):
+AttributeError: 'int' object has no attribute 'split'
+>>>>>>> 8e4e7c35a9c39a036d66b8550534333412590740
