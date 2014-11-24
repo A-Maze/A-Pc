@@ -58,11 +58,14 @@ class AfutureItem(scrapy.Item):
     prijs = scrapy.Field()
 
 class AzertyItem(scrapy.Item):
-    titel = scrapy.Field()
-    omschrijving = scrapy.Field()
-    prijs = scrapy.Field()
     categorie = scrapy.Field()
-    image = scrapy.Field()
+    naam = scrapy.Field()
+    subnaam = scrapy.Field()
+    stock = scrapy.Field()
+    prijs = scrapy.Field()
+    link = scrapy.Field()
+    EAN = scrapy.Field()
+    SKU = scrapy.Field()
 
 #specificatie items
 class GPU(scrapy.Item):
