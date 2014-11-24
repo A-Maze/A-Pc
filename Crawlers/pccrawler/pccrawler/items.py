@@ -121,7 +121,7 @@ class Geheugen(scrapy.Item):
     Fabrieksgarantie = scrapy.Field()
     Bijzonderheden = scrapy.Field()
     EAN = scrapy.Field()
-    SKu = scrapy.Field()
+    SKU = scrapy.Field()
 
 class Moederbord(scrapy.Item):
     categorie = scrapy.Field()

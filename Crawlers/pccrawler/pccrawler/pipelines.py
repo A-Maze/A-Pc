@@ -31,7 +31,7 @@ class PccrawlerPipeline(object):
 				def pleurindedb(collectionName):
 					self.collection.insert(dict(item))
 					log.msg("Item wrote to MongoDB database %s/%s/%s" %
-			    	(settings['MONGODB_DB'], collectionName, item['categorie'][0]),
+			    	(settings['MONGODB_DB'], collectionName, item['categorie']),
 			    	level=log.DEBUG, spider=spider) 
 
 				
@@ -58,7 +58,7 @@ class PccrawlerPipeline(object):
 					self.collection = db["koeling"]
 					for e in self.collection.find({"EAN": item["EAN"] }):
 						print e
-					collectienaam = "moederborden"
+					collectienaam = "koeling"
 				elif ("Behuizingen" or "Barebones") in langeNaam:
 					self.collection = db["behuizingen"]
 					for e in self.collection.find({"EAN": item["EAN"] }):
@@ -90,10 +90,12 @@ class PccrawlerPipeline(object):
 						print e
 					collectienaam = "voeding"
 
-                item["categorie"] = collectienaam
-                pleurindedb(collectienaam)
+				item["categorie"] = collectienaam
+				pleurindedb(collectienaam)
+			
+			
+				return item
 
 
-                return item
 
 	

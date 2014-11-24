@@ -7,11 +7,12 @@ connect(DBNAME)
 
 class Moederborden(Document):
     categorie = StringField(max_length=120)
-    naam = StringField(max_length=500)
-    subnaam = StringField(max_length=500)
+    Product = StringField(max_length=500)
+    Hardeschijf_bus = StringField(max_length=500)
     info = StringField(max_length=500)
     stock = StringField(max_length=500)
     prijs = StringField(max_length=120)
+    Afbeelding = StringField(max_length=500)
 
 class Processoren(Document):
     categorie = StringField(max_length=120)
@@ -31,11 +32,12 @@ class Koeling(Document):
 
 class Behuizingen(Document):
     categorie = StringField(max_length=120)
-    naam = StringField(max_length=500)
-    subnaam = StringField(max_length=500)
+    Product = StringField(max_length=500)
+    Behuizingtype = StringField(max_length=500)
     info = StringField(max_length=500)
     stock = StringField(max_length=500)
     prijs = StringField(max_length=120)
+    Afbeelding = StringField(max_length=500)
 
 class Grafische(Document):
     categorie = StringField(max_length=120)
@@ -63,8 +65,9 @@ class Dvd(Document):
 
 class Geheugen(Document):
     categorie = StringField(max_length=120)
-    naam = StringField(max_length=500)
-    subnaam = StringField(max_length=500)
+    Merk = StringField(max_length=500)
+    Geheugen_Specificatie = StringField(max_length=500)
+    Afbeelding = StringField(max_length=500)
     info = StringField(max_length=500)
     stock = StringField(max_length=500)
     prijs = StringField(max_length=120)
