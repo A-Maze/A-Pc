@@ -36,7 +36,7 @@ class PccrawlerPipeline(object):
 
 				
 
-				collectienaam = ""	
+				collectienaam = ""
 
 				#
 				#  one love (L)(L)pipelines(L)(L)
@@ -64,7 +64,7 @@ class PccrawlerPipeline(object):
 					for e in self.collection.find({"EAN": item["EAN"] }):
 						print e
 					collectienaam = "behuizingen"
-				elif ("Grafische" or "GPU" or "Videokaarten") in langeNaam:
+				elif ("Grafische" or "GPU" or "Videokaarten" or "Videokaart") in langeNaam:
 					self.collection = db["grafische"]
 					for e in self.collection.find({"EAN": item["EAN"] }):
 						print e
@@ -89,10 +89,19 @@ class PccrawlerPipeline(object):
 					for e in self.collection.find({"EAN": item["EAN"] }):
 						print e
 					collectienaam = "voeding"
+<<<<<<< HEAD
 				item["categorie"] = collectienaam
 				pleurindedb(collectienaam)
 			
 			
 			return item
+=======
+
+                item["categorie"] = collectienaam
+                pleurindedb(collectienaam)
+
+
+                return item
+>>>>>>> 6e8a6535e82071270d9f9a7b91e95c666ce84768
 
 	
