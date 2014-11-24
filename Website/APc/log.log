@@ -88,3 +88,12 @@ Traceback (most recent call last):
   File "/Library/Python/2.7/site-packages/django/template/base.py", line 343, in invalid_block_tag
     (command, get_text_list(["'%s'" % p for p in parse_until])))
 TemplateSyntaxError: Invalid block tag: 'endblock', expected 'elif', 'else' or 'endif'
+[24/Nov/2014 14:36:09] ERROR [django.request:231] Internal Server Error: /deselect/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 64, in deselect
+    del request.session[categorie]
+  File "/Library/Python/2.7/site-packages/django/contrib/sessions/backends/base.py", line 56, in __delitem__
+    del self._session[key]
+KeyError: u'Behuizingen'
