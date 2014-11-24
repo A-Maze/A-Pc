@@ -173,6 +173,7 @@ class TweakersSpider(CrawlSpider):
                 item['SKU'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
                 print "Behuizing"
             elif "Processors" in category:
+                item = Processor()
                 item['categorie'] = sel.xpath('//*[@id="tweakbaseBreadcrumbCategory"]/a/text()').extract()
                 item['Merk'] = sel.xpath('//tr[contains(td[1], "Merk")]/td[2]/a/text()').extract()
                 item['Serie'] = sel.xpath('//tr[contains(td[1], "Serie")]/td[2]/a/text()').extract()
@@ -212,6 +213,7 @@ class TweakersSpider(CrawlSpider):
                 yield item
                 print "Processor"
             elif "Voedingen" in category:
+                item = Voeding()
                 item['categorie'] = sel.xpath('//*[@id="tweakbaseBreadcrumbCategory"]/a/text()').extract()
                 item['Merk'] = sel.xpath('//tr[contains(td[1], "Merk")]/td[2]/a/text()').extract()
                 item['Product'] = sel.xpath('//tr[contains(td[1], "Product")]/td[2]/a/text()').extract()
@@ -268,4 +270,35 @@ class TweakersSpider(CrawlSpider):
                 yield item
                 print "Processorkoeling"
             elif "Barebones" in category:
+                item = Barebones()
+                item['categorie'] = sel.xpath('//*[@id="categorie"]/a/text()').extract()
+                item['Merk'] = sel.xpath('//tr[contains(td[1], "Merk")]/td[2]/a/text()').extract()
+                item['Uitvoering'] = sel.xpath('//tr[contains(td[1], "Uitvoering")]/td[2]/a/text()').extract()
+                item['Afbeelding'] = sel.xpath('//tr[contains(td[1], "Afbeelding")]/td[2]/a/@href').extract()
+                item['Barebonetype'] = sel.xpath('//tr[contains(td[1], "Barebonetype")]/td[2]/a/text()').extract()
+                item['Socket'] = sel.xpath('//tr[contains(td[1], "Socket")]/td[2]/a/text()').extract()
+                item['CPU_SoC'] = sel.xpath('//tr[contains(td[1], "CPU/SoC")]/td[2]/a/text()').extract()
+                item['Geheugentype_moederbord'] = sel.xpath('//tr[contains(td[1], "Geheugentype (moederbord)")]/td[2]/text()').extract()
+                item['Form_Factor'] = sel.xpath('//tr[contains(td[1], "Form Factor")]/td[2]/text()').extract()
+                item['Aansluitingen'] = sel.xpath('//tr[contains(td[1], "Aansluitingen")]/td[2]/text()').extract()
+                item['Hardeschijf_bus'] = sel.xpath('//tr[contains(td[1], "Hardeschijf bus")]/td[2]/text()').extract()
+                item['Videochip'] = sel.xpath('//tr[contains(td[1], "Videochip")]/td[2]/text()').extract()
+                item['Behuizing_Voeding'] = sel.xpath('//tr[contains(td[1], "Behuizing Voeding")]/td[2]/text()').extract()
+                item['Verbinding_Ethernet'] = sel.xpath('//tr[contains(td[1], "Verbinding (Ethernet)")]/td[2]/text()').extract()
+                item['Verbinding_wlan'] = sel.xpath('//tr[contains(td[1], "Verbinding (wlan)")]/td[2]/text()').extract()
+                item['Bluetooth_versie'] = sel.xpath('//tr[contains(td[1], "Bluetooth-versie")]/td[2]/text()').extract()
+                item['Verbinding_USB_FW'] = sel.xpath('//tr[contains(td[1], "Verbinding (USB/FW)")]/td[2]/text()').extract()
+                item['Audio_uitgangen'] = sel.xpath('//tr[contains(td[1], "Audio uitgangen")]/td[2]/text()').extract()
+                item['Video_uit'] = sel.xpath('//tr[contains(td[1], "Video uit")]/td[2]/text()').extract()
+                item['Aansluitingen_voorzijde'] = sel.xpath('//tr[contains(td[1], "Aansluitingen voorzijde")]/td[2]/text()').extract()
+                item['Materialen'] = sel.xpath('//tr[contains(td[1], "Materialen")]/td[2]/text()').extract()
+                item['Kleuren'] = sel.xpath('//tr[contains(td[1], "Kleuren")]/td[2]/text()').extract()
+                item['Behuizing_bay_intern'] = sel.xpath('//tr[contains(td[1], "Behuizing bay intern")]/td[2]/text()').extract()
+                item['Hoogte'] = sel.xpath('//tr[contains(td[1], "Hoogte")]/td[2]/text()').extract()
+                item['Breedte'] = sel.xpath('//tr[contains(td[1], "Breedte")]/td[2]/text()').extract()
+                item['Diepte'] = sel.xpath('//tr[contains(td[1], "Diepte")]/td[2]/text()').extract()
+                item['Bijzonderheden'] = sel.xpath('//tr[contains(td[1], "Bijzonderheden")]/td[2]/text()').extract()
+                item['EAN'] = sel.xpath('//tr[contains(td[1], "EAN")]/td[2]/text()').extract()
+                item['SKU'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
+                yield item
                 print "Barebone"
