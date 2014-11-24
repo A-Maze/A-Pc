@@ -147,6 +147,29 @@ class TweakersSpider(CrawlSpider):
             elif "Voedingen" in category:
                 print "Voeding"
             elif "Processorkoeling" in category:
+                item = Koeling()
+                item['categorie'] = sel.xpath('//*[@id="categorie"]/a/text()').extract()
+                item['Merk'] = sel.xpath('//tr[contains(td[1], "Merk")]/td[2]/a/text()').extract()
+                item['Serie'] = sel.xpath('//tr[contains(td[1], "Serie")]/td[2]/a/text()').extract()
+                item['Uitvoering'] = sel.xpath('//tr[contains(td[1], "Uitvoering")]/td[2]/a/text()').extract()
+                item['Afbeelding'] = sel.xpath('//tr[contains(td[1], "Afbeelding")]/td[2]/a/@href').extract()
+                item['Product'] = sel.xpath('//tr[contains(td[1], "Product")]/td[2]/text()').extract()
+                item['Socket'] = sel.xpath('//tr[contains(td[1], "Socket")]/td[2]/text()').extract()
+                item['Aansluiting_processorkoeling'] = sel.xpath('//tr[contains(td[1], "Aansluiting processorkoeling")]/td[2]/text()').extract()
+                item['Heatpipes'] = sel.xpath('//tr[contains(td[1], "Heatpipes")]/td[2]/text()').extract()
+                item['Geluidssterkte'] = sel.xpath('//tr[contains(td[1], "Geluidssterkte")]/td[2]/text()').extract()
+                item['Rotatiesnelheid_min'] = sel.xpath('//tr[contains(td[1], "Rotatiesnelheid min")]/td[2]/text()').extract()
+                item['Rotatiesnelheid_max'] = sel.xpath('//tr[contains(td[1], "Rotatiesnelheid max")]/td[2]/text()').extract()
+                item['Type_koeling'] = sel.xpath('//tr[contains(td[1], "Type koeling")]/td[2]/text()').extract()
+                item['Hoogte'] = sel.xpath('//tr[contains(td[1], "Hoogte")]/td[2]/text()').extract()
+                item['Diameter'] = sel.xpath('//tr[contains(td[1], "Diameter")]/td[2]/text()').extract()
+                item['Kleuren'] = sel.xpath('//tr[contains(td[1], "Kleuren")]/td[2]/text()').extract()
+                item['Materialen'] = sel.xpath('//tr[contains(td[1], "Materialen")]/td[2]/text()').extract()
+                item['Fabrieksgarantie'] = sel.xpath('//tr[contains(td[1], "Fabrieksgarantie")]/td[2]/text()').extract()
+                item['Bijzonderheden'] = sel.xpath('//tr[contains(td[1], "Bijzonderheden")]/td[2]/text()').extract()
+                item['EAN'] = sel.xpath('//tr[contains(td[1], "EAN")]/td[2]/text()').extract()
+                item['SKU'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
+                yield item
                 print "Processorkoeling"
             elif "Barebones" in category:
                 print "Barebone"
