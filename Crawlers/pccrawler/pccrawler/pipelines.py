@@ -89,19 +89,13 @@ class PccrawlerPipeline(object):
 					for e in self.collection.find({"EAN": item["EAN"] }):
 						print e
 					collectienaam = "voeding"
-<<<<<<< HEAD
+
 				item["categorie"] = collectienaam
 				pleurindedb(collectienaam)
 			
 			
-			return item
-=======
-
-                item["categorie"] = collectienaam
-                pleurindedb(collectienaam)
+				return item
 
 
-                return item
->>>>>>> 6e8a6535e82071270d9f9a7b91e95c666ce84768
 
 	
