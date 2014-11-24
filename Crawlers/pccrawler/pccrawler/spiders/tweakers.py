@@ -141,6 +141,36 @@ class TweakersSpider(CrawlSpider):
                 yield item 
                 print "Moederbord"
             elif "Behuizingen" in category:
+                item['categorie'] = sel.xpath('//*[@id="tweakbaseBreadcrumbCategory"]/a/text()').extract()
+                item['Merk'] = sel.xpath('//tr[contains(td[1], "Merk")]/td[2]/a/text()').extract()
+                item['Serie'] = sel.xpath('//tr[contains(td[1], "Serie")]/td[2]/a/text()').extract()
+                item['Product'] = sel.xpath('//tr[contains(td[1], "Product")]/td[2]/a/text()').extract()
+                item['Uitvoering'] = sel.xpath('//tr[contains(td[1], "Uitvoering")]/td[2]/a/text()').extract()
+                item['Behuizingtype'] = sel.xpath('//tr[contains(td[1], "Behuizingtype")]/td[2]/text()').extract()
+                item['Form_Factor'] = sel.xpath('//tr[contains(td[1], "Form Factor")]/td[2]/text()').extract()
+                item['Behuizing_Panel'] = sel.xpath('//tr[contains(td[1], "Behuizing Panel")]/td[2]/text()').extract()
+                item['Materialen_Staal'] = sel.xpath('//tr[contains(td[1], "Materialen Staal")]/td[2]/text()').extract()
+                item['Grafische_kaart_maximum_lengte'] = sel.xpath('//tr[contains(td[1], "Grafische kaart maximum lengte")]/td[2]/text()').extract()
+                item['CPU_koeler_maximum_hoogte'] = sel.xpath('//tr[contains(td[1], "CPU koeler maximum hoogte")]/td[2]/text()').extract()
+                item['Kleuren'] = sel.xpath('//tr[contains(td[1], "Kleuren")]/td[2]/text()').extract()
+                item['Behuizing_bay_intern'] = sel.xpath('//tr[contains(td[1], "Behuizing bay intern")]/td[2]/text()').extract()
+                item['Behuizing_bay_extern'] = sel.xpath('//tr[contains(td[1], "Behuizing bay extern")]/td[2]/text()').extract()
+                item['Aansluitingen_voorzijde'] = sel.xpath('//tr[contains(td[1], "Aansluitingen voorzijde")]/td[2]/text()').extract()
+                item['Inclusief_voeding'] = sel.xpath('//tr[contains(td[1], "Inclusief voeding")]/td[2]/text()').extract()
+                item['Voeding_plaats'] = sel.xpath('//tr[contains(td[1], "Voeding plaats")]/td[2]/text()').extract()
+                item['Voeding_form_factor'] = sel.xpath('//tr[contains(td[1], "Voeding form factor")]/td[2]/text()').extract()
+                item['Fan_poorten'] = sel.xpath('//tr[contains(td[1], "Fan poorten")]/td[2]/text()').extract()
+                item['Meegeleverde_fans'] = sel.xpath('//tr[contains(td[1], "Meegeleverde fans")]/td[2]/text()').extract()
+                item['Kabelmanagement'] = sel.xpath('//tr[contains(td[1], "Kabelmanagement")]/td[2]/text()').extract()
+                item['Hoogte'] = sel.xpath('//tr[contains(td[1], "Hoogte")]/td[2]/text()').extract()
+                item['Breedte'] = sel.xpath('//tr[contains(td[1], "Breedte")]/td[2]/text()').extract()
+                item['Diepte'] = sel.xpath('//tr[contains(td[1], "Diepte")]/td[2]/text()').extract()
+                item['Volume'] = sel.xpath('//tr[contains(td[1], "Volume")]/td[2]/text()').extract()
+                item['Gewicht'] = sel.xpath('//tr[contains(td[1], "Gewicht")]/td[2]/text()').extract()
+                item['Fabrieksgarantie'] = sel.xpath('//tr[contains(td[1], "Fabrieksgarantie")]/td[2]/text()').extract()
+                item['Bijzonderheden'] = sel.xpath('//tr[contains(td[1], "Bijzonderheden")]/td[2]/text()').extract()
+                item['EAN'] = sel.xpath('//tr[contains(td[1], "EAN")]/td[2]/text()').extract()
+                item['SKU'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
                 print "Behuizing"
             elif "Processors" in category:
                 print "Processor"
