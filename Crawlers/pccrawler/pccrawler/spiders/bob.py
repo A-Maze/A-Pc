@@ -47,9 +47,9 @@ class BobSpider(CrawlSpider):
             item['info'] = sel.xpath('//div[@class="productShort"]/ul/li/text()').extract()
             item['stock'] = sel.xpath('//div[@class="availability"]/p/text()').extract()
 
-            if sel.xpath('//div[@id="navTree"]/ul/li[19]/ul[@class="isOpenSubTree"]').extract()[0]:
+            if sel.xpath('//div[@id="navTree"]/ul/li[19]/ul/li[@class="treeOpened"]').extract():
                 item['categorie'] = ["Voeding"]
-            elif "Voedingen" in sel.xpath('//div[@class="breadCrumbs"]/span[position() = 3]/a/span/text()').extract()[0]:
+            elif "Voedingen" in sel.xpath('//div[@class="breadCrumbs"]/span[position() = 3]/a/span/text()').extract():
                 item['categorie'] = ["Voeding"]
             else:
                 item['categorie'] = sel.xpath('//div[@class="breadCrumbs"]/span[position() = 2]/a/span/text()').extract()
