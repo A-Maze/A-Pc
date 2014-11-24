@@ -47,13 +47,13 @@ $(document).ready(function(){
             <div class="list-group table-border">
                 <div class="list-group-item">
                     <div class="row-picture">
-                        <img class="square" src="http://lorempixel.com/56/56/people/1" alt="icon">
+                        <img class="square" src="{{ component.Afbeelding.0 }}" alt="icon">
                     </div>
 
                     <div class="row-content">
                         <div class="col-md-10 col-lg-10">
-                            <h4 class="list-group-item-heading">{% for name in component.naam %}{{ name }}{% endfor %}</h4>
-                            <p class="list-group-item-text">{% for desc in component.info %} {{ desc }} {% endfor %} </p>
+                            <h4 class="list-group-item-heading">{% for name in component.Merk.0 %}{{ name }}{% endfor %}{% for desc in component.Geheugen_Specificatie %} - {{ desc }}</h4>
+                            <p class="list-group-item-text"> {{ desc }} {% endfor %} </p>
                         </div>
                         <div class=" col-md-2 col-lg-2  ">
                             <p class="list-group-item-text pull-right ">{{ component.prijs.0 }}</p>
