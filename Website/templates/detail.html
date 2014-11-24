@@ -57,13 +57,8 @@
     {% endif %}
 
     {% if Categorie = "behuizingen" %}
-<<<<<<< HEAD
     {% if request.session.Behuizingen = True %}
     {% if request.session.Behuizingennaam = Product %}
-=======
-    {% if request.session.behuizingen = True %}
-    {% if request.session.behuizingennaam = Product %}
->>>>>>> 7ced53cb4cbb1e6dd054c42d0bc8ed31d1017b6b
     <a class="btn btn-primary pull-right" href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Deselecteer</a>
     {% endif %}
     {% endif %}
