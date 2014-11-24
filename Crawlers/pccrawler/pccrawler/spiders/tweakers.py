@@ -143,6 +143,43 @@ class TweakersSpider(CrawlSpider):
             elif "Behuizingen" in category:
                 print "Behuizing"
             elif "Processors" in category:
+                item['categorie'] = sel.xpath('//*[@id="tweakbaseBreadcrumbCategory"]/a/text()').extract()
+                item['Merk'] = sel.xpath('//tr[contains(td[1], "Merk")]/td[2]/a/text()').extract()
+                item['Serie'] = sel.xpath('//tr[contains(td[1], "Serie")]/td[2]/a/text()').extract()
+                item['Product'] = sel.xpath('//tr[contains(td[1], "Product")]/td[2]/a/text()').extract()
+                item['Uitvoering'] = sel.xpath('//tr[contains(td[1], "Uitvoering")]/td[2]/a/text()').extract()
+                item['Afbeelding'] = sel.xpath('//tr[contains(td[1], "Afbeelding")]/td[2]/a/text()').extract()
+                item['Socket'] = sel.xpath('//tr[contains(td[1], "Socket")]/td[2]/text()').extract()
+                item['Aantal_cores'] = sel.xpath('//tr[contains(td[1], "Aantal cores")]/td[2]/text()').extract()
+                item['CPU_sSpec_Number'] = sel.xpath('//tr[contains(td[1], "CPU sSpec Number")]/td[2]/text()').extract()
+                item['Snelheid'] = sel.xpath('//tr[contains(td[1], "Snelheid")]/td[2]/text()').extract()
+                item['Maximale_turbo_frequentie'] = sel.xpath('//tr[contains(td[1], "Maximale turbo frequentie")]/td[2]/text()').extract()
+                item['Geheugen_Specificatie'] = sel.xpath('//tr[contains(td[1], "Geheugen Specificatie")]/td[2]/text()').extract()
+                item['Bus_snelheid'] = sel.xpath('//tr[contains(td[1], "Bus snelheid")]/td[2]/text()').extract()
+                item['Procestechnologie'] = sel.xpath('//tr[contains(td[1], "Procestechnologie")]/td[2]/text()').extract()
+                item['Thermal_Design_Power'] = sel.xpath('//tr[contains(td[1], "Thermal Design Power")]/td[2]/text()').extract()
+                item['Geintegreerde_graphics'] = sel.xpath('//tr[contains(td[1], "Geïntegreerde graphics")]/td[2]/text()').extract()
+                item['Gpu'] = sel.xpath('//tr[contains(td[1], "Gpu")]/td[2]/text()').extract()
+                item['Nominale_snelheid_videochip'] = sel.xpath('//tr[contains(td[1], "Nominale snelheid videochip")]/td[2]/text()').extract()
+                item['Maximale_snelheid_videochip'] = sel.xpath('//tr[contains(td[1], "Maximale snelheid videochip")]/td[2]/text()').extract()
+                item['CPU_Cache_Level_1'] = sel.xpath('//tr[contains(td[1], "CPU Cache Level 1")]/td[2]/text()').extract()
+                item['CPU_Cache_Level_2'] = sel.xpath('//tr[contains(td[1], "CPU Cache Level 2")]/td[2]/text()').extract()
+                item['CPU_Cache_Level_3'] = sel.xpath('//tr[contains(td[1], "CPU Cache Level 3")]/td[2]/text()').extract()
+                item['Threads_oud'] = sel.xpath('//tr[contains(td[1], "Threads_oud")]/td[2]/text()').extract()
+                item['Threads'] = sel.xpath('//tr[contains(td[1], "Threads")]/td[2]/text()').extract()
+                item['Threads_nieuw'] = sel.xpath('//tr[contains(td[1], "Threads_nieuw")]/td[2]/text()').extract()
+                item['Virtualisatie'] = sel.xpath('//tr[contains(td[1], "Virtualisatie")]/td[2]/text()').extract()
+                item['Virtualisatie_type'] = sel.xpath('//tr[contains(td[1], "Virtualisatie type")]/td[2]/text()').extract()
+                item['CPU_Multiplier'] = sel.xpath('//tr[contains(td[1], "CPU Multiplier")]/td[2]/text()').extract()
+                item['CPU_stepping'] = sel.xpath('//tr[contains(td[1], "CPU stepping")]/td[2]/text()').extract()
+                item['CPU_Instructieset'] = sel.xpath('//tr[contains(td[1], "CPU Instructieset")]/td[2]/text()').extract()
+                item['Type_koeling'] = sel.xpath('//tr[contains(td[1], "Type koeling")]/td[2]/text()').extract()
+                item['Verkoopstatus_CPU'] = sel.xpath('//tr[contains(td[1], "Verkoopstatus (CPU)")]/td[2]/text()').extract()
+                item['Fabrieksgarantie'] = sel.xpath('//tr[contains(td[1], "Fabrieksgarantie")]/td[2]/text()').extract()
+                item['Bijzonderheden'] = sel.xpath('//tr[contains(td[1], "Bijzonderheden")]/td[2]/text()').extract()
+                item['EAN'] = sel.xpath('//tr[contains(td[1], "EAN")]/td[2]/text()').extract()
+                item['SKU'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
+                yield item
                 print "Processor"
             elif "Voedingen" in category:
                 print "Voeding"

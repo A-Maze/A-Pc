@@ -188,11 +188,12 @@ class Behuizing(scrapy.Item):
     SKU = scrapy.Field()
 
 class Processor(scrapy.Item):
-    Categorie = scrapy.Field()
+    categorie = scrapy.Field()
     Merk = scrapy.Field()
     Serie = scrapy.Field()
     Product = scrapy.Field()
     Uitvoering = scrapy.Field()
+    Afbeelding = scrapy.Field()
     Socket = scrapy.Field()
     Aantal_cores = scrapy.Field()
     CPU_sSpec_Number = scrapy.Field()
@@ -209,6 +210,7 @@ class Processor(scrapy.Item):
     CPU_Cache_Level_1 = scrapy.Field()
     CPU_Cache_Level_2 = scrapy.Field()
     CPU_Cache_Level_3 = scrapy.Field()
+    Threads_oud = scrapy.Field()
     Threads = scrapy.Field()
     Threads_nieuw = scrapy.Field()
     Virtualisatie = scrapy.Field()
