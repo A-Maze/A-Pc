@@ -41,7 +41,6 @@ class TweakersSpider(CrawlSpider):
             print category
             if "Videokaarten" in category:
                 item = GPU()
-
                 item['categorie'] = sel.xpath('//*[@id="tweakbaseBreadcrumbCategory"]/a/text()').extract()
                 item['Merk'] = sel.xpath('//tr[contains(td[1], "Merk")]/td[2]/a/text()').extract()
                 item['Product'] = sel.xpath('//tr[contains(td[1], "Product")]/td[2]/a/text()').extract()
@@ -83,7 +82,6 @@ class TweakersSpider(CrawlSpider):
             elif "Geheugen intern" in category:
                 #item naam, komt overeen met de naam in items.py
                 item = Geheugen()
-
                 #item attributen komt overeen met de inhoud van het item op items.py.
                 #sel.xpath moet overeenkomen met de tweakers html structuur.
                 #hier moet tr[1], "Modulegrootte" bijvoorbeeld Uitvoering worden aangepast naar hoe het op tweakers staat voor dit item.
@@ -142,6 +140,7 @@ class TweakersSpider(CrawlSpider):
                 yield item 
                 print "Moederbord"
             elif "Behuizingen" in category:
+                item = Behuizing()
                 item['categorie'] = sel.xpath('//*[@id="tweakbaseBreadcrumbCategory"]/a/text()').extract()
                 item['Merk'] = sel.xpath('//tr[contains(td[1], "Merk")]/td[2]/a/text()').extract()
                 item['Serie'] = sel.xpath('//tr[contains(td[1], "Serie")]/td[2]/a/text()').extract()
@@ -172,6 +171,7 @@ class TweakersSpider(CrawlSpider):
                 item['Bijzonderheden'] = sel.xpath('//tr[contains(td[1], "Bijzonderheden")]/td[2]/text()').extract()
                 item['EAN'] = sel.xpath('//tr[contains(td[1], "EAN")]/td[2]/text()').extract()
                 item['SKU'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
+                yield item
                 print "Behuizing"
             elif "Processors" in category:
                 item = Processor()
@@ -247,7 +247,7 @@ class TweakersSpider(CrawlSpider):
                 print "Voeding"
             elif "Processorkoeling" in category:
                 item = Koeling()
-                item['categorie'] = sel.xpath('//*[@id="categorie"]/a/text()').extract()
+                item['categorie'] = sel.xpath('//*[@id="tweakbaseBreadcrumbCategory"]/a/text()').extract()
                 item['Merk'] = sel.xpath('//tr[contains(td[1], "Merk")]/td[2]/a/text()').extract()
                 item['Serie'] = sel.xpath('//tr[contains(td[1], "Serie")]/td[2]/a/text()').extract()
                 item['Uitvoering'] = sel.xpath('//tr[contains(td[1], "Uitvoering")]/td[2]/a/text()').extract()
@@ -272,10 +272,10 @@ class TweakersSpider(CrawlSpider):
                 print "Processorkoeling"
             elif "Barebones" in category:
                 item = Barebones()
-                item['categorie'] = sel.xpath('//*[@id="categorie"]/a/text()').extract()
+                item['categorie'] = sel.xpath('//*[@id="tweakbaseBreadcrumbCategory"]/a/text()').extract()
                 item['Merk'] = sel.xpath('//tr[contains(td[1], "Merk")]/td[2]/a/text()').extract()
                 item['Uitvoering'] = sel.xpath('//tr[contains(td[1], "Uitvoering")]/td[2]/a/text()').extract()
-                item['Afbeelding'] = sel.xpath('//tr[contains(td[1], "Afbeelding")]/td[2]/a/@href').extract()
+                item['Afbeelding'] = sel.xpath('//tr[contains(td[1], "Afbeeldingen")]/td[2]/a/@href').extract()
                 item['Barebonetype'] = sel.xpath('//tr[contains(td[1], "Barebonetype")]/td[2]/a/text()').extract()
                 item['Socket'] = sel.xpath('//tr[contains(td[1], "Socket")]/td[2]/a/text()').extract()
                 item['CPU_SoC'] = sel.xpath('//tr[contains(td[1], "CPU/SoC")]/td[2]/a/text()').extract()

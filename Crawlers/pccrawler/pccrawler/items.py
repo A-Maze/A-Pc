@@ -156,7 +156,7 @@ class Moederbord(scrapy.Item):
     SKU = scrapy.Field()
 
 class Behuizing(scrapy.Item):
-    Categorie = scrapy.Field()
+    categorie = scrapy.Field()
     Merk = scrapy.Field()
     Serie = scrapy.Field()
     Product = scrapy.Field()
@@ -227,6 +227,7 @@ class Processor(scrapy.Item):
 
 class Voeding(scrapy.Item):
     categorie = scrapy.Field()
+    Merk = scrapy.Field()
     Vermogen_watt = scrapy.Field()
     _12V_Rails = scrapy.Field()
     Capaciteit_12V1_rail = scrapy.Field()
@@ -277,6 +278,7 @@ class Koeling(scrapy.Item):
 class Barebones(scrapy.Item):
     categorie = scrapy.Field()
     Merk = scrapy.Field()
+    Afbeelding = scrapy.Field()
     Uitvoering = scrapy.Field()
     Barebonetype = scrapy.Field()
     Socket = scrapy.Field()
