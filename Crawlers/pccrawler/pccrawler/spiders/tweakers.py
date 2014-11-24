@@ -240,7 +240,7 @@ class TweakersSpider(CrawlSpider):
                 item['Bijzonderheden'] = sel.xpath('//tr[contains(td[1], "Uitvoering")]/td[2]/a/text()').extract()
                 item['EAN'] = sel.xpath('//tr[contains(td[1], "EAN")]/td[2]/text()').extract()
                 item['SKU'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
-                yeild item
+                yield item
                 print "Voeding"
             elif "Processorkoeling" in category:
                 item = Koeling()
