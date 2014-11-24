@@ -27,9 +27,9 @@ class BobSpider(CrawlSpider):
     
     rules = (
 
-    Rule(LinkExtractor(restrict_xpaths =('//div[@id="navTree"]/ul/li[position()>=4 and position()<20 or position() = 28 or position() = 29 or position = 36]/ul/li[contains(concat(" ", normalize-space(@class), "  "), " subLevel2 ")]/a', )),callback='parse_item',follow=True),
-    Rule(LinkExtractor(restrict_xpaths =('//div[@id="navTree"]/ul/li[position()>=4 and position()<20 or position() = 28 or position() = 29 or position = 36]/ul/li[contains(concat(" ", normalize-space(@class), "  "), " subLevel3 ")]/a', )),callback='parse_item',follow=True),
-    Rule(LinkExtractor(restrict_xpaths =('//div[@id="navTree"]/ul/li[position()>=4 and position()<20 or position() = 28 or position() = 29 or position = 36]/ul/li[contains(concat(" ", normalize-space(@class), "  "), " subLevel4 ")]/a', )),callback='parse_item',follow=True),
+    Rule(LinkExtractor(restrict_xpaths =('//div[@id="navTree"]/ul/li[position()>=4 and position()<20]/ul/li[contains(concat(" ", normalize-space(@class), "  "), " subLevel2 ")]/a', )),callback='parse_item',follow=True),
+    Rule(LinkExtractor(restrict_xpaths =('//div[@id="navTree"]/ul/li[position()>=4 and position()<20]/ul/li[contains(concat(" ", normalize-space(@class), "  "), " subLevel3 ")]/a', )),callback='parse_item',follow=True),
+    Rule(LinkExtractor(restrict_xpaths =('//div[@id="navTree"]/ul/li[position()>=4 and position()<20]/ul/li[contains(concat(" ", normalize-space(@class), "  "), " subLevel4 ")]/a', )),callback='parse_item',follow=True),
     Rule(LinkExtractor(restrict_xpaths =('//div[contains(concat(" ", normalize-space(@class), "  "), " articleSizePerSite ")]/a', )),callback='parse_item',follow=True),
     Rule(LinkExtractor(restrict_xpaths =('//a[@class="productLink"]',)),callback='parse_item'),
     )
