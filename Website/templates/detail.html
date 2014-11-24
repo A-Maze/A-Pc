@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-
+{% load filters %}
 <div class="container top-margin">
                 <div class="col-md-12 col-lg-12">
                     <img src="#" class="col-lg-3">
@@ -97,62 +97,45 @@
 
     <div class="col-lg-12">
         <table class="table table-striped table-hover ">
-            <thead>
+ <thead>
             <tr>
-                <th>#</th>
-                <th>Column heading</th>
-                <th>Column heading</th>
-                <th>Column heading</th>
-                <th>Column heading</th>
+                
+                <th>naam</th>
+                <th>waarde</th>
+          
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>1</td>
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>Column content</td>
+{% for component in Componenten %}
+{%for product in component%}
+    {% with goodID=Productid compareID=product.id  %}         
+        {%if goodID|stringformat:"s" == compareID|stringformat:"s" %}
+            {%for item in product%}
+            {% with itemnumb=product|get_at_index:item %}  
+             <tr>
+                
+                <td>{{item}}</td>
+                 <td>        
+                 {%if itemnumb.0 > 0 %}          
+                    {{itemnumb.0}}
+
+                    {%else%}
+                    {{itemnumb}}
+                   {% endif %} 
+                 </td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>Column content</td>
-            </tr>
-            <tr class="info">
-                <td>3</td>
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>Column content</td>
-            </tr>
-            <tr class="success">
-                <td>4</td>
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>Column content</td>
-            </tr>
-            <tr class="danger">
-                <td>5</td>
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>Column content</td>
-            </tr>
-            <tr class="warning">
-                <td>6</td>
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>Column content</td>
-            </tr>
-            <tr class="active">
-                <td>7</td>
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>Column content</td>
-            </tr>
+           {% endwith %}
+                    {%endfor%}  
+           
+           
+           
             </tbody>
+{% endif %} 
+{% endwith %}
+{% endfor %}
+{% endfor %}
         </table>
+
 
     </div>
 </div>

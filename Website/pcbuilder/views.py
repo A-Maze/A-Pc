@@ -75,11 +75,11 @@ def detail(request):
     product = request.GET.get('product')
     categorie = request.GET.get('categorie')
     prijs = request.GET.get('prijs')
+    productid = request.GET.get('productid')
+    
 
-
-
-
-    return render_to_response('detail.html', {'Processoren': processoren, 'Categorie' : categorie, 'Product': product, 'Prijs': prijs},
+#+ Koeling+ Behuizingen+Grafische+ Harde+ Dvd+ Geheugen+ Voeding
+    return render_to_response('detail.html', {'Componenten': (Processoren.objects,Moederborden.objects), 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
 context_instance=RequestContext(request))
 
 def processoren(request):
