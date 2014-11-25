@@ -15,7 +15,7 @@ class BobItem(scrapy.Item):
     stock = scrapy.Field()
     prijs = scrapy.Field()
     link = scrapy.Field()
-    EAN = scrapy.Field()
+    ean = scrapy.Field()
 
 class ParadigitItem(scrapy.Item):
     categorie = scrapy.Field()
@@ -24,6 +24,7 @@ class ParadigitItem(scrapy.Item):
     info = scrapy.Field()
     stock = scrapy.Field()
     prijs = scrapy.Field()
+    EAN = scrapy.Field()
 
 class ComputerlandItem(scrapy.Item):
     categorie = scrapy.Field()
