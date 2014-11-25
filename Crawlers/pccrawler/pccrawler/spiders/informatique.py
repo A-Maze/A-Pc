@@ -20,12 +20,8 @@ class InformatiqueSpider(CrawlSpider):
         'http://www.informatique.nl/?M=USL&G=559',
         'http://www.informatique.nl/?M=GRP&H=037',
         'http://www.informatique.nl/?M=GRP&H=021',
-        'http://www.informatique.nl/?M=GRP&H=074',
         'http://www.informatique.nl/?M=GRP&H=017',
         'http://www.informatique.nl/?M=GRP&H=008',
-        'http://www.informatique.nl/?M=GRP&H=082',
-        'http://www.informatique.nl/?M=GRP&H=062',
-        'http://www.informatique.nl/?M=GRP&H=011',
 
 
 
@@ -33,8 +29,9 @@ class InformatiqueSpider(CrawlSpider):
 
     rules = (
 
-    Rule(LinkExtractor(restrict_xpaths =('//td[contains(concat(" ", normalize-space(@class), "  "), " kopsf ")]/a', )),callback='parse_item',follow=True),
+    Rule(LinkExtractor(restrict_xpaths =('////*[@id="content"]/table/tbody/tr/td/table/tbody/tr[2]/td/a', )),callback='parse_item',follow=True),
     Rule(LinkExtractor(restrict_xpaths =('//ul[@id="pages"]/li[1]/a', )),callback='parse_item',follow=True),
+    Rule(LinkExtractor(restrict_xpaths =('//*[@id="detailview"]/li/a', )),callback='parse_item',follow=True),
     
     )
 
@@ -42,20 +39,15 @@ class InformatiqueSpider(CrawlSpider):
 
     def parse_item(self, response):
 
-        for sel in response.xpath('//ul[@id="detailview"]/li'):
+        for sel in response.xpath('//*[@id="product-details"]'):
             item = InformatiqueItem()
-            item['naam'] =  sel.xpath('div[@id="title"]/a/text()').extract()
-            item['subnaam'] = sel.xpath('div[@id="title"]/a/text()').extract()
-            item['info'] = sel.xpath('div[@id="description"]/ul/li/text()').extract()
-            item['stock'] = sel.xpath('div[@id="stock"]/text()').extract()
-            item['categorie'] = sel.xpath('//div[@id="wrapper_content"]/div[@id="hdr"]/h1/text()').extract()
-            item['prijs'] = sel.xpath('div[@id="price"]/text()').extract()
+            item['categorie'] = sel.xpath('span[itemprop="title"][2]/text()').extract()
+            item['naam'] =  sel.xpath('//*[@id="hdr"]/h1/text()').extract()
+            item['stock'] = sel.xpath('//*[@id="details"]/tbody/tr[7]/td[2]/text()[1]').extract()
+            item['prijs'] = sel.xpath('//*[@id="price"]/p[@class="verkoopprijs"]/text()').extract()
+            item['link'] = response.url
+            item['SKU'] = sel.xpath('//span[@itemprop="sku"]/text()').extract()
+
             yield item
-
-
-
-
-
-
 
 
