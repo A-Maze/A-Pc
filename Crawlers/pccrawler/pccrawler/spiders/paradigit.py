@@ -14,17 +14,20 @@ class ParadigitSpider(CrawlSpider):
 
     rules = (
         Rule(LinkExtractor(restrict_xpaths=('//*[@id="ctl00_mainMenuContentContainer"]/div/ul/li[6]/div/div[1]/ul/li/a', )),callback='parse_item',follow=True),
+        Rule(LinkExtractor(restrict_xpaths=('//div/div[contains(concat(" ", normalize-space(@class), " "), " itemlistcombined-titlecontainer ")]/a', )),callback='parse_item',follow=True),
         Rule(LinkExtractor(restrict_xpaths=("//div[contains(concat(' ', normalize-space(@class), ' '), ' itemlistcombined-toppagercontainer ')]/table/tr/td/a[contains(text(),' > ')]", )), callback='parse_item', follow=True),
     )
 
     def parse_item(self, response):
       
-        for sel in response.xpath("//div[contains(concat(' ', normalize-space(@class), ' '), ' itemlistcombined-productrowcontainer-210 ')]"):
+        for sel in response.xpath("//div[contains(concat(' ', normalize-space(@class), ' '), ' itemdetail-productcontainer ')]"):
             item = ParadigitItem()
-            item['categorie'] = sel.xpath('//a[contains(concat(" ", normalize-space(@class), " "), " activebreadcrumbhyperlink ")]/text()').extract()[0]
-            item['naam'] = sel.xpath('div/div[contains(concat(" ", normalize-space(@class), " "), " itemlistcombined-titlecontainer ")]/a/span/text()').extract()[0]
-            item['info'] = sel.xpath('div/div[contains(concat(" ", normalize-space(@class), " "), " itemlistcombined-shortsummarycontainer ")]/a/span/text()').extract()[0]
-            item['stock'] = sel.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " itemlistcombined-warehousedeliverytimecontainer ")]/span/text()').extract()[0]
-            item['prijs'] = round(float(sel.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " itemlistcombined-salespriceincludingvatcontainer ")]/div/meta[2]/@content').extract()[0]), 2)
+            item['categorie'] = sel.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " breadcrumb ")]/div[2]/a/text()').extract()[0]
+            item['naam'] = sel.xpath('div/div[contains(concat(" ", normalize-space(@class), " "), " itemdetail-producttitlecontainer ")]/h1/span/text()').extract()
+            item['info'] = sel.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " itemdetail-shortsummarycontainer ")]/span/text()').extract()
+            item['stock'] = sel.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " itemdetail-warehousestockcontainer ")]/span/text()').extract()
+            #item['prijs'] = round(float(sel.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " itemdetail-salespriceincludingvatcontainer ")]/div/meta[2]/@content').extract()), 2)
+            item['prijs'] = sel.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " itemdetail-salespriceincludingvatcontainer ")]/div/meta[2]/@content').extract()
+            item['EAN'] = sel.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " itemdetail-specificationstab-mpndescriptioncontainer ")]/span/text()').extract()
 
             yield item
