@@ -289,3 +289,4 @@ TemplateSyntaxError: Invalid filter: 'lenght'
     (name, alen - dlen, plen))
 TemplateSyntaxError: slice requires 2 arguments, 1 provided
 >>>>>>> a6776fe7950d7b506ea61f3a211b690504c68e24
+[25/Nov/2014 12:27:52] WARNING [django.request:143] Not Found: /favicon.ico

@@ -30,14 +30,13 @@ class AzertySpider(CrawlSpider):
         for sel in response.xpath('//div[@id="artikel-informatie"]'):
             item = AzertyItem()
             item['naam'] =  sel.xpath('//h1[@class="artikel"]/text()').extract()
-            item['subnaam'] = sel.xpath('//div[contains(h1[1],@class="artikel")]/h2/text()').extract()
-            item['stock'] = sel.xpath('//div[@class="leverbaar-tekst"]/text()').extract()
+            item['subnaam'] = sel.xpath('//*[@id="_producten_product_detail"]/div[1]/div[1]/div[1]/div/h2').extract()
+            item['stock'] = sel.xpath('//*[@id="_producten_product_detail"]/div[1]/div[2]/div[2]/div[1]/div[2]/div/div/text()').extract()
             item['categorie'] = sel.xpath('//*[@id="product-detail-left-menu"]/div[2]/div/ul/li/ul/li[@class="node open group"]/a/text()').extract()
-            item['prijs'] = sel.xpath('//span[@class="groot"]/text()').extract()
+            item['prijs'] = sel.xpath('//*[@id="_producten_product_detail"]/div[1]/div[2]/div[2]/div[1]/div[2]/div/span[1]/text()').extract()
             item['link'] = response.url
-            item['EAN'] = sel.xpath('//ul[contains(li[1], "Ean &apos; s")]/li[2]/text()').extract()
-            item['SKU'] = sel.xpath('//ul[contains(li[1], "Sku &apos; s")]/li[2]/text()').extract()
+            item['EAN'] = sel.xpath('//ul[contains(li[1], "'+"Ean's"+'")]/li[2]/text()').extract()
+            item['SKU'] = sel.xpath('//ul[contains(li[1], "'+"Sku's"+'")]/li[2]/text()').extract()
             yield item
-
 
 
