@@ -46,47 +46,47 @@ class PccrawlerPipeline(object):
 				langeNaam = item["categorie"][0]
 				if ("Processoren" or "CPU" or "Processors") in langeNaam:
 					self.collection = db["processoren"]
-					for e in self.collection.find({"EAN": item["EAN"] }):
+					for e in self.collection.find({"ean": item["ean"] }):
 						print e
 					collectienaam = "processoren"
 				elif ("Moederbord" or "moederborden") in langeNaam:
 					self.collection = db["moederborden"]
-					for e in self.collection.find({"EAN": item["EAN"] }):
+					for e in self.collection.find({"ean": item["ean"] }):
 						print e
 					collectienaam = "moederborden"
 				elif ("Koeling" or "Koelers" or "Processorkoeling" or "CPU Koelers") in langeNaam:
 					self.collection = db["koeling"]
-					for e in self.collection.find({"EAN": item["EAN"] }):
+					for e in self.collection.find({"ean": item["ean"] }):
 						print e
 					collectienaam = "koeling"
 				elif ("Behuizingen" or "Barebones") in langeNaam:
 					self.collection = db["behuizingen"]
-					for e in self.collection.find({"EAN": item["EAN"] }):
+					for e in self.collection.find({"ean": item["ean"] }):
 						print e
 					collectienaam = "behuizingen"
 				elif ("Grafische" or "GPU" or "Videokaarten" or "Videokaart") in langeNaam:
 					self.collection = db["grafische"]
-					for e in self.collection.find({"EAN": item["EAN"] }):
+					for e in self.collection.find({"ean": item["ean"] }):
 						print e
 					collectienaam = "grafische"
 				elif ("Harde" or "Geheugen intern" or "Interne harde schijven") in langeNaam:
 					self.collection = db["harde"]
-					for e in self.collection.find({"EAN": item["EAN"] }):
+					for e in self.collection.find({"ean": item["ean"] }):
 						print e
 					collectienaam = "harde"
 				elif ("DVD") in langeNaam:
 					self.collection = db["dvd"]
-					for e in self.collection.find({"EAN": item["EAN"] }):
+					for e in self.collection.find({"ean": item["ean"] }):
 						print e
 					collectienaam = "dvd"
 				elif ("Geheugen" or "RAM") in langeNaam:
 					self.collection = db["geheugen"]
-					for e in self.collection.find({"EAN": item["EAN"] }):
+					for e in self.collection.find({"ean": item["ean"] }):
 						print e
 					collectienaam = "geheugen"
 				elif ("Voeding" or "Voedingen") in langeNaam:
 					self.collection = db["voeding"]
-					for e in self.collection.find({"EAN": item["EAN"] }):
+					for e in self.collection.find({"ean": item["ean"] }):
 						print e
 					collectienaam = "voeding"
 
