@@ -28,6 +28,7 @@ class ParadigitSpider(CrawlSpider):
             item['stock'] = sel.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " itemdetail-warehousestockcontainer ")]/span/text()').extract()
             #item['prijs'] = round(float(sel.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " itemdetail-salespriceincludingvatcontainer ")]/div/meta[2]/@content').extract()), 2)
             item['prijs'] = sel.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " itemdetail-salespriceincludingvatcontainer ")]/div/meta[2]/@content').extract()
-            item['EAN'] = sel.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " itemdetail-specificationstab-mpndescriptioncontainer ")]/span/text()').extract()
+            item['sku'] = sel.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " itemdetail-specificationstab-mpndescriptioncontainer ")]/span/text()').extract()
+            item['link'] = response.url
 
             yield item
