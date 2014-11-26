@@ -57,15 +57,15 @@ $(document).ready(function(){
                         </div>
                         <div class=" col-md-2 col-lg-2  ">
                             <p class="list-group-item-text pull-right ">{{ component.prijs.0 }}</p>
-                            <p class="list-group-item-text  ">{{ component.stock }}</p>
+                            <p class="list-group-item-text  ">{{ component.stock.0 }}</p>
 
-<<<<<<< HEAD
+
 
                             <a href="/detail/?product={% for name in component.naam %}{{ name }} {% endfor %}&amp;categorie={{component.categorie|truncatewords:1 }}&amp;prijs={{ component.prijs.0|slice:'-1' }}&amp;productid={{component.id}}" class="btn btn-primary">details</a>
 
-=======
-                            <a href="/detail/?product={% for name in component.naam %}{{ name }} {% endfor %}&amp;categorie={{component.categorie.0|truncatewords:1 }}&amp;prijs={{ component.prijs.0|slice:'-1' }}&amp;productid={{component.id}}" class="btn btn-primary">details</a>
->>>>>>> 4d5bb3d5756c8839840b0a38ab15cd2c2f3076e5
+
+                            
+
                         </div>
                     </div>
 

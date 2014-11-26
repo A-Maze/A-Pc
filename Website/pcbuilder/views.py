@@ -80,9 +80,30 @@ def detail(request):
     prijs = request.GET.get('prijs')
     productid = request.GET.get('productid')
     
-
-#+ 
-    return render_to_response('detail.html', {'Componenten': (Processoren.objects,Moederborden.objects,Koeling.objects, Behuizingen.objects,Grafische.objects, Harde.objects, Dvd.objects, Geheugen.objects, Voeding.objects), 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
+    categorieObject = ""
+    
+    if (categorie == "processoren"):
+        categorieObject = Processoren
+    elif (categorie == "moederborden"):
+        categorieObject = Moederborden
+    elif (categorie == "koeling"):
+        categorieObject = Koeling
+    elif (categorie == "grafische"):
+        categorieObject = Grafische
+    elif (categorie == "harde"):
+        categorieObject = Harde
+    elif (categorie == "Dvd"):
+        categorieObject = Dvd
+    elif (categorie == "koeling"):
+        categorieObject = Koeling
+    elif (categorie == "geheugen"):
+        categorieObject = Geheugen
+    elif (categorie == "voeding"):
+        categorieObject = Voeding
+    elif (categorie == "behuizingen"):
+        categorieObject = Behuizingen
+    
+    return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
 context_instance=RequestContext(request))
 
 def processoren(request):

@@ -1,327 +1,16 @@
 <<<<<<< HEAD
-[24/Nov/2014 18:13:03] ERROR [django.request:231] Internal Server Error: /detail/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/media/NieuwVolume/A-Pc/Website/pcbuilder/views.py", line 83, in detail
-    context_instance=RequestContext(request))
-  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
-    nodelist = parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
-    nodelist = parser.parse(('endblock',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1115, in load
-    lib = get_library(taglib)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 1336, in get_library
-    lib = import_library(taglib_module)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 1270, in import_library
-    mod = import_module(taglib_module)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/media/NieuwVolume/A-Pc/Website/pcbuilder/templatetags/filters.py", line 10
-    try:
-      ^
-IndentationError: expected an indented block
-[24/Nov/2014 18:13:23] ERROR [django.request:231] Internal Server Error: /detail/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/media/NieuwVolume/A-Pc/Website/pcbuilder/views.py", line 83, in detail
-    context_instance=RequestContext(request))
-  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
-    nodelist = parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
-    nodelist = parser.parse(('endblock',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1115, in load
-    lib = get_library(taglib)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 1336, in get_library
-    lib = import_library(taglib_module)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 1270, in import_library
-    mod = import_module(taglib_module)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/media/NieuwVolume/A-Pc/Website/pcbuilder/templatetags/filters.py", line 10
-    try:
-      ^
-IndentationError: expected an indented block
-[24/Nov/2014 18:13:29] ERROR [django.request:231] Internal Server Error: /detail/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/media/NieuwVolume/A-Pc/Website/pcbuilder/views.py", line 83, in detail
-    context_instance=RequestContext(request))
-  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
-    nodelist = parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
-    nodelist = parser.parse(('endblock',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1115, in load
-    lib = get_library(taglib)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 1336, in get_library
-    lib = import_library(taglib_module)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 1270, in import_library
-    mod = import_module(taglib_module)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/media/NieuwVolume/A-Pc/Website/pcbuilder/templatetags/filters.py", line 7
-    try:
-      ^
-IndentationError: expected an indented block
-[24/Nov/2014 18:13:40] ERROR [django.request:231] Internal Server Error: /detail/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/media/NieuwVolume/A-Pc/Website/pcbuilder/views.py", line 83, in detail
-    context_instance=RequestContext(request))
-  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
-    nodelist = parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
-    nodelist = parser.parse(('endblock',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1115, in load
-    lib = get_library(taglib)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 1336, in get_library
-    lib = import_library(taglib_module)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 1270, in import_library
-    mod = import_module(taglib_module)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/media/NieuwVolume/A-Pc/Website/pcbuilder/templatetags/filters.py", line 10
-    return None
-         ^
-IndentationError: expected an indented block
-[24/Nov/2014 18:14:00] ERROR [django.request:231] Internal Server Error: /detail/
+[24/Nov/2014 18:27:23] ERROR [django.request:231] Internal Server Error: /detail/
 =======
-[03/Nov/2014 09:32:43] WARNING [django.request:143] Not Found: /favicon.ico
-[03/Nov/2014 09:32:44] WARNING [django.request:143] Not Found: /favicon.ico
-[03/Nov/2014 09:32:46] WARNING [django.request:143] Not Found: /favicon.ico
-[03/Nov/2014 09:32:49] WARNING [django.request:143] Not Found: /favicon.ico
-[03/Nov/2014 09:32:53] WARNING [django.request:143] Not Found: /favicon.ico
-[03/Nov/2014 09:32:54] WARNING [django.request:143] Not Found: /favicon.ico
-[03/Nov/2014 09:32:58] WARNING [django.request:143] Not Found: /favicon.ico
-[03/Nov/2014 09:34:29] WARNING [django.request:143] Not Found: /favicon.ico
-[03/Nov/2014 09:34:37] WARNING [django.request:143] Not Found: /favicon.ico
-[03/Nov/2014 09:36:34] WARNING [django.request:143] Not Found: /favicon.ico
-[03/Nov/2014 09:36:36] WARNING [django.request:143] Not Found: /favicon.ico
-<<<<<<< HEAD
-[03/Nov/2014 09:38:21] WARNING [django.request:143] Not Found: /favicon.ico
-[03/Nov/2014 09:39:11] WARNING [django.request:143] Not Found: /favicon.ico
-[03/Nov/2014 09:40:27] WARNING [django.request:143] Not Found: /favicon.ico
-[03/Nov/2014 09:40:28] WARNING [django.request:143] Not Found: /favicon.ico
-[03/Nov/2014 09:40:31] WARNING [django.request:143] Not Found: /favicon.ico
-[03/Nov/2014 09:40:32] WARNING [django.request:143] Not Found: /favicon.ico
-[03/Nov/2014 09:49:07] WARNING [django.request:143] Not Found: /favicon.ico
-[03/Nov/2014 10:02:14] WARNING [django.request:143] Not Found: /favicon.ico
-=======
-<<<<<<< HEAD
-[30/Oct/2014 12:52:55] WARNING [django.request:143] Not Found: /favicon.ico
-[30/Oct/2014 12:53:25] WARNING [django.request:143] Not Found: /favicon.ico
-[30/Oct/2014 13:07:08] WARNING [django.request:143] Not Found: /favicon.ico
->>>>>>> 5bedcb49e4401c00134814afc9fb85a7bb65087b
-[30/Oct/2014 13:57:06] ERROR [django.request:231] Internal Server Error: /
+[24/Nov/2014 14:31:53] ERROR [django.request:231] Internal Server Error: /detail/
 >>>>>>> a6776fe7950d7b506ea61f3a211b690504c68e24
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+<<<<<<< HEAD
   File "/media/NieuwVolume/A-Pc/Website/pcbuilder/views.py", line 83, in detail
-    context_instance=RequestContext(request))
-  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
-    nodelist = parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
-    nodelist = parser.parse(('endblock',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1115, in load
-    lib = get_library(taglib)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 1336, in get_library
-    lib = import_library(taglib_module)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 1270, in import_library
-    mod = import_module(taglib_module)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/media/NieuwVolume/A-Pc/Website/pcbuilder/templatetags/filters.py", line 11
-    return None
-         ^
-IndentationError: expected an indented block
-[24/Nov/2014 18:15:33] ERROR [django.request:231] Internal Server Error: /detail/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/media/NieuwVolume/A-Pc/Website/pcbuilder/views.py", line 83, in detail
-    context_instance=RequestContext(request))
-  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 178, in render_to_string
-    return t.render(context_instance)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 148, in render
-    return self._render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
-    return self.nodelist.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 126, in render
-    return compiled_parent._render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
-    return self.nodelist.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 65, in render
-    result = block.nodelist.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 201, in render
-    nodelist.append(node.render(context))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 201, in render
-    nodelist.append(node.render(context))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 527, in render
-    return self.nodelist.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 312, in render
-    return nodelist.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 201, in render
-    nodelist.append(node.render(context))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 90, in render
-    output = self.filter_expression.resolve(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 624, in resolve
-    new_obj = func(obj, *arg_vals)
-  File "/media/NieuwVolume/A-Pc/Website/pcbuilder/templatetags/filters.py", line 11, in get_at_index
-    return l[i]
-  File "/usr/local/lib/python2.7/dist-packages/mongoengine/base/document.py", line 179, in __getitem__
-    raise KeyError(name)
-KeyError: 1
-[24/Nov/2014 18:16:34] ERROR [django.request:231] Internal Server Error: /detail/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/media/NieuwVolume/A-Pc/Website/pcbuilder/views.py", line 83, in detail
+=======
+  File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 83, in detail
+>>>>>>> a6776fe7950d7b506ea61f3a211b690504c68e24
     context_instance=RequestContext(request))
   File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
     return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
@@ -369,562 +58,30 @@ Traceback (most recent call last):
     compiled_result = compile_func(self, token)
   File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
     nodelist_loop = parser.parse(('empty', 'endfor',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 266, in parse
-    filter_expression = self.compile_filter(token.contents)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 372, in compile_filter
-    return FilterExpression(token, self)
-<<<<<<< HEAD
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 583, in __init__
-    self.args_check(filter_name, filter_func, args)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 645, in args_check
-    (name, alen - dlen, plen))
-TemplateSyntaxError: get_at_index requires 2 arguments, 1 provided
-[24/Nov/2014 18:16:38] ERROR [django.request:231] Internal Server Error: /detail/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/media/NieuwVolume/A-Pc/Website/pcbuilder/views.py", line 83, in detail
-=======
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 588, in __init__
-    "from '%s'" % (token[upto:], token))
-TemplateSyntaxError: Could not parse the remainder: ',naam' from 'request.session.DVD,naam'
-[30/Oct/2014 14:14:45] ERROR [django.request:231] Internal Server Error: /detail/
-Traceback (most recent call last):
-  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/Library/Python/2.7/site-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 52
-SyntaxError: Non-ASCII character '\xe2' in file /Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py on line 52, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-[30/Oct/2014 14:14:52] ERROR [django.request:231] Internal Server Error: /
-Traceback (most recent call last):
-  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/Library/Python/2.7/site-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 52
-SyntaxError: Non-ASCII character '\xe2' in file /Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py on line 52, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-[30/Oct/2014 14:14:52] ERROR [django.request:231] Internal Server Error: /
-Traceback (most recent call last):
-  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/Library/Python/2.7/site-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 52
-SyntaxError: Non-ASCII character '\xe2' in file /Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py on line 52, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-=======
-[16/Nov/2014 17:33:58] WARNING [django.request:143] Not Found: /favicon.ico
->>>>>>> 4ceb59a7a857375ae062df204b0e83c231561615
-<<<<<<< HEAD
-[18/Nov/2014 08:25:05] WARNING [django.request:143] Not Found: /favicon.ico
-=======
->>>>>>> d452ba923118df57d04a576421e8f7bfecc8196a
-<<<<<<< HEAD
-[18/Nov/2014 10:57:08] WARNING [django.request:143] Not Found: /favicon.ico
-=======
->>>>>>> 111b7718d8eef20c64b04cd1e34b927f2feec3e8
->>>>>>> 0192f63f0d96a985fad6a99f06a8d80c2310f79c
-[20/Nov/2014 10:54:31] WARNING [django.request:143] Not Found: /favicon.ico
-<<<<<<< HEAD
-[24/Nov/2014 10:30:52] WARNING [django.request:143] Not Found: /favicon.ico
-=======
-[24/Nov/2014 10:31:23] WARNING [django.request:143] Not Found: /favicon.ico
-[24/Nov/2014 11:09:23] WARNING [django.request:143] Not Found: /favicon.ico
-[24/Nov/2014 12:49:36] WARNING [django.request:143] Not Found: /favicon.ico
-[24/Nov/2014 13:09:14] ERROR [django.request:231] Internal Server Error: /optischeschijven/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 215, in optischeschijf
-    context_instance=RequestContext(request))
-  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 178, in render_to_string
-    return t.render(context_instance)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 148, in render
-    return self._render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
-    return self.nodelist.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 126, in render
-    return compiled_parent._render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
-    return self.nodelist.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 65, in render
-    result = block.nodelist.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 201, in render
-    nodelist.append(node.render(context))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 90, in render
-    output = self.filter_expression.resolve(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 624, in resolve
-    new_obj = func(obj, *arg_vals)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaultfilters.py", line 616, in slice_filter
-    for x in arg.split(':'):
-AttributeError: 'int' object has no attribute 'split'
-[24/Nov/2014 13:09:17] ERROR [django.request:231] Internal Server Error: /optischeschijven/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 215, in optischeschijf
-    context_instance=RequestContext(request))
-  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 178, in render_to_string
-    return t.render(context_instance)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 148, in render
-    return self._render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
-    return self.nodelist.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 126, in render
-    return compiled_parent._render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
-    return self.nodelist.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 65, in render
-    result = block.nodelist.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 201, in render
-    nodelist.append(node.render(context))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 90, in render
-    output = self.filter_expression.resolve(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 624, in resolve
-    new_obj = func(obj, *arg_vals)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaultfilters.py", line 616, in slice_filter
-    for x in arg.split(':'):
-AttributeError: 'int' object has no attribute 'split'
-[24/Nov/2014 13:09:55] ERROR [django.request:231] Internal Server Error: /optischeschijven/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 215, in optischeschijf
->>>>>>> a6776fe7950d7b506ea61f3a211b690504c68e24
-    context_instance=RequestContext(request))
-  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 178, in render_to_string
-    return t.render(context_instance)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 148, in render
-    return self._render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
-    return self.nodelist.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 126, in render
-    return compiled_parent._render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
-    return self.nodelist.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 65, in render
-    result = block.nodelist.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
-    return node.render(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 201, in render
-    nodelist.append(node.render(context))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 90, in render
-    output = self.filter_expression.resolve(context)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 624, in resolve
-    new_obj = func(obj, *arg_vals)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaultfilters.py", line 616, in slice_filter
-    for x in arg.split(':'):
-AttributeError: 'int' object has no attribute 'split'
->>>>>>> 8e4e7c35a9c39a036d66b8550534333412590740
-[24/Nov/2014 14:08:03] ERROR [django.request:231] Internal Server Error: /geheugen/
-Traceback (most recent call last):
-  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 133, in geheugen
-    context_instance=RequestContext(request))
-  File "/Library/Python/2.7/site-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 170, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 201, in do_extends
-    nodelist = parser.parse()
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 175, in do_block
-    nodelist = parser.parse(('endblock',))
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/defaulttags.py", line 833, in do_for
-    nodelist_loop = parser.parse(('empty', 'endfor',))
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/defaulttags.py", line 833, in do_for
-    nodelist_loop = parser.parse(('empty', 'endfor',))
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 266, in parse
-    filter_expression = self.compile_filter(token.contents)
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 372, in compile_filter
-    return FilterExpression(token, self)
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 588, in __init__
-    "from '%s'" % (token[upto:], token))
-TemplateSyntaxError: Could not parse the remainder: ' - desc' from 'name - desc'
-[24/Nov/2014 14:08:29] ERROR [django.request:231] Internal Server Error: /geheugen/
-Traceback (most recent call last):
-  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 133, in geheugen
-    context_instance=RequestContext(request))
-  File "/Library/Python/2.7/site-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 170, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 201, in do_extends
-    nodelist = parser.parse()
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 175, in do_block
-    nodelist = parser.parse(('endblock',))
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-<<<<<<< HEAD
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
-    nodelist_loop = parser.parse(('empty', 'endfor',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
-    nodelist_loop = parser.parse(('empty', 'endfor',))
   File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
     compiled_result = compile_func(self, token)
   File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1459, in do_with
     nodelist = parser.parse(('endwith',))
   File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
     compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 975, in do_if
-    nodelist = parser.parse(('elif', 'else', 'endif'))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
-    nodelist_loop = parser.parse(('empty', 'endfor',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 266, in parse
-    filter_expression = self.compile_filter(token.contents)
+<<<<<<< HEAD
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 974, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 906, in __init__
+    super(TemplateIfParser, self).__init__(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/smartif.py", line 164, in __init__
+    mapped_tokens.append(self.translate_token(token))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/smartif.py", line 175, in translate_token
+    return self.create_var(token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 909, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
   File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 372, in compile_filter
     return FilterExpression(token, self)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 583, in __init__
-    self.args_check(filter_name, filter_func, args)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 645, in args_check
-    (name, alen - dlen, plen))
-TemplateSyntaxError: get_at_index requires 2 arguments, 1 provided
-[24/Nov/2014 18:18:23] ERROR [django.request:231] Internal Server Error: /detail/
-=======
-  File "/Library/Python/2.7/site-packages/django/template/defaulttags.py", line 833, in do_for
-    nodelist_loop = parser.parse(('empty', 'endfor',))
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 288, in parse
-    self.invalid_block_tag(token, command, parse_until)
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 343, in invalid_block_tag
-    (command, get_text_list(["'%s'" % p for p in parse_until])))
-TemplateSyntaxError: Invalid block tag: 'endblock', expected 'empty' or 'endfor'
-[24/Nov/2014 14:09:08] ERROR [django.request:231] Internal Server Error: /geheugen/
->>>>>>> a6776fe7950d7b506ea61f3a211b690504c68e24
-Traceback (most recent call last):
-  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-<<<<<<< HEAD
-  File "/media/NieuwVolume/A-Pc/Website/pcbuilder/views.py", line 83, in detail
-=======
-  File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 133, in geheugen
->>>>>>> a6776fe7950d7b506ea61f3a211b690504c68e24
-    context_instance=RequestContext(request))
-  File "/Library/Python/2.7/site-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 170, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 201, in do_extends
-    nodelist = parser.parse()
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 175, in do_block
-    nodelist = parser.parse(('endblock',))
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/defaulttags.py", line 833, in do_for
-    nodelist_loop = parser.parse(('empty', 'endfor',))
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/defaulttags.py", line 833, in do_for
-    nodelist_loop = parser.parse(('empty', 'endfor',))
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/defaulttags.py", line 833, in do_for
-    nodelist_loop = parser.parse(('empty', 'endfor',))
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 266, in parse
-    filter_expression = self.compile_filter(token.contents)
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 372, in compile_filter
-    return FilterExpression(token, self)
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 588, in __init__
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 588, in __init__
     "from '%s'" % (token[upto:], token))
-TemplateSyntaxError: Could not parse the remainder: ' - desc' from 'name - desc'
-[24/Nov/2014 14:09:38] ERROR [django.request:231] Internal Server Error: /geheugen/
-Traceback (most recent call last):
-  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 133, in geheugen
-    context_instance=RequestContext(request))
-  File "/Library/Python/2.7/site-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 170, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 201, in do_extends
-    nodelist = parser.parse()
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 175, in do_block
-    nodelist = parser.parse(('endblock',))
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/defaulttags.py", line 833, in do_for
-    nodelist_loop = parser.parse(('empty', 'endfor',))
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/defaulttags.py", line 833, in do_for
-    nodelist_loop = parser.parse(('empty', 'endfor',))
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/defaulttags.py", line 832, in do_for
-    sequence = parser.compile_filter(bits[in_index + 1])
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 372, in compile_filter
-    return FilterExpression(token, self)
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 588, in __init__
-    "from '%s'" % (token[upto:], token))
-TemplateSyntaxError: Could not parse the remainder: '[0]' from 'component.Geheugen_Specificatie[0]'
-[24/Nov/2014 14:30:41] ERROR [django.request:231] Internal Server Error: /detail/
-Traceback (most recent call last):
-  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 83, in detail
-    context_instance=RequestContext(request))
-  File "/Library/Python/2.7/site-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 170, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 201, in do_extends
-    nodelist = parser.parse()
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 175, in do_block
-    nodelist = parser.parse(('endblock',))
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/defaulttags.py", line 975, in do_if
-    nodelist = parser.parse(('elif', 'else', 'endif'))
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-<<<<<<< HEAD
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1115, in load
-    lib = get_library(taglib)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 1336, in get_library
-    lib = import_library(taglib_module)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 1270, in import_library
-    mod = import_module(taglib_module)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/media/NieuwVolume/A-Pc/Website/pcbuilder/templatetags/filters.py", line 9
-    return l[i].0
-                ^
-SyntaxError: invalid syntax
-[24/Nov/2014 18:18:38] ERROR [django.request:231] Internal Server Error: /detail/
+TemplateSyntaxError: Could not parse the remainder: '[None,' from '[None,'
+[24/Nov/2014 18:27:32] ERROR [django.request:231] Internal Server Error: /detail/
 =======
-  File "/Library/Python/2.7/site-packages/django/template/defaulttags.py", line 975, in do_if
-    nodelist = parser.parse(('elif', 'else', 'endif'))
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 288, in parse
-    self.invalid_block_tag(token, command, parse_until)
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 343, in invalid_block_tag
-    (command, get_text_list(["'%s'" % p for p in parse_until])))
-TemplateSyntaxError: Invalid block tag: 'endblock', expected 'elif', 'else' or 'endif'
-[24/Nov/2014 14:31:07] ERROR [django.request:231] Internal Server Error: /detail/
->>>>>>> a6776fe7950d7b506ea61f3a211b690504c68e24
-Traceback (most recent call last):
-  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-<<<<<<< HEAD
-  File "/media/NieuwVolume/A-Pc/Website/pcbuilder/views.py", line 83, in detail
-=======
-  File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 83, in detail
->>>>>>> a6776fe7950d7b506ea61f3a211b690504c68e24
-    context_instance=RequestContext(request))
-  File "/Library/Python/2.7/site-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 170, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 201, in do_extends
-    nodelist = parser.parse()
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 175, in do_block
-    nodelist = parser.parse(('endblock',))
-<<<<<<< HEAD
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1115, in load
-    lib = get_library(taglib)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 1336, in get_library
-    lib = import_library(taglib_module)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 1270, in import_library
-    mod = import_module(taglib_module)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/media/NieuwVolume/A-Pc/Website/pcbuilder/templatetags/filters.py", line 9
-    return l[i.0]
-               ^
-SyntaxError: invalid syntax
-[24/Nov/2014 18:20:33] ERROR [django.request:231] Internal Server Error: /detail/
-=======
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
   File "/Library/Python/2.7/site-packages/django/template/defaulttags.py", line 975, in do_if
     nodelist = parser.parse(('elif', 'else', 'endif'))
   File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
@@ -936,174 +93,16 @@ SyntaxError: invalid syntax
   File "/Library/Python/2.7/site-packages/django/template/base.py", line 343, in invalid_block_tag
     (command, get_text_list(["'%s'" % p for p in parse_until])))
 TemplateSyntaxError: Invalid block tag: 'endblock', expected 'elif', 'else' or 'endif'
-[24/Nov/2014 14:31:41] ERROR [django.request:231] Internal Server Error: /detail/
+[24/Nov/2014 14:32:23] ERROR [django.request:231] Internal Server Error: /detail/
 >>>>>>> a6776fe7950d7b506ea61f3a211b690504c68e24
-Traceback (most recent call last):
-  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-<<<<<<< HEAD
-  File "/media/NieuwVolume/A-Pc/Website/pcbuilder/views.py", line 83, in detail
-=======
-  File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 83, in detail
->>>>>>> a6776fe7950d7b506ea61f3a211b690504c68e24
-    context_instance=RequestContext(request))
-  File "/Library/Python/2.7/site-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 170, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 201, in do_extends
-    nodelist = parser.parse()
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 175, in do_block
-    nodelist = parser.parse(('endblock',))
-<<<<<<< HEAD
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
-    nodelist_loop = parser.parse(('empty', 'endfor',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
-    nodelist_loop = parser.parse(('empty', 'endfor',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1459, in do_with
-    nodelist = parser.parse(('endwith',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 975, in do_if
-    nodelist = parser.parse(('elif', 'else', 'endif'))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
-    nodelist_loop = parser.parse(('empty', 'endfor',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1452, in do_with
-    extra_context = token_kwargs(remaining_bits, parser, support_legacy=True)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 952, in token_kwargs
-    kwargs[key] = parser.compile_filter(value)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 372, in compile_filter
-    return FilterExpression(token, self)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 561, in __init__
-    token[start:]))
-TemplateSyntaxError: Could not parse some characters: |{{product||get_at_index:item}}
-[24/Nov/2014 18:20:45] ERROR [django.request:231] Internal Server Error: /detail/
-=======
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/defaulttags.py", line 975, in do_if
-    nodelist = parser.parse(('elif', 'else', 'endif'))
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/defaulttags.py", line 975, in do_if
-    nodelist = parser.parse(('elif', 'else', 'endif'))
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 288, in parse
-    self.invalid_block_tag(token, command, parse_until)
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 343, in invalid_block_tag
-    (command, get_text_list(["'%s'" % p for p in parse_until])))
-TemplateSyntaxError: Invalid block tag: 'endblock', expected 'elif', 'else' or 'endif'
-[24/Nov/2014 14:31:44] ERROR [django.request:231] Internal Server Error: /detail/
->>>>>>> a6776fe7950d7b506ea61f3a211b690504c68e24
-Traceback (most recent call last):
-  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-<<<<<<< HEAD
-  File "/media/NieuwVolume/A-Pc/Website/pcbuilder/views.py", line 83, in detail
-=======
-  File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 83, in detail
->>>>>>> a6776fe7950d7b506ea61f3a211b690504c68e24
-    context_instance=RequestContext(request))
-  File "/Library/Python/2.7/site-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 170, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 201, in do_extends
-    nodelist = parser.parse()
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 175, in do_block
-    nodelist = parser.parse(('endblock',))
-<<<<<<< HEAD
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
-    nodelist_loop = parser.parse(('empty', 'endfor',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
-    nodelist_loop = parser.parse(('empty', 'endfor',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1459, in do_with
-    nodelist = parser.parse(('endwith',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 975, in do_if
-    nodelist = parser.parse(('elif', 'else', 'endif'))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
-    nodelist_loop = parser.parse(('empty', 'endfor',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1459, in do_with
-    nodelist = parser.parse(('endwith',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 288, in parse
-=======
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/defaulttags.py", line 975, in do_if
-    nodelist = parser.parse(('elif', 'else', 'endif'))
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/Library/Python/2.7/site-packages/django/template/defaulttags.py", line 975, in do_if
-    nodelist = parser.parse(('elif', 'else', 'endif'))
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 288, in parse
->>>>>>> a6776fe7950d7b506ea61f3a211b690504c68e24
-    self.invalid_block_tag(token, command, parse_until)
-  File "/Library/Python/2.7/site-packages/django/template/base.py", line 343, in invalid_block_tag
-    (command, get_text_list(["'%s'" % p for p in parse_until])))
-<<<<<<< HEAD
-TemplateSyntaxError: Invalid block tag: 'endfor', expected 'endwith'
-[24/Nov/2014 18:27:17] ERROR [django.request:231] Internal Server Error: /detail/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+<<<<<<< HEAD
   File "/media/NieuwVolume/A-Pc/Website/pcbuilder/views.py", line 83, in detail
+=======
+  File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 83, in detail
+>>>>>>> a6776fe7950d7b506ea61f3a211b690504c68e24
     context_instance=RequestContext(request))
   File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
     return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
@@ -1131,6 +130,7 @@ Traceback (most recent call last):
     compiled_result = compile_func(self, token)
   File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
     nodelist = parser.parse(('endblock',))
+<<<<<<< HEAD
   File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
     compiled_result = compile_func(self, token)
   File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
@@ -1171,7 +171,429 @@ Traceback (most recent call last):
     return FilterExpression(token, self)
   File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 588, in __init__
     "from '%s'" % (token[upto:], token))
-TemplateSyntaxError: Could not parse the remainder: '[None,' from '[None,'
+TemplateSyntaxError: Could not parse the remainder: ',' from 'None,'
+[24/Nov/2014 18:28:59] ERROR [django.request:231] Internal Server Error: /detail/
 =======
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Python/2.7/site-packages/django/template/defaulttags.py", line 975, in do_if
+    nodelist = parser.parse(('elif', 'else', 'endif'))
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Python/2.7/site-packages/django/template/defaulttags.py", line 975, in do_if
+    nodelist = parser.parse(('elif', 'else', 'endif'))
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 288, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 343, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
 TemplateSyntaxError: Invalid block tag: 'endblock', expected 'elif', 'else' or 'endif'
+[24/Nov/2014 14:36:09] ERROR [django.request:231] Internal Server Error: /deselect/
 >>>>>>> a6776fe7950d7b506ea61f3a211b690504c68e24
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+<<<<<<< HEAD
+  File "/media/NieuwVolume/A-Pc/Website/pcbuilder/views.py", line 83, in detail
+=======
+  File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 64, in deselect
+    del request.session[categorie]
+  File "/Library/Python/2.7/site-packages/django/contrib/sessions/backends/base.py", line 56, in __delitem__
+    del self._session[key]
+KeyError: u'Behuizingen'
+[24/Nov/2014 16:19:18] WARNING [django.request:143] Not Found: /favicon.ico
+[24/Nov/2014 16:20:02] ERROR [django.request:231] Internal Server Error: /gpu/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 150, in gpu
+>>>>>>> a6776fe7950d7b506ea61f3a211b690504c68e24
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+<<<<<<< HEAD
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1459, in do_with
+    nodelist = parser.parse(('endwith',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 975, in do_if
+    nodelist = parser.parse(('elif', 'else', 'endif'))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 1459, in do_with
+    nodelist = parser.parse(('endwith',))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 974, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 906, in __init__
+    super(TemplateIfParser, self).__init__(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/smartif.py", line 164, in __init__
+    mapped_tokens.append(self.translate_token(token))
+  File "/usr/local/lib/python2.7/dist-packages/django/template/smartif.py", line 175, in translate_token
+    return self.create_var(token)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 909, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 372, in compile_filter
+    return FilterExpression(token, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 582, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 378, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+TemplateSyntaxError: Invalid filter: 'lenght'
+=======
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 266, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 372, in compile_filter
+    return FilterExpression(token, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 583, in __init__
+    self.args_check(filter_name, filter_func, args)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 645, in args_check
+    (name, alen - dlen, plen))
+TemplateSyntaxError: slice requires 2 arguments, 1 provided
+>>>>>>> a6776fe7950d7b506ea61f3a211b690504c68e24
+[25/Nov/2014 12:27:52] WARNING [django.request:143] Not Found: /favicon.ico
+<<<<<<< HEAD
+[26/Nov/2014 11:42:19] WARNING [django.request:143] Not Found: /favicon.ico
+[26/Nov/2014 12:11:59] ERROR [django.request:231] Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 82
+    return render_to_response('detail.html', {'Componenten': (Processoren.objects,Moederborden.objects,Koeling, Behuizingen.objects,Grafische.objects, Harde.objects, Dvd.objects, Geheugen.objects, Voeding.objects, 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
+                                                                                                                                                                                                                                  ^
+SyntaxError: invalid syntax
+[26/Nov/2014 12:12:25] ERROR [django.request:231] Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 82
+    return render_to_response('detail.html', {'Componenten': (Processoren.objects,Moederborden.objects,Koeling.objects, Behuizingen.objects,Grafische.objects, Harde.objects, Dvd.objects, Geheugen.objects, Voeding.objects, 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
+                                                                                                                                                                                                                                          ^
+SyntaxError: invalid syntax
+[26/Nov/2014 12:12:28] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 82
+    return render_to_response('detail.html', {'Componenten': (Processoren.objects,Moederborden.objects,Koeling.objects, Behuizingen.objects,Grafische.objects, Harde.objects, Dvd.objects, Geheugen.objects, Voeding.objects, 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
+                                                                                                                                                                                                                                          ^
+SyntaxError: invalid syntax
+[26/Nov/2014 12:12:34] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 82
+    return render_to_response('detail.html', {'Componenten': (Processoren.objects,Moederborden.objects,Koeling.objects, Behuizingen.objects,Grafische.objects, Harde.objects, Dvd.objects, Geheugen.objects, Voeding.objects, 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
+                                                                                                                                                                                                                                          ^
+SyntaxError: invalid syntax
+[26/Nov/2014 12:12:48] ERROR [django.request:231] Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 82
+    return render_to_response('detail.html', {'Componenten': (Processoren.objects,Moederborden.objects,Koeling.objects, Behuizingen.objects,Grafische.objects, Harde.objects, Dvd.objects, Geheugen.objects, Voeding.objects, 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
+                                                                                                                                                                                                                                          ^
+SyntaxError: invalid syntax
+=======
+[25/Nov/2014 21:11:15] WARNING [django.request:143] Not Found: /favicon.ico
+[26/Nov/2014 10:34:29] WARNING [django.request:143] Not Found: /favicon.ico
+>>>>>>> 4d5bb3d5756c8839840b0a38ab15cd2c2f3076e5
+[26/Nov/2014 12:53:20] WARNING [django.request:143] Not Found: /favicon.ico
+[26/Nov/2014 13:43:52] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 83, in detail
+    categorieObject
+UnboundLocalError: local variable 'categorieObject' referenced before assignment
+[26/Nov/2014 13:44:29] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 83, in detail
+    categorieObject
+UnboundLocalError: local variable 'categorieObject' referenced before assignment
+[26/Nov/2014 13:44:45] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 83, in detail
+    categorieObject
+UnboundLocalError: local variable 'categorieObject' referenced before assignment
+[26/Nov/2014 13:44:49] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 83, in detail
+    categorieObject
+UnboundLocalError: local variable 'categorieObject' referenced before assignment
+[26/Nov/2014 13:44:51] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 83, in detail
+    categorieObject
+UnboundLocalError: local variable 'categorieObject' referenced before assignment
+[26/Nov/2014 13:44:54] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 83, in detail
+    categorieObject
+UnboundLocalError: local variable 'categorieObject' referenced before assignment
+[26/Nov/2014 13:45:21] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 83, in detail
+    categorieObject
+UnboundLocalError: local variable 'categorieObject' referenced before assignment
+[26/Nov/2014 13:45:25] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 83, in detail
+    categorieObject
+UnboundLocalError: local variable 'categorieObject' referenced before assignment
+[26/Nov/2014 13:45:32] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 83, in detail
+    categorieObject
+UnboundLocalError: local variable 'categorieObject' referenced before assignment
+[26/Nov/2014 13:45:42] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 83, in detail
+    categorieObject
+UnboundLocalError: local variable 'categorieObject' referenced before assignment
+[26/Nov/2014 13:45:53] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 83, in detail
+    categorieObject
+UnboundLocalError: local variable 'categorieObject' referenced before assignment
+[26/Nov/2014 13:47:47] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 87, in detail
+    categorieObject = moederborden.objects
+AttributeError: 'function' object has no attribute 'objects'
+[26/Nov/2014 13:48:24] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 85, in detail
+    return render_to_response('detail.html', {'Componenten': (categorieObject), 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
+NameError: global name 'categorieObject' is not defined
+[26/Nov/2014 13:48:52] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 85, in detail
+    return render_to_response('detail.html', {'Componenten': (categorieObject), 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
+NameError: global name 'categorieObject' is not defined
+[26/Nov/2014 13:52:50] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 105, in detail
+    return render_to_response('detail.html', {'Componenten': categorieObject, 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
+UnboundLocalError: local variable 'categorieObject' referenced before assignment
+[26/Nov/2014 13:53:22] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 82, in detail
+    categorieObject = A
+NameError: global name 'A' is not defined
+[26/Nov/2014 13:53:23] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 82, in detail
+    categorieObject = A
+NameError: global name 'A' is not defined
+[26/Nov/2014 13:54:05] INFO [root:104] <function moederborden at 0x7f97f4057d70>
+[26/Nov/2014 13:54:05] INFO [root:104] <function moederborden at 0x7f97f4057d70>
+[26/Nov/2014 13:54:19] INFO [root:104] <function moederborden at 0x7f97f4057d70>
+[26/Nov/2014 13:54:19] INFO [root:104] <function moederborden at 0x7f97f4057d70>
+[26/Nov/2014 13:55:21] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 104, in detail
+    logging.info("categorieee = " + categorieObject)
+TypeError: cannot concatenate 'str' and 'function' objects
+[26/Nov/2014 13:56:10] INFO [root:104] categorie is
+[26/Nov/2014 13:56:10] INFO [root:105] <class 'pcbuilder.models.Behuizingen'>
+[26/Nov/2014 13:56:10] INFO [root:104] categorie is
+[26/Nov/2014 13:56:10] INFO [root:105] <class 'pcbuilder.models.Behuizingen'>
+[26/Nov/2014 13:58:25] INFO [root:104] categorie is
+[26/Nov/2014 13:58:25] INFO [root:105] 
+[26/Nov/2014 13:58:25] INFO [root:104] categorie is
+[26/Nov/2014 13:58:25] INFO [root:105] 
+[26/Nov/2014 13:59:44] INFO [root:104] categorie is
+[26/Nov/2014 13:59:44] INFO [root:105] <class 'pcbuilder.models.Moederborden'>
+[26/Nov/2014 13:59:44] INFO [root:104] categorie is
+[26/Nov/2014 13:59:44] INFO [root:105] <class 'pcbuilder.models.Moederborden'>
+[26/Nov/2014 13:59:44] INFO [root:104] categorie is
+[26/Nov/2014 13:59:44] INFO [root:105] <class 'pcbuilder.models.Moederborden'>
+[26/Nov/2014 13:59:50] INFO [root:104] categorie is
+[26/Nov/2014 13:59:50] INFO [root:105] <class 'pcbuilder.models.Moederborden'>
+[26/Nov/2014 13:59:50] INFO [root:104] categorie is
+[26/Nov/2014 13:59:50] INFO [root:105] <class 'pcbuilder.models.Moederborden'>
+[26/Nov/2014 14:00:48] INFO [root:104] categorie is
+[26/Nov/2014 14:00:48] INFO [root:105] <class 'pcbuilder.models.Moederborden'>
+[26/Nov/2014 14:00:49] INFO [root:104] categorie is
+[26/Nov/2014 14:00:49] INFO [root:105] <class 'pcbuilder.models.Moederborden'>
+[26/Nov/2014 14:02:57] INFO [root:104] categorie is
+[26/Nov/2014 14:02:57] INFO [root:105] [<Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, '...(remaining elements truncated)...']
+[26/Nov/2014 14:02:57] INFO [root:104] categorie is
+[26/Nov/2014 14:02:57] INFO [root:105] [<Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, '...(remaining elements truncated)...']
+[26/Nov/2014 14:03:27] INFO [root:104] categorie is
+[26/Nov/2014 14:03:27] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 105, in detail
+    logging.info(categorieObject.objects.naam)
+AttributeError: 'QuerySet' object has no attribute 'naam'
+[26/Nov/2014 14:03:36] INFO [root:104] categorie is
+[26/Nov/2014 14:03:36] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 105, in detail
+    logging.info(categorieObject.objects.prijs)
+AttributeError: 'QuerySet' object has no attribute 'prijs'
+[26/Nov/2014 14:03:56] INFO [root:104] categorie is
+[26/Nov/2014 14:03:56] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 105, in detail
+    logging.info(categorieObject.naam)
+AttributeError: type object 'Moederborden' has no attribute 'naam'
+[26/Nov/2014 14:04:17] INFO [root:104] categorie is
+[26/Nov/2014 14:04:17] INFO [root:105] [<Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, '...(remaining elements truncated)...']
+[26/Nov/2014 14:04:17] INFO [root:104] categorie is
+[26/Nov/2014 14:04:17] INFO [root:105] [<Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, '...(remaining elements truncated)...']
+[26/Nov/2014 14:04:46] INFO [root:104] categorie is
+[26/Nov/2014 14:04:46] INFO [root:105] [<Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, '...(remaining elements truncated)...']
+[26/Nov/2014 14:04:46] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 107, in detail
+    return render_to_response('detail.html', {'Componenten': moederborden.objects, 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
+AttributeError: 'function' object has no attribute 'objects'
+[26/Nov/2014 14:04:58] INFO [root:104] categorie is
+[26/Nov/2014 14:04:58] INFO [root:105] [<Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, '...(remaining elements truncated)...']
+[26/Nov/2014 14:04:59] INFO [root:104] categorie is
+[26/Nov/2014 14:04:59] INFO [root:105] [<Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, '...(remaining elements truncated)...']
+[26/Nov/2014 14:05:00] INFO [root:104] categorie is
+[26/Nov/2014 14:05:00] INFO [root:105] [<Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, '...(remaining elements truncated)...']
+[26/Nov/2014 14:05:00] INFO [root:104] categorie is
