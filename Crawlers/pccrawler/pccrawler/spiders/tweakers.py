@@ -74,8 +74,8 @@ class TweakersSpider(CrawlSpider):
             #    item['Stroomverbruik'] = sel.xpath('//tr[contains(td[1], "Stroomverbruik")]/td[2]/text()').extract()
             #    item['Type_koeling'] = sel.xpath('//tr[contains(td[1], "Type koeling")]/td[2]/text()').extract()
             #    item['Link_Interface'] = sel.xpath('//tr[contains(td[1], "Link Interface")]/td[2]/text()').extract()
-            #    item['EAN'] = sel.xpath('//tr[contains(td[1], "EAN")]/td[2]/text()').extract()
-            #    item['SKU'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
+            #    item['ean'] = sel.xpath('//tr[contains(td[1], "EAN")]/td[2]/text()').extract()
+            #    item['sku'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
             #    yield item
             #    print "Videokaart"
 
@@ -101,8 +101,8 @@ class TweakersSpider(CrawlSpider):
                 item['Spanning'] = sel.xpath('//tr[contains(td[1], "Spanning")]/td[2]/text()').extract()
                 item['Fabrieksgarantie'] = sel.xpath('//tr[contains(td[1], "Fabrieksgarantie")]/td[2]/text()').extract()
                 item['Bijzonderheden'] = sel.xpath('//tr[contains(td[1], "Bijzonderheden")]/td[2]/text()').extract()
-                item['EAN'] = sel.xpath('//tr[contains(td[1], "EAN")]/td[2]/text()').extract()
-                item['SKU'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
+                item['ean'] = sel.xpath('//tr[contains(td[1], "EAN")]/td[2]/text()').extract()
+                item['sku'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
                 yield item
 
                 print "Geheugen"
@@ -135,8 +135,8 @@ class TweakersSpider(CrawlSpider):
                 item['Audio_kanalen'] = sel.xpath('//tr[contains(td[1], "Audio kanalen")]/td[2]/text()').extract()
                 item['Audio_uitgangen'] = sel.xpath('//tr[contains(td[1], "Audio uitgangen")]/td[2]/text()').extract()
                 item['Audiochip'] = sel.xpath('//tr[contains(td[1], "Audiochip")]/td[2]/text()').extract()
-                item['EAN'] = sel.xpath('//tr[contains(td[1], "EAN")]/td[2]/text()').extract()
-                item['SKU'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
+                item['ean'] = sel.xpath('//tr[contains(td[1], "EAN")]/td[2]/text()').extract()
+                item['sku'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
                 yield item 
                 print "Moederbord"
             elif "Behuizingen" in category:
@@ -169,8 +169,8 @@ class TweakersSpider(CrawlSpider):
                 item['Gewicht'] = sel.xpath('//tr[contains(td[1], "Gewicht")]/td[2]/text()').extract()
                 item['Fabrieksgarantie'] = sel.xpath('//tr[contains(td[1], "Fabrieksgarantie")]/td[2]/text()').extract()
                 item['Bijzonderheden'] = sel.xpath('//tr[contains(td[1], "Bijzonderheden")]/td[2]/text()').extract()
-                item['EAN'] = sel.xpath('//tr[contains(td[1], "EAN")]/td[2]/text()').extract()
-                item['SKU'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
+                item['ean'] = sel.xpath('//tr[contains(td[1], "EAN")]/td[2]/text()').extract()
+                item['sku'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
                 yield item
                 print "Behuizing"
             elif "Processors" in category:
@@ -209,8 +209,8 @@ class TweakersSpider(CrawlSpider):
                 item['Verkoopstatus_CPU'] = sel.xpath('//tr[contains(td[1], "Verkoopstatus (CPU)")]/td[2]/text()').extract()
                 item['Fabrieksgarantie'] = sel.xpath('//tr[contains(td[1], "Fabrieksgarantie")]/td[2]/text()').extract()
                 item['Bijzonderheden'] = sel.xpath('//tr[contains(td[1], "Bijzonderheden")]/td[2]/text()').extract()
-                item['EAN'] = sel.xpath('//tr[contains(td[1], "EAN")]/td[2]/text()').extract()
-                item['SKU'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
+                item['ean'] = sel.xpath('//tr[contains(td[1], "EAN")]/td[2]/text()').extract()
+                item['sku'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
                 yield item
                 print "Processor"
             elif "Voedingen" in category:
@@ -241,8 +241,8 @@ class TweakersSpider(CrawlSpider):
                 item['Diepte'] = sel.xpath('//tr[contains(td[1], "Uitvoering")]/td[2]/a/text()').extract()
                 item['Fabrieksgarantie'] = sel.xpath('//tr[contains(td[1], "Uitvoering")]/td[2]/a/text()').extract()
                 item['Bijzonderheden'] = sel.xpath('//tr[contains(td[1], "Uitvoering")]/td[2]/a/text()').extract()
-                item['EAN'] = sel.xpath('//tr[contains(td[1], "EAN")]/td[2]/text()').extract()
-                item['SKU'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
+                item['ean'] = sel.xpath('//tr[contains(td[1], "EAN")]/td[2]/text()').extract()
+                item['sku'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
                 yield item
                 print "Voeding"
             elif "Processorkoeling" in category:
@@ -266,8 +266,8 @@ class TweakersSpider(CrawlSpider):
                 item['Materialen'] = sel.xpath('//tr[contains(td[1], "Materialen")]/td[2]/text()').extract()
                 item['Fabrieksgarantie'] = sel.xpath('//tr[contains(td[1], "Fabrieksgarantie")]/td[2]/text()').extract()
                 item['Bijzonderheden'] = sel.xpath('//tr[contains(td[1], "Bijzonderheden")]/td[2]/text()').extract()
-                item['EAN'] = sel.xpath('//tr[contains(td[1], "EAN")]/td[2]/text()').extract()
-                item['SKU'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
+                item['ean'] = sel.xpath('//tr[contains(td[1], "EAN")]/td[2]/text()').extract()
+                item['sku'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
                 yield item
                 print "Processorkoeling"
             elif "Barebones" in category:
@@ -299,7 +299,7 @@ class TweakersSpider(CrawlSpider):
                 item['Breedte'] = sel.xpath('//tr[contains(td[1], "Breedte")]/td[2]/text()').extract()
                 item['Diepte'] = sel.xpath('//tr[contains(td[1], "Diepte")]/td[2]/text()').extract()
                 item['Bijzonderheden'] = sel.xpath('//tr[contains(td[1], "Bijzonderheden")]/td[2]/text()').extract()
-                item['EAN'] = sel.xpath('//tr[contains(td[1], "EAN")]/td[2]/text()').extract()
-                item['SKU'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
+                item['ean'] = sel.xpath('//tr[contains(td[1], "EAN")]/td[2]/text()').extract()
+                item['sku'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
                 yield item
                 print "Barebone"
