@@ -47,10 +47,10 @@ class InformatiqueItem(scrapy.Item):
 class BolItem(scrapy.Item):
     categorie = scrapy.Field()
     naam = scrapy.Field()
-    #subnaam = scrapy.Field()
-    info = scrapy.Field()
     stock = scrapy.Field()
     prijs = scrapy.Field()
+    link = scrapy.Field()
+    ean = scrapy.Field()
 
 class AfutureItem(scrapy.Item):
     categorie = scrapy.Field()

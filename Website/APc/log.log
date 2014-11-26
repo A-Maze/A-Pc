@@ -292,3 +292,4 @@ TemplateSyntaxError: slice requires 2 arguments, 1 provided
 [25/Nov/2014 12:27:52] WARNING [django.request:143] Not Found: /favicon.ico
 [25/Nov/2014 21:11:15] WARNING [django.request:143] Not Found: /favicon.ico
 [26/Nov/2014 10:34:29] WARNING [django.request:143] Not Found: /favicon.ico
+[26/Nov/2014 13:02:20] WARNING [django.request:143] Not Found: /favicon.ico
