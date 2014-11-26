@@ -29,7 +29,7 @@ class ComputerlandSpider(CrawlSpider):
 
         for sel in response.xpath('//*[@id="detailTab-specifications"]'):
             item = ComputerlandItem()
-            item['categorie'] =  sel.xpath('//div[@class="breadcrumb"]/div[2/a/text()').extract()
+            item['categorie'] =  sel.xpath('//*[@id="aspnetForm"]/div[4]/div[1]/div/div[2]/a').extract()
             item['naam'] = sel.xpath('//*[@id="ctl00_ContentPlaceHolder1_itemDetail_productTitleLabel"]/text()').extract()
             item['subnaam'] = sel.xpath('//*[@id="ctl00_ContentPlaceHolder1_itemDetail_shortSummaryLabel"]/text()').extract()
             item['stock'] = sel.xpath('//*[@id="ctl00_ContentPlaceHolder1_itemDetail_wareHouseDeliveryTimeLabel"]/text()').extract()
