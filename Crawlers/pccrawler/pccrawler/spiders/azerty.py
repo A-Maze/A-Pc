@@ -7,9 +7,9 @@ from scrapy.selector import HtmlXPathSelector
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors import LinkExtractor
 
-class ComputerlandSpider(CrawlSpider):
+class AzertySpider(CrawlSpider):
     name = "azerty"
-    allowed_domains = ["www.azerty.nl"]
+    allowed_domains = ["azerty.nl"]
     start_urls = (
         'http://azerty.nl/8/componenten.html',
 
@@ -17,27 +17,26 @@ class ComputerlandSpider(CrawlSpider):
     )
 
     rules = (
-    Rule(LinkExtractor(restrict_xpaths =('//li[contains(concat(" ", normalize-space(@class), "  "), " menu ")]//a', )),callback='parse_item',follow=True),
+
+    Rule(LinkExtractor(restrict_xpaths =('//*[@id="_producten_zoek_"]/div[5]/div/ul/li/ul/li[position()=4 or position()=5 or (position()>=7 and position()<=9) or position()=11 or position()=13 or position()=14 or position()=16 or position()=17 or position()=20]/a', )),callback='parse_item',follow=True),
+    Rule(LinkExtractor(restrict_xpaths =('//li[@class="node open group"]/ul/li/a', )),callback='parse_item',follow=True),
+    Rule(LinkExtractor(restrict_xpaths =('//li[@class="info"]/a', )),callback='parse_item',follow=True),
     )
 
 
 
     def parse_item(self, response):
 
-        for sel in response.xpath('//*[contains(concat(" ", normalize-space(@class), "  "), " outer ")]'):
+        for sel in response.xpath('//div[@id="artikel-informatie"]'):
             item = AzertyItem()
-            item['titel'] = sel.xpath('ul/li/a/h3/text()').extract()[0]
-            item['omschrijving'] = sel.xpath('ul/li/ul[contains(concat(" ", normalize-space(@class), " "), "kenmerken ")]/li/text()').extract()[0]
-            item['prijs'] = sel.xpath('ul/li/div/span[contains(concat(" ", normalize-space(@class), " "), "prijs_zicht ")]/text()').extract()[0]
-            item['image'] = sel.xpath('ul/li/a/img/@src').extract()[0]
-            item['categorie'] = sel.xpath('//div[@id="zoek-titel"]/h1/text()').extract()[0]
+            item['naam'] =  sel.xpath('//h1[@class="artikel"]/text()').extract()
+            item['subnaam'] = sel.xpath('//*[@id="_producten_product_detail"]/div[1]/div[1]/div[1]/div/h2').extract()
+            item['stock'] = sel.xpath('//*[@id="_producten_product_detail"]/div[1]/div[2]/div[2]/div[1]/div[2]/div/div/text()').extract()
+            item['categorie'] = sel.xpath('//*[@id="product-detail-left-menu"]/div[2]/div/ul/li/ul/li[@class="node open group"]/a/text()').extract()
+            item['prijs'] = sel.xpath('//*[@id="_producten_product_detail"]/div[1]/div[2]/div[2]/div[1]/div[2]/div/span[1]/text()').extract()
+            item['link'] = response.url
+            item['ean'] = sel.xpath('//ul[contains(li[1], "'+"Ean's"+'")]/li[2]/text()').extract()
+            item['sku'] = sel.xpath('//ul[contains(li[1], "'+"Sku's"+'")]/li[2]/text()').extract()
             yield item
-
-
-
-
-
-
-
 
 

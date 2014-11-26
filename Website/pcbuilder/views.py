@@ -19,7 +19,7 @@ app = 15
 def index(request):
     # Get all posts from DB
     processoren = Processoren.objects
-    return render_to_response('index.html', {'Processoren': processoren},
+    return render_to_response('index.html',
                               context_instance=RequestContext(request))
 
 def contact(request):
@@ -75,11 +75,11 @@ def detail(request):
     product = request.GET.get('product')
     categorie = request.GET.get('categorie')
     prijs = request.GET.get('prijs')
+    productid = request.GET.get('productid')
+    
 
-
-
-
-    return render_to_response('detail.html', {'Processoren': processoren, 'Categorie' : categorie, 'Product': product, 'Prijs': prijs},
+#+ 
+    return render_to_response('detail.html', {'Componenten': (Processoren.objects,Moederborden.objects,Koeling.objects, Behuizingen.objects,Grafische.objects, Harde.objects, Dvd.objects, Geheugen.objects, Voeding.objects), 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
 context_instance=RequestContext(request))
 
 def processoren(request):
