@@ -290,6 +290,114 @@ TemplateSyntaxError: Invalid filter: 'lenght'
 TemplateSyntaxError: slice requires 2 arguments, 1 provided
 >>>>>>> a6776fe7950d7b506ea61f3a211b690504c68e24
 [25/Nov/2014 12:27:52] WARNING [django.request:143] Not Found: /favicon.ico
+<<<<<<< HEAD
+[26/Nov/2014 11:42:19] WARNING [django.request:143] Not Found: /favicon.ico
+[26/Nov/2014 12:11:59] ERROR [django.request:231] Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 82
+    return render_to_response('detail.html', {'Componenten': (Processoren.objects,Moederborden.objects,Koeling, Behuizingen.objects,Grafische.objects, Harde.objects, Dvd.objects, Geheugen.objects, Voeding.objects, 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
+                                                                                                                                                                                                                                  ^
+SyntaxError: invalid syntax
+[26/Nov/2014 12:12:25] ERROR [django.request:231] Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 82
+    return render_to_response('detail.html', {'Componenten': (Processoren.objects,Moederborden.objects,Koeling.objects, Behuizingen.objects,Grafische.objects, Harde.objects, Dvd.objects, Geheugen.objects, Voeding.objects, 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
+                                                                                                                                                                                                                                          ^
+SyntaxError: invalid syntax
+[26/Nov/2014 12:12:28] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 82
+    return render_to_response('detail.html', {'Componenten': (Processoren.objects,Moederborden.objects,Koeling.objects, Behuizingen.objects,Grafische.objects, Harde.objects, Dvd.objects, Geheugen.objects, Voeding.objects, 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
+                                                                                                                                                                                                                                          ^
+SyntaxError: invalid syntax
+[26/Nov/2014 12:12:34] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 82
+    return render_to_response('detail.html', {'Componenten': (Processoren.objects,Moederborden.objects,Koeling.objects, Behuizingen.objects,Grafische.objects, Harde.objects, Dvd.objects, Geheugen.objects, Voeding.objects, 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
+                                                                                                                                                                                                                                          ^
+SyntaxError: invalid syntax
+[26/Nov/2014 12:12:48] ERROR [django.request:231] Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 82
+    return render_to_response('detail.html', {'Componenten': (Processoren.objects,Moederborden.objects,Koeling.objects, Behuizingen.objects,Grafische.objects, Harde.objects, Dvd.objects, Geheugen.objects, Voeding.objects, 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
+                                                                                                                                                                                                                                          ^
+SyntaxError: invalid syntax
+=======
 [25/Nov/2014 21:11:15] WARNING [django.request:143] Not Found: /favicon.ico
 [26/Nov/2014 10:34:29] WARNING [django.request:143] Not Found: /favicon.ico
+<<<<<<< HEAD
 [26/Nov/2014 13:02:20] WARNING [django.request:143] Not Found: /favicon.ico
+=======
+>>>>>>> 4d5bb3d5756c8839840b0a38ab15cd2c2f3076e5
+[26/Nov/2014 12:53:20] WARNING [django.request:143] Not Found: /favicon.ico
+>>>>>>> e8fa9c7db3801cc9e2eff188a2af688a2cddf475

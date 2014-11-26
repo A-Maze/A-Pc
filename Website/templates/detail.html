@@ -12,7 +12,7 @@
                     </div>
                 </div>
 
-    <a class="btn btn-primary pull-right"href="/select/?product={{ Product }}&amp;categorie={{ Categorie }}&amp;prijs={{ Prijs }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Selecteer</a>
+    <a class="btn btn-primary pull-right"href="/select/?product={{ Product }}&amp;categorie={{ Categorie }}&amp;prijs={{ Prijs }}&amp;productid={{ Productid }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Selecteer</a>
 
                 <!-- checken of je bij het juiste product bent voor de selecteer knop -->
                 {% if Categorie = "moederborden" %}
@@ -97,46 +97,37 @@
 
     <div class="col-lg-12">
         <table class="table table-striped table-hover ">
- <thead>
-            <tr>
-                
-                <th>naam</th>
-                <th>waarde</th>
-          
-            </tr>
-            </thead>
-            <tbody>
-{% for component in Componenten %}
-{%for product in component%}
-    {% with goodID=Productid compareID=product.id  %}         
-        {%if goodID|stringformat:"s" == compareID|stringformat:"s" %}
-            {%for item in product%}
-            {% with itemnumb=product|get_at_index:item %}  
-             <tr>
-                
-                <td>{{item}}</td>
-                 <td>        
-                 {%if itemnumb.0 > 0 %}          
-                    {{itemnumb.0}}
-
-                    {%else%}
-                    {{itemnumb}}
-                   {% endif %} 
-                 </td>
-            </tr>
-           {% endwith %}
-                    {%endfor%}  
-           
-           
-           
+            <thead>
+                <tr>               
+                    <th>naam</th>
+                    <th>waarde</th>
+                </tr>
+                </thead>
+                    <tbody>
+                        {% for component in Componenten %}
+                        {%for product in component%}
+                        {% with goodID=Productid compareID=product.id  %}         
+                        {%if goodID|stringformat:"s" == compareID|stringformat:"s" %}
+                        {%for item in product%}
+                        {% with itemnumb=product|get_at_index:item %}  
+                <tr>
+                    <td>{{item}}</td>
+                    <td>        
+                        {%if itemnumb.0 > 0 and item != "categorie"%}          
+                        {{itemnumb.0}}
+                        {%else%}
+                        {{itemnumb}}
+                        {% endif %} 
+                    </td>
+                </tr>
+                    {% endwith %}
+                    {%endfor%}           
             </tbody>
-{% endif %} 
-{% endwith %}
-{% endfor %}
-{% endfor %}
+                        {% endif %} 
+                        {% endwith %}
+                        {% endfor %}
+                        {% endfor %}
         </table>
-
-
     </div>
 </div>
 
