@@ -396,3 +396,4 @@ SyntaxError: invalid syntax
 [25/Nov/2014 21:11:15] WARNING [django.request:143] Not Found: /favicon.ico
 [26/Nov/2014 10:34:29] WARNING [django.request:143] Not Found: /favicon.ico
 >>>>>>> 4d5bb3d5756c8839840b0a38ab15cd2c2f3076e5
+[26/Nov/2014 12:53:20] WARNING [django.request:143] Not Found: /favicon.ico
