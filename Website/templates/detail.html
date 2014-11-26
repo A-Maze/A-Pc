@@ -117,13 +117,21 @@
                 <td>{{item}}</td>
                  <td>
                      {% if item == "Afbeelding" %}
-                         {% with itemnumb.0 as Afbeelding %}
+                         {% if itemnumb.0 == null %}
                              <script>
                                  $(document).ready(function(){
-                                     $('#itemImage').attr('src','{{ Afbeelding }}');
+                                     $('#itemImage').attr('src','http://azerty.nl/_azerty/data/product/6/5/3/653558/img/1/K.jpg');
                                  });
                              </script>
-                         {% endwith %}
+                         {% else %}
+                             {% with itemnumb.0 as Afbeelding %}
+                                 <script>
+                                     $(document).ready(function(){
+                                         $('#itemImage').attr('src','{{ Afbeelding }}');
+                                     });
+                                 </script>
+                             {% endwith %}
+                         {% endif %}
                      {% endif %}
                  {%if itemnumb.0 > 0 %}          
                     {{itemnumb.0}}
