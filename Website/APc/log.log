@@ -143,6 +143,7 @@ Traceback (most recent call last):
     mod = import_module(mod_name)
   File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
     __import__(name)
+<<<<<<< HEAD
   File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 83
     categorieObject = ""
    ^
@@ -205,3 +206,18 @@ Traceback (most recent call last):
   File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 106, in detail
     return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
 AttributeError: 'str' object has no attribute 'objects'
+=======
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 82
+    return render_to_response('detail.html', {'Componenten': (Processoren.objects,Moederborden.objects,Koeling.objects, Behuizingen.objects,Grafische.objects, Harde.objects, Dvd.objects, Geheugen.objects, Voeding.objects, 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
+                                                                                                                                                                                                                                          ^
+SyntaxError: invalid syntax
+=======
+[25/Nov/2014 21:11:15] WARNING [django.request:143] Not Found: /favicon.ico
+[26/Nov/2014 10:34:29] WARNING [django.request:143] Not Found: /favicon.ico
+<<<<<<< HEAD
+[26/Nov/2014 13:02:20] WARNING [django.request:143] Not Found: /favicon.ico
+=======
+>>>>>>> 4d5bb3d5756c8839840b0a38ab15cd2c2f3076e5
+[26/Nov/2014 12:53:20] WARNING [django.request:143] Not Found: /favicon.ico
+>>>>>>> e8fa9c7db3801cc9e2eff188a2af688a2cddf475
+>>>>>>> 97ffa05f250398c9792af413e8c11844dc1d736f

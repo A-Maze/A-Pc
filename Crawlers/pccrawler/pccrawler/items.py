@@ -47,10 +47,10 @@ class InformatiqueItem(scrapy.Item):
 class BolItem(scrapy.Item):
     categorie = scrapy.Field()
     naam = scrapy.Field()
-    #subnaam = scrapy.Field()
-    info = scrapy.Field()
     stock = scrapy.Field()
     prijs = scrapy.Field()
+    link = scrapy.Field()
+    ean = scrapy.Field()
 
 class AfutureItem(scrapy.Item):
     categorie = scrapy.Field()
@@ -107,8 +107,8 @@ class GPU(scrapy.Item):
     Stroomverbruik = scrapy.Field()
     Type_koeling = scrapy.Field()
     Link_Interface = scrapy.Field()
-    EAN = scrapy.Field()
-    SKU = scrapy.Field()
+    ean = scrapy.Field()
+    sku = scrapy.Field()
 
 class Geheugen(scrapy.Item):
     categorie = scrapy.Field()
@@ -128,8 +128,8 @@ class Geheugen(scrapy.Item):
     Spanning = scrapy.Field()
     Fabrieksgarantie = scrapy.Field()
     Bijzonderheden = scrapy.Field()
-    EAN = scrapy.Field()
-    SKU = scrapy.Field()
+    ean = scrapy.Field()
+    sku = scrapy.Field()
 
 class Moederbord(scrapy.Item):
     categorie = scrapy.Field()
@@ -160,8 +160,8 @@ class Moederbord(scrapy.Item):
     Audio_kanalen = scrapy.Field()
     Audio_uitgangen = scrapy.Field()
     Audiochip = scrapy.Field()
-    EAN = scrapy.Field()
-    SKU = scrapy.Field()
+    ean = scrapy.Field()
+    sku = scrapy.Field()
 
 class Behuizing(scrapy.Item):
     categorie = scrapy.Field()
@@ -192,8 +192,8 @@ class Behuizing(scrapy.Item):
     Gewicht = scrapy.Field()
     Fabrieksgarantie = scrapy.Field()
     Bijzonderheden = scrapy.Field()
-    EAN = scrapy.Field()
-    SKU = scrapy.Field()
+    ean = scrapy.Field()
+    sku = scrapy.Field()
 
 class Processor(scrapy.Item):
     categorie = scrapy.Field()
@@ -230,8 +230,8 @@ class Processor(scrapy.Item):
     Verkoopstatus_CPU = scrapy.Field()
     Fabrieksgarantie = scrapy.Field()
     Bijzonderheden = scrapy.Field()
-    EAN = scrapy.Field()
-    SKU = scrapy.Field()
+    ean = scrapy.Field()
+    sku = scrapy.Field()
 
 class Voeding(scrapy.Item):
     categorie = scrapy.Field()
@@ -257,8 +257,8 @@ class Voeding(scrapy.Item):
     Diepte = scrapy.Field()
     Fabrieksgarantie = scrapy.Field()
     Bijzonderheden = scrapy.Field()
-    EAN = scrapy.Field()
-    SKU = scrapy.Field()
+    ean = scrapy.Field()
+    sku = scrapy.Field()
 
 class Koeling(scrapy.Item):  
     categorie = scrapy.Field()
@@ -280,8 +280,8 @@ class Koeling(scrapy.Item):
     Materialen = scrapy.Field()
     Fabrieksgarantie = scrapy.Field()
     Bijzonderheden = scrapy.Field()
-    EAN = scrapy.Field()
-    SKU = scrapy.Field()
+    ean = scrapy.Field()
+    sku = scrapy.Field()
 
 class Barebones(scrapy.Item):
     categorie = scrapy.Field()
@@ -311,5 +311,5 @@ class Barebones(scrapy.Item):
     Breedte = scrapy.Field()
     Diepte = scrapy.Field()
     Bijzonderheden = scrapy.Field()
-    EAN = scrapy.Field()
-    SKU = scrapy.Field()
+    ean = scrapy.Field()
+    sku = scrapy.Field()
