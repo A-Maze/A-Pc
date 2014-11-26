@@ -4,7 +4,7 @@
 {% load filters %}
 <div class="container top-margin">
                 <div class="col-md-12 col-lg-12">
-                    <img src="#" class="col-lg-3">
+                    <img src="#" id="itemImage" class="col-lg-3">
                     <div class="panel panel-default col-lg-9">
                         <div class="panel-body">
                         <h1>{{ Product }}</h1>
@@ -115,7 +115,16 @@
              <tr>
                 
                 <td>{{item}}</td>
-                 <td>        
+                 <td>
+                     {% if item == "Afbeelding" %}
+                         {% with itemnumb.0 as Afbeelding %}
+                             <script>
+                                 $(document).ready(function(){
+                                     $('#itemImage').attr('src','{{ Afbeelding }}');
+                                 });
+                             </script>
+                         {% endwith %}
+                     {% endif %}
                  {%if itemnumb.0 > 0 %}          
                     {{itemnumb.0}}
 
