@@ -19,21 +19,23 @@ class BolSpider(CrawlSpider):
 
     rules = (
 
-    Rule(LinkExtractor(restrict_xpaths =('//ul[1]/li/span[contains(concat(" ", normalize-space(@class), "  "), " po_enda_fftftf.enav.leftnav ")]/a', )),callback='parse_item',follow=True),
-    Rule(LinkExtractor(restrict_xpaths =('//span[contains(concat(" ", normalize-space(@class), "  "), " po_enda_fftftf.enav.next ")]/a', )),callback='parse_item',follow=True),
+    Rule(LinkExtractor(restrict_xpaths =('//div[@class="cont_station"]/a', )),callback='parse_item',follow=True),
+    Rule(LinkExtractor(restrict_xpaths =('//div[@class="width_88 left_button tst_searchresults_next"]/span/a', )),callback='parse_item',follow=True),
+    Rule(LinkExtractor(restrict_xpaths =('//a[@class="product_name"]', )),callback='parse_item',follow=True),
     )
 
 
 
     def parse_item(self, response):
 
-        for sel in response.xpath('//div[contains(concat(" ", normalize-space(@class), "  "), " productlist_block ")]'):
+        for sel in response.xpath('//div[@class="product_description"]'):
             item = BolItem()
-            item['naam'] =  sel.xpath('.//a[contains(concat(" ", normalize-space(@class), "  "), " product_name ")]/text()').extract()
-            item['info'] = sel.xpath('.//p[contains(concat(" ", normalize-space(@class), "  "), " product_description ")]/text()').extract()
-            item['stock'] = sel.xpath('.//p[contains(concat(" ", normalize-space(@class), "  "), " product_delivery ")]/text()').extract()
-            item['categorie'] = sel.xpath('//span[contains(concat(" ", normalize-space(@class), "  "), " bol_header ")]/text()').extract()
-            item['prijs'] = sel.xpath('.//div[contains(concat(" ", normalize-space(@class), "  "), " price_block ")]/strong/text()').extract()
+            categorie = sel.xpath('//*[@id="main_block"]/div[3]/div[5]/div/div[1]/div[5]/table/tbody/tr[2]/td/span[2]/a/text()').extract()
+            naam = sel.xpath('//*[@id="main_block"]/div[2]/div/h1/text()').extract()
+            stock = sel.xpath('//p[@itemprop="availability"]/text()').extract()
+            prijs = sel.xpath('//span[@class="product-price-bol"]/meta/@content').extract()
+            link = response.url
+            ean = sel.xpath('//tr[@data-attr-key="EAN"]/td[2]/text()').extract()
             yield item
 
 
