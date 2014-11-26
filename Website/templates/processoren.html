@@ -59,11 +59,9 @@ $(document).ready(function(){
                             <p class="list-group-item-text pull-right ">{{ component.prijs.0 }}</p>
                             <p class="list-group-item-text  ">{{ component.stock }}</p>
 
-<<<<<<< HEAD
-                            <a href="/detail/?product={% for name in component.naam %}{{ name }} {% endfor %}&amp;categorie={{component.categorie.0|truncatewords:1 }}&amp;prijs={{ component.prijs.0|slice:'-1' }}&amp;productid={{component.id}}" class="btn btn-primary">details</a>
-=======
-                            <a href="/detail/?product={% for name in component.naam %}{{ name }} {% endfor %}&amp;categorie={{component.categorie|truncatewords:1 }}&amp;prijs={{ component.prijs.0|slice:'-1' }}" class="btn btn-primary">details</a>
->>>>>>> a6776fe7950d7b506ea61f3a211b690504c68e24
+
+                            <a href="/detail/?product={% for name in component.naam %}{{ name }} {% endfor %}&amp;categorie={{component.categorie|truncatewords:1 }}&amp;prijs={{ component.prijs.0|slice:'-1' }}&amp;productid={{component.id}}" class="btn btn-primary">details</a>
+
                         </div>
                     </div>
 
