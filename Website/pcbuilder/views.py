@@ -46,14 +46,17 @@ def select(request):
     product = request.GET.get('product')
     categorie = request.GET.get('categorie')
     prijs = request.GET.get('prijs')
+    id = request.GET.get('productid')
     categorie.replace(" ", "")
     categorie.replace(",", "")
     prijs.replace(" ","")
     request.session[categorie] = True
     productstring = categorie + "naam"
     categorieprijs = categorie + "prijs"
+    categorieid = categorie + "id"
     request.session[productstring] = product
     request.session[categorieprijs] = prijs
+    request.session[categorieid] = id
     return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
 
 def deselect(request):
