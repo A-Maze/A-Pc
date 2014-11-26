@@ -18,22 +18,24 @@ class ComputerlandSpider(CrawlSpider):
 
     rules = (
 
-    Rule(LinkExtractor(restrict_xpaths =('//div/div/div/div[contains(concat(" ", normalize-space(@class), "  "), "megamenu_container megamenu_dark_bar megamenu_light")]/ul[contains(concat(" ", normalize-space(@class), "  "), "megamenu")]/li[2]/div/ul/li/a', )),callback='parse_item',follow=True),
-    Rule(LinkExtractor(restrict_xpaths =('//a[contains(concat(" ", normalize-space(@class), "  "), " PagerHyperlinkStyle ")]', )),callback='parse_item',follow=True),
+    Rule(LinkExtractor(restrict_xpaths =('//ul[@class="dropdown_flyout"][1]/li/a', )),callback='parse_item',follow=True),
+    Rule(LinkExtractor(restrict_xpaths =('//table[@class="PagerContainerTable"]/tbody/tr/td[last()-1]/a', )),callback='parse_item',follow=True),
+    Rule(LinkExtractor(restrict_xpaths =('//div[@class="itemlistcombined-productcontainer"]/div/div/div/a', )),callback='parse_item',follow=True),
     )
 
 
 
     def parse_item(self, response):
 
-        for sel in response.xpath('//div[contains(concat(" ", normalize-space(@class), "  "), " itemlistcombined-productrowcontainer-210 ")]'):
+        for sel in response.xpath('//*[@id="detailTab-specifications"]'):
             item = ComputerlandItem()
-            item['naam'] =  sel.xpath('div/div/a/span["@id=ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_titleDescriptionLabel"]/text()').extract()
-            item['subnaam'] = sel.xpath('div/div/a/span["@id=ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_shortSummaryLabel"]/text()').extract()
-            item['info'] = sel.xpath('div/div/a/span["@id=ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_shortSummaryLabel"]/text()').extract()
-            item['stock'] = sel.xpath('div/div/div/span["@id=ctl00_ContentPlaceHolder1_itemListCombined_itemListTiledASPxCallbackPanel_itemListRepeater_ctl16_warehouseDeliveryTimeLabel"]/text()').extract()
-            item['categorie'] = sel.xpath('//a[contains(concat(" ", normalize-space(@class), " "), " activebreadcrumbhyperlink ")]/@title').extract()
-            item['prijs'] = sel.xpath('div[contains(concat(" ", normalize-space(@class), " "), "itemlistcombined-salespriceincludingvatcontainer")]/div/meta[2]/@content').extract()
+            item['categorie'] =  sel.xpath('//div[@class="breadcrumb"]/div[2/a/text()').extract()
+            item['naam'] = sel.xpath('//*[@id="ctl00_ContentPlaceHolder1_itemDetail_productTitleLabel"]/text()').extract()
+            item['subnaam'] = sel.xpath('//*[@id="ctl00_ContentPlaceHolder1_itemDetail_shortSummaryLabel"]/text()').extract()
+            item['stock'] = sel.xpath('//*[@id="ctl00_ContentPlaceHolder1_itemDetail_wareHouseDeliveryTimeLabel"]/text()').extract()
+            item['prijs'] = sel.xpath('//*[@id="ctl00_ContentPlaceHolder1_itemDetail_salespriceIncludingVATPriceLabel_pricePlaceHolder"]/meta[2]/@content').extract()
+            item['link'] = response.url
+            item['sku'] = sel.xpath('//*[@id="ctl00_ContentPlaceHolder1_itemDetail_itemDetailTabManufacturerProductNumberTextLabel"]/text()').extract() 
             yield item
 
 

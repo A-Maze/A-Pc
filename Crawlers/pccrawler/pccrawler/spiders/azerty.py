@@ -35,8 +35,8 @@ class AzertySpider(CrawlSpider):
             item['categorie'] = sel.xpath('//*[@id="product-detail-left-menu"]/div[2]/div/ul/li/ul/li[@class="node open group"]/a/text()').extract()
             item['prijs'] = sel.xpath('//*[@id="_producten_product_detail"]/div[1]/div[2]/div[2]/div[1]/div[2]/div/span[1]/text()').extract()
             item['link'] = response.url
-            item['EAN'] = sel.xpath('//ul[contains(li[1], "'+"Ean's"+'")]/li[2]/text()').extract()
-            item['SKU'] = sel.xpath('//ul[contains(li[1], "'+"Sku's"+'")]/li[2]/text()').extract()
+            item['ean'] = sel.xpath('//ul[contains(li[1], "'+"Ean's"+'")]/li[2]/text()').extract()
+            item['sku'] = sel.xpath('//ul[contains(li[1], "'+"Sku's"+'")]/li[2]/text()').extract()
             yield item
 
 
