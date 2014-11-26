@@ -59,7 +59,7 @@ class PccrawlerPipeline(object):
 					for e in self.collection.find({"EAN": item["EAN"] }):
 						print e
 					collectienaam = "koeling"
-				elif ("Behuizingen" or "Barebones") in langeNaam:
+				elif ("Behuizingen" or "Barebones" or "Barebone") in langeNaam:
 					self.collection = db["behuizingen"]
 					for e in self.collection.find({"EAN": item["EAN"] }):
 						print e

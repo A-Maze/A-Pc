@@ -9,7 +9,7 @@ from scrapy.contrib.linkextractors import LinkExtractor
 import logging
 class TweakersSpider(CrawlSpider):
     name = "tweakers"
-    DOWNLOAD_DELAY = 7.20
+    DOWNLOAD_DELAY = 3.60
     allowed_domains = ["tweakers.net"]
     start_urls = (
 
