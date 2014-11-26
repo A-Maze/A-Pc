@@ -24,15 +24,17 @@ class ParadigitItem(scrapy.Item):
     info = scrapy.Field()
     stock = scrapy.Field()
     prijs = scrapy.Field()
-    EAN = scrapy.Field()
+    sku = scrapy.Field()
+    link = scrapy.Field()
 
 class ComputerlandItem(scrapy.Item):
     categorie = scrapy.Field()
     naam = scrapy.Field()
     subnaam = scrapy.Field()
-    info = scrapy.Field()
     stock = scrapy.Field()
     prijs = scrapy.Field()
+    link = scrapy.Field()
+    sku = scrapy.Field()
 
 class InformatiqueItem(scrapy.Item):
     categorie = scrapy.Field()
@@ -40,7 +42,7 @@ class InformatiqueItem(scrapy.Item):
     stock = scrapy.Field()
     prijs = scrapy.Field()
     link = scrapy.Field()
-    SKU = scrapy.Field()
+    sku = scrapy.Field()
 
 class BolItem(scrapy.Item):
     categorie = scrapy.Field()
@@ -54,9 +56,11 @@ class AfutureItem(scrapy.Item):
     categorie = scrapy.Field()
     naam = scrapy.Field()
     #subnaam = scrapy.Field()
-    info = scrapy.Field()
     stock = scrapy.Field()
     prijs = scrapy.Field()
+    link = scrapy.Field()
+    ean = scrapy.Field()
+    sku = scrapy.Field()
 
 class AzertyItem(scrapy.Item):
     categorie = scrapy.Field()
@@ -65,8 +69,8 @@ class AzertyItem(scrapy.Item):
     stock = scrapy.Field()
     prijs = scrapy.Field()
     link = scrapy.Field()
-    EAN = scrapy.Field()
-    SKU = scrapy.Field()
+    ean = scrapy.Field()
+    sku = scrapy.Field()
 
 #specificatie items
 class GPU(scrapy.Item):

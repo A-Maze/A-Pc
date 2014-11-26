@@ -46,7 +46,7 @@ class InformatiqueSpider(CrawlSpider):
             item['stock'] = sel.xpath('//*[@id="details"]/tbody/tr[7]/td[2]/text()[1]').extract()
             item['prijs'] = sel.xpath('//*[@id="price"]/p[@class="verkoopprijs"]/text()').extract()
             item['link'] = response.url
-            item['SKU'] = sel.xpath('//span[@itemprop="sku"]/text()').extract()
+            item['sku'] = sel.xpath('//span[@itemprop="sku"]/text()').extract()
 
             yield item
 
