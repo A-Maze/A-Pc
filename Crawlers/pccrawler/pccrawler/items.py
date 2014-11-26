@@ -24,7 +24,8 @@ class ParadigitItem(scrapy.Item):
     info = scrapy.Field()
     stock = scrapy.Field()
     prijs = scrapy.Field()
-    EAN = scrapy.Field()
+    sku = scrapy.Field()
+    link = scrapy.Field()
 
 class ComputerlandItem(scrapy.Item):
     categorie = scrapy.Field()
@@ -55,9 +56,11 @@ class AfutureItem(scrapy.Item):
     categorie = scrapy.Field()
     naam = scrapy.Field()
     #subnaam = scrapy.Field()
-    info = scrapy.Field()
     stock = scrapy.Field()
     prijs = scrapy.Field()
+    link = scrapy.Field()
+    ean = scrapy.Field()
+    sku = scrapy.Field()
 
 class AzertyItem(scrapy.Item):
     categorie = scrapy.Field()
