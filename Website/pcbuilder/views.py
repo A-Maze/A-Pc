@@ -46,7 +46,7 @@ def select(request):
     product = request.GET.get('product')
     categorie = request.GET.get('categorie')
     prijs = request.GET.get('prijs')
-    id = request.GET.get('productid')
+    productid = request.GET.get('productid')
     categorie.replace(" ", "")
     categorie.replace(",", "")
     prijs.replace(" ","")
@@ -56,7 +56,7 @@ def select(request):
     categorieid = categorie + "id"
     request.session[productstring] = product
     request.session[categorieprijs] = prijs
-    request.session[categorieid] = id
+    request.session[categorieid] = productid
     return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
 
 def deselect(request):
@@ -77,10 +77,11 @@ def deselect(request):
 def detail(request):
     product = request.GET.get('product')
     categorie = request.GET.get('categorie')
+    categorie = categorie.lower()
     prijs = request.GET.get('prijs')
     productid = request.GET.get('productid')
     
-    categorieObject = ""
+    
     
     if (categorie == "processoren"):
         categorieObject = Processoren
@@ -92,7 +93,7 @@ def detail(request):
         categorieObject = Grafische
     elif (categorie == "harde"):
         categorieObject = Harde
-    elif (categorie == "Dvd"):
+    elif (categorie == "dvd"):
         categorieObject = Dvd
     elif (categorie == "koeling"):
         categorieObject = Koeling
@@ -103,7 +104,7 @@ def detail(request):
     elif (categorie == "behuizingen"):
         categorieObject = Behuizingen
     
-    return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
+    return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie.lower(), 'Product': product, 'Prijs': prijs, 'Productid': productid},
 context_instance=RequestContext(request))
 
 def processoren(request):

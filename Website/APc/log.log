@@ -1,13 +1,4 @@
-[26/Nov/2014 14:05:00] INFO [root:105] [<Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, '...(remaining elements truncated)...']
-[26/Nov/2014 14:05:25] INFO [root:104] categorie is
-[26/Nov/2014 14:05:25] ERROR [django.request:231] Internal Server Error: /detail/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 105, in detail
-    logging.info(categorieObject.objects)
-AttributeError: 'str' object has no attribute 'objects'
-[26/Nov/2014 14:08:04] ERROR [django.request:231] Internal Server Error: /detail/
+[26/Nov/2014 16:36:25] ERROR [django.request:231] Internal Server Error: /
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
     resolver_match = resolver.resolve(request.path_info)
@@ -23,201 +14,95 @@ Traceback (most recent call last):
     mod = import_module(mod_name)
   File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
     __import__(name)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 83
-    categorieObject = ""
-   ^
-IndentationError: unexpected indent
-[26/Nov/2014 14:09:20] ERROR [django.request:231] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 83
-    categorieObject = ""
-   ^
-IndentationError: unexpected indent
-[26/Nov/2014 14:09:41] ERROR [django.request:231] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 83
-    categorieObject = ""
-   ^
-IndentationError: unexpected indent
-[26/Nov/2014 14:09:49] ERROR [django.request:231] Internal Server Error: /moederborden/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 83
-    categorieObject = ""
-   ^
-IndentationError: unexpected indent
-[26/Nov/2014 14:10:13] INFO [root:105] categorie is
-[26/Nov/2014 14:10:13] INFO [root:106] [<Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, '...(remaining elements truncated)...']
-[26/Nov/2014 14:10:16] INFO [root:105] categorie is
-[26/Nov/2014 14:10:16] INFO [root:106] [<Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, '...(remaining elements truncated)...']
-[26/Nov/2014 14:10:32] INFO [root:105] categorie is
-[26/Nov/2014 14:10:32] INFO [root:106] [<Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, '...(remaining elements truncated)...']
-[26/Nov/2014 14:10:35] INFO [root:105] categorie is
-[26/Nov/2014 14:10:35] INFO [root:106] [<Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, '...(remaining elements truncated)...']
-[26/Nov/2014 14:10:47] INFO [root:105] categorie is
-[26/Nov/2014 14:10:47] INFO [root:106] [<Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, '...(remaining elements truncated)...']
-[26/Nov/2014 14:10:50] INFO [root:105] categorie is
-[26/Nov/2014 14:10:50] INFO [root:106] [<Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, '...(remaining elements truncated)...']
-[26/Nov/2014 14:11:02] INFO [root:105] categorie is
-[26/Nov/2014 14:11:02] INFO [root:106] [<Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, '...(remaining elements truncated)...']
-[26/Nov/2014 14:11:03] INFO [root:105] categorie is
-[26/Nov/2014 14:11:03] INFO [root:106] [<Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, '...(remaining elements truncated)...']
-[26/Nov/2014 14:11:07] INFO [root:105] categorie is
-[26/Nov/2014 14:11:07] INFO [root:106] [<Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, '...(remaining elements truncated)...']
-[26/Nov/2014 14:11:07] INFO [root:105] categorie is
-[26/Nov/2014 14:11:07] INFO [root:106] [<Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, '...(remaining elements truncated)...']
-[26/Nov/2014 14:12:06] ERROR [django.request:231] Internal Server Error: /detail/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 83
-    categorieObject = ""
-   ^
-IndentationError: unexpected indent
-[26/Nov/2014 14:12:14] ERROR [django.request:231] Internal Server Error: /detail/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-<<<<<<< HEAD
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 83
-    categorieObject = ""
-   ^
-IndentationError: unexpected indent
-[26/Nov/2014 14:13:49] INFO [root:105] categorie is
-[26/Nov/2014 14:13:49] INFO [root:106] [<Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, '...(remaining elements truncated)...']
-[26/Nov/2014 14:13:53] INFO [root:105] categorie is
-[26/Nov/2014 14:13:53] INFO [root:106] [<Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, '...(remaining elements truncated)...']
-[26/Nov/2014 14:14:32] INFO [root:105] categorie is
-[26/Nov/2014 14:14:32] INFO [root:106] [<Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, '...(remaining elements truncated)...']
-[26/Nov/2014 14:14:35] INFO [root:105] categorie is
-[26/Nov/2014 14:14:35] INFO [root:106] [<Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, <Moederborden: Moederborden object>, '...(remaining elements truncated)...']
-[26/Nov/2014 14:15:00] INFO [root:105] categorie is
-[26/Nov/2014 14:15:00] ERROR [django.request:231] Internal Server Error: /detail/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 106, in detail
-    logging.info(categorieObject.objects)
-AttributeError: 'str' object has no attribute 'objects'
-[26/Nov/2014 14:16:57] ERROR [django.request:231] Internal Server Error: /detail/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 106, in detail
-    return render_to_response('detail.html', {'Componenten': (categorieObject.objects,Koeling.objects), 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
-AttributeError: 'str' object has no attribute 'objects'
-[26/Nov/2014 14:18:23] ERROR [django.request:231] Internal Server Error: /detail/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 106, in detail
-    return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
-AttributeError: 'str' object has no attribute 'objects'
-[26/Nov/2014 14:19:14] ERROR [django.request:231] Internal Server Error: /detail/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 106, in detail
-    return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
-AttributeError: 'str' object has no attribute 'objects'
-[26/Nov/2014 14:19:31] ERROR [django.request:231] Internal Server Error: /detail/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 106, in detail
-    return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
-AttributeError: 'str' object has no attribute 'objects'
-[26/Nov/2014 14:19:48] ERROR [django.request:231] Internal Server Error: /detail/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 106, in detail
-    return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
-AttributeError: 'str' object has no attribute 'objects'
-[26/Nov/2014 14:24:07] ERROR [django.request:231] Internal Server Error: /detail/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 106, in detail
-    return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
-AttributeError: 'str' object has no attribute 'objects'
-=======
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 82
-    return render_to_response('detail.html', {'Componenten': (Processoren.objects,Moederborden.objects,Koeling.objects, Behuizingen.objects,Grafische.objects, Harde.objects, Dvd.objects, Geheugen.objects, Voeding.objects, 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
-                                                                                                                                                                                                                                          ^
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 96
+    elif (categorie == ("dvd"):
+                              ^
 SyntaxError: invalid syntax
-=======
-[25/Nov/2014 21:11:15] WARNING [django.request:143] Not Found: /favicon.ico
-[26/Nov/2014 10:34:29] WARNING [django.request:143] Not Found: /favicon.ico
-<<<<<<< HEAD
-[26/Nov/2014 13:02:20] WARNING [django.request:143] Not Found: /favicon.ico
-=======
->>>>>>> 4d5bb3d5756c8839840b0a38ab15cd2c2f3076e5
-[26/Nov/2014 12:53:20] WARNING [django.request:143] Not Found: /favicon.ico
->>>>>>> e8fa9c7db3801cc9e2eff188a2af688a2cddf475
->>>>>>> 97ffa05f250398c9792af413e8c11844dc1d736f
+[26/Nov/2014 16:36:26] ERROR [django.request:231] Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 96
+    elif (categorie == ("dvd"):
+                              ^
+SyntaxError: invalid syntax
+[26/Nov/2014 16:36:27] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 96
+    elif (categorie == ("dvd"):
+                              ^
+SyntaxError: invalid syntax
+[26/Nov/2014 16:36:33] ERROR [django.request:231] Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 96
+    elif (categorie == ("dvd"):
+                              ^
+SyntaxError: invalid syntax
+[26/Nov/2014 16:40:01] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 107, in detail
+    return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie.lower(), 'Product': product, 'Prijs': prijs, 'Productid': productid},
+UnboundLocalError: local variable 'categorieObject' referenced before assignment
+[26/Nov/2014 17:08:48] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 107, in detail
+    return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie.lower(), 'Product': product, 'Prijs': prijs, 'Productid': productid},
+UnboundLocalError: local variable 'categorieObject' referenced before assignment
+[26/Nov/2014 17:08:57] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 107, in detail
+    return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie.lower(), 'Product': product, 'Prijs': prijs, 'Productid': productid},
+UnboundLocalError: local variable 'categorieObject' referenced before assignment
+[26/Nov/2014 17:09:57] ERROR [django.request:231] Internal Server Error: /detail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 107, in detail
+    return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie.lower(), 'Product': product, 'Prijs': prijs, 'Productid': productid},
+UnboundLocalError: local variable 'categorieObject' referenced before assignment
