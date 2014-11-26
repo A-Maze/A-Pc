@@ -41,7 +41,7 @@ class InformatiqueSpider(CrawlSpider):
 
         for sel in response.xpath('//*[@id="product-details"]'):
             item = InformatiqueItem()
-            item['categorie'] = sel.xpath('span[itemprop="title"][2]/text()').extract()
+            item['categorie'] = sel.xpath('//*[@id="breadcrumb"]/li[3]/a/span/text()').extract()
             item['naam'] =  sel.xpath('//*[@id="hdr"]/h1/text()').extract()
             item['stock'] = sel.xpath('//*[@id="details"]/tbody/tr[7]/td[2]/text()[1]').extract()
             item['prijs'] = sel.xpath('//*[@id="price"]/p[@class="verkoopprijs"]/text()').extract()
