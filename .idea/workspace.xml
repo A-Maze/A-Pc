@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a9b433c9-adef-4891-afff-f63ac76183b4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Website/db.sqlite3" afterPath="$PROJECT_DIR$/Website/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Website/templates/detail.html" afterPath="$PROJECT_DIR$/Website/templates/detail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Website/templates/index.html" afterPath="$PROJECT_DIR$/Website/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Website/pcbuilder/views.py" afterPath="$PROJECT_DIR$/Website/pcbuilder/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="A-Pc.iws" />
@@ -32,8 +30,8 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Website/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42906573" vertical-offset="4792" max-vertical-offset="5535">
-              <caret line="336" column="189" selection-start-line="336" selection-start-column="179" selection-end-line="336" selection-end-column="189" />
+            <state vertical-scroll-proportion="1.6487889" vertical-offset="3367" max-vertical-offset="5535">
+              <caret line="288" column="201" selection-start-line="288" selection-start-column="201" selection-end-line="288" selection-end-column="201" />
               <folding />
             </state>
           </provider>
@@ -565,7 +563,7 @@
       <updated>1413276498492</updated>
       <workItem from="1414427642191" duration="2382000" />
       <workItem from="1414589806633" duration="313000" />
-      <workItem from="1417006516104" duration="697000" />
+      <workItem from="1417006516104" duration="791000" />
     </task>
     <task id="LOCAL-00001" summary="updatejee">
       <created>1413283808267</created>
@@ -635,11 +633,15 @@
       <created>1417006567204</created>
       <updated>1417006567204</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="geeft id bij geheugen op index mee">
+      <created>1417007283138</created>
+      <updated>1417007283138</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3392000" />
+    <option name="totallyTimeSpent" value="3486000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="712" extended-state="6" />
@@ -705,7 +707,8 @@
     <MESSAGE value="plaatje bij moederborden" />
     <MESSAGE value="&#10;" />
     <MESSAGE value="commit message" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit message" />
+    <MESSAGE value="geeft id bij geheugen op index mee" />
+    <option name="LAST_COMMIT_MESSAGE" value="geeft id bij geheugen op index mee" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1092,8 +1095,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Website/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42906573" vertical-offset="4792" max-vertical-offset="5535">
-          <caret line="336" column="189" selection-start-line="336" selection-start-column="179" selection-end-line="336" selection-end-column="189" />
+        <state vertical-scroll-proportion="1.6487889" vertical-offset="3367" max-vertical-offset="5535">
+          <caret line="288" column="201" selection-start-line="288" selection-start-column="201" selection-end-line="288" selection-end-column="201" />
           <folding />
         </state>
       </provider>
