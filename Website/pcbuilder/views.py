@@ -3,6 +3,7 @@ from django.shortcuts import HttpResponseRedirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.template import RequestContext
 from django.template import loader
+from django.http import HttpResponse
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding
 import logging
 import json
@@ -23,8 +24,18 @@ def index(request):
                               context_instance=RequestContext(request))
 
 def contact(request):
-    return render_to_response('contact.html',
-                              context_instance=RequestContext(request))
+    msg = 1
+    if request.is_ajax():
+        try:
+            msg = request.POST['msg']
+        except:
+            return HttpResponse(simplejson.dumps({'message':'Error From Server'}))
+        print msg
+        return render_to_response('contact.html', {'message': msg},
+                                  context_instance=RequestContext(request))
+    else:
+        #return HttpResponse(simplejson.dumps({'message':'Not an ajax request'}))
+        return render_to_response('contact.html', {'message': msg})
 
 def mail(request):
     name = request.POST.get('name', '')
