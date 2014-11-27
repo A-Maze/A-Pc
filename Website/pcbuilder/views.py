@@ -46,7 +46,7 @@ def select(request):
     product = request.GET.get('product')
     categorie = request.GET.get('categorie')
     prijs = request.GET.get('prijs')
-    id = request.GET.get('productid')
+    productid = request.GET.get('productid')
     categorie.replace(" ", "")
     categorie.replace(",", "")
     prijs.replace(" ","")
@@ -56,7 +56,7 @@ def select(request):
     categorieid = categorie + "id"
     request.session[productstring] = product
     request.session[categorieprijs] = prijs
-    request.session[categorieid] = id
+    request.session[categorieid] = productid
     return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
 
 def deselect(request):
@@ -77,12 +77,34 @@ def deselect(request):
 def detail(request):
     product = request.GET.get('product')
     categorie = request.GET.get('categorie')
+    categorie = categorie.lower()
     prijs = request.GET.get('prijs')
     productid = request.GET.get('productid')
     
-
-#+ 
-    return render_to_response('detail.html', {'Componenten': (Processoren.objects,Moederborden.objects,Koeling.objects, Behuizingen.objects,Grafische.objects, Harde.objects, Dvd.objects, Geheugen.objects, Voeding.objects), 'Categorie' : categorie, 'Product': product, 'Prijs': prijs, 'Productid': productid},
+    
+    
+    if (categorie == "processoren"):
+        categorieObject = Processoren
+    elif (categorie == "moederborden"):
+        categorieObject = Moederborden
+    elif (categorie == "koeling"):
+        categorieObject = Koeling
+    elif (categorie == "grafische"):
+        categorieObject = Grafische
+    elif (categorie == "harde"):
+        categorieObject = Harde
+    elif (categorie == "dvd"):
+        categorieObject = Dvd
+    elif (categorie == "koeling"):
+        categorieObject = Koeling
+    elif (categorie == "geheugen"):
+        categorieObject = Geheugen
+    elif (categorie == "voeding"):
+        categorieObject = Voeding
+    elif (categorie == "behuizingen"):
+        categorieObject = Behuizingen
+    
+    return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie.lower(), 'Product': product, 'Prijs': prijs, 'Productid': productid},
 context_instance=RequestContext(request))
 
 def processoren(request):
@@ -90,15 +112,25 @@ def processoren(request):
     # Get all posts from DB
     # Aantal per pagina en pagina nummer
 
-
+    minPriceSliderValue = 1500
+    maxPriceSliderValue = 0
     processorenlijst = Processoren.objects
+
+    
+    for processoren in processorenlijst:
+        
+        if float(processoren.prijs[0]) < float(minPriceSliderValue):
+            minPriceSliderValue = processoren.prijs[0]
+        elif float(processoren.prijs[0]) > float(maxPriceSliderValue):
+            maxPriceSliderValue = processoren.prijs[0]
+
     processoren = listing(request, processorenlijst, 15)
     #processoren = json.dumps(list(uniArray))
     
     bereik, diff = paginas(processorenlijst, processoren)
 
 
-    return render_to_response('processoren.html', {'Componenten': processoren, 'Range':bereik, 'Diff':diff},
+    return render_to_response('processoren.html', {'Componenten': processoren, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue },
                               context_instance=RequestContext(request))
 
 def behuizingen(request):
