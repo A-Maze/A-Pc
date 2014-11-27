@@ -124,9 +124,11 @@ def processoren(request):
 
     minPriceSliderValue = 1500
     maxPriceSliderValue = 0
+    #levering afhankelijk van filters
     levering = filters(request)
     
-
+    #overgebleven componentenlijst afhankelijk van stock
+    #Dit dient later afhaneklijk te worden van alle filters
     processorenlijst = stock(Processoren.objects, levering)
 
     for processoren in processorenlijst:
@@ -307,9 +309,12 @@ def paginas(componentenlijst, componenten):
     return bereik, diff
 
 def filters(request):
+    #checkt of stock filter checked is
     if request.GET.get('stockcheck'):
+        #leveringsfilter afhankelijk van checkboxes
         levering = request.POST.get('stock')
         return levering
+    #anders alles meegeven
     else:
         levering = "alles"
         return levering
