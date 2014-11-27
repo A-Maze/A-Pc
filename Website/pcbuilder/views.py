@@ -31,8 +31,7 @@ def contact(request):
         except:
             return HttpResponse(simplejson.dumps({'message':'Error From Server'}))
         print msg
-        return render_to_response('contact.html', {'message': msg},
-                                  context_instance=RequestContext(request))
+        contact(request)
     else:
         #return HttpResponse(simplejson.dumps({'message':'Not an ajax request'}))
         return render_to_response('contact.html', {'message': msg})
@@ -125,9 +124,11 @@ def processoren(request):
 
     minPriceSliderValue = 1500
     maxPriceSliderValue = 0
-    processorenlijst = Processoren.objects
-
+    levering = filters(request)
     
+
+    processorenlijst = stock(Processoren.objects, levering)
+
     for processoren in processorenlijst:
         diestringnaam = processoren.prijs[0].translate("\u20AC")
         if float(diestringnaam) < float(minPriceSliderValue):
@@ -304,5 +305,26 @@ def paginas(componentenlijst, componenten):
         diff.append(int(p - current_page))
 
     return bereik, diff
+
+def filters(request):
+    if request.GET.get('stockcheck'):
+        levering = request.GET.get('stockcheck')
+        return levering
+    else:
+        levering = "alles"
+        return levering
+
+
+def stock(objectlijst, levering):
+    if levering == "alles":
+        return objectlijst
+    if levering == "morgen":
+        print "ja"
+        print objectlijst.filter(stock__icontains="Direct leverbaar")
+        return objectlijst.filter(stock__icontains="Direct leverbaar")
+
+
+
+
 
 
