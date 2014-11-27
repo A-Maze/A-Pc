@@ -39,5 +39,4 @@ class AfutureSpider(CrawlSpider):
             item['ean'] = sel.xpath('//table[@id="product-detail-informatie"]/tr[3]/td/text()').extract()
             #splitean = ean.split("<br /> ")
             #tem['ean'] = splitean[0]
-
             yield item

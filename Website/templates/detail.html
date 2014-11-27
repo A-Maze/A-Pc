@@ -113,7 +113,7 @@
             {%for item in product%}
             {% with itemnumb=product|get_at_index:item %}  
              <tr>
-                
+                {% if itemnumb.0 != None%}
                 <td>{{item}}</td>
                  <td>
                      {% if item == "Afbeelding" %}
@@ -140,6 +140,7 @@
                     {{itemnumb}}
                    {% endif %} 
                  </td>
+                 {% endif %}
             </tr>
            {% endwith %}
                     {%endfor%}  

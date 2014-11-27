@@ -1,0 +1,14 @@
+db.sqlite3
+
+
+.idea/
+
+*.log
+
+*.json
+
+*.pyc
+
+
+workspace.xml
+
