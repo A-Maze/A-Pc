@@ -184,7 +184,7 @@ window.location = newLocation;
             <div class="panel panel-default component">
                 <div class="panel-body">
                     <a href="/optischeschijven/"><img class="center-block" src='{% static "img/opticaldrive.png" %}'></a>
-                    {% if request.session.DVD = True %}
+                    {% if request.session.dvd = True %}
                     <img class="cover" src='{% static "img/succes.png" %}' />
                     {% endif %}
                 </div>
@@ -294,7 +294,8 @@ window.location = newLocation;
         <tr {% if request.session.moederborden == True %} class="info" {% endif %} >
             <td>2</td>
             <td>Moederbord</td>
-            <td><a href="/detail/?product={{ request.session.moederbordennaam }}&amp;categorie=moederborden&amp;prijs={{ request.session.moederbordenprijs }}&amp;productid={{ request.session.moederbordenid }}">{{ request.session.moederbordennaam }}</a></td>
+
+            <td><a href="/detail/?product={{ request.session.moederbordennaam }}&amp;categorie=moederborden&amp;prijs={{ request.session.moederbordenprijs }}&amp;productid={{ request.session.moederbordenid }}"> {{ request.session.moederbordennaam }}</a></td>
             <td>{{ request.session.moederbordenprijs }}</td>
             <td>{% if request.session.moederborden == True %}<a href="/deselect/?product={{ request.session.moederbordennaam }}&amp;categorie=moederborden&amp;prijs={{ request.session.moederbordenprijs }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0"><img src="./static/img/action/svg/ic_highlight_remove_24px.svg" /></a>
             {% else  %} <a href="/moederborden/"><img src="./static/img/action/svg/ic_add_shopping_cart_24px.svg" /></a> {% endif %}</td>

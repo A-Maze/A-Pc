@@ -15,19 +15,53 @@ $(document).ready(function(){
   $(switcher).toggleClass("dropup");
   });
 
-    $(".slider").noUiSlider({
+   /* $(".slider").noUiSlider({
 	start: [20, 80],
 	connect: true,
 	range: {
 		'min': 0,
 		'max': 100
 	}
+    }); */
+
+var minimaal = {{minPriceSliderValue}}
+var maximaal = {{maxPriceSliderValue}}
+
+$('.slider').noUiSlider({
+    start: [minimaal + 10, maximaal - 10],
+    connect: true,
+    
+    
+    // Configure tapping, or make the selected range dragable.
+   
+    
+    // Full number format support.
+    format: wNumb({
+        mark: ',',
+        decimals: 1
+    }),
+    
+    // Support for non-linear ranges by adding intervals.
+    range: {
+        'min': minimaal,
+        'max': maximaal
+    }
+});
+
+// Reading/writing + validation from an input? One line.
+$('.slider').Link('lower').to($('#sliderMinValue'));
+
+// Write to a span? One line.
+$('.slider').Link('upper').to($('#sliderMaxValue'));
+
+// Optional addon: creating Pips (Percentage In Point);
+
 
 
 
 });
 
-});
+
 
 
 </script>
@@ -37,13 +71,93 @@ $(document).ready(function(){
 <div class="container">
 
 
-    {% include "filter.html" %}
+    <div class="col-md-4 col-lg-3 ">
+
+    <div class="panel panel-primary top-margin  ">
+        <div class="panel-heading">
+            <h3 class="panel-title">Filter</h3>
+        </div>
+
+        <div class="panel-body">
+
+            <div class="panel panel-default">
+                <div class="panel-heading toggle">Panel heading   <div class="pull-right"><span class="switcher dropup"><span class="caret"></span></span> </div></div>
+                <div class="panel-body body-toggled">
+
+                    <div class="checkbox customcheck">
+                        <label>
+                            <input type="checkbox"> Checkbox
+                        </label>
+                    </div>
+                    <div class="checkbox customcheck">
+                        <label>
+                            <input type="checkbox"> Checkbox
+                        </label>
+                    </div>
+                    <div class="checkbox customcheck">
+                        <label>
+                            <input type="checkbox"> Checkbox
+                        </label>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading toggle">Panel heading   <div class="pull-right"><span class="switcher dropup"><span class="caret"></span></span> </div></div>
+                <div class="panel-body body-toggled">
+                    <div class="slider" ></div>
+                    <input id ="sliderMinValue" class="col-md-6 col-lg-6 ">
+                    <input id ="sliderMaxValue" class="col-md-6 col-lg-6 pull-right ">
+                </div>
+
+
+
+            </div>
+
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading toggle">Panel heading   <div class="pull-right"><span class="switcher dropup"><span class="caret"></span></span> </div></div>
+                <div class="panel-body body-toggled">
+
+                    <div class="checkbox customcheck">
+                        <label>
+                            <input type="checkbox"> Checkbox
+                        </label>
+                    </div>
+                    <div class="checkbox customcheck">
+                        <label>
+                            <input type="checkbox"> Checkbox
+                        </label>
+                    </div>
+                    <div class="checkbox customcheck">
+                        <label>
+                            <input type="checkbox"> Checkbox
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+</div>
 
     <div class="col-md-8 col-lg-9">
-
+    
         <div class=" top-margin ">
             <h1>{{Componenten.categorie.0|truncatewords:1|slice:"-4" }}</h1>
             {% for component in Componenten %}
+           
             <div class="list-group table-border">
                 <div class="list-group-item">
                     <div class="row-picture">
@@ -56,7 +170,9 @@ $(document).ready(function(){
                             <p class="list-group-item-text">{% for desc in component.info %} {{ desc }} {% endfor %} </p>
                         </div>
                         <div class=" col-md-2 col-lg-2  ">
-                            <p class="list-group-item-text pull-right ">{{ component.prijs.0 }}</p>
+                            <p class="list-group-item-text pull-right ">{{ component.prijs.0 }}  </p>
+
+
                             <p class="list-group-item-text  ">{{ component.stock.0 }}</p>
 
 
@@ -74,6 +190,7 @@ $(document).ready(function(){
 
 
             </div>
+            
             {% endfor %}
 
         </div>

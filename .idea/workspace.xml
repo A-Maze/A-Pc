@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a9b433c9-adef-4891-afff-f63ac76183b4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Website/db.sqlite3" afterPath="$PROJECT_DIR$/Website/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Crawlers/pccrawler/pccrawler/items.py" afterPath="$PROJECT_DIR$/Crawlers/pccrawler/pccrawler/items.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Crawlers/pccrawler/pccrawler/spiders/tweakers.py" afterPath="$PROJECT_DIR$/Crawlers/pccrawler/pccrawler/spiders/tweakers.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="A-Pc.iws" />
@@ -38,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Website/pcbuilder/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="3960">
-              <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.15544042" vertical-offset="0" max-vertical-offset="4065">
+              <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -51,8 +49,8 @@
       <file leaf-file-name="detail.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Website/templates/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.458334" vertical-offset="1552" max-vertical-offset="2475">
-              <caret line="133" column="36" selection-start-line="133" selection-start-column="36" selection-end-line="133" selection-end-column="36" />
+            <state vertical-scroll-proportion="-9.375" vertical-offset="1395" max-vertical-offset="2475">
+              <caret line="108" column="34" selection-start-line="108" selection-start-column="34" selection-end-line="108" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -61,17 +59,17 @@
       <file leaf-file-name="tweakers.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Crawlers/pccrawler/pccrawler/spiders/tweakers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3966" max-vertical-offset="4545">
-              <caret line="302" column="63" selection-start-line="302" selection-start-column="63" selection-end-line="302" selection-end-column="63" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="4545">
+              <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="items.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="items.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Crawlers/pccrawler/pccrawler/items.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3935811" vertical-offset="4012" max-vertical-offset="4800">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4800">
               <caret line="283" column="4" selection-start-line="283" selection-start-column="4" selection-end-line="283" selection-end-column="4" />
               <folding />
             </state>
@@ -163,9 +161,9 @@
         <option value="$PROJECT_DIR$/Website/pcbuilder/views.py" />
         <option value="$PROJECT_DIR$/Website/templates/index.html" />
         <option value="$PROJECT_DIR$/Website/templates/geheugen.html" />
-        <option value="$PROJECT_DIR$/Website/templates/detail.html" />
         <option value="$PROJECT_DIR$/Crawlers/pccrawler/pccrawler/items.py" />
         <option value="$PROJECT_DIR$/Crawlers/pccrawler/pccrawler/spiders/tweakers.py" />
+        <option value="$PROJECT_DIR$/Website/templates/detail.html" />
       </list>
     </option>
   </component>
@@ -676,7 +674,7 @@
       <updated>1413276498492</updated>
       <workItem from="1414427642191" duration="2382000" />
       <workItem from="1414589806633" duration="313000" />
-      <workItem from="1417006516104" duration="3654000" />
+      <workItem from="1417006516104" duration="4269000" />
     </task>
     <task id="LOCAL-00001" summary="updatejee">
       <created>1413283808267</created>
@@ -770,11 +768,15 @@
       <created>1417009352781</created>
       <updated>1417009352781</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Afbeelding word op detail pagina geladen">
+      <created>1417011539129</created>
+      <updated>1417011539129</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6349000" />
+    <option name="totallyTimeSpent" value="6964000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="712" extended-state="6" />
@@ -1174,14 +1176,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Website/pcbuilder/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="3960">
-          <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Website/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-170.625" vertical-offset="225" max-vertical-offset="5535">
@@ -1206,14 +1200,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Website/templates/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.458334" vertical-offset="1552" max-vertical-offset="2475">
-          <caret line="133" column="36" selection-start-line="133" selection-start-column="36" selection-end-line="133" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Crawlers/pccrawler/pccrawler/pipelines.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.4615383" vertical-offset="514" max-vertical-offset="1530">
@@ -1222,18 +1208,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Crawlers/pccrawler/pccrawler/spiders/tweakers.py">
+    <entry file="file://$PROJECT_DIR$/Crawlers/pccrawler/pccrawler/items.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3966" max-vertical-offset="4545">
-          <caret line="302" column="63" selection-start-line="302" selection-start-column="63" selection-end-line="302" selection-end-column="63" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4800">
+          <caret line="283" column="4" selection-start-line="283" selection-start-column="4" selection-end-line="283" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Crawlers/pccrawler/pccrawler/items.py">
+    <entry file="file://$PROJECT_DIR$/Crawlers/pccrawler/pccrawler/spiders/tweakers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3935811" vertical-offset="4012" max-vertical-offset="4800">
-          <caret line="283" column="4" selection-start-line="283" selection-start-column="4" selection-end-line="283" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="4545">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Website/templates/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.375" vertical-offset="1395" max-vertical-offset="2475">
+          <caret line="108" column="34" selection-start-line="108" selection-start-column="34" selection-end-line="108" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Website/pcbuilder/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15544042" vertical-offset="0" max-vertical-offset="4065">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
           <folding />
         </state>
       </provider>
