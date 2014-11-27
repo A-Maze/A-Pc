@@ -24,16 +24,18 @@ def index(request):
                               context_instance=RequestContext(request))
 
 def contact(request):
+    msg = 1
     if request.is_ajax():
         try:
             msg = request.POST['msg']
         except:
             return HttpResponse(simplejson.dumps({'message':'Error From Server'}))
         print msg
-        return render_to_response('contact.html', {'message': msg})
+        return render_to_response('contact.html', {'message': msg},
+                                  context_instance=RequestContext(request))
     else:
         #return HttpResponse(simplejson.dumps({'message':'Not an ajax request'}))
-        return render_to_response('contact.html', {'message': '0'})
+        return render_to_response('contact.html', {'message': msg})
 
 def mail(request):
     name = request.POST.get('name', '')
