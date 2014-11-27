@@ -321,6 +321,7 @@ ValueError: invalid literal for int() with base 10: '3579.0'
 [27/Nov/2014 13:17:59] INFO [root:124] 37.99
 [27/Nov/2014 13:17:59] INFO [root:124] 31.99
 [27/Nov/2014 13:17:59] INFO [root:124] 30.99
+<<<<<<< HEAD
 [27/Nov/2014 13:26:21] ERROR [django.request:231] Internal Server Error: /behuizingen/
 Traceback (most recent call last):
   File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
@@ -335,3 +336,139 @@ Traceback (most recent call last):
   File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 150, in behuizingen
     if float(processoren.prijs[0]) < float(minPriceSliderValue):
 AttributeError: 'function' object has no attribute 'prijs'
+=======
+[27/Nov/2014 14:12:22] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+IndexError: list index out of range
+[27/Nov/2014 14:12:23] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+IndexError: list index out of range
+[27/Nov/2014 14:12:27] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+IndexError: list index out of range
+[27/Nov/2014 14:17:37] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:17:38] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:17:39] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:17:39] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:17:40] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:17:40] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:17:40] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:17:50] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:17:51] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:18:27] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:18:29] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:24:25] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:25:52] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:25:53] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:25:53] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:25:54] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:46:33] WARNING [django.request:163] Not Found: /processoren.
+>>>>>>> 21a056782c80d6626a553bffd35ac63e004841f9

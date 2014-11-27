@@ -157,6 +157,7 @@ $('.slider').Link('upper').to($('#sliderMaxValue'));
         <div class=" top-margin ">
             <h1>{{Componenten.categorie.0|truncatewords:1|slice:"-4" }}</h1>
             {% for component in Componenten %}
+           
             <div class="list-group table-border">
                 <div class="list-group-item">
                     <div class="row-picture">
@@ -171,9 +172,6 @@ $('.slider').Link('upper').to($('#sliderMaxValue'));
                         <div class=" col-md-2 col-lg-2  ">
                             <p class="list-group-item-text pull-right ">{{ component.prijs.0 }}  </p>
 
-                            {% if component.prijs.0 < minPriceSliderValue %}
-                               
-                            {% endif %}
 
                             <p class="list-group-item-text  ">{{ component.stock.0 }}</p>
 
@@ -192,6 +190,7 @@ $('.slider').Link('upper').to($('#sliderMaxValue'));
 
 
             </div>
+            
             {% endfor %}
 
         </div>

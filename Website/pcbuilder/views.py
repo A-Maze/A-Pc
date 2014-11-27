@@ -3,6 +3,7 @@ from django.shortcuts import HttpResponseRedirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.template import RequestContext
 from django.template import loader
+from django.http import HttpResponse
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding
 import logging
 import json
@@ -23,8 +24,18 @@ def index(request):
                               context_instance=RequestContext(request))
 
 def contact(request):
-    return render_to_response('contact.html',
-                              context_instance=RequestContext(request))
+    msg = 1
+    if request.is_ajax():
+        try:
+            msg = request.POST['msg']
+        except:
+            return HttpResponse(simplejson.dumps({'message':'Error From Server'}))
+        print msg
+        return render_to_response('contact.html', {'message': msg},
+                                  context_instance=RequestContext(request))
+    else:
+        #return HttpResponse(simplejson.dumps({'message':'Not an ajax request'}))
+        return render_to_response('contact.html', {'message': msg})
 
 def mail(request):
     name = request.POST.get('name', '')
@@ -118,11 +129,11 @@ def processoren(request):
 
 
     for processoren in processorenlijst:
-        
-        if float(processoren.prijs[0]) < float(minPriceSliderValue):
-            minPriceSliderValue = processoren.prijs[0]
-        elif float(processoren.prijs[0]) > float(maxPriceSliderValue):
-            maxPriceSliderValue = processoren.prijs[0]
+        diestringnaam = processoren.prijs[0].translate("\u20AC")
+        if float(diestringnaam) < float(minPriceSliderValue):
+            minPriceSliderValue = diestringnaam
+        elif float(diestringnaam) > float(maxPriceSliderValue):
+            maxPriceSliderValue = diestringnaam
 
     processoren = listing(request, processorenlijst, 15)
     #processoren = json.dumps(list(uniArray))
