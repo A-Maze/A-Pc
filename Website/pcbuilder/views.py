@@ -308,7 +308,7 @@ def paginas(componentenlijst, componenten):
 
 def filters(request):
     if request.GET.get('stockcheck'):
-        levering = request.GET.get('stockcheck')
+        levering = request.POST.get('stock')
         return levering
     else:
         levering = "alles"

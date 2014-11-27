@@ -332,3 +332,6 @@ Traceback (most recent call last):
     return levering = "alles"
                     ^
 SyntaxError: invalid syntax
+[27/Nov/2014 19:41:55] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /processoren/
+[27/Nov/2014 19:43:19] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /processoren/
+[27/Nov/2014 19:48:02] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /processoren/
