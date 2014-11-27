@@ -116,7 +116,7 @@ def processoren(request):
     maxPriceSliderValue = 0
     processorenlijst = Processoren.objects
 
-    
+
     for processoren in processorenlijst:
         
         if float(processoren.prijs[0]) < float(minPriceSliderValue):

@@ -237,6 +237,7 @@ class Voeding(scrapy.Item):
     categorie = scrapy.Field()
     Merk = scrapy.Field()
     Vermogen_watt = scrapy.Field()
+    Product = scrapy.Field()
     _12V_Rails = scrapy.Field()
     Capaciteit_12V1_rail = scrapy.Field()
     Voeding_certificering = scrapy.Field()

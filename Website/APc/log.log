@@ -321,3 +321,17 @@ ValueError: invalid literal for int() with base 10: '3579.0'
 [27/Nov/2014 13:17:59] INFO [root:124] 37.99
 [27/Nov/2014 13:17:59] INFO [root:124] 31.99
 [27/Nov/2014 13:17:59] INFO [root:124] 30.99
+[27/Nov/2014 13:26:21] ERROR [django.request:231] Internal Server Error: /behuizingen/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 150, in behuizingen
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+AttributeError: 'function' object has no attribute 'prijs'
+[27/Nov/2014 13:27:04] ERROR [django.request:231] Internal Server Error: /behuizingen/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 150, in behuizingen
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+AttributeError: 'function' object has no attribute 'prijs'
