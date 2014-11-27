@@ -112,15 +112,25 @@ def processoren(request):
     # Get all posts from DB
     # Aantal per pagina en pagina nummer
 
-
+    minPriceSliderValue = 1500
+    maxPriceSliderValue = 0
     processorenlijst = Processoren.objects
+
+    
+    for processoren in processorenlijst:
+        
+        if float(processoren.prijs[0]) < float(minPriceSliderValue):
+            minPriceSliderValue = processoren.prijs[0]
+        elif float(processoren.prijs[0]) > float(maxPriceSliderValue):
+            maxPriceSliderValue = processoren.prijs[0]
+
     processoren = listing(request, processorenlijst, 15)
     #processoren = json.dumps(list(uniArray))
     
     bereik, diff = paginas(processorenlijst, processoren)
 
 
-    return render_to_response('processoren.html', {'Componenten': processoren, 'Range':bereik, 'Diff':diff},
+    return render_to_response('processoren.html', {'Componenten': processoren, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue },
                               context_instance=RequestContext(request))
 
 def behuizingen(request):
