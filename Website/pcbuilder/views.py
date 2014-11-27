@@ -129,11 +129,11 @@ def processoren(request):
 
     
     for processoren in processorenlijst:
-        
-        if float(processoren.prijs[0]) < float(minPriceSliderValue):
-            minPriceSliderValue = processoren.prijs[0]
-        elif float(processoren.prijs[0]) > float(maxPriceSliderValue):
-            maxPriceSliderValue = processoren.prijs[0]
+        diestringnaam = processoren.prijs[0].translate("\u20AC")
+        if float(diestringnaam) < float(minPriceSliderValue):
+            minPriceSliderValue = diestringnaam
+        elif float(diestringnaam) > float(maxPriceSliderValue):
+            maxPriceSliderValue = diestringnaam
 
     processoren = listing(request, processorenlijst, 15)
     #processoren = json.dumps(list(uniArray))
