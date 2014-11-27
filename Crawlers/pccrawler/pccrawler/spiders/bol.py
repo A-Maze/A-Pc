@@ -19,24 +19,22 @@ class BolSpider(CrawlSpider):
 
     rules = (
 
-    Rule(LinkExtractor(restrict_xpaths =('//div[@class="cont_station"]/a', )),callback='parse_item',follow=True),
-    Rule(LinkExtractor(restrict_xpaths =('//div[@class="width_88 left_button tst_searchresults_next"]/span/a', )),callback='parse_item',follow=True),
-    Rule(LinkExtractor(restrict_xpaths =('//a[@class="product_name"]', )),callback='parse_item',follow=True),
+    Rule(LinkExtractor(restrict_xpaths =('//div[@class="cont_station"]/a', )),follow=True),
+    Rule(LinkExtractor(restrict_xpaths =('//div[@class="width_88 left_button tst_searchresults_next"]/span/a', )),follow=True),
+    Rule(LinkExtractor(restrict_xpaths =('//*[@id="list_view"]/div[1]/div/div[1]/div[1]/a[1]', )),callback='parse_item'),
     )
 
 
 
     def parse_item(self, response):
-
-        for sel in response.xpath('//div[@class="product_description"]'):
-            item = BolItem()
-            categorie = sel.xpath('//*[@id="main_block"]/div[3]/div[5]/div/div[1]/div[5]/table/tbody/tr[2]/td/span[2]/a/text()').extract()
-            naam = sel.xpath('//*[@id="main_block"]/div[2]/div/h1/text()').extract()
-            stock = sel.xpath('//p[@itemprop="availability"]/text()').extract()
-            prijs = sel.xpath('//span[@class="product-price-bol"]/meta/@content').extract()
-            link = response.url
-            ean = sel.xpath('//tr[@data-attr-key="EAN"]/td[2]/text()').extract()
-            yield item
+        item = BolItem()
+        item['categorie'] = response.xpath('//*[@id="option_block_4"]/li[last()-1]/a/text()').extract()
+        item['naam'] = response.xpath('//*[@id="main_block"]/div[2]/div/h1/text()').extract()
+        item['stock'] = response.xpath('//p[@itemprop="availability"]/text()').extract()
+        item['prijs'] = response.xpath('//*[@id="main_block"]/div[4]/div[1]/div[1]/div[1]/div/p/span/meta/@content').extract()
+        item['link'] = response.url
+        item['ean'] = response.xpath('//*[@data-attr-key="EAN"]/td[2]/text()').extract()
+        yield item
 
 
 

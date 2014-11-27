@@ -7,5 +7,10 @@ db.sqlite3
 
 *.json
 
+*.pyc
+
+*.sqlite3
+
+
 workspace.xml
 
