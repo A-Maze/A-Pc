@@ -1,11 +1,10 @@
 db.sqlite3
 
-
 .idea/
 
 *.log
 
 *.json
 
-workspace.xml
-
+.idea/workspace.xml
+.idea
