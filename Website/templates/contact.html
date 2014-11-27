@@ -55,4 +55,54 @@
         </div>
     </fieldset>
 </form>
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            $("#button").click(function(){
+                $.ajax({
+                    type : "POST",
+                    url : "/contact/",
+                    data : {
+                        msg : 'abcd',
+                        csrfmiddlewaretoken: getCookie('csrftoken')
+                    },
+                }).done(function(data){
+                    alert(data.message);
+                });
+            });
+        });
+
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie != '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+
+    </script>
+
+    <input id="button" type="button" value="Get message from server!">
+    {% if resource_list %}
+        <ul>
+            {% for resource in resource_list %}
+                <li><a href="{{ resource.url }}">{{ resource.name }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No Resources</p>
+    {% endif %}
+
+    <h3>{{ message }}</h3>
+
 {% endblock %}
