@@ -7,6 +7,16 @@
 
 import scrapy
 
+class TestItem(scrapy.Item):
+    categorie = scrapy.Field()
+    naam = scrapy.Field()
+    subnaam = scrapy.Field()
+    info = scrapy.Field()
+    stock = scrapy.Field()
+    prijs = scrapy.Field()
+    link = scrapy.Field()
+    ean = scrapy.Field()
+
 class BobItem(scrapy.Item):
     categorie = scrapy.Field()
     naam = scrapy.Field()
