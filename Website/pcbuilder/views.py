@@ -124,17 +124,16 @@ def processoren(request):
 
     minPriceSliderValue = 1500
     maxPriceSliderValue = 0
-<<<<<<< HEAD
+
     processorenlijst = Processoren.objects
 
-=======
+
     #levering afhankelijk van filters
     levering = filters(request)
     
     #overgebleven componentenlijst afhankelijk van stock
     #Dit dient later afhaneklijk te worden van alle filters
     processorenlijst = stock(Processoren.objects, levering)
->>>>>>> 5726e9e51586b42514a724fdea8f67d3b51957b0
 
     for processoren in processorenlijst:
         diestringnaam = processoren.prijs[0].translate("\u20AC")
