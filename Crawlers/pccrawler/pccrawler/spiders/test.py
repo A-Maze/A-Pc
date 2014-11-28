@@ -20,17 +20,22 @@ class TestSpider(CrawlSpider):
     name = "test"
     allowed_domains = ["www.alternate.nl"]
     start_urls = (
-        'http://www.alternate.nl/html/highlights/page.html?hgid=189&tgid=906&tk=7&lk=7',
+        'http://www.alternate.nl/html/product/listing.html?navId=1362&tk=7&lk=9361',
+        'http://www.alternate.nl/html/product/listing.html?navId=690&tk=7&lk=9327',
+        'http://www.alternate.nl/html/product/listing.html?navId=980&tk=7&lk=9564',
+        'http://www.alternate.nl/html/product/listing.html?navId=11898&bgid=8215&tk=7&lk=9344',
+        'http://www.alternate.nl/html/product/listing.html?navId=11622&tk=7&lk=9419',
+        'http://www.alternate.nl/html/product/listing.html?navId=17510&tk=7&lk=9492',
+        'http://www.alternate.nl/html/product/listing.html?navId=1686&tk=7&lk=9501',
+        'http://www.alternate.nl/html/product/listing.html?navId=11604&bgid=8215&tk=7&lk=9533'
+
+
 
         
     )
     
     rules = (
-
-    Rule(LinkExtractor(restrict_xpaths =('//div[@id="navTree"]/ul/li[position()>=4 and position()<20]/ul/li[contains(concat(" ", normalize-space(@class), "  "), " subLevel2 ")]/a', )),callback='parse_item',follow=True),
-    Rule(LinkExtractor(restrict_xpaths =('//div[@id="navTree"]/ul/li[position()>=4 and position()<20]/ul/li[contains(concat(" ", normalize-space(@class), "  "), " subLevel3 ")]/a', )),callback='parse_item',follow=True),
-    Rule(LinkExtractor(restrict_xpaths =('//div[@id="navTree"]/ul/li[position()>=4 and position()<20]/ul/li[contains(concat(" ", normalize-space(@class), "  "), " subLevel4 ")]/a', )),callback='parse_item',follow=True),
-    Rule(LinkExtractor(restrict_xpaths =('//a[@class="productLink"][position()<10]',)),callback='parse_item'),
+    Rule(LinkExtractor(restrict_xpaths =('//div[@class="listRow"][1]/a[@class="productLink"]',)),callback='parse_item'),
     )
 
     
