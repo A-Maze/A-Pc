@@ -31,8 +31,7 @@ def contact(request):
         except:
             return HttpResponse(simplejson.dumps({'message':'Error From Server'}))
         print msg
-        return render_to_response('contact.html', {'message': msg},
-                                  context_instance=RequestContext(request))
+        contact(request)
     else:
         #return HttpResponse(simplejson.dumps({'message':'Not an ajax request'}))
         return render_to_response('contact.html', {'message': msg})
@@ -125,8 +124,17 @@ def processoren(request):
 
     minPriceSliderValue = 1500
     maxPriceSliderValue = 0
+<<<<<<< HEAD
     processorenlijst = Processoren.objects
 
+=======
+    #levering afhankelijk van filters
+    levering = filters(request)
+    
+    #overgebleven componentenlijst afhankelijk van stock
+    #Dit dient later afhaneklijk te worden van alle filters
+    processorenlijst = stock(Processoren.objects, levering)
+>>>>>>> 5726e9e51586b42514a724fdea8f67d3b51957b0
 
     for processoren in processorenlijst:
         diestringnaam = processoren.prijs[0].translate("\u20AC")
@@ -304,5 +312,29 @@ def paginas(componentenlijst, componenten):
         diff.append(int(p - current_page))
 
     return bereik, diff
+
+def filters(request):
+    #checkt of stock filter checked is
+    if request.GET.get('stockcheck'):
+        #leveringsfilter afhankelijk van checkboxes
+        levering = request.POST.get('stock')
+        return levering
+    #anders alles meegeven
+    else:
+        levering = "alles"
+        return levering
+
+
+def stock(objectlijst, levering):
+    if levering == "alles":
+        return objectlijst
+    if levering == "morgen":
+        print "ja"
+        print objectlijst.filter(stock__icontains="Direct leverbaar")
+        return objectlijst.filter(stock__icontains="Direct leverbaar")
+
+
+
+
 
 
