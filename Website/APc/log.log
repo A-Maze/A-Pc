@@ -587,3 +587,121 @@ Traceback (most recent call last):
      ^
 SyntaxError: invalid syntax
 [28/Nov/2014 16:06:32] WARNING [django.request:143] Not Found: /favicon.ico
+[28/Nov/2014 16:18:58] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 134
+    if request.POST.get('stockCheck'):
+   ^
+IndentationError: unexpected indent
+[28/Nov/2014 16:19:17] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 204, in get_response
+    response = middleware_method(request, response)
+  File "/usr/local/lib/python2.7/dist-packages/django/middleware/clickjacking.py", line 31, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'str' object has no attribute 'get'
+[28/Nov/2014 16:25:24] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 138, in processoren
+    for processoren in processorenlijst:
+TypeError: 'NoneType' object is not iterable
+[28/Nov/2014 16:25:44] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 138, in processoren
+    for processoren in processorenlijst:
+TypeError: 'NoneType' object is not iterable
+[28/Nov/2014 16:26:18] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 138, in processoren
+    for processoren in processorenlijst:
+TypeError: 'NoneType' object is not iterable
+[28/Nov/2014 16:26:19] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 138, in processoren
+    for processoren in processorenlijst:
+TypeError: 'NoneType' object is not iterable
+[28/Nov/2014 16:37:01] ERROR [django.request:231] Internal Server Error: /processoren/processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 138, in processoren
+    for processoren in processorenlijst:
+TypeError: 'NoneType' object is not iterable
+[28/Nov/2014 16:41:29] ERROR [django.request:231] Internal Server Error: /processoren/processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 138, in processoren
+    for processoren in processorenlijst:
+TypeError: 'NoneType' object is not iterable
+[28/Nov/2014 16:42:22] ERROR [django.request:231] Internal Server Error: /processoren/processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 138, in processoren
+    for processoren in processorenlijst:
+TypeError: 'NoneType' object is not iterable
+[28/Nov/2014 16:43:31] ERROR [django.request:231] Internal Server Error: /processoren/processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 138, in processoren
+    for processoren in processorenlijst:
+TypeError: 'NoneType' object is not iterable
+[28/Nov/2014 16:44:37] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 138, in processoren
+    for processoren in processorenlijst:
+TypeError: 'NoneType' object is not iterable
+[28/Nov/2014 16:44:41] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 138, in processoren
+    for processoren in processorenlijst:
+TypeError: 'NoneType' object is not iterable
+[28/Nov/2014 16:44:46] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 138, in processoren
+    for processoren in processorenlijst:
+TypeError: 'NoneType' object is not iterable
+[28/Nov/2014 16:44:52] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 138, in processoren
+    for processoren in processorenlijst:
+TypeError: 'NoneType' object is not iterable
+[28/Nov/2014 16:45:23] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 138, in processoren
+    for processoren in processorenlijst:
+TypeError: 'NoneType' object is not iterable

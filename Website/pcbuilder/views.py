@@ -147,7 +147,7 @@ def processoren(request):
     
     bereik, diff = paginas(processorenlijst, processoren)
 
-
+    print "werkt bijna"
     return render_to_response('processoren.html', {'Componenten': processoren, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue },
                               context_instance=RequestContext(request))
 
@@ -314,9 +314,10 @@ def paginas(componentenlijst, componenten):
 
 def filters(request):
     #checkt of stock filter checked is
-    if request.GET.get('stockcheck'):
+    if request.method == 'POST':
         #leveringsfilter afhankelijk van checkboxes
-        levering = request.POST.get('stock')
+        print "meh"
+        levering = "morgen"
         return levering
     #anders alles meegeven
     else:
@@ -326,11 +327,13 @@ def filters(request):
 
 def stock(objectlijst, levering):
     if levering == "alles":
+        print "not changed"
         return objectlijst
     if levering == "morgen":
-        print "ja"
-        print objectlijst.filter(stock__icontains="Direct leverbaar")
+        print "changed"
+        objectlijst.filter(stock__icontains="Direct leverbaar")
         return objectlijst.filter(stock__icontains="Direct leverbaar")
+        
 
 
 
