@@ -38,72 +38,77 @@ class PccrawlerPipeline(object):
 			    	level=log.DEBUG, spider=spider) 
 
 				def addToList(item):
-					self.collection.update({'ean': item["ean"]}, {"$push": {"naam" : item["naam"][0]}}, upsert=False)
-					self.collection.update({'ean': item["ean"]}, {"$push": {"subnaam" : item["subnaam"][0]}}, upsert=False)
-					self.collection.update({'ean': item["ean"]}, {"$push": {"link" : item["link"][0]}}, upsert=False)
-					self.collection.update({'ean': item["ean"]}, {"$push": {"herkomst" : item["herkomst"][0]}}, upsert=False)
-					self.collection.update({'ean': item["ean"]}, {"$push": {"prijs" : item["prijs"][0]}}, upsert=False)
-					self.collection.update({'ean': item["ean"]}, {"$push": {"stock" : item["stock"][0]}}, upsert=False)
+					if u'\u20ac' in item["prijs"][0]:
+						item["prijs"][0] = item["prijs"][0][2:]
+					try:
+						self.collection.update({'ean': item["ean"]}, {"$push": {"naam" : item["naam"][0]}}, upsert=True)
+						self.collection.update({'ean': item["ean"]}, {"$push": {"subnaam" : item["subnaam"][0]}}, upsert=True)
+						self.collection.update({'ean': item["ean"]}, {"$push": {"link" : item["link"][0]}}, upsert=True)
+						self.collection.update({'ean': item["ean"]}, {"$push": {"herkomst" : item["herkomst"][0]}}, upsert=True)
+						self.collection.update({'ean': item["ean"]}, {"$push": {"prijs" : item["prijs"][0]}}, upsert=True)
+						self.collection.update({'ean': item["ean"]}, {"$push": {"stock" : item["stock"][0]}}, upsert=True)
+						self.collection.update({'ean': item["ean"]}, {"$push": {"sku" : item["sku"][0]}}, upsert=True)
+					except IndexError:
+						self.collection.update({'sku': item["sku"]}, {"$push": {"naam" : item["naam"][0]}}, upsert=True)
+						self.collection.update({'sku': item["sku"]}, {"$push": {"subnaam" : item["subnaam"][0]}}, upsert=True)
+						self.collection.update({'sku': item["sku"]}, {"$push": {"link" : item["link"][0]}}, upsert=True)
+						self.collection.update({'sku': item["sku"]}, {"$push": {"herkomst" : item["herkomst"][0]}}, upsert=True)
+						self.collection.update({'sku': item["sku"]}, {"$push": {"prijs" : item["prijs"][0]}}, upsert=True)
+						self.collection.update({'sku': item["sku"]}, {"$push": {"stock" : item["stock"][0]}}, upsert=True)
+
+				def addToDatabase(collectienaam):
+					item["categorie"] = collectienaam
+					pleurindedb(collectienaam)
 
 				collectienaam = ""
 
 				#
 				#  one love (L)(L)pipelines(L)(L)
 				
-
+				
 
 				langeNaam = item["categorie"][0]
 				if ("Processoren" or "CPU" or "Processors") in langeNaam:
 					self.collection = db["processoren"]
-					if self.collection.find({"ean": item["ean"] }):					
-						addToList(item)
-
-					collectienaam = "processoren"
+					collectienaam = "processoren"			
+					addToList(item)
 				elif ("Moederbord" or "moederborden") in langeNaam:
 					self.collection = db["moederborden"]
-					if  self.collection.find({"ean": item["ean"] }):
-						addToList(item)
 					collectienaam = "moederborden"
+					addToList(item)
+
 				elif ("Koeling" or "Koelers" or "Processorkoeling" or "Koelers") in langeNaam:
 					self.collection = db["koeling"]
-					if  self.collection.find({"ean": item["ean"] }):
-						addToList(item)
 					collectienaam = "koeling"
+					addToList(item)
 				elif ("Behuizingen" or "Barebones" or "Barebone") in langeNaam:
 					self.collection = db["behuizingen"]
-					if self.collection.find({"ean": item["ean"] }):
-						addToList(item)
 					collectienaam = "behuizingen"
+					addToList(item)
 				elif ("Grafische" or "GPU" or "Videokaarten" or "Videokaart") in langeNaam:
 					self.collection = db["grafische"]
-					if self.collection.find({"ean": item["ean"] }):
-						addToList(item)
 					collectienaam = "grafische"
+					addToList(item)
 				elif ("Harde" or "Geheugen intern" or "Interne") in langeNaam:
 					self.collection = db["harde"]
-					if self.collection.find({"ean": item["ean"] }):
-						addToList(item)
 					collectienaam = "harde"
+					addToList(item)
 				elif ("DVD" or "dvd") in langeNaam:
 					self.collection = db["dvd"]
-					if self.collection.find({"ean": item["ean"] }):
-						addToList(item)
 					collectienaam = "dvd"
+					addToList(item)
 				elif ("Geheugen" or "RAM") in langeNaam:
 					self.collection = db["geheugen"]
-					if self.collection.find({"ean": item["ean"] }):
-						addToList(item)
 					collectienaam = "geheugen"
+					addToList(item)
 				elif ("Voeding" or "Voedingen") in langeNaam:
 					self.collection = db["voeding"]
-					if self.collection.find({"ean": item["ean"] }):
-						addToList(item)
 					collectienaam = "voeding"
+					addToList(item)
 				else:
 					return
 
-				item["categorie"] = collectienaam
-				pleurindedb(collectienaam)
+				
 			
 			
 				return item
