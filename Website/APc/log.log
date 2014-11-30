@@ -1,184 +1,4 @@
-[27/Nov/2014 14:44:06] ERROR [django.request:231] Internal Server Error: /optischeschijven/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122
-SyntaxError: Non-ASCII character '\xe2' in file /home/rik/A-Pc/Website/pcbuilder/views.py on line 122, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-[27/Nov/2014 14:44:18] ERROR [django.request:231] Internal Server Error: /optischeschijven/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122
-SyntaxError: Non-ASCII character '\xe2' in file /home/rik/A-Pc/Website/pcbuilder/views.py on line 122, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-[27/Nov/2014 14:44:18] ERROR [django.request:231] Internal Server Error: /optischeschijven/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122
-SyntaxError: Non-ASCII character '\xe2' in file /home/rik/A-Pc/Website/pcbuilder/views.py on line 122, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-[27/Nov/2014 14:44:18] ERROR [django.request:231] Internal Server Error: /optischeschijven/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122
-SyntaxError: Non-ASCII character '\xe2' in file /home/rik/A-Pc/Website/pcbuilder/views.py on line 122, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-[27/Nov/2014 14:44:19] ERROR [django.request:231] Internal Server Error: /optischeschijven/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122
-SyntaxError: Non-ASCII character '\xe2' in file /home/rik/A-Pc/Website/pcbuilder/views.py on line 122, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-[27/Nov/2014 14:44:19] ERROR [django.request:231] Internal Server Error: /optischeschijven/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122
-SyntaxError: Non-ASCII character '\xe2' in file /home/rik/A-Pc/Website/pcbuilder/views.py on line 122, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-[27/Nov/2014 14:44:19] ERROR [django.request:231] Internal Server Error: /optischeschijven/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122
-SyntaxError: Non-ASCII character '\xe2' in file /home/rik/A-Pc/Website/pcbuilder/views.py on line 122, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-[27/Nov/2014 14:44:19] ERROR [django.request:231] Internal Server Error: /optischeschijven/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122
-SyntaxError: Non-ASCII character '\xe2' in file /home/rik/A-Pc/Website/pcbuilder/views.py on line 122, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-[27/Nov/2014 14:44:19] ERROR [django.request:231] Internal Server Error: /optischeschijven/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122
-SyntaxError: Non-ASCII character '\xe2' in file /home/rik/A-Pc/Website/pcbuilder/views.py on line 122, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-[27/Nov/2014 14:44:19] ERROR [django.request:231] Internal Server Error: /optischeschijven/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122
-SyntaxError: Non-ASCII character '\xe2' in file /home/rik/A-Pc/Website/pcbuilder/views.py on line 122, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-[27/Nov/2014 14:45:44] ERROR [django.request:231] Internal Server Error: /optischeschijven/
+[28/Nov/2014 11:50:17] ERROR [django.request:231] Internal Server Error: /processoren/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
     resolver_match = resolver.resolve(request.path_info)
@@ -196,7 +16,7 @@ Traceback (most recent call last):
     __import__(name)
   File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 121
 SyntaxError: Non-ASCII character '\xe2' in file /home/rik/A-Pc/Website/pcbuilder/views.py on line 121, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-[27/Nov/2014 14:46:47] ERROR [django.request:231] Internal Server Error: /optischeschijven/
+[28/Nov/2014 11:50:17] ERROR [django.request:231] Internal Server Error: /processoren/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
     resolver_match = resolver.resolve(request.path_info)
@@ -214,7 +34,7 @@ Traceback (most recent call last):
     __import__(name)
   File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 121
 SyntaxError: Non-ASCII character '\xe2' in file /home/rik/A-Pc/Website/pcbuilder/views.py on line 121, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-[27/Nov/2014 14:48:23] ERROR [django.request:231] Internal Server Error: /optischeschijven/
+[28/Nov/2014 11:50:17] ERROR [django.request:231] Internal Server Error: /processoren/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
     resolver_match = resolver.resolve(request.path_info)
@@ -232,7 +52,7 @@ Traceback (most recent call last):
     __import__(name)
   File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 121
 SyntaxError: Non-ASCII character '\xe2' in file /home/rik/A-Pc/Website/pcbuilder/views.py on line 121, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-[27/Nov/2014 14:48:23] ERROR [django.request:231] Internal Server Error: /optischeschijven/
+[28/Nov/2014 11:50:18] ERROR [django.request:231] Internal Server Error: /processoren/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
     resolver_match = resolver.resolve(request.path_info)
@@ -250,201 +70,172 @@ Traceback (most recent call last):
     __import__(name)
   File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 121
 SyntaxError: Non-ASCII character '\xe2' in file /home/rik/A-Pc/Website/pcbuilder/views.py on line 121, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-[27/Nov/2014 14:48:23] ERROR [django.request:231] Internal Server Error: /optischeschijven/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 121
-SyntaxError: Non-ASCII character '\xe2' in file /home/rik/A-Pc/Website/pcbuilder/views.py on line 121, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-[27/Nov/2014 14:48:24] ERROR [django.request:231] Internal Server Error: /optischeschijven/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 121
-SyntaxError: Non-ASCII character '\xe2' in file /home/rik/A-Pc/Website/pcbuilder/views.py on line 121, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-[27/Nov/2014 14:48:24] ERROR [django.request:231] Internal Server Error: /optischeschijven/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 121
-SyntaxError: Non-ASCII character '\xe2' in file /home/rik/A-Pc/Website/pcbuilder/views.py on line 121, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-[27/Nov/2014 14:48:24] ERROR [django.request:231] Internal Server Error: /optischeschijven/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 121
-SyntaxError: Non-ASCII character '\xe2' in file /home/rik/A-Pc/Website/pcbuilder/views.py on line 121, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-[27/Nov/2014 14:48:24] ERROR [django.request:231] Internal Server Error: /optischeschijven/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 121
-SyntaxError: Non-ASCII character '\xe2' in file /home/rik/A-Pc/Website/pcbuilder/views.py on line 121, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-[27/Nov/2014 14:48:25] ERROR [django.request:231] Internal Server Error: /optischeschijven/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 121
-SyntaxError: Non-ASCII character '\xe2' in file /home/rik/A-Pc/Website/pcbuilder/views.py on line 121, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-[27/Nov/2014 14:52:01] ERROR [django.request:231] Internal Server Error: /processoren/
+[28/Nov/2014 11:50:48] ERROR [django.request:231] Internal Server Error: /processoren/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 121, in processoren
-    diestringnaam = procesorren.prijs[0].translate(None,u"\u20AC")
-NameError: global name 'procesorren' is not defined
-[27/Nov/2014 14:52:22] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 121, in processoren
-    diestringnaam = procesorren.prijs[0].translate(None,u"\u20AC")
-NameError: global name 'procesorren' is not defined
-[27/Nov/2014 14:52:33] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 121, in processoren
-    diestringnaam = procesorren.prijs[0].translate(None,"\u20AC")
-NameError: global name 'procesorren' is not defined
-[27/Nov/2014 14:53:48] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 121, in processoren
-    diestringnaam = procesoren.prijs[0].translate(None,"\u20AC")
-NameError: global name 'procesoren' is not defined
-[27/Nov/2014 14:54:00] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 121, in processoren
-    diestringnaam = processoren.prijs[0].translate(None,"\u20AC")
-TypeError: translate() takes exactly one argument (2 given)
-[27/Nov/2014 14:54:19] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-<<<<<<< HEAD
   File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
-    if float(updatedString) < float(minPriceSliderValue):
-NameError: global name 'updatedString' is not defined
-=======
-<<<<<<< HEAD
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 107, in detail
-    return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie.lower(), 'Product': product, 'Prijs': prijs, 'Productid': productid},
-UnboundLocalError: local variable 'categorieObject' referenced before assignment
-[27/Nov/2014 14:23:56] WARNING [django.request:143] Not Found: /favicon.ico
-=======
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 134, in processoren
-    context_instance=RequestContext(request))
-  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
-    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 170, in render_to_string
-    t = get_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 201, in do_extends
-    nodelist = parser.parse()
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 175, in do_block
-    nodelist = parser.parse(('endblock',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 833, in do_for
-    nodelist_loop = parser.parse(('empty', 'endfor',))
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 288, in parse
-    self.invalid_block_tag(token, command, parse_until)
-  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 343, in invalid_block_tag
-    (command, get_text_list(["'%s'" % p for p in parse_until])))
-TemplateSyntaxError: Invalid block tag: 'endif', expected 'empty' or 'endfor'
-[27/Nov/2014 14:10:50] WARNING [django.request:143] Not Found: /favicon.ico
->>>>>>> e45e27c772846cdc6f4e2fc90d6a1d33dd54bd12
->>>>>>> 7717287fe8b5775318b698167e68503edab2e787
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[28/Nov/2014 11:50:50] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[28/Nov/2014 11:51:15] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[28/Nov/2014 11:51:15] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[28/Nov/2014 11:51:22] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[28/Nov/2014 11:51:41] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[28/Nov/2014 11:51:42] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[28/Nov/2014 11:51:42] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[28/Nov/2014 11:51:42] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[28/Nov/2014 11:51:43] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[28/Nov/2014 11:51:43] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[28/Nov/2014 11:51:43] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[28/Nov/2014 11:51:50] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[28/Nov/2014 11:51:54] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[28/Nov/2014 11:51:54] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[28/Nov/2014 11:51:55] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[28/Nov/2014 11:51:55] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[28/Nov/2014 11:51:58] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[28/Nov/2014 11:51:58] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[28/Nov/2014 11:51:58] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[28/Nov/2014 11:51:59] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[28/Nov/2014 11:51:59] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[28/Nov/2014 11:52:31] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:26:58] WARNING [django.request:143] Not Found: /favicon.ico
+[30/Nov/2014 11:27:02] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
