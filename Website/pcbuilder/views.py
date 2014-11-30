@@ -3,6 +3,7 @@ from django.shortcuts import HttpResponseRedirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.template import RequestContext
 from django.template import loader
+from django.http import HttpResponse
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding
 import logging
 import json
@@ -23,8 +24,17 @@ def index(request):
                               context_instance=RequestContext(request))
 
 def contact(request):
-    return render_to_response('contact.html',
-                              context_instance=RequestContext(request))
+    msg = 1
+    if request.is_ajax():
+        try:
+            msg = request.POST['msg']
+        except:
+            return HttpResponse(simplejson.dumps({'message':'Error From Server'}))
+        print msg
+        contact(request)
+    else:
+        #return HttpResponse(simplejson.dumps({'message':'Not an ajax request'}))
+        return render_to_response('contact.html', {'message': msg})
 
 def mail(request):
     name = request.POST.get('name', '')
@@ -114,9 +124,17 @@ def processoren(request):
 
     minPriceSliderValue = 1500
     maxPriceSliderValue = 0
+
     processorenlijst = Processoren.objects
 
+
+    #levering afhankelijk van filters
+    levering = filters(request)
     
+    #overgebleven componentenlijst afhankelijk van stock
+    #Dit dient later afhaneklijk te worden van alle filters
+    processorenlijst = stock(Processoren.objects, levering)
+
     for processoren in processorenlijst:
         diestringnaam = processoren.prijs[0].translate("\u20AC")
         if float(diestringnaam) < float(minPriceSliderValue):
@@ -129,7 +147,7 @@ def processoren(request):
     
     bereik, diff = paginas(processorenlijst, processoren)
 
-
+    print "werkt bijna"
     return render_to_response('processoren.html', {'Componenten': processoren, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue },
                               context_instance=RequestContext(request))
 
@@ -293,5 +311,32 @@ def paginas(componentenlijst, componenten):
         diff.append(int(p - current_page))
 
     return bereik, diff
+
+def filters(request):
+    #checkt of stock filter checked is
+    if request.method == 'POST':
+        #leveringsfilter afhankelijk van checkboxes
+        print "meh"
+        levering = "morgen"
+        return levering
+    #anders alles meegeven
+    else:
+        levering = "alles"
+        return levering
+
+
+def stock(objectlijst, levering):
+    if levering == "alles":
+        print "not changed"
+        return objectlijst
+    if levering == "morgen":
+        print "changed"
+        objectlijst.filter(stock__icontains="Direct leverbaar")
+        return objectlijst.filter(stock__icontains="Direct leverbaar")
+        
+
+
+
+
 
 

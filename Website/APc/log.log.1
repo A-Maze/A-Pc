@@ -362,6 +362,7 @@ SyntaxError: Non-ASCII character '\xe2' in file /home/rik/A-Pc/Website/pcbuilder
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+<<<<<<< HEAD
   File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 121, in processoren
     diestringnaam = procesorren.prijs[0].translate(None,u"\u20AC")
 NameError: global name 'procesorren' is not defined
@@ -645,3 +646,488 @@ Traceback (most recent call last):
     __import__(name)
   File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 121
 SyntaxError: Non-ASCII character '\xe2' in file /home/rik/A-Pc/Website/pcbuilder/views.py on line 121, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
+=======
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
+    if int(processoren.prijs[0]) < int(minPriceSliderValue):
+ValueError: invalid literal for int() with base 10: '3579.0'
+[27/Nov/2014 13:17:59] INFO [root:124] 1149.0
+[27/Nov/2014 13:17:59] INFO [root:124] 1129.0
+[27/Nov/2014 13:17:59] INFO [root:124] 619.0
+[27/Nov/2014 13:17:59] INFO [root:124] 449.0
+[27/Nov/2014 13:17:59] INFO [root:124] 319.0
+[27/Nov/2014 13:17:59] INFO [root:124] 224.9
+[27/Nov/2014 13:17:59] INFO [root:124] 222.9
+[27/Nov/2014 13:17:59] INFO [root:124] 64.9
+[27/Nov/2014 13:17:59] INFO [root:124] 59.9
+[27/Nov/2014 13:17:59] INFO [root:124] 52.9
+[27/Nov/2014 13:17:59] INFO [root:124] 37.99
+[27/Nov/2014 13:17:59] INFO [root:124] 31.99
+[27/Nov/2014 13:17:59] INFO [root:124] 30.99
+[27/Nov/2014 14:12:22] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+IndexError: list index out of range
+[27/Nov/2014 14:12:23] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+IndexError: list index out of range
+[27/Nov/2014 14:12:27] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+IndexError: list index out of range
+[27/Nov/2014 14:17:37] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:17:38] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:17:39] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:17:39] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:17:40] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:17:40] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:17:40] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:17:50] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:17:51] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:18:27] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:18:29] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:24:25] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:25:52] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:25:53] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:25:53] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:25:54] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    if float(processoren.prijs[0]) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[27/Nov/2014 14:46:33] WARNING [django.request:163] Not Found: /processoren.
+[27/Nov/2014 15:57:51] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:57:54] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:57:56] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:57:57] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:57:57] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:58:11] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:58:11] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:58:15] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:58:16] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:58:16] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:58:16] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:58:27] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:58:32] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:58:32] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:58:32] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:58:33] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:58:33] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:58:33] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:58:33] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:59:04] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:59:04] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:59:05] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:59:05] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:59:05] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:59:05] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:59:06] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:59:06] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:59:06] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:59:06] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:59:07] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:59:07] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:59:07] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:59:07] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 15:59:07] WARNING [django.request:99] Forbidden (CSRF cookie not set.): /contact/
+[27/Nov/2014 16:24:21] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 129
+    processorenlijst = stock(processorenlijst, "morgen"):
+                                                        ^
+SyntaxError: invalid syntax
+[27/Nov/2014 16:26:06] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 309
+    if levering = "morgen":
+                ^
+SyntaxError: invalid syntax
+[27/Nov/2014 16:27:19] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 309
+    if (levering = "morgen"):
+                 ^
+SyntaxError: invalid syntax
+[27/Nov/2014 16:27:20] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 309
+    if (levering = "morgen"):
+                 ^
+SyntaxError: invalid syntax
+[27/Nov/2014 16:27:32] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 129, in processoren
+    processorenlijst = stock(processorenlijst, "morgen")
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 310, in stock
+    for component in componentenlijst.objects:
+AttributeError: 'QuerySet' object has no attribute 'objects'
+[27/Nov/2014 16:29:38] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 129, in processoren
+    processorenlijst = stock(processorenlijst, "morgen")
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 313, in stock
+    return componentenlijst
+UnboundLocalError: local variable 'componentenlijst' referenced before assignment
+[27/Nov/2014 16:30:06] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 129, in processoren
+    processorenlijst = stock(processorenlijst, "morgen")
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 309, in stock
+    componentenlijst
+UnboundLocalError: local variable 'componentenlijst' referenced before assignment
+[27/Nov/2014 16:34:05] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 312
+    if "Direct leverbaar" in component.stock.0:
+                                             ^
+SyntaxError: invalid syntax
+[27/Nov/2014 16:34:14] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 129, in processoren
+    processorenlijst = stock(processorenlijst, "morgen")
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 314, in stock
+    componentenlijst += component
+TypeError: cannot concatenate 'str' and 'Processoren' objects
+[27/Nov/2014 16:35:04] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 129, in processoren
+    processorenlijst = stock(processorenlijst, "morgen")
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 314, in stock
+    componentenlijst += component
+TypeError: cannot concatenate 'str' and 'Processoren' objects
+[27/Nov/2014 16:37:25] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 312
+    print component.stock.0
+                          ^
+SyntaxError: invalid syntax
+[27/Nov/2014 16:37:50] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 129, in processoren
+    processorenlijst = stock(processorenlijst, "morgen")
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 315, in stock
+    componentenlijst += component
+TypeError: cannot concatenate 'str' and 'Processoren' objects
+[27/Nov/2014 16:39:09] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 129, in processoren
+    processorenlijst = stock(processorenlijst, "morgen")
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 309, in stock
+    componentenlijst
+UnboundLocalError: local variable 'componentenlijst' referenced before assignment
+[27/Nov/2014 16:39:21] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    diestringnaam = processoren.prijs[0].translate("\u20AC")
+AttributeError: 'str' object has no attribute 'prijs'
+[27/Nov/2014 16:40:42] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 129, in processoren
+    processorenlijst = stock(processorenlijst, "morgen")
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 314, in stock
+    componentenlijst += objectenlijst.component
+NameError: global name 'objectenlijst' is not defined
+[27/Nov/2014 16:40:50] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 129, in processoren
+    processorenlijst = stock(processorenlijst, "morgen")
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 314, in stock
+    componentenlijst += objectlijst.component
+AttributeError: 'QuerySet' object has no attribute 'component'
+[27/Nov/2014 16:41:21] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    diestringnaam = processoren.prijs[0].translate("\u20AC")
+AttributeError: 'str' object has no attribute 'prijs'
+[27/Nov/2014 17:17:23] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    diestringnaam = processoren.prijs[0].translate("\u20AC")
+AttributeError: 'str' object has no attribute 'prijs'
+[27/Nov/2014 17:20:57] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    diestringnaam = processoren.prijs[0].translate("\u20AC")
+AttributeError: 'str' object has no attribute 'prijs'
+[27/Nov/2014 17:21:28] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    diestringnaam = processoren.prijs[0].translate("\u20AC")
+AttributeError: 'str' object has no attribute 'prijs'
+[27/Nov/2014 17:22:25] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 129, in processoren
+    processorenlijst = stock(processorenlijst, "morgen")
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 314, in stock
+    componentenlijst += component
+TypeError: unsupported operand type(s) for +=: 'type' and 'Processoren'
+[27/Nov/2014 17:24:16] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 129, in processoren
+    processorenlijst = stock(processorenlijst, "morgen")
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 313, in stock
+    objectlijst -= component
+TypeError: unsupported operand type(s) for -=: 'QuerySet' and 'Processoren'
+[27/Nov/2014 17:25:07] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 128, in processoren
+    processorenlijst = stock(Processoren, "morgen")
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 312, in stock
+    objectlijst -= component
+TypeError: unsupported operand type(s) for -=: 'TopLevelDocumentMetaclass' and 'Processoren'
+[27/Nov/2014 17:25:57] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 129, in processoren
+    processorenlijst = stock(processorenlijst, "morgen")
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 309, in stock
+    componentenlijst = objects
+NameError: global name 'objects' is not defined
+[27/Nov/2014 17:26:07] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 129, in processoren
+    processorenlijst = stock(processorenlijst, "morgen")
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 314, in stock
+    objectlijst -= component
+TypeError: unsupported operand type(s) for -=: 'QuerySet' and 'Processoren'
+[27/Nov/2014 17:26:15] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 129, in processoren
+    processorenlijst = stock(processorenlijst, "morgen")
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 313, in stock
+    objectlijst -= component
+TypeError: unsupported operand type(s) for -=: 'QuerySet' and 'Processoren'
+[27/Nov/2014 17:26:16] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 129, in processoren
+    processorenlijst = stock(processorenlijst, "morgen")
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 313, in stock
+    objectlijst -= component
+TypeError: unsupported operand type(s) for -=: 'QuerySet' and 'Processoren'
+>>>>>>> dc1ce95249218cc7fcbd0cd42d88676fbd301ad6

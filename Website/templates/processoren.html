@@ -81,13 +81,14 @@ $('.slider').Link('upper').to($('#sliderMaxValue'));
         <div class="panel-body">
 
             <div class="panel panel-default">
-                <div class="panel-heading toggle">Panel heading   <div class="pull-right"><span class="switcher dropup"><span class="caret"></span></span> </div></div>
+                <div class="panel-heading toggle">Levertijd   <div class="pull-right"><span class="switcher dropup"><span class="caret"></span></span> </div></div>
                 <div class="panel-body body-toggled">
-
                     <div class="checkbox customcheck">
                         <label>
-                            <input type="checkbox"> Checkbox
+                            <!--Checbox value on click via ajax naar views -->
+                                <input type="checkbox" value="morgen" action="processoren/" id="stockCheck" onChange="stock()"> Direct leveraar
                         </label>
+
                     </div>
                     <div class="checkbox customcheck">
                         <label>
@@ -152,7 +153,7 @@ $('.slider').Link('upper').to($('#sliderMaxValue'));
 
 </div>
 
-    <div class="col-md-8 col-lg-9">
+    <div class="col-md-8 col-lg-9" id="productList">
     
         <div class=" top-margin ">
             <h1>{{Componenten.categorie.0|truncatewords:1|slice:"-4" }}</h1>
