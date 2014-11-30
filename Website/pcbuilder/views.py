@@ -1,9 +1,12 @@
 from django.shortcuts import render_to_response
+from django.template.loader import render_to_string
 from django.shortcuts import HttpResponseRedirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.template import RequestContext
 from django.template import loader
 from django.http import HttpResponse
+from bson.json_util import dumps
+import json as simplejson
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding
 import logging
 import json
@@ -128,15 +131,12 @@ def processoren(request):
     processorenlijst = Processoren.objects
 
 
-    #levering afhankelijk van filters
-    levering = filters(request)
     
     #overgebleven componentenlijst afhankelijk van stock
     #Dit dient later afhaneklijk te worden van alle filters
-    processorenlijst = stock(Processoren.objects, levering)
+    processorenlijst = filters(request,processorenlijst)
 
     for processoren in processorenlijst:
-        #
         diestringnaam = processoren.prijs[0]
         if float(diestringnaam) < float(minPriceSliderValue):
             minPriceSliderValue = diestringnaam
@@ -149,7 +149,13 @@ def processoren(request):
     bereik, diff = paginas(processorenlijst, processoren)
 
     print "werkt bijna"
-    return render_to_response('processoren.html', {'Componenten': processoren, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue },
+    if request.method == 'POST':
+        json = {}
+        json['Componenten'] = render_to_string('processoren.html', {'Componenten': processoren, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue }, context_instance=RequestContext(request))
+        json = dumps(json)
+        return HttpResponse(json,content_type="application/json")
+    else:
+        return render_to_response('processoren.html', {'Componenten': processoren, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue },
                               context_instance=RequestContext(request))
 
 def behuizingen(request):
@@ -313,17 +319,15 @@ def paginas(componentenlijst, componenten):
 
     return bereik, diff
 
-def filters(request):
+def filters(request, objectlijst):
     #checkt of stock filter checked is
     if request.method == 'POST':
         #leveringsfilter afhankelijk van checkboxes
-        print "meh"
-        levering = "morgen"
-        return levering
-    #anders alles meegeven
-    else:
-        levering = "alles"
-        return levering
+        if request.POST.get('stock') == 'morgen':
+            levering = "morgen"
+            objectlijst = stock(objectlijst,levering)
+    return objectlijst
+
 
 
 def stock(objectlijst, levering):
