@@ -29,6 +29,9 @@ class PccrawlerPipeline(object):
 				db = connection[settings['MONGODB_DB']]
 
 				def pleurindedb(collectionName):
+					if u'\u20ac' in item["prijs"][0]:
+						item["prijs"][0] = item["prijs"][0][2:]
+					log.msg(item["prijs"][0])
 					self.collection.insert(dict(item))
 					log.msg("Item wrote to MongoDB database %s/%s/%s" %
 			    	(settings['MONGODB_DB'], collectionName, item['categorie']),
@@ -52,48 +55,48 @@ class PccrawlerPipeline(object):
 				langeNaam = item["categorie"][0]
 				if ("Processoren" or "CPU" or "Processors") in langeNaam:
 					self.collection = db["processoren"]
-					for e in self.collection.find({"ean": item["ean"] }):					
+					if self.collection.find({"ean": item["ean"] }):					
 						addToList(item)
 
 					collectienaam = "processoren"
 				elif ("Moederbord" or "moederborden") in langeNaam:
 					self.collection = db["moederborden"]
-					for e in self.collection.find({"ean": item["ean"] }):
+					if  self.collection.find({"ean": item["ean"] }):
 						addToList(item)
 					collectienaam = "moederborden"
 				elif ("Koeling" or "Koelers" or "Processorkoeling" or "Koelers") in langeNaam:
 					self.collection = db["koeling"]
-					for e in self.collection.find({"ean": item["ean"] }):
+					if  self.collection.find({"ean": item["ean"] }):
 						addToList(item)
 					collectienaam = "koeling"
 				elif ("Behuizingen" or "Barebones" or "Barebone") in langeNaam:
 					self.collection = db["behuizingen"]
-					for e in self.collection.find({"ean": item["ean"] }):
+					if self.collection.find({"ean": item["ean"] }):
 						addToList(item)
 					collectienaam = "behuizingen"
 				elif ("Grafische" or "GPU" or "Videokaarten" or "Videokaart") in langeNaam:
 					self.collection = db["grafische"]
-					for e in self.collection.find({"ean": item["ean"] }):
+					if self.collection.find({"ean": item["ean"] }):
 						addToList(item)
 					collectienaam = "grafische"
 				elif ("Harde" or "Geheugen intern" or "Interne") in langeNaam:
 					self.collection = db["harde"]
-					for e in self.collection.find({"ean": item["ean"] }):
+					if self.collection.find({"ean": item["ean"] }):
 						addToList(item)
 					collectienaam = "harde"
 				elif ("DVD" or "dvd") in langeNaam:
 					self.collection = db["dvd"]
-					for e in self.collection.find({"ean": item["ean"] }):
+					if self.collection.find({"ean": item["ean"] }):
 						addToList(item)
 					collectienaam = "dvd"
 				elif ("Geheugen" or "RAM") in langeNaam:
 					self.collection = db["geheugen"]
-					for e in self.collection.find({"ean": item["ean"] }):
+					if self.collection.find({"ean": item["ean"] }):
 						addToList(item)
 					collectienaam = "geheugen"
 				elif ("Voeding" or "Voedingen") in langeNaam:
 					self.collection = db["voeding"]
-					for e in self.collection.find({"ean": item["ean"] }):
+					if self.collection.find({"ean": item["ean"] }):
 						addToList(item)
 					collectienaam = "voeding"
 				else:

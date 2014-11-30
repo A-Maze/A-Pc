@@ -136,7 +136,8 @@ def processoren(request):
     processorenlijst = stock(Processoren.objects, levering)
 
     for processoren in processorenlijst:
-        diestringnaam = processoren.prijs[0].translate("\u20AC")
+        #
+        diestringnaam = processoren.prijs[0]
         if float(diestringnaam) < float(minPriceSliderValue):
             minPriceSliderValue = diestringnaam
         elif float(diestringnaam) > float(maxPriceSliderValue):

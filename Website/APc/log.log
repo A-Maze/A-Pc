@@ -1,5 +1,32 @@
-<<<<<<< HEAD
-[28/Nov/2014 11:50:17] ERROR [django.request:231] Internal Server Error: /processoren/
+[30/Nov/2014 11:51:17] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:51:46] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    #processoren = json.dumps(list(uniArray))
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:55:08] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:55:52] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs.translate("\u20AC")
+AttributeError: 'list' object has no attribute 'translate'
+[30/Nov/2014 11:56:07] ERROR [django.request:231] Internal Server Error: /processoren/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
     resolver_match = resolver.resolve(request.path_info)
@@ -15,936 +42,378 @@ Traceback (most recent call last):
     mod = import_module(mod_name)
   File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
     __import__(name)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 121
-SyntaxError: Non-ASCII character '\xe2' in file /home/rik/A-Pc/Website/pcbuilder/views.py on line 121, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-[28/Nov/2014 11:50:17] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 121
-SyntaxError: Non-ASCII character '\xe2' in file /home/rik/A-Pc/Website/pcbuilder/views.py on line 121, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-[28/Nov/2014 11:50:17] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 121
-SyntaxError: Non-ASCII character '\xe2' in file /home/rik/A-Pc/Website/pcbuilder/views.py on line 121, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-[28/Nov/2014 11:50:18] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 121
-SyntaxError: Non-ASCII character '\xe2' in file /home/rik/A-Pc/Website/pcbuilder/views.py on line 121, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
-[28/Nov/2014 11:50:48] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[28/Nov/2014 11:50:50] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[28/Nov/2014 11:51:15] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[28/Nov/2014 11:51:15] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[28/Nov/2014 11:51:22] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[28/Nov/2014 11:51:41] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[28/Nov/2014 11:51:42] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[28/Nov/2014 11:51:42] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[28/Nov/2014 11:51:42] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[28/Nov/2014 11:51:43] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[28/Nov/2014 11:51:43] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[28/Nov/2014 11:51:43] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[28/Nov/2014 11:51:50] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[28/Nov/2014 11:51:54] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[28/Nov/2014 11:51:54] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[28/Nov/2014 11:51:55] ERROR [django.request:231] Internal Server Error: /processoren/
-=======
-[27/Nov/2014 13:15:38] INFO [root:121] 449.0
-[27/Nov/2014 13:15:38] INFO [root:121] 319.0
-[27/Nov/2014 13:15:38] INFO [root:121] 224.9
-[27/Nov/2014 13:15:38] INFO [root:121] 222.9
-[27/Nov/2014 13:15:38] INFO [root:121] 1579.0
-[27/Nov/2014 13:15:38] INFO [root:121] 64.9
-[27/Nov/2014 13:15:38] INFO [root:121] 359.0
-[27/Nov/2014 13:15:38] INFO [root:121] 689.0
-[27/Nov/2014 13:15:38] INFO [root:121] 669.0
-[27/Nov/2014 13:15:38] INFO [root:121] 1499.0
-[27/Nov/2014 13:15:38] INFO [root:121] 439.0
-[27/Nov/2014 13:15:38] INFO [root:121] 319.0
-[27/Nov/2014 13:15:38] INFO [root:121] 619.0
-[27/Nov/2014 13:15:38] INFO [root:121] 227.9
-[27/Nov/2014 13:15:38] INFO [root:121] 3579.0
-[27/Nov/2014 13:15:38] INFO [root:121] 3929.0
-[27/Nov/2014 13:15:38] INFO [root:121] 2979.0
-[27/Nov/2014 13:15:38] INFO [root:121] 1329.0
-[27/Nov/2014 13:15:38] INFO [root:121] 1599.0
-[27/Nov/2014 13:15:38] INFO [root:121] 1129.0
-[27/Nov/2014 13:15:38] INFO [root:121] 2629.0
-[27/Nov/2014 13:15:38] INFO [root:121] 619.0
-[27/Nov/2014 13:15:38] INFO [root:121] 2229.0
-[27/Nov/2014 13:15:38] INFO [root:121] 2129.0
-[27/Nov/2014 13:15:38] INFO [root:121] 1849.0
-[27/Nov/2014 13:15:38] INFO [root:121] 1729.0
-[27/Nov/2014 13:15:38] INFO [root:121] 1679.0
-[27/Nov/2014 13:15:38] INFO [root:121] 1579.0
-[27/Nov/2014 13:15:38] INFO [root:121] 1549.0
-[27/Nov/2014 13:15:38] INFO [root:121] 1429.0
-[27/Nov/2014 13:15:38] INFO [root:121] 1229.0
-[27/Nov/2014 13:15:38] INFO [root:121] 1279.0
-[27/Nov/2014 13:15:38] INFO [root:121] 1429.0
-[27/Nov/2014 13:15:38] INFO [root:121] 969.0
-[27/Nov/2014 13:15:38] INFO [root:121] 939.0
-[27/Nov/2014 13:15:38] INFO [root:121] 669.0
-[27/Nov/2014 13:15:38] INFO [root:121] 669.0
-[27/Nov/2014 13:15:38] INFO [root:121] 449.0
-[27/Nov/2014 13:15:38] INFO [root:121] 319.0
-[27/Nov/2014 13:15:38] INFO [root:121] 1829.0
-[27/Nov/2014 13:15:38] INFO [root:121] 222.9
-[27/Nov/2014 13:15:38] INFO [root:121] 224.9
-[27/Nov/2014 13:15:38] INFO [root:121] 1149.0
-[27/Nov/2014 13:15:38] INFO [root:121] 1579.0
-[27/Nov/2014 13:15:38] INFO [root:121] 1329.0
-[27/Nov/2014 13:15:38] INFO [root:121] 1579.0
-[27/Nov/2014 13:15:38] INFO [root:121] 1229.0
-[27/Nov/2014 13:15:38] INFO [root:121] 919.0
-[27/Nov/2014 13:15:38] INFO [root:121] 424.0
-[27/Nov/2014 13:15:38] INFO [root:121] 599.0
-[27/Nov/2014 13:15:38] INFO [root:121] 274.0
-[27/Nov/2014 13:15:38] INFO [root:121] 212.9
-[27/Nov/2014 13:15:38] INFO [root:121] 669.0
-[27/Nov/2014 13:15:38] INFO [root:121] 374.0
-[27/Nov/2014 13:15:38] INFO [root:121] 374.0
-[27/Nov/2014 13:15:38] INFO [root:121] 329.0
-[27/Nov/2014 13:15:38] INFO [root:121] 254.0
-[27/Nov/2014 13:15:38] INFO [root:121] 294.0
-[27/Nov/2014 13:15:38] INFO [root:121] 254.0
-[27/Nov/2014 13:15:38] INFO [root:121] 359.0
-[27/Nov/2014 13:15:38] INFO [root:121] 239.9
-[27/Nov/2014 13:15:38] INFO [root:121] 379.0
-[27/Nov/2014 13:15:38] INFO [root:121] 349.0
-[27/Nov/2014 13:15:38] INFO [root:121] 299.0
-[27/Nov/2014 13:15:38] INFO [root:121] 217.9
-[27/Nov/2014 13:15:38] INFO [root:121] 284.0
-[27/Nov/2014 13:15:38] INFO [root:121] 299.0
-[27/Nov/2014 13:15:38] INFO [root:121] 269.0
-[27/Nov/2014 13:15:38] INFO [root:121] 229.9
-[27/Nov/2014 13:15:38] INFO [root:121] 274.0
-[27/Nov/2014 13:15:38] INFO [root:121] 242.9
-[27/Nov/2014 13:15:38] INFO [root:121] 217.9
-[27/Nov/2014 13:15:38] INFO [root:121] 379.0
-[27/Nov/2014 13:15:38] INFO [root:121] 349.0
-[27/Nov/2014 13:15:38] INFO [root:121] 299.0
-[27/Nov/2014 13:15:38] INFO [root:121] 284.0
-[27/Nov/2014 13:15:38] INFO [root:121] 274.0
-[27/Nov/2014 13:15:38] INFO [root:121] 269.0
-[27/Nov/2014 13:15:38] INFO [root:121] 229.9
-[27/Nov/2014 13:15:38] INFO [root:121] 242.9
-[27/Nov/2014 13:15:38] INFO [root:121] 217.9
-[27/Nov/2014 13:15:38] INFO [root:121] 299.0
-[27/Nov/2014 13:15:38] INFO [root:121] 374.0
-[27/Nov/2014 13:15:38] INFO [root:121] 329.0
-[27/Nov/2014 13:15:38] INFO [root:121] 374.0
-[27/Nov/2014 13:15:38] INFO [root:121] 294.0
-[27/Nov/2014 13:15:38] INFO [root:121] 254.0
-[27/Nov/2014 13:15:38] INFO [root:121] 254.0
-[27/Nov/2014 13:15:38] INFO [root:121] 919.0
-[27/Nov/2014 13:15:38] INFO [root:121] 239.9
-[27/Nov/2014 13:15:38] INFO [root:121] 217.9
-[27/Nov/2014 13:15:38] INFO [root:121] 1229.0
-[27/Nov/2014 13:15:38] INFO [root:121] 599.0
-[27/Nov/2014 13:15:38] INFO [root:121] 424.0
-[27/Nov/2014 13:15:38] INFO [root:121] 274.0
-[27/Nov/2014 13:15:38] INFO [root:121] 1829.0
-[27/Nov/2014 13:15:38] INFO [root:121] 212.9
-[27/Nov/2014 13:15:38] INFO [root:121] 1579.0
-[27/Nov/2014 13:15:38] INFO [root:121] 1329.0
-[27/Nov/2014 13:15:38] INFO [root:121] 96.9
-[27/Nov/2014 13:15:38] INFO [root:121] 59.9
-[27/Nov/2014 13:15:38] INFO [root:121] 137.9
-[27/Nov/2014 13:15:38] INFO [root:121] 147.9
-[27/Nov/2014 13:15:38] INFO [root:121] 76.9
-[27/Nov/2014 13:15:38] INFO [root:121] 147.9
-[27/Nov/2014 13:15:38] INFO [root:121] 96.9
-[27/Nov/2014 13:15:38] INFO [root:121] 72.9
-[27/Nov/2014 13:15:38] INFO [root:121] 91.9
-[27/Nov/2014 13:15:38] INFO [root:121] 81.9
-[27/Nov/2014 13:15:38] INFO [root:121] 52.9
-[27/Nov/2014 13:15:38] INFO [root:121] 37.99
-[27/Nov/2014 13:15:38] INFO [root:121] 999.0
-[27/Nov/2014 13:15:38] INFO [root:124] 999.0
-[27/Nov/2014 13:15:38] INFO [root:121] 224.9
-[27/Nov/2014 13:15:38] INFO [root:121] 93.9
-[27/Nov/2014 13:15:38] INFO [root:121] 989.0
-[27/Nov/2014 13:15:38] INFO [root:121] 66.9
-[27/Nov/2014 13:15:38] INFO [root:121] 129.9
-[27/Nov/2014 13:15:38] INFO [root:121] 122.9
-[27/Nov/2014 13:15:38] INFO [root:121] 109.9
-[27/Nov/2014 13:15:38] INFO [root:121] 54.9
-[27/Nov/2014 13:15:38] INFO [root:121] 43.49
-[27/Nov/2014 13:15:38] INFO [root:121] 96.9
-[27/Nov/2014 13:15:38] INFO [root:121] 59.9
-[27/Nov/2014 13:15:38] INFO [root:121] 147.9
-[27/Nov/2014 13:15:38] INFO [root:121] 137.9
-[27/Nov/2014 13:15:38] INFO [root:121] 147.9
-[27/Nov/2014 13:15:38] INFO [root:121] 91.9
-[27/Nov/2014 13:15:38] INFO [root:121] 72.9
-[27/Nov/2014 13:15:38] INFO [root:121] 96.9
-[27/Nov/2014 13:15:38] INFO [root:121] 81.9
-[27/Nov/2014 13:15:38] INFO [root:121] 52.9
-[27/Nov/2014 13:15:38] INFO [root:121] 76.9
-[27/Nov/2014 13:15:38] INFO [root:121] 51.9
-[27/Nov/2014 13:15:38] INFO [root:121] 48.99
-[27/Nov/2014 13:15:38] INFO [root:121] 41.49
-[27/Nov/2014 13:15:38] INFO [root:121] 38.99
-[27/Nov/2014 13:15:38] INFO [root:121] 31.99
-[27/Nov/2014 13:15:38] INFO [root:121] 31.99
-[27/Nov/2014 13:15:38] INFO [root:121] 30.99
-[27/Nov/2014 13:15:38] INFO [root:121] 127.9
-[27/Nov/2014 13:15:38] INFO [root:121] 93.9
-[27/Nov/2014 13:15:38] INFO [root:121] 224.9
-[27/Nov/2014 13:15:38] INFO [root:121] 202.9
-[27/Nov/2014 13:15:38] INFO [root:121] 199.9
-[27/Nov/2014 13:15:38] INFO [root:121] 202.9
-[27/Nov/2014 13:15:38] INFO [root:121] 147.9
-[27/Nov/2014 13:15:38] INFO [root:121] 132.9
-[27/Nov/2014 13:15:38] INFO [root:121] 164.9
-[27/Nov/2014 13:15:38] INFO [root:121] 119.9
-[27/Nov/2014 13:15:38] INFO [root:121] 96.9
-[27/Nov/2014 13:15:38] INFO [root:121] 37.99
-[27/Nov/2014 13:15:38] INFO [root:121] 32.99
-[27/Nov/2014 13:15:38] INFO [root:121] 99.9
-[27/Nov/2014 13:15:38] INFO [root:121] 58.9
-[27/Nov/2014 13:15:38] INFO [root:121] 78.9
-[27/Nov/2014 13:15:38] INFO [root:121] 47.99
-[27/Nov/2014 13:15:38] INFO [root:121] 81.9
-[27/Nov/2014 13:15:38] INFO [root:121] 81.9
-[27/Nov/2014 13:15:38] INFO [root:121] 93.9
-[27/Nov/2014 13:15:38] INFO [root:121] 64.9
-[27/Nov/2014 13:15:38] INFO [root:121] 66.9
-[27/Nov/2014 13:15:38] INFO [root:121] 64.9
-[27/Nov/2014 13:15:38] INFO [root:121] 57.9
-[27/Nov/2014 13:15:38] INFO [root:121] 53.9
-[27/Nov/2014 13:15:38] INFO [root:121] 309.0
-[27/Nov/2014 13:15:38] INFO [root:121] 299.0
-[27/Nov/2014 13:15:38] INFO [root:121] 324.0
-[27/Nov/2014 13:15:38] INFO [root:121] 304.0
-[27/Nov/2014 13:15:38] INFO [root:121] 319.0
-[27/Nov/2014 13:15:38] INFO [root:121] 222.9
-[27/Nov/2014 13:15:38] INFO [root:121] 299.0
-[27/Nov/2014 13:15:38] INFO [root:121] 989.0
-[27/Nov/2014 13:15:38] INFO [root:121] 329.0
-[27/Nov/2014 13:15:38] INFO [root:121] 374.0
-[27/Nov/2014 13:15:38] INFO [root:121] 549.0
-[27/Nov/2014 13:15:38] INFO [root:121] 999.0
-[27/Nov/2014 13:15:38] INFO [root:121] 549.0
-[27/Nov/2014 13:15:38] INFO [root:121] 314.0
-[27/Nov/2014 13:15:38] INFO [root:121] 579.0
-[27/Nov/2014 13:15:38] INFO [root:121] 294.0
-[27/Nov/2014 13:15:38] INFO [root:121] 66.9
-[27/Nov/2014 13:15:38] INFO [root:121] 53.9
-[27/Nov/2014 13:15:38] INFO [root:121] 284.0
-[27/Nov/2014 13:15:38] INFO [root:121] 339.0
-[27/Nov/2014 13:15:38] INFO [root:121] 232.9
-[27/Nov/2014 13:15:38] INFO [root:121] 199.9
-[27/Nov/2014 13:15:38] INFO [root:121] 214.9
-[27/Nov/2014 13:15:38] INFO [root:121] 182.9
-[27/Nov/2014 13:15:38] INFO [root:121] 189.9
-[27/Nov/2014 13:15:38] INFO [root:121] 114.9
-[27/Nov/2014 13:15:38] INFO [root:121] 144.9
-[27/Nov/2014 13:15:38] INFO [root:121] 124.9
-[27/Nov/2014 13:15:38] INFO [root:121] 93.9
-[27/Nov/2014 13:15:38] INFO [root:121] 81.9
-[27/Nov/2014 13:15:38] INFO [root:121] 81.9
-[27/Nov/2014 13:15:38] INFO [root:121] 93.9
-[27/Nov/2014 13:15:38] INFO [root:121] 64.9
-[27/Nov/2014 13:15:38] INFO [root:121] 66.9
-[27/Nov/2014 13:15:38] INFO [root:121] 64.9
-[27/Nov/2014 13:15:38] INFO [root:121] 57.9
-[27/Nov/2014 13:15:38] INFO [root:121] 53.9
-[27/Nov/2014 13:15:38] INFO [root:121] 309.0
-[27/Nov/2014 13:15:38] INFO [root:121] 319.0
-[27/Nov/2014 13:15:38] INFO [root:121] 299.0
-[27/Nov/2014 13:15:38] INFO [root:121] 324.0
-[27/Nov/2014 13:15:38] INFO [root:121] 304.0
-[27/Nov/2014 13:15:38] INFO [root:121] 329.0
-[27/Nov/2014 13:15:38] INFO [root:121] 299.0
-[27/Nov/2014 13:15:38] INFO [root:121] 222.9
-[27/Nov/2014 13:15:38] INFO [root:121] 224.9
-[27/Nov/2014 13:15:38] INFO [root:121] 212.9
-[27/Nov/2014 13:15:38] INFO [root:121] 199.9
-[27/Nov/2014 13:15:38] INFO [root:121] 212.9
-[27/Nov/2014 13:15:38] INFO [root:121] 224.9
-[27/Nov/2014 13:15:38] INFO [root:121] 187.9
-[27/Nov/2014 13:15:38] INFO [root:121] 194.9
-[27/Nov/2014 13:15:38] INFO [root:121] 192.9
-[27/Nov/2014 13:15:38] INFO [root:121] 182.9
-[27/Nov/2014 13:15:38] INFO [root:121] 154.9
-[27/Nov/2014 13:15:38] INFO [root:121] 177.9
-[27/Nov/2014 13:15:38] INFO [root:121] 184.9
-[27/Nov/2014 13:15:38] INFO [root:121] 144.9
-[27/Nov/2014 13:15:38] INFO [root:121] 144.9
-[27/Nov/2014 13:15:38] INFO [root:121] 157.9
-[27/Nov/2014 13:15:38] INFO [root:121] 224.9
-[27/Nov/2014 13:15:38] INFO [root:121] 212.9
-[27/Nov/2014 13:15:38] INFO [root:121] 212.9
-[27/Nov/2014 13:15:38] INFO [root:121] 199.9
-[27/Nov/2014 13:15:38] INFO [root:121] 224.9
-[27/Nov/2014 13:15:38] INFO [root:121] 187.9
-[27/Nov/2014 13:15:38] INFO [root:121] 194.9
-[27/Nov/2014 13:15:38] INFO [root:121] 192.9
-[27/Nov/2014 13:15:38] INFO [root:121] 177.9
-[27/Nov/2014 13:15:38] INFO [root:121] 154.9
-[27/Nov/2014 13:15:38] INFO [root:121] 184.9
-[27/Nov/2014 13:15:38] INFO [root:121] 182.9
-[27/Nov/2014 13:15:38] INFO [root:121] 144.9
-[27/Nov/2014 13:15:38] INFO [root:121] 144.9
-[27/Nov/2014 13:15:38] INFO [root:121] 157.9
-[27/Nov/2014 13:15:38] INFO [root:121] 109.9
-[27/Nov/2014 13:15:38] INFO [root:121] 54.9
-[27/Nov/2014 13:15:38] INFO [root:121] 129.9
-[27/Nov/2014 13:15:38] INFO [root:121] 122.9
-[27/Nov/2014 13:15:38] INFO [root:121] 43.49
-[27/Nov/2014 13:15:38] INFO [root:121] 549.0
-[27/Nov/2014 13:15:38] INFO [root:121] 374.0
-[27/Nov/2014 13:15:38] INFO [root:121] 284.0
-[27/Nov/2014 13:15:38] INFO [root:121] 53.9
-[27/Nov/2014 13:15:38] INFO [root:121] 339.0
-[27/Nov/2014 13:15:38] INFO [root:121] 232.9
-[27/Nov/2014 13:15:38] INFO [root:121] 199.9
-[27/Nov/2014 13:15:38] INFO [root:121] 214.9
-[27/Nov/2014 13:15:38] INFO [root:121] 182.9
-[27/Nov/2014 13:15:38] INFO [root:121] 189.9
-[27/Nov/2014 13:15:38] INFO [root:121] 32.99
-[27/Nov/2014 13:15:38] INFO [root:121] 58.9
-[27/Nov/2014 13:15:38] INFO [root:121] 124.9
-[27/Nov/2014 13:15:38] INFO [root:121] 144.9
-[27/Nov/2014 13:15:38] INFO [root:121] 47.99
-[27/Nov/2014 13:15:38] INFO [root:121] 114.9
-[27/Nov/2014 13:15:38] INFO [root:121] 549.0
-[27/Nov/2014 13:15:38] INFO [root:121] 314.0
-[27/Nov/2014 13:15:38] INFO [root:121] 579.0
-[27/Nov/2014 13:15:38] INFO [root:121] 202.9
-[27/Nov/2014 13:15:38] INFO [root:121] 294.0
-[27/Nov/2014 13:15:38] INFO [root:121] 199.9
-[27/Nov/2014 13:15:38] INFO [root:121] 202.9
-[27/Nov/2014 13:15:38] INFO [root:121] 147.9
-[27/Nov/2014 13:15:38] INFO [root:121] 164.9
-[27/Nov/2014 13:15:38] INFO [root:121] 119.9
-[27/Nov/2014 13:15:38] INFO [root:121] 78.9
-[27/Nov/2014 13:15:38] INFO [root:121] 132.9
-[27/Nov/2014 13:15:38] INFO [root:121] 99.9
-[27/Nov/2014 13:15:38] INFO [root:121] 96.9
-[27/Nov/2014 13:15:38] INFO [root:121] 41.49
-[27/Nov/2014 13:15:38] INFO [root:121] 51.9
-[27/Nov/2014 13:15:38] INFO [root:121] 48.99
-[27/Nov/2014 13:15:38] INFO [root:121] 38.99
-[27/Nov/2014 13:15:38] INFO [root:121] 31.99
-[27/Nov/2014 13:15:38] INFO [root:121] 31.99
-[27/Nov/2014 13:15:38] INFO [root:121] 127.9
-[27/Nov/2014 13:15:38] INFO [root:121] 30.99
-[27/Nov/2014 13:15:38] INFO [root:121] 93.9
-[27/Nov/2014 13:15:38] INFO [root:121] 31.99
-[27/Nov/2014 13:16:32] INFO [root:124] 3579.0
-[27/Nov/2014 13:16:32] INFO [root:124] 3929.0
-[27/Nov/2014 13:16:32] INFO [root:124] 619.0
-[27/Nov/2014 13:16:32] INFO [root:124] 939.0
-[27/Nov/2014 13:16:32] INFO [root:124] 969.0
-[27/Nov/2014 13:16:32] INFO [root:124] 999.0
-[27/Nov/2014 13:16:33] INFO [root:124] 3579.0
-[27/Nov/2014 13:16:33] INFO [root:124] 3929.0
-[27/Nov/2014 13:16:33] INFO [root:124] 619.0
-[27/Nov/2014 13:16:33] INFO [root:124] 939.0
-[27/Nov/2014 13:16:33] INFO [root:124] 969.0
-[27/Nov/2014 13:16:33] INFO [root:124] 999.0
-[27/Nov/2014 13:16:35] INFO [root:124] 3579.0
-[27/Nov/2014 13:16:35] INFO [root:124] 3929.0
-[27/Nov/2014 13:16:35] INFO [root:124] 619.0
-[27/Nov/2014 13:16:35] INFO [root:124] 939.0
-[27/Nov/2014 13:16:35] INFO [root:124] 969.0
-[27/Nov/2014 13:16:35] INFO [root:124] 999.0
-[27/Nov/2014 13:17:45] ERROR [django.request:231] Internal Server Error: /processoren/
->>>>>>> dc1ce95249218cc7fcbd0cd42d88676fbd301ad6
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
-<<<<<<< HEAD
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[28/Nov/2014 11:51:55] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[28/Nov/2014 11:51:58] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[28/Nov/2014 11:51:58] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[28/Nov/2014 11:51:58] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[28/Nov/2014 11:51:59] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[28/Nov/2014 11:51:59] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[28/Nov/2014 11:52:31] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:26:58] WARNING [django.request:143] Not Found: /favicon.ico
-[30/Nov/2014 11:27:02] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 122, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-=======
-    if int(processoren.prijs[0]) < int(minPriceSliderValue):
-ValueError: invalid literal for int() with base 10: '3579.0'
-[27/Nov/2014 13:17:59] INFO [root:124] 1149.0
-[27/Nov/2014 13:17:59] INFO [root:124] 1129.0
-[27/Nov/2014 13:17:59] INFO [root:124] 619.0
-[27/Nov/2014 13:17:59] INFO [root:124] 449.0
-[27/Nov/2014 13:17:59] INFO [root:124] 319.0
-[27/Nov/2014 13:17:59] INFO [root:124] 224.9
-[27/Nov/2014 13:17:59] INFO [root:124] 222.9
-[27/Nov/2014 13:17:59] INFO [root:124] 64.9
-[27/Nov/2014 13:17:59] INFO [root:124] 59.9
-[27/Nov/2014 13:17:59] INFO [root:124] 52.9
-[27/Nov/2014 13:17:59] INFO [root:124] 37.99
-[27/Nov/2014 13:17:59] INFO [root:124] 31.99
-[27/Nov/2014 13:17:59] INFO [root:124] 30.99
-<<<<<<< HEAD
-[27/Nov/2014 13:26:21] ERROR [django.request:231] Internal Server Error: /behuizingen/
-Traceback (most recent call last):
-  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 150, in behuizingen
-    if float(processoren.prijs[0]) < float(minPriceSliderValue):
-AttributeError: 'function' object has no attribute 'prijs'
-[27/Nov/2014 13:27:04] ERROR [django.request:231] Internal Server Error: /behuizingen/
-Traceback (most recent call last):
-  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 150, in behuizingen
-    if float(processoren.prijs[0]) < float(minPriceSliderValue):
-AttributeError: 'function' object has no attribute 'prijs'
-=======
-[27/Nov/2014 14:12:22] ERROR [django.request:240] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
-    if float(processoren.prijs[0]) < float(minPriceSliderValue):
-IndexError: list index out of range
-[27/Nov/2014 14:12:23] ERROR [django.request:240] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
-    if float(processoren.prijs[0]) < float(minPriceSliderValue):
-IndexError: list index out of range
-[27/Nov/2014 14:12:27] ERROR [django.request:240] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
-    if float(processoren.prijs[0]) < float(minPriceSliderValue):
-IndexError: list index out of range
-[27/Nov/2014 14:17:37] ERROR [django.request:240] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
-    if float(processoren.prijs[0]) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[27/Nov/2014 14:17:38] ERROR [django.request:240] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
-    if float(processoren.prijs[0]) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[27/Nov/2014 14:17:39] ERROR [django.request:240] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
-    if float(processoren.prijs[0]) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[27/Nov/2014 14:17:39] ERROR [django.request:240] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
-    if float(processoren.prijs[0]) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[27/Nov/2014 14:17:40] ERROR [django.request:240] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
-    if float(processoren.prijs[0]) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[27/Nov/2014 14:17:40] ERROR [django.request:240] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
-    if float(processoren.prijs[0]) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[27/Nov/2014 14:17:40] ERROR [django.request:240] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
-    if float(processoren.prijs[0]) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[27/Nov/2014 14:17:50] ERROR [django.request:240] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
-    if float(processoren.prijs[0]) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[27/Nov/2014 14:17:51] ERROR [django.request:240] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
-    if float(processoren.prijs[0]) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[27/Nov/2014 14:18:27] ERROR [django.request:240] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
-    if float(processoren.prijs[0]) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[27/Nov/2014 14:18:29] ERROR [django.request:240] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
-    if float(processoren.prijs[0]) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[27/Nov/2014 14:24:25] ERROR [django.request:240] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
-    if float(processoren.prijs[0]) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[27/Nov/2014 14:25:52] ERROR [django.request:240] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
-    if float(processoren.prijs[0]) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[27/Nov/2014 14:25:53] ERROR [django.request:240] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
-    if float(processoren.prijs[0]) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[27/Nov/2014 14:25:53] ERROR [django.request:240] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
-    if float(processoren.prijs[0]) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[27/Nov/2014 14:25:54] ERROR [django.request:240] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
-    if float(processoren.prijs[0]) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[27/Nov/2014 14:46:33] WARNING [django.request:163] Not Found: /processoren.
->>>>>>> 21a056782c80d6626a553bffd35ac63e004841f9
-[28/Nov/2014 16:05:35] ERROR [django.request:231] Internal Server Error: /
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 87, in get_response
-    response = middleware_method(request)
-  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/middleware.py", line 34, in process_request
-    if user and hasattr(user, 'get_session_auth_hash'):
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/functional.py", line 224, in inner
-    self._setup()
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/functional.py", line 357, in _setup
-    self._wrapped = self._setupfunc()
-  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/middleware.py", line 23, in <lambda>
-    request.user = SimpleLazyObject(lambda: get_user(request))
-  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/middleware.py", line 11, in get_user
-    request._cached_user = auth.get_user(request)
-  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/__init__.py", line 151, in get_user
-    user_id = request.session[SESSION_KEY]
-  File "/usr/local/lib/python2.7/dist-packages/django/contrib/sessions/backends/base.py", line 49, in __getitem__
-    return self._session[key]
-  File "/usr/local/lib/python2.7/dist-packages/django/contrib/sessions/backends/base.py", line 175, in _get_session
-    self._session_cache = self.load()
-  File "/usr/local/lib/python2.7/dist-packages/django/contrib/sessions/backends/db.py", line 21, in load
-    expire_date__gt=timezone.now()
-  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 92, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 351, in get
-    num = len(clone)
-  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 122, in __len__
-    self._fetch_all()
-  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 966, in _fetch_all
-    self._result_cache = list(self.iterator())
-  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 265, in iterator
-    for row in compiler.results_iter():
-  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 700, in results_iter
-    for rows in self.execute_sql(MULTI):
-  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 786, in execute_sql
-    cursor.execute(sql, params)
-  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/utils.py", line 81, in execute
-    return super(CursorDebugWrapper, self).execute(sql, params)
-  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/utils.py", line 65, in execute
-    return self.cursor.execute(sql, params)
-  File "/usr/local/lib/python2.7/dist-packages/django/db/utils.py", line 94, in __exit__
-    six.reraise(dj_exc_type, dj_exc_value, traceback)
-  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/utils.py", line 65, in execute
-    return self.cursor.execute(sql, params)
-  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/sqlite3/base.py", line 485, in execute
-    return Database.Cursor.execute(self, query, params)
-OperationalError: no such table: django_session
-[28/Nov/2014 16:05:36] ERROR [django.request:231] Internal Server Error: /favicon.ico
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 87, in get_response
-    response = middleware_method(request)
-  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/middleware.py", line 34, in process_request
-    if user and hasattr(user, 'get_session_auth_hash'):
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/functional.py", line 224, in inner
-    self._setup()
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/functional.py", line 357, in _setup
-    self._wrapped = self._setupfunc()
-  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/middleware.py", line 23, in <lambda>
-    request.user = SimpleLazyObject(lambda: get_user(request))
-  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/middleware.py", line 11, in get_user
-    request._cached_user = auth.get_user(request)
-  File "/usr/local/lib/python2.7/dist-packages/django/contrib/auth/__init__.py", line 151, in get_user
-    user_id = request.session[SESSION_KEY]
-  File "/usr/local/lib/python2.7/dist-packages/django/contrib/sessions/backends/base.py", line 49, in __getitem__
-    return self._session[key]
-  File "/usr/local/lib/python2.7/dist-packages/django/contrib/sessions/backends/base.py", line 175, in _get_session
-    self._session_cache = self.load()
-  File "/usr/local/lib/python2.7/dist-packages/django/contrib/sessions/backends/db.py", line 21, in load
-    expire_date__gt=timezone.now()
-  File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py", line 92, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 351, in get
-    num = len(clone)
-  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 122, in __len__
-    self._fetch_all()
-  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 966, in _fetch_all
-    self._result_cache = list(self.iterator())
-  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 265, in iterator
-    for row in compiler.results_iter():
-  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 700, in results_iter
-    for rows in self.execute_sql(MULTI):
-  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 786, in execute_sql
-    cursor.execute(sql, params)
-  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/utils.py", line 81, in execute
-    return super(CursorDebugWrapper, self).execute(sql, params)
-  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/utils.py", line 65, in execute
-    return self.cursor.execute(sql, params)
-  File "/usr/local/lib/python2.7/dist-packages/django/db/utils.py", line 94, in __exit__
-    six.reraise(dj_exc_type, dj_exc_value, traceback)
-  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/utils.py", line 65, in execute
-    return self.cursor.execute(sql, params)
-  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/sqlite3/base.py", line 485, in execute
-    return Database.Cursor.execute(self, query, params)
-OperationalError: no such table: django_session
-[28/Nov/2014 16:06:31] ERROR [django.request:231] Internal Server Error: /
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 127
-    <<<<<<< HEAD
-     ^
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140
+    diestringnaam = processoren.prijs[].translate("\u20AC")
+                                      ^
 SyntaxError: invalid syntax
-[28/Nov/2014 16:06:32] WARNING [django.request:143] Not Found: /favicon.ico
-[28/Nov/2014 16:18:58] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 134
-    if request.POST.get('stockCheck'):
-   ^
-IndentationError: unexpected indent
-[28/Nov/2014 16:19:17] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 204, in get_response
-    response = middleware_method(request, response)
-  File "/usr/local/lib/python2.7/dist-packages/django/middleware/clickjacking.py", line 31, in process_response
-    if response.get('X-Frame-Options', None) is not None:
-AttributeError: 'str' object has no attribute 'get'
-[28/Nov/2014 16:25:24] ERROR [django.request:231] Internal Server Error: /processoren/
+[30/Nov/2014 11:56:13] ERROR [django.request:231] Internal Server Error: /processoren/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 138, in processoren
-    for processoren in processorenlijst:
-TypeError: 'NoneType' object is not iterable
-[28/Nov/2014 16:25:44] ERROR [django.request:231] Internal Server Error: /processoren/
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[1].translate("\u20AC")
+IndexError: list index out of range
+[30/Nov/2014 11:56:24] ERROR [django.request:231] Internal Server Error: /processoren/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 138, in processoren
-    for processoren in processorenlijst:
-TypeError: 'NoneType' object is not iterable
-[28/Nov/2014 16:26:18] ERROR [django.request:231] Internal Server Error: /processoren/
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0].translate("\u20AC")
+IndexError: list index out of range
+[30/Nov/2014 11:56:26] ERROR [django.request:231] Internal Server Error: /processoren/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 138, in processoren
-    for processoren in processorenlijst:
-TypeError: 'NoneType' object is not iterable
-[28/Nov/2014 16:26:19] ERROR [django.request:231] Internal Server Error: /processoren/
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0].translate("\u20AC")
+IndexError: list index out of range
+[30/Nov/2014 11:56:27] ERROR [django.request:231] Internal Server Error: /processoren/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 138, in processoren
-    for processoren in processorenlijst:
-TypeError: 'NoneType' object is not iterable
-[28/Nov/2014 16:37:01] ERROR [django.request:231] Internal Server Error: /processoren/processoren/
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0].translate("\u20AC")
+IndexError: list index out of range
+[30/Nov/2014 11:56:41] ERROR [django.request:231] Internal Server Error: /processoren/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 138, in processoren
-    for processoren in processorenlijst:
-TypeError: 'NoneType' object is not iterable
-[28/Nov/2014 16:41:29] ERROR [django.request:231] Internal Server Error: /processoren/processoren/
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:56:42] ERROR [django.request:231] Internal Server Error: /processoren/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 138, in processoren
-    for processoren in processorenlijst:
-TypeError: 'NoneType' object is not iterable
-[28/Nov/2014 16:42:22] ERROR [django.request:231] Internal Server Error: /processoren/processoren/
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:56:42] ERROR [django.request:231] Internal Server Error: /processoren/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 138, in processoren
-    for processoren in processorenlijst:
-TypeError: 'NoneType' object is not iterable
-[28/Nov/2014 16:43:31] ERROR [django.request:231] Internal Server Error: /processoren/processoren/
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:56:43] ERROR [django.request:231] Internal Server Error: /processoren/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 138, in processoren
-    for processoren in processorenlijst:
-TypeError: 'NoneType' object is not iterable
-[28/Nov/2014 16:44:37] ERROR [django.request:231] Internal Server Error: /processoren/
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:56:43] ERROR [django.request:231] Internal Server Error: /processoren/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 138, in processoren
-    for processoren in processorenlijst:
-TypeError: 'NoneType' object is not iterable
-[28/Nov/2014 16:44:41] ERROR [django.request:231] Internal Server Error: /processoren/
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:56:44] ERROR [django.request:231] Internal Server Error: /processoren/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 138, in processoren
-    for processoren in processorenlijst:
-TypeError: 'NoneType' object is not iterable
-[28/Nov/2014 16:44:46] ERROR [django.request:231] Internal Server Error: /processoren/
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:56:44] ERROR [django.request:231] Internal Server Error: /processoren/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 138, in processoren
-    for processoren in processorenlijst:
-TypeError: 'NoneType' object is not iterable
-[28/Nov/2014 16:44:52] ERROR [django.request:231] Internal Server Error: /processoren/
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:56:44] ERROR [django.request:231] Internal Server Error: /processoren/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 138, in processoren
-    for processoren in processorenlijst:
-TypeError: 'NoneType' object is not iterable
-[28/Nov/2014 16:45:23] ERROR [django.request:231] Internal Server Error: /processoren/
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:56:45] ERROR [django.request:231] Internal Server Error: /processoren/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 138, in processoren
-    for processoren in processorenlijst:
-TypeError: 'NoneType' object is not iterable
->>>>>>> dc1ce95249218cc7fcbd0cd42d88676fbd301ad6
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:57:51] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:57:52] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:57:52] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:57:52] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:57:53] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:57:53] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:57:53] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:57:53] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:57:54] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:58:07] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:59:17] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:59:54] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:59:55] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:59:55] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:59:55] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:59:56] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:59:56] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:59:56] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:59:56] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:59:57] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:59:57] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:59:57] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:59:57] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:59:57] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 11:59:58] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 12:00:51] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0].translate( None, u'\u20ac')
+TypeError: translate() takes exactly one argument (2 given)
+[30/Nov/2014 12:00:52] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0].translate( None, u'\u20ac')
+TypeError: translate() takes exactly one argument (2 given)
+[30/Nov/2014 12:00:52] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0].translate( None, u'\u20ac')
+TypeError: translate() takes exactly one argument (2 given)
+[30/Nov/2014 12:00:52] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0].translate( None, u'\u20ac')
+TypeError: translate() takes exactly one argument (2 given)
+[30/Nov/2014 12:00:53] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0].translate( None, u'\u20ac')
+TypeError: translate() takes exactly one argument (2 given)
+[30/Nov/2014 12:00:53] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0].translate( None, u'\u20ac')
+TypeError: translate() takes exactly one argument (2 given)
+[30/Nov/2014 12:00:54] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0].translate( None, u'\u20ac')
+TypeError: translate() takes exactly one argument (2 given)
+[30/Nov/2014 12:00:54] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0].translate( None, u'\u20ac')
+TypeError: translate() takes exactly one argument (2 given)
+[30/Nov/2014 12:00:54] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0].translate( None, u'\u20ac')
+TypeError: translate() takes exactly one argument (2 given)
+[30/Nov/2014 12:00:54] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0].translate( None, u'\u20ac')
+TypeError: translate() takes exactly one argument (2 given)
+[30/Nov/2014 12:00:55] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0].translate( None, u'\u20ac')
+TypeError: translate() takes exactly one argument (2 given)
+[30/Nov/2014 12:00:55] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0].translate( None, u'\u20ac')
+TypeError: translate() takes exactly one argument (2 given)
+[30/Nov/2014 12:01:24] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 12:46:34] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
+[30/Nov/2014 12:46:36] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
+    if float(diestringnaam) < float(minPriceSliderValue):
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string

@@ -34,12 +34,12 @@ class AzertySpider(CrawlSpider):
             link.append(response.url)
             herkomst.append("azerty")
             
-
+            prijs = sel.xpath('//*[@id="_producten_product_detail"]/div[1]/div[2]/div[2]/div[1]/div[2]/div/span[1]/text()').extract()
             item['naam'] =  sel.xpath('//h1[@class="artikel"]/text()').extract()
             item['subnaam'] = sel.xpath('//*[@id="_producten_product_detail"]/div[1]/div[1]/div[1]/div/h2').extract()
             item['stock'] = sel.xpath('//*[@id="_producten_product_detail"]/div[1]/div[2]/div[2]/div[1]/div[2]/div/div/text()').extract()
             item['categorie'] = sel.xpath('//*[@id="product-detail-left-menu"]/div[2]/div/ul/li/ul/li[@class="node open group"]/a/text()').extract()
-            item['prijs'] = sel.xpath('//*[@id="_producten_product_detail"]/div[1]/div[2]/div[2]/div[1]/div[2]/div/span[1]/text()').extract()
+            item['prijs'] = prijs
             item['link'] = link
             item['ean'] = sel.xpath('//ul[contains(li[1], "'+"Ean's"+'")]/li[2]/text()').extract()
             item['sku'] = sel.xpath('//ul[contains(li[1], "'+"Sku's"+'")]/li[2]/text()').extract()
