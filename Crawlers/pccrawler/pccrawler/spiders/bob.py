@@ -41,12 +41,13 @@ class BobSpider(CrawlSpider):
     def parse_item(self, response):
 
         for sel in response.xpath('//div[@id="details"]'):
+            
             item = BobItem()
             item['naam'] =  sel.xpath('//div[@class="productNameContainer"]/h1/span[position() = 2]/text()').extract()
             item['subnaam'] = sel.xpath('//div[@class="productNameContainer"]/h1/span[position() = 3]/text()').extract()
             item['info'] = sel.xpath('//div[@class="productShort"]/ul/li/text()').extract()
             item['stock'] = sel.xpath('//div[@class="availability"]/p/text()').extract()
-
+            item["herkomst"] = "bob"
             if sel.xpath('//div[@id="navTree"]/ul/li[19]/ul/li[@class="treeOpened"]').extract():
                 item['categorie'] = ["Voeding"]
             elif "Voedingen" in sel.xpath('//div[@class="breadCrumbs"]/span[position() = 3]/a/span/text()').extract():
@@ -56,6 +57,7 @@ class BobSpider(CrawlSpider):
             item['prijs'] = sel.xpath('//span[@itemprop="price"]/@content').extract()
             item['link'] = response.url
             item['ean'] = find_between(sel.xpath('//script[contains(. , "upcean")]/text()').extract()[0], "'upcean', '","']);")
+
             yield item
             
 

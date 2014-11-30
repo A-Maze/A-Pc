@@ -51,6 +51,7 @@ class BolItem(scrapy.Item):
     prijs = scrapy.Field()
     link = scrapy.Field()
     ean = scrapy.Field()
+    herkomst = scrapy.Field()
 
 class AfutureItem(scrapy.Item):
     categorie = scrapy.Field()
@@ -71,6 +72,7 @@ class AzertyItem(scrapy.Item):
     link = scrapy.Field()
     ean = scrapy.Field()
     sku = scrapy.Field()
+    herkomst = scrapy.Field()
 
 #specificatie items
 class GPU(scrapy.Item):

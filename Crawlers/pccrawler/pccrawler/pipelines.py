@@ -14,7 +14,7 @@ import codecs
 
 class PccrawlerPipeline(object):
 
-	
+		
 
 	def __init__(self):
 		poep = "kaas"
@@ -34,7 +34,13 @@ class PccrawlerPipeline(object):
 			    	(settings['MONGODB_DB'], collectionName, item['categorie']),
 			    	level=log.DEBUG, spider=spider) 
 
-				
+				def addToList(item):
+					self.collection.update({'ean': item["ean"]}, {"$push": {"naam" : item["naam"][0]}}, upsert=False)
+					self.collection.update({'ean': item["ean"]}, {"$push": {"subnaam" : item["subnaam"][0]}}, upsert=False)
+					self.collection.update({'ean': item["ean"]}, {"$push": {"link" : item["link"][0]}}, upsert=False)
+					self.collection.update({'ean': item["ean"]}, {"$push": {"herkomst" : item["herkomst"][0]}}, upsert=False)
+					self.collection.update({'ean': item["ean"]}, {"$push": {"prijs" : item["prijs"][0]}}, upsert=False)
+					self.collection.update({'ean': item["ean"]}, {"$push": {"stock" : item["stock"][0]}}, upsert=False)
 
 				collectienaam = ""
 
@@ -46,48 +52,49 @@ class PccrawlerPipeline(object):
 				langeNaam = item["categorie"][0]
 				if ("Processoren" or "CPU" or "Processors") in langeNaam:
 					self.collection = db["processoren"]
-					for e in self.collection.find({"ean": item["ean"] }):
-						print "HIJ BESTAAAAAAAAAAAAAAT AL"
+					for e in self.collection.find({"ean": item["ean"] }):					
+						addToList(item)
+
 					collectienaam = "processoren"
 				elif ("Moederbord" or "moederborden") in langeNaam:
 					self.collection = db["moederborden"]
 					for e in self.collection.find({"ean": item["ean"] }):
-						print "HIJ BESTAAAAAAAAAAAAAAT AL"
+						addToList(item)
 					collectienaam = "moederborden"
 				elif ("Koeling" or "Koelers" or "Processorkoeling" or "Koelers") in langeNaam:
 					self.collection = db["koeling"]
 					for e in self.collection.find({"ean": item["ean"] }):
-						print "HIJ BESTAAAAAAAAAAAAAAT AL"
+						addToList(item)
 					collectienaam = "koeling"
 				elif ("Behuizingen" or "Barebones" or "Barebone") in langeNaam:
 					self.collection = db["behuizingen"]
 					for e in self.collection.find({"ean": item["ean"] }):
-						print "HIJ BESTAAAAAAAAAAAAAAT AL"
+						addToList(item)
 					collectienaam = "behuizingen"
 				elif ("Grafische" or "GPU" or "Videokaarten" or "Videokaart") in langeNaam:
 					self.collection = db["grafische"]
 					for e in self.collection.find({"ean": item["ean"] }):
-						print "HIJ BESTAAAAAAAAAAAAAAT AL"
+						addToList(item)
 					collectienaam = "grafische"
 				elif ("Harde" or "Geheugen intern" or "Interne") in langeNaam:
 					self.collection = db["harde"]
 					for e in self.collection.find({"ean": item["ean"] }):
-						print "HIJ BESTAAAAAAAAAAAAAAT AL"
+						addToList(item)
 					collectienaam = "harde"
 				elif ("DVD" or "dvd") in langeNaam:
 					self.collection = db["dvd"]
 					for e in self.collection.find({"ean": item["ean"] }):
-						print "HIJ BESTAAAAAAAAAAAAAAT AL"
+						addToList(item)
 					collectienaam = "dvd"
 				elif ("Geheugen" or "RAM") in langeNaam:
 					self.collection = db["geheugen"]
 					for e in self.collection.find({"ean": item["ean"] }):
-						print "HIJ BESTAAAAAAAAAAAAAAT AL"
+						addToList(item)
 					collectienaam = "geheugen"
 				elif ("Voeding" or "Voedingen") in langeNaam:
 					self.collection = db["voeding"]
 					for e in self.collection.find({"ean": item["ean"] }):
-						print "HIJ BESTAAAAAAAAAAAAAAT AL"
+						addToList(item)
 					collectienaam = "voeding"
 				else:
 					return
