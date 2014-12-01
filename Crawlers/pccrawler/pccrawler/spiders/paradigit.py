@@ -30,5 +30,6 @@ class ParadigitSpider(CrawlSpider):
             item['prijs'] = sel.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " itemdetail-salespriceincludingvatcontainer ")]/div/meta[2]/@content').extract()
             item['sku'] = sel.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " itemdetail-specificationstab-mpndescriptioncontainer ")]/span/text()').extract()
             item['link'] = response.url
+            item['herkomst'] = "paradigit"
 
             yield item
