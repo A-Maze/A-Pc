@@ -122,8 +122,8 @@ def processoren(request):
     # Get all posts from DB
     # Aantal per pagina en pagina nummer
 
-    minPriceSliderValue = 1500
-    maxPriceSliderValue = 0
+    minPriceSliderValue = 1500.1
+    maxPriceSliderValue = 0.1
 
     processorenlijst = Processoren.objects
 
@@ -138,9 +138,9 @@ def processoren(request):
     for processoren in processorenlijst:
         #
         diestringnaam = processoren.prijs[0]
-        if float(diestringnaam) < float(minPriceSliderValue):
+        if diestringnaam < minPriceSliderValue:
             minPriceSliderValue = diestringnaam
-        elif float(diestringnaam) > float(maxPriceSliderValue):
+        elif diestringnaam > maxPriceSliderValue:
             maxPriceSliderValue = diestringnaam
 
     processoren = listing(request, processorenlijst, 15)
