@@ -58,7 +58,17 @@ class PccrawlerPipeline(object):
 
 				def addToDatabase(collectienaam):
 					item["categorie"] = collectienaam
-					pleurindedb(collectienaam)
+					try:
+						if item["ean"][0] in self.collection.find({ "ean" : { "$exists" : "true", "$in" :[item["ean"][0]]}}):
+							addToList(item)
+							log.msg(db.behuizingen.find({ "ean" : { "$exists" : "true", "$in" :[item["ean"][0]]}}))
+					except IndexError:
+						if item["sku"][0] in self.collection.find({ "sku" : { "$exists" : "true", "$in" :[item["sku"][0]]}}):
+							addToList(item)
+							log.msg(db.behuizingen.find({ "sku" : { "$exists" : "true", "$in" :[item["sku"][0]]}}))
+					except IndexError:
+						pleurindedb(collectienaam)
+						log.msg("nieuwww")
 
 				collectienaam = ""
 
@@ -70,41 +80,42 @@ class PccrawlerPipeline(object):
 				langeNaam = item["categorie"][0]
 				if ("Processoren" or "CPU" or "Processors") in langeNaam:
 					self.collection = db["processoren"]
-					collectienaam = "processoren"			
-					addToList(item)
+					collectienaam = "processoren"
+					addToDatabase(collectienaam)
+					
 				elif ("Moederbord" or "moederborden") in langeNaam:
 					self.collection = db["moederborden"]
 					collectienaam = "moederborden"
-					addToList(item)
+					addToDatabase(collectienaam)
 
 				elif ("Koeling" or "Koelers" or "Processorkoeling" or "Koelers") in langeNaam:
 					self.collection = db["koeling"]
 					collectienaam = "koeling"
-					addToList(item)
+					addToDatabase(collectienaam)
 				elif ("Behuizingen" or "Barebones" or "Barebone") in langeNaam:
 					self.collection = db["behuizingen"]
 					collectienaam = "behuizingen"
-					addToList(item)
+					addToDatabase(collectienaam)
 				elif ("Grafische" or "GPU" or "Videokaarten" or "Videokaart") in langeNaam:
 					self.collection = db["grafische"]
 					collectienaam = "grafische"
-					addToList(item)
+					addToDatabase(collectienaam)
 				elif ("Harde" or "Geheugen intern" or "Interne") in langeNaam:
 					self.collection = db["harde"]
 					collectienaam = "harde"
-					addToList(item)
+					addToDatabase(collectienaam)
 				elif ("DVD" or "dvd") in langeNaam:
 					self.collection = db["dvd"]
 					collectienaam = "dvd"
-					addToList(item)
+					addToDatabase(collectienaam)
 				elif ("Geheugen" or "RAM") in langeNaam:
 					self.collection = db["geheugen"]
 					collectienaam = "geheugen"
-					addToList(item)
+					addToDatabase(collectienaam)
 				elif ("Voeding" or "Voedingen") in langeNaam:
 					self.collection = db["voeding"]
 					collectienaam = "voeding"
-					addToList(item)
+					addToDatabase(collectienaam)
 				else:
 					return
 

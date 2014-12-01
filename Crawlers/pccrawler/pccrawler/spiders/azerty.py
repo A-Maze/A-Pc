@@ -35,6 +35,7 @@ class AzertySpider(CrawlSpider):
             herkomst.append("azerty")
             
             prijs = sel.xpath('//*[@id="_producten_product_detail"]/div[1]/div[2]/div[2]/div[1]/div[2]/div/span[1]/text()').extract()
+           
             item['naam'] =  sel.xpath('//h1[@class="artikel"]/text()').extract()
             item['subnaam'] = sel.xpath('//*[@id="_producten_product_detail"]/div[1]/div[1]/div[1]/div/h2').extract()
             item['stock'] = sel.xpath('//*[@id="_producten_product_detail"]/div[1]/div[2]/div[2]/div[1]/div[2]/div/div/text()').extract()
