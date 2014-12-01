@@ -26,6 +26,7 @@ class BobItem(scrapy.Item):
     prijs = scrapy.Field()
     link = scrapy.Field()
     ean = scrapy.Field()
+    herkomst = scrapy.Field()
 
 class ParadigitItem(scrapy.Item):
     categorie = scrapy.Field()

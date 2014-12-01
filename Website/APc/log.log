@@ -1,21 +1,195 @@
-[01/Dec/2014 08:25:25] WARNING [django.request:143] Not Found: /favicon.ico
-[01/Dec/2014 08:56:30] ERROR [django.request:231] Internal Server Error: /processoren/
+[01/Dec/2014 12:01:49] ERROR [django.request:231] Internal Server Error: /processoren/
 Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 332
-    objectlijst =  pricefilter(objectlijst,minprijs,maxprijs)
-                                                            ^
-IndentationError: unindent does not match any outer indentation level
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+[01/Dec/2014 12:01:51] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+[01/Dec/2014 12:02:07] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+[01/Dec/2014 12:06:09] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 139, in processoren
+    for processoren in processorenlijst:
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/queryset.py", line 81, in _iter_results
+    self._populate_cache()
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/queryset.py", line 93, in _populate_cache
+    self._result_cache.append(self.next())
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 1141, in next
+    _auto_dereference=self._auto_dereference)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/base/document.py", line 570, in _from_son
+    else field.to_python(value))
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/fields.py", line 243, in to_python
+    value = float(value)
+TypeError: float() argument must be a string or a number
+[01/Dec/2014 12:10:02] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 139, in processoren
+    for processoren in processorenlijst:
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/queryset.py", line 81, in _iter_results
+    self._populate_cache()
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/queryset.py", line 93, in _populate_cache
+    self._result_cache.append(self.next())
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 1141, in next
+    _auto_dereference=self._auto_dereference)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/base/document.py", line 570, in _from_son
+    else field.to_python(value))
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/fields.py", line 243, in to_python
+    value = float(value)
+TypeError: float() argument must be a string or a number
+[01/Dec/2014 12:10:04] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 258, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 178, in render_to_string
+    return t.render(context_instance)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 162, in render
+    len_values = len(values)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/paginator.py", line 117, in __len__
+    return len(self.object_list)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/queryset.py", line 47, in __len__
+    list(self._iter_results())
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/queryset.py", line 81, in _iter_results
+    self._populate_cache()
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/queryset.py", line 93, in _populate_cache
+    self._result_cache.append(self.next())
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 1141, in next
+    _auto_dereference=self._auto_dereference)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/base/document.py", line 570, in _from_son
+    else field.to_python(value))
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/fields.py", line 243, in to_python
+    value = float(value)
+TypeError: float() argument must be a string or a number
+[01/Dec/2014 12:13:40] ERROR [django.request:231] Internal Server Error: /moederborden/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 258, in moederborden
+    context_instance=RequestContext(request))
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 23, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 178, in render_to_string
+    return t.render(context_instance)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 162, in render
+    len_values = len(values)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/paginator.py", line 117, in __len__
+    return len(self.object_list)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/queryset.py", line 47, in __len__
+    list(self._iter_results())
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/queryset.py", line 81, in _iter_results
+    self._populate_cache()
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/queryset.py", line 93, in _populate_cache
+    self._result_cache.append(self.next())
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 1141, in next
+    _auto_dereference=self._auto_dereference)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/base/document.py", line 570, in _from_son
+    else field.to_python(value))
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/fields.py", line 243, in to_python
+    value = float(value)
+TypeError: float() argument must be a string or a number
+[01/Dec/2014 12:27:07] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+[01/Dec/2014 12:30:56] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+[01/Dec/2014 12:30:57] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+[01/Dec/2014 12:32:34] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+[01/Dec/2014 12:32:35] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+[01/Dec/2014 12:34:23] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0]
+TypeError: 'NoneType' object has no attribute '__getitem__'

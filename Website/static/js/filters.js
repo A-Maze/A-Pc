@@ -8,7 +8,7 @@ function filter(){
 		url : window.location.pathname,
 		method: "POST",
 		//value van checkbox wordt meegegeven onder stock
-		data: {stock : $('#stockCheck').val(),minprijs: $('#sliderMinValue'), maxprijs: $('#sliderMaxValue')},
+		data: {stock : $('#stockCheck').val(),minprijs: $('#sliderMinValue').val(), maxprijs: $('#sliderMaxValue').val()},
     })
 	.done(function(data){
 		var html = $(data.Componenten).find("#productList").html();

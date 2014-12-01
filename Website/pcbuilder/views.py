@@ -327,9 +327,9 @@ def filters(request, objectlijst):
             levering = "morgen"
             objectlijst = stock(objectlijst,levering)
 
-        minprijs = request.POST.get('minprijs')
-        maxprijs = request.POST.get('maxprijs')
-        objectlijst =  pricefilter(objectlijst,minprijs,maxprijs)
+        #minprijs = request.POST.get('minprijs')
+        #maxprijs = request.POST.get('maxprijs')
+        #objectlijst =  pricefilter(objectlijst,minprijs,maxprijs)
     return objectlijst
 
 
@@ -344,7 +344,7 @@ def stock(objectlijst, levering):
         return objectlijst.filter(stock__icontains="Direct leverbaar")
 
 def pricefilter(objectlijst, minprijs, maxprijs):
-    objectlijst = objectlijst.extra(where=["prijs <= '" + maxprijs +"' AND prijs >= '" + minprijs + "'"])
+    objectlijst = objectlijst.filter(prijs__range,float(minprijs),float(maxprijs))
     return objectlijst
         
 
