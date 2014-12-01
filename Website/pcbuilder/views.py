@@ -126,13 +126,13 @@ def processoren(request):
     #overgebleven componentenlijst afhankelijk van stock
     #Dit dient later afhaneklijk te worden van alle filters
     processorenlijst = filters(request,processorenlijst)
-
     for processoren in processorenlijst:
-        diestringnaam = processoren.prijs[0]
-        if float(diestringnaam) < float(minPriceSliderValue):
-            minPriceSliderValue = diestringnaam
-        elif float(diestringnaam) > float(maxPriceSliderValue):
-            maxPriceSliderValue = diestringnaam
+        if processoren.prijs:
+            diestringnaam = processoren.prijs[0]
+            if float(diestringnaam) < float(minPriceSliderValue):
+                minPriceSliderValue = diestringnaam
+            elif float(diestringnaam) > float(maxPriceSliderValue):
+                maxPriceSliderValue = diestringnaam
 
     processoren = listing(request, processorenlijst, 15)
     #processoren = json.dumps(list(uniArray))

@@ -214,3 +214,58 @@ Traceback (most recent call last):
   File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 132, in processoren
     diestringnaam = processoren.prijs[0]
 TypeError: 'NoneType' object has no attribute '__getitem__'
+[01/Dec/2014 17:27:25] WARNING [django.request:143] Not Found: /favicon.ico
+[01/Dec/2014 17:27:26] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    diestringnaam = processoren.prijs[0]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+[01/Dec/2014 17:28:19] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    diestringnaam = processoren.prijs[0]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+[01/Dec/2014 17:38:25] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    diestringnaam = processoren.prijs[0]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+[01/Dec/2014 17:41:45] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    diestringnaam = processoren.prijs[0]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+[01/Dec/2014 17:42:27] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    diestringnaam = processoren.prijs[0]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+[01/Dec/2014 17:44:43] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    diestringnaam = processoren.prijs[0]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+[01/Dec/2014 17:45:34] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    diestringnaam = processoren.prijs[0]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+[01/Dec/2014 17:48:27] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 130, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view pcbuilder.views.processoren didn't return an HttpResponse object. It returned None instead.
