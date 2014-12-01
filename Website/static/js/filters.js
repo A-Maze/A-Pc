@@ -1,4 +1,4 @@
-function stock(){
+function filter(){
 	//check of het wordt aangeroepen
 	console.log("stock getting called")
 	
@@ -8,7 +8,7 @@ function stock(){
 		url : window.location.pathname,
 		method: "POST",
 		//value van checkbox wordt meegegeven onder stock
-		data: {stock : $('#stockCheck').val()},
+		data: {stock : $('#stockCheck').val(),minprijs: $('#sliderMinValue'), maxprijs: $('#sliderMaxValue')},
     })
 	.done(function(data){
 		var html = $(data.Componenten).find("#productList").html();
