@@ -27,17 +27,8 @@ def index(request):
                               context_instance=RequestContext(request))
 
 def contact(request):
-    msg = 1
-    if request.is_ajax():
-        try:
-            msg = request.POST['msg']
-        except:
-            return HttpResponse(simplejson.dumps({'message':'Error From Server'}))
-        print msg
-        contact(request)
-    else:
-        #return HttpResponse(simplejson.dumps({'message':'Not an ajax request'}))
-        return render_to_response('contact.html', {'message': msg})
+    return render_to_response('contact.html',
+                              context_instance=RequestContext(request))
 
 def mail(request):
     name = request.POST.get('name', '')
@@ -347,9 +338,3 @@ def pricefilter(objectlijst, minprijs, maxprijs):
     objectlijst = objectlijst.filter(prijs__range,float(minprijs),float(maxprijs))
     return objectlijst
         
-
-
-
-
-
-
