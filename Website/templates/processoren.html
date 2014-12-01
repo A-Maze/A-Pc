@@ -86,7 +86,7 @@ $('.slider').Link('upper').to($('#sliderMaxValue'));
                     <div class="checkbox customcheck">
                         <label>
                             <!--Checbox value on click via ajax naar views -->
-                                <input type="checkbox" value="morgen" action="processoren/" id="stockCheck" onChange="stock()"> Direct leveraar
+                                <input type="checkbox" value="morgen" action="processoren/" id="stockCheck" onChange="filter()"> Direct leveraar
                         </label>
 
                     </div>
@@ -110,8 +110,8 @@ $('.slider').Link('upper').to($('#sliderMaxValue'));
                 <div class="panel-heading toggle">Panel heading   <div class="pull-right"><span class="switcher dropup"><span class="caret"></span></span> </div></div>
                 <div class="panel-body body-toggled">
                     <div class="slider" ></div>
-                    <input id ="sliderMinValue" class="col-md-6 col-lg-6 ">
-                    <input id ="sliderMaxValue" class="col-md-6 col-lg-6 pull-right ">
+                    <input id ="sliderMinValue" onChange="filter()" class="col-md-6 col-lg-6 ">
+                    <input id ="sliderMaxValue" onCHange="filter()" class="col-md-6 col-lg-6 pull-right ">
                 </div>
 
 
