@@ -27,17 +27,8 @@ def index(request):
                               context_instance=RequestContext(request))
 
 def contact(request):
-    msg = 1
-    if request.is_ajax():
-        try:
-            msg = request.POST['msg']
-        except:
-            return HttpResponse(simplejson.dumps({'message':'Error From Server'}))
-        print msg
-        contact(request)
-    else:
-        #return HttpResponse(simplejson.dumps({'message':'Not an ajax request'}))
-        return render_to_response('contact.html', {'message': msg})
+    return render_to_response('contact.html',
+                              context_instance=RequestContext(request))
 
 def mail(request):
     name = request.POST.get('name', '')
@@ -135,13 +126,21 @@ def processoren(request):
     #overgebleven componentenlijst afhankelijk van stock
     #Dit dient later afhaneklijk te worden van alle filters
     processorenlijst = filters(request,processorenlijst)
-
     for processoren in processorenlijst:
+<<<<<<< HEAD
         diestringnaam = processoren.prijs[0]
         if diestringnaam < minPriceSliderValue:
             minPriceSliderValue = diestringnaam
         elif diestringnaam > maxPriceSliderValue:
             maxPriceSliderValue = diestringnaam
+=======
+        if processoren.prijs:
+            diestringnaam = processoren.prijs[0]
+            if float(diestringnaam) < float(minPriceSliderValue):
+                minPriceSliderValue = diestringnaam
+            elif float(diestringnaam) > float(maxPriceSliderValue):
+                maxPriceSliderValue = diestringnaam
+>>>>>>> d88613cfe5aa78982fdfe01090ec1d0ce697d9b0
 
     processoren = listing(request, processorenlijst, 15)
     #processoren = json.dumps(list(uniArray))
@@ -347,9 +346,3 @@ def pricefilter(objectlijst, minprijs, maxprijs):
     objectlijst = objectlijst.filter(prijs__range,float(minprijs),float(maxprijs))
     return objectlijst
         
-
-
-
-
-
-
