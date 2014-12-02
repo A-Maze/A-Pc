@@ -127,21 +127,12 @@ def processoren(request):
     #Dit dient later afhaneklijk te worden van alle filters
     processorenlijst = filters(request,processorenlijst)
     for processoren in processorenlijst:
-<<<<<<< HEAD
-        diestringnaam = processoren.prijs[0]
-        if diestringnaam < minPriceSliderValue:
-            minPriceSliderValue = diestringnaam
-        elif diestringnaam > maxPriceSliderValue:
-            maxPriceSliderValue = diestringnaam
-=======
         if processoren.prijs:
-            print processoren.prijs
             diestringnaam = processoren.prijs[0]
             if float(diestringnaam) < float(minPriceSliderValue):
                 minPriceSliderValue = diestringnaam
             elif float(diestringnaam) > float(maxPriceSliderValue):
                 maxPriceSliderValue = diestringnaam
->>>>>>> d88613cfe5aa78982fdfe01090ec1d0ce697d9b0
 
     processoren = listing(request, processorenlijst, 15)
     #processoren = json.dumps(list(uniArray))
@@ -350,18 +341,19 @@ def pricefilter(objectlijst, minprijs, maxprijs):
     minprijs = minprijs.replace(',','.')
     maxprijs = maxprijs.replace(',','.')
     #for every component in the queryset
-
-    for component in objectlijst:
+    print objectlijst
+    newLijst = objectlijst
+    for component in newLijst:
         #convert price to float
         prijs = float(component.prijs[0])
         #if the component price is not within the range of the 2 prices
         if (prijs < float(minprijs)) or (prijs > float(maxprijs)):
             #then filter that component from the queryset
             if component.ean:
-                objectlijst.exclude(ean=component.ean)
+                component.delete()
             elif component.sku:
-                objectlijst.exclude(sku=component.sku)
-    return componentenlijst
+                component.delete()
+    return newLijst
 
 
 

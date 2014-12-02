@@ -19,6 +19,9 @@ def find_between( s, first, last ):
 class BobSpider(CrawlSpider):
     name = "bob"
     allowed_domains = ["www.alternate.nl"]
+    CONCURRENT_ITEMS = 1000
+    CONCURRENT_REQUESTS = 100
+    CONCURRENT_REQUESTS_PER_DOMAIN = 1000
     start_urls = (
         'http://www.alternate.nl/html/highlights/page.html?hgid=189&tgid=906&tk=7&lk=7',
 
