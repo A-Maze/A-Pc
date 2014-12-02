@@ -84,7 +84,7 @@ class PccrawlerPipeline(object):
 				harde = ["Harde", "Interne harde schijven", "Interne", "Solid State Drives"]
 				dvd = ["DVD", "dvd", "DVD / Blu-ray drives"]
 				geheugen = ["Geheugen", "RAM", "Geheugen intern"]
-				voedding = ["Voeding", "Voedingen"]
+				voeding = ["Voeding", "Voedingen"]
 
 				if langeNaam in processoren:
 					self.collection = db["processoren"]
