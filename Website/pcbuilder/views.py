@@ -129,33 +129,13 @@ def processoren(request):
     #Dit dient later afhaneklijk te worden van alle filters
     processorenlijst = filters(request,processorenlijst)
     for processoren in processorenlijst:
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 
-
-
-=======
-        diestringnaam = processoren.prijs[0]
-        if diestringnaam < minPriceSliderValue:
-            minPriceSliderValue = diestringnaam
-        elif diestringnaam > maxPriceSliderValue:
-            maxPriceSliderValue = diestringnaam
->>>>>>> 70e434357644b7119463dd6907ac7ca55ba9b6c5
->>>>>>> e33c88cbc62208cb82100e2cde5325ed4e3f631a
         if processoren.prijs:
             diestringnaam = processoren.prijs[0]
             if float(diestringnaam) < float(minPriceSliderValue):
                 minPriceSliderValue = diestringnaam
             elif float(diestringnaam) > float(maxPriceSliderValue):
                 maxPriceSliderValue = diestringnaam
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> 70e434357644b7119463dd6907ac7ca55ba9b6c5
->>>>>>> e33c88cbc62208cb82100e2cde5325ed4e3f631a
 
     processoren = listing(request, processorenlijst, 15)
     #processoren = json.dumps(list(uniArray))
@@ -360,7 +340,6 @@ def stock(objectlijst, levering):
     ]
     
     if levering == "alles":
-<<<<<<< HEAD
         return objectlijst
     if levering == "morgen":
         for key, d in enumerate(direct_leverbaar):
@@ -371,16 +350,6 @@ def stock(objectlijst, levering):
                 objectlijst_filtered = list(chain(objects, objectlijst_filtered))                
         print objectlijst_filtered
         return objectlijst_filtered
-=======
-        #if the value return from ajax is "alles" show everything
-        print "not changed"
-        return objectlijst
-    if levering == "morgen":
-        #if the value returned from ajax is "morgen" filter the queryset on that
-        print "changed"
-        objectlijst.filter(stock__icontains="Direct leverbaar")
-        return objectlijst.filter(stock__icontains="Direct leverbaar")
->>>>>>> 377736fbe60e927f8ca421d5ecfc586418a9aa1f
 
 def pricefilter(objectlijst, minprijs, maxprijs):
     #replaces the , in the 2 arguments with . for float parsing
