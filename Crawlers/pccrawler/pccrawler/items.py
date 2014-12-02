@@ -37,6 +37,7 @@ class ParadigitItem(scrapy.Item):
     prijs = scrapy.Field()
     sku = scrapy.Field()
     link = scrapy.Field()
+    herkomst = scrapy.Field()
 
 class ComputerlandItem(scrapy.Item):
     categorie = scrapy.Field()

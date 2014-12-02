@@ -27,17 +27,8 @@ def index(request):
                               context_instance=RequestContext(request))
 
 def contact(request):
-    msg = 1
-    if request.is_ajax():
-        try:
-            msg = request.POST['msg']
-        except:
-            return HttpResponse(simplejson.dumps({'message':'Error From Server'}))
-        print msg
-        contact(request)
-    else:
-        #return HttpResponse(simplejson.dumps({'message':'Not an ajax request'}))
-        return render_to_response('contact.html', {'message': msg})
+    return render_to_response('contact.html',
+                              context_instance=RequestContext(request))
 
 def mail(request):
     name = request.POST.get('name', '')
@@ -125,8 +116,8 @@ def processoren(request):
     # Get all posts from DB
     # Aantal per pagina en pagina nummer
 
-    minPriceSliderValue = 1500
-    maxPriceSliderValue = 0
+    minPriceSliderValue = 1500.1
+    maxPriceSliderValue = 0.1
 
     processorenlijst = Processoren.objects
 
@@ -135,13 +126,22 @@ def processoren(request):
     #overgebleven componentenlijst afhankelijk van stock
     #Dit dient later afhaneklijk te worden van alle filters
     processorenlijst = filters(request,processorenlijst)
-
     for processoren in processorenlijst:
+<<<<<<< HEAD
         diestringnaam = processoren.prijs[0]
-        if float(diestringnaam) < float(minPriceSliderValue):
+        if diestringnaam < minPriceSliderValue:
             minPriceSliderValue = diestringnaam
-        elif float(diestringnaam) > float(maxPriceSliderValue):
+        elif diestringnaam > maxPriceSliderValue:
             maxPriceSliderValue = diestringnaam
+=======
+        if processoren.prijs:
+            print processoren.prijs
+            diestringnaam = processoren.prijs[0]
+            if float(diestringnaam) < float(minPriceSliderValue):
+                minPriceSliderValue = diestringnaam
+            elif float(diestringnaam) > float(maxPriceSliderValue):
+                maxPriceSliderValue = diestringnaam
+>>>>>>> d88613cfe5aa78982fdfe01090ec1d0ce697d9b0
 
     processoren = listing(request, processorenlijst, 15)
     #processoren = json.dumps(list(uniArray))
@@ -327,29 +327,41 @@ def filters(request, objectlijst):
             levering = "morgen"
             objectlijst = stock(objectlijst,levering)
 
-        #minprijs = request.POST.get('minprijs')
-        #maxprijs = request.POST.get('maxprijs')
-        #objectlijst =  pricefilter(objectlijst,minprijs,maxprijs)
+        minprijs = request.POST.get('minprijs')
+        maxprijs = request.POST.get('maxprijs')
+        objectlijst =  pricefilter(objectlijst,minprijs,maxprijs)
     return objectlijst
 
 
 
 def stock(objectlijst, levering):
     if levering == "alles":
+        #if the value return from ajax is "alles" show everything
         print "not changed"
         return objectlijst
     if levering == "morgen":
+        #if the value returned from ajax is "morgen" filter the queryset on that
         print "changed"
         objectlijst.filter(stock__icontains="Direct leverbaar")
         return objectlijst.filter(stock__icontains="Direct leverbaar")
 
 def pricefilter(objectlijst, minprijs, maxprijs):
-    objectlijst = objectlijst.filter(prijs__range,float(minprijs),float(maxprijs))
-    return objectlijst
-        
+    #replaces the , in the 2 arguments with . for float parsing
+    minprijs = minprijs.replace(',','.')
+    maxprijs = maxprijs.replace(',','.')
+    #for every component in the queryset
 
-
-
+    for component in objectlijst:
+        #convert price to float
+        prijs = float(component.prijs[0])
+        #if the component price is not within the range of the 2 prices
+        if (prijs < float(minprijs)) or (prijs > float(maxprijs)):
+            #then filter that component from the queryset
+            if component.ean:
+                objectlijst.exclude(ean=component.ean)
+            elif component.sku:
+                objectlijst.exclude(sku=component.sku)
+    return componentenlijst
 
 
 
