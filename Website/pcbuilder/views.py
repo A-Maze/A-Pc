@@ -8,6 +8,7 @@ from django.http import HttpResponse
 from bson.json_util import dumps
 import json as simplejson
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding
+from itertools import chain
 import logging
 import json
 
@@ -27,6 +28,7 @@ def index(request):
                               context_instance=RequestContext(request))
 
 def contact(request):
+    processoren = Processoren.objects
     return render_to_response('contact.html',
                               context_instance=RequestContext(request))
 
@@ -127,20 +129,17 @@ def processoren(request):
     #Dit dient later afhaneklijk te worden van alle filters
     processorenlijst = filters(request,processorenlijst)
     for processoren in processorenlijst:
-<<<<<<< HEAD
         diestringnaam = processoren.prijs[0]
         if diestringnaam < minPriceSliderValue:
             minPriceSliderValue = diestringnaam
         elif diestringnaam > maxPriceSliderValue:
             maxPriceSliderValue = diestringnaam
-=======
         if processoren.prijs:
             diestringnaam = processoren.prijs[0]
             if float(diestringnaam) < float(minPriceSliderValue):
                 minPriceSliderValue = diestringnaam
             elif float(diestringnaam) > float(maxPriceSliderValue):
                 maxPriceSliderValue = diestringnaam
->>>>>>> d88613cfe5aa78982fdfe01090ec1d0ce697d9b0
 
     processoren = listing(request, processorenlijst, 15)
     #processoren = json.dumps(list(uniArray))
@@ -334,13 +333,27 @@ def filters(request, objectlijst):
 
 
 def stock(objectlijst, levering):
+    direct_leverbaar = [
+        "1 stuk op voorraad",
+        "2 stuks op voorraad",
+        "3 stuks op voorraad",
+        "4 stuks op voorraad",
+        "5 stuks op voorraad",
+        "5+ stuks op voorraad",
+        "Direct leverbaar"
+    ]
+    
     if levering == "alles":
-        print "not changed"
         return objectlijst
     if levering == "morgen":
-        print "changed"
-        objectlijst.filter(stock__icontains="Direct leverbaar")
-        return objectlijst.filter(stock__icontains="Direct leverbaar")
+        for key, d in enumerate(direct_leverbaar):
+            objects = objectlijst.filter(stock__icontains=d)
+            if key == 0:
+                objectlijst_filtered = objects
+            else:
+                objectlijst_filtered = list(chain(objects, objectlijst_filtered))                
+        print objectlijst_filtered
+        return objectlijst_filtered
 
 def pricefilter(objectlijst, minprijs, maxprijs):
     objectlijst = objectlijst.filter(prijs__range,float(minprijs),float(maxprijs))
