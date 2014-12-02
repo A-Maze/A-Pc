@@ -37,6 +37,7 @@ class ParadigitItem(scrapy.Item):
     prijs = scrapy.Field()
     sku = scrapy.Field()
     link = scrapy.Field()
+    herkomst = scrapy.Field()
 
 class ComputerlandItem(scrapy.Item):
     categorie = scrapy.Field()
@@ -250,6 +251,8 @@ class Voeding(scrapy.Item):
     categorie = scrapy.Field()
     Merk = scrapy.Field()
     Vermogen_watt = scrapy.Field()
+    Uitvoering = scrapy.Field()
+    Afbeelding = scrapy.Field()
     Product = scrapy.Field()
     _12V_Rails = scrapy.Field()
     Capaciteit_12V1_rail = scrapy.Field()
@@ -277,10 +280,8 @@ class Voeding(scrapy.Item):
 class Koeling(scrapy.Item):  
     categorie = scrapy.Field()
     Merk = scrapy.Field()
-    Serie = scrapy.Field()
     Uitvoering = scrapy.Field()
     Afbeelding = scrapy.Field()
-    Product = scrapy.Field() 
     Socket = scrapy.Field()
     Aansluiting_processorkoeling = scrapy.Field()
     Heatpipes = scrapy.Field()
