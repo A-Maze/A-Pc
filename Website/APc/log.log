@@ -193,3 +193,30 @@ Traceback (most recent call last):
   File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
     diestringnaam = processoren.prijs[0]
 TypeError: 'NoneType' object has no attribute '__getitem__'
+[02/Dec/2014 14:29:20] WARNING [django.request:143] Not Found: /favicon.ico
+[02/Dec/2014 14:29:20] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[02/Dec/2014 14:29:20] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[02/Dec/2014 14:29:21] WARNING [django.request:143] Not Found: /favicon.ico
+[02/Dec/2014 14:29:21] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[02/Dec/2014 14:29:21] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[02/Dec/2014 14:29:35] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+[02/Dec/2014 14:29:44] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+[02/Dec/2014 15:03:45] ERROR [django.request:231] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/Davey/Documents/school/Jaar 2/Kwartaal 1/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
+    diestringnaam = processoren.prijs[0]
+TypeError: 'NoneType' object has no attribute '__getitem__'

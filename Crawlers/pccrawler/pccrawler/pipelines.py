@@ -14,104 +14,119 @@ import codecs
 
 class PccrawlerPipeline(object):
 
-		
 
-	def __init__(self):
-		poep = "kaas"
-		
-        def process_item(self, item, spider):
-		valid = True
-		for data in item:
-          # here we only check if the data is not null
-          # but we could do any crazy validation we want
-			if valid:
-				connection = pymongo.Connection(settings['MONGODB_SERVER'], settings['MONGODB_PORT'])
-				db = connection[settings['MONGODB_DB']]
 
-				def pleurindedb(collectionName):
-					if u'\u20ac' in item["prijs"][0]:
-						item["prijs"][0] = item["prijs"][0][2:]
-					log.msg(item["prijs"][0])
-					self.collection.insert(dict(item))
-					log.msg("Item wrote to MongoDB database %s/%s/%s" %
-			    	(settings['MONGODB_DB'], collectionName, item['categorie']),
-			    	level=log.DEBUG, spider=spider) 
+    def __init__(self):
+        var = "bezig"
 
-				def addToList(item):
-					if u'\u20ac' in item["prijs"][0]:
-						item["prijs"][0] = item["prijs"][0][2:]
-					try:
-						self.collection.update({'ean': item["ean"]}, {"$push": {"naam" : item["naam"][0]}}, upsert=True)
-						self.collection.update({'ean': item["ean"]}, {"$push": {"subnaam" : item["subnaam"][0]}}, upsert=True)
-						self.collection.update({'ean': item["ean"]}, {"$push": {"link" : item["link"][0]}}, upsert=True)
-						self.collection.update({'ean': item["ean"]}, {"$push": {"herkomst" : item["herkomst"][0]}}, upsert=True)
-						self.collection.update({'ean': item["ean"]}, {"$push": {"prijs" : item["prijs"][0]}}, upsert=True)
-						self.collection.update({'ean': item["ean"]}, {"$push": {"stock" : item["stock"][0]}}, upsert=True)
-						self.collection.update({'ean': item["ean"]}, {"$push": {"sku" : item["sku"][0]}}, upsert=True)
-					except IndexError:
-						self.collection.update({'sku': item["sku"]}, {"$push": {"naam" : item["naam"][0]}}, upsert=True)
-						self.collection.update({'sku': item["sku"]}, {"$push": {"subnaam" : item["subnaam"][0]}}, upsert=True)
-						self.collection.update({'sku': item["sku"]}, {"$push": {"link" : item["link"][0]}}, upsert=True)
-						self.collection.update({'sku': item["sku"]}, {"$push": {"herkomst" : item["herkomst"][0]}}, upsert=True)
-						self.collection.update({'sku': item["sku"]}, {"$push": {"prijs" : item["prijs"][0]}}, upsert=True)
-						self.collection.update({'sku': item["sku"]}, {"$push": {"stock" : item["stock"][0]}}, upsert=True)
+    def process_item(self, item, spider):
+        valid = True
+        for data in item:
+            # here we only check if the data is not null
+            # but we could do any crazy validation we want
+            if valid:
+                connection = pymongo.Connection(settings['MONGODB_SERVER'], settings['MONGODB_PORT'])
+                db = connection[settings['MONGODB_DB']]
 
-				def addToDatabase(collectienaam):
-					item["categorie"] = collectienaam
-					pleurindedb(collectienaam)
+                def pleurindedb(collectionName):
+                    #if u'\u20ac' in item["prijs"][0]:
+                    #    item["prijs"][0] = item["prijs"][0][2:]
+                    #log.msg(item["prijs"][0])
+                    self.collection.insert(dict(item))
+                    log.msg("Item wrote to MongoDB database %s/%s/%s" %
+                            (settings['MONGODB_DB'], collectionName, item['categorie']),
+                            level=log.DEBUG, spider=spider)
 
-				collectienaam = ""
+                def addToList(item):
+                    print(item)
+                    if u'\u20ac' in item["prijs"][0]:
+                        item["prijs"][0] = item["prijs"][0][2:]
 
-				#
-				#  one love (L)(L)pipelines(L)(L)
-				
-				
+                    print(item["link"][0])
+                    try:
+                        self.collection.update({'ean': item["ean"]}, {"$push": {"link" : item["link"][0]}}, upsert=True)
+                        self.collection.update({'ean': item["ean"]}, {"$push": {"herkomst" : item["herkomst"][0]}}, upsert=True)
+                        self.collection.update({'ean': item["ean"]}, {"$push": {"prijs" : item["prijs"][0]}}, upsert=True)
+                        self.collection.update({'ean': item["ean"]}, {"$push": {"stock" : item["stock"][0]}}, upsert=True)
+                        self.collection.update({'ean': item["ean"]}, {"$push": {"sku" : item["sku"][0]}}, upsert=True)
+                    except IndexError:
+                        self.collection.update({'sku': item["sku"]}, {"$push": {"link" : item["link"][0]}}, upsert=True)
+                        self.collection.update({'sku': item["sku"]}, {"$push": {"herkomst" : item["herkomst"][0]}}, upsert=True)
+                        self.collection.update({'sku': item["sku"]}, {"$push": {"prijs" : item["prijs"][0]}}, upsert=True)
+                        self.collection.update({'sku': item["sku"]}, {"$push": {"stock" : item["stock"][0]}}, upsert=True)
 
-				langeNaam = item["categorie"][0]
-				if ("Processoren" or "CPU" or "Processors") in langeNaam:
-					self.collection = db["processoren"]
-					collectienaam = "processoren"			
-					addToList(item)
-				elif ("Moederbord" or "moederborden") in langeNaam:
-					self.collection = db["moederborden"]
-					collectienaam = "moederborden"
-					addToList(item)
 
-				elif ("Koeling" or "Koelers" or "Processorkoeling" or "Koelers") in langeNaam:
-					self.collection = db["koeling"]
-					collectienaam = "koeling"
-					addToList(item)
-				elif ("Behuizingen" or "Barebones" or "Barebone") in langeNaam:
-					self.collection = db["behuizingen"]
-					collectienaam = "behuizingen"
-					addToList(item)
-				elif ("Grafische" or "GPU" or "Videokaarten" or "Videokaart") in langeNaam:
-					self.collection = db["grafische"]
-					collectienaam = "grafische"
-					addToList(item)
-				elif ("Harde" or "Geheugen intern" or "Interne") in langeNaam:
-					self.collection = db["harde"]
-					collectienaam = "harde"
-					addToList(item)
-				elif ("DVD" or "dvd") in langeNaam:
-					self.collection = db["dvd"]
-					collectienaam = "dvd"
-					addToList(item)
-				elif ("Geheugen" or "RAM") in langeNaam:
-					self.collection = db["geheugen"]
-					collectienaam = "geheugen"
-					addToList(item)
-				elif ("Voeding" or "Voedingen") in langeNaam:
-					self.collection = db["voeding"]
-					collectienaam = "voeding"
-					addToList(item)
-				else:
-					return
+                def addToDatabase(collectienaam):
+                    item["categorie"] = collectienaam
+                    try:
+                        if self.collection.find({'ean':  item["ean"][0]}).count() > 0:
+                            print("true")
+                            #addToList(item)
+                        else:
+                            print("false")
+                            pleurindedb(collectienaam)
+                    except:
+                        if self.collection.find({'sku':  item["sku"][0]}).count() > 0:
+                            print("true")
+                            #addToList(item)
+                        else:
+                            print("false")
+                            pleurindedb(collectienaam)
 
-				
-			
-			
-				return item
+                langeNaam = item["categorie"][0]
+
+                processoren = ["Processors", "CPU", "Processoren"]
+                moederborden = ["Moederbord", "moederborden", "Moederborden"]
+                koeling = ["Koeling", "Koelers", "Processorkoeling", "Koelers", "CPU Koelers"]
+                behuizingen = ["Behuizingen", "Barebones", "Barebone"]
+                grafische = ["Grafische", "GPU", "Videokaarten", "Videokaart"]
+                harde = ["Harde", "Interne harde schijven", "Interne", "Solid State Drives"]
+                dvd = ["DVD", "dvd", "DVD / Blu-ray drives"]
+                geheugen = ["Geheugen", "RAM", "Geheugen intern"]
+                voeding = ["Voeding", "Voedingen"]
+
+                if langeNaam in processoren:
+                    self.collection = db["processoren"]
+                    collectienaam = "processoren"
+                    addToDatabase(collectienaam)
+                elif langeNaam in moederborden:
+                    self.collection = db["moederborden"]
+                    collectienaam = "moederborden"
+                    addToDatabase(collectienaam)
+                elif langeNaam in koeling:
+                    self.collection = db["koeling"]
+                    collectienaam = "koeling"
+                    addToDatabase(collectienaam)
+                elif langeNaam in behuizingen:
+                    self.collection = db["behuizingen"]
+                    collectienaam = "behuizingen"
+                    addToDatabase(collectienaam)
+                elif langeNaam in grafische:
+                    self.collection = db["grafische"]
+                    collectienaam = "grafische"
+                    addToDatabase(collectienaam)
+                elif langeNaam in harde:
+                    self.collection = db["harde"]
+                    collectienaam = "harde"
+                    addToDatabase(collectienaam)
+                elif langeNaam in dvd:
+                    self.collection = db["dvd"]
+                    collectienaam = "dvd"
+                    addToDatabase(collectienaam)
+                elif langeNaam in geheugen:
+                    self.collection = db["geheugen"]
+                    collectienaam = "geheugen"
+                    addToDatabase(collectienaam)
+                elif langeNaam in voeding:
+                    self.collection = db["voeding"]
+                    collectienaam = "voeding"
+                    addToDatabase(collectienaam)
+                else:
+                    return
+
+
+
+                return item
 
 
 
