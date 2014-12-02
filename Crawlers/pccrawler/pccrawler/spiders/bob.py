@@ -47,7 +47,7 @@ class BobSpider(CrawlSpider):
             item['subnaam'] = sel.xpath('//div[@class="productNameContainer"]/h1/span[position() = 3]/text()').extract()
             item['info'] = sel.xpath('//div[@class="productShort"]/ul/li/text()').extract()
             item['stock'] = sel.xpath('//div[@class="availability"]/p/text()').extract()
-            item["herkomst"] = "bob"
+            item["herkomst"] = ["bob"]
             if sel.xpath('//div[@id="navTree"]/ul/li[19]/ul/li[@class="treeOpened"]').extract():
                 item['categorie'] = ["Voeding"]
             elif "Voedingen" in sel.xpath('//div[@class="breadCrumbs"]/span[position() = 3]/a/span/text()').extract():
@@ -56,7 +56,7 @@ class BobSpider(CrawlSpider):
                 item['categorie'] = sel.xpath('//div[@class="breadCrumbs"]/span[position() = 2]/a/span/text()').extract()
             item['prijs'] = sel.xpath('//span[@itemprop="price"]/@content').extract()
             item['link'] = response.url
-            item['ean'] = find_between(sel.xpath('//script[contains(. , "upcean")]/text()').extract()[0], "'upcean', '","']);")
+            item['ean'] = [find_between(sel.xpath('//script[contains(. , "upcean")]/text()').extract()[0], "'upcean', '","']);")]
 
             yield item
             
