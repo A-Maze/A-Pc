@@ -1,4 +1,40 @@
 <<<<<<< HEAD
+[02/Dec/2014 14:37:35] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 130, in processoren
+    for processoren in processorenlijst:
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/queryset.py", line 81, in _iter_results
+    self._populate_cache()
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/queryset.py", line 93, in _populate_cache
+    self._result_cache.append(self.next())
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 1137, in next
+    raw_doc = self._cursor.next()
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 1182, in _cursor
+    self._cursor_obj = self._collection.find(self._query,
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 1215, in _query
+    self._mongo_query = self._query_obj.to_query(self._document)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/visitor.py", line 92, in to_query
+    query = query.accept(QueryCompilerVisitor(document))
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/visitor.py", line 157, in accept
+    return visitor.visit_query(self)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/visitor.py", line 80, in visit_query
+    return transform.query(self.document, **query.query)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/transform.py", line 87, in query
+    value = field.prepare_query_value(op, value)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/fields.py", line 106, in prepare_query_value
+    value = re.escape(value)
+  File "/usr/lib/python2.7/re.py", line 214, in escape
+    return pattern[:0].join(s)
+AttributeError: 'list' object has no attribute 'join'
+[02/Dec/2014 14:37:37] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 130, in processoren
+=======
+<<<<<<< HEAD
 [01/Dec/2014 12:01:49] ERROR [django.request:231] Internal Server Error: /processoren/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
@@ -25,11 +61,38 @@ Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
   File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 139, in processoren
+>>>>>>> 377736fbe60e927f8ca421d5ecfc586418a9aa1f
     for processoren in processorenlijst:
   File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/queryset.py", line 81, in _iter_results
     self._populate_cache()
   File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/queryset.py", line 93, in _populate_cache
     self._result_cache.append(self.next())
+<<<<<<< HEAD
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 1137, in next
+    raw_doc = self._cursor.next()
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 1182, in _cursor
+    self._cursor_obj = self._collection.find(self._query,
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 1215, in _query
+    self._mongo_query = self._query_obj.to_query(self._document)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/visitor.py", line 92, in to_query
+    query = query.accept(QueryCompilerVisitor(document))
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/visitor.py", line 157, in accept
+    return visitor.visit_query(self)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/visitor.py", line 80, in visit_query
+    return transform.query(self.document, **query.query)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/transform.py", line 87, in query
+    value = field.prepare_query_value(op, value)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/fields.py", line 106, in prepare_query_value
+    value = re.escape(value)
+  File "/usr/lib/python2.7/re.py", line 214, in escape
+    return pattern[:0].join(s)
+AttributeError: 'list' object has no attribute 'join'
+[02/Dec/2014 14:37:43] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 130, in processoren
+=======
   File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 1141, in next
     _auto_dereference=self._auto_dereference)
   File "/usr/local/lib/python2.7/dist-packages/mongoengine/base/document.py", line 570, in _from_son
@@ -42,11 +105,39 @@ Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
   File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 139, in processoren
+>>>>>>> 377736fbe60e927f8ca421d5ecfc586418a9aa1f
     for processoren in processorenlijst:
   File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/queryset.py", line 81, in _iter_results
     self._populate_cache()
   File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/queryset.py", line 93, in _populate_cache
     self._result_cache.append(self.next())
+<<<<<<< HEAD
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 1137, in next
+    raw_doc = self._cursor.next()
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 1182, in _cursor
+    self._cursor_obj = self._collection.find(self._query,
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 1215, in _query
+    self._mongo_query = self._query_obj.to_query(self._document)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/visitor.py", line 92, in to_query
+    query = query.accept(QueryCompilerVisitor(document))
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/visitor.py", line 157, in accept
+    return visitor.visit_query(self)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/visitor.py", line 80, in visit_query
+    return transform.query(self.document, **query.query)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/transform.py", line 87, in query
+    value = field.prepare_query_value(op, value)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/fields.py", line 106, in prepare_query_value
+    value = re.escape(value)
+  File "/usr/lib/python2.7/re.py", line 214, in escape
+    return pattern[:0].join(s)
+AttributeError: 'list' object has no attribute 'join'
+[02/Dec/2014 14:37:47] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 130, in processoren
+    for processoren in processorenlijst:
+=======
   File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 1141, in next
     _auto_dereference=self._auto_dereference)
   File "/usr/local/lib/python2.7/dist-packages/mongoengine/base/document.py", line 570, in _from_son
@@ -92,10 +183,38 @@ Traceback (most recent call last):
     return len(self.object_list)
   File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/queryset.py", line 47, in __len__
     list(self._iter_results())
+>>>>>>> 377736fbe60e927f8ca421d5ecfc586418a9aa1f
   File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/queryset.py", line 81, in _iter_results
     self._populate_cache()
   File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/queryset.py", line 93, in _populate_cache
     self._result_cache.append(self.next())
+<<<<<<< HEAD
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 1137, in next
+    raw_doc = self._cursor.next()
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 1182, in _cursor
+    self._cursor_obj = self._collection.find(self._query,
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 1215, in _query
+    self._mongo_query = self._query_obj.to_query(self._document)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/visitor.py", line 92, in to_query
+    query = query.accept(QueryCompilerVisitor(document))
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/visitor.py", line 157, in accept
+    return visitor.visit_query(self)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/visitor.py", line 80, in visit_query
+    return transform.query(self.document, **query.query)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/transform.py", line 87, in query
+    value = field.prepare_query_value(op, value)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/fields.py", line 106, in prepare_query_value
+    value = re.escape(value)
+  File "/usr/lib/python2.7/re.py", line 214, in escape
+    return pattern[:0].join(s)
+AttributeError: 'list' object has no attribute 'join'
+[02/Dec/2014 14:37:58] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 130, in processoren
+    for processoren in processorenlijst:
+=======
   File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 1141, in next
     _auto_dereference=self._auto_dereference)
   File "/usr/local/lib/python2.7/dist-packages/mongoengine/base/document.py", line 570, in _from_son
@@ -141,10 +260,128 @@ Traceback (most recent call last):
     return len(self.object_list)
   File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/queryset.py", line 47, in __len__
     list(self._iter_results())
+>>>>>>> 377736fbe60e927f8ca421d5ecfc586418a9aa1f
   File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/queryset.py", line 81, in _iter_results
     self._populate_cache()
   File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/queryset.py", line 93, in _populate_cache
     self._result_cache.append(self.next())
+<<<<<<< HEAD
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 1137, in next
+    raw_doc = self._cursor.next()
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 1182, in _cursor
+    self._cursor_obj = self._collection.find(self._query,
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 1215, in _query
+    self._mongo_query = self._query_obj.to_query(self._document)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/visitor.py", line 92, in to_query
+    query = query.accept(QueryCompilerVisitor(document))
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/visitor.py", line 157, in accept
+    return visitor.visit_query(self)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/visitor.py", line 80, in visit_query
+    return transform.query(self.document, **query.query)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/transform.py", line 87, in query
+    value = field.prepare_query_value(op, value)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/fields.py", line 106, in prepare_query_value
+    value = re.escape(value)
+  File "/usr/lib/python2.7/re.py", line 214, in escape
+    return pattern[:0].join(s)
+AttributeError: 'list' object has no attribute 'join'
+[02/Dec/2014 14:46:49] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 129, in processoren
+    processorenlijst = filters(request,processorenlijst)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 325, in filters
+    objectlijst = stock(objectlijst,levering)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 342, in stock
+    objectlijst_filtered += objectlijst.filter(stock__icontains=d)
+UnboundLocalError: local variable 'objectlijst_filtered' referenced before assignment
+[02/Dec/2014 14:53:45] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 131, in processoren
+    diestringnaam = processoren.prijs[0]
+AttributeError: 'QuerySet' object has no attribute 'prijs'
+[02/Dec/2014 15:02:30] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 132, in processoren
+    diestringnaam = processoren.prijs[0]
+AttributeError: 'QuerySet' object has no attribute 'prijs'
+[02/Dec/2014 15:02:48] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 132, in processoren
+    diestringnaam = processoren.prijs[0]
+AttributeError: 'QuerySet' object has no attribute 'prijs'
+[02/Dec/2014 15:03:47] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 130, in processoren
+    processorenlijst = filters(request,processorenlijst)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 326, in filters
+    objectlijst = stock(objectlijst,levering)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 345, in stock
+    objectlijst_filtered(objectlijst.filter(stock__icontains=d))
+TypeError: 'list' object is not callable
+[02/Dec/2014 15:04:23] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 132, in processoren
+    diestringnaam = processoren.prijs[0]
+AttributeError: 'QuerySet' object has no attribute 'prijs'
+[02/Dec/2014 15:04:53] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 132, in processoren
+    diestringnaam = processoren.prijs[0]
+AttributeError: 'QuerySet' object has no attribute 'prijs'
+[02/Dec/2014 15:05:46] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 130, in processoren
+    processorenlijst = filters(request,processorenlijst)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 326, in filters
+    objectlijst = stock(objectlijst,levering)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 351, in stock
+    return list(chain(cars, trucks))
+NameError: global name 'cars' is not defined
+[02/Dec/2014 15:08:06] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 132, in processoren
+    diestringnaam = processoren.prijs[0]
+AttributeError: 'QuerySet' object has no attribute 'prijs'
+[02/Dec/2014 15:08:19] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 132, in processoren
+    diestringnaam = processoren.prijs[0]
+AttributeError: 'QuerySet' object has no attribute 'prijs'
+[02/Dec/2014 15:09:51] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 130, in processoren
+    processorenlijst = filters(request,processorenlijst)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 326, in filters
+    objectlijst = stock(objectlijst,levering)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 344, in stock
+    objectlijst_filtered.append(objectlijst.filter(stock__icontains in direct_leverbaar))
+NameError: global name 'stock__icontains' is not defined
+[02/Dec/2014 15:10:00] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 112, in get_response
+=======
   File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 1141, in next
     _auto_dereference=self._auto_dereference)
   File "/usr/local/lib/python2.7/dist-packages/mongoengine/base/document.py", line 570, in _from_son
@@ -733,656 +970,496 @@ AttributeError: 'list' object has no attribute 'translate'
 [30/Nov/2014 11:56:07] ERROR [django.request:231] Internal Server Error: /processoren/
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 98, in get_response
+>>>>>>> 377736fbe60e927f8ca421d5ecfc586418a9aa1f
     resolver_match = resolver.resolve(request.path_info)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 340, in resolve
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 369, in resolve
     sub_match = pattern.resolve(new_path)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 224, in resolve
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 241, in resolve
     return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 231, in callback
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 248, in callback
     self._callback = get_callable(self._callback_str)
-  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 101, in wrapper
+  File "/home/sander/Downloads/django-trunk/django/utils/lru_cache.py", line 101, in wrapper
     result = user_function(*args, **kwds)
-  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 97, in get_callable
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 107, in get_callable
     mod = import_module(mod_name)
   File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
     __import__(name)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140
-    diestringnaam = processoren.prijs[].translate("\u20AC")
-                                      ^
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 344
+    objectlijst_filtered.append(objectlijst.filter(stock__icontains= in direct_leverbaar))
+                                                                      ^
 SyntaxError: invalid syntax
-[30/Nov/2014 11:56:13] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
-    diestringnaam = processoren.prijs[1].translate("\u20AC")
-IndexError: list index out of range
-[30/Nov/2014 11:56:24] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
-    diestringnaam = processoren.prijs[0].translate("\u20AC")
-IndexError: list index out of range
-[30/Nov/2014 11:56:26] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
-    diestringnaam = processoren.prijs[0].translate("\u20AC")
-IndexError: list index out of range
-[30/Nov/2014 11:56:27] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
-    diestringnaam = processoren.prijs[0].translate("\u20AC")
-IndexError: list index out of range
-[30/Nov/2014 11:56:41] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:56:42] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:56:42] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:56:43] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:56:43] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:56:44] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:56:44] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:56:44] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:56:45] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:57:51] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:57:52] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:57:52] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:57:52] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:57:53] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:57:53] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:57:53] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:57:53] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:57:54] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:58:07] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:59:17] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:59:54] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:59:55] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:59:55] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:59:55] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:59:56] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:59:56] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:59:56] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:59:56] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:59:57] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:59:57] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:59:57] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:59:57] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:59:57] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 11:59:58] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 12:00:51] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
-    diestringnaam = processoren.prijs[0].translate( None, u'\u20ac')
-TypeError: translate() takes exactly one argument (2 given)
-[30/Nov/2014 12:00:52] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
-    diestringnaam = processoren.prijs[0].translate( None, u'\u20ac')
-TypeError: translate() takes exactly one argument (2 given)
-[30/Nov/2014 12:00:52] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
-    diestringnaam = processoren.prijs[0].translate( None, u'\u20ac')
-TypeError: translate() takes exactly one argument (2 given)
-[30/Nov/2014 12:00:52] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
-    diestringnaam = processoren.prijs[0].translate( None, u'\u20ac')
-TypeError: translate() takes exactly one argument (2 given)
-[30/Nov/2014 12:00:53] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
-    diestringnaam = processoren.prijs[0].translate( None, u'\u20ac')
-TypeError: translate() takes exactly one argument (2 given)
-[30/Nov/2014 12:00:53] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
-    diestringnaam = processoren.prijs[0].translate( None, u'\u20ac')
-TypeError: translate() takes exactly one argument (2 given)
-[30/Nov/2014 12:00:54] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
-    diestringnaam = processoren.prijs[0].translate( None, u'\u20ac')
-TypeError: translate() takes exactly one argument (2 given)
-[30/Nov/2014 12:00:54] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
-    diestringnaam = processoren.prijs[0].translate( None, u'\u20ac')
-TypeError: translate() takes exactly one argument (2 given)
-[30/Nov/2014 12:00:54] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
-    diestringnaam = processoren.prijs[0].translate( None, u'\u20ac')
-TypeError: translate() takes exactly one argument (2 given)
-[30/Nov/2014 12:00:54] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
-    diestringnaam = processoren.prijs[0].translate( None, u'\u20ac')
-TypeError: translate() takes exactly one argument (2 given)
-[30/Nov/2014 12:00:55] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
-    diestringnaam = processoren.prijs[0].translate( None, u'\u20ac')
-TypeError: translate() takes exactly one argument (2 given)
-[30/Nov/2014 12:00:55] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 140, in processoren
-    diestringnaam = processoren.prijs[0].translate( None, u'\u20ac')
-TypeError: translate() takes exactly one argument (2 given)
-[30/Nov/2014 12:01:24] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 12:46:34] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 12:46:36] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-UnicodeEncodeError: 'decimal' codec can't encode character u'\u20ac' in position 0: invalid decimal Unicode string
-[30/Nov/2014 12:54:32] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 12:54:32] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 12:54:33] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 12:54:33] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 12:54:33] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 12:54:33] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 12:54:34] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 12:54:34] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 12:54:34] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 12:54:34] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 12:54:35] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 12:54:35] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 12:54:35] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 12:54:35] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 12:54:35] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 12:54:36] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 12:54:36] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 13:01:21] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 13:01:21] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 13:01:21] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 13:01:21] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 13:01:22] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 13:01:22] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 13:01:22] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 13:01:22] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 13:01:23] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 13:01:23] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 13:01:23] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 13:01:23] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 13:01:24] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 13:01:24] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 13:01:24] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 13:01:24] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam) < float(minPriceSliderValue):
-ValueError: invalid literal for float(): 525,61
-[30/Nov/2014 13:03:22] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam.replace(',','.')) < float(minPriceSliderValue.replace(',','')):
-AttributeError: 'int' object has no attribute 'replace'
-[30/Nov/2014 13:03:23] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam.replace(',','.')) < float(minPriceSliderValue.replace(',','')):
-AttributeError: 'int' object has no attribute 'replace'
-[30/Nov/2014 13:03:23] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam.replace(',','.')) < float(minPriceSliderValue.replace(',','')):
-AttributeError: 'int' object has no attribute 'replace'
-[30/Nov/2014 13:03:23] ERROR [django.request:231] Internal Server Error: /processoren/
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/rik/A-Pc/Website/pcbuilder/views.py", line 141, in processoren
-    if float(diestringnaam.replace(',','.')) < float(minPriceSliderValue.replace(',','')):
-AttributeError: 'int' object has no attribute 'replace'
+[02/Dec/2014 15:10:00] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 112, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 369, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 241, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 248, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/sander/Downloads/django-trunk/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 107, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 344
+    objectlijst_filtered.append(objectlijst.filter(stock__icontains= in direct_leverbaar))
+                                                                      ^
+SyntaxError: invalid syntax
+[02/Dec/2014 15:10:07] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 130, in processoren
+    processorenlijst = filters(request,processorenlijst)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 326, in filters
+    objectlijst = stock(objectlijst,levering)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 349, in stock
+    print objectlijst_filtered
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/queryset.py", line 58, in __repr__
+    self._populate_cache()
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/queryset.py", line 93, in _populate_cache
+    self._result_cache.append(self.next())
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 1137, in next
+    raw_doc = self._cursor.next()
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 1182, in _cursor
+    self._cursor_obj = self._collection.find(self._query,
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/base.py", line 1215, in _query
+    self._mongo_query = self._query_obj.to_query(self._document)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/visitor.py", line 92, in to_query
+    query = query.accept(QueryCompilerVisitor(document))
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/visitor.py", line 157, in accept
+    return visitor.visit_query(self)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/visitor.py", line 80, in visit_query
+    return transform.query(self.document, **query.query)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/queryset/transform.py", line 87, in query
+    value = field.prepare_query_value(op, value)
+  File "/usr/local/lib/python2.7/dist-packages/mongoengine/fields.py", line 106, in prepare_query_value
+    value = re.escape(value)
+  File "/usr/lib/python2.7/re.py", line 214, in escape
+    return pattern[:0].join(s)
+AttributeError: 'list' object has no attribute 'join'
+[02/Dec/2014 15:10:46] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 125, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 144, in processoren
+    processoren = listing(request, processorenlijst, 15)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 300, in listing
+    componenten = paginator.page(1)
+  File "/home/sander/Downloads/django-trunk/django/core/paginator.py", line 50, in page
+    number = self.validate_number(number)
+  File "/home/sander/Downloads/django-trunk/django/core/paginator.py", line 39, in validate_number
+    if number > self.num_pages:
+  File "/home/sander/Downloads/django-trunk/django/core/paginator.py", line 86, in _get_num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "/home/sander/Downloads/django-trunk/django/core/paginator.py", line 77, in _get_count
+    self._count = len(self.object_list)
+TypeError: object of type 'itertools.chain' has no len()
+[02/Dec/2014 15:12:12] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 112, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 369, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 241, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 248, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/sander/Downloads/django-trunk/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 107, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 347
+    print objectlijst_filtered
+        ^
+SyntaxError: invalid syntax
+[02/Dec/2014 15:12:13] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 112, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 369, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 241, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 248, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/sander/Downloads/django-trunk/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 107, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 347
+    print objectlijst_filtered
+        ^
+SyntaxError: invalid syntax
+[02/Dec/2014 15:12:21] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 112, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 369, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 241, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 248, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/sander/Downloads/django-trunk/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 107, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 347
+    print objectlijst_filtered
+        ^
+SyntaxError: invalid syntax
+[02/Dec/2014 15:12:22] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 112, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 369, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 241, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 248, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/sander/Downloads/django-trunk/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 107, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 347
+    print objectlijst_filtered
+        ^
+SyntaxError: invalid syntax
+[02/Dec/2014 15:12:23] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 112, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 369, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 241, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 248, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/sander/Downloads/django-trunk/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 107, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 347
+    print objectlijst_filtered
+        ^
+SyntaxError: invalid syntax
+[02/Dec/2014 15:12:24] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 112, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 369, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 241, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 248, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/sander/Downloads/django-trunk/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 107, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 347
+    print objectlijst_filtered
+        ^
+SyntaxError: invalid syntax
+[02/Dec/2014 15:12:34] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 112, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 369, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 241, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 248, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/sander/Downloads/django-trunk/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 107, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 347
+    print objectlijst_filtered
+        ^
+SyntaxError: invalid syntax
+[02/Dec/2014 15:12:34] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 112, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 369, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 241, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 248, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/sander/Downloads/django-trunk/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 107, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 347
+    print objectlijst_filtered
+        ^
+SyntaxError: invalid syntax
+[02/Dec/2014 15:12:50] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 112, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 369, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 241, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 248, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/sander/Downloads/django-trunk/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 107, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 347
+    print objectlijst_filtered
+        ^
+SyntaxError: invalid syntax
+[02/Dec/2014 15:12:51] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 112, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 369, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 241, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 248, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/sander/Downloads/django-trunk/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 107, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 347
+    print objectlijst_filtered
+        ^
+SyntaxError: invalid syntax
+[02/Dec/2014 15:12:51] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 112, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 369, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 241, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 248, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/sander/Downloads/django-trunk/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 107, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 347
+    print objectlijst_filtered
+        ^
+SyntaxError: invalid syntax
+[02/Dec/2014 15:12:52] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 112, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 369, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 241, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 248, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/sander/Downloads/django-trunk/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 107, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 347
+    print objectlijst_filtered
+        ^
+SyntaxError: invalid syntax
+[02/Dec/2014 15:12:58] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 112, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 369, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 241, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 248, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/sander/Downloads/django-trunk/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 107, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 347
+    print "alles goed?"
+        ^
+SyntaxError: invalid syntax
+[02/Dec/2014 15:12:59] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 112, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 369, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 241, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 248, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/sander/Downloads/django-trunk/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 107, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 347
+    print "alles goed?"
+        ^
+SyntaxError: invalid syntax
+[02/Dec/2014 15:12:59] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 112, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 369, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 241, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 248, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/sander/Downloads/django-trunk/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 107, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 347
+    print "alles goed?"
+        ^
+SyntaxError: invalid syntax
+[02/Dec/2014 15:12:59] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 112, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 369, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 241, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 248, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/sander/Downloads/django-trunk/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 107, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 347
+    print "alles goed?"
+        ^
+SyntaxError: invalid syntax
+[02/Dec/2014 15:13:00] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 112, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 369, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 241, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 248, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/sander/Downloads/django-trunk/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 107, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 347
+    print "alles goed?"
+        ^
+SyntaxError: invalid syntax
+[02/Dec/2014 15:13:00] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 112, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 369, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 241, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 248, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/sander/Downloads/django-trunk/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 107, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 347
+    print "alles goed?"
+        ^
+SyntaxError: invalid syntax
+[02/Dec/2014 15:13:01] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 112, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 369, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 241, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 248, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/sander/Downloads/django-trunk/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 107, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 347
+    print "alles goed?"
+        ^
+SyntaxError: invalid syntax
+[02/Dec/2014 15:13:07] ERROR [django.request:240] Internal Server Error: /processoren/
+Traceback (most recent call last):
+<<<<<<< HEAD
+  File "/home/sander/Downloads/django-trunk/django/core/handlers/base.py", line 112, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 369, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 241, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 248, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/sander/Downloads/django-trunk/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/sander/Downloads/django-trunk/django/core/urlresolvers.py", line 107, in get_callable
+    mod = import_module(mod_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/sander/grive/School/Kwartaal 1/Project local/A-Pc/Website/pcbuilder/views.py", line 348
+    print "alles goed?"
+        ^
+SyntaxError: invalid syntax
 =======
-[01/Dec/2014 12:00:25] ERROR [django.request:231] Internal Server Error: /contact/
-Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
   File "/home/robin/Work/School/A-Pc/Website/pcbuilder/views.py", line 37, in contact
@@ -3334,3 +3411,4 @@ Traceback (most recent call last):
 RuntimeError: maximum recursion depth exceeded while calling a Python object
 >>>>>>> 282b34b08e6f24e83b78c76f3e4b40b185e445a4
 >>>>>>> bacabea99b021d8116d39b9637b4c2be4eafdefc
+>>>>>>> 377736fbe60e927f8ca421d5ecfc586418a9aa1f
