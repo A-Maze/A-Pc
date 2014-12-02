@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
-
-# Define your item pipelines here
-#
-# Don't forget to add your pipeline to the ITEM_PIPELINES setting
-# See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
+# -------------------------------------------------------------------
+# |																	|
+# |																	|
+# |                 	 	   pipelines							|
+# |																	|
+# |							 made with love							|
+# |																	|
+# |																	|
+# -------------------------------------------------------------------			  
 import pymongo
-
 from scrapy.exceptions import DropItem
 from scrapy.conf import settings
 from scrapy import log
@@ -14,10 +17,8 @@ import codecs
 
 class PccrawlerPipeline(object):
 
-		
-
 	def __init__(self):
-		poep = "kaas"
+		var = "bezig"
 		
         def process_item(self, item, spider):
 		valid = True
@@ -38,10 +39,10 @@ class PccrawlerPipeline(object):
 			    	level=log.DEBUG, spider=spider) 
 
 				def addToList(item):	
-					print(ite)
+					print(item)
 					if u'\u20ac' in item["prijs"][0]:
 						item["prijs"][0] = item["prijs"][0][2:]
-<<<<<<< HEAD
+
 					print(item["link"][0])
 					try:
 						self.collection.update({'ean': item["ean"]}, {"$push": {"link" : item["link"][0]}}, upsert=True)
@@ -54,60 +55,24 @@ class PccrawlerPipeline(object):
 						self.collection.update({'sku': item["sku"]}, {"$push": {"herkomst" : item["herkomst"][0]}}, upsert=True)
 						self.collection.update({'sku': item["sku"]}, {"$push": {"prijs" : item["prijs"][0]}}, upsert=True)
 						self.collection.update({'sku': item["sku"]}, {"$push": {"stock" : item["stock"][0]}}, upsert=True)
-=======
-					#try:
-					self.collection.update({'ean': item["ean"]}, {"$push": {"naam" : item["naam"][0]}}, upsert=True)
-					self.collection.update({'ean': item["ean"]}, {"$push": {"subnaam" : item["subnaam"][0]}}, upsert=True)
-					self.collection.update({'ean': item["ean"]}, {"$push": {"link" : item["link"][0]}}, upsert=True)
-					self.collection.update({'ean': item["ean"]}, {"$push": {"herkomst" : item["herkomst"][0]}}, upsert=True)
-					self.collection.update({'ean': item["ean"]}, {"$push": {"prijs" : item["prijs"][0]}}, upsert=True)
-					self.collection.update({'ean': item["ean"]}, {"$push": {"stock" : item["stock"][0]}}, upsert=True)
-					#self.collection.update({'ean': item["ean"]}, {"$push": {"sku" : item["sku"][0]}}, upsert=True)
-					#except IndexError:
-					#	self.collection.update({'sku': item["sku"]}, {"$push": {"naam" : item["naam"][0]}}, upsert=True)
-					#	self.collection.update({'sku': item["sku"]}, {"$push": {"subnaam" : item["subnaam"][0]}}, upsert=True)
-					#	self.collection.update({'sku': item["sku"]}, {"$push": {"link" : item["link"][0]}}, upsert=True)
-					#	self.collection.update({'sku': item["sku"]}, {"$push": {"herkomst" : item["herkomst"][0]}}, upsert=True)
-					#	self.collection.update({'sku': item["sku"]}, {"$push": {"prijs" : item["prijs"][0]}}, upsert=True)
-					#	self.collection.update({'sku': item["sku"]}, {"$push": {"stock" : item["stock"][0]}}, upsert=True)
->>>>>>> d88613cfe5aa78982fdfe01090ec1d0ce697d9b0
+
 
 				def addToDatabase(collectienaam):
 					item["categorie"] = collectienaam
-
-
-					eanProduct = self.collection.find({'ean':item["ean"]})
-					skuProduct = self.collection.find({'sku':item["sku"]})
-					totalProduct = eanProduct 
-					for doc in totalProduct:
-						
-						try:
-							if item["ean"][0]:
-								if (item["ean"][0] in doc["ean"][0]):
-									addToList(collectienaam)
-									print("oud")
-								else:
-									pleurindedb(collectienaam)
-									print("nieuw")
-						except IndexError:
-							if item["sku"][0]:
-								if (item["sku"][0] in doc["sku"][0]):
-									addToList(collectienaam)
-									print("oud")
-								else:
-									pleurindedb(collectienaam)
-									print("nieuw")
-							
-					
-						
-						
-
-				collectienaam = ""
-
-				#
-				#  one love (L)(L)pipelines(L)(L)
-				
-				
+					try:
+						if self.collection.find({'ean':  item["ean"][0]}).count() > 0:
+							print("true")
+							addToList(item)
+						else:
+							print("false")
+							pleurindedb(collectienaam)
+					except IndexError:
+						if self.collection.find({'sku':  item["sku"][0]}).count() > 0:
+							print("true")
+							addToList(item)
+						else:
+							print("false")	
+							pleurindedb(collectienaam)
 
 				langeNaam = item["categorie"][0]
 				if ("Processoren" or "CPU" or "Processors") in langeNaam:
