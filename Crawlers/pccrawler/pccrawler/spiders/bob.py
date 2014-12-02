@@ -54,10 +54,7 @@ class BobSpider(CrawlSpider):
                 item['categorie'] = ["Voeding"]
             else:
                 item['categorie'] = sel.xpath('//div[@class="breadCrumbs"]/span[position() = 2]/a/span/text()').extract()
-            prijs = sel.xpath('//span[@itemprop="price"]/@content').extract()
-            for prijzen in prijs:
-                prijzen.replace(',','.')
-            item['prijs'] = prijs
+            item['prijs'] = sel.xpath('//span[@itemprop="price"]/@content').extract()
             item['link'] = response.url
             item['ean'] = find_between(sel.xpath('//script[contains(. , "upcean")]/text()').extract()[0], "'upcean', '","']);")
 

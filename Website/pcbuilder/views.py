@@ -116,8 +116,8 @@ def processoren(request):
     # Get all posts from DB
     # Aantal per pagina en pagina nummer
 
-    minPriceSliderValue = 1500
-    maxPriceSliderValue = 0
+    minPriceSliderValue = 1500.1
+    maxPriceSliderValue = 0.1
 
     processorenlijst = Processoren.objects
 
@@ -126,13 +126,21 @@ def processoren(request):
     #overgebleven componentenlijst afhankelijk van stock
     #Dit dient later afhaneklijk te worden van alle filters
     processorenlijst = filters(request,processorenlijst)
-
     for processoren in processorenlijst:
+<<<<<<< HEAD
         diestringnaam = processoren.prijs[0]
-        if float(diestringnaam) < float(minPriceSliderValue):
+        if diestringnaam < minPriceSliderValue:
             minPriceSliderValue = diestringnaam
-        elif float(diestringnaam) > float(maxPriceSliderValue):
+        elif diestringnaam > maxPriceSliderValue:
             maxPriceSliderValue = diestringnaam
+=======
+        if processoren.prijs:
+            diestringnaam = processoren.prijs[0]
+            if float(diestringnaam) < float(minPriceSliderValue):
+                minPriceSliderValue = diestringnaam
+            elif float(diestringnaam) > float(maxPriceSliderValue):
+                maxPriceSliderValue = diestringnaam
+>>>>>>> d88613cfe5aa78982fdfe01090ec1d0ce697d9b0
 
     processoren = listing(request, processorenlijst, 15)
     #processoren = json.dumps(list(uniArray))
