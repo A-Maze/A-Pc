@@ -37,20 +37,18 @@ class PccrawlerPipeline(object):
 			    	(settings['MONGODB_DB'], collectionName, item['categorie']),
 			    	level=log.DEBUG, spider=spider) 
 
-				def addToList(item):
+				def addToList(item):	
+					print(ite)
 					if u'\u20ac' in item["prijs"][0]:
 						item["prijs"][0] = item["prijs"][0][2:]
+					print(item["link"][0])
 					try:
-						self.collection.update({'ean': item["ean"]}, {"$push": {"naam" : item["naam"][0]}}, upsert=True)
-						self.collection.update({'ean': item["ean"]}, {"$push": {"subnaam" : item["subnaam"][0]}}, upsert=True)
 						self.collection.update({'ean': item["ean"]}, {"$push": {"link" : item["link"][0]}}, upsert=True)
 						self.collection.update({'ean': item["ean"]}, {"$push": {"herkomst" : item["herkomst"][0]}}, upsert=True)
 						self.collection.update({'ean': item["ean"]}, {"$push": {"prijs" : item["prijs"][0]}}, upsert=True)
 						self.collection.update({'ean': item["ean"]}, {"$push": {"stock" : item["stock"][0]}}, upsert=True)
 						self.collection.update({'ean': item["ean"]}, {"$push": {"sku" : item["sku"][0]}}, upsert=True)
 					except IndexError:
-						self.collection.update({'sku': item["sku"]}, {"$push": {"naam" : item["naam"][0]}}, upsert=True)
-						self.collection.update({'sku': item["sku"]}, {"$push": {"subnaam" : item["subnaam"][0]}}, upsert=True)
 						self.collection.update({'sku': item["sku"]}, {"$push": {"link" : item["link"][0]}}, upsert=True)
 						self.collection.update({'sku': item["sku"]}, {"$push": {"herkomst" : item["herkomst"][0]}}, upsert=True)
 						self.collection.update({'sku': item["sku"]}, {"$push": {"prijs" : item["prijs"][0]}}, upsert=True)
@@ -58,17 +56,33 @@ class PccrawlerPipeline(object):
 
 				def addToDatabase(collectienaam):
 					item["categorie"] = collectienaam
-					try:
-						if item["ean"][0] in self.collection.find({ "ean" : { "$exists" : "true", "$in" :[item["ean"][0]]}}):
-							addToList(item)
-							log.msg(db.behuizingen.find({ "ean" : { "$exists" : "true", "$in" :[item["ean"][0]]}}))
-					except IndexError:
-						if item["sku"][0] in self.collection.find({ "sku" : { "$exists" : "true", "$in" :[item["sku"][0]]}}):
-							addToList(item)
-							log.msg(db.behuizingen.find({ "sku" : { "$exists" : "true", "$in" :[item["sku"][0]]}}))
-					except IndexError:
-						pleurindedb(collectienaam)
-						log.msg("nieuwww")
+
+
+					eanProduct = self.collection.find({'ean':item["ean"]})
+					skuProduct = self.collection.find({'sku':item["sku"]})
+					totalProduct = eanProduct 
+					for doc in totalProduct:
+						
+						try:
+							if item["ean"][0]:
+								if (item["ean"][0] in doc["ean"][0]):
+									addToList(collectienaam)
+									print("oud")
+								else:
+									pleurindedb(collectienaam)
+									print("nieuw")
+						except IndexError:
+							if item["sku"][0]:
+								if (item["sku"][0] in doc["sku"][0]):
+									addToList(collectienaam)
+									print("oud")
+								else:
+									pleurindedb(collectienaam)
+									print("nieuw")
+							
+					
+						
+						
 
 				collectienaam = ""
 
@@ -100,7 +114,7 @@ class PccrawlerPipeline(object):
 					self.collection = db["grafische"]
 					collectienaam = "grafische"
 					addToDatabase(collectienaam)
-				elif ("Harde" or "Geheugen intern" or "Interne") in langeNaam:
+				elif ("Harde" or "intern" or "Interne" or "Solid") in langeNaam:
 					self.collection = db["harde"]
 					collectienaam = "harde"
 					addToDatabase(collectienaam)
