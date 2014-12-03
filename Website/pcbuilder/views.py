@@ -365,9 +365,9 @@ def pricefilter(objectlijst, minprijs, maxprijs):
         if (prijs < float(minprijs)) or (prijs > float(maxprijs)):
             #then filter that component from the queryset
             if component.ean:
-                #hier komt magie
+                pass#hier komt magie
             elif component.sku:
-                #hier komt magie
+                pass#hier komt magie
     return newLijst
 
 
