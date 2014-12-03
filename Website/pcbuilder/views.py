@@ -322,7 +322,7 @@ def filters(request, objectlijst):
 
         minprijs = request.POST.get('minprijs')
         maxprijs = request.POST.get('maxprijs')
-        objectlijst =  pricefilter(objectlijst,minprijs,maxprijs)
+        #objectlijst =  pricefilter(objectlijst,minprijs,maxprijs)
     return objectlijst
 
 
@@ -340,7 +340,7 @@ def stock(objectlijst, levering):
     
     if levering == "alles":
         return objectlijst
-    if levering == "morgen":
+    elif levering == "morgen":
         for key, d in enumerate(direct_leverbaar):
             objects = objectlijst.filter(stock__icontains=d)
             if key == 0:
