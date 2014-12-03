@@ -9,7 +9,6 @@ from bson.json_util import dumps
 import json as simplejson
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding
 from itertools import chain
-import logging
 import json
 
 # Global vars
