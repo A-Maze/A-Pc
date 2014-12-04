@@ -108,8 +108,11 @@ def detail(request):
         categorieObject = Voeding
     elif (categorie == "behuizingen"):
         categorieObject = Behuizingen
+
+    aantalHerkomsten = []
+
     
-    return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie.lower(), 'Product': product, 'Prijs': prijs, 'Productid': productid},
+    return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie.lower(), 'Product': product, 'Prijs': prijs, 'Productid': productid, 'aantalHerkomsten' : aantalHerkomsten},
 context_instance=RequestContext(request))
 
 def processoren(request):

@@ -19,14 +19,17 @@ class Moederborden(Document):
 
 class Processoren(Document):
     
+    herkomst = StringField(max_length=200)
     categorie = StringField(max_length=120)
     naam = StringField(max_length=500)
     subnaam = StringField(max_length=500)
     info = StringField(max_length=500)
-    stock = StringField(max_length=500)
     prijs = StringField(max_length=120)
+    stock = StringField(max_length=500)
+    
     ean = StringField(max_length=200)
     sku = StringField(max_length=200)
+
 
 class Koeling(Document):
     
