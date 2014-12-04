@@ -130,6 +130,7 @@ def processoren(request):
     #overgebleven componentenlijst afhankelijk van stock
     #Dit dient later afhaneklijk te worden van alle filters
     processorenlijst = filters(request,processorenlijst)
+
     for processoren in processorenlijst:
 
         if processoren.prijs:
@@ -142,16 +143,15 @@ def processoren(request):
     processoren = listing(request, processorenlijst, 15)
     #processoren = json.dumps(list(uniArray))
     
-    bereik, diff = paginas(processorenlijst, processoren)
+    bereik, diff, current_page = paginas(processorenlijst, processoren)
 
-    print "werkt bijna"
     if request.method == 'POST':
         json = {}
-        json['Componenten'] = render_to_string('processoren.html', {'Componenten': processoren, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue }, context_instance=RequestContext(request))
+        json['Componenten'] = render_to_string('processoren.html', {'Componenten': processoren, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page }, context_instance=RequestContext(request))
         json = dumps(json)
         return HttpResponse(json,content_type="application/json")
     else:
-        return render_to_response('processoren.html', {'Componenten': processoren, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue },
+        return render_to_response('processoren.html', {'Componenten': processoren, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page },
                               context_instance=RequestContext(request))
 
 def behuizingen(request):
@@ -289,7 +289,10 @@ def voedingen(request):
 
 def listing(request, componentenlijst, aantal):
     paginator = Paginator(componentenlijst,15)
-    pagina = request.GET.get('pagina')
+    try:
+        pagina = request.POST['pageNumber']
+    except:
+        pagina = 1
 
     try:
         componenten = paginator.page(pagina)
@@ -313,7 +316,7 @@ def paginas(componentenlijst, componenten):
     for p in pages:
         diff.append(int(p - current_page))
 
-    return bereik, diff
+    return bereik, diff, current_page
 
 def filters(request, objectlijst):
     #checkt of stock filter checked is
@@ -349,8 +352,7 @@ def stock(objectlijst, levering):
             if key == 0:
                 objectlijst_filtered = objects
             else:
-                objectlijst_filtered = list(chain(objects, objectlijst_filtered))                
-        print objectlijst_filtered
+                objectlijst_filtered = list(chain(objects, objectlijst_filtered))
         return objectlijst_filtered
 
 def pricefilter(objectlijst, minprijs, maxprijs):
