@@ -126,8 +126,14 @@ def detail(request):
         categorieObject = Voeding
     elif (categorie == "behuizingen"):
         categorieObject = Behuizingen
+
+    #makes a list of price,stock,link and herkomst
+    for component in categorieObject.objects:
+            if str(productid) == str(component.id):
+                print "called"
+                ziplist = zip(component.herkomst, component.stock, component.link, component.prijs)
     
-    return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie.lower(), 'Product': product, 'Prijs': prijs, 'Productid': productid},
+    return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie.lower(), 'Product': product, 'Prijs': prijs, 'Productid': productid, 'Ziplist': ziplist},
 context_instance=RequestContext(request))
 
 def processoren(request):

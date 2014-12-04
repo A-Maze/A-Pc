@@ -16,7 +16,8 @@ class Moederborden(Document):
     Afbeelding = StringField(max_length=500)
     ean = StringField(max_length=200)
     sku = StringField(max_length=200)
-
+    herkomst = StringField(max_length=200)  
+    link = StringField(max_length=200)
 class Processoren(Document):
     
     categorie = StringField(max_length=120)
@@ -27,6 +28,8 @@ class Processoren(Document):
     prijs = StringField(max_length=120)
     ean = StringField(max_length=200)
     sku = StringField(max_length=200)
+    herkomst = StringField(max_length=200)  
+    link = StringField(max_length=200)
 
 class Koeling(Document):
     
@@ -38,6 +41,8 @@ class Koeling(Document):
     prijs = StringField(max_length=120)
     ean = StringField(max_length=200)
     sku = StringField(max_length=200)
+    herkomst = StringField(max_length=200)  
+    link = StringField(max_length=200)
 
 class Behuizingen(Document):
     
@@ -50,6 +55,8 @@ class Behuizingen(Document):
     Afbeelding = StringField(max_length=500)
     ean = StringField(max_length=200)
     sku = StringField(max_length=200)
+    herkomst = StringField(max_length=200)  
+    link = StringField(max_length=200)
 
 class Grafische(Document):
     
@@ -61,6 +68,8 @@ class Grafische(Document):
     prijs = StringField(max_length=120)
     ean = StringField(max_length=200)
     sku = StringField(max_length=200)
+    herkomst = StringField(max_length=200)  
+    link = StringField(max_length=200)
 
 class Harde(Document):
     
@@ -72,6 +81,8 @@ class Harde(Document):
     prijs = StringField(max_length=120)
     ean = StringField(max_length=200)
     sku = StringField(max_length=200)
+    herkomst = StringField(max_length=200)  
+    link = StringField(max_length=200)
 
 class Dvd(Document):
     
@@ -83,6 +94,8 @@ class Dvd(Document):
     prijs = StringField(max_length=120)
     ean = StringField(max_length=200)
     sku = StringField(max_length=200)
+    herkomst = StringField(max_length=200)  
+    link = StringField(max_length=200)
 
 class Geheugen(Document):
     
@@ -95,6 +108,8 @@ class Geheugen(Document):
     prijs = StringField(max_length=120)
     ean = StringField(max_length=200)
     sku = StringField(max_length=200)
+    herkomst = StringField(max_length=200)  
+    link = StringField(max_length=200)
 
 class Voeding(Document):
     
@@ -106,3 +121,5 @@ class Voeding(Document):
     prijs = StringField(max_length=120)
     ean = StringField(max_length=200)
     sku = StringField(max_length=200)
+    herkomst = StringField(max_length=200)  
+    link = StringField(max_length=200)
