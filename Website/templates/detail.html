@@ -99,32 +99,10 @@
                                 <td><a href="{{ product.link }}">{{ herkomst}}</a></td>
                                 <td>{{ prijs}}</td>
                                 <td>{{ stock}}</td>
-                                <td>{% if request.session.moederbordennaam = Product %}
+
+                                <td>{% if Currentproduct == Product and Currentherkomst = herkomst%}
                                     <a class="btn btn-primary pull-right" href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Deselecteer</a>
 
-                                    {% elif request.session.processorennaam = Product %}
-                                    <a class="btn btn-primary pull-right" href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Deselecteer</a>
-
-                                    {% elif request.session.grafischenaam = Product %}
-                                    <a class="btn btn-primary pull-right" href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Deselecteer</a>
-
-                                    {% elif request.session.geheugennaam = Product %}
-                                    <a class="btn btn-primary pull-right" href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Deselecteer</a>
-
-                                    {% elif request.session.voedingnaam = Product %}
-                                    <a class="btn btn-primary pull-right" href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Deselecteer</a>
-
-                                    {% elif request.session.behuizingennaam = Product %}
-                                    <a class="btn btn-primary pull-right" href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Deselecteer</a>
-
-                                    {% elif request.session.koelingnaam = Product %}
-                                    <a class="btn btn-primary pull-right" href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Deselecteer</a>
-
-                                    {% elif request.session.hardenaam = Product %}
-                                    <a class="btn btn-primary pull-right" href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Deselecteer</a>
-
-                                    {% elif request.session.dvdnaam = Product %}
-                                    <a class="btn btn-primary pull-right" href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Deselecteer</a>
                                     {% else %}
                                     <a class="btn btn-primary pull-right"href="/select/?product={{ Product }}&amp;categorie={{ Categorie }}&amp;prijs={{ Prijs }}&amp;productid={{ Productid }}&amp;herkomst={{ herkomst }}&amp;link={{ product.link }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Selecteer</a></td>
                                     {% endif %}

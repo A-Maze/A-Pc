@@ -66,10 +66,15 @@ def mail(request):
         return HttpResponse('Make sure all fields are entered and valid.')
 
 def select(request):
+    #getting all the variables from the url
     product = request.GET.get('product')
     categorie = request.GET.get('categorie')
     prijs = request.GET.get('prijs')
     productid = request.GET.get('productid')
+    herkomst = request.GET.get('herkomst')
+    link = request.GET.get('link')
+
+
     categorie.replace(" ", "")
     categorie.replace(",", "")
     prijs.replace(" ","")
@@ -77,9 +82,16 @@ def select(request):
     productstring = categorie + "naam"
     categorieprijs = categorie + "prijs"
     categorieid = categorie + "id"
+    categorieherkomst = categorie + "herkomst"
+    categorielink = categorie + "link"
+
+    #setting the session variables for the category
     request.session[productstring] = product
     request.session[categorieprijs] = prijs
     request.session[categorieid] = productid
+    request.session[categorieherkomst] = herkomst
+    request.session[categorielink] = link
+
     return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
 
 def deselect(request):
@@ -103,6 +115,13 @@ def detail(request):
     categorie = categorie.lower()
     prijs = request.GET.get('prijs')
     productid = request.GET.get('productid')
+    #tries if currentproduct and currentherkomst actually exist and puts that in a variable
+    try:
+        currentproduct = request.session[categorie + "naam"]
+        currentherkomst = request.session[categorie + "herkomst"]
+        existing = True
+    except existing:
+        consisting = False
     
     
     
@@ -130,11 +149,16 @@ def detail(request):
     #makes a list of price,stock,link and herkomst
     for component in categorieObject.objects:
             if str(productid) == str(component.id):
-                print "called"
                 ziplist = zip(component.herkomst, component.stock, component.link, component.prijs)
-    
-    return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie.lower(), 'Product': product, 'Prijs': prijs, 'Productid': productid, 'Ziplist': ziplist},
-context_instance=RequestContext(request))
+
+    #if currentproduct and currentherkomst exist render them to response as well
+    if existing:
+        return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie.lower(), 'Product': product, 'Prijs': prijs, 'Productid': productid, 'Ziplist': ziplist, 'Currentproduct': currentproduct, 'Currentherkomst': currentherkomst },
+        context_instance=RequestContext(request))
+    else:
+        return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie.lower(), 'Product': product, 'Prijs': prijs, 'Productid': productid, 'Ziplist': ziplist},
+        context_instance=RequestContext(request))
+
 
 def processoren(request):
 
