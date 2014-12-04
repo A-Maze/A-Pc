@@ -131,7 +131,7 @@ def processoren(request):
     for processoren in processorenlijst:
 
         if processoren.prijs:
-            diestringnaam = processoren.prijs[0]
+            diestringnaam = processoren.prijs[0].replace(",",("."))
             if float(diestringnaam) < float(minPriceSliderValue):
                 minPriceSliderValue = diestringnaam
             elif float(diestringnaam) > float(maxPriceSliderValue):
