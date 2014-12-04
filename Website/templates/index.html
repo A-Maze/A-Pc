@@ -356,9 +356,16 @@ window.location = newLocation;
             <td>{% if request.session.behuizingen == True %}<a href="/deselect/?product={{ request.session.behuizingennaam }}&amp;categorie=behuizingen&amp;prijs={{ request.session.behuizingenprijs }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0"><img src="./static/img/action/svg/ic_highlight_remove_24px.svg" /></a>
             {% else  %} <a href="/behuizingen/"><img src="./static/img/action/svg/ic_add_shopping_cart_24px.svg" /></a> {% endif %}</td>
         </tr>
+        <tr >
+            <td></td>
+            <td>Totaal</td>
+            <td><a></a></td>
+            <td>{{ Totaalprijs }}</td>
+        </tr>
 
         </tbody>
     </table>
+            <a href="javascript:void(0)" class="btn btn-primary pull-right">Bestel</a>
 </div>
 
 {% endblock %}
