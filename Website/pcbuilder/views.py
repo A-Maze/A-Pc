@@ -9,7 +9,6 @@ from bson.json_util import dumps
 import json as simplejson
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding
 from itertools import chain
-import logging
 import json
 
 # Global vars
@@ -323,7 +322,7 @@ def filters(request, objectlijst):
 
         minprijs = request.POST.get('minprijs')
         maxprijs = request.POST.get('maxprijs')
-        objectlijst =  pricefilter(objectlijst,minprijs,maxprijs)
+        #objectlijst =  pricefilter(objectlijst,minprijs,maxprijs)
     return objectlijst
 
 
@@ -341,7 +340,7 @@ def stock(objectlijst, levering):
     
     if levering == "alles":
         return objectlijst
-    if levering == "morgen":
+    elif levering == "morgen":
         for key, d in enumerate(direct_leverbaar):
             objects = objectlijst.filter(stock__icontains=d)
             if key == 0:
