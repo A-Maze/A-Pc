@@ -161,7 +161,7 @@ def behuizingen(request):
     behuizingen = listing(request, behuizingenlijst, 15)
 
     
-    bereik, diff = paginas(behuizingenlijst, behuizingen)
+    bereik, diff, current_page = paginas(behuizingenlijst, behuizingen)
 
 
 
@@ -178,7 +178,7 @@ def geheugen(request):
     geheugen = listing(request, geheugenlijst, 15)
 
     
-    bereik, diff = paginas(geheugenlijst, geheugen)
+    bereik, diff, current_page = paginas(geheugenlijst, geheugen)
 
 
 
@@ -195,7 +195,7 @@ def gpu(request):
     grafische = listing(request, grafischelijst, 15)
 
     
-    bereik, diff = paginas(grafischelijst, grafische)
+    bereik, diff, current_page = paginas(grafischelijst, grafische)
 
 
 
@@ -211,7 +211,7 @@ def hardeschijf(request):
     harde = listing(request, hardelijst, 15)
 
     
-    bereik, diff = paginas(hardelijst, harde)
+    bereik, diff, current_page = paginas(hardelijst, harde)
 
 
 
@@ -228,7 +228,7 @@ def koeling(request):
     koeling = listing(request, koelinglijst, 15)
 
     
-    bereik, diff = paginas(koelinglijst, koeling)
+    bereik, diff, current_page = paginas(koelinglijst, koeling)
 
 
 
@@ -243,7 +243,7 @@ def moederborden(request):
     moederborden = listing(request, moederbordenlijst, 15)
     
    
-    bereik, diff = paginas(moederbordenlijst, moederborden)
+    bereik, diff, current_page = paginas(moederbordenlijst, moederborden)
 
 
 
@@ -260,7 +260,7 @@ def optischeschijf(request):
     dvd = listing(request, dvdlijst, 15)
 
 
-    bereik, diff = paginas(dvdlijst, dvd)
+    bereik, diff, current_page = paginas(dvdlijst, dvd)
 
 
 
@@ -276,7 +276,7 @@ def voedingen(request):
     voedinglijst = Voeding.objects
     voeding = listing(request, voedinglijst, 15)
 
-    bereik,diff = paginas(voedinglijst, voeding)
+    bereik, diff, current_page = paginas(voedinglijst, voeding)
 
 
 
