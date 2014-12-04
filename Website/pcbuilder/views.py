@@ -120,8 +120,8 @@ def detail(request):
         currentproduct = request.session[categorie + "naam"]
         currentherkomst = request.session[categorie + "herkomst"]
         existing = True
-    except existing:
-        consisting = False
+    except KeyError:
+        existing = False
     
     
     
