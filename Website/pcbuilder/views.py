@@ -23,7 +23,25 @@ app = 15
 def index(request):
     # Get all posts from DB
     processoren = Processoren.objects
-    return render_to_response('index.html',
+
+    #all the available prices
+    prijzen = [request.session.get('processorenprijs'),
+    request.session.get('moederbordenprijs'),
+    request.session.get('grafischeprijs'),
+    request.session.get('hardeprijs'),
+    request.session.get('dvdprijs'),
+    request.session.get('koelingprijs'),
+    request.session.get('geheugenprijs'),
+    request.session.get('voedingprijs'),
+    request.session.get('behuizingenprijs')]
+    print prijzen
+    totaalprijs = 0
+    #loop through the prices
+    for prijs in prijzen:
+        if not prijs is None:
+            totaalprijs += float(prijs)
+
+    return render_to_response('index.html',{'Totaalprijs': totaalprijs},
                               context_instance=RequestContext(request))
 
 def contact(request):
