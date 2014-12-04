@@ -154,8 +154,34 @@
 {% endfor %}
         </table>
 
+        <table class="table table-striped table-hover ">
+            <thead>
+                <tr>
+                    <th>Webwinkel</th>
+                    <th>Prijs</th>
+                    <th>Levering</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for component in Componenten %}
+                {% for product in component %}
+                    {% with goodID=Productid compareID=product.id  %}         
+                        {%if goodID|stringformat:"s" == compareID|stringformat:"s" %}
+                        {% for herkomst, stock, link, prijs in Ziplist %}
+                            <tr>
+                                <td><a href="{{ product.link }}">{{ herkomst}}</a></td>
+                                <td>{{ prijs}}</td>
+                                <td>{{ stock}}</td>
+                            <tr>
+                        {% endfor %} 
+                {% endif %}
+                {% endwith %}
+                {% endfor %}
+                {% endfor %}
+            </tbody>
+
 
     </div>
 </div>
 
-{% endblock %}
+{% endblock %}q
