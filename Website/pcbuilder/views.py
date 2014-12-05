@@ -146,13 +146,6 @@ def detail(request):
     elif (categorie == "behuizingen"):
         categorieObject = Behuizingen
 
-<<<<<<< HEAD
-    aantalHerkomsten = []
-
-    
-    return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie.lower(), 'Product': product, 'Prijs': prijs, 'Productid': productid, 'aantalHerkomsten' : aantalHerkomsten},
-context_instance=RequestContext(request))
-=======
     #makes a list of price,stock,link and herkomst
     for component in categorieObject.objects:
             if str(productid) == str(component.id):
@@ -166,7 +159,6 @@ context_instance=RequestContext(request))
         return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie.lower(), 'Product': product, 'Prijs': prijs, 'Productid': productid, 'Ziplist': ziplist},
         context_instance=RequestContext(request))
 
->>>>>>> 420b004316de3d801694b16a1727f3875442933d
 
 def processoren(request):
 
@@ -426,6 +418,5 @@ def pricefilter(objectlijst, minprijs, maxprijs):
             elif component.sku:
                 pass#hier komt magie
     return newLijst
-
 
 
