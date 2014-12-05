@@ -23,7 +23,25 @@ app = 15
 def index(request):
     # Get all posts from DB
     processoren = Processoren.objects
-    return render_to_response('index.html',
+
+    #all the available prices
+    prijzen = [request.session.get('processorenprijs'),
+    request.session.get('moederbordenprijs'),
+    request.session.get('grafischeprijs'),
+    request.session.get('hardeprijs'),
+    request.session.get('dvdprijs'),
+    request.session.get('koelingprijs'),
+    request.session.get('geheugenprijs'),
+    request.session.get('voedingprijs'),
+    request.session.get('behuizingenprijs')]
+    print prijzen
+    totaalprijs = 0
+    #loop through the prices
+    for prijs in prijzen:
+        if not prijs is None:
+            totaalprijs += float(prijs)
+
+    return render_to_response('index.html',{'Totaalprijs': totaalprijs},
                               context_instance=RequestContext(request))
 
 def contact(request):
@@ -48,10 +66,15 @@ def mail(request):
         return HttpResponse('Make sure all fields are entered and valid.')
 
 def select(request):
+    #getting all the variables from the url
     product = request.GET.get('product')
     categorie = request.GET.get('categorie')
     prijs = request.GET.get('prijs')
     productid = request.GET.get('productid')
+    herkomst = request.GET.get('herkomst')
+    link = request.GET.get('link')
+
+
     categorie.replace(" ", "")
     categorie.replace(",", "")
     prijs.replace(" ","")
@@ -59,9 +82,16 @@ def select(request):
     productstring = categorie + "naam"
     categorieprijs = categorie + "prijs"
     categorieid = categorie + "id"
+    categorieherkomst = categorie + "herkomst"
+    categorielink = categorie + "link"
+
+    #setting the session variables for the category
     request.session[productstring] = product
     request.session[categorieprijs] = prijs
     request.session[categorieid] = productid
+    request.session[categorieherkomst] = herkomst
+    request.session[categorielink] = link
+
     return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
 
 def deselect(request):
@@ -85,6 +115,13 @@ def detail(request):
     categorie = categorie.lower()
     prijs = request.GET.get('prijs')
     productid = request.GET.get('productid')
+    #tries if currentproduct and currentherkomst actually exist and puts that in a variable
+    try:
+        currentproduct = request.session[categorie + "naam"]
+        currentherkomst = request.session[categorie + "herkomst"]
+        existing = True
+    except KeyError:
+        existing = False
     
     
     
@@ -109,11 +146,27 @@ def detail(request):
     elif (categorie == "behuizingen"):
         categorieObject = Behuizingen
 
+<<<<<<< HEAD
     aantalHerkomsten = []
 
     
     return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie.lower(), 'Product': product, 'Prijs': prijs, 'Productid': productid, 'aantalHerkomsten' : aantalHerkomsten},
 context_instance=RequestContext(request))
+=======
+    #makes a list of price,stock,link and herkomst
+    for component in categorieObject.objects:
+            if str(productid) == str(component.id):
+                ziplist = zip(component.herkomst, component.stock, component.link, component.prijs)
+
+    #if currentproduct and currentherkomst exist render them to response as well
+    if existing:
+        return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie.lower(), 'Product': product, 'Prijs': prijs, 'Productid': productid, 'Ziplist': ziplist, 'Currentproduct': currentproduct, 'Currentherkomst': currentherkomst },
+        context_instance=RequestContext(request))
+    else:
+        return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie.lower(), 'Product': product, 'Prijs': prijs, 'Productid': productid, 'Ziplist': ziplist},
+        context_instance=RequestContext(request))
+
+>>>>>>> 420b004316de3d801694b16a1727f3875442933d
 
 def processoren(request):
 
@@ -164,7 +217,7 @@ def behuizingen(request):
     behuizingen = listing(request, behuizingenlijst, 15)
 
     
-    bereik, diff = paginas(behuizingenlijst, behuizingen)
+    bereik, diff, current_page = paginas(behuizingenlijst, behuizingen)
 
 
 
@@ -181,7 +234,7 @@ def geheugen(request):
     geheugen = listing(request, geheugenlijst, 15)
 
     
-    bereik, diff = paginas(geheugenlijst, geheugen)
+    bereik, diff, current_page = paginas(geheugenlijst, geheugen)
 
 
 
@@ -198,7 +251,7 @@ def gpu(request):
     grafische = listing(request, grafischelijst, 15)
 
     
-    bereik, diff = paginas(grafischelijst, grafische)
+    bereik, diff, current_page = paginas(grafischelijst, grafische)
 
 
 
@@ -214,7 +267,7 @@ def hardeschijf(request):
     harde = listing(request, hardelijst, 15)
 
     
-    bereik, diff = paginas(hardelijst, harde)
+    bereik, diff, current_page = paginas(hardelijst, harde)
 
 
 
@@ -231,7 +284,7 @@ def koeling(request):
     koeling = listing(request, koelinglijst, 15)
 
     
-    bereik, diff = paginas(koelinglijst, koeling)
+    bereik, diff, current_page = paginas(koelinglijst, koeling)
 
 
 
@@ -246,7 +299,7 @@ def moederborden(request):
     moederborden = listing(request, moederbordenlijst, 15)
     
    
-    bereik, diff = paginas(moederbordenlijst, moederborden)
+    bereik, diff, current_page = paginas(moederbordenlijst, moederborden)
 
 
 
@@ -263,7 +316,7 @@ def optischeschijf(request):
     dvd = listing(request, dvdlijst, 15)
 
 
-    bereik, diff = paginas(dvdlijst, dvd)
+    bereik, diff, current_page = paginas(dvdlijst, dvd)
 
 
 
@@ -279,7 +332,7 @@ def voedingen(request):
     voedinglijst = Voeding.objects
     voeding = listing(request, voedinglijst, 15)
 
-    bereik,diff = paginas(voedinglijst, voeding)
+    bereik, diff, current_page = paginas(voedinglijst, voeding)
 
 
 

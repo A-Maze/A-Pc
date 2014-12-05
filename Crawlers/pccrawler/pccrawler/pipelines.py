@@ -17,6 +17,11 @@ import codecs
 
 class PccrawlerPipeline(object):
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 420b004316de3d801694b16a1727f3875442933d
 	def __init__(self):
 		var = "bezig"
 		
@@ -186,4 +191,10 @@ class PccrawlerPipeline(object):
 
 				
 
+<<<<<<< HEAD
 				
+=======
+				
+
+   
+>>>>>>> 420b004316de3d801694b16a1727f3875442933d
