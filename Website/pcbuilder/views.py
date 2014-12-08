@@ -51,12 +51,15 @@ def index(request):
         if not prijs is None:
             totaalprijs += float(prijs.replace(",","."))
 
-    for link in links:
-        if link is None:
-            print "link removed"
-            links.remove(link)
+    filteredLinks = []
 
-    return render_to_response('index.html',{'Totaalprijs': totaalprijs,'Links': links},
+    for link in links:
+        if not link is None:
+            filteredLinks.append(link)
+
+    filteredLinks = dumps(filteredLinks)
+
+    return render_to_response('index.html',{'Totaalprijs': totaalprijs,'Links': filteredLinks},
                               context_instance=RequestContext(request))
 
 def contact(request):

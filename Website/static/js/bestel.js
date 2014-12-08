@@ -1,4 +1,4 @@
 function bestel(){
-	var djangoLinks = "{{ Links }}"
+	var djangoLinks = JSON.parse('{{ Links }}');
 	console.log(djangoLinks);
 }

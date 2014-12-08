@@ -28,7 +28,22 @@ window.location = newLocation;
 
 });
 </script>
-    <script src="{% static 'js/ScrollBar.js' %}"></script>
+<script src="{% static 'js/ScrollBar.js' %}"></script>
+<script >
+function bestel(){
+    var djangoLinks = '{{ Links|safe }}';
+    djangoLinks = djangoLinks.replace("[","");
+    djangoLinks = djangoLinks.replace("]","");
+    djangoLinks = djangoLinks.replace(/"/g,"");
+    djangoLinks = djangoLinks.replace(/ /g,"");
+    djangoLinks = djangoLinks.split(",");
+    for (i=0; i < djangoLinks.length; i++){
+        console.log(djangoLinks[i]);
+        window.open(djangoLinks[i]);
+    }
+};
+</script>
+
 
 
 {% endblock %}
