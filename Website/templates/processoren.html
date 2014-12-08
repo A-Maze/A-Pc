@@ -154,20 +154,8 @@ $('.slider').Link('upper').to($('#sliderMaxValue'));
 
     <div class="col-md-8 col-lg-9" id="productList">
 
-    <script>
-        $(document).ready(function(){
-            $('.prijs').each(function(i) {
-                var prijs = $(this).text()
-                var prijsArray = prijs.split('.')
-                var decimal = prijsArray[1].substring(0,2)
-                if (decimal.toString().length == 1) {
-                    decimal += 0
-                }
-                var prijs = "€" + prijsArray[0] + "," + decimal
-                $(this).html(prijs)
-            });
-        });
-    </script>
+        <!-- Gives layout to the price -->
+        <script type="text/javascript" src="{% static 'js/prijs.js' %}"></script>
     
         <div class=" top-margin ">
             <h1>{{Componenten.categorie.0|truncatewords:1|slice:"-4" }}</h1>

@@ -39,7 +39,10 @@ $(document).ready(function(){
 
     {% include "filter.html" %}
 
-    <div class="col-md-8 col-lg-9">
+    <div class="col-md-8 col-lg-9" id="productList">
+
+        <!-- Gives layout to the price -->
+        <script type="text/javascript" src="{% static 'js/prijs.js' %}"></script>
 
         <div class=" top-margin ">
             <h1>{{Componenten.categorie.0|truncatewords:4|slice:"-4" }}</h1>
@@ -56,7 +59,7 @@ $(document).ready(function(){
                             <p class="list-group-item-text">{% for desc in component.info %} {{ desc }} {% endfor %} </p>
                         </div>
                         <div class=" col-md-2 col-lg-2  ">
-                            <p class="list-group-item-text pull-right ">{{ component.prijs.0 }}</p>
+                            <p class="list-group-item-text pull-right prijs">{{ component.prijs.0 }}</p>
                             <p class="list-group-item-text  ">{{ component.stock.0 }}</p>
 
                             <a href="/detail/?product={% for name in component.naam %}{{ name }} {% endfor %}&amp;categorie={{component.categorie|truncatewords:1 }}&amp;prijs={{ component.prijs.0|slice:'-1' }}&amp;productid={{component.id}}" class="btn btn-primary">details</a>
