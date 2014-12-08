@@ -34,14 +34,29 @@ def index(request):
     request.session.get('geheugenprijs'),
     request.session.get('voedingprijs'),
     request.session.get('behuizingenprijs')]
-    print prijzen
+
+    links = [request.session.get('processorenlink'),
+    request.session.get('moederbordenlink'),
+    request.session.get('grafischelink'),
+    request.session.get('hardelink'),
+    request.session.get('dvdlink'),
+    request.session.get('koelinglink'),
+    request.session.get('geheugenlink'),
+    request.session.get('voedinglink'),
+    request.session.get('behuizingenlink')]
+
     totaalprijs = 0
     #loop through the prices
     for prijs in prijzen:
         if not prijs is None:
-            totaalprijs += float(prijs)
+            totaalprijs += float(prijs.replace(",","."))
 
-    return render_to_response('index.html',{'Totaalprijs': totaalprijs},
+    for link in links:
+        if link is None:
+            print "link removed"
+            links.remove(link)
+
+    return render_to_response('index.html',{'Totaalprijs': totaalprijs,'Links': links},
                               context_instance=RequestContext(request))
 
 def contact(request):
