@@ -6,6 +6,7 @@ from django.template import RequestContext
 from django.template import loader
 from django.http import HttpResponse
 from bson.json_util import dumps
+from pcbuilder.compatibility import *
 import json as simplejson
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding
 from itertools import chain
@@ -461,6 +462,7 @@ def filters(request, objectlijst):
         maxprijs = request.POST.get('maxprijs')
 
         #objectlijst =  pricefilter(objectlijst,minprijs,maxprijs)
+    compatibility(request,objectlijst)
     return objectlijst
 
 
