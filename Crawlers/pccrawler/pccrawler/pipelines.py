@@ -41,6 +41,7 @@ class PccrawlerPipeline(object):
 					print(spider.name)
 					if spider.name in ["tweakers"]:
 						addNewItemToDatabase(collectienaam)
+						print ("gelukt")
 					else:
 						try:
 							if self.collection.find({'ean':  item["ean"][0]}).count() > 0:
