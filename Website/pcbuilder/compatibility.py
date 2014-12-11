@@ -14,3 +14,10 @@ def moederbordenComp(request,objectlijst):
 	if request.session["behuizingenid"]:
 		behuizing = Behuizingen.objects.get(id=request.session["behuizingenid"])
 		objectlijst.filter(Form_factor__icontains=behuizing.Form_Factor)
+	if request.session["geheugenid"]:
+		geheugen = Geheugen.objects.get(id=request.session["geheugenid"])
+		objectlijst.filter(Geheugentype__icontains=geheugen.Geheugentype)
+		objectlijst.filter(Geheugentype__icontains=geheugen.Aantal)
+	if request.session["voedingid"]:
+		voeding = Voeding.objects.get(id=request.session["voedingid"])
+		
