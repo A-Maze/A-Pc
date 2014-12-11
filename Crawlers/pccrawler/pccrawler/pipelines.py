@@ -38,19 +38,27 @@ class PccrawlerPipeline(object):
 
 				def addToDatabase(collectienaam):
 					item["categorie"] = collectienaam
-					try:
-						if self.collection.find({'ean':  item["ean"][0]}).count() > 0:
-							addToList()
-						else:
-							addNewItemToDatabase(collectienaam)
-					except:
+					print(spider.name)
+					if spider.name in ["tweakers"]:
+						addNewItemToDatabase(collectienaam)
+					else:
 						try:
-							if self.collection.find({'sku':  item["sku"][0]}).count() > 0:
+							if self.collection.find({'ean':  item["ean"][0]}).count() > 0:
 								addToList()
+								
 							else:
 								addNewItemToDatabase(collectienaam)
-						except KeyError:
-							return
+								
+						except:
+							try:
+								if self.collection.find({'sku':  item["sku"][0]}).count() > 0:
+									addToList()
+									
+								else:
+									addNewItemToDatabase(collectienaam)
+									p
+							except KeyError:
+								return
 
 				def addNewItemToDatabase(collectionName):
 					filerEuroSign()
@@ -60,8 +68,12 @@ class PccrawlerPipeline(object):
 			    	level=log.DEBUG, spider=spider) 
 
 				def filerEuroSign():
-					if u'\u20ac' in item["prijs"][0]:
-						item["prijs"][0] = item["prijs"][0][2:]
+					try:
+						if u'\u20ac' in item["prijs"][0]:
+							item["prijs"][0] = item["prijs"][0][2:]
+					except:
+						return
+						
 
 				def addExistingItemInList(foundLocation,herkomstLocatie):
 						if (foundLocation == True):
@@ -182,6 +194,7 @@ class PccrawlerPipeline(object):
 					addToDatabase(collectienaam)
 				else:
 					return
+				
 				return item
 
 				
