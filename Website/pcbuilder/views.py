@@ -7,7 +7,7 @@ from django.template import loader
 from django.http import HttpResponse
 from bson.json_util import dumps
 import json as simplejson
-from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding
+from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding, Views
 from itertools import chain
 import json
 
@@ -74,6 +74,8 @@ def select(request):
     herkomst = request.GET.get('herkomst')
     link = request.GET.get('link')
 
+    Viewers(productid, 'delete', request)
+
 
     categorie.replace(" ", "")
     categorie.replace(",", "")
@@ -99,6 +101,8 @@ def deselect(request):
     categorie = request.GET.get('categorie')
     prijs = request.GET.get('prijs')
     categorie.replace(" ", "")
+    productid = request.GET.get('productid')
+    Viewers(productid, 'delete', request)
     del request.session[categorie]
     productstring = categorie + "naam"
     productprijs = categorie + "prijs"
@@ -116,6 +120,8 @@ def detail(request):
     prijs = request.GET.get('prijs')
     productid = request.GET.get('productid')
     #tries if currentproduct and currentherkomst actually exist and puts that in a variable
+    #haalt de id uit de link
+
     try:
         currentproduct = request.session[categorie + "naam"]
         currentherkomst = request.session[categorie + "herkomst"]
@@ -153,11 +159,52 @@ def detail(request):
 
     #if currentproduct and currentherkomst exist render them to response as well
     if existing:
+        Viewers(productid, 'add', request)
         return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie.lower(), 'Product': product, 'Prijs': prijs, 'Productid': productid, 'Ziplist': ziplist, 'Currentproduct': currentproduct, 'Currentherkomst': currentherkomst },
         context_instance=RequestContext(request))
     else:
+        Viewers(productid, 'add', request)
         return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie.lower(), 'Product': product, 'Prijs': prijs, 'Productid': productid, 'Ziplist': ziplist},
         context_instance=RequestContext(request))
+
+def Viewers(productid, action, request):
+    #haalt de id uit de link
+    #productid = request.GET.get('productid')
+    gevonden = 0
+
+
+    for views in Views.objects:
+            if str(productid) == str(views.Id):
+                if action == 'add':
+                    aantal = float(views.Aantal)
+                    viewss=Views.objects.get(Id=productid)
+                    nieuwAantal = aantal+0.5
+                    nieuwAantal = str(nieuwAantal)
+                    viewss.Aantal = nieuwAantal
+                    viewss.save()
+                    gevonden = 1
+                    #return HttpResponse(str(nieuwAantal))
+                elif action == 'delete':
+                    aantal = float(views.Aantal)
+                    viewss=Views.objects.get(Id=productid)
+                    nieuwAantal = aantal-1.0
+                    nieuwAantal = str(nieuwAantal)
+                    viewss.Aantal = nieuwAantal
+                    viewss.save()
+                    gevonden = 1
+                    #return HttpResponse(str(nieuwAantal))
+            else:
+                pass
+    if gevonden == 0:
+        if(action == add):
+            #zet views collectie de id als de id die is meegegeven het aantal op 15 (moet nog aan gewerkt worden)
+            weergaven = Views(Id=productid, Aantal='0.5')
+            #slaat de weergaven op in de db
+            weergaven.save()
+        #return HttpResponse('Niks gevonden')
+
+    #je gaat weer terug naar de pagina
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
 
 
 def processoren(request):
@@ -169,6 +216,7 @@ def processoren(request):
     maxPriceSliderValue = 0.1
 
     processorenlijst = Processoren.objects
+
 
 
     
@@ -192,7 +240,7 @@ def processoren(request):
 
     if request.method == 'POST':
         json = {}
-        json['Componenten'] = render_to_string('processoren.html', {'Componenten': processoren, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page }, context_instance=RequestContext(request))
+        json['Componenten'] = render_to_string('processoren.html', {'Componenten': processoren, 'Views':views, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page }, context_instance=RequestContext(request))
         json = dumps(json)
         return HttpResponse(json,content_type="application/json")
     else:

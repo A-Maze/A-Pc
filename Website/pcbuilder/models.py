@@ -5,6 +5,13 @@ from APc.settings import DBNAME
 
 connect(DBNAME)
 
+
+
+class Views(Document):
+
+    Id = StringField(max_length=500)
+    Aantal = StringField(max_length=50)
+
 class Moederborden(Document):
     
     categorie = StringField(max_length=120)
