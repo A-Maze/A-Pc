@@ -2,7 +2,7 @@
 import scrapy
 
 from scrapy.http import Request
-from pccrawler.items import GPU, Geheugen, Moederbord, Behuizing, Processor, Voeding, Koeling, Barebones
+from pccrawler.items import GPU, Geheugen, Moederbord, Behuizing, Processor, Voeding, Koeling, Barebones, Harde, SSD
 from scrapy.selector import HtmlXPathSelector
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors import LinkExtractor
@@ -13,14 +13,18 @@ class TweakersSpider(CrawlSpider):
     allowed_domains = ["tweakers.net"]
     start_urls = (
 
-        'http://tweakers.net/categorie/49/videokaarten/producten/',
-        'http://tweakers.net/categorie/545/geheugen-intern/producten/',
-        'http://tweakers.net/categorie/47/moederborden/producten/',
-        'http://tweakers.net/categorie/61/behuizingen/producten/',
-        'http://tweakers.net/categorie/46/processors/producten/',
-        'http://tweakers.net/categorie/664/voedingen/producten/',
-        'http://tweakers.net/categorie/488/processorkoeling/producten/',
-        'http://tweakers.net/categorie/326/barebones/producten/',
+        #'http://tweakers.net/categorie/49/videokaarten/producten/',
+        #'http://tweakers.net/categorie/545/geheugen-intern/producten/',
+        #'http://tweakers.net/categorie/47/moederborden/producten/',
+        #'http://tweakers.net/categorie/61/behuizingen/producten/',
+        #'http://tweakers.net/categorie/46/processors/producten/',
+        #'http://tweakers.net/categorie/664/voedingen/producten/',
+        #'http://tweakers.net/categorie/488/processorkoeling/producten/',
+        #'http://tweakers.net/categorie/326/barebones/producten/',
+        #'http://tweakers.net/categorie/634/optische-drives/producten/',
+        #'http://tweakers.net/categorie/50/interne-harde-schijven/producten/',
+        'http://tweakers.net/categorie/674/solid-state-drives/producten/',
+
 
 
     )
@@ -302,3 +306,57 @@ class TweakersSpider(CrawlSpider):
                 item['sku'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
                 yield item
                 print "Barebone"
+            elif "Interne harde schijven" in category:
+                item = Harde()
+                item['categorie'] = sel.xpath('//*[@id="tweakbaseBreadcrumbCategory"]/a/text()').extract()
+                item['Merk'] = sel.xpath('//tr[contains(td[1], "Merk")]/td[2]/a/text()').extract()
+                item['Serie'] = sel.xpath('//tr[contains(td[1], "Serie")]/td[2]/a/text()').extract()
+                item['Product'] = sel.xpath('//tr[contains(td[1], "Product")]/td[2]/a/text()').extract()
+                item['Uitvoering'] = sel.xpath('//tr[contains(td[1], "Uitvoering")]/td[2]/a/text()').extract()
+                item['Afbeelding'] = sel.xpath('//tr[contains(td[1], "Afbeelding")]/td[2]/a/@href').extract()
+                item['Opslagcapaciteit'] = sel.xpath('//tr[contains(td[1], "Opslagcapaciteit")]/td[2]/text()').extract()
+                item['Hardeschijf_bus'] = sel.xpath('//tr[contains(td[1], "Hardeschijf bus")]/td[2]/text()').extract()
+                item['Behuizing_bay_intern'] = sel.xpath('//tr[contains(td[1], "Behuizing bay (intern)")]/td[2]/text()').extract()
+                item['Hoogte'] = sel.xpath('//tr[contains(td[1], "Hoogte")]/td[2]/text()').extract()
+                item['Rotatiesnelheid'] = sel.xpath('//tr[contains(td[1], "Rotatiesnelheid")]/td[2]/text()').extract()
+                item['Drive_cache'] = sel.xpath('//tr[contains(td[1], "Drive cache")]/td[2]/text()').extract()
+                item['Command_Queuing'] = sel.xpath('//tr[contains(td[1], "Command Queuing")]/td[2]/text()').extract()
+                item['Stroomverbruik_lezen'] = sel.xpath('//tr[contains(td[1], "Stroomverbruik (lezen)")]/td[2]/text()').extract()
+                item['Stroomverbruik_schrijven'] = sel.xpath('//tr[contains(td[1], "Stroomverbruik (schrijven)")]/td[2]/text()').extract()
+                item['Prijs_per_GB'] = sel.xpath('//tr[contains(td[1], "Prijs per GB")]/td[2]/text()').extract()
+                item['Fabrieksgarantie'] = sel.xpath('//tr[contains(td[1], "Fabrieksgarantie")]/td[2]/text()').extract()
+                item['EAN'] = sel.xpath('//tr[contains(td[1], "EAN")]/td[2]/text()').extract()
+                item['SKU'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
+                print "hardeschijf"
+                yield item
+
+            elif "Solid state drives" in category:
+                item = SSD()
+                item['categorie'] = sel.xpath('//*[@id="tweakbaseBreadcrumbCategory"]/a/text()').extract()
+                item['Merk'] = sel.xpath('//tr[contains(td[1], "Merk")]/td[2]/a/text()').extract()
+                item['Serie'] = sel.xpath('//tr[contains(td[1], "Serie")]/td[2]/a/text()').extract()
+                item['Product'] = sel.xpath('//tr[contains(td[1], "Product")]/td[2]/a/text()').extract()
+                item['Uitvoering'] = sel.xpath('//tr[contains(td[1], "Uitvoering")]/td[2]/a/text()').extract()
+                item['Afbeelding'] = sel.xpath('//tr[contains(td[1], "Afbeelding")]/td[2]/a/@href').extract()
+                item['Opslagcapaciteit'] = sel.xpath('//tr[contains(td[1], "Opslagcapaciteit")]/td[2]/text()').extract()
+                item['Drive_cache'] = sel.xpath('//tr[contains(td[1], "Drive cache")]/td[2]/text()').extract()
+                item['SSD_type'] = sel.xpath('//tr[contains(td[1], "SSD-type")]/td[2]/text()').extract()
+                item['SSD_controller'] = sel.xpath('//tr[contains(td[1], "SSD-controller")]/td[2]/text()').extract()
+                item['SSD_eigenschappen'] = sel.xpath('//tr[contains(td[1], "SSD eigenschappen")]/td[2]/text()').extract()
+                item['Hardeschijf_bus_intern'] = sel.xpath('//tr[contains(td[1], "Hardeschijf bus (intern)")]/td[2]/text()').extract()
+                item['HDD_SSD_aansluiting'] = sel.xpath('//tr[contains(td[1], "HDD/SSD-aansluiting")]/td[2]/text()').extract()
+                item['Stroomverbruik_lezen'] = sel.xpath('//tr[contains(td[1], "Stroomverbruik (lezen)")]/td[2]/text()').extract()
+                item['Stroomverbruik_schrijven'] = sel.xpath('//tr[contains(td[1], "Stroomverbruik (schrijven)")]/td[2]/text()').extract()
+                item['Behuizing_bay_intern'] = sel.xpath('//tr[contains(td[1], "Behuizing bay intern")]/td[2]/text()').extract()
+                item['Hoogte'] = sel.xpath('//tr[contains(td[1], "Hoogte")]/td[2]/text()').extract()
+                item['Prijs_per_GB'] = sel.xpath('//tr[contains(td[1], "Prijs per GB")]/td[2]/text()').extract()
+                item['Lezen_sequentieel'] = sel.xpath('//tr[contains(td[1], "Lezen (sequentieel)")]/td[2]/text()').extract()
+                item['Schrijven_sequentieel'] = sel.xpath('//tr[contains(td[1], "Schrijven (sequentieel)")]/td[2]/text()').extract()
+                item['Lezen_random_4K'] = sel.xpath('//tr[contains(td[1], "Lezen (random 4K)")]/td[2]/text()').extract()
+                item['Schrijven_random_4K'] = sel.xpath('//tr[contains(td[1], "Schrijven (random 4K)")]/td[2]/text()').extract()
+                item['Verkoopstatus'] = sel.xpath('//tr[contains(td[1], "Verkoopstatus")]/td[2]/text()').extract()
+                item['Fabrieksgarantie'] = sel.xpath('//tr[contains(td[1], "Fabrieksgarantie")]/td[2]/text()').extract()
+                item['EAN'] = sel.xpath('//tr[contains(td[1], "EAN")]/td[2]/text()').extract()
+                item['SKU'] = sel.xpath('//tr[contains(td[1], "SKU")]/td[2]/text()').extract()
+                print "SSD"
+                yield item
