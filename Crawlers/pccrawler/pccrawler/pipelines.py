@@ -152,7 +152,7 @@ class PccrawlerPipeline(object):
 				koeling = ["Koeling", "Koelers", "Processorkoeling", "Koelers", "CPU Koelers"]
 				behuizingen = ["Behuizingen", "Barebones", "Barebone"]
 				grafische = ["Grafische", "GPU", "Videokaarten", "Videokaart", "grafische"]
-				harde = ["Harde", "Interne harde schijven", "Interne", "Solid State Drives"]
+				harde = ["Harde", "Interne harde schijven", "Interne", "Solid State Drives", "Solid state drives"]
 				dvd = ["DVD", "dvd", "DVD / Blu-ray drives"]
 				geheugen = ["Geheugen", "RAM", "Geheugen intern"]
 				voeding = ["Voeding", "Voedingen"]
