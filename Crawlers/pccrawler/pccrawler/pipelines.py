@@ -149,11 +149,11 @@ class PccrawlerPipeline(object):
 				categorieNaam = item["categorie"][0]
 				processoren = ["Processors", "CPU", "Processoren"]
 				moederborden = ["Moederbord", "moederborden", "Moederborden"]
-				koeling = ["Koeling", "Koelers", "Processorkoeling", "Koelers", "CPU Koelers"]
+				koeling = ["Koeling", "Koelers", "Processorkoeling", "Koelers", "CPU Koelers", "Ventilatoren"]
 				behuizingen = ["Behuizingen", "Barebones", "Barebone"]
 				grafische = ["Grafische", "GPU", "Videokaarten", "Videokaart", "grafische"]
 				harde = ["Harde", "Interne harde schijven", "Interne", "Solid State Drives", "Solid state drives"]
-				dvd = ["DVD", "dvd", "DVD / Blu-ray drives"]
+				dvd = ["DVD", "dvd", "DVD / Blu-ray drives", "Optische drives"]
 				geheugen = ["Geheugen", "RAM", "Geheugen intern"]
 				voeding = ["Voeding", "Voedingen"]
 
