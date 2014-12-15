@@ -132,7 +132,7 @@ class Geheugen(scrapy.Item):
     Afbeelding = scrapy.Field()
     Product = scrapy.Field()
     Geheugengrootte = scrapy.Field()
-    Aantal_pins = scrapy.Field()
+    Aantal = scrapy.Field()
     Modulegrootte = scrapy.Field()
     Prijs_per_GB = scrapy.Field()
     Geheugentype = scrapy.Field()

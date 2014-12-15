@@ -97,7 +97,7 @@ class TweakersSpider(CrawlSpider):
                 item['Uitvoering'] = sel.xpath('//tr[contains(td[1], "Uitvoering")]/td[2]/a/text()').extract()
                 item['Afbeelding'] = sel.xpath('//tr[contains(td[1], "Afbeelding")]/td[2]/a/@href').extract()
                 item['Geheugengrootte'] = sel.xpath('//tr[contains(td[1], "Geheugengrootte")]/td[2]/text()').extract()
-                item['Aantal_pins'] = sel.xpath('//tr[contains(td[1], "Aantal")]/td[2]/text()').extract()
+                item['Aantal'] = sel.xpath('//tr[contains(td[1], "Aantal")]/td[2]/text()').extract()
                 item['Modulegrootte'] = sel.xpath('//tr[contains(td[1], "Modulegrootte")]/td[2]/text()').extract()
                 item['Prijs_per_GB'] = sel.xpath('//tr[contains(td[1], "Prijs per GB (geheugen)")]/td[2]/text()').extract()
                 item['Geheugentype'] = sel.xpath('//tr[contains(td[1], "Geheugentype")]/td[2]/text()').extract()
