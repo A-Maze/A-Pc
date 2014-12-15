@@ -20,13 +20,21 @@ function filter(page) {
 function checkboxValue(page) { 
 	//veranderd de value
 	if($('#stockCheck').val() == "morgen"){
-		$('#stockCheck').val("alles")
+		$('#stockCheck').val("alles");
 	}
 	else{
-		$('#stockCheck').val("morgen")
+		$('#stockCheck').val("morgen");
 	}
 	filter(page)
 }
 
-
-
+function sortBy(val) {
+	$.ajax({
+		url: window.location.pathname,
+		method: "POST",
+		data: { order: val},
+	})
+	.done(function(){
+		//random shizzle here
+	})
+}

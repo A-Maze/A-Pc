@@ -19,7 +19,6 @@ urlpatterns = patterns('',
     url(r'^contact/', 'pcbuilder.views.contact'),
     url(r'^mail/', 'pcbuilder.views.mail'),
 
-    #geen idee wat dit allemaal is
     url(r'^user/(?P<product>\w{0,50})/$', 'pcbuilder.views.pages'),
     url(r'^user/(?P<aantal>\w{0,50})/$', 'pcbuilder.views.pages'),
     url(r'^user/(?P<pagina>\w{0,50})/$', 'pcbuilder.views.pages'),

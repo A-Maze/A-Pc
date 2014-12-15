@@ -6,7 +6,11 @@ from django.template import RequestContext
 from django.template import loader
 from django.http import HttpResponse
 from bson.json_util import dumps
+<<<<<<< HEAD
 from pcbuilder.compatibility import *
+=======
+from pcbuilder.filters import *
+>>>>>>> sanderrr
 import json as simplejson
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding
 from itertools import chain
@@ -202,9 +206,9 @@ def processoren(request):
                 maxPriceSliderValue = diestringnaam
 
     processoren = listing(request, processorenlijst, 15)
-    #processoren = json.dumps(list(uniArray))
     
     bereik, diff, current_page = paginas(processorenlijst, processoren)
+
 
     if request.method == 'POST':
         json = {}
@@ -450,6 +454,7 @@ def paginas(componentenlijst, componenten):
 
     return bereik, diff, current_page
 
+<<<<<<< HEAD
 def filters(request, objectlijst):
     #checkt of stock filter checked is
     if request.method == 'POST':
@@ -508,4 +513,6 @@ def pricefilter(objectlijst, minprijs, maxprijs):
                 pass#hier komt magie
     return newLijst
 
+=======
+>>>>>>> sanderrr
 

@@ -79,6 +79,20 @@ background-color:black;
     z-index:100000;
 }
 
+#dropdown-menu h2 {
+    padding: 14px;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+}
+#dropdown-menu .sample {
+    width: 200px;
+}
+#dropdown-menu .form-control-wrapper {
+    margin: 30px 0;
+}
 
-
+#complete {
+    margin-top: 0px;
+}
 
