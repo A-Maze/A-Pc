@@ -152,6 +152,16 @@ $('.slider').Link('upper').to($('#sliderMaxValue'));
 
 </div>
 
+    <div class="col-md-8 col-lg-9 top-margin">
+      <select class="form-control" id="sort-by" onchange="sortBy(this.value)">
+        <option value="0">Sorteer op</option>
+        <option value="prijs-op">Prijs (oplopend)</option>
+        <option value="prijs-af">Prijs (aflopend)</option>
+        <option value="titel-op">Titel (A - Z)</option>
+        <option value="titel-af">Titel (Z - A)</option>
+      </select>
+    </div> 
+
     <div class="col-md-8 col-lg-9" id="productList">
 
         <!-- Gives layout to the price -->
@@ -159,6 +169,8 @@ $('.slider').Link('upper').to($('#sliderMaxValue'));
     
         <div class=" top-margin ">
             <h1>{{Componenten.categorie.0|truncatewords:1|slice:"-4" }}</h1>
+
+            <div id="list">
             {% for component in Componenten %}
             {% if component.prijs.0 %}
             <div class="list-group table-border">
@@ -175,25 +187,18 @@ $('.slider').Link('upper').to($('#sliderMaxValue'));
                         <div class=" col-md-2 col-lg-2  ">
                             <p class="list-group-item-text pull-right prijs">{{ component.prijs.0 }}  </p>
 
-                            <p class="list-group-item-text  ">{{ component.stock.0 }}</p>
-
-
+                            <p class="list-group-item-text pull-right text-right">{{ component.stock.0 }}</p>
 
                             <a href="/detail/?product={% for name in component.naam %}{{ name }} {% endfor %}&amp;categorie={{component.categorie|truncatewords:1 }}&amp;prijs={{ component.prijs.0|slice:'-1' }}&amp;productid={{component.id}}" class="btn btn-primary">details</a>
-
-
-                            
 
                         </div>
                     </div>
 
                 </div>
-
-
-
             </div>
             {% endif %}
             {% endfor %}
+            </div>
 
         </div>
 

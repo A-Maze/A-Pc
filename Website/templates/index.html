@@ -103,8 +103,12 @@ function bestel(){
         {% if request.session.behuizingen == True %}
             percentage += 11;
         {% endif %}
+
     if(percentage == 99){
         percentage = 100;
+        showBestel(true);
+    } else {
+        showBestel(false);
     }
 
         progress.innerHTML = percentage+'%';
@@ -112,6 +116,14 @@ function bestel(){
         $(".progress-bar").width(''+percentage+'%');
 
 
+    }
+
+    function showBestel(show) {
+        if (!show) {
+            $('#complete').hide();
+        } else {
+            $('#complete').show();
+        }
     }
     </script>
 
@@ -121,9 +133,14 @@ function bestel(){
         </div>
     </div>
 
+    <div class="jumbotron" id="complete">
+        <h1>Compleet</h1>
+        <p>Je computer samenstelling is af, klik op bestellen om je componenten te bestellen.</p>
+        <p><a id="bestel" onClick="bestel()" class="btn btn-primary btn-lg">Bestel</a></p>
+    </div>
 
 <div class="col-md-12 shadow bottom-margin">
-    <div class="row top-margin2">
+    <div class="row top-margin">
         <div class="col-md-4 ">
             <div class="panel panel-default component">
                 <div class="panel-body">
@@ -380,7 +397,7 @@ function bestel(){
 
         </tbody>
     </table>
-            <a id="bestel" onClick="bestel()" class="btn btn-primary pull-right">Bestel</a>
+            
 </div>
 
 {% endblock %}
