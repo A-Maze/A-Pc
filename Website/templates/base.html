@@ -22,12 +22,28 @@
     <script src='{% static "js/paging.js" %}'></script>
     <script src='{% static "js/overlay.js" %}'></script>
     <script src='{% static "js/filters.js" %}'></script>
+    <script src='{% static "js/search.js" %}'></script>
     
+    <script type="text/javascript">
+        function addSearch(e) {
+            if (e.keyCode == 13) {
+                var query = document.getElementById("search").value;
+             
+                
+                searchInDjango(query);
+
+            }
+        }
+
+        $(document).ready(addSearch());
+
+    </script>
+
     {% block scripts %}
 
     {% endblock %}
 </head>
-<body>
+<body >
 
 {% block overlay %}
 
@@ -50,7 +66,7 @@
 
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" onLoad="addSearch()">
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="/">Overzicht</a>
@@ -97,8 +113,8 @@
                 <li>
                     <a href="/contact/">Contact</a>
                 </li>
-                <form class="navbar-form navbar-left">
-                    <input class="form-control col-lg-8" placeholder="Search" type="text">
+                <form class="navbar-form navbar-left" action="/search">
+                    <input id='search' class="form-control col-lg-8"  placeholder="Search" type="text" onkeypress="addSearch(event)">
                 </form>
             </ul>
         </div>

@@ -158,8 +158,8 @@ $('.slider').Link('upper').to($('#sliderMaxValue'));
         <script type="text/javascript" src="{% static 'js/prijs.js' %}"></script>
     
         <div class=" top-margin ">
-            <h1>{{Componenten.categorie.0|truncatewords:1|slice:"-4" }}</h1>
-            {% for component in Componenten %}
+           
+            {% for component in filterComponents %}
             {% if component.prijs.0 %}
             <div class="list-group table-border">
                 <div class="list-group-item">

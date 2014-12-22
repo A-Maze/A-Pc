@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="col-md-8 col-lg-9" id="productList">
+
+        <!-- Gives layout to the price -->
+       
+    	
+        <div class=" top-margin top-margin">
+         1{{ filterComponents }}2
+        
+            {% for component in filterComponents %}
+
+            {% if component.prijs.0 %}
+            <div class="list-group table-border">
+                <div class="list-group-item">
+                    <div class="row-picture">
+                        <img class="square" src="http://lorempixel.com/56/56/people/1" alt="icon">
+                    </div>
+
+                    <div class="row-content">
+                        <div class="col-md-10 col-lg-10">
+                            <h4 class="list-group-item-heading">{% for name in component.naam %}{{ name }}{% endfor %}</h4>
+                            <p class="list-group-item-text">{% for desc in component.info %} {{ desc }} {% endfor %} </p>
+                        </div>
+                        <div class=" col-md-2 col-lg-2  ">
+                            <p class="list-group-item-text pull-right prijs">{{ component.prijs.0 }}  </p>
+
+                            <p class="list-group-item-text  ">{{ component.stock.0 }}</p>
+
+
+
+                            <a href="/detail/?product={% for name in component.naam %}{{ name }} {% endfor %}&amp;categorie={{component.categorie|truncatewords:1 }}&amp;prijs={{ component.prijs.0|slice:'-1' }}&amp;productid={{component.id}}" class="btn btn-primary">details</a>
+
+
+                            
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+            {% endif %}
+            {% endfor %}
+
+        </div>
+
+        {% include "page_snippet.html" %}
+
+    </div>
+
+{% endblock %}

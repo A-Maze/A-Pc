@@ -68,6 +68,27 @@ def contact(request):
     return render_to_response('contact.html',
                               context_instance=RequestContext(request))
 
+def search(request):
+    if request.method == "POST":
+        query = request.POST.get('search')
+        componentenArray = [Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding]
+
+        print "HOII"
+
+        for componenten in componentenArray:
+            filterComponents = componenten.objects.filter(naam__icontains=query)
+            break
+
+
+        json = {}
+        json['filterComponents'] = render_to_string('search.html', {'filterComponents': filterComponents }, context_instance=RequestContext(request))
+        json = dumps(json)
+        return HttpResponse(json,content_type="application/json")
+    else:
+        return render_to_response('search.html',
+                                  context_instance=RequestContext(request))
+
+
 def mail(request):
     name = request.POST.get('name', '')
     subject = request.POST.get('type', '')
