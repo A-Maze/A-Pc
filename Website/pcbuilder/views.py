@@ -75,17 +75,25 @@ def search(request):
 
         print "HOII"
 
-        for componenten in componentenArray:
-            filterComponents = componenten.objects.filter(naam__icontains=query)
-            break
 
+        for componenten in componentenArray:
+            print "gevonden"
+            filtert = componenten.objects.filter(naam__icontains=query)
+            break
+            
+        print filtert
+        filterComponents = listing(request, filtert, 15)
+
+        bereik, diff, current_page = paginas(filtert, filterComponents)
 
         json = {}
-        json['filterComponents'] = render_to_string('search.html', {'filterComponents': filterComponents }, context_instance=RequestContext(request))
+        json['filterComponents'] = render_to_string('search.html', {'filterComponents': filterComponents , 'Range':bereik, 'Diff':diff}, context_instance=RequestContext(request))
         json = dumps(json)
         return HttpResponse(json,content_type="application/json")
+
     else:
-        return render_to_response('search.html',
+        print ("1,2,3")
+        return render_to_response('search.html', 
                                   context_instance=RequestContext(request))
 
 

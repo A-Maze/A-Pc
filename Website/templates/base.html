@@ -26,16 +26,15 @@
     
     <script type="text/javascript">
         function addSearch(e) {
-            if (e.keyCode == 13) {
-                var query = document.getElementById("search").value;
-             
-                
-                searchInDjango(query);
+           if(e.which == 13) {
 
-            }
+                e.preventDefault()
+                var query = document.getElementById("search").value;
+                searchInDjango(query );
+             }   
+            
         }
 
-        $(document).ready(addSearch());
 
     </script>
 
@@ -49,7 +48,7 @@
 
 {% endblock %}
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -66,7 +65,7 @@
 
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" onLoad="addSearch()">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="/">Overzicht</a>
@@ -113,9 +112,13 @@
                 <li>
                     <a href="/contact/">Contact</a>
                 </li>
-                <form class="navbar-form navbar-left" action="/search">
-                    <input id='search' class="form-control col-lg-8"  placeholder="Search" type="text" onkeypress="addSearch(event)">
-                </form>
+
+                
+                <form class="navbar-form navbar-left" >
+                    
+                    <input id='search' class="form-control col-lg-4"  placeholder="Zoeken" type="text" onkeypress="addSearch(event)">
+                    
+                </form> 
             </ul>
         </div>
         <!-- /.navbar-collapse -->
