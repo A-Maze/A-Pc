@@ -29,8 +29,11 @@
            if(e.which == 13) {
 
                 e.preventDefault()
+
                 var query = document.getElementById("search").value;
+
                 searchInDjango(query );
+               
              }   
             
         }
@@ -106,6 +109,7 @@
                         <li>
                             <a href="/behuizingen/"><i class="fa fa-desktop fa-fw"></i>behuizing</a>
                         </li>
+
                     </ul>
             </li>
 
@@ -113,12 +117,11 @@
                     <a href="/contact/">Contact</a>
                 </li>
 
-                
-                <form class="navbar-form navbar-left" >
-                    
-                    <input id='search' class="form-control col-lg-4"  placeholder="Zoeken" type="text" onkeypress="addSearch(event)">
-                    
-                </form> 
+                <li>
+                    <a href="/search/">Zoeken</a>
+                </li>
+
+              
             </ul>
         </div>
         <!-- /.navbar-collapse -->
