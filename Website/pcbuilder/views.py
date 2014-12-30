@@ -69,6 +69,46 @@ def contact(request):
     return render_to_response('contact.html',
                               context_instance=RequestContext(request))
 
+def search(request):
+    if request.method == "POST":
+        query = request.POST.get('search')
+        #componentenArray = [Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding]
+
+        print "HOII"
+
+
+        filtert_Processoren = Processoren.objects.filter(naam__icontains=query)    
+        filtert_Moederborden = Moederborden.objects.filter(naam__icontains=query)
+        filtert_Koeling = Koeling.objects.filter(naam__icontains=query)
+        filtert_Behuizingen = Behuizingen.objects.filter(naam__icontains=query)
+        filtert_Grafische = Grafische.objects.filter(naam__icontains=query)
+        filtert_Harde = Harde.objects.filter(naam__icontains=query)
+        filtert_Dvd = Dvd.objects.filter(naam__icontains=query)
+        filtert_Geheugen = Geheugen.objects.filter(naam__icontains=query)    
+        filtert_Voeding = Voeding.objects.filter(naam__icontains=query) 
+
+        # querysets = [filtert_Processoren,filtert_Moederborden,filtert_Koeling,filtert_Behuizingen,filtert_Grafische,filtert_Harde,filtert_Dvd,filtert_Geheugen,filtert_Voeding]
+        print "combining...."
+        filtert = list(chain(filtert_Processoren,filtert_Moederborden,filtert_Koeling,filtert_Behuizingen,filtert_Grafische,filtert_Harde,filtert_Dvd,filtert_Geheugen,filtert_Voeding))
+        
+        
+        print filtert
+        filterComponents = listing(request, filtert, 15)
+
+        bereik, diff, current_page = paginas(filtert, filterComponents)
+
+        json = {}
+        json['filterComponents'] = render_to_string('search.html', {'filterComponents': filterComponents , 'Range':bereik, 'Diff':diff, "page":current_page}, context_instance=RequestContext(request))
+        json = dumps(json)
+        return HttpResponse(json,content_type="application/json")
+
+    else:
+        print ("1,2,3")
+        return render_to_response('search.html', 
+                                  context_instance=RequestContext(request))
+
+
+
 def mail(request):
     name = request.POST.get('name', '')
     subject = request.POST.get('type', '')

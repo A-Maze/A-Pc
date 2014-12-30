@@ -1,6 +1,8 @@
 function filter(page) {
 	//ajax afhandeling
+
 	$.ajax({
+
 		//huidige pagina url
 		url : window.location.pathname,
 		method: "POST",
@@ -8,6 +10,7 @@ function filter(page) {
 		data: {stock : $('#stockCheck').val(),minprijs: $('#sliderMinValue').val(), maxprijs: $('#sliderMaxValue').val(), pageNumber: page},
     })
 	.done(function(data){
+		
 		var html = $(data.Componenten).find("#productList").html();
 		$('#productList').html(html);
 

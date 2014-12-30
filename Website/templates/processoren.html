@@ -106,9 +106,9 @@ $('.slider').Link('upper').to($('#sliderMaxValue'));
             </div>
 
             <div class="panel panel-default">
-                <div class="panel-heading toggle">Panel heading   <div class="pull-right"><span class="switcher dropup"><span class="caret"></span></span> </div></div>
+                <div class="panel-heading toggle">Prijs  <div class="pull-right"><span class="switcher dropup"><span class="caret"></span></span> </div></div>
                 <div class="panel-body body-toggled">
-                    <div class="slider" ></div>
+                    <div class="slider" onkeypress="filter({{ page }})"></div>
                     <input id ="sliderMinValue" onChange="filter({{ page }})" class="col-md-6 col-lg-6 ">
                     <input id ="sliderMaxValue" onCHange="filter({{ page }})" class="col-md-6 col-lg-6 pull-right ">
                 </div>
@@ -168,9 +168,13 @@ $('.slider').Link('upper').to($('#sliderMaxValue'));
         <script type="text/javascript" src="{% static 'js/prijs.js' %}"></script>
     
         <div class=" top-margin ">
+<<<<<<< HEAD
             <h1>{{Componenten.categorie.0|truncatewords:1|slice:"-4" }}</h1>
 
             <div id="list">
+=======
+           
+>>>>>>> search
             {% for component in Componenten %}
             {% if component.prijs.0 %}
             <div class="list-group table-border">
