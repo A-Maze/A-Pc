@@ -1,14 +1,20 @@
 from itertools import chain
+import operator
+import types
 
-def filters(request, objectlijst):
-    
+def filters(request, objectlijst):    
     #checkt of stock filter checked is
     if request.method == 'POST':
 
         #leveringsfilter afhankelijk van checkboxes
-        if request.POST.get('stock') == 'morgen':
-            levering = request.POST.get('stock')
-            objectlijst = stock(objectlijst,levering)
+
+        print objectlijst
+
+        objectlijst1 = stock2(request, objectlijst)
+        print objectlijst1
+
+        objectlijst2 = sort2(request, objectlijst)
+        print objectlijst2
 
         minprijs = request.POST.get('minprijs')
         maxprijs = request.POST.get('maxprijs')
@@ -17,6 +23,20 @@ def filters(request, objectlijst):
     else:
         return objectlijst
 
+
+def stock2(request, objectlijst):
+    if request.POST.get('stock') == 'morgen':
+        levering = request.POST.get('stock')
+        return stock(objectlijst, levering)
+    else:
+        return objectlijst
+
+def sort2(request, objectlijst):
+    if request.POST.get('order') != "0":
+        sort = request.POST.get('order')
+        return sorteer(objectlijst, sort)
+    else:
+        return objectlijst
 
 def stock(objectlijst, levering):
     direct_leverbaar = [
@@ -41,7 +61,25 @@ def stock(objectlijst, levering):
         return objectlijst_filtered
 
 
+def sorteer(objectlijst, sort):
 
+    '''for o in objectlijst:
+        if isinstance(o.prijs, list):
+            o.prijs = o.prijs[0]
+        else:
+            print "nee"'''
+
+    if sort == "titel-op":
+        objectlijst_filtered = objectlijst.order_by('naam')
+    elif sort == "titel-af":
+        objectlijst_filtered = objectlijst.order_by('-naam')
+    else:
+        objectlijst_filtered = objectlijst
+
+    #for o in objectlijst_filtered:
+        #print o.naam
+
+    return objectlijst_filtered
 
 
 def pricefilter(objectlijst, minprijs, maxprijs):

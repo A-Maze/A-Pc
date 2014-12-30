@@ -191,7 +191,7 @@ def processoren(request):
 
     #overgebleven componentenlijst afhankelijk van stock
     #Dit dient later afhaneklijk te worden van alle filters
-    processorenlijst = filters(request,processorenlijst)
+    processorenlijst = filters(request, processorenlijst)
 
     for processoren in processorenlijst:
 
