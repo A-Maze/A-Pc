@@ -11,7 +11,7 @@ class testCases(TestCase):
 	def test(self):
 		webdriver.Remote(
    			command_executor='http://127.0.0.1:4444',
-   			desired_capabilities=DesiredCapabilities.FIREFOX)
+   			desired_capabilities=None)
 		driver.get('http://127.0.01:8000/')
 		driver.quit()
 		
