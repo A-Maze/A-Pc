@@ -140,13 +140,13 @@ function voorafSamengesteld(){
         </div>
     </div>
 
-<<<<<<< HEAD
+
     <div class="jumbotron" id="complete">
         <h1>Compleet</h1>
         <p>Je computer samenstelling is af, klik op bestellen om je componenten te bestellen.</p>
         <p><a id="bestel" onClick="bestel()" class="btn btn-primary btn-lg">Bestel</a></p>
     </div>
-=======
+
    
         <div class="panel panel-default">
             <div class="panel-body">
@@ -167,14 +167,14 @@ function voorafSamengesteld(){
              </div>
         </div>
     
->>>>>>> search
+
 
 <div class="col-md-12 shadow bottom-margin">
     <div class="row top-margin">
         <div class="col-md-4 ">
             <div class="panel panel-default component">
                 <div class="panel-body">
-                    <a href="/processoren/"><img class="center-block" src='{% static "img/cpu.png" %}'></a>
+                    <a href="/processoren/"><img class="center-block" id="processoren-test-id" src='{% static "img/cpu.png" %}' alt="Show 'Processoren'"></a>
                     {% if request.session.processoren = True %}
                     <img class="cover" src='{% static "img/succes.png" %}' />
                     {% endif %}

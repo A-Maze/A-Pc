@@ -13,7 +13,7 @@ def filters(request, objectlijst):
         objectlijst1 = stock2(request, objectlijst)
         print objectlijst1
 
-        objectlijst2 = sort2(request, objectlijst)
+        objectlijst = sort2(request, objectlijst)
         print objectlijst2
 
         minprijs = request.POST.get('minprijs')
