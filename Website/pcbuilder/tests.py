@@ -8,8 +8,8 @@ class testCases(TestCase):
 
 	# Test of de homepagina correct wordt geladen
 	def test(self):
-		driver = webdriver.Firefox()
-		driver.get('http://127.0.01:8000/')
+		driver = DefaultSelenium("127.0.0.1", 4444, "*firefox", 'http://127.0.01:8000/');
+		#driver.get('http://127.0.01:8000/')
 		driver.quit()
 		
 	'''def test2(self):
