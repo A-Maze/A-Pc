@@ -8,7 +8,7 @@ class testCases(TestCase):
 
 	# Test of de homepagina correct wordt geladen
 	def test(self):
-		driver = webdriver.Remote("http://localhost:4444/wd/hub", webdriver.DesiredCapabilities.FIREFOX.copy())
+		driver = webdriver.Remote("http://localhost:4444", webdriver.DesiredCapabilities.firefox.copy())
 		driver.get('http://127.0.01:8000/')
 		driver.quit()
 		
