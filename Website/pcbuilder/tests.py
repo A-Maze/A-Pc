@@ -8,7 +8,9 @@ class testCases(TestCase):
 
 	# Test of de homepagina correct wordt geladen
 	def test(self):
-		driver = webdriver.Firefox()
+		bin_dir = os.path.join(const.WEBDRIVER_DIR, 'firefox', 'binary', '32.0.3', 'linux-x86_64', 'firefox')
+		binary = FirefoxBinary(firefox_path=bin_dir)
+		driver = webdriver.Firefox(firefox_binary=binary)
 		driver.get('http://127.0.01:8000/')
 		driver.quit()
 		
