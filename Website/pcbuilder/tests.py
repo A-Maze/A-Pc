@@ -3,12 +3,15 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 # Create your tests here.
 class testCases(TestCase):
 
 	# Test of de homepagina correct wordt geladen
 	def test(self):
-		driver = webdriver.Remote("http://localhost:4444", webdriver.DesiredCapabilities.FIREFOX.copy())
+		webdriver.Remote(
+   			command_executor='http://127.0.0.1:4444/wd/hub',
+   			desired_capabilities=DesiredCapabilities.FIREFOX)
 		driver.get('http://127.0.01:8000/')
 		driver.quit()
 		
