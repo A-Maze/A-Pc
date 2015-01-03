@@ -9,9 +9,9 @@ class testCases(TestCase):
 
 	# Test of de homepagina correct wordt geladen
 	def test(self):
-		webdriver.Remote(
+		driver = webdriver.Remote(
    			command_executor='http://127.0.0.1:4444',
-   			desired_capabilities=None)
+   			desired_capabilities=DesiredCapabilities.FIREFOX)
 		driver.get('http://127.0.01:8000/')
 		driver.quit()
 		
