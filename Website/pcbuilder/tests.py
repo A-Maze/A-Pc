@@ -9,7 +9,9 @@ class testCases(TestCase):
 
 	# Test of de homepagina correct wordt geladen
 	def test(self):
-		print "hoi"
+		driver = webdriver.Firefox()
+		driver.get('http://127.0.01:8000/')
+		driver.quit()
 		
 	'''def test2(self):
 		driver = webdriver.Firefox()
