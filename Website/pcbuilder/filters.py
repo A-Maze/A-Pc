@@ -78,6 +78,7 @@ def sorteer(objectlijst, sort):
 
     #for o in objectlijst_filtered:
         #print o.naam
+        #lol
 
     return objectlijst_filtered
 
