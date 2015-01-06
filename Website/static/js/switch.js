@@ -1,9 +1,9 @@
 function show(which){
-	if(show == "first"){
+	if(which == "first"){
 		$("#mainfirst").show();
 		$("#mainsecond").hide();
 	}
-	else if(show == "second"){
+	else if(which == "second"){
 		$("#mainfirst").hide();
 		$("#mainsecond").show();
 	};
