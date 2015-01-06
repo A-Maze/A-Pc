@@ -11,6 +11,9 @@ def compatibility(request, objectlijst):
 		elif "geheugen" in categorieObject:
 			#geheugenComp(request,objectlijst)
 			pass
+		elif "voeding" in categorieObject:
+			#voedingComp(request,objectlijst)
+			pass
 
 def moederbordenComp(request,objectlijst):
 	print "moederborden called"
@@ -40,3 +43,11 @@ def geheugenComp(request,objectlijst):
 		moederbord = Moederborden.objects.get(id=request.session["moederbordenid"])
 		objectlijst.filter(Geheugentype__icontains=moederbord.Geheugentype)
 		objectlijst.filter(Aantal__icontains=moederbord.Geheugentype)
+
+def voedingComp(request,objectlijst):
+	print "voeding called"
+	if request.session["moederbordenid"]:
+		moederbord = Moederborden.objects.get(id=request.session["voedingid"])
+		#TODO be sure to check powersuply here
+
+

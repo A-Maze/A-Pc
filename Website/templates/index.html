@@ -48,6 +48,7 @@ function voorafSamengesteld(){
 }
 
 </script>
+<script src='{% static "js/switch.js" %}'></script>
 
 
 
@@ -71,8 +72,8 @@ function voorafSamengesteld(){
 
 
 <div class="btn-group btn-group-justified">
-    <a href="javascript:void(0)" class="btn btn-default">Zelf samenstellen</a>
-    <a href="javascript:void(0)" class="btn btn-default">Vooraf samengesteld</a>
+    <a onclick="show('first')" class="btn btn-default">Zelf samenstellen</a>
+    <a onClick="show('second')" class="btn btn-default">Vooraf samengesteld</a>
 </div>
 
     <script>
@@ -148,28 +149,11 @@ function voorafSamengesteld(){
     </div>
 
    
-        <div class="panel panel-default">
-            <div class="panel-body">
-
-                <div class="col-lg-10">
-
-                <div class="radio radio-primary">
-                    <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                        goedkoopste
-                    </label>
-                </div>
-
-
-               
-            </div>
-             <a href="javascript:void(0)" class="btn btn-primary btn-raised pull-right">stel samen</a>
-             </div>
-        </div>
+        {% include "compile.html" %}
     
 
 
-<div class="col-md-12 shadow bottom-margin">
+<div id="mainfirst" class="col-md-12 shadow bottom-margin">
     <div class="row top-margin">
         <div class="col-md-4 ">
             <div class="panel panel-default component">
