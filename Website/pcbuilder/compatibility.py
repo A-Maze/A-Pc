@@ -50,4 +50,9 @@ def voedingComp(request,objectlijst):
 		moederbord = Moederborden.objects.get(id=request.session["voedingid"])
 		#TODO be sure to check powersuply here
 
+def grafischeComp(request,objectlijst):
+	print "grafische called"
+	if request.session["grafischeid"]:
+		
+
 
