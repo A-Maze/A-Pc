@@ -14,6 +14,18 @@ def compatibility(request, objectlijst):
 		elif "voeding" in categorieObject:
 			#voedingComp(request,objectlijst)
 			pass
+		elif "grafische" in categorieObject:
+			#grafischeComp(request,objectlijst)
+			pass
+		elif "behuizingen" in categorieObject:
+			#behuizingenComp(request,objectlijst)
+			pass
+		elif "harde" in categorieObject:
+			#hardeComp(request,objectlijst)
+			pass
+		elif "dvd" in categorieObject:
+			#dvdComp(request,objectlijst)
+			pass
 
 def moederbordenComp(request,objectlijst):
 	print "moederborden called"
@@ -30,12 +42,14 @@ def moederbordenComp(request,objectlijst):
 	if request.session["hardeid"]:
 		harde = Harde.objects.get(id=request.session["hardeid"])
 		objectlijst.filter(Hardeschijf_bus__icontains=harde.Hardeschijf_bus)
+	return objectlijst
 
 def processorenComp(request,objectlijst):
 	print "processoren called"
 	if request.session["moederbordenid"]:
 		moederbord = Moederborden.objects.get(id=request.session["moederbordenid"])
 		objectlijst.filter(Socket__icontains=moederbord.Socket)
+	return objectlijst
 
 def geheugenComp(request,objectlijst):
 	print "geheugen called"
@@ -43,16 +57,40 @@ def geheugenComp(request,objectlijst):
 		moederbord = Moederborden.objects.get(id=request.session["moederbordenid"])
 		objectlijst.filter(Geheugentype__icontains=moederbord.Geheugentype)
 		objectlijst.filter(Aantal__icontains=moederbord.Geheugentype)
+	return objectlijst
 
 def voedingComp(request,objectlijst):
 	print "voeding called"
 	if request.session["moederbordenid"]:
 		moederbord = Moederborden.objects.get(id=request.session["voedingid"])
 		#TODO be sure to check powersuply here
+	return objectlijst
 
 def grafischeComp(request,objectlijst):
 	print "grafische called"
-	if request.session["grafischeid"]:
-		
+	if request.session["moederbordenid"]:
+		moederbord = Moederborden.objects.get(id=request.session["moederbordenid"])
+		objectlijst.filter(Card_Interface__icontains=moederbord.Card_Interface)
+	return objectlijst
 
+def behuizingenComp(request,objectlijst):
+	print "behuizingen called"
+	if request.session["moederbordenid"]:
+		moederbord = Moederborden.objects.get(id=request.session["moederbordenid"])
+		objectlijst.filter(Form_Factor__icontains=moederbord.Form_Factor)
+	return objectlijst
+
+def hardeComp(request,objectlijst):
+	print "harde called"
+	if request.session["moederbordenid"]:
+		moederbord = Moederborden.objects.get(id=request.session["moederbordenid"])
+		objectlijst.filter(Hardeschijf_bus__icontains=moederbord.Hardeschijf_bus)
+	return objectlijst
+
+def dvdComp(request,objectlijst):
+	print "dvd called"
+	if request.session["moederbordenid"]:
+		moederbord = Moederborden.objects.get(id=request.session["moederbordenid"])
+		objectlijst.filter(Hardeschijf_bus__icontains=moederbord.Hardeschijf_bus)
+	return objectlijst
 

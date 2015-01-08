@@ -1,8 +1,11 @@
 from itertools import chain
+from pcbuilder.compatibility import *
 import operator
 import types
 
-def filters(request, objectlijst):    
+def filters(request, objectlijst): 
+    #filters the objectlist on compatibility first
+    compatibility(request,objectlijst)   
     #checkt of stock filter checked is
     if request.method == 'POST':
 
