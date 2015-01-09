@@ -96,3 +96,14 @@ background-color:black;
     margin-top: 0px;
 }
 
+.compile-panel{
+    width:20%;
+    float:left;
+    height:20%;
+}
+
+#speciale-img{
+    height:184px;
+    width:184px;
+}
+
