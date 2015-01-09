@@ -1,18 +1,125 @@
+{% load static %}
 <div class="panel panel-default" id="mainsecond" style="display:none">
     <div class="panel-body">
 
-        <div class="col-lg-10">
+        <div class="col-lg-12">
 
-        <div class="radio radio-primary">
-            <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                goedkoopste
-            </label>
+            <div class="col-md-3 ">
+                <div class="panel panel-default component">
+                    <div class="panel-body">
+                        <a href="/processoren/"><img class="center-block col-md-12" id="processoren-test-id" src='{% static "img/cpu.png" %}' alt="Show 'Processoren'"></a>
+                    </div>
+                    <div class="panel-footer ">
+                        <h4 class="text-center">Processor</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 ">
+                <div class="panel panel-default component">
+                    <div class="panel-body">
+                        <a href="/moederborden/"><img class="center-block col-md-12" src='{% static "img/motherboard.png" %}'></a>
+                    </div>
+                    <div class="panel-footer ">
+                        <h4 class="text-center">Moederbord</h4>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="col-md-3 ">
+                <div class="panel panel-default component">
+                    <div class="panel-body">
+                        <a href="/gpu/"><img class="center-block col-md-12" src='{% static "img/gpu.png" %}'></a>
+                    </div>
+                    <div class="panel-footer ">
+                        <h4 class="text-center">Grafische kaart</h4>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+            <div class="col-md-3 ">
+                <div class="panel panel-default component">
+                    <div class="panel-body">
+                        <a href="/hardeschijven/"><img class="center-block col-md-12" src='{% static "img/harddrive.png" %}'></a>
+                    </div>
+                    <div class="panel-footer ">
+                        <h4 class="text-center">Harde schijf</h4>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="col-md-3 ">
+                <div class="panel panel-default component">
+                    <div class="panel-body">
+                        <a href="/optischeschijven/"><img class="center-block col-md-12" src='{% static "img/opticaldrive.png" %}'></a>
+                    </div>
+                    <div class="panel-footer ">
+                        <h4 class="text-center">Optische drives</h4>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="col-md-3 ">
+                <div class="panel panel-default component">
+                    <div class="panel-body">
+                        <a href="/koelingen/"><img class="center-block col-md-12" src='{% static "img/cooler.png" %}'></a>
+                    </div>
+                    <div class="panel-footer ">
+                        <h4 class="text-center">Koeling</h4>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="col-md-3 ">
+                <div class="panel panel-default component">
+                    <div class="panel-body">
+                        <a href="/geheugen/"><img class="center-block col-md-12" src='{% static "img/ram.png" %}'></a>
+                    </div>
+                    <div class="panel-footer ">
+                        <h4 class="text-center">Geheugen</h4>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="col-md-3 ">
+                <div class="panel panel-default component">
+                    <div class="panel-body">
+                        <a href="/voedingen/"><img class="center-block col-md-12" src='{% static "img/powersupply.png" %}'></a>
+                    </div>
+                    <div class="panel-footer ">
+                        <h4 class="text-center">Voeding</h4>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="col-md-3 ">
+                <div class="panel panel-default component">
+                    <div class="panel-body">
+                        <a href="/behuizingen/"><img class="center-block col-md-12" src='{% static "img/case.png" %}'></a>
+                    </div>
+                    <div class="panel-footer ">
+                        <h4 class="text-center">Behuizing</h4>
+                    </div>
+                </div>
+            </div> 
         </div>
-
-
-       
+        <a href="javascript:void(0)" class="btn btn-primary btn-raised pull-right">stel samen</a>
     </div>
-     <a href="javascript:void(0)" class="btn btn-primary btn-raised pull-right">stel samen</a>
-     </div>
 </div>
