@@ -1,8 +1,6 @@
 function filter(page) {
 	//ajax afhandeling
-
-	$.ajax({
-
+	
 	if (!page) {
 		page = $("#active-page").text();
 	} else {
