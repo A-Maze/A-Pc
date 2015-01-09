@@ -144,7 +144,7 @@ function bestel(){
         <div class="col-md-4 ">
             <div class="panel panel-default component">
                 <div class="panel-body">
-                    <a href="/processoren/"><img class="center-block" src='{% static "img/cpu.png" %}'></a>
+                    <a href="/processoren/"><img class="center-block" id="processoren-test-id" src='{% static "img/cpu.png" %}'></a>
                     {% if request.session.processoren = True %}
                     <img class="cover" src='{% static "img/succes.png" %}' />
                     {% endif %}

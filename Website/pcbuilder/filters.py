@@ -2,19 +2,20 @@ from itertools import chain
 import operator
 import types
 
-def filters(request, objectlijst):    
-    #checkt of stock filter checked is
+def filters(request, objectlijst):
+
     if request.method == 'POST':
 
         #leveringsfilter afhankelijk van checkboxes
 
-        print objectlijst
 
-        objectlijst1 = stock2(request, objectlijst)
-        print objectlijst1
+        levering = request.POST.get('stock')
+        sort = request.POST.get('order')
+        print levering, sort
 
-        objectlijst2 = sort2(request, objectlijst)
-        print objectlijst2
+
+        objectlijst = sorteer(objectlijst, sort)
+        objectlijst = stock(objectlijst, levering)
 
         minprijs = request.POST.get('minprijs')
         maxprijs = request.POST.get('maxprijs')
@@ -63,21 +64,17 @@ def stock(objectlijst, levering):
 
 def sorteer(objectlijst, sort):
 
-    '''for o in objectlijst:
-        if isinstance(o.prijs, list):
-            o.prijs = o.prijs[0]
-        else:
-            print "nee"'''
-
     if sort == "titel-op":
         objectlijst_filtered = objectlijst.order_by('naam')
     elif sort == "titel-af":
         objectlijst_filtered = objectlijst.order_by('-naam')
+    elif sort == "prijs-op":
+        #objectlijst_filtered = objectlijst.extra(select={'prijs': 'CAST(prijs AS INTEGER)'}).order_by('prijs')
+        objectlijst_filtered = objectlijst.order_by('prijs')
+    elif sort == "prijs-af":
+        objectlijst_filtered = objectlijst.order_by('-prijs')
     else:
         objectlijst_filtered = objectlijst
-
-    #for o in objectlijst_filtered:
-        #print o.naam
 
     return objectlijst_filtered
 

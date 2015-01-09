@@ -152,15 +152,7 @@ $('.slider').Link('upper').to($('#sliderMaxValue'));
 
 </div>
 
-    <div class="col-md-8 col-lg-9 top-margin">
-      <select class="form-control" id="sort-by" onchange="filter()">
-        <option value="0">Sorteer op</option>
-        <option value="prijs-op">Prijs (oplopend)</option>
-        <option value="prijs-af">Prijs (aflopend)</option>
-        <option value="titel-op">Titel (A - Z)</option>
-        <option value="titel-af">Titel (Z - A)</option>
-      </select>
-    </div> 
+    {% include "sorteer_snippet.html" %}
 
     <div class="col-md-8 col-lg-9" id="productList">
 
