@@ -8,3 +8,7 @@ function show(which){
 		$("#mainsecond").show();
 	};
 };
+
+function showDrops(){
+	
+}
