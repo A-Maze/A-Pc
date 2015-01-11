@@ -57,7 +57,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pcbuilder',
-    'django_jenkins',
+    #'django_jenkins',
 )
 
 PROJECT_APPS = (

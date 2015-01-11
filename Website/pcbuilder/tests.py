@@ -4,15 +4,20 @@ import unittest
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 # Create your tests here.
 class testCases(unittest.TestCase):
 
 	# Test of de homepagina correct wordt geladen
 	def test(self):
+<<<<<<< HEAD
 		driver = webdriver.Firefox()
 		driver.get('http://127.0.01:8000/')
 		assert "A-Pc" in driver.title
 		driver.quit()
+=======
+		print ""
+>>>>>>> 0bf85487dce315ae6397192970fa0d3a7c4413af
 		
 	def test2(self):
 		driver = webdriver.Firefox()
