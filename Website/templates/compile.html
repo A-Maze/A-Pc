@@ -1,116 +1,183 @@
 {% load static %}
 <div class="panel panel-default" id="mainsecond" style="display:none">
-    <div class="panel-body">
+    <div class="panel-body" onClick="showDrops(this)">
 
         <div class="col-lg-12">
+            <div class="col-md-12">
+                <div class="compile-panel ">
+                    <div class="panel panel-default component">
+                        <div class="panel-body" onClick="showDrops(this)">
+                            <img class="center-block col-md-12" id="processoren-test-id" src='{% static "img/cpu.png" %}' alt="Show 'Processoren'">
+                        </div>
+                        <div class="panel-footer ">
+                            <h4 class="text-center">Processor</h4>
+                        
+                        <div class="dropdown-panel">
+                            <div class="form-control-wrapper"><select class="form-control" >
+                                <option value="0">Socket</option>
+                                <option value="socket 1150">Socket 1150</option>
+                                <option value="socket 1155">Socket 1155</option>
+                                <option value="socket 2011">Socket 2011</option>
+                                <option value="socket 2011-3">Socket 2011-3</option>
+                                <option value="socket AM3+">Socket AM3+</option>
+                                <option value="socket FM2">Socket FM2</option>
+                            </select><span class="material-input"></span></div>
+                            <div class="form-control-wrapper"><select class="form-control" >
+                                <option value="0">Aantal cores</option>
+                                <option value="6-Core">6-Core</option>
+                                <option value="8-Core">8-Core</option>
+                                <option value="10-Core">10-Core</option>
+                                <option value="Dual Core">Dual Core</option>
+                                <option value="Quad Core">Quad Core</option>
+                                <option value="Single Core">Single Core</option>
+                            </select><span class="material-input"></span></div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
 
-            <div class="compile-panel ">
-                <div class="panel panel-default component">
-                    <div class="panel-body">
-                        <a href="/processoren/"><img class="center-block col-md-12" id="processoren-test-id" src='{% static "img/cpu.png" %}' alt="Show 'Processoren'"></a>
+                <div class="compile-panel ">
+                    <div class="panel panel-default component">
+                        <div class="panel-body" onClick="showDrops(this)">
+                            <img class="center-block col-md-12" src='{% static "img/motherboard.png" %}'>
+                        </div>
+                        <div class="panel-footer ">
+                            <h4 class="text-center">Moederbord</h4>
+                        
+                        <div class="dropdown-panel">
+                            <div class="form-control-wrapper"><select class="form-control" >
+                                <option value="0">Socket</option>
+                                <option value="socket 1150">Socket 1150</option>
+                                <option value="socket 1155">Socket 1155</option>
+                                <option value="socket 2011">Socket 2011</option>
+                                <option value="socket 2011-3">Socket 2011-3</option>
+                                <option value="socket AM3+">Socket AM3+</option>
+                                <option value="socket FM2">Socket FM2</option>
+                                <option value="CPU onboard">CPU onboard</option>
+                            </select><span class="material-input"></span></div>
+                            <div class="form-control-wrapper"><select class="form-control" >
+                                <option value="0">Moederbordchipset</option>
+                                <option value="Intel B85">Intel B85</option>
+                                <option value="Intel H81">Intel H81</option>
+                                <option value="Intel H97">Intel H97</option>
+                                <option value="Intel X99">Intel X99</option>
+                                <option value="Intel Z87">Intel Z87</option>
+                                <option value="Intel Z97">Intel Z97</option>
+                            </select><span class="material-input"></span></div>
+
+                        </div>
+                        </div>
                     </div>
-                    <div class="panel-footer ">
-                        <h4 class="text-center">Processor</h4>
+
+
+                </div>
+
+                <div class="compile-panel ">
+                    <div class="panel panel-default component">
+                        <div class="panel-body" onClick="showDrops(this)">
+                            <img class="center-block col-md-12" src='{% static "img/gpu.png" %}'>
+                        </div>
+                        <div class="panel-footer ">
+                            <h4 class="text-center">Grafische kaart</h4>
+                        
+                        <div class="dropdown-panel">
+                            <div class="form-control-wrapper"><select class="form-control" >
+                                <option value="0">Moederbordchipset</option>
+                                <option value="AMD">AMD</option>
+                                <option value="Nvidia">Nvidia</option>
+                                <option value="Matrox">Matrox</option>
+                            </select><span class="material-input"></span></div>
+                            <div class="form-control-wrapper"><select class="form-control" >
+                                <option value="0">Geheugengrootte</option>
+                                <option value="1GB">1GB</option>
+                                <option value="2GB">2GB</option>
+                                <option value="3GB">3GB</option>
+                                <option value="4GB">4GB</option>
+                                <option value="5GB">5GB</option>
+                                <option value="6GB">6GB</option>
+                                <option value="7GB">7GB</option>
+                                <option value="8GB">8GB</option>
+                            </select><span class="material-input"></span></div>
+                        </div>
+                        </div>
                     </div>
-                    <div class="dropdown-panel">
-                        <div class="form-control-wrapper"><select class="form-control" id="sort-by" onchange="filter()">
-                            <option value="0">Socket</option>
-                            <option value="socket-1150">Socket 1150</option>
-                            <option value="socket-1155">Socket 1155</option>
-                            <option value="socket-2011">Socket 2011</option>
-                            <option value="socket-2011-3">Socket 2011-3</option>
-                            <option value="socket-AM3+">Socket AM3+</option>
-                            <option value="socket-FM2">Socket FM2</option>
+
+
+
+                </div>
+
+
+
+                <div class="compile-panel ">
+                    <div class="panel panel-default component">
+                        <div class="panel-body" onClick="showDrops(this)">
+                            <img class="center-block col-md-12" src='{% static "img/harddrive.png" %}'>
+                        </div>
+                        <div class="panel-footer ">
+                            <h4 class="text-center">Harde schijf</h4>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="compile-panel ">
+                    <div class="panel panel-default component">
+                        <div class="panel-body" onClick="showDrops(this)">
+                            <img class="center-block col-md-12" src='{% static "img/opticaldrive.png" %}'>
+                        </div>
+                        <div class="panel-footer ">
+                            <h4 class="text-center">Optische drives</h4>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="compile-panel-alt">
+                    <div class="panel panel-default component">
+                        <div class="panel-body" onClick="showDrops(this)">
+                            <img class="center-block col-md-12" src='{% static "img/cooler.png" %}'>
+                        </div>
+                        <div class="panel-footer ">
+                            <h4 class="text-center">Koeling</h4>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="compile-panel-alt">
+                    <div class="panel panel-default component">
+                        <div class="panel-body" onClick="showDrops(this)">
+                            <img class="center-block col-md-12" src='{% static "img/ram.png" %}'>
+                        </div>
+                        <div class="panel-footer ">
+                            <h4 class="text-center">Geheugen</h4>
+                        
+                        <div class="dropdown-panel">
+                           <div class="form-control-wrapper"><select class="form-control" >
+                            <option value="0">Geheugentype</option>
+                            <option value="DDR2">DDR2</option>
+                            <option value="DDR2 (SODIMM)">DDR2 (SODIMM)</option>
+                            <option value="DDR3">DDR3</option>
+                            <option value="DDR3 (SODIMM)">DDR3 (SODIMM)</option>
+                            <option value="DDR3L (SODIMM)">DDR3L (SODIMM)</option>
+                            <option value="DDR4">DDR4</option>
                         </select><span class="material-input"></span></div>
                     </div>
-                </div>
-            </div>
-
-            <div class="compile-panel ">
-                <div class="panel panel-default component">
-                    <div class="panel-body">
-                        <a href="/moederborden/"><img class="center-block col-md-12" src='{% static "img/motherboard.png" %}'></a>
-                    </div>
-                    <div class="panel-footer ">
-                        <h4 class="text-center">Moederbord</h4>
-                    </div>
-
-                </div>
-
-
-            </div>
-
-            <div class="compile-panel ">
-                <div class="panel panel-default component">
-                    <div class="panel-body">
-                        <a href="/gpu/"><img class="center-block col-md-12" src='{% static "img/gpu.png" %}'></a>
-                    </div>
-                    <div class="panel-footer ">
-                        <h4 class="text-center">Grafische kaart</h4>
                     </div>
                 </div>
 
 
-            </div>
-
-
-
-            <div class="compile-panel ">
-                <div class="panel panel-default component">
-                    <div class="panel-body">
-                        <a href="/hardeschijven/"><img class="center-block col-md-12" src='{% static "img/harddrive.png" %}'></a>
-                    </div>
-                    <div class="panel-footer ">
-                        <h4 class="text-center">Harde schijf</h4>
-                    </div>
-                </div>
-
 
             </div>
 
-            <div class="compile-panel ">
+            <div class="compile-panel-alt">
                 <div class="panel panel-default component">
-                    <div class="panel-body">
-                        <a href="/optischeschijven/"><img class="center-block col-md-12" src='{% static "img/opticaldrive.png" %}'></a>
-                    </div>
-                    <div class="panel-footer ">
-                        <h4 class="text-center">Optische drives</h4>
-                    </div>
-                </div>
-
-
-            </div>
-
-            <div class="compile-panel ">
-                <div class="panel panel-default component">
-                    <div class="panel-body">
-                        <a href="/koelingen/"><img class="center-block col-md-12" src='{% static "img/cooler.png" %}'></a>
-                    </div>
-                    <div class="panel-footer ">
-                        <h4 class="text-center">Koeling</h4>
-                    </div>
-                </div>
-
-
-            </div>
-
-            <div class="compile-panel ">
-                <div class="panel panel-default component">
-                    <div class="panel-body">
-                        <a href="/geheugen/"><img class="center-block col-md-12" src='{% static "img/ram.png" %}'></a>
-                    </div>
-                    <div class="panel-footer ">
-                        <h4 class="text-center">Geheugen</h4>
-                    </div>
-                </div>
-
-
-            </div>
-
-            <div class="compile-panel ">
-                <div class="panel panel-default component">
-                    <div class="panel-body">
-                        <a href="/voedingen/"><img class="center-block col-md-12" src='{% static "img/powersupply.png" %}'></a>
+                    <div class="panel-body" onClick="showDrops(this)">
+                        <img class="center-block col-md-12" src='{% static "img/powersupply.png" %}'>
                     </div>
                     <div class="panel-footer ">
                         <h4 class="text-center">Voeding</h4>
@@ -120,10 +187,10 @@
 
             </div>
 
-            <div class="compile-panel ">
+            <div class="compile-panel-alt">
                 <div class="panel panel-default component">
-                    <div class="panel-body">
-                        <a href="/voedingen/"><img id="speciale-img" class="center-block col-md-12" src='{% static "img/case.png" %}'></a>
+                    <div class="panel-body" onClick="showDrops(this)">
+                        <img id="speciale-img" class="center-block col-md-12" src='{% static "img/case.png" %}'>
                     </div>
                     <div class="panel-footer ">
                         <h4 class="text-center">Behuizing</h4>
@@ -132,9 +199,11 @@
 
 
             </div>
-
+        </div>
+        <div class="col-md-2">
             <a href="javascript:void(0)" class="btn btn-primary btn-raised pull-right">stel samen</a>
         </div>
-        
     </div>
+
+</div>
 </div>

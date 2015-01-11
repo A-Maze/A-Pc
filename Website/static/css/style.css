@@ -102,8 +102,18 @@ background-color:black;
     height:20%;
 }
 
+.compile-panel-alt{
+    width:25%;
+    float:left;
+    height:20%;
+}
+
 #speciale-img{
     height:184px;
     width:184px;
+}
+
+.dropdown-panel{
+   display: none;
 }
 
