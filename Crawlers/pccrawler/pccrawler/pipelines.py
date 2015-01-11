@@ -57,7 +57,7 @@ class PccrawlerPipeline(object):
 									
 								else:
 									addNewItemToDatabase(collectienaam)
-									p
+									
 							except KeyError:
 								return
 

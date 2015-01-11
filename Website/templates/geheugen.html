@@ -39,44 +39,52 @@ $(document).ready(function(){
 
     {% include "filter.html" %}
 
+    
     <div class="col-md-8 col-lg-9" id="productList">
 
+        <!-- Gives layout to the price -->
+        <script type="text/javascript" src="{% static 'js/prijs.js' %}"></script>
+    
         <div class=" top-margin ">
+
             <h1>{{Componenten.categorie.0|truncatewords:1|slice:"-4" }}</h1>
+
+            <div id="list">
+
             {% for component in Componenten %}
+            {% if component.prijs.0 %}
             <div class="list-group table-border">
                 <div class="list-group-item">
                     <div class="row-picture">
-                        <img class="square" src="{{ component.Afbeelding.0 }}" alt="icon">
+                        <img class="square" src="http://lorempixel.com/56/56/people/1" alt="icon">
                     </div>
 
                     <div class="row-content">
                         <div class="col-md-10 col-lg-10">
-                            <h4 class="list-group-item-heading">{% for name in component.Merk.0 %}{{ name }}{% endfor %}{% for desc in component.Geheugen_Specificatie %} - {{ desc }}</h4>
-                            <p class="list-group-item-text"> {{ desc }} {% endfor %} </p>
+                            <h4 class="list-group-item-heading">{% for name in component.naam %}{{ name }}{% endfor %}</h4>
+                            <p class="list-group-item-text">{% for desc in component.info %} {{ desc }} {% endfor %} </p>
                         </div>
                         <div class=" col-md-2 col-lg-2  ">
-                            <p class="list-group-item-text pull-right ">{{ component.prijs.0 }}</p>
-                            <p class="list-group-item-text  ">{{ component.stock.0 }}</p>
+                            <p class="list-group-item-text pull-right prijs">{{ component.prijs.0 }}  </p>
 
-                            <a href="/detail/?product={% for name in component.Merk %}{{ name }} {% endfor %}&amp;categorie={{component.categorie|truncatewords:1 }}&amp;prijs={{ component.prijs.0|slice:'-1' }}&amp;productid={{component.id}}" class="btn btn-primary">details</a>
+                            <p class="list-group-item-text pull-right text-right">{{ component.stock.0 }}</p>
+
+                            <a href="/detail/?product={% for name in component.naam %}{{ name }} {% endfor %}&amp;categorie={{component.categorie|truncatewords:1 }}&amp;prijs={{ component.prijs.0|slice:'-1' }}&amp;productid={{component.id}}" class="btn btn-primary">details</a>
+
                         </div>
                     </div>
 
                 </div>
-
-
-
             </div>
+            {% endif %}
             {% endfor %}
+            </div>
 
         </div>
 
         {% include "page_snippet.html" %}
 
     </div>
-
-
 </div>
 
 
