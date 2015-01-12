@@ -29,4 +29,5 @@ urlpatterns = patterns('',
 
     url(r'^contact$', 'pcbuilder.views.contact'),
     url(r'^contact/$', 'pcbuilder.views.contact', name='contact'),
+    url(r'^compile/', 'pcbuilder.views.compile', name="compile"),
 )

@@ -8,7 +8,7 @@ from django.http import HttpResponse
 from bson.json_util import dumps
 from pcbuilder.compatibility import *
 from pcbuilder.filters import *
-from pcbuilder.builds import *
+from pcbuilder.compile import *
 import json as simplejson
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding
 from itertools import chain
@@ -492,7 +492,7 @@ def paginas(componentenlijst, componenten):
 
     return bereik, diff, current_page
 
-def build(request):
-    buildpc();
+def compile(request):
+    buildpc(request);
 
 
