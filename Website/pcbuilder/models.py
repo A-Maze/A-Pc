@@ -75,11 +75,16 @@ class Behuizingen(Document):
     categorie = StringField(max_length=120)
     Product = StringField(max_length=500)
     Behuizingtype = StringField(max_length=500)
+<<<<<<< HEAD
 
     naam = StringField(max_length=500)
 
     Uitvoering = StringField(max_length=500)
 
+=======
+    naam = StringField(max_length=500)
+    Uitvoering = StringField(max_length=500)
+>>>>>>> 3d485dbfcef60561a6f249ee99fc2aba5045a68b
     info = StringField(max_length=500)
     stock = StringField(max_length=500)
     prijs = StringField(max_length=120)
