@@ -10,6 +10,7 @@ class Moederborden(Document):
     categorie = StringField(max_length=120)
     Product = StringField(max_length=500)
     Hardeschijf_bus = StringField(max_length=500)
+    naam = StringField(max_length=500)
     info = StringField(max_length=500)
     stock = StringField(max_length=500)
     prijs = StringField(max_length=120)
@@ -18,6 +19,7 @@ class Moederborden(Document):
     sku = StringField(max_length=200)
     herkomst = StringField(max_length=200)  
     link = StringField(max_length=200)
+    
 class Processoren(Document):
     
     herkomst = StringField(max_length=200)
@@ -52,6 +54,7 @@ class Behuizingen(Document):
     categorie = StringField(max_length=120)
     Product = StringField(max_length=500)
     Behuizingtype = StringField(max_length=500)
+    naam = StringField(max_length=500)
     info = StringField(max_length=500)
     stock = StringField(max_length=500)
     prijs = StringField(max_length=120)
@@ -103,6 +106,7 @@ class Dvd(Document):
 class Geheugen(Document):
     
     categorie = StringField(max_length=120)
+    naam = StringField(max_length=500)
     Merk = StringField(max_length=500)
     Geheugen_Specificatie = StringField(max_length=500)
     Afbeelding = StringField(max_length=500)

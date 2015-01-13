@@ -62,13 +62,13 @@ class PccrawlerPipeline(object):
 								return
 
 				def addNewItemToDatabase(collectionName):
-					filerEuroSign()
+					filterEuroSign()
 					self.collection.insert(dict(item))
 					log.msg("Item wrote to MongoDB database %s/%s/%s" %
 			    	(settings['MONGODB_DB'], collectionName, item['categorie']),
 			    	level=log.DEBUG, spider=spider) 
 
-				def filerEuroSign():
+				def filterEuroSign():
 					try:
 						if u'\u20ac' in item["prijs"][0]:
 							item["prijs"][0] = item["prijs"][0][2:]
@@ -120,7 +120,7 @@ class PccrawlerPipeline(object):
 						self.collection.update({'sku': item["sku"]}, {"$push": {"stock" : item["stock"][0]}}, upsert=False)
 
 				def addToList():	
-					filerEuroSign()
+					filterEuroSign()
 					try:
 						fullItem = self.collection.find({'ean': item["ean"][0]})
 					except:

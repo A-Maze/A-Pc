@@ -152,7 +152,15 @@ $('.slider').Link('upper').to($('#sliderMaxValue'));
 
 </div>
 
-    {% include "sorteer_snippet.html" %}
+    <div class="col-md-8 col-lg-9 top-margin">
+      <select class="form-control" id="sort-by" onchange="filter()">
+        <option value="0">Sorteer op</option>
+        <option value="prijs-op">Prijs (oplopend)</option>
+        <option value="prijs-af">Prijs (aflopend)</option>
+        <option value="titel-op">Titel (A - Z)</option>
+        <option value="titel-af">Titel (Z - A)</option>
+      </select>
+    </div> 
 
     <div class="col-md-8 col-lg-9" id="productList">
 
@@ -160,9 +168,11 @@ $('.slider').Link('upper').to($('#sliderMaxValue'));
         <script type="text/javascript" src="{% static 'js/prijs.js' %}"></script>
     
         <div class=" top-margin ">
+
             <h1>{{Componenten.categorie.0|truncatewords:1|slice:"-4" }}</h1>
 
             <div id="list">
+
             {% for component in Componenten %}
             {% if component.prijs.0 %}
             <div class="list-group table-border">
@@ -182,6 +192,8 @@ $('.slider').Link('upper').to($('#sliderMaxValue'));
                             <p class="list-group-item-text pull-right text-right">{{ component.stock.0 }}</p>
 
                             <a href="/detail/?product={% for name in component.naam %}{{ name }} {% endfor %}&amp;categorie={{component.categorie|truncatewords:1 }}&amp;prijs={{ component.prijs.0|slice:'-1' }}&amp;productid={{component.id}}" class="btn btn-primary">details</a>
+
+                             
 
                         </div>
                     </div>

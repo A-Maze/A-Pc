@@ -77,6 +77,8 @@ $(document).ready(function(){
 
                             <a href="/detail/?product={% for name in component.naam %}{{ name }} {% endfor %}&amp;categorie={{component.categorie|truncatewords:1 }}&amp;prijs={{ component.prijs.0|slice:'-1' }}&amp;productid={{component.id}}" class="btn btn-primary">details</a>
 
+                             
+
                         </div>
                     </div>
 

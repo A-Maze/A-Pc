@@ -212,6 +212,8 @@ def detail(request):
             if str(productid) == str(component.id):
                 ziplist = zip(component.herkomst, component.stock, component.link, component.prijs)
 
+    print ziplist
+
     #if currentproduct and currentherkomst exist render them to response as well
     if existing:
         return render_to_response('detail.html', {'Componenten': (categorieObject.objects,), 'Categorie' : categorie.lower(), 'Product': product, 'Prijs': prijs, 'Productid': productid, 'Ziplist': ziplist, 'Currentproduct': currentproduct, 'Currentherkomst': currentherkomst },
@@ -384,7 +386,7 @@ def koeling(request):
 
 def moederborden(request):
 
-    # Get all posts from DB
+   # Get all posts from DB
     # Aantal per pagina en pagina nummer
     minPriceSliderValue = 1500.1
     maxPriceSliderValue = 0.1
@@ -393,19 +395,30 @@ def moederborden(request):
 
     #overgebleven componentenlijst afhankelijk van stock
     #Dit dient later afhaneklijk te worden van alle filters
-    moederbordenlijst = filters(request,moederbordenlijst)
+    moederbordenlijst = filters(request, moederbordenlijst)
+
+    for moederborden in moederbordenlijst:
+
+        if moederborden.prijs:
+            diestringnaam = moederborden.prijs[0].replace(",",("."))
+            if float(diestringnaam) < float(minPriceSliderValue):
+                minPriceSliderValue = diestringnaam
+            elif float(diestringnaam) > float(maxPriceSliderValue):
+                maxPriceSliderValue = diestringnaam
+
     moederborden = listing(request, moederbordenlijst, 15)
     
-   
     bereik, diff, current_page = paginas(moederbordenlijst, moederborden)
+
+    print moederbordenlijst[0].prijs
 
     if request.method == 'POST':
         json = {}
-        json['Componenten'] = render_to_string('moederbord.html', {'Componenten': moederborden, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page }, context_instance=RequestContext(request))
+        json['Componenten'] = render_to_string('moederborden.html', {'Componenten': moederborden, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page }, context_instance=RequestContext(request))
         json = dumps(json)
         return HttpResponse(json,content_type="application/json")
     else:
-        return render_to_response('moederbord.html', {'Componenten': moederborden, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page },
+        return render_to_response('processoren.html', {'Componenten': moederborden, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page },
                               context_instance=RequestContext(request))
 
 def optischeschijf(request):
