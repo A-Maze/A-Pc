@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+{% load static %}
+{% block scripts %}
+<link rel="stylesheet" type="text/css" href='{% static "css/demo.css" %}'/>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+{% endblock %}
+{% block content %}
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+$(function() {//1
+    $('#graph').highcharts({//2
+        chart: {//3
+            type: 'pie',
+            options3d: {//4
+                enabled: true,
+                alpha: 45,
+                beta: 0
+            }//3
+        },//2
+        title: {//3
+            text: 'Aantal views per categorie'
+        },//2
+        tooltip: {//3
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },//2
+        plotOptions: {//3
+            pie: {//4
+                allowPointSelect: true,
+                cursor: 'pointer',
+                depth: 35,
+                dataLabels: {//5
+                    enabled: true,
+                    format: '{point.name}'
+                }//4
+            }//3
+        },//2
+        series: [{//3
+            type: 'pie',
+            name: 'Browser share',
+            data: [
+                ['Processoren',   {{ Processorenpercentage }}],
+                ['Moederborden',       {{ Moederbordenpercentage }}],
+                {//4
+                    name: 'Grafische kaarten',
+                    y: {{ Grafischepercentage }},
+                    sliced: true,
+                    selected: true
+                },//3
+                ['Harde schijven',    {{ Hardepercentage }}],
+                ['Optische drives',     {{ Dvdpercentage }}],
+                ['Koelingen',   {{ Koelingpercentage }}],
+                ['Geheugen',    {{ Geheugenpercentage }}],
+                ['Voeding',     {{ Voedingpercentage }}],
+                ['Behuizing',   {{ Behuizingenpercentage }}]
+            ]
+        }]//2
+    });//1
+});//0
+
+
+
+
+
+$(function () {
+    $('#columngraph').highcharts({
+        chart: {
+            zoomType: 'x'
+        },
+        title: {
+            text: 'Het aantal views op de detailpagina\'s per dag'
+        },
+        subtitle: {
+            text: document.ontouchstart === undefined ?
+                    'Klik en sleep in de grafiek om in te zoomen' :
+                    'Schuif de grafiek om in te zoomen'
+        },
+        xAxis: {
+            type: 'datetime',
+            minRange: 14 * 24 * 3600000 // fourteen days
+        },
+        yAxis: {
+            title: {
+                text: 'Aantal views'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        plotOptions: {
+            area: {
+                fillColor: {
+                    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1},
+                    stops: [
+                        [0, Highcharts.getOptions().colors[0]],
+                        [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                    ]
+                },
+                marker: {
+                    radius: 2
+                },
+                lineWidth: 1,
+                states: {
+                    hover: {
+                        lineWidth: 1
+                    }
+                },
+                threshold: null
+            }
+        },
+
+        series: [{
+            type: 'area',
+            name: 'Aantal views',
+            pointInterval: 24 * 3600 * 1000,
+            pointStart: Date.UTC(2014, 11, 2),
+            data: 
+                {{ ViewsPerDatum2 }}
+            
+        }]
+    });
+});
+</script>
+
+
+
+
+
+	<div class='container'>
+		<div class="col-md-8 col-lg-11" id="productList" id="productList2">
+			<div class="panel panel-primary top-margin  ">
+				<div class="panel-heading">
+	            	<h3 class="panel-title">Top 10 bekeken producten</h3>
+	        	</div>
+				<div class=" top-margin ">
+					
+
+
+
+
+			{% for component in Componenten %}
+            <div class="list-group table-border">
+                <div class="list-group-item">
+                    <div class="row-picture">
+                        <img class="square" src="{{ component.Afbeelding.0 }}" alt="icon">
+                    </div>
+
+                    <div class="row-content">
+                        <div class="col-md-10 col-lg-10">
+                            <h4 class="list-group-item-heading">{% if component.naam %}{% for name in component.naam %}{{ name }}{% endfor %}{% elif component.Product %}{% for name in component.Product %}{{ name }}{% endfor %}{% elif component.Uitvoering %}{% for name in component.Uitvoering %} {{ name }} {% endfor %}{% elif component.naam %} {% for name in component.naam %} {{ naam }} {% endfor %}{% endif %}</h4>
+                            <p class="list-group-item-text">{% for desc in component.info %} {{ desc }} {% endfor %} </p>
+                            <p class="list-group-item-text">Categorie: {{ component.categorie }}</p>
+                        </div>
+                        <div class=" col-md-2 col-lg-2  ">
+                            <p class="list-group-item-text pull-right prijs">{{ component.prijs.0 }}  </p>
+
+                            <p class="list-group-item-text  ">{{ component.stock.0 }}</p>
+
+
+
+                            <a onclick="{{ views.Viewers }}" href="/detail/?product={% for name in component.naam %}{{ name }} {% endfor %}&amp;categorie={{component.categorie|truncatewords:1 }}&amp;prijs={{ component.prijs.0|slice:'-1' }}&amp;productid={{component.id}}" class="btn btn-primary">details</a>
+
+
+                            
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+            {% endfor %}
+
+
+
+
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+    <script src='{% static "js/highcharts.js" %}'></script>
+    <script src='{% static "js/highcharts-3d.js" %}'></script>
+    <script src='{% static "js/modules/exporting.js" %}'></script>
+    <div id="graph" style="height: 400px"></div>
+    {{ ViewsPerDatum2 }}<br>
+    {{ DatumsPerDatum }}
+    <div id="columngraph"></div>
+    
+
+{% endblock %}

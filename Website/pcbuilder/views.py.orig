@@ -11,7 +11,6 @@ from pcbuilder.filters import *
 from pcbuilder.builds import *
 import json as simplejson
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding, Views, Select, ViewsPerDatum
-from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding
 from itertools import chain
 import json
 import time
@@ -55,6 +54,7 @@ def index(request):
     #loop through the prices
     for prijs in prijzen:
         if not prijs is None:
+<<<<<<< HEAD
             totaalprijs += float(prijs.replace(",","."))
 
     filteredLinks = []
@@ -64,6 +64,9 @@ def index(request):
             filteredLinks.append(link)
 
     filteredLinks = dumps(filteredLinks)
+=======
+            totaalprijs += float(prijs.replace(',','.'))
+>>>>>>> Davey
 
     return render_to_response('index.html',{'Totaalprijs': totaalprijs,'Links': filteredLinks},
                               context_instance=RequestContext(request))
@@ -541,9 +544,12 @@ def processoren(request):
 
     processorenlijst = Processoren.objects
 
+<<<<<<< HEAD
+=======
 
 
     
+>>>>>>> Davey
     #overgebleven componentenlijst afhankelijk van stock
     #Dit dient later afhaneklijk te worden van alle filters
     processorenlijst = filters(request, processorenlijst)
@@ -872,49 +878,5 @@ def paginas(componentenlijst, componenten):
 
 def build(request):
     buildpc();
-
-
-
-
-def stock(objectlijst, levering):
-    direct_leverbaar = [
-        "1 stuk op voorraad",
-        "2 stuks op voorraad",
-        "3 stuks op voorraad",
-        "4 stuks op voorraad",
-        "5 stuks op voorraad",
-        "5+ stuks op voorraad",
-        "Direct leverbaar"
-    ]
-    
-    if levering == "alles":
-        return objectlijst
-    elif levering == "morgen":
-        for key, d in enumerate(direct_leverbaar):
-            objects = objectlijst.filter(stock__icontains=d)
-            if key == 0:
-                objectlijst_filtered = objects
-            else:
-                objectlijst_filtered = list(chain(objects, objectlijst_filtered))
-        return objectlijst_filtered
-
-def pricefilter(objectlijst, minprijs, maxprijs):
-    #replaces the , in the 2 arguments with . for float parsing
-    minprijs = minprijs.replace(',','.')
-    maxprijs = maxprijs.replace(',','.')
-    #for every component in the queryset
-    print objectlijst
-    newLijst = objectlijst
-    for component in newLijst:
-        #convert price to float
-        prijs = float(component.prijs[0])
-        #if the component price is not within the range of the 2 prices
-        if (prijs < float(minprijs)) or (prijs > float(maxprijs)):
-            #then filter that component from the queryset
-            if component.ean:
-                pass#hier komt magie
-            elif component.sku:
-                pass#hier komt magie
-    return newLijst
 
 

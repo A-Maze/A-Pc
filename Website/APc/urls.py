@@ -15,9 +15,11 @@ urlpatterns = patterns('',
     url(r'^voedingen/', 'pcbuilder.views.voedingen'),
     url(r'^detail/', 'pcbuilder.views.detail'),
     url(r'^select/', 'pcbuilder.views.select'),
+    url(r'^viewd/', 'pcbuilder.views.Viewers'),
     url(r'^deselect/', 'pcbuilder.views.deselect'),
     url(r'^contact/', 'pcbuilder.views.contact'),
     url(r'^mail/', 'pcbuilder.views.mail'),
+    url(r'^dashboard', 'pcbuilder.views.dashboard'),
 
 
     url(r'^search/', 'pcbuilder.views.search'),

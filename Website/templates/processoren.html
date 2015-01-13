@@ -181,7 +181,7 @@ $('.slider').Link('upper').to($('#sliderMaxValue'));
 
                             <p class="list-group-item-text pull-right text-right">{{ component.stock.0 }}</p>
 
-                            <a href="/detail/?product={% for name in component.naam %}{{ name }} {% endfor %}&amp;categorie={{component.categorie|truncatewords:1 }}&amp;prijs={{ component.prijs.0|slice:'-1' }}&amp;productid={{component.id}}" class="btn btn-primary">details</a>
+                            <a onclick="{{ views.Viewers }}" href="/detail/?product={% for name in component.naam %}{{ name }} {% endfor %}&amp;categorie={{component.categorie|truncatewords:1 }}&amp;prijs={{ component.prijs.0|slice:'-1' }}&amp;productid={{component.id}}" class="btn btn-primary">details</a>
 
                         </div>
                     </div>
