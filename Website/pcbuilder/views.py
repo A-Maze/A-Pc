@@ -494,5 +494,6 @@ def paginas(componentenlijst, componenten):
 
 def compile(request):
     buildpc(request);
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
 
 

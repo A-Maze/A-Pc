@@ -1,10 +1,10 @@
-var dropId = ["#processorSocket","#processorCores", "#moederbordSocket", "#moederbordChipset", "#grafischeChipFabrikant", "#grafischeGeheugengrootte", "#geheugenType"]
+var dropId = ["#processorenSocket","#processorenCores", "#moederbordenSocket", "#moederbordenChipset", "#grafischeChipFabrikant", "#grafischeGeheugengrootte", "#geheugenType"]
 function autoCompile(){
 	var filteredDrops = [];
 	var value;
 	for (var i = 0; i<dropId.length; i++){
 		value = $(dropId[i]).val();
-		if (value != "0"){
+		if (value != ("0" || null) ){
 			filteredDrops.push([dropId[i],value]);
 		}
 	}
@@ -26,5 +26,6 @@ function redirect(filteredDrops){
 	console.log(data.data)
 	$.ajax(data)
 	.done(function(data){
+		console.log("lekker dan")
 	})
 }

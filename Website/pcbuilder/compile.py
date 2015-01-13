@@ -6,7 +6,8 @@ def buildpc(request):
 	if (filteredDrops != "empty"):
 		for requirement in filteredDrops:
 			print requirement
-			if "processor" in requirement[0]:
+
+			if "processoren" in requirement[0]:
 				processor = Processoren.objects
 				print "stap 2"
 				if "Socket" in requirement[0]:
@@ -15,13 +16,34 @@ def buildpc(request):
 				if "Cores" in requirement[0]:
 					print "nog verder"
 					processor.filter(Aantal_cores_icontains=requirement[1])
-				autoSelect(processor)
+				autoSelect(request,processor)
+
+			if "Moederborden" in requirement[0]:
+				moederbord = Moederborden.objects
+				if "Socket" in requirement[0]:
+					moederbord.filter(Socket__icontains=requirement[1])
+				if "Chipset" in requirement[0]:
+					moederbord.filter(Moederbordchipset__icontains=requirement[1])
+				autoSelect(request,moederbord)
 
 
-def autoSelect(componentList):
-	print "calledd"
-	request.session[productstring] = processor[0].naam
-	request.session[categorieprijs] = processor[0].prijs
-	request.session[categorieid] = processor[0].id
-	request.session[categorieherkomst] = processor[0].id
-	request.session[categorielink] = processor[0].link
+def autoSelect(request,componentList):
+	categorie = componentList[0].categorie
+	print categorie
+	productstring = categorie + "naam"
+	categorieprijs = categorie + "prijs"
+	categorieid = categorie + "id"
+	categorieherkomst = categorie + "herkomst"
+	categorielink = categorie + "link"
+
+	prijzen,naam,herkomst = convert(componentList[0].prijs,componentList[0].naam,componentList[0].herkomst)
+	request.session[categorie] = True
+	request.session[productstring] = naam[0]
+	request.session[categorieprijs] = prijzen[0]
+	request.session[categorieid] = componentList[0].id
+	request.session[categorieherkomst] = herkomst[0]
+	request.session[categorielink] = componentList[0].link
+
+def convert(prijzen,naam,herkomst):
+	prijzen = [float(x) for x in prijzen]
+	return prijzen,naam,herkomst
