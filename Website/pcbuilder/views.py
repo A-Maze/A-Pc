@@ -14,12 +14,9 @@ from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, H
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding
 from itertools import chain
 import json
-<<<<<<< HEAD
 import time
 from random import randint
-=======
 from array import array
->>>>>>> paging
 
 # Global vars
 
@@ -545,11 +542,8 @@ def processoren(request):
 
     processorenlijst = Processoren.objects
 
-<<<<<<< HEAD
-
 
     
-=======
     #processorenlijst = fixprijs(processorenlijst)
 
 
@@ -564,7 +558,6 @@ def processoren(request):
     #print type(float(processorenlijst[0].prijs[0].encode("utf8")))
   
 
->>>>>>> paging
     #overgebleven componentenlijst afhankelijk van stock
     #Dit dient later afhaneklijk te worden van alle filters
     processorenlijst = filters(request, processorenlijst)
