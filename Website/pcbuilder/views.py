@@ -14,8 +14,12 @@ from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, H
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding
 from itertools import chain
 import json
+<<<<<<< HEAD
 import time
 from random import randint
+=======
+from array import array
+>>>>>>> paging
 
 # Global vars
 
@@ -78,8 +82,7 @@ def search(request):
         query = request.POST.get('search')
         #componentenArray = [Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding]
 
-        print "HOII"
-
+        print query
 
         filtert_Processoren = Processoren.objects.filter(naam__icontains=query)    
         filtert_Moederborden = Moederborden.objects.filter(naam__icontains=query)
@@ -92,22 +95,19 @@ def search(request):
         filtert_Voeding = Voeding.objects.filter(naam__icontains=query) 
 
         # querysets = [filtert_Processoren,filtert_Moederborden,filtert_Koeling,filtert_Behuizingen,filtert_Grafische,filtert_Harde,filtert_Dvd,filtert_Geheugen,filtert_Voeding]
-        print "combining...."
-        filtert = list(chain(filtert_Processoren))
-        
-        
-        print filtert
+        #filtert = list(chain(filtert_Processoren))
+        filtert = filtert_Processoren 
         filterComponents = listing(request, filtert, 15)
 
         bereik, diff, current_page = paginas(filtert, filterComponents)
 
+
         json = {}
-        json['filterComponents'] = render_to_string('search.html', {'filterComponents': filterComponents , 'Range':bereik, 'Diff':diff, "page":current_page}, context_instance=RequestContext(request))
+        json['Componenten'] = render_to_string('search.html', {'Componenten': filterComponents , 'Range':bereik, 'Diff':diff, "page":current_page}, context_instance=RequestContext(request))
         json = dumps(json)
         return HttpResponse(json,content_type="application/json")
 
     else:
-        print ("1,2,3")
         return render_to_response('search.html', 
                                   context_instance=RequestContext(request))
 
@@ -543,15 +543,31 @@ def processoren(request):
 
     processorenlijst = Processoren.objects
 
+<<<<<<< HEAD
 
 
     
+=======
+    #processorenlijst = fixprijs(processorenlijst)
+
+
+    #print "1"
+    #processorenlijst = [prijs.encode("utf8") for prijs in processorenlijst.values('prijs')]
+    #print "2 "
+
+
+
+    print type(processorenlijst[0].prijs[0])
+
+    #print type(float(processorenlijst[0].prijs[0].encode("utf8")))
+  
+
+>>>>>>> paging
     #overgebleven componentenlijst afhankelijk van stock
     #Dit dient later afhaneklijk te worden van alle filters
     processorenlijst = filters(request, processorenlijst)
 
     for processoren in processorenlijst:
-
         if processoren.prijs:
             diestringnaam = processoren.prijs[0].replace(",",("."))
             if float(diestringnaam) < float(minPriceSliderValue):
@@ -930,4 +946,25 @@ def pricefilter(objectlijst, minprijs, maxprijs):
                 pass#hier komt magie
     return newLijst
 
+
+def fixprijs(objects):
+
+    
+    #print type(float(processorenlijst[0].prijs[0].encode("utf8")))
+
+    for count, obj in enumerate(objects):
+        prijzen = []
+
+        for p in objects[count].prijs:
+            prijzen.append(float(p.encode("utf8")))
+
+        #print type(prijzen[0])
+
+        objects[count].prijs = prijzen
+
+        #print type(objects[count].prijs[0])
+
+    print type(objects[0].prijs[0])
+
+    return objects
 
