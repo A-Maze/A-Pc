@@ -334,7 +334,7 @@ function voorafSamengesteld(){
             <td>1</td>
             <td>Processor</td>
             <td><a href="/detail/?product={{ request.session.processorennaam }}&amp;categorie=processoren&amp;prijs={{ request.session.processorenprijs }}&amp;productid={{ request.session.processorenid }}">{{ request.session.processorennaam }}</a></td>
-            <td>{{ request.session.processorenprijs }}</td>
+            <td>&#8364;{{ request.session.processorenprijs }}</td>
             <td>{% if request.session.processoren == True %}<a href="/deselect/?product={{ request.session.processorennaam }}&amp;categorie=processoren&amp;prijs={{ request.session.processorenprijs }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0"><img src="./static/img/action/svg/ic_highlight_remove_24px.svg" /></a>
             {% else  %} <a href="/processoren/"><img src="./static/img/action/svg/ic_add_shopping_cart_24px.svg" /></a> {% endif %}</td>
         </tr>
@@ -343,7 +343,7 @@ function voorafSamengesteld(){
             <td>Moederbord</td>
 
             <td><a href="/detail/?product={{ request.session.moederbordennaam }}&amp;categorie=moederborden&amp;prijs={{ request.session.moederbordenprijs }}&amp;productid={{ request.session.moederbordenid }}"> {{ request.session.moederbordennaam }}</a></td>
-            <td>{{ request.session.moederbordenprijs }}</td>
+            <td>&#8364;{{ request.session.moederbordenprijs }}</td>
             <td>{% if request.session.moederborden == True %}<a href="/deselect/?product={{ request.session.moederbordennaam }}&amp;categorie=moederborden&amp;prijs={{ request.session.moederbordenprijs }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0"><img src="./static/img/action/svg/ic_highlight_remove_24px.svg" /></a>
             {% else  %} <a href="/moederborden/"><img src="./static/img/action/svg/ic_add_shopping_cart_24px.svg" /></a> {% endif %}</td>
         </tr>
@@ -351,7 +351,7 @@ function voorafSamengesteld(){
             <td>3</td>
             <td>Grafische Kaart</td>
             <td><a href="/detail/?product={{ request.session.grafischenaam }}&amp;categorie=grafische&amp;prijs={{ request.session.grafischeprijs }}&amp;productid={{ request.session.grafischeid }}">{{ request.session.grafischenaam }}</a></td>
-            <td>{{ request.session.grafischeprijs }}</td>
+            <td>&#8364;{{ request.session.grafischeprijs }}</td>
             <td>{% if request.session.grafische == True %}<a href="/deselect/?product={{ request.session.grafischenaam }}&amp;categorie=grafische&amp;prijs={{ request.session.grafischeprijs }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0"><img src="./static/img/action/svg/ic_highlight_remove_24px.svg" /></a>
             {% else  %} <a href="/gpu/"><img src="./static/img/action/svg/ic_add_shopping_cart_24px.svg" /></a> {% endif %}</td>
         </tr>
@@ -359,7 +359,7 @@ function voorafSamengesteld(){
             <td>4</td>
             <td>Harde Schijf</td>
             <td><a href="/detail/?product={{ request.session.Hardenaam }}&amp;categorie=harde&amp;prijs={{ request.session.hardeprijs }}&amp;productid={{ request.session.hardeid }}">{{ request.session.hardenaam }}</a></td>
-            <td>{{ request.session.hardeprijs }}</td>
+            <td>&#8364;{{ request.session.hardeprijs }}</td>
             <td>{% if request.session.harde == True %}<a href="/deselect/?product={{ request.session.hardenaam }}&amp;categorie=harde&amp;prijs={{ request.session.hardeprijs }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0"><img src="./static/img/action/svg/ic_highlight_remove_24px.svg" /></a>
             {% else  %} <a href="/hardeschijven/"><img src="./static/img/action/svg/ic_add_shopping_cart_24px.svg" /></a> {% endif %}</td>
         </tr>
@@ -367,7 +367,7 @@ function voorafSamengesteld(){
             <td>5</td>
             <td>Optische Drive</td>
             <td><a href="/detail/?product={{ request.session.dvdnaam }}&amp;categorie=dvd&amp;prijs={{ request.session.dvdprijs }}&amp;productid={{ request.session.dvdid }}">{{ request.session.dvdnaam }}</a></td>
-            <td>{{ request.session.dvdprijs }}</td>
+            <td>&#8364;{{ request.session.dvdprijs }}</td>
             <td>{% if request.session.dvd == True %}<a href="/deselect/?product={{ request.session.dvdnaam }}&amp;categorie=dvd&amp;prijs={{ request.session.dvdprijs }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0"><img src="./static/img/action/svg/ic_highlight_remove_24px.svg" /></a>
             {% else  %} <a href="/optischeschijven/"><img src="./static/img/action/svg/ic_add_shopping_cart_24px.svg" /></a> {% endif %}</td>
         </tr>
@@ -375,7 +375,7 @@ function voorafSamengesteld(){
             <td>6</td>
             <td>Koeling</td>
             <td><a href="/detail/?product={{ request.session.koelingnaam }}&amp;categorie=koeling&amp;prijs={{ request.session.koelingprijs }}&amp;productid={{ request.session.koelingid }}">{{ request.session.koelingnaam }}</a></td>
-            <td>{{ request.session.koelingprijs }}</td>
+            <td>&#8364;{{ request.session.koelingprijs }}</td>
             <td>{% if request.session.koeling == True %}<a href="/deselect/?product={{ request.session.koelingnaam }}&amp;categorie=koeling&amp;prijs={{ request.session.koelingprijs }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0"><img src="./static/img/action/svg/ic_highlight_remove_24px.svg" /></a>
             {% else  %} <a href="/koelingen/"><img src="./static/img/action/svg/ic_add_shopping_cart_24px.svg" /></a> {% endif %}</td>
         </tr>
@@ -383,7 +383,7 @@ function voorafSamengesteld(){
             <td>7</td>
             <td>Geheugen</td>
             <td><a href="/detail/?product={{ request.session.geheugennaam }}&amp;categorie=geheugen&amp;prijs={{ request.session.geheugenprijs }}&amp;productid={{ request.session.geheugenid }}">{{ request.session.geheugennaam }}</a></td>
-            <td>{{ request.session.geheugenprijs }}</td>
+            <td>&#8364;{{ request.session.geheugenprijs }}</td>
             <td>{% if request.session.geheugen == True %}<a href="/deselect/?product={{ request.session.geheugennaam }}&amp;categorie=geheugen&amp;prijs={{ request.session.geheugenprijs }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0"><img src="./static/img/action/svg/ic_highlight_remove_24px.svg" /></a>
             {% else  %} <a href="/geheugen/"><img src="./static/img/action/svg/ic_add_shopping_cart_24px.svg" /></a> {% endif %}</td>
         </tr>
@@ -391,7 +391,7 @@ function voorafSamengesteld(){
             <td>8</td>
             <td>Voeding</td>
             <td><a href="/detail/?product={{ request.session.voedingnaam }}&amp;categorie=voeding&amp;prijs={{ request.session.voedingprijs }}&amp;productid={{ request.session.voedingid }}">{{ request.session.voedingnaam }}</a></td>
-            <td>{{ request.session.voedingprijs }}</td>
+            <td>&#8364;{{ request.session.voedingprijs }}</td>
             <td>{% if request.session.voeding == True %}<a href="/deselect/?product={{ request.session.voedingnaam }}&amp;categorie=voeding&amp;prijs={{ request.session.voedingprijs }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0"><img src="./static/img/action/svg/ic_highlight_remove_24px.svg" /></a>
             {% else  %} <a href="/voedingen/"><img src="./static/img/action/svg/ic_add_shopping_cart_24px.svg" /></a> {% endif %}</td>
         </tr>
@@ -399,7 +399,7 @@ function voorafSamengesteld(){
             <td>9</td>
             <td>Behuizing</td>
             <td><a href="/detail/?product={{ request.session.behuizingennaam }}&amp;categorie=behuizingen&amp;prijs={{ request.session.behuizingenprijs }}&amp;productid={{ request.session.behuizingenid }}">{{ request.session.behuizingennaam }}</a></td>
-            <td>{{ request.session.behuizingenprijs }}</td>
+            <td>&#8364;{{ request.session.behuizingenprijs }}</td>
             <td>{% if request.session.behuizingen == True %}<a href="/deselect/?product={{ request.session.behuizingennaam }}&amp;categorie=behuizingen&amp;prijs={{ request.session.behuizingenprijs }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0"><img src="./static/img/action/svg/ic_highlight_remove_24px.svg" /></a>
             {% else  %} <a href="/behuizingen/"><img src="./static/img/action/svg/ic_add_shopping_cart_24px.svg" /></a> {% endif %}</td>
         </tr>
@@ -407,7 +407,7 @@ function voorafSamengesteld(){
             <td></td>
             <td>Totaal</td>
             <td><a></a></td>
-            <td>{{ Totaalprijs }}</td>
+            <td>&#8364;{{ Totaalprijs }}</td>
         </tr>
 
         </tbody>
