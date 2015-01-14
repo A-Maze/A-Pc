@@ -577,7 +577,7 @@ def processoren(request):
 
     if request.method == 'POST':
         json = {}
-        json['Componenten'] = render_to_string('processoren.html', {'Componenten': processoren, 'Views':views, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page }, context_instance=RequestContext(request))
+        json['Componenten'] = render_to_string('processoren.html', {'Componenten': processoren, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page }, context_instance=RequestContext(request))
         json = dumps(json)
         return HttpResponse(json,content_type="application/json")
     else:
