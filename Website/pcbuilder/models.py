@@ -38,7 +38,9 @@ class Moederborden(Document):
     sku = StringField(max_length=200)
     herkomst = StringField(max_length=200)  
     link = StringField(max_length=200)
-    
+    naam = StringField(max_length=500)
+    subnaam = StringField(max_length=500)
+
 class Processoren(Document):
     
     herkomst = StringField(max_length=200)
@@ -49,7 +51,6 @@ class Processoren(Document):
     info = StringField(max_length=500)
     prijs = StringField(max_length=120)
     stock = StringField(max_length=500)
-    
     ean = StringField(max_length=200)
     sku = StringField(max_length=200)
     herkomst = StringField(max_length=200)  
@@ -69,6 +70,8 @@ class Koeling(Document):
     sku = StringField(max_length=200)
     herkomst = StringField(max_length=200)  
     link = StringField(max_length=200)
+    naam = StringField(max_length=500)
+    subnaam = StringField(max_length=500)
 
 class Behuizingen(Document):
     
@@ -85,6 +88,8 @@ class Behuizingen(Document):
     sku = StringField(max_length=200)
     herkomst = StringField(max_length=200)  
     link = StringField(max_length=200)
+    naam = StringField(max_length=500)
+    subnaam = StringField(max_length=500)
 
 class Grafische(Document):
     
@@ -99,6 +104,8 @@ class Grafische(Document):
     sku = StringField(max_length=200)
     herkomst = StringField(max_length=200)  
     link = StringField(max_length=200)
+    naam = StringField(max_length=500)
+    subnaam = StringField(max_length=500)
 
 class Harde(Document):
     
@@ -113,6 +120,8 @@ class Harde(Document):
     sku = StringField(max_length=200)
     herkomst = StringField(max_length=200)  
     link = StringField(max_length=200)
+    naam = StringField(max_length=500)
+    subnaam = StringField(max_length=500)
 
 class Dvd(Document):
     
@@ -127,6 +136,8 @@ class Dvd(Document):
     sku = StringField(max_length=200)
     herkomst = StringField(max_length=200)  
     link = StringField(max_length=200)
+    naam = StringField(max_length=500)
+    subnaam = StringField(max_length=500)
 
 class Geheugen(Document):
     
@@ -143,6 +154,8 @@ class Geheugen(Document):
     sku = StringField(max_length=200)
     herkomst = StringField(max_length=200)  
     link = StringField(max_length=200)
+    naam = StringField(max_length=500)
+    subnaam = StringField(max_length=500)
 
 class Voeding(Document):
     
@@ -157,3 +170,5 @@ class Voeding(Document):
     sku = StringField(max_length=200)
     herkomst = StringField(max_length=200)  
     link = StringField(max_length=200)
+    naam = StringField(max_length=500)
+    subnaam = StringField(max_length=500)
