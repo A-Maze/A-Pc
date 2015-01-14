@@ -4,11 +4,11 @@ def buildpc(request):
 	filteredDrops = request.POST.get('dropDowns', 'empty')
 	filteredDrops = json.loads(filteredDrops)
 	if (filteredDrops != "empty"):
+		processor = Processoren.objects
 		for requirement in filteredDrops:
 			print requirement
 
 			if "processoren" in requirement[0]:
-				processor = Processoren.objects
 				print "stap 2"
 				if "Socket" in requirement[0]:
 					print 'verder'
@@ -29,18 +29,16 @@ def buildpc(request):
 
 def autoSelect(request,componentList):
 	categorie = componentList[0].categorie
-	print categorie
 	productstring = categorie + "naam"
 	categorieprijs = categorie + "prijs"
 	categorieid = categorie + "id"
 	categorieherkomst = categorie + "herkomst"
 	categorielink = categorie + "link"
-
 	prijzen,naam,herkomst = convert(componentList[0].prijs,componentList[0].naam,componentList[0].herkomst)
 	request.session[categorie] = True
 	request.session[productstring] = naam[0]
 	request.session[categorieprijs] = prijzen[0]
-	request.session[categorieid] = componentList[0].id
+	request.session[categorieid] = str(componentList[0].id)
 	request.session[categorieherkomst] = herkomst[0]
 	request.session[categorielink] = componentList[0].link
 

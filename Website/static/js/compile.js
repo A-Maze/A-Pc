@@ -4,7 +4,7 @@ function autoCompile(){
 	var value;
 	for (var i = 0; i<dropId.length; i++){
 		value = $(dropId[i]).val();
-		if (value != ("0" || null) ){
+		if ((value != "0" )||( null) ){
 			filteredDrops.push([dropId[i],value]);
 		}
 	}

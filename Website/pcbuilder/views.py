@@ -50,9 +50,9 @@ def index(request):
 
     totaalprijs = 0
     #loop through the prices
-    for prijs in prijzen:
-        if not prijs is None:
-            totaalprijs += float(prijs.replace(",","."))
+    #for prijs in prijzen:
+        #if not prijs is None:
+            #totaalprijs += float(prijs.replace(",","."))
 
     filteredLinks = []
 
@@ -134,15 +134,17 @@ def select(request):
     productid = request.GET.get('productid')
     herkomst = request.GET.get('herkomst')
     link = request.GET.get('link')
+    prijs = float(prijs)
 
 
     categorie.replace(" ", "")
     categorie.replace(",", "")
-    prijs.replace(" ","")
     request.session[categorie] = True
     productstring = categorie + "naam"
     categorieprijs = categorie + "prijs"
     categorieid = categorie + "id"
+    print "selectmethod"
+    print type(productid)
     categorieherkomst = categorie + "herkomst"
     categorielink = categorie + "link"
 
