@@ -26,6 +26,7 @@ function redirect(filteredDrops){
 	console.log(data.data)
 	$.ajax(data)
 	.done(function(data){
-		console.log("lekker dan")
+		location.reload();
+		switch("second")
 	})
 }

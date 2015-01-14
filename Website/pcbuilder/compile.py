@@ -11,12 +11,9 @@ def buildpc(request):
 			print requirement
 
 			if "processoren" in requirement[0]:
-				print "stap 2"
 				if "Socket" in requirement[0]:
-					print 'verder'
 					processor.filter(Socket__icontains=requirement[1])
 				if "Cores" in requirement[0]:
-					print "nog verder"
 					processor.filter(Aantal_cores_icontains=requirement[1])
 				data.remove(Processoren)
 				autoSelect(request,processor)
@@ -38,9 +35,7 @@ def buildpc(request):
 
 
 def autoSelect(request,componentList):
-	print "callend"
 	if componentList:
-		print "called sequel"
 		categorie = componentList[0].categorie
 		productstring = categorie + "naam"
 		categorieprijs = categorie + "prijs"
@@ -56,6 +51,9 @@ def autoSelect(request,componentList):
 		request.session[categorielink] = componentList[0].link
 
 def convert(prijzen,naam,herkomst):
-	print "prijs"
 	prijzen = [float(x) for x in prijzen]
-	return prijzen,naam,herkomst
+	herkomst = [str(x) for x in herkomst]
+	merge = sorted(zip(prijzen,herkomst))
+	newprijzen = [x[0] for x in merge]
+	newherkomst = [x[1] for x in merge]
+	return newprijzen,naam,newherkomst
