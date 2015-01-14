@@ -8,7 +8,7 @@ from django.http import HttpResponse
 from bson.json_util import dumps
 from pcbuilder.compatibility import *
 from pcbuilder.filters import *
-from pcbuilder.builds import *
+from pcbuilder.compile import *
 import json as simplejson
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding, Views, Select, ViewsPerDatum
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding
@@ -57,9 +57,9 @@ def index(request):
 
     totaalprijs = 0
     #loop through the prices
-    for prijs in prijzen:
-        if not prijs is None:
-            totaalprijs += float(prijs.replace(",","."))
+    #for prijs in prijzen:
+        #if not prijs is None:
+            #totaalprijs += float(prijs.replace(",","."))
 
     filteredLinks = []
 
@@ -137,6 +137,7 @@ def select(request):
     productid = request.GET.get('productid')
     herkomst = request.GET.get('herkomst')
     link = request.GET.get('link')
+    prijs = float(prijs)
 
     Viewers(productid, categorie, 'delete', request)
     Selected(productid, categorie, 'add', request)
@@ -145,11 +146,12 @@ def select(request):
 
     categorie.replace(" ", "")
     categorie.replace(",", "")
-    prijs.replace(" ","")
     request.session[categorie] = True
     productstring = categorie + "naam"
     categorieprijs = categorie + "prijs"
     categorieid = categorie + "id"
+    print "selectmethod"
+    print type(productid)
     categorieherkomst = categorie + "herkomst"
     categorielink = categorie + "link"
 
@@ -899,8 +901,9 @@ def paginas(componentenlijst, componenten):
 
     return bereik, diff, current_page
 
-def build(request):
-    buildpc();
+def compile(request):
+    buildpc(request);
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
 
 
 

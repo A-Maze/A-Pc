@@ -13,7 +13,7 @@
                             <h4 class="text-center">Processor</h4>
                         
                         <div class="dropdown-panel">
-                            <div class="form-control-wrapper"><select class="form-control" >
+                            <div class="form-control-wrapper" ><select  id="processorenSocket" class="form-control" >
                                 <option value="0">Socket</option>
                                 <option value="socket 1150">Socket 1150</option>
                                 <option value="socket 1155">Socket 1155</option>
@@ -22,7 +22,7 @@
                                 <option value="socket AM3+">Socket AM3+</option>
                                 <option value="socket FM2">Socket FM2</option>
                             </select><span class="material-input"></span></div>
-                            <div class="form-control-wrapper"><select class="form-control" >
+                            <div class="form-control-wrapper" ><select id="processorenCores" class="form-control" >
                                 <option value="0">Aantal cores</option>
                                 <option value="6-Core">6-Core</option>
                                 <option value="8-Core">8-Core</option>
@@ -45,7 +45,7 @@
                             <h4 class="text-center">Moederbord</h4>
                         
                         <div class="dropdown-panel">
-                            <div class="form-control-wrapper"><select class="form-control" >
+                            <div class="form-control-wrapper"><select id="moederbordenSocket" class="form-control" >
                                 <option value="0">Socket</option>
                                 <option value="socket 1150">Socket 1150</option>
                                 <option value="socket 1155">Socket 1155</option>
@@ -55,7 +55,7 @@
                                 <option value="socket FM2">Socket FM2</option>
                                 <option value="CPU onboard">CPU onboard</option>
                             </select><span class="material-input"></span></div>
-                            <div class="form-control-wrapper"><select class="form-control" >
+                            <div class="form-control-wrapper"><select id="moederbordenChipset" class="form-control" >
                                 <option value="0">Moederbordchipset</option>
                                 <option value="Intel B85">Intel B85</option>
                                 <option value="Intel H81">Intel H81</option>
@@ -81,13 +81,13 @@
                             <h4 class="text-center">Grafische kaart</h4>
                         
                         <div class="dropdown-panel">
-                            <div class="form-control-wrapper"><select class="form-control" >
-                                <option value="0">Moederbordchipset</option>
+                            <div class="form-control-wrapper"><select id="grafischeChipFabrikant" class="form-control" >
+                                <option value="0">Videochipfabrikant</option>
                                 <option value="AMD">AMD</option>
                                 <option value="Nvidia">Nvidia</option>
                                 <option value="Matrox">Matrox</option>
                             </select><span class="material-input"></span></div>
-                            <div class="form-control-wrapper"><select class="form-control" >
+                            <div class="form-control-wrapper"><select id="grafischeGeheugengrootte" class="form-control" >
                                 <option value="0">Geheugengrootte</option>
                                 <option value="1GB">1GB</option>
                                 <option value="2GB">2GB</option>
@@ -157,7 +157,7 @@
                             <h4 class="text-center">Geheugen</h4>
                         
                         <div class="dropdown-panel">
-                           <div class="form-control-wrapper"><select class="form-control" >
+                           <div class="form-control-wrapper"><select id="geheugenType" class="form-control" >
                             <option value="0">Geheugentype</option>
                             <option value="DDR2">DDR2</option>
                             <option value="DDR2 (SODIMM)">DDR2 (SODIMM)</option>
@@ -201,7 +201,7 @@
             </div>
         </div>
         <div class="col-md-2">
-            <a href="javascript:void(0)" class="btn btn-primary btn-raised pull-right">stel samen</a>
+            <a href="javascript:autoCompile()" class="btn btn-primary btn-raised pull-right">stel samen</a>
         </div>
     </div>
 
