@@ -22,7 +22,6 @@
     <script src='{% static "js/paging.js" %}'></script>
     <script src='{% static "js/overlay.js" %}'></script>
     <script src='{% static "js/filters.js" %}'></script>
-    <script src='{% static "js/search.js" %}'></script>
     
     <script type="text/javascript">
         function addSearch(e) {
@@ -32,10 +31,8 @@
 
                 var query = document.getElementById("search").value;
 
-                searchInDjango(query );
-               
-             }   
-            
+                filter(0, query);
+            }   
         }
 
 

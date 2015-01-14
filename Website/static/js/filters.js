@@ -1,26 +1,48 @@
-function filter(page) {
+function filter(page, query) {
 	//ajax afhandeling
 	
-	if (!page) {
+	if (!page || page == "") {
 		page = $("#active-page").text();
 	} else {
 		page = page;
 	}
 
-	data = {
-		//huidige pagina url
-		url : window.location.pathname,
-		method: "POST",
-		//value van checkbox wordt meegegeven onder stock
-		data: {
-			stock : $('#stockCheck').val(),
-			minprijs: $('#sliderMinValue').val(), 
-			maxprijs: $('#sliderMaxValue').val(), 
-			pageNumber: page, 
-			order: $("#sort-by").val(),
-		},
+	if (onSearchPage()) {
+		if (page == "") {
+			page = 1
+		}
+
+		if (query === undefined) {
+			query = document.getElementById("search").value;
+		}
+
+		data = {
+			//huidige pagina url
+			url : window.location.pathname,
+			method: "POST",
+			//value van checkbox wordt meegegeven onder stock
+			data: {
+				pageNumber: page,
+				search: query,
+
+			},
+	    }
+	} else {
+		data = {
+			//huidige pagina url
+			url : window.location.pathname,
+			method: "POST",
+			//value van checkbox wordt meegegeven onder stock
+			data: {
+				stock : $('#stockCheck').val(),
+				minPrijs: $('#sliderMinValue').val(), 
+				maxPrijs: $('#sliderMaxValue').val(), 
+				pageNumber: page, 
+				order: $("#sort-by").val(),
+			},
+	    }
     }
-    
+
     console.log(data)
 
 	//ajax afhandeling
@@ -57,3 +79,12 @@ function sortBy(val) {
 		//random shizzle here
 	})
 }
+
+function onSearchPage() {
+	if (window.location.pathname == "/search/") {
+		return true
+	} else {
+		return false
+	}
+}
+
