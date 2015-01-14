@@ -50,9 +50,9 @@ def index(request):
 
     totaalprijs = 0
     #loop through the prices
-    #for prijs in prijzen:
-        #if not prijs is None:
-            #totaalprijs += float(prijs.replace(",","."))
+    for prijs in prijzen:
+        if not prijs is None:
+            totaalprijs += prijs
 
     filteredLinks = []
 
