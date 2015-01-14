@@ -36,7 +36,7 @@ def autoSelect(request,componentList):
 	categorielink = categorie + "link"
 	prijzen,naam,herkomst = convert(componentList[0].prijs,componentList[0].naam,componentList[0].herkomst)
 	request.session[categorie] = True
-	request.session[productstring] = naam[0]
+	request.session[productstring] = naam[0].replace("+", "")
 	request.session[categorieprijs] = prijzen[0]
 	request.session[categorieid] = str(componentList[0].id)
 	request.session[categorieherkomst] = herkomst[0]
