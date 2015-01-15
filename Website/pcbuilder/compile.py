@@ -28,15 +28,13 @@ def buildpc(request):
 				autoSelect(request,moederbord)
 
 		for dataset in data:
-			print "loopend"
-			print dataset
 			autoSelect(request,dataset.objects)
 
 
 
 def autoSelect(request,componentList):
 	if componentList:
-		componentenList = compatibility(request, componentList)
+		#componentenList = compatibility(request, componentList)
 		categorie = componentList[0].categorie
 		productstring = categorie + "naam"
 		categorieprijs = categorie + "prijs"

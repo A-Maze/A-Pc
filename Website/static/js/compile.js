@@ -27,6 +27,6 @@ function redirect(filteredDrops){
 	$.ajax(data)
 	.done(function(data){
 		location.reload();
-		switch("second")
+		show("second");
 	})
 }
