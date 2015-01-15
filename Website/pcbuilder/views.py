@@ -16,6 +16,7 @@ from itertools import chain
 import json
 import time
 from random import randint
+import unicodedata
 
 # Global vars
 
@@ -160,7 +161,7 @@ def select(request):
     request.session[categorieherkomst] = herkomst
     request.session[categorielink] = link
 
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
+    return HttpResponseRedirect(request.META.get('/','/'))
 
 def deselect(request):
     product = request.GET.get('product')
@@ -337,7 +338,6 @@ def ViewsPerDag(action, request):
         if(action == 'add'):
             #zet selected collectie de id als de id die is meegegeven het aantal op 15 (moet nog aan gewerkt worden)
             
-
 
 
 
@@ -541,7 +541,15 @@ def processoren(request):
     minPriceSliderValue = 1500.1
     maxPriceSliderValue = 0.1
 
+
+
+    
+            
+
     processorenlijst = Processoren.objects
+
+    
+
 
 
 
@@ -553,7 +561,7 @@ def processoren(request):
     for processoren in processorenlijst:
 
         if processoren.prijs:
-            diestringnaam = processoren.prijs[0].replace(",",("."))
+            diestringnaam = processoren.prijs[0]
             if float(diestringnaam) < float(minPriceSliderValue):
                 minPriceSliderValue = diestringnaam
             elif float(diestringnaam) > float(maxPriceSliderValue):
@@ -562,7 +570,6 @@ def processoren(request):
     processoren = listing(request, processorenlijst, 15)
     
     bereik, diff, current_page = paginas(processorenlijst, processoren)
-
 
     if request.method == 'POST':
         json = {}
@@ -778,7 +785,7 @@ def moederborden(request):
     for moederborden in moederbordenlijst:
 
         if moederborden.prijs:
-            diestringnaam = moederborden.prijs[0].replace(",",("."))
+            diestringnaam = moederborden.prijs[0]
             if float(diestringnaam) < float(minPriceSliderValue):
                 minPriceSliderValue = diestringnaam
             elif float(diestringnaam) > float(maxPriceSliderValue):
