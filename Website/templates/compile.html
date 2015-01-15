@@ -207,3 +207,41 @@
 
 </div>
 </div>
+<script>
+var minimaal = {{minPriceSliderValue}}
+var maximaal = {{maxPriceSliderValue}}
+
+$('.slider').noUiSlider({
+    start: [minimaal , maximaal ],
+    connect: true,
+    
+    
+    // Configure tapping, or make the selected range dragable.
+   
+    
+    // Full number format support.
+    format: wNumb({
+        mark: ',',
+        decimals: 1
+    }),
+    
+    // Support for non-linear ranges by adding intervals.
+    range: {
+        'min': minimaal,
+        'max': maximaal
+    }
+});
+
+// Reading/writing + validation from an input? One line.
+$('.slider').Link('lower').to($('#sliderMinValue'));
+
+// Write to a span? One line.
+$('.slider').Link('upper').to($('#sliderMaxValue'));
+
+// Optional addon: creating Pips (Percentage In Point);
+
+
+
+
+});
+</script
