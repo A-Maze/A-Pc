@@ -1,4 +1,5 @@
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding
+from pcbuilder.compatibility import *
 import json
 
 def buildpc(request):
@@ -34,7 +35,7 @@ def buildpc(request):
 
 def autoSelect(request,componentList):
 	if componentList:
-		#componentenList = compatibility(request, componentList)
+		componentenList = compatibility(request, componentList)
 		categorie = componentList[0].categorie
 		productstring = categorie + "naam"
 		categorieprijs = categorie + "prijs"
