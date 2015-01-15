@@ -64,9 +64,9 @@ def index(request):
         if not link is None:
             filteredLinks.append(link)
 
-    filteredLinks = dumps(filteredLinks)
+    jsonLinks = dumps(filteredLinks)
 
-    return render_to_response('index.html',{'Totaalprijs': totaalprijs,'Links': filteredLinks},
+    return render_to_response('index.html',{'Totaalprijs': totaalprijs,'JSONLinks': jsonLinks},
                               context_instance=RequestContext(request))
 
 def contact(request):
