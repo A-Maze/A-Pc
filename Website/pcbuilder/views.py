@@ -16,11 +16,6 @@ from itertools import chain
 import json
 import time
 from random import randint
-<<<<<<< HEAD
-from array import array
-=======
-import unicodedata
->>>>>>> rik
 
 # Global vars
 
