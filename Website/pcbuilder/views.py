@@ -172,6 +172,7 @@ def deselect(request):
     del request.session[categorie]
     productstring = categorie + "naam"
     productprijs = categorie + "prijs"
+    productlink = categorie + "link"
     print type(product)
     print type(request.session[productstring])
     print product
@@ -180,6 +181,7 @@ def deselect(request):
         print "deselect called"
         del request.session[productstring]
         del request.session[productprijs]
+        del request.session[productlink]
     return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
     
 
