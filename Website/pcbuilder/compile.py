@@ -36,6 +36,7 @@ def buildpc(request):
 
 def autoSelect(request,componentList):
 	if componentList:
+		componentenList = compatibility(request, componentList)
 		categorie = componentList[0].categorie
 		productstring = categorie + "naam"
 		categorieprijs = categorie + "prijs"

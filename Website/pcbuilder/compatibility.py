@@ -26,6 +26,7 @@ def compatibility(request, objectlijst):
 		elif "dvd" in categorieObject:
 			#dvdComp(request,objectlijst)
 			pass
+	return objectlijst
 
 def moederbordenComp(request,objectlijst):
 	print "moederborden called"
