@@ -13,13 +13,10 @@ import json as simplejson
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding, Views, Select, ViewsPerDatum
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding
 from itertools import chain
+from django.db.models import Max
 import json
-<<<<<<< HEAD
 import time
 from random import randint
-=======
-from array import array
->>>>>>> paging
 
 # Global vars
 
@@ -536,57 +533,30 @@ def Selected(productid, categorie, action, request):
 
 def processoren(request):
 
-    # Get all posts from DB
-    # Aantal per pagina en pagina nummer
-    minPriceSliderValue = 1500.1
-    maxPriceSliderValue = 0.1
-
     processorenlijst = Processoren.objects
 
-<<<<<<< HEAD
+    '''
 
+db.processoren.find().forEach( function(processoren) {
+    for(var i in processoren.prijs){
+        processoren.prijs[i] = parseFloat(processoren.prijs[i]);
+    }
+    db.processoren.save(processoren);
+});
+    '''
 
-    
-=======
-    #processorenlijst = fixprijs(processorenlijst)
-
-
-    #print "1"
-    #processorenlijst = [prijs.encode("utf8") for prijs in processorenlijst.values('prijs')]
-    #print "2 "
-
-
-
-    print type(processorenlijst[0].prijs[0])
-
-    #print type(float(processorenlijst[0].prijs[0].encode("utf8")))
-  
-
->>>>>>> paging
-    #overgebleven componentenlijst afhankelijk van stock
-    #Dit dient later afhaneklijk te worden van alle filters
-    processorenlijst = filters(request, processorenlijst)
-
-    for processoren in processorenlijst:
-        if processoren.prijs:
-            diestringnaam = processoren.prijs[0].replace(",",("."))
-            if float(diestringnaam) < float(minPriceSliderValue):
-                minPriceSliderValue = diestringnaam
-            elif float(diestringnaam) > float(maxPriceSliderValue):
-                maxPriceSliderValue = diestringnaam
-
+    processorenlijst, merken = filters(request, processorenlijst)
+    minPriceSliderValue, maxPriceSliderValue = getGrenzen(processorenlijst)
     processoren = listing(request, processorenlijst, 15)
-    
     bereik, diff, current_page = paginas(processorenlijst, processoren)
-
 
     if request.method == 'POST':
         json = {}
-        json['Componenten'] = render_to_string('processoren.html', {'Componenten': processoren, 'Views':views, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page }, context_instance=RequestContext(request))
+        json['Componenten'] = render_to_string('processoren.html', {'Componenten': processoren, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page, "merken": merken }, context_instance=RequestContext(request))
         json = dumps(json)
         return HttpResponse(json,content_type="application/json")
     else:
-        return render_to_response('processoren.html', {'Componenten': processoren, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page },
+        return render_to_response('processoren.html', {'Componenten': processoren, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page, "merken": merken },
                               context_instance=RequestContext(request))
 
 def dashboard(request):
@@ -655,216 +625,138 @@ def dashboard(request):
 
 def behuizingen(request):
 
-    # Get all posts from DB
-    # Aantal per pagina en pagina nummer    
-    minPriceSliderValue = 1500.1
-    maxPriceSliderValue = 0.1
-
     behuizingenlijst = Behuizingen.objects
-
-    #overgebleven componentenlijst afhankelijk van stock
-    #Dit dient later afhaneklijk te worden van alle filters
-    behuizingenlijst = filters(request,behuizingenlijst)
-    behuizingen = listing(request, behuizingenlijst, 15)
-    
+    behuizingenlijst, merken = filters(request, behuizingenlijst)
+    minPriceSliderValue, maxPriceSliderValue = getGrenzen(behuizingenlijst)
+    behuizingen = listing(request, behuizingenlijst, 15)        
     bereik, diff, current_page = paginas(behuizingenlijst, behuizingen)
 
     if request.method == 'POST':
         json = {}
-        json['Componenten'] = render_to_string('behuizing.html', {'Componenten': behuizingen, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page }, context_instance=RequestContext(request))
+        json['Componenten'] = render_to_string('behuizing.html', {'Componenten': behuizingen, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page, "merken": merken }, context_instance=RequestContext(request))
         json = dumps(json)
         return HttpResponse(json,content_type="application/json")
     else:
-        return render_to_response('behuizing.html', {'Componenten': behuizingen, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page },
+        return render_to_response('behuizing.html', {'Componenten': behuizingen, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page, "merken": merken },
                               context_instance=RequestContext(request))
 
 def geheugen(request):
 
-    # Get all posts from DB
-    # Aantal per pagina en pagina nummer
-    minPriceSliderValue = 1500.1
-    maxPriceSliderValue = 0.1
-
     geheugenlijst = Geheugen.objects
-
-    #overgebleven componentenlijst afhankelijk van stock
-    #Dit dient later afhaneklijk te worden van alle filters
-    geheugenlijst = filters(request,geheugenlijst)
-    geheugen = listing(request, geheugenlijst, 15)
-    
+    geheugenlijst, merken = filters(request, geheugenlijst)
+    minPriceSliderValue, maxPriceSliderValue = getGrenzen(geheugenlijst)
+    geheugen = listing(request, geheugenlijst, 15)        
     bereik, diff, current_page = paginas(geheugenlijst, geheugen)
 
     if request.method == 'POST':
         json = {}
-        json['Componenten'] = render_to_string('geheugen.html', {'Componenten': geheugen, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page }, context_instance=RequestContext(request))
+        json['Componenten'] = render_to_string('geheugen.html', {'Componenten': geheugen, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page, "merken": merken }, context_instance=RequestContext(request))
         json = dumps(json)
         return HttpResponse(json,content_type="application/json")
     else:
-        return render_to_response('geheugen.html', {'Componenten': geheugen, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page },
+        return render_to_response('geheugen.html', {'Componenten': geheugen, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page, "merken": merken },
                               context_instance=RequestContext(request))
-
 def gpu(request):
 
-    # Get all posts from DB
-    # Aantal per pagina en pagina nummer
-    minPriceSliderValue = 1500.1
-    maxPriceSliderValue = 0.1
-
-
-    grafischelijst = Grafische.objects
-
-    #overgebleven componentenlijst afhankelijk van stock
-    #Dit dient later afhaneklijk te worden van alle filters
-    grafischelijst = filters(request,grafischelijst)
-    grafische = listing(request, grafischelijst, 15)
-    
-    bereik, diff, current_page = paginas(grafischelijst, grafische)
+    gpulijst = Grafische.objects
+    gpulijst, merken = filters(request, gpulijst)
+    minPriceSliderValue, maxPriceSliderValue = getGrenzen(gpulijst)
+    gpu = listing(request, gpulijst, 15)        
+    bereik, diff, current_page = paginas(gpulijst, gpu)
 
     if request.method == 'POST':
         json = {}
-        json['Componenten'] = render_to_string('gpu.html', {'Componenten': grafische, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page }, context_instance=RequestContext(request))
+        json['Componenten'] = render_to_string('gpu.html', {'Componenten': gpu, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page, "merken": merken }, context_instance=RequestContext(request))
         json = dumps(json)
         return HttpResponse(json,content_type="application/json")
     else:
-        return render_to_response('gpu.html', {'Componenten': grafische, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page },
+        return render_to_response('gpu.html', {'Componenten': gpu, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page, "merken": merken },
                               context_instance=RequestContext(request))
 def hardeschijf(request):
 
-    # Get all posts from DB
-    # Aantal per pagina en pagina nummer
-    minPriceSliderValue = 1500.1
-    maxPriceSliderValue = 0.1
-
     hardelijst = Harde.objects
-
-    #overgebleven componentenlijst afhankelijk van stock
-    #Dit dient later afhaneklijk te worden van alle filters
-    hardelijst = filters(request,hardelijst)
-    harde = listing(request, hardelijst, 15)
-
+    hardelijst, merken = filters(request, hardelijst)
+    minPriceSliderValue, maxPriceSliderValue = getGrenzen(hardelijst)
+    harde = listing(request, hardelijst, 15)        
     bereik, diff, current_page = paginas(hardelijst, harde)
 
     if request.method == 'POST':
         json = {}
-        json['Componenten'] = render_to_string('hardeschijf.html', {'Componenten': harde, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page }, context_instance=RequestContext(request))
+        json['Componenten'] = render_to_string('hardeschijf.html', {'Componenten': harde, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page, "merken": merken }, context_instance=RequestContext(request))
         json = dumps(json)
         return HttpResponse(json,content_type="application/json")
     else:
-        return render_to_response('hardeschijf.html', {'Componenten': harde, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page },
+        return render_to_response('hardeschijf.html', {'Componenten': harde, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page, "merken": merken },
                               context_instance=RequestContext(request))
 
 def koeling(request):
 
-    # Get all posts from DB
-    # Aantal per pagina en pagina nummer
-    minPriceSliderValue = 1500.1
-    maxPriceSliderValue = 0.1
-
     koelinglijst = Koeling.objects
-
-    #overgebleven componentenlijst afhankelijk van stock
-    #Dit dient later afhaneklijk te worden van alle filters
-    koelinglijst = filters(request,koelinglijst)
-    koeling = listing(request, koelinglijst, 15)
-    
-    bereik, diff, current_page = paginas(koelinglijst, koeling)
+    koelinglijst, merken = filters(request, koelinglijst)
+    minPriceSliderValue, maxPriceSliderValue = getGrenzen(koelinglijst)
+    koelingen = listing(request, koelinglijst, 15)        
+    bereik, diff, current_page = paginas(koelinglijst, koelingen)
 
     if request.method == 'POST':
         json = {}
-        json['Componenten'] = render_to_string('koeling.html', {'Componenten': koeling, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page }, context_instance=RequestContext(request))
+        json['Componenten'] = render_to_string('koeling.html', {'Componenten': koelingen, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page, "merken": merken }, context_instance=RequestContext(request))
         json = dumps(json)
         return HttpResponse(json,content_type="application/json")
     else:
-        return render_to_response('koeling.html', {'Componenten': koeling, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page },
+        return render_to_response('koeling.html', {'Componenten': koelingen, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page, "merken": merken },
                               context_instance=RequestContext(request))
 
 def moederborden(request):
 
-   # Get all posts from DB
-    # Aantal per pagina en pagina nummer
-    minPriceSliderValue = 1500.1
-    maxPriceSliderValue = 0.1
-
     moederbordenlijst = Moederborden.objects
-
-    #overgebleven componentenlijst afhankelijk van stock
-    #Dit dient later afhaneklijk te worden van alle filters
-    moederbordenlijst = filters(request, moederbordenlijst)
-
-    for moederborden in moederbordenlijst:
-
-        if moederborden.prijs:
-            diestringnaam = moederborden.prijs[0].replace(",",("."))
-            if float(diestringnaam) < float(minPriceSliderValue):
-                minPriceSliderValue = diestringnaam
-            elif float(diestringnaam) > float(maxPriceSliderValue):
-                maxPriceSliderValue = diestringnaam
-
-    moederborden = listing(request, moederbordenlijst, 15)
-    
+    moederbordenlijst, merken = filters(request, moederbordenlijst)
+    minPriceSliderValue, maxPriceSliderValue = getGrenzen(moederbordenlijst)
+    moederborden = listing(request, moederbordenlijst, 15)        
     bereik, diff, current_page = paginas(moederbordenlijst, moederborden)
-
-    print moederbordenlijst[0].prijs
 
     if request.method == 'POST':
         json = {}
-        json['Componenten'] = render_to_string('moederborden.html', {'Componenten': moederborden, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page }, context_instance=RequestContext(request))
+        json['Componenten'] = render_to_string('moederbord.html', {'Componenten': moederborden, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page, "merken": merken }, context_instance=RequestContext(request))
         json = dumps(json)
         return HttpResponse(json,content_type="application/json")
     else:
-        return render_to_response('processoren.html', {'Componenten': moederborden, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page },
+        return render_to_response('moederbord.html', {'Componenten': moederborden, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page, "merken": merken },
                               context_instance=RequestContext(request))
 
 def optischeschijf(request):
 
-    # Get all posts from DB
-    # Aantal per pagina en pagina nummer
-    minPriceSliderValue = 1500.1
-    maxPriceSliderValue = 0.1
-
-    dvdlijst = Dvd.objects
-
-    #overgebleven componentenlijst afhankelijk van stock
-    #Dit dient later afhaneklijk te worden van alle filters
-    dvdlijst = filters(request,dvdlijst)
-    dvd = listing(request, dvdlijst, 15)
-
-
-    bereik, diff, current_page = paginas(dvdlijst, dvd)
+    optischeschijflijst = Dvd.objects
+    optischeschijflijst, merken = filters(request, optischeschijflijst)
+    minPriceSliderValue, maxPriceSliderValue = getGrenzen(optischeschijflijst)
+    optischeschijven = listing(request, optischeschijflijst, 15)        
+    bereik, diff, current_page = paginas(optischeschijflijst, optischeschijven)
 
     if request.method == 'POST':
         json = {}
-        json['Componenten'] = render_to_string('optischeschijf.html', {'Componenten': dvd, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page }, context_instance=RequestContext(request))
+        json['Componenten'] = render_to_string('optischeschijf.html', {'Componenten': optischeschijven, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page, "merken": merken }, context_instance=RequestContext(request))
         json = dumps(json)
         return HttpResponse(json,content_type="application/json")
     else:
-        return render_to_response('optischeschijf.html', {'Componenten': dvd, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page },
+        return render_to_response('optischeschijf.html', {'Componenten': optischeschijven, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page, "merken": merken },
                               context_instance=RequestContext(request))
+
 
 
 def voedingen(request):
 
-    # Get all posts from DB
-    # Aantal per pagina en pagina nummer
-    minPriceSliderValue = 1500.1
-    maxPriceSliderValue = 0.1
-
     voedinglijst = Voeding.objects
-
-    #overgebleven componentenlijst afhankelijk van stock
-    #Dit dient later afhaneklijk te worden van alle filters
-    voedinglijst = filters(request,voedinglijst)
-    voeding = listing(request, voedinglijst, 15)
-
-    bereik, diff, current_page = paginas(voedinglijst, voeding)
+    voedinglijst, merken = filters(request, voedinglijst)
+    minPriceSliderValue, maxPriceSliderValue = getGrenzen(voedinglijst)
+    voedingen = listing(request, voedinglijst, 15)        
+    bereik, diff, current_page = paginas(voedinglijst, voedingen)
 
     if request.method == 'POST':
         json = {}
-        json['Componenten'] = render_to_string('voeding.html', {'Componenten': voeding, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page }, context_instance=RequestContext(request))
+        json['Componenten'] = render_to_string('voeding.html', {'Componenten': voedingen, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page, "merken": merken }, context_instance=RequestContext(request))
         json = dumps(json)
         return HttpResponse(json,content_type="application/json")
     else:
-        return render_to_response('voeding.html', {'Componenten': voeding, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page },
+        return render_to_response('voeding.html', {'Componenten': voedingen, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page, "merken": merken },
                               context_instance=RequestContext(request))
 
 
@@ -901,70 +793,4 @@ def paginas(componentenlijst, componenten):
 
 def build(request):
     buildpc();
-
-
-
-
-def stock(objectlijst, levering):
-    direct_leverbaar = [
-        "1 stuk op voorraad",
-        "2 stuks op voorraad",
-        "3 stuks op voorraad",
-        "4 stuks op voorraad",
-        "5 stuks op voorraad",
-        "5+ stuks op voorraad",
-        "Direct leverbaar"
-    ]
-    
-    if levering == "alles":
-        return objectlijst
-    elif levering == "morgen":
-        for key, d in enumerate(direct_leverbaar):
-            objects = objectlijst.filter(stock__icontains=d)
-            if key == 0:
-                objectlijst_filtered = objects
-            else:
-                objectlijst_filtered = list(chain(objects, objectlijst_filtered))
-        return objectlijst_filtered
-
-def pricefilter(objectlijst, minprijs, maxprijs):
-    #replaces the , in the 2 arguments with . for float parsing
-    minprijs = minprijs.replace(',','.')
-    maxprijs = maxprijs.replace(',','.')
-    #for every component in the queryset
-    print objectlijst
-    newLijst = objectlijst
-    for component in newLijst:
-        #convert price to float
-        prijs = float(component.prijs[0])
-        #if the component price is not within the range of the 2 prices
-        if (prijs < float(minprijs)) or (prijs > float(maxprijs)):
-            #then filter that component from the queryset
-            if component.ean:
-                pass#hier komt magie
-            elif component.sku:
-                pass#hier komt magie
-    return newLijst
-
-
-def fixprijs(objects):
-
-    
-    #print type(float(processorenlijst[0].prijs[0].encode("utf8")))
-
-    for count, obj in enumerate(objects):
-        prijzen = []
-
-        for p in objects[count].prijs:
-            prijzen.append(float(p.encode("utf8")))
-
-        #print type(prijzen[0])
-
-        objects[count].prijs = prijzen
-
-        #print type(objects[count].prijs[0])
-
-    print type(objects[0].prijs[0])
-
-    return objects
 

@@ -22,6 +22,12 @@ class ParadigitSpider(CrawlSpider):
       
         for sel in response.xpath("//div[contains(concat(' ', normalize-space(@class), ' '), ' itemdetail-productcontainer ')]"):
             item = ParadigitItem()
+            
+            link = []
+            herkomst = []
+            link.append(response.url)
+            herkomst.append("paradigit")
+
             item['categorie'] = sel.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " breadcrumb ")]/div[2]/a/text()').extract()
             item['naam'] = sel.xpath('div/div[contains(concat(" ", normalize-space(@class), " "), " itemdetail-producttitlecontainer ")]/h1/span/text()').extract()
             item['info'] = sel.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " itemdetail-shortsummarycontainer ")]/span/text()').extract()
@@ -29,7 +35,7 @@ class ParadigitSpider(CrawlSpider):
             #item['prijs'] = round(float(sel.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " itemdetail-salespriceincludingvatcontainer ")]/div/meta[2]/@content').extract()), 2)
             item['prijs'] = sel.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " itemdetail-salespriceincludingvatcontainer ")]/div/meta[2]/@content').extract()
             item['sku'] = sel.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " itemdetail-specificationstab-mpndescriptioncontainer ")]/span/text()').extract()
-            item['link'] = response.url
-            item['herkomst'] = "paradigit"
+            item['link'] = link
+            item['herkomst'] = herkomst
 
             yield item
