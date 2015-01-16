@@ -49,7 +49,7 @@ class Processoren(Document):
     naam = StringField(max_length=500)
     subnaam = StringField(max_length=500)
     info = StringField(max_length=500)
-    prijs = StringField(max_length=120)
+    prijs = DecimalField()
     stock = StringField(max_length=500)
     ean = StringField(max_length=200)
     sku = StringField(max_length=200)
@@ -78,8 +78,14 @@ class Behuizingen(Document):
     categorie = StringField(max_length=120)
     Product = StringField(max_length=500)
     Behuizingtype = StringField(max_length=500)
+
     naam = StringField(max_length=500)
     Uitvoering = StringField(max_length=500)
+
+
+    naam = StringField(max_length=500)
+    Uitvoering = StringField(max_length=500)
+
     info = StringField(max_length=500)
     stock = StringField(max_length=500)
     prijs = StringField(max_length=120)

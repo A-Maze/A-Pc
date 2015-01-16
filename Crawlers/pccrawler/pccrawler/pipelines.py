@@ -15,6 +15,10 @@ from scrapy import log
 import json
 import codecs
 
+#azerty mist graphisce kaarten
+
+#bob mist optische(dvd) / processoren
+
 class PccrawlerPipeline(object):
 
 	def __init__(self):
@@ -27,7 +31,8 @@ class PccrawlerPipeline(object):
 				connection = pymongo.Connection(settings['MONGODB_SERVER'], settings['MONGODB_PORT'])
 				db = connection[settings['MONGODB_DB']]
 
-				
+			
+
 				def find_between( s, first, last ):
 				    try:
 				        start = s.index( first ) + len( first )
@@ -36,33 +41,37 @@ class PccrawlerPipeline(object):
 				    except ValueError:
 				        return ""
 
+				
+				
+					
+					
 				def addToDatabase(collectienaam):
+					filterEuroSign()
+					item["prijs"][0] = str(item["prijs"][0]).replace(",",("."))				
+					item["prijs"][0] = float(item["prijs"][0])
 					item["categorie"] = collectienaam
-					print(spider.name)
+					#item['prijs'][0] =  float(item['prijs'][0])
+
 					if spider.name in ["tweakers"]:
 						addNewItemToDatabase(collectienaam)
-						print ("gelukt")
 					else:
 						try:
 							if self.collection.find({'ean':  item["ean"][0]}).count() > 0:
-								addToList()
-								
+								addToList()								
+
 							else:
 								addNewItemToDatabase(collectienaam)
-								
 						except:
 							try:
 								if self.collection.find({'sku':  item["sku"][0]}).count() > 0:
 									addToList()
-									
 								else:
-									addNewItemToDatabase(collectienaam)
-									
+									addNewItemToDatabase(collectienaam)	
 							except KeyError:
 								return
 
 				def addNewItemToDatabase(collectionName):
-					filterEuroSign()
+					filterEuroSign()		
 					self.collection.insert(dict(item))
 					log.msg("Item wrote to MongoDB database %s/%s/%s" %
 			    	(settings['MONGODB_DB'], collectionName, item['categorie']),
@@ -133,7 +142,6 @@ class PccrawlerPipeline(object):
 					for waardes in fullItem:
 						waardeArray.append(waardes)
 					
-					
 					subString = str(waardeArray[0])
 					herkomstString = find_between(subString, "herkomst': [" , "]")	
 					herkomstArray = herkomstString.split()
@@ -151,10 +159,10 @@ class PccrawlerPipeline(object):
 				moederborden = ["Moederbord", "moederborden", "Moederborden"]
 				koeling = ["Koeling", "Koelers", "Processorkoeling", "Koelers", "CPU Koelers", "Ventilatoren"]
 				behuizingen = ["Behuizingen", "Barebones", "Barebone"]
-				grafische = ["Grafische", "GPU", "Videokaarten", "Videokaart", "grafische"]
-				harde = ["Harde", "Interne harde schijven", "Interne", "Solid State Drives", "Solid state drives"]
-				dvd = ["DVD", "dvd", "DVD / Blu-ray drives", "Optische drives"]
-				geheugen = ["Geheugen", "RAM", "Geheugen intern"]
+				grafische = ["Grafische kaarten","kaart","Grafische", "GPU", "Videokaarten", "Videokaart", "grafische", "Grafische kaart"]
+				harde = ["Harde", "Interne harde schijven", "Interne", "Solid State Drives", "Solid state drives", "Harddisk", "Harddisk Intern", "Harde schijven intern", "SSD's"]
+				dvd = ["DVD", "dvd", "DVD / Blu-ray drives", "Optische drives", "DVD / Blu Ray"]
+				geheugen = ["Geheugen", "RAM", "Geheugen intern", "Geheugen PC & Server"]
 				voeding = ["Voeding", "Voedingen"]
 
 				if categorieNaam in processoren:

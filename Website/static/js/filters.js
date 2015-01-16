@@ -28,16 +28,20 @@ function filter(page, query) {
 			},
 	    }
 	} else {
+		merken = getMerken()
+
 		data = {
 			//huidige pagina url
 			url : window.location.pathname,
 			method: "POST",
 			//value van checkbox wordt meegegeven onder stock
 			data: {
-				stock : $('#stockCheck').val(),
+				stockDirect : $('#direct').val(),
+				stockWeek : $('#binnen-week').val(),
 				minPrijs: $('#sliderMinValue').val(), 
 				maxPrijs: $('#sliderMaxValue').val(), 
 				pageNumber: page, 
+				merken: merken,
 				order: $("#sort-by").val(),
 			},
 	    }
@@ -58,26 +62,24 @@ function filter(page, query) {
 	})
 };
 
-function checkboxValue(page) { 
-	//veranderd de value
-	if($('#stockCheck').val() == "morgen"){
-		$('#stockCheck').val("alles");
+function checkboxValue(page, id) { 
+	selector = $('#' + id)
+
+	if (selector.val() == "true") {
+		selector.val(false)
+	} else {
+		selector.val(true)
 	}
-	else{
-		$('#stockCheck').val("morgen");
-	}
+	
 	filter(page)
 }
 
-function sortBy(val) {
-	$.ajax({
-		url: window.location.pathname,
-		method: "POST",
-		data: { order: val},
-	})
-	.done(function(){
-		//random shizzle here
-	})
+function getMerken() {
+	var merken = $(".merk:checkbox:checked").map(function(){
+    	return $(this).val()
+    }).get()
+
+	return merken
 }
 
 function onSearchPage() {
