@@ -12,64 +12,44 @@
         <div class="panel-body">
 
             <div class="panel panel-default">
-                <div class="panel-heading toggle">Panel heading   <div class="pull-right"><span class="switcher dropup"><span class="caret"></span></span> </div></div>
+                <div class="panel-heading toggle">Levertijd   <div class="pull-right"><span class="switcher dropup"><span class="caret"></span></span> </div></div>
                 <div class="panel-body body-toggled">
-
                     <div class="checkbox customcheck">
                         <label>
                             <!--Checbox value on click via ajax naar views -->
-                            <input type="checkbox" value="alles" action="processoren/" id="stockCheck" onclick="checkboxValue({{ page }})"> Direct leveraar  
+                                <input type="checkbox" value="false" id="direct" onclick="checkboxValue({{ page }}, this.id)"> Direct leveraar                              
                         </label>
+
                     </div>
                     <div class="checkbox customcheck">
                         <label>
-                            <input type="checkbox"> Checkbox
-                        </label>
-                    </div>
-                    <div class="checkbox customcheck">
-                        <label>
-                            <input type="checkbox"> Checkbox
+                            <input type="checkbox" value="false" id="binnen-week" onclick="checkboxValue({{ page }}, this.id)"> Binnen één week 
                         </label>
                     </div>
                 </div>
-
-
-
             </div>
 
             <div class="panel panel-default">
                 <div class="panel-heading toggle">Prijs  <div class="pull-right"><span class="switcher dropup"><span class="caret"></span></span> </div></div>
                 <div class="panel-body body-toggled">
-                    <div class="slider"  ></div>
-                    <input id ="sliderMinValue" ></input>
-
+                    <div class="slider" onChange="filter({{ page }})"></div>
+                    <input id ="sliderMinValue" onChange="filter({{ page }})" class="col-md-6 col-lg-6 ">
+                    <input id ="sliderMaxValue" onChange="filter({{ page }})" class="col-md-6 col-lg-6 pull-right ">
                 </div>
-
-
-
             </div>
 
-
-
             <div class="panel panel-default">
-                <div class="panel-heading toggle">Panel heading   <div class="pull-right"><span class="switcher dropup"><span class="caret"></span></span> </div></div>
+                <div class="panel-heading toggle">Merk  <div class="pull-right"><span class="switcher dropup"><span class="caret"></span></span> </div></div>
                 <div class="panel-body body-toggled">
 
-                    <div class="checkbox customcheck">
-                        <label>
-                            <input type="checkbox"> Checkbox
-                        </label>
-                    </div>
-                    <div class="checkbox customcheck">
-                        <label>
-                            <input type="checkbox"> Checkbox
-                        </label>
-                    </div>
-                    <div class="checkbox customcheck">
-                        <label>
-                            <input type="checkbox"> Checkbox
-                        </label>
-                    </div>
+                    {% for merk in merken %}
+                        <div class="checkbox customcheck">
+                            <label>
+                                <input class="merk" type="checkbox" onclick="filter({{ page }})" value="{{ merk }}"> {{ merk }}
+                            </label>
+                        </div>                       
+                    {% endfor %}
+
                 </div>
             </div>
 
