@@ -170,6 +170,7 @@ def deselect(request):
     Viewers(productid, categorie, 'delete', request)
     ViewsPerDag('delete', request)
     del request.session[categorie]
+    productid = categorie + "id"
     productstring = categorie + "naam"
     productprijs = categorie + "prijs"
     productlink = categorie + "link"
@@ -179,6 +180,7 @@ def deselect(request):
     print request.session[productstring]
     if request.session[productstring] == product:
         print "deselect called"
+        del request.session[productid]
         del request.session[productstring]
         del request.session[productprijs]
         del request.session[productlink]
