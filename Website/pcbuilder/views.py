@@ -557,8 +557,10 @@ db.processoren.find().forEach( function(processoren) {
 
     processorenlijst, merken = filters(request, processorenlijst)
     minPriceSliderValue, maxPriceSliderValue = getGrenzen(processorenlijst)
+    processorenlijst = processorenlijst.filter(prijs__exists=True)
     processoren = listing(request, processorenlijst, 15)
     bereik, diff, current_page = paginas(processorenlijst, processoren)
+
 
     if request.method == 'POST':
         json = {}
@@ -638,6 +640,7 @@ def behuizingen(request):
     behuizingenlijst = Behuizingen.objects
     behuizingenlijst, merken = filters(request, behuizingenlijst)
     minPriceSliderValue, maxPriceSliderValue = getGrenzen(behuizingenlijst)
+    behuizingenlijst = behuizingenlijst.filter(prijs__exists=True)
     behuizingen = listing(request, behuizingenlijst, 15)        
     bereik, diff, current_page = paginas(behuizingenlijst, behuizingen)
 
@@ -655,6 +658,7 @@ def geheugen(request):
     geheugenlijst = Geheugen.objects
     geheugenlijst, merken = filters(request, geheugenlijst)
     minPriceSliderValue, maxPriceSliderValue = getGrenzen(geheugenlijst)
+    geheugenlijst = geheugenlijst.filter(prijs__exists=True)
     geheugen = listing(request, geheugenlijst, 15)        
     bereik, diff, current_page = paginas(geheugenlijst, geheugen)
 
@@ -671,6 +675,7 @@ def gpu(request):
     gpulijst = Grafische.objects
     gpulijst, merken = filters(request, gpulijst)
     minPriceSliderValue, maxPriceSliderValue = getGrenzen(gpulijst)
+    gpulijst = gpulijst.filter(prijs__exists=True)
     gpu = listing(request, gpulijst, 15)        
     bereik, diff, current_page = paginas(gpulijst, gpu)
 
@@ -687,6 +692,7 @@ def hardeschijf(request):
     hardelijst = Harde.objects
     hardelijst, merken = filters(request, hardelijst)
     minPriceSliderValue, maxPriceSliderValue = getGrenzen(hardelijst)
+    hardelijst = hardelijst.filter(prijs__exists=True)
     harde = listing(request, hardelijst, 15)        
     bereik, diff, current_page = paginas(hardelijst, harde)
 
@@ -704,6 +710,7 @@ def koeling(request):
     koelinglijst = Koeling.objects
     koelinglijst, merken = filters(request, koelinglijst)
     minPriceSliderValue, maxPriceSliderValue = getGrenzen(koelinglijst)
+    koelinglijst = koelinglijst.filter(prijs__exists=True)
     koelingen = listing(request, koelinglijst, 15)        
     bereik, diff, current_page = paginas(koelinglijst, koelingen)
 
@@ -721,6 +728,7 @@ def moederborden(request):
     moederbordenlijst = Moederborden.objects
     moederbordenlijst, merken = filters(request, moederbordenlijst)
     minPriceSliderValue, maxPriceSliderValue = getGrenzen(moederbordenlijst)
+    moederbordenlijst = moederbordenlijst.filter(prijs__exists=True)
     moederborden = listing(request, moederbordenlijst, 15)        
     bereik, diff, current_page = paginas(moederbordenlijst, moederborden)
 
@@ -738,6 +746,7 @@ def optischeschijf(request):
     optischeschijflijst = Dvd.objects
     optischeschijflijst, merken = filters(request, optischeschijflijst)
     minPriceSliderValue, maxPriceSliderValue = getGrenzen(optischeschijflijst)
+    optischeschijflijst = optischeschijflijst.filter(prijs__exists=True)
     optischeschijven = listing(request, optischeschijflijst, 15)        
     bereik, diff, current_page = paginas(optischeschijflijst, optischeschijven)
 
@@ -757,6 +766,7 @@ def voedingen(request):
     voedinglijst = Voeding.objects
     voedinglijst, merken = filters(request, voedinglijst)
     minPriceSliderValue, maxPriceSliderValue = getGrenzen(voedinglijst)
+    voedinglijst = voedinglijst.filter(prijs__exists=True)
     voedingen = listing(request, voedinglijst, 15)        
     bereik, diff, current_page = paginas(voedinglijst, voedingen)
 
