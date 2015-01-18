@@ -1,7 +1,7 @@
 from itertools import chain
 from pcbuilder.compatibility import *
 import types
-from models import Processoren
+from mongoengine import Q
 import operator
 
 '''def filters(request, objectlijst): 
@@ -22,12 +22,13 @@ def filters(request, objectlijst):
         merken = request.POST.getlist('merken[]')
 
         objectlijst = sorteer(objectlijst, sort)
+        # Prijzen in mongo naar double -> uncommenten
         #objectlijst = pricefilter(objectlijst, minPrijs, maxPrijs)
         objectlijst = stock(objectlijst, direct, binnenWeek)
 
         if len(merken) > 0:
-            #objectlijst = filterMerken(objectlijst, merken)
-            pass
+            objectlijst = filterMerken(objectlijst, merken)
+            #pass
 
     merken = getMerken(request)
 
@@ -56,8 +57,7 @@ def stock(objectlijst, direct, binnenWeek):
     ]
 
     if direct == "true" and binnenWeek == "true":
-        # Q object
-        objectlijst = objectlijst.filter(stock__in = direct_leverbaar)
+        objectlijst = objectlijst.filter(Q(stock__in = direct_leverbaar) | Q(stock__in = binnen_week))
     else:
         if direct == "true":
             objectlijst = objectlijst.filter(stock__in = direct_leverbaar)
@@ -93,56 +93,8 @@ def pricefilter(objectlijst, minPrijs, maxPrijs):
     return objectlijst_filtered
 
 def filterMerken(objectlijst, merken):
-    print merken
-
-    brand = []
-    for merk in merken:
-        brand.append(str(merk))
-
-    print brand
-
-    #objectlijst.filter(reduce(operator.and_, (Q(naam__icontains=title) for title in brand)))
-    #objectlijst = objectlijst.filter(reduce(operator.and_, (Q(naam__icontains=title) for title in brand)))
-    
-    #query = reduce(operator.and_, (Q(naam__contains = item) for item in ['Intel', 'AMD']))
-
-
-    #query = "Q(naam__contains='Intel') & Q(naam__contains='AMD')"
-    #print query
-
-
-    print "2"
-
-
-    #objectlijst = objectlijst.filter(naam__icontains=brand[0])
-
-    #objectlijst = objectlijst.filter(naam__contains=['Intel', 'AMD'])
-
-
-    #objectlijst = objectlijst.filter(q)
-
-    from django.db.models import Q
-    from models import Processoren
-
-    cpu = [
-        "Intel",
-        "AMD"
-    ]
-
-    queryset = Processoren.objects.filter(Q(naam__contains=cpu[0]) | Q(naam__contains=cpu[1]))
-    queryset = Processoren.objects.filter(naam__contains=cpu[1])
-
-    print queryset
-
-    #objectlijst = objectlijst.filter(Q(naam__contains='Intel') | Q(naam__contains='AMD'))
-    
-    print "3"
-
-
-
-    #objectlijst = objectlijst.filter(naam__icontains = merken[0])
-
-
+    query = reduce(operator.or_, (Q(naam__icontains=x) for x in merken))
+    objectlijst = objectlijst.filter(query)
 
     return objectlijst
 
