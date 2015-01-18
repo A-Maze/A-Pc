@@ -6,12 +6,12 @@ import operator
 
 '''def filters(request, objectlijst): 
     #filters the objectlist on compatibility first
-    compatibility(request,objectlijst)   
+    
     #checkt of stock filter checked is'''
 
 
 def filters(request, objectlijst):
-
+    objectlijst = compatibility(request,objectlijst)   
     if request.method == 'POST':
 
         direct = request.POST.get('stockDirect')
