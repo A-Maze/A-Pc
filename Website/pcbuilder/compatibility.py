@@ -20,18 +20,19 @@ def compatibility(request, objectlijst):
 			objectlijst_filtered = dvdComp(request,objectlijst)
 		elif "koeling" in categorieObject:
 			objectlijst_filtered = objectlijst
-	return objectlijst_filtered
+	return objectlijst
 
 def moederbordenComp(request,objectlijst):
-	print "moederborden called"
 	objectlijst_filtered = objectlijst
+	print "moederborden called"
+	print type(objectlijst)
 	if "processorenid" in request.session:
 		processor = Processoren.objects.get(id=request.session["processorenid"])
 		objectlijst_filtered = objectlijst.filter(Socket__icontains=processor.Socket)
 	if "behuizingenid" in request.session:
 		behuizing = Behuizingen.objects.get(id=request.session["behuizingenid"])
 		objectlijst_filtered = objectlijst.filter(Form_Factor__icontains=behuizing.Form_Factor)
-		print objectlijst_filtered
+		print type(objectlijst_filtered)
 	if "geheugenid" in request.session:
 		geheugen = Geheugen.objects.get(id=request.session["geheugenid"])
 		objectlijst_filtered = objectlijst.filter(Geheugentype__icontains=geheugen.Geheugentype)
