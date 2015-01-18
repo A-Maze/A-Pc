@@ -147,8 +147,7 @@ def select(request):
     productstring = categorie + "naam"
     categorieprijs = categorie + "prijs"
     categorieid = categorie + "id"
-    print "selectmethod"
-    print type(productid)
+    print categorieid
     categorieherkomst = categorie + "herkomst"
     categorielink = categorie + "link"
 
