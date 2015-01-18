@@ -29,9 +29,9 @@ def moederbordenComp(request,objectlijst):
 		processor = Processoren.objects.get(id=request.session["processorenid"])
 		objectlijst_filtered = objectlijst.filter(Socket__icontains=processor.Socket)
 	if "behuizingenid" in request.session:
-		print "aangeroepen"
 		behuizing = Behuizingen.objects.get(id=request.session["behuizingenid"])
-		objectlijst.filter(Form_Factor__icontains=behuizing.Form_Factor)
+		objectlijst_filtered = objectlijst.filter(Form_Factor__icontains=behuizing.Form_Factor)
+		print objectlijst_filtered
 	if "geheugenid" in request.session:
 		geheugen = Geheugen.objects.get(id=request.session["geheugenid"])
 		objectlijst_filtered = objectlijst.filter(Geheugentype__icontains=geheugen.Geheugentype)
@@ -39,7 +39,7 @@ def moederbordenComp(request,objectlijst):
 	if "hardeid" in request.session:
 		harde = Harde.objects.get(id=request.session["hardeid"])
 		objectlijst_filtered = objectlijst.filter(Hardeschijf_bus__icontains=harde.Hardeschijf_bus)
-	return objectlijst
+	return objectlijst_filtered
 
 def processorenComp(request,objectlijst):
 	print "processoren called"
