@@ -725,6 +725,7 @@ def koeling(request):
 def moederborden(request):
 
     moederbordenlijst = Moederborden.objects
+    moederbordenlijst = compatibility(request,moederbordenlijst)  
     moederbordenlijst, merken = filters(request, moederbordenlijst)
     minPriceSliderValue, maxPriceSliderValue = getGrenzen(moederbordenlijst)
     moederbordenlijst = moederbordenlijst.filter(prijs__exists=True)

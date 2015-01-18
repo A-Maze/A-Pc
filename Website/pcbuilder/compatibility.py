@@ -25,26 +25,26 @@ def compatibility(request, objectlijst):
 def moederbordenComp(request,objectlijst):
 	print "moederborden called"
 	objectlijst_filtered = objectlijst
-	if request.REQUEST.get('processorenid',None):
+	if "processorenid" in request.session:
 		processor = Processoren.objects.get(id=request.session["processorenid"])
 		objectlijst_filtered = objectlijst.filter(Socket__icontains=processor.Socket)
-	print request.REQUEST.get('behuizingenid',None)
-	if request.REQUEST.get('behuizingenid',None):
+	if "behuizingenid" in request.session:
+		print "aangeroepen"
 		behuizing = Behuizingen.objects.get(id=request.session["behuizingenid"])
-		objectlijst_filtered = objectlijst.filter(Form_factor__icontains=behuizing.Form_Factor)
-	if request.REQUEST.get('geheugenid',None):
+		objectlijst.filter(Form_Factor__icontains=behuizing.Form_Factor)
+	if "geheugenid" in request.session:
 		geheugen = Geheugen.objects.get(id=request.session["geheugenid"])
 		objectlijst_filtered = objectlijst.filter(Geheugentype__icontains=geheugen.Geheugentype)
 		objectlijst_filtered = objectlijst.filter(Geheugentype__icontains=geheugen.Aantal)
-	if request.REQUEST.get('hardeid',None):
+	if "hardeid" in request.session:
 		harde = Harde.objects.get(id=request.session["hardeid"])
 		objectlijst_filtered = objectlijst.filter(Hardeschijf_bus__icontains=harde.Hardeschijf_bus)
-	return objectlijst_filtered
+	return objectlijst
 
 def processorenComp(request,objectlijst):
 	print "processoren called"
 	objectlijst_filtered = objectlijst
-	if request.REQUEST.get('moederbordenid',None):
+	if "moederbordenid" in request.session:
 		moederbord = Moederborden.objects.get(id=request.session["moederbordenid"])
 		objectlijst_filtered = objectlijst.filter(Socket__icontains=moederbord.Socket)
 	return objectlijst_filtered
@@ -52,7 +52,7 @@ def processorenComp(request,objectlijst):
 def geheugenComp(request,objectlijst):
 	print "geheugen called"
 	objectlijst_filtered = objectlijst
-	if request.REQUEST.get('moederbordenid',None):
+	if "moederbordenid" in request.session:
 		moederbord = Moederborden.objects.get(id=request.session["moederbordenid"])
 		objectlijst_filtered = objectlijst.filter(Geheugentype__icontains=moederbord.Geheugentype)
 		objectlijst_filtered = objectlijst.filter(Aantal__icontains=moederbord.Geheugentype)
@@ -61,7 +61,7 @@ def geheugenComp(request,objectlijst):
 def voedingComp(request,objectlijst):
 	print "voeding called"
 	objectlijst_filtered = objectlijst
-	if request.REQUEST.get('moederbordenid',None):
+	if "moederbordenid" in request.session:
 		moederbord = Moederborden.objects.get(id=request.session["voedingid"])
 		#TODO be sure to check powersuply here
 	return objectlijst_filtered
@@ -69,7 +69,7 @@ def voedingComp(request,objectlijst):
 def grafischeComp(request,objectlijst):
 	print "grafische called"
 	objectlijst_filtered = objectlijst
-	if request.REQUEST.get('moederbordenid',None):
+	if "moederbordenid" in request.session:
 		moederbord = Moederborden.objects.get(id=request.session["moederbordenid"])
 		objectlijst_filtered = objectlijst.filter(Card_Interface__icontains=moederbord.Card_Interface)
 	return objectlijst_filtered
@@ -77,7 +77,7 @@ def grafischeComp(request,objectlijst):
 def behuizingenComp(request,objectlijst):
 	print "behuizingen called"
 	objectlijst_filtered = objectlijst
-	if request.REQUEST.get('moederbordenid',None):
+	if "moederbordenid" in request.session:
 		moederbord = Moederborden.objects.get(id=request.session["moederbordenid"])
 		objectlijst_filtered = objectlijst.filter(Form_Factor__icontains=moederbord.Form_Factor)
 	return objectlijst_filtered
@@ -85,7 +85,7 @@ def behuizingenComp(request,objectlijst):
 def hardeComp(request,objectlijst):
 	print "harde called"
 	objectlijst_filtered = objectlijst
-	if request.REQUEST.get('moederbordenid',None):
+	if "moederbordenid" in request.session:
 		moederbord = Moederborden.objects.get(id=request.session["moederbordenid"])
 		objectlijst_filtered = objectlijst.filter(Hardeschijf_bus__icontains=moederbord.Hardeschijf_bus)
 	return objectlijst_filtered
@@ -93,7 +93,7 @@ def hardeComp(request,objectlijst):
 def dvdComp(request,objectlijst):
 	print "dvd called"
 	objectlijst_filtered = objectlijst
-	if request.REQUEST.get('moederbordenid',None):
+	if "moederbordenid" in request.session:
 		moederbord = Moederborden.objects.get(id=request.session["moederbordenid"])
 		objectlijst_filtered = objectlijst.filter(Hardeschijf_bus__icontains=moederbord.Hardeschijf_bus)
 	return objectlijst_filtered
