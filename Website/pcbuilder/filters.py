@@ -1,31 +1,40 @@
 from itertools import chain
 from pcbuilder.compatibility import *
-import operator
 import types
+from mongoengine import Q
+import operator
+
+'''def filters(request, objectlijst): 
+    #filters the objectlist on compatibility first
+    
+    #checkt of stock filter checked is'''
+
 
 def filters(request, objectlijst): 
-    #filters the objectlist on compatibility first
-    compatibility(request,objectlijst)   
-    #checkt of stock filter checked is
-
-def filters(request, objectlijst):
-
     if request.method == 'POST':
 
-        levering = request.POST.get('stock')
+        direct = request.POST.get('stockDirect')
+        binnenWeek = request.POST.get('stockWeek')
         sort = request.POST.get('order')
+        minPrijs = request.POST.get('minPrijs')
+        maxPrijs = request.POST.get('maxPrijs')
+        merken = request.POST.getlist('merken[]')
 
         objectlijst = sorteer(objectlijst, sort)
-        objectlijst = stock(objectlijst, levering)
+        # Prijzen in mongo naar double -> uncommenten
+        #objectlijst = pricefilter(objectlijst, minPrijs, maxPrijs)
+        objectlijst = stock(objectlijst, direct, binnenWeek)
 
-        minprijs = request.POST.get('minprijs')
-        maxprijs = request.POST.get('maxprijs')
+        if len(merken) > 0:
+            objectlijst = filterMerken(objectlijst, merken)
+            #pass
 
-        return objectlijst
-    else:
-        return objectlijst
+    merken = getMerken(request)
 
-def stock(objectlijst, levering):
+  
+    return objectlijst, merken
+
+def stock(objectlijst, direct, binnenWeek):
     direct_leverbaar = [
         "1 stuk op voorraad",
         "2 stuks op voorraad",
@@ -33,29 +42,37 @@ def stock(objectlijst, levering):
         "4 stuks op voorraad",
         "5 stuks op voorraad",
         "5+ stuks op voorraad",
-        "Direct leverbaar"
+        "Direct leverbaar",
     ]
 
-    if levering == "alles":
-        return objectlijst
-    elif levering == "morgen":
-        for key, d in enumerate(direct_leverbaar):
-            objects = objectlijst.filter(stock__icontains=d)
-            if key == 0:
-                objectlijst_filtered = objects
-            else:
-                objectlijst_filtered = list(chain(objects, objectlijst_filtered))
-        return objectlijst_filtered
+    binnen_week = [
+        "Verwacht over 6 dag(en)",
+        "Verwacht over 5 dag(en)",
+        "Verwacht over 4 dag(en)",
+        "Verwacht over 3 dag(en)",
+        "Verwacht over 2 dag(en)",
+        "Verwacht over 1 dag(en)",
+        "Verwacht over 1 dag",
+    ]
+
+    if direct == "true" and binnenWeek == "true":
+        objectlijst = objectlijst.filter(Q(stock__in = direct_leverbaar) | Q(stock__in = binnen_week))
+    else:
+        if direct == "true":
+            objectlijst = objectlijst.filter(stock__in = direct_leverbaar)
+
+        if binnenWeek == "true":
+            objectlijst = objectlijst.filter(stock__in = binnen_week)
+
+    return objectlijst
 
 
 def sorteer(objectlijst, sort):
-
     if sort == "titel-op":
         objectlijst_filtered = objectlijst.order_by('naam')
     elif sort == "titel-af":
         objectlijst_filtered = objectlijst.order_by('-naam')
     elif sort == "prijs-op":
-        #objectlijst_filtered = objectlijst.extra(select={'prijs': 'CAST(prijs AS INTEGER)'}).order_by('prijs')
         objectlijst_filtered = objectlijst.order_by('prijs')
     elif sort == "prijs-af":
         objectlijst_filtered = objectlijst.order_by('-prijs')
@@ -65,22 +82,116 @@ def sorteer(objectlijst, sort):
     return objectlijst_filtered
 
 
-def pricefilter(objectlijst, minprijs, maxprijs):
-    #replaces the , in the 2 arguments with . for float parsing
-    minprijs = minprijs.replace(',','.')
-    maxprijs = maxprijs.replace(',','.')
-    #for every component in the queryset
-    print objectlijst
-    newLijst = objectlijst
-    for component in newLijst:
-        #convert price to float
-        prijs = float(component.prijs[0])
-        #if the component price is not within the range of the 2 prices
-        if (prijs < float(minprijs)) or (prijs > float(maxprijs)):
-            #then filter that component from the queryset
-            if component.ean:
-                pass#hier komt magie
-            elif component.sku:
-                pass#hier komt magie
-    return newLijst
+def pricefilter(objectlijst, minPrijs, maxPrijs):
+    minPrijs = minPrijs.replace(',','.')
+    maxPrijs = maxPrijs.replace(',','.')
 
+    objectlijst_filtered = objectlijst.filter(prijs__lte = maxPrijs)
+    objectlijst_filtered = objectlijst_filtered.filter(prijs__gte = minPrijs)
+
+    return objectlijst_filtered
+
+def filterMerken(objectlijst, merken):
+    query = reduce(operator.or_, (Q(naam__icontains=x) for x in merken))
+    objectlijst = objectlijst.filter(query)
+
+    return objectlijst
+
+def getGrenzen(objectlijst):
+    minPriceSliderValue = 1500.1
+    maxPriceSliderValue = 0.1
+
+    for obj in objectlijst:
+        if obj.prijs:
+            prijsje = obj.prijs[0]
+
+            for prijs in obj.prijs:
+                if float(prijs) < float(minPriceSliderValue):
+                    prijsje = prijs
+                elif float(prijs) > float(maxPriceSliderValue):
+                    prijsje = prijs
+
+            if float(prijsje) < float(minPriceSliderValue):
+                minPriceSliderValue = prijsje
+            elif float(prijsje) > float(maxPriceSliderValue):
+                maxPriceSliderValue = prijsje
+
+    return minPriceSliderValue, maxPriceSliderValue
+
+
+def getMerken(request):
+    categorie = request.path
+
+    if categorie == "/processoren/":
+        merken = [
+            "Intel",
+            "AMD",
+        ]
+    elif categorie == "/moederborden/":
+        merken = [
+            "Asus",
+            "ASRock",
+            "Gigabyte",
+            "MSI",
+        ]
+    elif categorie == "/gpu/":
+        merken = [
+            "Asus",
+            "MSI",
+            "AMD",
+            "Gigabyte",
+            "EVGA",
+        ]
+    elif categorie == "/hardeschijven/":
+        merken = [
+            "Hitachi",
+            "Seagate",
+            "HP",
+            "Toshiba",
+            "Samsung",
+            "Crucial",
+            "Kingston",
+            "Transcend",
+        ]
+    elif categorie == "/optischeschijven/":
+        merken = [
+            "Asus",
+            "HP",
+            "Samsung",
+            "LG",
+        ]
+    elif categorie == "/koelingen/":
+        merken = [
+            "Cooler Master",
+            "Corsair",
+            "Noiseblocker",
+            "Scynthe",
+        ]
+    elif categorie == "/geheugen/":
+        merken = [
+            "Corsair",
+            "Crucial",
+            "Kingston",
+            "Transcend",
+            "G.Skill",
+        ]
+    elif categorie == "/voedingen/":
+        merken = [
+            "Antec",
+            "be quiet",
+            "Cooler Master",
+            "Corsair",
+            "Seasonic",
+        ]
+    elif categorie == "/behuizingen/":
+        merken = [
+            "Cooler Master",
+            "Corsair",
+            "Silverstone",
+            "Aerocool",
+            "Fractal Design",
+        ]
+    else:
+        merken = []
+    
+    return merken

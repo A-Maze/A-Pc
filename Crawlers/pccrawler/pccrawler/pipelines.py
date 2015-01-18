@@ -58,6 +58,7 @@ class PccrawlerPipeline(object):
 						try:
 							if self.collection.find({'ean':  item["ean"][0]}).count() > 0:
 								addToList()								
+
 							else:
 								addNewItemToDatabase(collectienaam)
 						except:

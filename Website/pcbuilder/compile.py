@@ -29,14 +29,16 @@ def buildpc(request):
 				autoSelect(request,moederbord)
 
 		for dataset in data:
-			autoSelect(request,dataset.objects)
+			print "looping"
+			autoSelect(request,dataset.objects.filter(prijs__exists=True))
 
 
 
 def autoSelect(request,componentList):
 	if componentList:
-		componentenList = compatibility(request, componentList)
+		#componentenList = compatibility(request, componentList)
 		categorie = componentList[0].categorie
+		print categorie
 		productstring = categorie + "naam"
 		categorieprijs = categorie + "prijs"
 		categorieid = categorie + "id"
@@ -56,4 +58,5 @@ def convert(prijzen,naam,herkomst):
 	merge = sorted(zip(prijzen,herkomst))
 	newprijzen = [x[0] for x in merge]
 	newherkomst = [x[1] for x in merge]
+	print newprijzen, naam, newherkomst
 	return newprijzen,naam,newherkomst
