@@ -12,7 +12,7 @@ class testCases(unittest.TestCase):
 	def test(self):
 		#driver = new RemoteWebDriver(new URL("http://a-maze.ddns.net:4444/wd/hub"), capability);
 		driver = webdriver.Firefox()
-		driver.get('http://a-maze.ddns.net:4444/wd/hub')
+		driver.get('http://a-maze.ddns.net:8000')
 		assert "A-Pc" in driver.title
 		driver.quit()
 
