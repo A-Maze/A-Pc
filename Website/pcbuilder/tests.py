@@ -10,16 +10,16 @@ class testCases(unittest.TestCase):
 
 	# Test of de homepagina correct wordt geladen
 	def test(self):
-		WebDriver driver = new RemoteWebDriver(new URL("http://a-maze.ddns.net:4444/wd/hub"), capability);
-		#driver = webdriver.Firefox()
-		#driver.get('http://127.0.01:8000/')
+		#driver = new RemoteWebDriver(new URL("http://a-maze.ddns.net:4444/wd/hub"), capability);
+		driver = webdriver.Firefox()
+		driver.get('http://a-maze.ddns.net:4444/wd/hub')
 		assert "A-Pc" in driver.title
 		driver.quit()
 
 		print ""
 
 		
-	def test2(self):
+"""	def test2(self):
 		driver = webdriver.Firefox()
 		driver.get('http://127.0.01:8000/')
 		driver.find_element_by_id("processoren-test-id").click()
@@ -99,6 +99,6 @@ class testCases(unittest.TestCase):
 		driver.find_element_by_id("textArea").send_keys('test test')
 		assert "test test" in driver.find_element_by_id("textArea").get_attribute("value")
 		driver.find_element_by_id("textArea").submit() 
-		driver.quit()
+		driver.quit()"""
 		
 
