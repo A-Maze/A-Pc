@@ -10,9 +10,9 @@ class testCases(unittest.TestCase):
 
 	# Test of de homepagina correct wordt geladen
 	def test(self):
-
-		driver = webdriver.Firefox()
-		driver.get('http://127.0.01:8000/')
+		WebDriver driver = new RemoteWebDriver(new URL("http://a-maze.ddns.net:4444/wd/hub"), capability);
+		#driver = webdriver.Firefox()
+		#driver.get('http://127.0.01:8000/')
 		assert "A-Pc" in driver.title
 		driver.quit()
 
