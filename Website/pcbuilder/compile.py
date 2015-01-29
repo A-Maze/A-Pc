@@ -7,20 +7,27 @@ def buildpc(request):
 	filteredDrops = request.POST.get('dropDowns', 'empty')
 	filteredDrops = json.loads(filteredDrops)
 	if (filteredDrops != "empty"):
-		processor = Processoren.objects
+		processor = Processoren.objects.filter(prijs__exists=True)
+		processor_filtered = processor
+		print processor_filtered
 		for requirement in filteredDrops:
 			print requirement
 
 			if "processoren" in requirement[0]:
 				if "Socket" in requirement[0]:
-					processor.filter(Socket__icontains=requirement[1])
+					print "requirement"
+					filterRequirement = unicode(requirement[1])
+
+					processor_filtered = processor.filter(Socket__icontains= filterRequirement)
+					if not processor_filtered:
+						print "leeg"
 				if "Cores" in requirement[0]:
-					processor.filter(Aantal_cores_icontains=requirement[1])
+					processor = processor.filter(Aantal_cores_icontains=requirement[1])
 				data.remove(Processoren)
-				autoSelect(request,processor)
+				autoSelect(request,processor_filtered)
 
 			if "Moederborden" in requirement[0]:
-				moederbord = Moederborden.objects
+				moederbord = Moederborden.objects.filter(prijs__exists=True)
 				if "Socket" in requirement[0]:
 					moederbord.filter(Socket__icontains=requirement[1])
 				if "Chipset" in requirement[0]:
@@ -39,6 +46,9 @@ def autoSelect(request,componentList):
 		#componentenList = compatibility(request, componentList)
 		categorie = componentList[0].categorie
 		print categorie
+		if "processor" in categorie:
+			print "eigenlijke socket"
+			print componentList[0].Socket
 		productstring = categorie + "naam"
 		categorieprijs = categorie + "prijs"
 		categorieid = categorie + "id"

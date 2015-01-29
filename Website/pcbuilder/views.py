@@ -553,9 +553,12 @@ db.processoren.find().forEach( function(processoren) {
     db.processoren.save(processoren);
 });
     '''
-
     processorenlijst, merken = filters(request, processorenlijst)
     minPriceSliderValue, maxPriceSliderValue = getGrenzen(processorenlijst)
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 53d15e0d29854fbf67b0e7342a107629df4faf2b
     processoren = listing(request, processorenlijst, 15)
     bereik, diff, current_page = paginas(processorenlijst, processoren)
 
