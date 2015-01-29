@@ -9,7 +9,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 class testCases(unittest.TestCase):
 
 	# Test of de homepagina correct wordt geladen
-def test(self):
+	def test(self):
 		driver = webdriver.Firefox()
 		driver.get('http://a-maze.ddns.net:8181/')
 		assert "A-Pc" in driver.title
