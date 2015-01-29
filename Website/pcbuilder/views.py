@@ -542,7 +542,7 @@ def Selected(productid, categorie, action, request):
 
 def processoren(request):
 
-    processorenlijst = Processoren.objects
+    processorenlijst = Processoren.objects.filter(prijs__exists=True)
 
     '''
 
@@ -553,10 +553,9 @@ db.processoren.find().forEach( function(processoren) {
     db.processoren.save(processoren);
 });
     '''
-
     processorenlijst, merken = filters(request, processorenlijst)
     minPriceSliderValue, maxPriceSliderValue = getGrenzen(processorenlijst)
-    processorenlijst = processorenlijst.filter(prijs__exists=True)
+    
     processoren = listing(request, processorenlijst, 15)
     bereik, diff, current_page = paginas(processorenlijst, processoren)
 
