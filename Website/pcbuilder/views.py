@@ -16,24 +16,13 @@ from django.db.models import Max
 import json, time, sys
 from random import randint
 
-
-
 data = [Processoren,Moederborden,Koeling,Behuizingen,Grafische,Harde,Dvd,Geheugen,Voeding]
 dataFiltered = {}
 for model in data:
     categorieNaam = model.__name__
     filteredModel = model.objects.filter((Q(prijs__exists=True) and Q(naam__exists=True)))
     dataFiltered[categorieNaam] = filteredModel
-
-
-
-# Global vars
-
-# Strandaard aantal per pagina
-#end = 25
-#start = 0
-#sl = "0:%d" % (end)
-#Dit bovenstaande is voor later om alleen de div te veranderen en niet de hele pagina
+    
 app = 15
 
 def index(request):

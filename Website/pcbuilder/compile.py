@@ -1,10 +1,19 @@
-from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding
+from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding, Views, Select, ViewsPerDatum
 from pcbuilder.compatibility import *
-from pcbuilder.views import *
+from mongoengine import Q
 import json
+
+data = [Processoren,Moederborden,Koeling,Behuizingen,Grafische,Harde,Dvd,Geheugen,Voeding]
+dataFiltered = {}
+for model in data:
+    categorieNaam = model.__name__
+    filteredModel = model.objects.filter((Q(prijs__exists=True) and Q(naam__exists=True)))
+    dataFiltered[categorieNaam] = filteredModel
 
 def buildpc(request):
 	print "ja"
+	print dataFiltered
+	print "nee"
 	#list with every part it should compile
 	filteredDrops = request.POST.get('dropDowns', 'empty')
 	filteredDrops = json.loads(filteredDrops)
@@ -15,7 +24,6 @@ def buildpc(request):
 		processor = dataFiltered["Processoren"]
 		moederbord = dataFiltered["Moederborden"]
 		grafische = dataFiltered["Grafische"]
-		print "wtf"
 
 		#loop through filter requirements
 		for requirement in filteredDrops:
@@ -57,9 +65,9 @@ def buildpc(request):
 
 
 
-		for dataset in data:
+		for dataset in dataFiltered:
 			print "looping"
-			autoSelect(request,dataset.objects.filter(prijs__exists=True))
+			autoSelect(request,dataset)
 
 
 
@@ -83,6 +91,7 @@ def autoSelect(request,componentList):
 		request.session[categorieid] = str(componentList[0].id)
 		request.session[categorieherkomst] = herkomst[0]
 		request.session[categorielink] = componentList[0].link
+
 
 def convert(prijzen,naam,herkomst):
 	prijzen = [float(x) for x in prijzen]
