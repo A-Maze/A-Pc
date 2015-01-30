@@ -9,7 +9,9 @@
 {% block content %}
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+
 <script type="text/javascript">
+
 $(function() {//1
     $('#graph').highcharts({//2
         chart: {//3
@@ -43,12 +45,7 @@ $(function() {//1
             data: [
                 ['Processoren',   {{ Processorenpercentage }}],
                 ['Moederborden',       {{ Moederbordenpercentage }}],
-                {//4
-                    name: 'Grafische kaarten',
-                    y: {{ Grafischepercentage }},
-                    sliced: true,
-                    selected: true
-                },//3
+                ['Grafische kaarten', {{ Grafischepercentage }}],
                 ['Harde schijven',    {{ Hardepercentage }}],
                 ['Optische drives',     {{ Dvdpercentage }}],
                 ['Koelingen',   {{ Koelingpercentage }}],
@@ -124,63 +121,89 @@ $(function () {
 });
 </script>
 
+<script>
+$(document).ready(function(){
+  $(".toggle").click(function(){
+  var parent = $(this).parent();
+  var child = parent.children(".body-toggled");
+    $(child).slideToggle(100);
+  var pull = $(this).children(".pull-right ");
+  var switcher = $(pull).children(".switcher ");
+  $(switcher).toggleClass("dropup");
+  });
+});
+
+function changerights(email){
+    rechtenNummer = prompt("Welke rechten (0-1) wilt u toekennen? 0 is gebruiker en 1 is eigenaar", "")
+    if(rechtenNummer == '0' || rechtenNummer == '1'){
+        location.href = "/wijzigRechten/?rechten="+rechtenNummer+"&amp;email="+email;
+    } else {
+        alert("Je kunt alleen 0 of 1 invullen!")
+    }
+}
+</script>
 
 
 
 
+{% if request.session.Rechten %}
+    {% if request.session.Rechten >= '1' %}
 	<div class='container'>
 		<div class="col-md-8 col-lg-11" id="productList" id="productList2">
 			<div class="panel panel-primary top-margin  ">
-				<div class="panel-heading">
-	            	<h3 class="panel-title">Top 10 bekeken producten</h3>
-	        	</div>
-				<div class=" top-margin ">
+                    <div class="panel panel-default">
+                        <div class="panel-heading toggle"> Top 10 meest bekeken producten {{ request.session.Rechten }}{{ request.session.email }} <div class="pull-right"><span class="switcher dropup"><span class="caret"></span></span> </div></div>
+                        <div class="panel-body body-toggled" style="display:none;">
+				            <div class=" top-margin ">
 					
 
 
 
 
-			{% for component in Componenten %}
-            <div class="list-group table-border">
-                <div class="list-group-item">
-                    <div class="row-picture">
-                        <img class="square" src="{{ component.Afbeelding.0 }}" alt="icon">
-                    </div>
+                    			{% for component in Componenten %}
+                                <div class="list-group table-border">
+                                    <div class="list-group-item">
+                                        <div class="row-picture">
+                                            <img class="square" src="{{ component.Afbeelding.0 }}" alt="icon">
+                                        </div>
 
-                    <div class="row-content">
-                        <div class="col-md-10 col-lg-10">
-                            <h4 class="list-group-item-heading">{% if component.naam %}{% for name in component.naam %}{{ name }}{% endfor %}{% elif component.Product %}{% for name in component.Product %}{{ name }}{% endfor %}{% elif component.Uitvoering %}{% for name in component.Uitvoering %} {{ name }} {% endfor %}{% elif component.naam %} {% for name in component.naam %} {{ naam }} {% endfor %}{% endif %}</h4>
-                            <p class="list-group-item-text">{% for desc in component.info %} {{ desc }} {% endfor %} </p>
-                            <p class="list-group-item-text">Categorie: {{ component.categorie }}</p>
+                                        <div class="row-content">
+                                            <div class="col-md-10 col-lg-10">
+                                                <h4 class="list-group-item-heading">{% if component.naam %}{% for name in component.naam %}{{ name }}{% endfor %}{% elif component.Product %}{% for name in component.Product %}{{ name }}{% endfor %}{% elif component.Uitvoering %}{% for name in component.Uitvoering %} {{ name }} {% endfor %}{% elif component.naam %} {% for name in component.naam %} {{ naam }} {% endfor %}{% endif %}</h4>
+                                                <p class="list-group-item-text">{% for desc in component.info %} {{ desc }} {% endfor %} </p>
+                                                <p class="list-group-item-text">Categorie: {{ component.categorie }}</p>
+                                            </div>
+                                            <div class=" col-md-2 col-lg-2  ">
+                                                <p class="list-group-item-text pull-right prijs">{{ component.prijs.0 }}  </p>
+
+                                                <p class="list-group-item-text  ">{{ component.stock.0 }}</p>
+
+
+
+                                                <a onclick="{{ views.Viewers }}" href="/detail/?product={% for name in component.naam %}{{ name }} {% endfor %}&amp;categorie={{component.categorie|truncatewords:1 }}&amp;prijs={{ component.prijs.0|slice:'-1' }}&amp;productid={{component.id}}" class="btn btn-primary">details</a>
+
+
+                                                
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+
+                                </div>
+                                {% endfor %}
+
+
+
+
+
+
+
+
                         </div>
-                        <div class=" col-md-2 col-lg-2  ">
-                            <p class="list-group-item-text pull-right prijs">{{ component.prijs.0 }}  </p>
-
-                            <p class="list-group-item-text  ">{{ component.stock.0 }}</p>
-
-
-
-                            <a onclick="{{ views.Viewers }}" href="/detail/?product={% for name in component.naam %}{{ name }} {% endfor %}&amp;categorie={{component.categorie|truncatewords:1 }}&amp;prijs={{ component.prijs.0|slice:'-1' }}&amp;productid={{component.id}}" class="btn btn-primary">details</a>
-
-
-                            
-
-                        </div>
                     </div>
-
-                </div>
-
-
-
-            </div>
-            {% endfor %}
-
-
-
-
-
-
-
 				</div>
 			</div>
 		</div>
@@ -191,10 +214,146 @@ $(function () {
     <script src='{% static "js/highcharts.js" %}'></script>
     <script src='{% static "js/highcharts-3d.js" %}'></script>
     <script src='{% static "js/modules/exporting.js" %}'></script>
-    <div id="graph" style="height: 400px"></div>
-    {{ ViewsPerDatum2 }}<br>
-    {{ DatumsPerDatum }}
-    <div id="columngraph"></div>
+    <div class='container'>
+        <div class="col-md-8 col-lg-11" id="productList" id="productList2">
+            <div class="panel panel-primary top-margin  ">
+                    <div class="panel panel-default">
+                        <div class="panel-heading toggle"> Aantal views per categorie  <div class="pull-right"><span class="switcher"><span class="caret"></span></span> </div></div>
+                        <div class="panel-body body-toggled">
+                            <div class=" top-margin ">
+                            <div id="graph"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='container'>
+        <div class="col-md-8 col-lg-11" id="productList" id="productList2">
+            <div class="panel panel-primary top-margin  ">
+                    <div class="panel panel-default">
+                        <div class="panel-heading toggle"> Aantal views per categorie  <div class="pull-right"><span class="switcher"><span class="caret"></span></span> </div></div>
+                        <div class="panel-body body-toggled">
+                            <div class=" top-margin ">
+                            <div id="columngraph"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     
+    
+
+
+
+
+
+    <div class='container'>
+        <div class="col-md-10 col-lg-5" id="productList" id="productList2">
+            <div class="panel panel-primary top-margin  ">
+                    <div class="panel panel-default">
+                        <div class="panel-heading toggle"> Populairste zoekwoorden  <div class="pull-right"><span class="switcher dropup"><span class="caret"></span></span> </div></div>
+                        <div class="panel-body body-toggled" style="display:none;">
+                            <div class="list-group table-border">
+                                <div class="list-group-item">
+
+                                    <div class="row-content">
+                                        <div class="col-md-10 col-lg-10">
+                                            <h3 class="list-group-item-text pull-left">Zoekwoord</h3>
+                                            
+                                            <h3 class="list-group-item-text pull-right">Aantal </h3>
+
+
+                                            
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>  
+                            <div id="productList" id="productList2" style="height:200px; overflow-y:scroll; display:block; margin-bottom: 20px;">     
+
+
+
+
+                            {% for search in Search %}
+                            <div class="list-group table-border">
+                                <div class="list-group-item">
+
+                                    <div class="row-content">
+                                        <div class="col-md-10 col-lg-10">
+                                            <p class="list-group-item-text pull-left">{{ search.Zoekwoord }}</p>
+                                            
+                                            <p class="list-group-item-text pull-right">{{ search.Aantal }}  </p>
+
+
+                                            
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                            {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class='container'>
+        <div class="col-md-10 col-lg-6" id="productList" id="productList2">
+            <div class="panel panel-primary top-margin  ">
+                    <div class="panel panel-default">
+                        <div class="panel-heading toggle"> gebruikers  <div class="pull-right"><span class="switcher dropup"><span class="caret"></span></span> </div></div>
+                        <div class="panel-body body-toggled" style="display:none;">
+                            <div class="list-group table-border">
+                                <div class="list-group-item">
+                                    <h4 class="list-group-item-text pull-left">Email</h4>
+                                    <h4 class="list-group-item-text text-center">Rechten </h4>
+                                    <h4 class="list-group-item-text pull-right">Wijzig rechten </h4>
+                                </div>
+                            </div>  
+                            <div id="productList" id="productList2" style="height:200px; overflow-y:scroll; display:block; margin-bottom: 20px;">     
+
+
+
+
+                            {% for user in Userlist %}
+                            <div class="list-group table-border">
+                                <div class="list-group-item">
+
+                                    <table class="row-content">
+                                            <p class="list-group-item-text pull-left">{{ user.Email }}</p>
+                                            
+                                            <p class="list-group-item-text text-center">{{ user.Rechten }}  </p>
+                                            <p class="list-group-item-text pull-right"><a onclick="changerights('{{ user.Email }}')" class="btn btn-primary">Wijzig rechten</a>  </p>
+                                    </table>
+
+                                </div>
+
+
+
+                            </div>
+                            {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+
+    {% endif %}
+{% endif %}
 
 {% endblock %}

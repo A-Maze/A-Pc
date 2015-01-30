@@ -121,6 +121,37 @@
                     <a href="/search/">Zoeken</a>
                 </li>
 
+                
+                {% if request.session.Rechten %}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Bootstrap Related Resources">{{ request.session.email }}<b
+                            class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="/bestellingen/"><i class="fa fa-desktop fa-fw"></i>bestellingen</a>
+                        </li>
+                        <li class='divider/'></li>
+                        {% if request.session.Rechten == '1' %}<li>
+                            <a href="/dashboard/"><i class="fa fa-list fa-fw"></i>dashboard</a>
+                        </li>{% endif %}
+                        <li class="divider/"></li>
+                        <li>
+                            <a href="/loguit/"><i class="fa fa-desktop fa-fw"></i>loguit</a>
+                        </li>
+                        </li>
+
+                    </ul>
+                </li>
+
+
+                    {% else %}
+                    <li>
+                        <a href="/login/">
+                            login
+                        </a>
+                    </li>
+                {% endif %}
+
               
             </ul>
         </div>

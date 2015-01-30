@@ -117,3 +117,10 @@ background-color:black;
    display: none;
 }
 
+.errormsgbox {
+ 
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url('images/error.png');
+}
+

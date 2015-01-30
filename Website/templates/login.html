@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% block scripts %}
+<link rel="stylesheet" type="text/css" href='{% static "css/demo.css" %}'/>
+<link rel="stylesheet" type="text/css" href='{% static "css/style.css" %}'/>
+
+{% endblock %}
+{% block content %}
+
+	<a href='/registreer/'><div class='container'>
+		<div class="col-md-8 col-lg-11">
+			<div class="panel panel-primary top-margin  ">
+                    <div href='/registreer/' class="panel-heading toggle" style="text-align:center;"> Registreer  <div class="pull-right"><span id='registreerspan' class="switcher dropup"><span class="caret"></span></span> </div></div>
+				</div>
+			</div>
+		</div>
+	</a>
+
+	<div class='container'>
+		<div class="col-md-8 col-lg-11">
+			<div class="panel panel-primary top-margin  ">
+                    <div class="panel-heading toggle" style="text-align:center;"> Log in  <div class="pull-right"><span id='loginspan' class="switcher"><span class="caret"></span></span> </div></div>
+                    <div id='login' class="panel-body body-toggled">
+						<div class="col-md-10 col-lg-12 text-center" style="margin-left: auto; margin-right: auto;">
+			            	<form action='login' method='post'>
+			            		{% csrf_token %}
+			            			<div class='errormsgbox'>{{ form.errors }}</div>
+			            		{{ form.as_table }}<br><br>
+			            		<button type='submit' class="btn btn-primary" name='submit'>Log in</button> 
+			            	</form>
+			            	<a href='/registreer/'>Registreer</a>
+			            </div>
+				            	
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

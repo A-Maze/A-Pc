@@ -10,12 +10,12 @@ from pcbuilder.compatibility import *
 from pcbuilder.filters import *
 from pcbuilder.builds import *
 import json as simplejson
-from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding, Views, Select, ViewsPerDatum
-from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding
+from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding, Views, Select, ViewsPerDatum, Login, Users, Registreer, SearchQuery
 from itertools import chain
 import json
 import time
 from random import randint
+from django.forms.util import ErrorList
 
 # Global vars
 
@@ -25,6 +25,87 @@ from random import randint
 #sl = "0:%d" % (end)
 #Dit bovenstaande is voor later om alleen de div te veranderen en niet de hele pagina
 app = 15
+
+def registreer(request):
+    #user = Users(Voornaam='', Achternaam='', Email='', Wachtwoord='', Rechten='0')
+    #user.save()
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        formregistreer = Registreer(request.POST)
+        # check whether it's valid:
+        if formregistreer.is_valid():
+            voornaam = formregistreer.cleaned_data['voornaam']
+            achternaam = formregistreer.cleaned_data['achternaam']
+            email = formregistreer.cleaned_data['email']
+            wachtwoord = formregistreer.cleaned_data['wachtwoord']
+            try:
+                selectedEerder=Users.objects.get(Email=email)
+                formregistreer.errors[""] = ErrorList([u"Het opgegeven email adres is al geregistreerd!"])
+            except Users.DoesNotExist:
+                if(formregistreer.cleaned_data['wachtwoord'] == formregistreer.cleaned_data['Herhaal_wachtwoord']):
+                    voeg_toe = Users(Voornaam=voornaam, Achternaam=achternaam, Email=email, Wachtwoord=wachtwoord, Rechten='0')
+                    voeg_toe.save()
+                    return HttpResponseRedirect('/login/')
+                else:
+                    formregistreer.errors[""] = ErrorList([u"De opgegeven wachtwoorden komen niet overeen!"])
+    else:
+        formregistreer = Registreer()
+    return render_to_response('registreer.html',{'registreer': formregistreer},
+                              context_instance=RequestContext(request))
+
+def wijzigRechten(request):
+    rechten = request.GET.get('rechten')
+    email = request.GET.get('email')
+    try:
+        selectedEerder=Users.objects.get(Email=email)
+        selectedEerder.Rechten = rechten
+        selectedEerder.save()
+        if(request.session['email'] == email):
+            request.session['Rechten'] = rechten
+    except Users.DoesNotExist:
+        print("fout!")
+
+    return HttpResponseRedirect('/dashboard/')
+
+def login(request):
+
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = Login(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            wachtwoord = form.cleaned_data['wachtwoord']
+            print(email)
+            try:
+                selectedEerder=Users.objects.get(Email=email, Wachtwoord=wachtwoord)
+                request.session['email'] = email;
+                request.session['Rechten'] = selectedEerder.Rechten
+                return HttpResponseRedirect('/')
+            except Users.DoesNotExist:
+                selectedEerder = None
+                form.errors[""] = ErrorList([u"Email of wachtwoord komen niet overeen!"])
+            # process the data in form.cleaned_data as required
+            # ...
+            # redirect to a new URL:
+            
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = Login()
+
+    return render_to_response('login.html',{'form': form},
+                              context_instance=RequestContext(request))
+
+def loguit(request):
+    try:
+        del request.session['email']
+        del request.session['Rechten']
+        return HttpResponseRedirect('/login/')
+    except KeyError:
+        return HttpResponseRedirect('/login/')
+
 
 def index(request):
     # Get all posts from DB
@@ -76,6 +157,7 @@ def contact(request):
 def search(request):
     if request.method == "POST":
         query = request.POST.get('search')
+        searchDatabase(query, request)
         #componentenArray = [Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding]
 
         print "HOII"
@@ -93,7 +175,7 @@ def search(request):
 
         # querysets = [filtert_Processoren,filtert_Moederborden,filtert_Koeling,filtert_Behuizingen,filtert_Grafische,filtert_Harde,filtert_Dvd,filtert_Geheugen,filtert_Voeding]
         print "combining...."
-        filtert = list(chain(filtert_Processoren,filtert_Moederborden,filtert_Koeling,filtert_Behuizingen,filtert_Grafische,filtert_Harde,filtert_Dvd,filtert_Geheugen,filtert_Voeding))
+        filtert = list(chain(filtert_Processoren))
         
         
         print filtert
@@ -110,6 +192,35 @@ def search(request):
         print ("1,2,3")
         return render_to_response('search.html', 
                                   context_instance=RequestContext(request))
+
+
+def searchDatabase(query, request):
+    gevonden = 0
+
+
+    for search in SearchQuery.objects:
+        print('aan het zoeken')
+        if str(query) == str(search.Zoekwoord):
+            aantal = int(search.Aantal)
+            searchSet=SearchQuery.objects.get(Zoekwoord=query)
+            nieuwAantal = aantal+1
+            nieuwAantal = str(nieuwAantal)
+            searchSet.Aantal = nieuwAantal
+            searchSet.save()
+            gevonden = 1
+            #return HttpResponse(str(nieuwAantal))
+        else:
+            pass
+
+    print('klaar met zoeken')
+    if gevonden == 0:
+        #zet views collectie de id als de id die is meegegeven het aantal op 15 (moet nog aan gewerkt worden)
+        searchNieuw = SearchQuery(Zoekwoord=query, Aantal='1')
+        #slaat de weergaven op in de db
+        searchNieuw.save()
+        #return HttpResponse('Niks gevonden')
+
+    #je gaat weer terug naar de pagina
 
 
 
@@ -551,7 +662,7 @@ def processoren(request):
     for processoren in processorenlijst:
 
         if processoren.prijs:
-            diestringnaam = processoren.prijs[0].replace(",",("."))
+            diestringnaam = processoren.prijs[0]
             if float(diestringnaam) < float(minPriceSliderValue):
                 minPriceSliderValue = diestringnaam
             elif float(diestringnaam) > float(maxPriceSliderValue):
@@ -564,7 +675,7 @@ def processoren(request):
 
     if request.method == 'POST':
         json = {}
-        json['Componenten'] = render_to_string('processoren.html', {'Componenten': processoren, 'Views':views, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page }, context_instance=RequestContext(request))
+        json['Componenten'] = render_to_string('processoren.html', {'Componenten': processoren, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page }, context_instance=RequestContext(request))
         json = dumps(json)
         return HttpResponse(json,content_type="application/json")
     else:
@@ -572,9 +683,16 @@ def processoren(request):
                               context_instance=RequestContext(request))
 
 def dashboard(request):
-    dashboardlijst = Views.objects.order_by('-Aantal').limit(10)
+    dashboardlijst = Views.objects.order_by('-Aantal')
     dashboardlijst = listing(request, dashboardlijst, 10)
+    searchQueryLijst2 = SearchQuery.objects.order_by('-Aantal', 'Zoekwoord')
+    userlijst = Users.objects.order_by('Email')
+
     mylist = []
+    userlist = []
+    rechtenlist = []
+    searchQueryLijst = []
+    searchQueryLijst1 = []
     viewsperdag = []
     datumsperdag = []
     processorenperc = 0;
@@ -590,6 +708,16 @@ def dashboard(request):
     for viewss in dashboardlijst:
         mylist.insert(i, viewss.Id)
         i = i +1
+    j = 0
+    for users in userlijst:
+        userlist.insert(j, users.Email)
+        rechtenlist.insert(j, users.Rechten)
+        j = j +1
+    k = 0
+    for search in searchQueryLijst2:
+        searchQueryLijst.insert(k, search.Zoekwoord)
+        searchQueryLijst1.insert(k, search.Aantal)
+        k = k + 1
     for percentage in Views.objects:
         if percentage.Categorie == 'processoren':
             processorenperc = processorenperc + int(float(percentage.Aantal));
@@ -609,6 +737,8 @@ def dashboard(request):
             hardeperc = hardeperc + int(float(percentage.Aantal));
         elif percentage.Categorie == 'dvd':
             dvdperc = dvdperc + int(float(percentage.Aantal));
+        else:
+            pass
     #totaalpercentage = processorenperc+moederbordenperc+grafischeperc+behuizingenperc+hardeperc+dvdperc+koelingperc+geheugenperc+voedingperc
     #processorenperc = (processorenperc/totaalpercentage)*100
     #moederbordenperc = (moederbordenperc/totaalpercentage)*100
@@ -627,12 +757,13 @@ def dashboard(request):
     viewsperdatumlijst = ViewsPerDatum.objects
     j = 0;
     for viewsdatums in viewsperdatumlijst:
-        viewsperdag.insert(j, float(viewsdatums.Aantal))
-        datumsperdag.insert(j, viewsdatums.Datum)
+        viewsperdag.insert(j, int(float(viewsdatums.Aantal)))
         j = j+1
 
 
-    return render_to_response('dashboard.html', {'Componenten': views, 'Processorenpercentage': processorenperc,'Moederbordenpercentage': moederbordenperc,'Voedingpercentage': voedingperc,'Geheugenpercentage': geheugenperc,'Koelingpercentage': koelingperc,'Grafischepercentage':grafischeperc, 'Behuizingenpercentage':behuizingenperc, 'Dvdpercentage': dvdperc, 'Hardepercentage': hardeperc, 'ViewsPerDatum2': viewsperdag, 'DatumsPerDatum': datumsperdag},
+
+
+    return render_to_response('dashboard.html', {'Componenten': views, 'Processorenpercentage': processorenperc,'Moederbordenpercentage': moederbordenperc,'Voedingpercentage': voedingperc,'Geheugenpercentage': geheugenperc,'Koelingpercentage': koelingperc,'Grafischepercentage':grafischeperc, 'Behuizingenpercentage':behuizingenperc, 'Dvdpercentage': dvdperc, 'Hardepercentage': hardeperc, 'ViewsPerDatum2': viewsperdag, 'Search': searchQueryLijst2, 'Userlist': userlijst},
                               context_instance=RequestContext(request))
 
 def behuizingen(request):
