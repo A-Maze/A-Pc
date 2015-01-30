@@ -669,8 +669,8 @@ def Selected(productid, categorie, action, request):
 
 
 def processoren(request):
-    '''
 
+    '''
 db.processoren.find().forEach( function(processoren) {
     for(var i in processoren.prijs){
         processoren.prijs[i] = parseFloat(processoren.prijs[i]);
@@ -680,28 +680,6 @@ db.processoren.find().forEach( function(processoren) {
     '''
     processorenlijst, merken = filters(request, dataFiltered[sys._getframe().f_code.co_name.title()])
     minPriceSliderValue, maxPriceSliderValue = getGrenzen(processorenlijst)
-    # Get all posts from DB
-    # Aantal per pagina en pagina nummer
-    minPriceSliderValue = 1500.1
-    maxPriceSliderValue = 0.1
-
-    processorenlijst = Processoren.objects
-
-
-
-    
-    #overgebleven componentenlijst afhankelijk van stock
-    #Dit dient later afhaneklijk te worden van alle filters
-    processorenlijst = filters(request, processorenlijst)
-
-    for processoren in processorenlijst:
-
-        if processoren.prijs:
-            diestringnaam = processoren.prijs[0]
-            if float(diestringnaam) < float(minPriceSliderValue):
-                minPriceSliderValue = diestringnaam
-            elif float(diestringnaam) > float(maxPriceSliderValue):
-                maxPriceSliderValue = diestringnaam
     processoren = listing(request, processorenlijst, 15)
     bereik, diff, current_page = paginas(processorenlijst, processoren)
 
