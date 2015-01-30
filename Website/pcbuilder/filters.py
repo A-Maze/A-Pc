@@ -21,13 +21,11 @@ def filters(request, objectlijst):
         merken = request.POST.getlist('merken[]')
 
         objectlijst = sorteer(objectlijst, sort)
-        # Prijzen in mongo naar double -> uncommenten
-        #objectlijst = pricefilter(objectlijst, minPrijs, maxPrijs)
+        objectlijst = pricefilter(objectlijst, minPrijs, maxPrijs)
         objectlijst = stock(objectlijst, direct, binnenWeek)
 
         if len(merken) > 0:
             objectlijst = filterMerken(objectlijst, merken)
-            #pass
 
     merken = getMerken(request)
 

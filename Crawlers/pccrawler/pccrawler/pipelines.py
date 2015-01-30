@@ -52,23 +52,16 @@ class PccrawlerPipeline(object):
 					item["categorie"] = collectienaam
 					#item['prijs'][0] =  float(item['prijs'][0])
 
-					if spider.name in ["tweakers"]:
-						addNewItemToDatabase(collectienaam)
-					else:
-						try:
-							if self.collection.find({'ean':  item["ean"][0]}).count() > 0:
-								addToList()								
+					try:
+						if self.collection.find({'ean':  item["ean"][0]}).count() > 0:
+							addToList()								
 
-							else:
-								addNewItemToDatabase(collectienaam)
-						except:
-							try:
-								if self.collection.find({'sku':  item["sku"][0]}).count() > 0:
-									addToList()
-								else:
-									addNewItemToDatabase(collectienaam)	
-							except KeyError:
-								return
+					except:
+						try:
+							if self.collection.find({'sku':  item["sku"][0]}).count() > 0:
+								addToList()
+						except KeyError:
+							return
 
 				def addNewItemToDatabase(collectionName):
 					filterEuroSign()		

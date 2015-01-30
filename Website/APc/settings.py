@@ -57,7 +57,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pcbuilder',
-    #'django_jenkins',
+    'django_jenkins',
 )
 
 PROJECT_APPS = (
@@ -69,6 +69,7 @@ PROJECT_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pcbuilder',
+    'django-jenkins',
     )
 
 MIDDLEWARE_CLASSES = (
