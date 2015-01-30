@@ -59,8 +59,9 @@ class PccrawlerPipeline(object):
 
 					except:
 						try:
-							if self.collection.find({'sku':  item["sku"][0]}).count() > 0:
-								addToList()
+							for sku in item["sku"]:
+								if self.collection.find({'sku':  sku}).count() > 0:
+									addToList()
 						except KeyError:
 							return
 
