@@ -332,7 +332,7 @@ class Voeding(Document):
     
     categorie = StringField(max_length=120)
     naam = StringField(max_length=500)
-    subnaam = StringField(max_length=500)
+    subnaam = StringField(max_length=500,required=True)
     info = StringField(max_length=500)
     stock = StringField(max_length=500)
     prijs = DecimalField()

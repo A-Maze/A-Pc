@@ -1,18 +1,22 @@
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding
 from pcbuilder.compatibility import *
+from pcbuilder.views import *
 import json
 
 def buildpc(request):
+	print "ja"
 	#list with every part it should compile
-	data = [Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding]
 	filteredDrops = request.POST.get('dropDowns', 'empty')
 	filteredDrops = json.loads(filteredDrops)
 	#make sure filtered drops is not empty
 	if (filteredDrops != "empty"):
+		print "if"
 		#Make sure the querysets only contain components with prices
-		processor = Processoren.objects.filter(prijs__exists=True)
-		moederbord = Moederborden.objects.filter(prijs__exists=True)
-		geheugen = Geheugen.objects.filter(prijs__exists=True)
+		processor = dataFiltered["Processoren"]
+		moederbord = dataFiltered["Moederborden"]
+		grafische = dataFiltered["Grafische"]
+		print "wtf"
+
 		#loop through filter requirements
 		for requirement in filteredDrops:
 			print requirement
@@ -30,7 +34,12 @@ def buildpc(request):
 			#for every moederborder requirement
 			if "moederborden" in requirement[0]:
 				if "Socket" in requirement[0]:
+					print "1"
+					print moederbord
 					moederbord = moederbord.filter(Socket__icontains=filterRequirement)
+					print "2"
+					print moederbord
+					print "3"
 				if "Chipset" in requirement[0]:
 					moederbord = moederbord.filter(Moederbordchipset__icontains=filterRequirement)
 				data.remove(Moederborden)
