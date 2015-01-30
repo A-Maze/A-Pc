@@ -53,8 +53,9 @@ class PccrawlerPipeline(object):
 					#item['prijs'][0] =  float(item['prijs'][0])
 
 					try:
-						if self.collection.find({'ean':  item["ean"][0]}).count() > 0:
-							addToList()								
+						for ean in item["ean"]:
+							if self.collection.find({'ean':  ean}).count() > 0:
+								addToList()									
 
 					except:
 						try:
