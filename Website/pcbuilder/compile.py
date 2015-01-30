@@ -1,32 +1,61 @@
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding
 from pcbuilder.compatibility import *
+from pcbuilder.views import *
 import json
 
 def buildpc(request):
-	data = [Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding]
+	print "ja"
+	#list with every part it should compile
 	filteredDrops = request.POST.get('dropDowns', 'empty')
 	filteredDrops = json.loads(filteredDrops)
+	#make sure filtered drops is not empty
 	if (filteredDrops != "empty"):
-		processor = Processoren.objects
+		print "if"
+		#Make sure the querysets only contain components with prices
+		processor = dataFiltered["Processoren"]
+		moederbord = dataFiltered["Moederborden"]
+		grafische = dataFiltered["Grafische"]
+		print "wtf"
+
+		#loop through filter requirements
 		for requirement in filteredDrops:
 			print requirement
-
+			filterRequirement = unicode(requirement[1])
+			#for every processoren requirement
 			if "processoren" in requirement[0]:
 				if "Socket" in requirement[0]:
-					processor.filter(Socket__icontains=requirement[1])
+					print "requirement"
+					processor = processor.filter(Socket__icontains= filterRequirement)
 				if "Cores" in requirement[0]:
-					processor.filter(Aantal_cores_icontains=requirement[1])
+					processor = processor.filter(Aantal_cores_icontains= filterRequirement)
 				data.remove(Processoren)
 				autoSelect(request,processor)
 
-			if "Moederborden" in requirement[0]:
-				moederbord = Moederborden.objects
+			#for every moederborder requirement
+			if "moederborden" in requirement[0]:
 				if "Socket" in requirement[0]:
-					moederbord.filter(Socket__icontains=requirement[1])
+					print "1"
+					print moederbord
+					moederbord = moederbord.filter(Socket__icontains=filterRequirement)
+					print "2"
+					print moederbord
+					print "3"
 				if "Chipset" in requirement[0]:
-					moederbord.filter(Moederbordchipset__icontains=requirement[1])
+					moederbord = moederbord.filter(Moederbordchipset__icontains=filterRequirement)
 				data.remove(Moederborden)
 				autoSelect(request,moederbord)
+
+			if "grafische" in requirement[0]:
+				if "ChipFabrikant" in requirement[0]:
+					grafische = grafische.filter(Videochipfabrikant__icontains=filterRequirement)
+				if "Geheugengrootte" in requirement[0]:
+					grafische = grafische.filter(Geheugengrootte__icontains=filterRequirement)
+				data.remove(Grafische)
+				autoSelect(request,grafische)
+
+
+
+
 
 		for dataset in data:
 			print "looping"
@@ -39,6 +68,9 @@ def autoSelect(request,componentList):
 		#componentenList = compatibility(request, componentList)
 		categorie = componentList[0].categorie
 		print categorie
+		if "processor" in categorie:
+			print "eigenlijke socket"
+			print componentList[0].Socket
 		productstring = categorie + "naam"
 		categorieprijs = categorie + "prijs"
 		categorieid = categorie + "id"

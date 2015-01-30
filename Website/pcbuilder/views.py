@@ -11,12 +11,21 @@ from pcbuilder.filters import *
 from pcbuilder.compile import *
 import json as simplejson
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding, Views, Select, ViewsPerDatum
-from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding
 from itertools import chain
 from django.db.models import Max
-import json
-import time
+import json, time, sys
 from random import randint
+
+
+
+data = [Processoren,Moederborden,Koeling,Behuizingen,Grafische,Harde,Dvd,Geheugen,Voeding]
+dataFiltered = {}
+for model in data:
+    categorieNaam = model.__name__
+    filteredModel = model.objects.filter((Q(prijs__exists=True) and Q(naam__exists=True)))
+    dataFiltered[categorieNaam] = filteredModel
+
+
 
 # Global vars
 
@@ -541,6 +550,7 @@ def Selected(productid, categorie, action, request):
 
 
 
+
 def dashboard(request):
     dashboardlijst = Views.objects.order_by('-Aantal').limit(10)
     dashboardlijst = listing(request, dashboardlijst, 10)
@@ -634,9 +644,7 @@ db.processoren.find().forEach( function(processoren) {
                               context_instance=RequestContext(request))
 
 def behuizingen(request):
-
-    behuizingenlijst = Behuizingen.objects.filter(prijs__exists=True)
-    behuizingenlijst, merken = filters(request, behuizingenlijst)
+    behuizingenlijst, merken = filters(request, dataFiltered[sys._getframe().f_code.co_name.title()])
     minPriceSliderValue, maxPriceSliderValue = getGrenzen(behuizingenlijst)
     behuizingen = listing(request, behuizingenlijst, 15)        
     bereik, diff, current_page = paginas(behuizingenlijst, behuizingen)
@@ -651,9 +659,7 @@ def behuizingen(request):
                               context_instance=RequestContext(request))
 
 def geheugen(request):
-
-    geheugenlijst = Geheugen.objects.filter(prijs__exists=True)
-    geheugenlijst, merken = filters(request, geheugenlijst)
+    geheugenlijst, merken = filters(request, dataFiltered[sys._getframe().f_code.co_name.title()])
     minPriceSliderValue, maxPriceSliderValue = getGrenzen(geheugenlijst)
     geheugen = listing(request, geheugenlijst, 15)        
     bereik, diff, current_page = paginas(geheugenlijst, geheugen)
@@ -666,10 +672,9 @@ def geheugen(request):
     else:
         return render_to_response('geheugen.html', {'Componenten': geheugen, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page, "merken": merken },
                               context_instance=RequestContext(request))
-def gpu(request):
+def grafische(request):
 
-    gpulijst = Grafische.objects.filter(prijs__exists=True)
-    gpulijst, merken = filters(request, gpulijst)
+    gpulijst, merken = filters(request, dataFiltered[sys._getframe().f_code.co_name.title()])
     minPriceSliderValue, maxPriceSliderValue = getGrenzen(gpulijst)
     gpu = listing(request, gpulijst, 15)        
     bereik, diff, current_page = paginas(gpulijst, gpu)
@@ -682,10 +687,9 @@ def gpu(request):
     else:
         return render_to_response('gpu.html', {'Componenten': gpu, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page, "merken": merken },
                               context_instance=RequestContext(request))
-def hardeschijf(request):
+def harde(request):
 
-    hardelijst = Harde.objects.filter(prijs__exists=True)
-    hardelijst, merken = filters(request, hardelijst)
+    hardelijst, merken = filters(request, dataFiltered[sys._getframe().f_code.co_name.title()])
     minPriceSliderValue, maxPriceSliderValue = getGrenzen(hardelijst)
     harde = listing(request, hardelijst, 15)        
     bereik, diff, current_page = paginas(hardelijst, harde)
@@ -701,8 +705,7 @@ def hardeschijf(request):
 
 def koeling(request):
 
-    koelinglijst = Koeling.objects.filter(prijs__exists=True)
-    koelinglijst, merken = filters(request, koelinglijst)
+    koelinglijst, merken = filters(request, dataFiltered[sys._getframe().f_code.co_name.title()])
     minPriceSliderValue, maxPriceSliderValue = getGrenzen(koelinglijst)
     koelingen = listing(request, koelinglijst, 15)        
     bereik, diff, current_page = paginas(koelinglijst, koelingen)
@@ -718,9 +721,7 @@ def koeling(request):
 
 def moederborden(request):
 
-    moederbordenlijst = Moederborden.objects.filter(prijs__exists=True)
-    moederbordenlijst = compatibility(request,moederbordenlijst)  
-    moederbordenlijst, merken = filters(request, moederbordenlijst)
+    moederbordenlijst, merken = filters(request, dataFiltered[sys._getframe().f_code.co_name.title()])
     minPriceSliderValue, maxPriceSliderValue = getGrenzen(moederbordenlijst)
     moederborden = listing(request, moederbordenlijst, 15)        
     bereik, diff, current_page = paginas(moederbordenlijst, moederborden)
@@ -734,10 +735,8 @@ def moederborden(request):
         return render_to_response('moederbord.html', {'Componenten': moederborden, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page, "merken": merken },
                               context_instance=RequestContext(request))
 
-def optischeschijf(request):
-
-    optischeschijflijst = Dvd.objects.filter(prijs__exists=True)
-    optischeschijflijst, merken = filters(request, optischeschijflijst)
+def dvd(request):
+    optischeschijflijst, merken = filters(request, dataFiltered[sys._getframe().f_code.co_name.title()])
     minPriceSliderValue, maxPriceSliderValue = getGrenzen(optischeschijflijst)
     optischeschijven = listing(request, optischeschijflijst, 15)        
     bereik, diff, current_page = paginas(optischeschijflijst, optischeschijven)
@@ -753,10 +752,9 @@ def optischeschijf(request):
 
 
 
-def voedingen(request):
+def voeding(request):
 
-    voedinglijst = Voeding.objects.filter(prijs__exists=True)
-    voedinglijst, merken = filters(request, voedinglijst)
+    voedinglijst, merken = filters(request, dataFiltered[sys._getframe().f_code.co_name.title()])
     minPriceSliderValue, maxPriceSliderValue = getGrenzen(voedinglijst)
     voedingen = listing(request, voedinglijst, 15)        
     bereik, diff, current_page = paginas(voedinglijst, voedingen)

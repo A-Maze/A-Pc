@@ -31,8 +31,10 @@ def moederbordenComp(request,objectlijst):
 		objectlijst_filtered = objectlijst.filter(Socket__icontains=processor.Socket)
 	if "behuizingenid" in request.session:
 		behuizing = Behuizingen.objects.get(id=request.session["behuizingenid"])
-		objectlijst_filtered = objectlijst.filter(Form_Factor__icontains=behuizing.Form_Factor)
+		print behuizing.Form_Factor
+		objectlijst_filtered = objectlijst.filter(Form_Factor__icontains=behuizing.Form_Factor[0])
 		print type(objectlijst_filtered)
+		print objectlijst_filtered
 	if "geheugenid" in request.session:
 		geheugen = Geheugen.objects.get(id=request.session["geheugenid"])
 		objectlijst_filtered = objectlijst.filter(Geheugentype__icontains=geheugen.Geheugentype)

@@ -13,7 +13,7 @@ class ParadigitSpider(CrawlSpider):
     )
 
     rules = (
-        Rule(LinkExtractor(restrict_xpaths=('//*[@id="ctl00_mainMenuContentContainer"]/div/ul/li[6]/div/div[1]/ul/li/a', )),callback='parse_item',follow=True),
+        Rule(LinkExtractor(restrict_xpaths=('//*[@id="ctl00_mainMenuContentContainer"]/div/ul/li[5]/div/div[1]/ul/li/a', )),callback='parse_item',follow=True),
         Rule(LinkExtractor(restrict_xpaths=('//div/div[contains(concat(" ", normalize-space(@class), " "), " itemlistcombined-titlecontainer ")]/a', )),callback='parse_item',follow=True),
         Rule(LinkExtractor(restrict_xpaths=("//div[contains(concat(' ', normalize-space(@class), ' '), ' itemlistcombined-toppagercontainer ')]/table/tr/td/a[contains(text(),' > ')]", )), callback='parse_item', follow=True),
     )

@@ -10,18 +10,15 @@ class testCases(unittest.TestCase):
 
 	# Test of de homepagina correct wordt geladen
 	def test(self):
-<<<<<<< HEAD
 		driver = webdriver.Firefox()
-		driver.get('http://127.0.01:8000/')
+		driver.get('http://a-maze.ddns.net:8181/')
 		assert "A-Pc" in driver.title
 		driver.quit()
-=======
-		print ""
->>>>>>> 0bf85487dce315ae6397192970fa0d3a7c4413af
+
 		
-	def test2(self):
+	"""def test2(self):
 		driver = webdriver.Firefox()
-		driver.get('http://127.0.01:8000/')
+		driver.get('http://a-maze.ddns.net:8181/')
 		driver.find_element_by_id("processoren-test-id").click()
 		assert driver.find_element_by_id("productList")
 		driver.quit()
@@ -29,7 +26,7 @@ class testCases(unittest.TestCase):
 	#filter op direct leverbaar
 	def test3(self):
 		driver = webdriver.Firefox()
-		driver.get('http://127.0.0.1:8000/processoren')
+		driver.get('http://a-maze.ddns.net:8181/processoren')
 		driver.find_element_by_id("stockCheck").click()
 		assert driver.find_element_by_id("stockCheck").is_selected()
 		driver.quit()
@@ -37,7 +34,7 @@ class testCases(unittest.TestCase):
 	#klik op eerste in de eerte in de lijst
 	def test4(self):
 		driver = webdriver.Firefox()
-		driver.get('http://127.0.0.1:8000/processoren')
+		driver.get('http://a-maze.ddns.net:8181/processoren')
 		driver.find_elements_by_xpath("//*[@id='list']/div[1]/div/div[2]/div[2]/a")[0].click()
 		assert driver.find_element_by_id("itemImage")
 		driver.quit()
@@ -45,7 +42,7 @@ class testCases(unittest.TestCase):
 	# selecteer het product
 	def test5(self):
 		driver = webdriver.Firefox()
-		driver.get('http://127.0.0.1:8000/processoren')
+		driver.get('http://a-maze.ddns.net:8181/processoren')
 		driver.find_elements_by_xpath("//*[@id='list']/div[1]/div/div[2]/div[2]/a")[0].click()
 		driver.find_element_by_class_name("selectproduct").click()
 		driver.find_elements_by_xpath("/html/body/nav/div/div[1]/a")[0].click()
@@ -55,7 +52,7 @@ class testCases(unittest.TestCase):
 	#go home
 	def test6(self):
 		driver = webdriver.Firefox()
-		driver.get('http://127.0.0.1:8000/processoren')
+		driver.get('http://a-maze.ddns.net:8181/processoren')
 		driver.find_elements_by_xpath("//*[@id='list']/div[1]/div/div[2]/div[2]/a")[0].click()
 		driver.find_element_by_class_name("selectproduct").click()
 		driver.find_elements_by_xpath("/html/body/nav/div/div[1]/a")[0].click()
@@ -65,7 +62,7 @@ class testCases(unittest.TestCase):
 	#sorteer op a-z leverbaar
 	def test7(self):
 		driver = webdriver.Firefox()
-		driver.get('http://127.0.0.1:8000/processoren')
+		driver.get('http://a-maze.ddns.net:8181/processoren')
 		driver.find_element_by_xpath("//select[@id='sort-by']/option[@value='titel-op']").click()
 		assert "titel-op" in driver.find_element_by_id('sort-by').get_attribute("value")
 		driver.quit()
@@ -73,7 +70,7 @@ class testCases(unittest.TestCase):
 	#search
 	def test8(self):
 		driver = webdriver.Firefox()
-		driver.get('http://127.0.01:8000/search')
+		driver.get('http://a-maze.ddns.net:8181/search')
 		assert driver.find_element_by_id("search")
 		driver.find_element_by_id("search").send_keys('intel')
 		driver.find_element_by_id("search").send_keys(Keys.ENTER)
@@ -82,7 +79,7 @@ class testCases(unittest.TestCase):
 	#pijs filteren
 	def test9(self):
 		driver = webdriver.Firefox()
-		driver.get('http://127.0.0.1:8000/processoren')
+		driver.get('http://a-maze.ddns.net:8181/processoren')
 		driver.find_element_by_id("sliderMinValue").send_keys('500')
 		driver.find_element_by_id("sliderMinValue").send_keys(Keys.ENTER)
 		assert driver.find_element_by_id("sliderMinValue")
@@ -93,12 +90,12 @@ class testCases(unittest.TestCase):
 	#contact form
 	def test10(self):
 		driver = webdriver.Firefox()
-		driver.get('http://127.0.0.1:8000/contact')
+		driver.get('http://a-maze.ddns.net:8181/contact')
 		driver.find_element_by_id("inputName").send_keys('test')
 		driver.find_element_by_id("inputEmail").send_keys('test')
 		driver.find_element_by_id("textArea").send_keys('test test')
 		assert "test test" in driver.find_element_by_id("textArea").get_attribute("value")
 		driver.find_element_by_id("textArea").submit() 
-		driver.quit()
+		driver.quit()"""
 		
 
