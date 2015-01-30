@@ -3,8 +3,6 @@
 {% block content %}
 
 <script>
-
-
 $(document).ready(function(){
   $(".toggle").click(function(){
   var parent = $(this).parent();
@@ -15,21 +13,28 @@ $(document).ready(function(){
   $(switcher).toggleClass("dropup");
   });
 
-    $(".slider").noUiSlider({
-	start: [20, 80],
-	connect: true,
-	range: {
-		'min': 0,
-		'max': 100
-	}
+var minimaal = {{minPriceSliderValue}}
+var maximaal = {{maxPriceSliderValue}}
 
+$('.slider').noUiSlider({
+    start: [minimaal , maximaal ],
+    connect: true,
 
-
+    format: wNumb({
+        mark: ',',
+        decimals: 1
+    }),
+    
+    range: {
+        'min': minimaal,
+        'max': maximaal
+    }
 });
 
+$('.slider').Link('lower').to($('#sliderMinValue'));
+$('.slider').Link('upper').to($('#sliderMaxValue'));
+
 });
-
-
 </script>
 
 
@@ -58,8 +63,8 @@ $(document).ready(function(){
             {% if component.prijs.0 %}
             <div class="list-group table-border">
                 <div class="list-group-item">
-                    <div class="row-picture">
-                        <img class="square" src="http://lorempixel.com/56/56/people/1" alt="icon">
+                    <div id="{{component.ean.0}}" class="row-picture">
+                        
                     </div>
 
                     <div class="row-content">
@@ -74,6 +79,8 @@ $(document).ready(function(){
 
                             <a href="/detail/?product={% for name in component.naam %}{{ name }} {% endfor %}&amp;categorie={{component.categorie|truncatewords:1 }}&amp;prijs={{ component.prijs.0|slice:'-1' }}&amp;productid={{component.id}}" class="btn btn-primary">details</a>
 
+                             
+
                         </div>
                     </div>
 
@@ -82,6 +89,8 @@ $(document).ready(function(){
             {% endif %}
             {% endfor %}
             </div>
+
+            <script src='{% static "js/image.js" %}'></script>
 
         </div>
 

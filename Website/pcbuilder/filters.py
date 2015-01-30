@@ -29,7 +29,6 @@ def filters(request, objectlijst):
 
     merken = getMerken(request)
 
-  
     return objectlijst, merken
 
 def stock(objectlijst, direct, binnenWeek):
@@ -96,7 +95,7 @@ def filterMerken(objectlijst, merken):
     return objectlijst
 
 def getGrenzen(objectlijst):
-    minPriceSliderValue = 1500.1
+    minPriceSliderValue = 1000.1
     maxPriceSliderValue = 0.1
 
     for obj in objectlijst:

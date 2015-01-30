@@ -540,34 +540,6 @@ def Selected(productid, categorie, action, request):
     return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
 
 
-def processoren(request):
-
-    processorenlijst = Processoren.objects.filter(prijs__exists=True)
-
-    '''
-
-db.processoren.find().forEach( function(processoren) {
-    for(var i in processoren.prijs){
-        processoren.prijs[i] = parseFloat(processoren.prijs[i]);
-    }
-    db.processoren.save(processoren);
-});
-    '''
-
-    processorenlijst, merken = filters(request, processorenlijst)
-    minPriceSliderValue, maxPriceSliderValue = getGrenzen(processorenlijst)
-    processoren = listing(request, processorenlijst, 15)
-    bereik, diff, current_page = paginas(processorenlijst, processoren)
-
-
-    if request.method == 'POST':
-        json = {}
-        json['Componenten'] = render_to_string('processoren.html', {'Componenten': processoren, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page, "merken": merken }, context_instance=RequestContext(request))
-        json = dumps(json)
-        return HttpResponse(json,content_type="application/json")
-    else:
-        return render_to_response('processoren.html', {'Componenten': processoren, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page, "merken": merken },
-                              context_instance=RequestContext(request))
 
 def dashboard(request):
     dashboardlijst = Views.objects.order_by('-Aantal').limit(10)
@@ -631,6 +603,34 @@ def dashboard(request):
 
 
     return render_to_response('dashboard.html', {'Componenten': views, 'Processorenpercentage': processorenperc,'Moederbordenpercentage': moederbordenperc,'Voedingpercentage': voedingperc,'Geheugenpercentage': geheugenperc,'Koelingpercentage': koelingperc,'Grafischepercentage':grafischeperc, 'Behuizingenpercentage':behuizingenperc, 'Dvdpercentage': dvdperc, 'Hardepercentage': hardeperc, 'ViewsPerDatum2': viewsperdag, 'DatumsPerDatum': datumsperdag},
+                              context_instance=RequestContext(request))
+
+def processoren(request):
+
+    '''
+
+db.processoren.find().forEach( function(processoren) {
+    for(var i in processoren.prijs){
+        processoren.prijs[i] = parseFloat(processoren.prijs[i]);
+    }
+    db.processoren.save(processoren);
+});
+    '''
+
+    processorenlijst = Processoren.objects.filter(prijs__exists=True)
+    processorenlijst, merken = filters(request, processorenlijst)
+    minPriceSliderValue, maxPriceSliderValue = getGrenzen(processorenlijst)
+    processoren = listing(request, processorenlijst, 15)
+    bereik, diff, current_page = paginas(processorenlijst, processoren)
+
+
+    if request.method == 'POST':
+        json = {}
+        json['Componenten'] = render_to_string('processoren.html', {'Componenten': processoren, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page, "merken": merken }, context_instance=RequestContext(request))
+        json = dumps(json)
+        return HttpResponse(json,content_type="application/json")
+    else:
+        return render_to_response('processoren.html', {'Componenten': processoren, 'Range':bereik, 'Diff':diff, "minPriceSliderValue":minPriceSliderValue , "maxPriceSliderValue":maxPriceSliderValue, "page":current_page, "merken": merken },
                               context_instance=RequestContext(request))
 
 def behuizingen(request):
