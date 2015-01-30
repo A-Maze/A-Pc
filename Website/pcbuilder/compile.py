@@ -24,8 +24,6 @@ def buildpc(request):
 					processor = processor.filter(Socket__icontains= filterRequirement)
 				if "Cores" in requirement[0]:
 					processor = processor.filter(Aantal_cores_icontains= filterRequirement)
-					if not processor:
-						print "leeg"
 				data.remove(Processoren)
 				autoSelect(request,processor)
 
