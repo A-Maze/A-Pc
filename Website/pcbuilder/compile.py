@@ -3,22 +3,23 @@ from pcbuilder.compatibility import *
 from mongoengine import Q
 import json
 
+#Don't allow components without price,name or stock
 data = [Processoren,Moederborden,Koeling,Behuizingen,Grafische,Harde,Dvd,Geheugen,Voeding]
 dataFiltered = {}
-for model in data:
-    categorieNaam = model.__name__
-    filteredModel = model.objects.filter((Q(prijs__exists=True) and Q(naam__exists=True)))
-    dataFiltered[categorieNaam] = filteredModel
+def FilterDataset():
+	for model in data:
+	    categorieNaam = model.__name__
+	    filteredModel = model.objects.filter((Q(prijs__exists=True) and Q(naam__exists=True) and Q(stock__exists=True)))
+	    dataFiltered[categorieNaam] = filteredModel
+
 
 def buildpc(request):
-	print "ja"
-	print dataFiltered
-	print "nee"
+	FilterDataset()
 	#list with every part it should compile
-	filteredDrops = request.POST.get('dropDowns', 'empty')
+	filteredDrops = request.POST.get('dropDowns')
 	filteredDrops = json.loads(filteredDrops)
 	#make sure filtered drops is not empty
-	if (filteredDrops != "empty"):
+	if (filteredDrops):
 		print "if"
 		#Make sure the querysets only contain components with prices
 		processor = dataFiltered["Processoren"]
@@ -36,38 +37,36 @@ def buildpc(request):
 					processor = processor.filter(Socket__icontains= filterRequirement)
 				if "Cores" in requirement[0]:
 					processor = processor.filter(Aantal_cores_icontains= filterRequirement)
-				data.remove(Processoren)
-				autoSelect(request,processor)
+				del dataFiltered["Processoren"]
+			
 
 			#for every moederborder requirement
 			if "moederborden" in requirement[0]:
 				if "Socket" in requirement[0]:
-					print "1"
-					print moederbord
 					moederbord = moederbord.filter(Socket__icontains=filterRequirement)
-					print "2"
-					print moederbord
-					print "3"
 				if "Chipset" in requirement[0]:
 					moederbord = moederbord.filter(Moederbordchipset__icontains=filterRequirement)
-				data.remove(Moederborden)
-				autoSelect(request,moederbord)
+				del dataFiltered["Moederborden"]
+				
 
 			if "grafische" in requirement[0]:
 				if "ChipFabrikant" in requirement[0]:
 					grafische = grafische.filter(Videochipfabrikant__icontains=filterRequirement)
 				if "Geheugengrootte" in requirement[0]:
 					grafische = grafische.filter(Geheugengrootte__icontains=filterRequirement)
-				data.remove(Grafische)
-				autoSelect(request,grafische)
+				del dataFiltered["Grafische"]
+			autoSelect(request,processor)
+			autoSelect(request,moederbord)
+			autoSelect(request,grafische)
 
 
 
 
 
-		for dataset in dataFiltered:
-			print "looping"
-			autoSelect(request,dataset)
+
+	for dataset in dataFiltered:
+		print "looping"
+		autoSelect(request,dataFiltered[dataset])
 
 
 

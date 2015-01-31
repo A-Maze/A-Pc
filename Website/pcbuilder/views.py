@@ -20,7 +20,7 @@ data = [Processoren,Moederborden,Koeling,Behuizingen,Grafische,Harde,Dvd,Geheuge
 dataFiltered = {}
 for model in data:
     categorieNaam = model.__name__
-    filteredModel = model.objects.filter((Q(prijs__exists=True) and Q(naam__exists=True)))
+    filteredModel = model.objects.filter((Q(prijs__exists=True) and Q(naam__exists=True) and Q(stock__exists=True)))
     dataFiltered[categorieNaam] = filteredModel
     
 app = 15
@@ -229,8 +229,6 @@ def detail(request):
             if str(productid) == str(component.id):
                 if(component.herkomst):
                     ziplist = zip(component.herkomst, component.stock, component.link, component.prijs)
-
-    print ziplist
 
     #if currentproduct and currentherkomst exist render them to response as well
     if existing:
