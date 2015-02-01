@@ -7,6 +7,7 @@ import json
 data = [Processoren,Moederborden,Koeling,Behuizingen,Grafische,Harde,Dvd,Geheugen,Voeding]
 dataFiltered = {}
 def FilterDataset():
+	#make a filtered dictionary with only the right components
 	for model in data:
 	    categorieNaam = model.__name__
 	    filteredModel = model.objects.filter((Q(prijs__exists=True) and Q(naam__exists=True) and Q(stock__exists=True)))
@@ -53,12 +54,14 @@ def autoSelect(request,componentList):
 		if "processor" in categorie:
 			print "eigenlijke socket"
 			print componentList[0].Socket
+		#get all the necesarry field names
 		productstring = categorie + "naam"
 		categorieprijs = categorie + "prijs"
 		categorieid = categorie + "id"
 		categorieherkomst = categorie + "herkomst"
 		categorielink = categorie + "link"
 		prijzen,naam,herkomst = convert(componentList[0].prijs,componentList[0].naam,componentList[0].herkomst)
+		#assign the chosen component to the session variables
 		request.session[categorie] = True
 		request.session[productstring] = naam[0].replace("+", "")
 		request.session[categorieprijs] = prijzen[0]
@@ -68,6 +71,7 @@ def autoSelect(request,componentList):
 
 
 def convert(prijzen,naam,herkomst):
+	#make sure prices are ordered together with their origin
 	prijzen = [float(x) for x in prijzen]
 	herkomst = [str(x) for x in herkomst]
 	merge = sorted(zip(prijzen,herkomst))
