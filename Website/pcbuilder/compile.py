@@ -9,7 +9,7 @@ dataFiltered = {}
 def FilterDataset():
 	for model in data:
 	    categorieNaam = model.__name__
-	    filteredModel = model.objects.filter((Q(prijs__exists=True) and Q(naam__exists=True) and Q(stock__exists=True)))
+	    filteredModel = model.objects.exclude((Q(prijs__exists=False) and Q(naam__exists=False) and Q(naam=None)and Q(stock__exists=False)))
 	    dataFiltered[categorieNaam] = filteredModel
 
 
@@ -19,49 +19,12 @@ def buildpc(request):
 	filteredDrops = request.POST.get('dropDowns')
 	filteredDrops = json.loads(filteredDrops)
 	print filteredDrops
-	#make sure filtered drops is not empty
-	if (filteredDrops):
-		print "if"
-
-		#loop through filter requirements
-		for requirement in filteredDrops:
-			print requirement
-			filterRequirement = unicode(requirement[1])
-			#for every processoren requirement
-			if "processoren" in requirement[0]:
-				if "Socket" in requirement[0]:
-					print "requirement"
-					processor = processor.filter(Socket__icontains= filterRequirement)
-				if "Cores" in requirement[0]:
-					processor = processor.filter(Aantal_cores_icontains= filterRequirement)
-				del dataFiltered["Processoren"]
-			
-
-			#for every moederborder requirement
-			if "moederborden" in requirement[0]:
-				if "Socket" in requirement[0]:
-					moederbord = moederbord.filter(Socket__icontains=filterRequirement)
-				if "Chipset" in requirement[0]:
-					moederbord = moederbord.filter(Moederbordchipset__icontains=filterRequirement)
-				del dataFiltered["Moederborden"]
-				
-
-			if "grafische" in requirement[0]:
-				if "ChipFabrikant" in requirement[0]:
-					grafische = grafische.filter(Videochipfabrikant__icontains=filterRequirement)
-				if "Geheugengrootte" in requirement[0]:
-					grafische = grafische.filter(Geheugengrootte__icontains=filterRequirement)
-				del dataFiltered["Grafische"]
-			autoSelect(request,processor)
-			autoSelect(request,moederbord)
-			autoSelect(request,grafische)
-
-
-
-
-
 
 	for dataset in dataFiltered:
+		if "Processoren" in dataset:
+			(firstRequirement, secondRequirement) = (filteredDrops["#processorenSocket"],filteredDrops["#processorenCores"])
+			dataFiltered[dataset] = dataFiltered[dataset].filter(Q(Socket__icontains=firstRequirement) and Q(Aantal_cores_icontains=secondRequirement))
+			print dataFiltered[dataset]
 		print "looping"
 		autoSelect(request,dataFiltered[dataset])
 

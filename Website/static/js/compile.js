@@ -5,9 +5,9 @@ function autoCompile(){
 	for (var i = 0; i<dropId.length; i++){
 		value = $(dropId[i]).val();
 		if ((value != "0" )||( null) ){
-			filteredDrops[dropID[i]] = value;
+			filteredDrops[dropId[i]] = value;
 		}else{
-			filteredDrops[dropID[i]] = ""
+			filteredDrops[dropId[i]] = ''
 		}
 	}
 	redirect(JSON.stringify(filteredDrops));
