@@ -9,7 +9,7 @@ dataFiltered = {}
 def FilterDataset():
 	for model in data:
 	    categorieNaam = model.__name__
-	    filteredModel = model.objects.exclude((Q(prijs__exists=False) and Q(naam__exists=False) and Q(naam=None)and Q(stock__exists=False)))
+	    filteredModel = model.objects.filter((Q(prijs__exists=True) and Q(naam__exists=True) and Q(stock__exists=True)))
 	    dataFiltered[categorieNaam] = filteredModel
 
 
@@ -23,7 +23,8 @@ def buildpc(request):
 	for dataset in dataFiltered:
 		if "Processoren" in dataset:
 			(firstRequirement, secondRequirement) = (filteredDrops["#processorenSocket"],filteredDrops["#processorenCores"])
-			dataFiltered[dataset] = dataFiltered[dataset].filter(Q(Socket__icontains=firstRequirement) and Q(Aantal_cores_icontains=secondRequirement))
+			#dataFiltered[dataset] = dataFiltered[dataset].filter(Q(Socket__icontains=firstRequirement) and Q(Aantal_cores_icontains=secondRequirement))
+			dataFiltered[dataset] = dataFiltered[dataset].filter(Aantal_cores_icontains=secondRequirement)
 			print dataFiltered[dataset]
 		print "looping"
 		autoSelect(request,dataFiltered[dataset])
