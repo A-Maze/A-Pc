@@ -18,15 +18,29 @@ def buildpc(request):
 	#list with every part it should compile
 	filteredDrops = request.POST.get('dropDowns')
 	filteredDrops = json.loads(filteredDrops)
-	print filteredDrops
 
 	for dataset in dataFiltered:
+		#filter based on given requirements
 		if "Processoren" in dataset:
+			print "Processoren"
 			(firstRequirement, secondRequirement) = (filteredDrops["#processorenSocket"],filteredDrops["#processorenCores"])
-			#dataFiltered[dataset] = dataFiltered[dataset].filter(Q(Socket__icontains=firstRequirement) and Q(Aantal_cores_icontains=secondRequirement))
-			dataFiltered[dataset] = dataFiltered[dataset].filter(Aantal_cores_icontains=secondRequirement)
+			dataFiltered[dataset] = dataFiltered[dataset].filter(Q(Socket__icontains=firstRequirement) & Q(Aantal_cores__icontains=secondRequirement))
 			print dataFiltered[dataset]
-		print "looping"
+		elif "Moederborden" in dataset:
+			print "Moederborden"
+			(firstRequirement, secondRequirement) = (filteredDrops["#moederbordenSocket"],filteredDrops["#moederbordenChipset"])
+			dataFiltered[dataset] = dataFiltered[dataset].filter(Q(Socket__icontains=firstRequirement) & Q(Moederbordchipset__icontains=secondRequirement))
+		elif "Grafische" in dataset:
+			print "Grafische"
+			#(firstRequirement, secondRequirement) = (filteredDrops["#grafischeChipFabrikant"],filteredDrops["#grafischeGeheugengrootte"])
+			#dataFiltered[dataset] = dataFiltered[dataset].filter(Q(Videochipfabrikant__icontains=firstRequirement) & Q(Geheugengrootte__icontains=secondRequirement))
+		elif "Geheugen" in dataset:
+			firstRequirement = filteredDrops["#geheugenType"]
+			dataFiltered[dataset] = dataFiltered[dataset].filter(Geheugentype__icontains=firstRequirement)
+
+		#if a selection is not found
+		if not dataFiltered[dataset]:
+			pass
 		autoSelect(request,dataFiltered[dataset])
 
 
