@@ -18,24 +18,14 @@ import json, time, sys
 from random import randint
 from django.forms.util import ErrorList
 
-
-
 data = [Processoren,Moederborden,Koeling,Behuizingen,Grafische,Harde,Dvd,Geheugen,Voeding]
 dataFiltered = {}
 for model in data:
     categorieNaam = model.__name__
-    filteredModel = model.objects.filter((Q(prijs__exists=True) and Q(naam__exists=True)))
+    empty = unicode("")
+    filteredModel = model.objects.filter((Q(prijs__exists=True) and Q(naam__exists=True) and Q(stock__exists=True)))
     dataFiltered[categorieNaam] = filteredModel
-
-
-
-# Global vars
-
-# Strandaard aantal per pagina
-#end = 25
-#start = 0
-#sl = "0:%d" % (end)
-#Dit bovenstaande is voor later om alleen de div te veranderen en niet de hele pagina
+    
 app = 15
 
 def registreer(request):
@@ -359,8 +349,6 @@ def detail(request):
             if str(productid) == str(component.id):
                 if(component.herkomst):
                     ziplist = zip(component.herkomst, component.stock, component.link, component.prijs)
-
-    print ziplist
 
     #if currentproduct and currentherkomst exist render them to response as well
     if existing:
