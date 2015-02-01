@@ -18,13 +18,10 @@ def buildpc(request):
 	#list with every part it should compile
 	filteredDrops = request.POST.get('dropDowns')
 	filteredDrops = json.loads(filteredDrops)
+	print filteredDrops
 	#make sure filtered drops is not empty
 	if (filteredDrops):
 		print "if"
-		#Make sure the querysets only contain components with prices
-		processor = dataFiltered["Processoren"]
-		moederbord = dataFiltered["Moederborden"]
-		grafische = dataFiltered["Grafische"]
 
 		#loop through filter requirements
 		for requirement in filteredDrops:
