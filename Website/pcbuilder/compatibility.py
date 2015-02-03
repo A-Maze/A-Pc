@@ -6,22 +6,22 @@ def compatibility(request, objectlijst):
 	if categorieObject:
 		if "moederborden" in categorieObject:
 			objectlijst = moederbordenComp(request,objectlijst)
-		elif "processoren" in categorieObject:
-			objectlijst = processorenComp(request,objectlijst)
-		elif "geheugen" in categorieObject:
-			objectlijst = geheugenComp(request,objectlijst)
-		elif "voeding" in categorieObject:
-			objectlijst = voedingComp(request,objectlijst)
-		elif "grafische" in categorieObject:
-			objectlijst = grafischeComp(request,objectlijst)
-		elif "behuizingen" in categorieObject:
-			objectlijst = behuizingenComp(request,objectlijst)
-		elif "harde" in categorieObject:
-			objectlijst = hardeComp(request,objectlijst)
-		elif "dvd" in categorieObject:
-			objectlijst = dvdComp(request,objectlijst)
-		elif "koeling" in categorieObject:
-			objectlijst = objectlijst
+		# elif "processoren" in categorieObject:
+		# 	objectlijst = processorenComp(request,objectlijst)
+		# elif "geheugen" in categorieObject:
+		# 	objectlijst = geheugenComp(request,objectlijst)
+		# elif "voeding" in categorieObject:
+		# 	objectlijst = voedingComp(request,objectlijst)
+		# elif "grafische" in categorieObject:
+		# 	objectlijst = grafischeComp(request,objectlijst)
+		# elif "behuizingen" in categorieObject:
+		# 	objectlijst = behuizingenComp(request,objectlijst)
+		# elif "harde" in categorieObject:
+		# 	objectlijst = hardeComp(request,objectlijst)
+		# elif "dvd" in categorieObject:
+		# 	objectlijst = dvdComp(request,objectlijst)
+		# elif "koeling" in categorieObject:
+		# 	objectlijst = objectlijst
 	return objectlijst
 
 def moederbordenComp(request,objectlijst):
@@ -31,6 +31,7 @@ def moederbordenComp(request,objectlijst):
 	if "processorenid" in request.session:
 		processor = Processoren.objects.get(id=request.session["processorenid"])
 		firstRequirement = processor.Socket
+		print "first Requirement"
 		print firstRequirement
 	if "behuizingenid" in request.session:
 		behuizing = Behuizingen.objects.get(id=request.session["behuizingenid"])
@@ -43,7 +44,7 @@ def moederbordenComp(request,objectlijst):
 		harde = Harde.objects.get(id=request.session["hardeid"])
 		fifthRequirement = harde.Hardeschijf_bus
 	objectlijst = objectlijst.filter(Q(Socket__icontains=firstRequirement) & Q(Form_Factor__icontains=secondRequirement) & Q(Geheugentype__icontains=thirdRequirement) & Q(Geheugentype__icontains=fourthRequirement) & Q(Hardeschijf_bus__icontains=fifthRequirement))
-
+	objectlijst[0].socket
 	return objectlijst
 
 def processorenComp(request,objectlijst):

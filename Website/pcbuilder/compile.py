@@ -48,10 +48,10 @@ def buildpc(request):
 
 def autoSelect(request,componentList):
 	if componentList:
-		#componentenList = compatibility(request, componentList)
+		componentList = compatibility(request, componentList)
 		categorie = componentList[0].categorie
 		print categorie
-		if "processor" in categorie:
+		if "moederbord" in categorie:
 			print "eigenlijke socket"
 			print componentList[0].Socket
 		#get all the necesarry field names
