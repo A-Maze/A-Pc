@@ -254,9 +254,9 @@ def select(request):
     link = request.GET.get('link')
     prijs = float(prijs)
 
-    Viewers(productid, categorie, 'delete', request)
-    Selected(productid, categorie, 'add', request)
-    ViewsPerDag('delete', request)
+    #Viewers(productid, categorie, 'delete', request)
+    #Selected(productid, categorie, 'add', request)
+    #ViewsPerDag('delete', request)
 
 
     categorie.replace(" ", "")
@@ -284,8 +284,10 @@ def deselect(request):
     prijs = request.GET.get('prijs')
     categorie.replace(" ", "")
     productid = request.GET.get('productid')
-    Viewers(productid, categorie, 'delete', request)
-    ViewsPerDag('delete', request)
+    
+    #Viewers(productid, categorie, 'delete', request)
+    #ViewsPerDag('delete', request)
+
     del request.session[categorie]
     productid = categorie + "id"
     productstring = categorie + "naam"
@@ -308,6 +310,13 @@ def deselect(request):
 def detail(request):
     categorie = request.GET.get('categorie')
     productid = request.GET.get('productid')
+
+    try:
+        currentID = request.session[categorie + "id"]
+        currentherkomst = request.session[categorie + "herkomst"]
+        existing = True
+    except KeyError:
+        existing = False
     
     if (categorie == "processoren"):
         categorieObject = Processoren
@@ -331,15 +340,22 @@ def detail(request):
         categorieObject = Behuizingen
 
 
-    Viewers(productid, categorie, 'add', request)
-    ViewsPerDag('add', request)
+    #Viewers(productid, categorie, 'add', request)
+    #ViewsPerDag('add', request)
 
     component = categorieObject.objects.get(id=productid)
+
+
 
     if(component.herkomst):
         ziplist = zip(component.herkomst, component.stock, component.link, component.prijs)
 
-    return render_to_response('detail.html', {'component': (component), 'Productid': productid, 'Ziplist': ziplist})
+
+    #if currentproduct and currentherkomst exist render them to response as well
+    if existing:
+        return render_to_response('detail.html', {'component': component, 'Productid': productid, 'Ziplist': ziplist, 'CurrentID': currentID, 'Currentherkomst': currentherkomst })
+    else:
+        return render_to_response('detail.html', {'component': component, 'Productid': productid, 'Ziplist': ziplist})
 
 def Viewers(productid, categorie, action, request):
     #haalt de id uit de link
