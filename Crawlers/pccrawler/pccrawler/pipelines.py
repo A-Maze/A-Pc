@@ -90,11 +90,11 @@ class PccrawlerPipeline(object):
 
 				def replaceValues(herkomstLocatie):
 					try:
-						self.collection.update({'ean': item["ean"]}, { "$set": { 'link.'+str(herkomstLocatie) : item["link"]}}, upsert=False)
-						self.collection.update({'SKU': {'$regex' : item["sku"]}}, { "$set": { 'prijs.'+str(herkomstLocatie): item["prijs"][0]}}, upsert=False)
-						self.collection.update({'ean': item["ean"]}, { "$set": { 'stock.'+str(herkomstLocatie) : item["stock"][0]}}, upsert=False)
+						self.collection.update({'ean': {'$regex' :item["ean"]}}, { "$set": { 'link.'+str(herkomstLocatie) : item["link"]}}, upsert=False)
+						self.collection.update({'ean': {'$regex' : item["ean"]}}, { "$set": { 'prijs.'+str(herkomstLocatie): item["prijs"][0]}}, upsert=False)
+						self.collection.update({'ean': {'$regex': item["ean"]}}, { "$set": { 'stock.'+str(herkomstLocatie) : item["stock"][0]}}, upsert=False)
 						try:
-							self.collection.update({'ean': item["ean"]}, { "$set": { 'sku.'+str(herkomstLocatie) : item["sku"][0]}}, upsert=False)
+							self.collection.update({'ean': {'$regex' : item["ean"]}}, { "$set": { 'sku.'+str(herkomstLocatie) : item["sku"][0]}}, upsert=False)
 						except KeyError:
 							return
 					except IndexError:
@@ -115,7 +115,7 @@ class PccrawlerPipeline(object):
 								if self.collection.find({'SKU': {'$regex' : item["sku"][0]}}).count() > 0:
 									return
 								else:
-									self.collection.update({'ean': item["ean"]}, {"$push": {"SKU" : item["sku"][0]}}, upsert=True)
+									self.collection.update({'ean': {'$regex' : item["ean"]}}, {"$push": {"SKU" : item["sku"][0]}}, upsert=True)
 							except KeyError:
 								return
 						except IndexError:
@@ -135,17 +135,6 @@ class PccrawlerPipeline(object):
 							self.collection.update({'SKU': {'$regex' : values}}, {"$push": {"herkomst" : item["herkomst"][0]}}, upsert=False)
 							self.collection.update({'SKU': {'$regex' : values}}, {"$push": {"stock" : item["stock"][0]}}, upsert=False)
 							self.collection.update({'SKU': {'$regex' : values}}, {"$push": {"subnaam" : item["subnaam"][0]}}, upsert=False)
-						
-
-				def insertValue(itemField,searchField,field):
-					for values in item[itemField]:
-						try:
-							self.collection.update({searchField: {'$regex' : values}}, {"$push": {field : item[field][0]}}, upsert=False)
-						except IndexError:
-							return
-				def updateValue(searchField,field,herkomstLocatie):
-					for values in item[searchField]:
-						self.collection.update({searchField: {'$regex' : values}}, { "$set": { field+'.'+str(herkomstLocatie): item[field][0]}}, upsert=False)
 
 				def addToList():	
 					filterEuroSign()
