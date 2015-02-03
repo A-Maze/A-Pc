@@ -10,7 +10,7 @@ def FilterDataset():
 	#make a filtered dictionary with only the right components
 	for model in data:
 	    categorieNaam = model.__name__
-	    filteredModel = model.objects.filter((Q(prijs__exists=True) and Q(naam__exists=True) and Q(stock__exists=True)))
+	    filteredModel = model.objects.filter((Q(prijs__exists=True) & Q(naam__exists=True) & Q(stock__exists=True)))
 	    dataFiltered[categorieNaam] = filteredModel
 
 
