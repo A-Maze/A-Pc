@@ -90,11 +90,11 @@ class PccrawlerPipeline(object):
 
 				def replaceValues(herkomstLocatie):
 					try:
-						self.collection.update({'ean': {'$regex' :item["ean"]}}, { "$set": { 'link.'+str(herkomstLocatie) : item["link"]}}, upsert=False)
-						self.collection.update({'ean': {'$regex' : item["ean"]}}, { "$set": { 'prijs.'+str(herkomstLocatie): item["prijs"][0]}}, upsert=False)
-						self.collection.update({'ean': {'$regex': item["ean"]}}, { "$set": { 'stock.'+str(herkomstLocatie) : item["stock"][0]}}, upsert=False)
+						self.collection.update({'ean': item["ean"]}, { "$set": { 'link.'+str(herkomstLocatie) : item["link"]}}, upsert=False)
+						self.collection.update({'ean': item["ean"]}, { "$set": { 'prijs.'+str(herkomstLocatie): item["prijs"][0]}}, upsert=False)
+						self.collection.update({'ean': item["ean"]}, { "$set": { 'stock.'+str(herkomstLocatie) : item["stock"][0]}}, upsert=False)
 						try:
-							self.collection.update({'ean': {'$regex' : item["ean"]}}, { "$set": { 'sku.'+str(herkomstLocatie) : item["sku"][0]}}, upsert=False)
+							self.collection.update({'ean': item["ean"]}, { "$set": { 'sku.'+str(herkomstLocatie) : item["sku"][0]}}, upsert=False)
 						except KeyError:
 							return
 					except IndexError:
@@ -105,6 +105,7 @@ class PccrawlerPipeline(object):
 				def addValues(): 
 					if (spider.name != "paradigit"):
 						try:
+							print "ean"
 							self.collection.update({'ean': item["ean"]}, {"$push": {"naam" : item["naam"][0]}}, upsert=False)
 							self.collection.update({'ean': item["ean"]}, {"$push": {"subnaam" : item["subnaam"][0]}}, upsert=False)
 							self.collection.update({'ean': item["ean"]}, {"$push": {"link" : item["link"][0]}}, upsert=False)
@@ -115,7 +116,7 @@ class PccrawlerPipeline(object):
 								if self.collection.find({'SKU': {'$regex' : item["sku"][0]}}).count() > 0:
 									return
 								else:
-									self.collection.update({'ean': {'$regex' : item["ean"]}}, {"$push": {"SKU" : item["sku"][0]}}, upsert=True)
+									self.collection.update({'ean': item["ean"]}, {"$push": {"SKU" : item["sku"][0]}}, upsert=True)
 							except KeyError:
 								return
 						except IndexError:
@@ -128,6 +129,7 @@ class PccrawlerPipeline(object):
 								self.collection.update({'SKU': {'$regex' : values}}, {"$push": {"subnaam" : item["subnaam"][0]}}, upsert=False)
 							
 					else:
+						print "sku"
 						for values in item["sku"]:
 							self.collection.update({'SKU': {'$regex' : values}}, {"$push": {"naam" : item["naam"][0]}}, upsert=False)
 							self.collection.update({'SKU': {'$regex' : values}}, {"$push": {"prijs" : item["prijs"][0]}}, upsert=False)
