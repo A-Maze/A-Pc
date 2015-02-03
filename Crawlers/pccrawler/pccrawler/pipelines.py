@@ -50,16 +50,20 @@ class PccrawlerPipeline(object):
 					item["prijs"][0] = str(item["prijs"][0]).replace(",",("."))				
 					item["prijs"][0] = float(item["prijs"][0])
 					item["categorie"] = collectienaam
-					#item['prijs'][0] =  float(item['prijs'][0])
+
 
 					try:
-						if self.collection.find({'ean':  item["ean"][0]}).count() > 0:
-							addToList()								
+						for ean in item["ean"]:
+							if self.collection.find({'ean': {'$regex' :  ean}}).count() > 0:
+								addToList()
+
 
 					except:
 						try:
-							if self.collection.find({'sku':  item["sku"][0]}).count() > 0:
-								addToList()
+							for sku in item["sku"]:
+								if self.collection.find({'SKU': {'$regex' : sku}}).count() > 0:
+									addToList()
+									
 						except KeyError:
 							return
 
@@ -87,47 +91,62 @@ class PccrawlerPipeline(object):
 				def replaceValues(herkomstLocatie):
 					try:
 						self.collection.update({'ean': item["ean"]}, { "$set": { 'link.'+str(herkomstLocatie) : item["link"]}}, upsert=False)
-						self.collection.update({'sku': item["sku"]}, { "$set": { 'prijs.'+str(herkomstLocatie): item["prijs"][0]}}, upsert=False)
+						self.collection.update({'ean': item["ean"]}, { "$set": { 'prijs.'+str(herkomstLocatie): item["prijs"][0]}}, upsert=False)
 						self.collection.update({'ean': item["ean"]}, { "$set": { 'stock.'+str(herkomstLocatie) : item["stock"][0]}}, upsert=False)
 						try:
 							self.collection.update({'ean': item["ean"]}, { "$set": { 'sku.'+str(herkomstLocatie) : item["sku"][0]}}, upsert=False)
 						except KeyError:
 							return
 					except IndexError:
-						self.collection.update({'sku': item["sku"]}, { "$set": { 'link.'+str(herkomstLocatie): item["link"][0]}}, upsert=False)
-						self.collection.update({'sku': item["sku"]}, { "$set": { 'prijs.'+str(herkomstLocatie) : item["prijs"][0]}}, upsert=False)
-						self.collection.update({'sku': item["sku"]}, { "$set": { 'stock.'+str(herkomstLocatie) : item["stock"][0]}}, upsert=False)
+						self.collection.update({'SKU': {'$regex' : item["sku"]}}, { "$set": { 'link.'+str(herkomstLocatie): item["link"][0]}}, upsert=False)
+						self.collection.update({'SKU': {'$regex' : item["sku"]}}, { "$set": { 'prijs.'+str(herkomstLocatie) : item["prijs"][0]}}, upsert=False)
+						self.collection.update({'SKU': {'$regex' : item["sku"]}}, { "$set": { 'stock.'+str(herkomstLocatie) : item["stock"][0]}}, upsert=False)
 
 				def addValues(): 
-					try:
-						self.collection.update({'ean': item["ean"]}, {"$push": {"naam" : item["naam"][0]}}, upsert=False)
-						self.collection.update({'ean': item["ean"]}, {"$push": {"subnaam" : item["subnaam"][0]}}, upsert=False)
-						self.collection.update({'ean': item["ean"]}, {"$push": {"link" : item["link"][0]}}, upsert=False)
-						self.collection.update({'ean': item["ean"]}, {"$push": {"herkomst" : item["herkomst"][0]}}, upsert=False)
-						self.collection.update({'ean': item["ean"]}, {"$push": {"prijs" : item["prijs"][0]}}, upsert=False)
-						self.collection.update({'ean': item["ean"]}, {"$push": {"stock" : item["stock"][0]}}, upsert=False)
+					if (spider.name != "paradigit"):
 						try:
-							if self.collection.find({'sku':  item["sku"][0]}).count() > 0:
+							print "ean"
+							self.collection.update({'ean': item["ean"]}, {"$push": {"naam" : item["naam"][0]}}, upsert=False)
+							self.collection.update({'ean': item["ean"]}, {"$push": {"subnaam" : item["subnaam"][0]}}, upsert=False)
+							self.collection.update({'ean': item["ean"]}, {"$push": {"link" : item["link"][0]}}, upsert=False)
+							self.collection.update({'ean': item["ean"]}, {"$push": {"herkomst" : item["herkomst"][0]}}, upsert=False)
+							self.collection.update({'ean': item["ean"]}, {"$push": {"prijs" : item["prijs"][0]}}, upsert=False)
+							self.collection.update({'ean': item["ean"]}, {"$push": {"stock" : item["stock"][0]}}, upsert=False)
+							try:
+								if self.collection.find({'SKU': {'$regex' : item["sku"][0]}}).count() > 0:
+									return
+								else:
+									self.collection.update({'ean': item["ean"]}, {"$push": {"SKU" : item["sku"][0]}}, upsert=True)
+							except KeyError:
 								return
-							else:
-								self.collection.update({'ean': item["ean"]}, {"$push": {"sku" : item["sku"][0]}}, upsert=True)
-						except KeyError:
-							return
-					except IndexError:
-						self.collection.update({'sku': item["sku"]}, {"$push": {"naam" : item["naam"][0]}}, upsert=False)
-						self.collection.update({'sku': item["sku"]}, {"$push": {"subnaam" : item["subnaam"][0]}}, upsert=False)
-						self.collection.update({'sku': item["sku"]}, {"$push": {"link" : item["link"][0]}}, upsert=False)
-						self.collection.update({'sku': item["sku"]}, {"$push": {"herkomst" : item["herkomst"][0]}}, upsert=False)
-						self.collection.update({'sku': item["sku"]}, {"$push": {"prijs" : item["prijs"][0]}}, upsert=False)
-						self.collection.update({'sku': item["sku"]}, {"$push": {"stock" : item["stock"][0]}}, upsert=False)
+						except IndexError:
+							for values in item["sku"]:
+								self.collection.update({'SKU': {'$regex' : values}}, {"$push": {"naam" : item["naam"][0]}}, upsert=False)
+								self.collection.update({'SKU': {'$regex' : values}}, {"$push": {"prijs" : item["prijs"][0]}}, upsert=False)
+								self.collection.update({'SKU': {'$regex' : values}}, {"$push": {"link" : item["link"][0]}}, upsert=False)
+								self.collection.update({'SKU': {'$regex' : values}}, {"$push": {"herkomst" : item["herkomst"][0]}}, upsert=False)
+								self.collection.update({'SKU': {'$regex' : values}}, {"$push": {"stock" : item["stock"][0]}}, upsert=False)
+								self.collection.update({'SKU': {'$regex' : values}}, {"$push": {"subnaam" : item["subnaam"][0]}}, upsert=False)
+							
+					else:
+						print "sku"
+						for values in item["sku"]:
+							self.collection.update({'SKU': {'$regex' : values}}, {"$push": {"naam" : item["naam"][0]}}, upsert=False)
+							self.collection.update({'SKU': {'$regex' : values}}, {"$push": {"prijs" : item["prijs"][0]}}, upsert=False)
+							self.collection.update({'SKU': {'$regex' : values}}, {"$push": {"link" : item["link"][0]}}, upsert=False)
+							self.collection.update({'SKU': {'$regex' : values}}, {"$push": {"herkomst" : item["herkomst"][0]}}, upsert=False)
+							self.collection.update({'SKU': {'$regex' : values}}, {"$push": {"stock" : item["stock"][0]}}, upsert=False)
+							self.collection.update({'SKU': {'$regex' : values}}, {"$push": {"subnaam" : item["subnaam"][0]}}, upsert=False)
 
 				def addToList():	
 					filterEuroSign()
 					try:
-						fullItem = self.collection.find({'ean': item["ean"][0]})
+						for ean in item["ean"]:
+							fullItem = self.collection.find({'ean': {'$regex' :  ean}})
 					except:
-						fullItem = self.collection.find({'sku': item["sku"][0]})
-					
+						for sku in item["sku"]:
+							fullItem = self.collection.find({'SKU': {'$regex' :  sku}})
+				
 					waardeArray = []
 					foundLocation = False
 					herkomstLocatie = 0
@@ -141,10 +160,10 @@ class PccrawlerPipeline(object):
 					for values in herkomstArray:
 						if item["herkomst"][0] in values:
 							foundLocation = True
+							
 							break;
 						else:
 							herkomstLocatie += 1
-
 					addExistingItemInList(foundLocation,herkomstLocatie)
 					
 				categorieNaam = item["categorie"][0]
@@ -200,4 +219,3 @@ class PccrawlerPipeline(object):
 				return item
 
 				
-

@@ -3,8 +3,6 @@
 {% block content %}
 
 <script>
-
-
 $(document).ready(function(){
   $(".toggle").click(function(){
   var parent = $(this).parent();
@@ -15,57 +13,29 @@ $(document).ready(function(){
   $(switcher).toggleClass("dropup");
   });
 
-   /* $(".slider").noUiSlider({
-	start: [20, 80],
-	connect: true,
-	range: {
-		'min': 0,
-		'max': 100
-	}
-    }); */
-
 var minimaal = {{minPriceSliderValue}}
 var maximaal = {{maxPriceSliderValue}}
 
 $('.slider').noUiSlider({
     start: [minimaal , maximaal ],
     connect: true,
-    
-    
-    // Configure tapping, or make the selected range dragable.
-   
-    
-    // Full number format support.
+
     format: wNumb({
         mark: ',',
         decimals: 1
     }),
     
-    // Support for non-linear ranges by adding intervals.
     range: {
         'min': minimaal,
         'max': maximaal
     }
 });
 
-// Reading/writing + validation from an input? One line.
 $('.slider').Link('lower').to($('#sliderMinValue'));
-
-// Write to a span? One line.
 $('.slider').Link('upper').to($('#sliderMaxValue'));
 
-// Optional addon: creating Pips (Percentage In Point);
-
-
-
-
 });
-
-
-
-
 </script>
-
 
 <div class="container">
 
@@ -88,8 +58,10 @@ $('.slider').Link('upper').to($('#sliderMaxValue'));
             {% if component.prijs.0 %}
             <div class="list-group table-border">
                 <div class="list-group-item">
-                    <div class="row-picture">
-                        <img class="square" src="http://lorempixel.com/56/56/people/1" alt="icon">
+                    <div id="{{component.ean.0}}" class="row-picture">
+                        
+                        <!--<img class="square" src="http://lorempixel.com/56/56/people/1" alt="icon">-->
+
                     </div>
 
                     <div class="row-content">
@@ -114,6 +86,9 @@ $('.slider').Link('upper').to($('#sliderMaxValue'));
             {% endif %}
             {% endfor %}
             </div>
+
+            <script src='{% static "js/image.js" %}'></script>
+
 
         </div>
 

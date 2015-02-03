@@ -33,12 +33,9 @@
             </tr>
             </thead>
             <tbody>
-{% for component in Componenten %}
-{%for product in component%}
-    {% with goodID=Productid compareID=product.id  %}         
-        {%if goodID|stringformat:"s" == compareID|stringformat:"s" %}
-            {%for item in product%}
-            {% with itemnumb=product|get_at_index:item %}  
+
+            {%for item in component%}
+            {% with itemnumb=component|get_at_index:item %}  
              <tr>
                 {% if itemnumb.0 != None%}
                 <td>{{item}}</td>
@@ -48,14 +45,14 @@
                          {% if itemnumb.0 == null %}
                              <script>
                                  $(document).ready(function(){
-                                     $('#itemImage').attr('src','http://azerty.nl/_azerty/data/product/6/5/3/653558/img/1/K.jpg');
+                                     //$('#itemImage').attr('src','http://azerty.nl/_azerty/data/product/6/5/3/653558/img/1/K.jpg');
                                  });
                              </script>
                          {% else %}
                              {% with itemnumb.0 as Afbeelding %}
                                  <script>
                                      $(document).ready(function(){
-                                         $('#itemImage').attr('src','{{ Afbeelding }}');
+                                         //$('#itemImage').attr('src','{{ Afbeelding }}');
                                      });
                                  </script>
                              {% endwith %}
@@ -75,10 +72,6 @@
            
            
             </tbody>
-{% endif %} 
-{% endwith %}
-{% endfor %}
-{% endfor %}
         </table>
 
 
@@ -92,29 +85,22 @@
                 </tr>
             </thead>
             <tbody>
-                {% for component in Componenten %}
-                {% for product in component %}
-                    {% with goodID=Productid compareID=product.id  %}         
-                        {%if goodID|stringformat:"s" == compareID|stringformat:"s" %}
+
                         {% for herkomst, stock, link, prijs in Ziplist %}
                             <tr>
-                                <td><a href="{{ product.link }}">{{ herkomst}}</a></td>
+                                <td><a href="{{ link }}">{{ herkomst}}</a></td>
                                 <td>{{ prijs}}</td>
                                 <td>{{ stock}}</td>
 
 
-                                <td>{% if Currentproduct == Product and Currentherkomst = herkomst%}
-                                    <a class="btn btn-primary pull-right" href="/deselect/?product={{ Product }}&amp;categorie={{ Categorie }}&amp;productid={{ Productid }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Deselecteer</a>
+                                <td>{% if CurrentID == Productid and Currentherkomst = herkomst%}
+                                    <a class="btn btn-primary pull-right" href="/deselect/?product={{ component.naam.0 }}&amp;categorie={{ component.categorie }}&amp;productid={{ Productid }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Deselecteer</a>
 
                                     {% else %}
-                                    <a class="btn btn-primary pull-right selectproduct"  href="/select/?product={{ Product }}&amp;categorie={{ Categorie }}&amp;prijs={{ Prijs }}&amp;productid={{ Productid }}&amp;herkomst={{ herkomst }}&amp;link={{ product.link }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Selecteer</a></td>
+                                    <a class="btn btn-primary pull-right selectproduct"  href="/select/?product={{ component.naam.0 }}&amp;categorie={{ component.categorie }}&amp;prijs={{ prijs }}&amp;productid={{ Productid }}&amp;herkomst={{ herkomst }}&amp;link={{ link }}" data-content="This is a snackbar! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Selecteer</a></td>
                                     {% endif %}
                             <tr>
-                        {% endfor %} 
-                {% endif %}
-                {% endwith %}
-                {% endfor %}
-                {% endfor %}
+                        {% endfor %}
             </tbody>
 
 

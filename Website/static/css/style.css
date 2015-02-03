@@ -116,8 +116,12 @@ background-color:black;
 .dropdown-panel{
    display: none;
 }
-
 .externalLink{
     display: none;
+.errormsgbox {
+ 
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url('images/error.png');
 }
 

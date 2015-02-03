@@ -16,7 +16,7 @@ class testCases(unittest.TestCase):
 		driver.quit()
 
 		
-	def test2(self):
+	"""def test2(self):
 		driver = webdriver.Firefox()
 		driver.get('http://a-maze.ddns.net:8181/')
 		driver.find_element_by_id("processoren-test-id").click()
@@ -96,6 +96,6 @@ class testCases(unittest.TestCase):
 		driver.find_element_by_id("textArea").send_keys('test test')
 		assert "test test" in driver.find_element_by_id("textArea").get_attribute("value")
 		driver.find_element_by_id("textArea").submit() 
-		driver.quit()
+		driver.quit()"""
 		
 

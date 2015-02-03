@@ -2,10 +2,28 @@ from django.db import models
 
 from mongoengine import *
 from APc.settings import DBNAME
+from django import forms
+from django.forms import PasswordInput
 
 connect(DBNAME)
 
+class Login(forms.Form):
+    email = forms.CharField(max_length=100, required=True)
+    wachtwoord = forms.CharField(max_length=20 ,required=True, widget=PasswordInput())
 
+class Registreer(forms.Form):
+    voornaam = forms.CharField(max_length=100, required=True)
+    achternaam = forms.CharField(max_length=100, required=True)
+    email = forms.CharField(max_length=100, required=True)
+    wachtwoord = forms.CharField(max_length=20 ,required=True, widget=PasswordInput())
+    Herhaal_wachtwoord = forms.CharField(max_length=20 ,required=True, widget=PasswordInput())
+
+class Users(Document):
+    Voornaam = StringField(max_length=500)
+    Achternaam = StringField(max_length=500)
+    Email = StringField(max_length=500)
+    Wachtwoord = StringField(max_length=500)
+    Rechten = StringField(max_length=500)
 
 class Views(Document):
 
@@ -16,6 +34,10 @@ class Views(Document):
 class ViewsPerDatum(Document):
     Aantal = StringField(max_length=500)
     Datum = StringField(max_length=50)
+
+class SearchQuery(Document):
+    Zoekwoord = StringField(max_length=500)
+    Aantal = StringField(max_length=500)
 
 class Select(Document):
 

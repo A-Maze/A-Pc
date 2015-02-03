@@ -19,7 +19,12 @@ urlpatterns = patterns('',
     url(r'^deselect/', 'pcbuilder.views.deselect'),
     url(r'^contact/', 'pcbuilder.views.contact'),
     url(r'^mail/', 'pcbuilder.views.mail'),
-    url(r'^dashboard', 'pcbuilder.views.dashboard'),
+    url(r'^dashboard/', 'pcbuilder.views.dashboard'),
+    url(r'^login/', 'pcbuilder.views.login'),
+    url(r'^registreer/', 'pcbuilder.views.registreer'),
+    url(r'^loguit/', 'pcbuilder.views.loguit'),
+    url(r'^bestellingen/', 'pcbuilder.views.bestellingen'),
+    url(r'^wijzigRechten/', 'pcbuilder.views.wijzigRechten'),
 
 
     url(r'^search/', 'pcbuilder.views.search'),
