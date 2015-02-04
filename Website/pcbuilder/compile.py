@@ -29,15 +29,12 @@ def buildpc(request):
 			print dataFiltered[dataset]
 		elif "Moederborden" in dataset:
 			print "Moederborden"
-			print "Categorie HIERBOVEN"
 			(firstRequirement, secondRequirement) = (filteredDrops["#moederbordenSocket"],filteredDrops["#moederbordenChipset"])
-			print firstRequirement
-			print secondRequirement
 			dataFiltered[dataset] = dataFiltered[dataset].filter(Q(Socket__icontains=firstRequirement) & Q(Moederbordchipset__icontains=secondRequirement))
 		elif "Grafische" in dataset:
 			print "Grafische"
-			#(firstRequirement, secondRequirement) = (filteredDrops["#grafischeChipFabrikant"],filteredDrops["#grafischeGeheugengrootte"])
-			#dataFiltered[dataset] = dataFiltered[dataset].filter(Q(Videochipfabrikant__icontains=firstRequirement) & Q(Geheugengrootte__icontains=secondRequirement))
+			(firstRequirement, secondRequirement) = (filteredDrops["#grafischeChipFabrikant"],filteredDrops["#grafischeGeheugengrootte"])
+			dataFiltered[dataset] = dataFiltered[dataset].filter(Q(Videochipfabrikant__icontains=firstRequirement) & Q(Geheugengrootte__icontains=secondRequirement))
 		elif "Geheugen" in dataset:
 			firstRequirement = filteredDrops["#geheugenType"]
 			dataFiltered[dataset] = dataFiltered[dataset].filter(Geheugentype__icontains=firstRequirement)
@@ -50,6 +47,7 @@ def buildpc(request):
 
 
 def autoSelect(request,componentList):
+
 	if componentList:
 		componentList = compatibility(request, componentList)
 		categorie = componentList[0].categorie
@@ -67,7 +65,7 @@ def autoSelect(request,componentList):
 		request.session[categorieprijs] = prijzen[0]
 		request.session[categorieid] = str(componentList[0].id)
 		request.session[categorieherkomst] = herkomst[0]
-		request.session[categorielink] = componentList[0].link
+		request.session[categorielink] = componentList[0].link[0]
 
 
 def convert(prijzen,naam,herkomst):
