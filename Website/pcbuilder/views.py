@@ -23,7 +23,7 @@ dataFiltered = {}
 for model in data:
     categorieNaam = model.__name__
     empty = unicode("")
-    filteredModel = model.objects.filter((Q(prijs__exists=True) and Q(naam__exists=True) and Q(stock__exists=True)))
+    filteredModel = model.objects.filter((Q(prijs__exists=True) & Q(naam__exists=True) & Q(stock__exists=True)))
     dataFiltered[categorieNaam] = filteredModel
     
 app = 15
@@ -843,6 +843,7 @@ def koeling(request):
 def moederborden(request):
 
     moederbordenlijst, merken = filters(request, dataFiltered[sys._getframe().f_code.co_name.title()])
+    print type(moederbordenlijst)
     minPriceSliderValue, maxPriceSliderValue = getGrenzen(moederbordenlijst)
     moederborden = listing(request, moederbordenlijst, 15)        
     bereik, diff, current_page = paginas(moederbordenlijst, moederborden)

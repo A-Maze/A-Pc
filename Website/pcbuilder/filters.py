@@ -11,6 +11,7 @@ import operator
 
 
 def filters(request, objectlijst): 
+    objectlijst = compatibility(request,objectlijst)
     if request.method == 'POST':
 
         direct = request.POST.get('stockDirect')
