@@ -7,6 +7,27 @@ from django.forms import PasswordInput
 
 connect(DBNAME)
 
+class Bestellingen(Document):
+    Email = StringField(max_length=100)
+    Processoren = StringField(max_length=100)
+    Moederborden = StringField(max_length=100)
+    Grafische = StringField(max_length=100)
+    Harde = StringField(max_length=100)
+    Dvd = StringField(max_length=100)
+    Koeling = StringField(max_length=100)
+    Geheugen = StringField(max_length=100)
+    Voeding = StringField(max_length=100)
+    Behuizingen = StringField(max_length=255)
+    ProcessorenLink = StringField(max_length=255)
+    MoederbordenLink = StringField(max_length=255)
+    GrafischeLink = StringField(max_length=255)
+    HardeLink = StringField(max_length=255)
+    DvdLink = StringField(max_length=255)
+    KoelingLink = StringField(max_length=255)
+    GeheugenLink = StringField(max_length=255)
+    VoedingLink = StringField(max_length=255)
+    BehuizingenLink = StringField(max_length=255)
+
 class Login(forms.Form):
     email = forms.CharField(max_length=100, required=True)
     wachtwoord = forms.CharField(max_length=20 ,required=True, widget=PasswordInput())

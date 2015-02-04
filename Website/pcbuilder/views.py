@@ -11,7 +11,7 @@ from pcbuilder.filters import *
 from pcbuilder.compile import *
 import json as simplejson
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding, Views, Select, ViewsPerDatum
-from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding, Views, Select, ViewsPerDatum, Login, Users, Registreer, SearchQuery
+from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding, Views, Select, ViewsPerDatum, Login, Users, Registreer, SearchQuery, Bestellingen
 from itertools import chain
 from django.db.models import Max
 import json, time, sys
@@ -37,6 +37,57 @@ for model in data:
 #sl = "0:%d" % (end)
 #Dit bovenstaande is voor later om alleen de div te veranderen en niet de hele pagina
 app = 15
+
+def bestellingen(request):
+    return render_to_response('bestellingen.html',{},
+                             context_instance=RequestContext(request))
+
+def bestel(request):
+    categorieen = ['processoren', 'moederborden', 'grafische', 'harde', 'dvd', 'koeling', 'geheugen', 'voeding', 'behuizingen']
+    naam = []
+    naamlink = []
+
+    j = 0
+    for i in categorieen:
+        if i in request.session:
+            naam.insert(j, request.session[i+'id'])
+            naamlink.insert(j, request.session[i+'link'])
+        else:
+            naam.insert(j, ' ')
+            naamlink.insert(j, ' ')
+        j = j+1
+
+    if 'email' in request.session:
+        email = request.session['email']
+    else:
+        return HttpResponseRedirect('/')
+
+    try:
+        old_bestelling=Bestellingen.objects.get(Email=email)
+        old_bestelling.Processoren = naam[0]
+        old_bestelling.Moederborden = naam[1]
+        old_bestelling.Grafische = naam[2]
+        old_bestelling.Harde = naam[3]
+        old_bestelling.Dvd = naam[4]
+        old_bestelling.Koeling = naam[5]
+        old_bestelling.Geheugen = naam[6]
+        old_bestelling.Voeding = naam[7]
+        old_bestelling.Behuizingen = naam[8]
+        old_bestelling.ProcessorenLink = naamlink[0]
+        old_bestelling.MoederbordenLink = naamlink[1]
+        old_bestelling.GrafischeLink = naamlink[2]
+        old_bestelling.HardeLink = naamlink[3]
+        old_bestelling.DvdLink = naamlink[4]
+        old_bestelling.KoelingLink = naamlink[5]
+        old_bestelling.GeheugenLink = naamlink[6]
+        old_bestelling.VoedingLink = naamlink[7]
+        old_bestelling.BehuizingenLink = naamlink[8]
+        old_bestelling.save()
+    except Bestellingen.DoesNotExist:
+        new_bestelling=Bestellingen(Email=email, Processoren=naam[0], Moederborden=naam[1], Grafische=naam[2], Harde=naam[3],Dvd=naam[4],Koeling=naam[5],Geheugen=naam[6],Voeding=naam[7],Behuizingen=naam[8], ProcessorenLink=naamlink[0], MoederbordenLink=naamlink[1], GrafischeLink=naamlink[2], HardeLink=naamlink[3],DvdLink=naamlink[4],KoelingLink=naamlink[5],GeheugenLink=naamlink[6],VoedingLink=naamlink[7],BehuizingenLink=naamlink[8])
+        new_bestelling.save()
+
+    return HttpResponseRedirect('/bestellingen/')
 
 def registreer(request):
     #user = Users(Voornaam='', Achternaam='', Email='', Wachtwoord='', Rechten='0')

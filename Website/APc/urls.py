@@ -25,6 +25,7 @@ urlpatterns = patterns('',
     url(r'^loguit/', 'pcbuilder.views.loguit'),
     url(r'^bestellingen/', 'pcbuilder.views.bestellingen'),
     url(r'^wijzigRechten/', 'pcbuilder.views.wijzigRechten'),
+    url(r'^bestel/', 'pcbuilder.views.bestel'),
 
 
     url(r'^search/', 'pcbuilder.views.search'),
