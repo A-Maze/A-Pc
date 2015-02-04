@@ -27,13 +27,10 @@ def compatibility(request, objectlijst):
 
 def moederbordenComp(request,objectlijst):
 	firstRequirement, secondRequirement, thirdRequirement, fourthRequirement,fifthRequirement = ("","","","","")
-	print "moederborden called"
-	print type(objectlijst)
 	if "processorenid" in request.session:
 		processor = Processoren.objects.get(id=request.session["processorenid"])
-		firstRequirement = processor.Socket
-		print "first Requirement"
-		print firstRequirement
+		firstRequirement = [item.encode('UTF8') for item in processor.Socket]
+		firstRequirement = firstRequirement.values()
 	if "behuizingenid" in request.session:
 		behuizing = Behuizingen.objects.get(id=request.session["behuizingenid"])
 		secondRequirement = behuizing.Form_Factor
