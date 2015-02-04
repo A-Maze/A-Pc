@@ -10,6 +10,7 @@ import operator
 
 
 def filters(request, objectlijst): 
+    objectlijst = compatibility(request,objectlijst)
     if request.method == 'POST':
 
         direct = request.POST.get('stockDirect')
@@ -99,12 +100,17 @@ def getGrenzen(objectlijst):
 
     for obj in objectlijst:
         if obj.prijs:
-            prijsje = obj.prijs[0]
+            try:
+                prijsje = obj.prijs[0]
+            except KeyError:
+                prijsje = obj.prijs
+
+
 
             for prijs in obj.prijs:
-                if float(prijs) < float(minPriceSliderValue):
+                if prijs < float(minPriceSliderValue):
                     prijsje = prijs
-                elif float(prijs) > float(maxPriceSliderValue):
+                elif prijs > float(maxPriceSliderValue):
                     prijsje = prijs
 
             if float(prijsje) < float(minPriceSliderValue):

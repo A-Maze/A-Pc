@@ -10,7 +10,7 @@ def FilterDataset():
 	#make a filtered dictionary with only the right components
 	for model in data:
 	    categorieNaam = model.__name__
-	    filteredModel = model.objects.filter((Q(prijs__exists=True) and Q(naam__exists=True) and Q(stock__exists=True)))
+	    filteredModel = model.objects.filter((Q(prijs__exists=True) & Q(naam__exists=True) & Q(stock__exists=True)))
 	    dataFiltered[categorieNaam] = filteredModel
 
 
@@ -29,7 +29,10 @@ def buildpc(request):
 			print dataFiltered[dataset]
 		elif "Moederborden" in dataset:
 			print "Moederborden"
+			print "Categorie HIERBOVEN"
 			(firstRequirement, secondRequirement) = (filteredDrops["#moederbordenSocket"],filteredDrops["#moederbordenChipset"])
+			print firstRequirement
+			print secondRequirement
 			dataFiltered[dataset] = dataFiltered[dataset].filter(Q(Socket__icontains=firstRequirement) & Q(Moederbordchipset__icontains=secondRequirement))
 		elif "Grafische" in dataset:
 			print "Grafische"
@@ -48,12 +51,9 @@ def buildpc(request):
 
 def autoSelect(request,componentList):
 	if componentList:
-		#componentenList = compatibility(request, componentList)
+		componentList = compatibility(request, componentList)
 		categorie = componentList[0].categorie
 		print categorie
-		if "processor" in categorie:
-			print "eigenlijke socket"
-			print componentList[0].Socket
 		#get all the necesarry field names
 		productstring = categorie + "naam"
 		categorieprijs = categorie + "prijs"
