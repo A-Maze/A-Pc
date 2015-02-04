@@ -1,11 +1,13 @@
 var dropId = ["#processorenSocket","#processorenCores", "#moederbordenSocket", "#moederbordenChipset", "#grafischeChipFabrikant", "#grafischeGeheugengrootte", "#geheugenType"]
 function autoCompile(){
-	var filteredDrops = [];
+	var filteredDrops = {};
 	var value;
 	for (var i = 0; i<dropId.length; i++){
 		value = $(dropId[i]).val();
 		if ((value != "0" )||( null) ){
-			filteredDrops.push([dropId[i],value]);
+			filteredDrops[dropId[i]] = value;
+		}else{
+			filteredDrops[dropId[i]] = ''
 		}
 	}
 	redirect(JSON.stringify(filteredDrops));

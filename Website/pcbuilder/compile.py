@@ -1,90 +1,75 @@
-from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding
+from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding, Views, Select, ViewsPerDatum
 from pcbuilder.compatibility import *
-from pcbuilder.views import *
+from mongoengine import Q
 import json
 
+#Don't allow components without price,name or stock
+data = [Processoren,Moederborden,Koeling,Behuizingen,Grafische,Harde,Dvd,Geheugen,Voeding]
+dataFiltered = {}
+def FilterDataset():
+	#make a filtered dictionary with only the right components
+	for model in data:
+	    categorieNaam = model.__name__
+	    filteredModel = model.objects.filter((Q(prijs__exists=True) & Q(naam__exists=True) & Q(stock__exists=True)))
+	    dataFiltered[categorieNaam] = filteredModel
+
+
 def buildpc(request):
-	print "ja"
+	FilterDataset()
 	#list with every part it should compile
-	filteredDrops = request.POST.get('dropDowns', 'empty')
+	filteredDrops = request.POST.get('dropDowns')
 	filteredDrops = json.loads(filteredDrops)
-	#make sure filtered drops is not empty
-	if (filteredDrops != "empty"):
-		print "if"
-		#Make sure the querysets only contain components with prices
-		processor = dataFiltered["Processoren"]
-		moederbord = dataFiltered["Moederborden"]
-		grafische = dataFiltered["Grafische"]
-		print "wtf"
 
-		#loop through filter requirements
-		for requirement in filteredDrops:
-			print requirement
-			filterRequirement = unicode(requirement[1])
-			#for every processoren requirement
-			if "processoren" in requirement[0]:
-				if "Socket" in requirement[0]:
-					print "requirement"
-					processor = processor.filter(Socket__icontains= filterRequirement)
-				if "Cores" in requirement[0]:
-					processor = processor.filter(Aantal_cores_icontains= filterRequirement)
-				data.remove(Processoren)
-				autoSelect(request,processor)
+	for dataset in dataFiltered:
+		#filter based on given requirements
+		if "Processoren" in dataset:
+			print "Processoren"
+			(firstRequirement, secondRequirement) = (filteredDrops["#processorenSocket"],filteredDrops["#processorenCores"])
+			dataFiltered[dataset] = dataFiltered[dataset].filter(Q(Socket__icontains=firstRequirement) & Q(Aantal_cores__icontains=secondRequirement))
+			print dataFiltered[dataset]
+		elif "Moederborden" in dataset:
+			print "Moederborden"
+			(firstRequirement, secondRequirement) = (filteredDrops["#moederbordenSocket"],filteredDrops["#moederbordenChipset"])
+			dataFiltered[dataset] = dataFiltered[dataset].filter(Q(Socket__icontains=firstRequirement) & Q(Moederbordchipset__icontains=secondRequirement))
+		elif "Grafische" in dataset:
+			print "Grafische"
+			(firstRequirement, secondRequirement) = (filteredDrops["#grafischeChipFabrikant"],filteredDrops["#grafischeGeheugengrootte"])
+			dataFiltered[dataset] = dataFiltered[dataset].filter(Q(Videochipfabrikant__icontains=firstRequirement) & Q(Geheugengrootte__icontains=secondRequirement))
+		elif "Geheugen" in dataset:
+			firstRequirement = filteredDrops["#geheugenType"]
+			dataFiltered[dataset] = dataFiltered[dataset].filter(Geheugentype__icontains=firstRequirement)
 
-			#for every moederborder requirement
-			if "moederborden" in requirement[0]:
-				if "Socket" in requirement[0]:
-					print "1"
-					print moederbord
-					moederbord = moederbord.filter(Socket__icontains=filterRequirement)
-					print "2"
-					print moederbord
-					print "3"
-				if "Chipset" in requirement[0]:
-					moederbord = moederbord.filter(Moederbordchipset__icontains=filterRequirement)
-				data.remove(Moederborden)
-				autoSelect(request,moederbord)
-
-			if "grafische" in requirement[0]:
-				if "ChipFabrikant" in requirement[0]:
-					grafische = grafische.filter(Videochipfabrikant__icontains=filterRequirement)
-				if "Geheugengrootte" in requirement[0]:
-					grafische = grafische.filter(Geheugengrootte__icontains=filterRequirement)
-				data.remove(Grafische)
-				autoSelect(request,grafische)
-
-
-
-
-
-		for dataset in data:
-			print "looping"
-			autoSelect(request,dataset.objects.filter(prijs__exists=True))
+		#if a selection is not found
+		if not dataFiltered[dataset]:
+			pass
+		autoSelect(request,dataFiltered[dataset])
 
 
 
 def autoSelect(request,componentList):
+
 	if componentList:
-		#componentenList = compatibility(request, componentList)
+		componentList = compatibility(request, componentList)
 		categorie = componentList[0].categorie
 		print categorie
-		if "processor" in categorie:
-			print "eigenlijke socket"
-			print componentList[0].Socket
+		#get all the necesarry field names
 		productstring = categorie + "naam"
 		categorieprijs = categorie + "prijs"
 		categorieid = categorie + "id"
 		categorieherkomst = categorie + "herkomst"
 		categorielink = categorie + "link"
 		prijzen,naam,herkomst = convert(componentList[0].prijs,componentList[0].naam,componentList[0].herkomst)
+		#assign the chosen component to the session variables
 		request.session[categorie] = True
 		request.session[productstring] = naam[0].replace("+", "")
 		request.session[categorieprijs] = prijzen[0]
 		request.session[categorieid] = str(componentList[0].id)
 		request.session[categorieherkomst] = herkomst[0]
-		request.session[categorielink] = componentList[0].link
+		request.session[categorielink] = componentList[0].link[0]
+
 
 def convert(prijzen,naam,herkomst):
+	#make sure prices are ordered together with their origin
 	prijzen = [float(x) for x in prijzen]
 	herkomst = [str(x) for x in herkomst]
 	merge = sorted(zip(prijzen,herkomst))
