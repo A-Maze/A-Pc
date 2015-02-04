@@ -35,7 +35,7 @@ def moederbordenComp(request,objectlijst):
 		print firstRequirement
 	if "behuizingenid" in request.session:
 		behuizing = Behuizingen.objects.get(id=request.session["behuizingenid"])
-		secondRequirement = behuizing.Form_Factor[0]
+		secondRequirement = behuizing.Form_Factor
 	if "geheugenid" in request.session:
 		geheugen = Geheugen.objects.get(id=request.session["geheugenid"])
 		thirdRequirement = geheugen.Geheugentype
