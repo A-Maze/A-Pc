@@ -1,4 +1,3 @@
-from itertools import chain
 from pcbuilder.compatibility import *
 import types
 from mongoengine import Q
