@@ -29,7 +29,10 @@ def buildpc(request):
 			print dataFiltered[dataset]
 		elif "Moederborden" in dataset:
 			print "Moederborden"
+			print "Categorie HIERBOVEN"
 			(firstRequirement, secondRequirement) = (filteredDrops["#moederbordenSocket"],filteredDrops["#moederbordenChipset"])
+			print firstRequirement
+			print secondRequirement
 			dataFiltered[dataset] = dataFiltered[dataset].filter(Q(Socket__icontains=firstRequirement) & Q(Moederbordchipset__icontains=secondRequirement))
 		elif "Grafische" in dataset:
 			print "Grafische"
@@ -51,9 +54,6 @@ def autoSelect(request,componentList):
 		componentList = compatibility(request, componentList)
 		categorie = componentList[0].categorie
 		print categorie
-		if "moederbord" in categorie:
-			print "eigenlijke socket"
-			print componentList[0].Socket
 		#get all the necesarry field names
 		productstring = categorie + "naam"
 		categorieprijs = categorie + "prijs"
