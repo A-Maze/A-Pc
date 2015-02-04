@@ -30,17 +30,17 @@ def moederbordenComp(request,objectlijst):
 	if "processorenid" in request.session:
 		processor = Processoren.objects.get(id=request.session["processorenid"])
 		firstRequirement = [item.encode('UTF8') for item in processor.Socket]
-		firstRequirement = firstRequirement.values()
+		firstRequirement = "".join(firstRequirement)
 	if "behuizingenid" in request.session:
 		behuizing = Behuizingen.objects.get(id=request.session["behuizingenid"])
-		secondRequirement = behuizing.Form_Factor
+		secondRequirement = "".join(secondRequirement)
 	if "geheugenid" in request.session:
 		geheugen = Geheugen.objects.get(id=request.session["geheugenid"])
-		thirdRequirement = geheugen.Geheugentype
-		fourthRequirement = geheugen.Aantal
+		thirdRequirement = "".join(thirdRequirement)
+		fourthRequirement = "".join(fourthRequirement)
 	if "hardeid" in request.session:
 		harde = Harde.objects.get(id=request.session["hardeid"])
-		fifthRequirement = harde.Hardeschijf_bus
+		fifthRequirement = "".join(fifthRequirement)
 	objectlijst = objectlijst.filter(Q(Socket__icontains=firstRequirement) & Q(Form_Factor__icontains=secondRequirement) & Q(Geheugentype__icontains=thirdRequirement) & Q(Geheugentype__icontains=fourthRequirement) & Q(Hardeschijf_bus__icontains=fifthRequirement))
 	return objectlijst
 
