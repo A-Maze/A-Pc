@@ -339,7 +339,6 @@ def detail(request):
     elif (categorie == "behuizingen"):
         categorieObject = Behuizingen
 
-
     #Viewers(productid, categorie, 'add', request)
     #ViewsPerDag('add', request)
 

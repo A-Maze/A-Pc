@@ -4,10 +4,10 @@
 {% load filters %}
 <div class="container top-margin">
                 <div class="col-md-12 col-lg-12">
-                    <img src="#" id="itemImage" class="col-lg-3">
+                    <img src="" id="itemImage" class="col-lg-3">
                     <div class="panel panel-default col-lg-9">
                         <div class="panel-body">
-                        <h1>{{ Product }}</h1>
+                        <h1>{{ component.naam.0 }}</h1>
                         </div>
                     </div>
                 </div>
@@ -15,7 +15,30 @@
                 <!-- checken of je bij het juiste product bent voor de selecteer knop -->
                 
 
+<script>
+$(document).ready(function(){
+var ean = {{component.ean.0}};
 
+ean = ean.toString()
+start = ean.substr(0, 1);
+
+if (start != "0") {
+    ean = "0" + ean
+}
+
+var iURL = "http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=" + ean;
+console.log(iURL)
+
+$.ajax({
+    url: iURL,
+    dataType: "jsonp",
+    success: function(data) {
+        var imgURL = data.responseData.results[0].unescapedUrl
+        var img = $('#itemImage').attr("src", imgURL);
+    }
+});
+});
+</script>
                 
 
 </div>
@@ -39,25 +62,8 @@
              <tr>
                 {% if itemnumb.0 != None%}
                 <td>{{item}}</td>
+
                  <td>
-                     
-                     {% if item == "Afbeelding" %}
-                         {% if itemnumb.0 == null %}
-                             <script>
-                                 $(document).ready(function(){
-                                     //$('#itemImage').attr('src','http://azerty.nl/_azerty/data/product/6/5/3/653558/img/1/K.jpg');
-                                 });
-                             </script>
-                         {% else %}
-                             {% with itemnumb.0 as Afbeelding %}
-                                 <script>
-                                     $(document).ready(function(){
-                                         //$('#itemImage').attr('src','{{ Afbeelding }}');
-                                     });
-                                 </script>
-                             {% endwith %}
-                         {% endif %}
-                     {% endif %}
                 {%if itemnumb.0 > 0 and item != "categorie"%}             
                     {% for item in itemnumb %}
                         {{ item }}
