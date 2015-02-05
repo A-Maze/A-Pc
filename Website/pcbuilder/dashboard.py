@@ -7,6 +7,7 @@ from django.template import loader
 from django.http import HttpResponse
 from bson.json_util import dumps
 from pcbuilder.views import *
+import time
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding, Views, Select, ViewsPerDatum, Login, Users, Registreer, SearchQuery
 
 
@@ -132,35 +133,18 @@ def Viewers(productid, categorie, action, request):
     return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
 
 def ViewsPerDag(action, request):
+    ObjectenLijst = ViewsPerDatum.objects
+    LaatsteObject = len(ObjectenLijst) - 1
+    lastone = ObjectenLijst[LaatsteObject].Datum
     datum = time.strftime("%d/%m/%Y")
-    gevonden = 0
-    maand = [0,31,28,31,30,31,30,31,31,30,31,30,31]
-
-    datumString = ""+datum+""
+    datumString = ""+lastone+""
     datumArray = []
     datumArray.extend(datumString.split("/"))
-    dagEerder = int(datumArray[0])-1
-    maandEerder = int(datumArray[1])
-    jaarEerder = int(datumArray[2])
-    jaarEerderString = str(jaarEerder)
-    maandEerderString = str(maandEerder)
-    if(maandEerder < 10):
-        maandEerderString = "0"+maandEerderString
-    dagLater = dagEerder
-    maandLater = maandEerder
-    jaarLater = jaarEerder
-    jaarLaterString = str(jaarLater)
-    maandLaterString = str(maandLater)
-    if(maandLater < 10):
-        maandLaterString = "0"+maandLaterString
-    selectedDate = None
-    
-    if(dagEerder >= 10):
-        dagEerderString = str(dagEerder)
-    elif(dagEerder < 10):
-        dagEerderString = "0"+str(dagEerder)
-    datumEerder = dagEerderString+"/"+datumArray[1]+"/"+datumArray[2]
-    print(datumArray)
+    datumLater = str(int(datumArray[0])+1).zfill(2)+"/"+str(datumArray[1]).zfill(2)+"/"+str(datumArray[2])
+    datumsLater = []
+    done = False
+    maand = [0,31,28,31,30,31,30,31,31,30,31,30,31]
+    gevonden = 0
 
 
     for viewsperdatum in ViewsPerDatum.objects:
@@ -168,7 +152,7 @@ def ViewsPerDag(action, request):
                 if action == 'add':
                     aantal = float(viewsperdatum.Aantal)
                     selected=ViewsPerDatum.objects.get(Datum=datum)
-                    nieuwAantal = aantal+0.5
+                    nieuwAantal = aantal+1.0
                     nieuwAantal = str(nieuwAantal)
                     selected.Aantal = nieuwAantal
                     selected.save()
@@ -187,159 +171,38 @@ def ViewsPerDag(action, request):
                 pass
     if gevonden == 0:
         if(action == 'add'):
-            #zet selected collectie de id als de id die is meegegeven het aantal op 15 (moet nog aan gewerkt worden)
-            
-
-
-
-            try:
-                selectedEerder=ViewsPerDatum.objects.get(Datum=datumEerder)
-            except ViewsPerDatum.DoesNotExist:
-                selectedEerder = None
-            if(selectedEerder == None):
-                print("staat niet in db")
-                selectedDate = datumEerder
-                while(selectedEerder == None):
-                    print("in de loop")
-                    if(int(dagEerder-1) > 0):
-                        dagEerder = dagEerder-1
-                        if(dagEerder >= 10):
-                            dagEerderString = str(dagEerder)
-                        elif(dagEerder < 10):
-                            dagEerderString = str(dagEerder)
-                            dagEerderString = "0"+dagEerderString
-                        else:
-                            break
-                    elif(int(dagEerder-1) <= 0):
-                        if(int(maandEerder-1) > 0):
-                            maandEerder = maandEerder-1
-                            dagEerder = maand[maandEerder]
-                            dagEerderString = str(dagEerder)
-                            if(maandEerder < 10):
-                                maandEerderString = str(maandEerder)
-                                maandEerderString = "0"+maandEerderString
-                            elif(maandEerder >= 10):
-                                maandEerderString = str(maandEerder)
-                        elif(int(maandEerder-1) <= 0):
-                            jaarEerder = jaarEerder-1
-                            maandEerder = 12
-                            dagEerder = maand[maandEerder]
-                            dagEerderString = str(dagEerder)
-                            maandEerderString = str(maandEerder)
-                            jaarEerderString = str(jaarEerder)
-                    else:
-                        selectedEerder = "selectedDate"
-                        print("infinite loop")
-                        break
-                    datumEerder = dagEerderString+"/"+maandEerderString+"/"+jaarEerderString
-
-                    if(datumEerder == "01/12/2014"):
-                        selectedDate = datumEerder
-                        datumLater = datumEerder
-                        dagLater = dagEerder
-                        maandLater = maandEerder
-                        jaarLater = jaarEerder
-                        datumLater = datumEerder
-                        print("Datum Eerder:"+str(dagLater)+"+"+str(maandLater)+"+"+str(jaarLater))
-                        break
-
-                    print(datumEerder)
-                    try:
-                        selectedEerder=ViewsPerDatum.objects.get(Datum=datumEerder)
-                        selectedDate = datumEerder
-                        datumLater = datumEerder
-                        dagLater = dagEerder
-                        maandLater = maandEerder
-                        jaarLater = jaarEerder
-                        datumLater = datumEerder
-                    except ViewsPerDatum.DoesNotExist:
-                        selectedEerder = None
-            elif(selectedEerder != None):
-                print("staat al in db")
-            
-
-            if(selectedDate != None):
-                try:
-                    datumLater = dagLater + 1
-                    datumLater = str(datumLater)+"/"+str(maandEerder)+"/"+str(jaarEerder)
-                    print(datumLater)
-                    selectedLater=ViewsPerDatum.objects.get(Datum=datumLater)
-                except ViewsPerDatum.DoesNotExist:
-                    selectedLater = None
-                if(selectedLater == None):
-                    print("aangevuld")
-                    while(selectedLater == None):
-                        print(datumLater)
-                        print(dagLater)
-                        print(maandLater)
-                        print(jaarLater)
-                        dagLater = dagLater+1
-                        if((dagLater <= maand[maandLater])):
-                            print("if dag later kleiner is als het aantal dagen")
-                            if(dagLater < 10):
-                                dagLaterString = str(dagLater)
-                                dagLaterString = "0"+dagLaterString
-                            else:
-                                dagLaterString = str(dagLater)
-                            if(maandLater < 10):
-                                maandLaterString = str(maandLater)
-                                maandLaterString = "0"+maandLaterString
-                            elif(maandLater >= 10):
-                                maandLaterString = str(maandLater)
-                            jaarLaterString = str(jaarLater)
-                        elif((maandLater < 12) and (dagLater > maand[maandLater])):
-                            print("if dag later groter is als het aantal dagen en de maand later kleiner als 12")
-                            maandLater = maandLater + 1
-                            if(maandLater < 10):
-                                maandLaterString = str(maandLater)
-                                maandLaterString = "0"+maandLaterString
-                            elif(maandLater >= 10):
-                                maandLaterString = str(maandLater)
-                            dagLater = 01
-                            dagLaterString = str(dagLater)
-                            jaarLaterString = str(jaarLater)
-                        elif((maandLater >= 12) and (dagLater > maand[maandLater])):
-                            print("if dag later groter is als het aantal dagen en de maand later groter als 12")
-                            maandLater = 01
-                            maandLaterString = str(maandLater)
-                            maandLaterString = "0"+maandLaterString
-                            dagLater = 01
-                            dagLaterString = str(dagLater)
-                            dagLaterString = "0"+dagLaterString
-                            jaarLater = jaarLater + 1
-                            jaarLaterString = str(jaarLater)
-                            
-                        print(dagLaterString+maandLaterString+jaarLaterString)
-                        datumLater = dagLaterString+"/"+maandLaterString+"/"+jaarLaterString
-                        print(datumLater)
-                        if(datumLater == datum):
-                            print("datum later gelijk aan datum:"+datumLater)
-                            break
-                        print("datum later:"+datumLater)
-                        try:
-                            print(datumLater)
-                            selectedLater=ViewsPerDatum.objects.get(Datum=datumLater)
-                            print("komt hier bij")
-                        except ViewsPerDatum.DoesNotExist:
-                            selectedLater = None
-                        if(selectedLater == None and datumLater != datum):
-                            print("komt hier bij")
-                            geselecteerdLater = ViewsPerDatum(Aantal='0.0', Datum=datumLater)
-                            geselecteerdLater.save()
-                            #Voor random nummer: str(randint(0,100))
+            i=0
+            while(datumLater != datum):
+                if((str(int(datumArray[0])+1).zfill(2)+"/"+str(datumArray[1]).zfill(2)+"/"+str(datumArray[2])) != datum):
+                    if(int(datumArray[0])+1 <= maand[int(datumArray[1])]):
+                        datumLater = str(int(datumArray[0])+1).zfill(2)+"/"+str(datumArray[1]).zfill(2)+"/"+str(datumArray[2])
+                        datumArray[0] = str(int(datumArray[0])+1)
+                        datumArray[1] = str(datumArray[1])
+                        datumArray[2] = str(datumArray[2])
+                    elif(int(datumArray[0])+1 > maand[int(datumArray[1])]):
+                        if(int(datumArray[1])+1 <= 12):
+                            datumLater = "01/"+str(int(datumArray[1])+1).zfill(2)+"/"+str(datumArray[2])
+                            datumArray[0] = 01
+                            datumArray[1] = str(int(datumArray[1])+1)
+                            datumArray[2] = str(datumArray[2])
+                        elif(int(datumArray[1])+1 > 12):
+                            datumLater = str().zfill(2)+"/"+str(1).zfill(2)+"/"+str(int(datumArray[2])+1)
+                            datumArray[0] = 01
+                            datumArray[1] = 01
+                            datumArray[2] = str(int(datumArray[2])+1)
+                    datumsLater.insert(i, datumLater)
+                    i = i + 1
                 else:
-                    print("nog niet aangevuld")
+                    done = True
+                    break
 
+            for i in datumsLater:
+                datumLeeg = ViewsPerDatum(Datum=i, Aantal='0.0')
+                datumLeeg.save()
 
-            elif(selectedDate == None):
-                print("Al toegevoegd")
-
-
-
-
-            geselecteerd = ViewsPerDatum(Aantal='0.5', Datum=datum)
+            datumVandaag = ViewsPerDatum(Aantal='1.0', Datum=datum)
             #slaat de geselecteerden op in de db
-            geselecteerd.save()
+            datumVandaag.save()
         #return HttpResponse('Niks gevonden')
 
     #je gaat weer terug naar de pagina

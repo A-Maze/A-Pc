@@ -5,6 +5,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.template import RequestContext
 from django.template import loader
 from django.http import HttpResponse
+from dashboard import ViewsPerDag, Viewers, Selected
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding, Views, Select, ViewsPerDatum, Login, Users, Registreer, SearchQuery
 
 
@@ -18,9 +19,9 @@ def select(request):
     link = request.GET.get('link')
     prijs = float(prijs)
 
-    #Viewers(productid, categorie, 'delete', request)
-    #Selected(productid, categorie, 'add', request)
-    #ViewsPerDag('delete', request)
+    Viewers(productid, categorie, 'delete', request)
+    Selected(productid, categorie, 'add', request)
+    ViewsPerDag('delete', request)
 
 
     categorie.replace(" ", "")
@@ -49,8 +50,8 @@ def deselect(request):
     categorie.replace(" ", "")
     productid = request.GET.get('productid')
     
-    #Viewers(productid, categorie, 'delete', request)
-    #ViewsPerDag('delete', request)
+    Viewers(productid, categorie, 'delete', request)
+    ViewsPerDag('delete', request)
 
     del request.session[categorie]
     productid = categorie + "id"
@@ -104,7 +105,7 @@ def detail(request):
         categorieObject = Behuizingen
 
     #Viewers(productid, categorie, 'add', request)
-    #ViewsPerDag('add', request)
+    ViewsPerDag('add', request)
 
     component = categorieObject.objects.get(id=productid)
 
