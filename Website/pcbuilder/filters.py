@@ -3,12 +3,6 @@ import types
 from mongoengine import Q
 import operator
 
-'''def filters(request, objectlijst): 
-    #filters the objectlist on compatibility first
-    
-    #checkt of stock filter checked is'''
-
-
 def filters(request, objectlijst): 
     objectlijst = compatibility(request,objectlijst)
     if request.method == 'POST':
