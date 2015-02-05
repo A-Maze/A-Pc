@@ -11,6 +11,7 @@ from pcbuilder.filters import *
 from pcbuilder.compile import *
 from pcbuilder.selection import *
 from pcbuilder.dashboard import *
+from pcbuilder.login import *
 import json as simplejson
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding, Views, Select, ViewsPerDatum
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding, Views, Select, ViewsPerDatum, Login, Users, Registreer, SearchQuery, Bestellingen
@@ -18,7 +19,6 @@ from itertools import chain
 from django.db.models import Max
 import json, time, sys
 from random import randint
-from django.forms.util import ErrorList
 
 data = [Processoren,Moederborden,Koeling,Behuizingen,Grafische,Harde,Dvd,Geheugen,Voeding]
 dataFiltered = {}
@@ -30,6 +30,7 @@ for model in data:
     
 app = 15
 
+<<<<<<< HEAD
 def bestellingen(request):
     categorieen = ['Processoren', 'Moederborden', 'Grafische', 'Harde', 'Dvd', 'Koeling', 'Geheugen', 'Voeding', 'Behuizingen']
     data = [Processoren,Moederborden,Koeling,Behuizingen,Grafische,Harde,Dvd,Geheugen,Voeding]
@@ -175,6 +176,8 @@ def login(request):
     return render_to_response('login.html',{'form': form},
                               context_instance=RequestContext(request))
 
+=======
+>>>>>>> Davey
 
 
 def index(request):
