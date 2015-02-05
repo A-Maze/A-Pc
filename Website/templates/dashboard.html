@@ -43,15 +43,15 @@ $(function() {//1
             type: 'pie',
             name: 'Browser share',
             data: [
-                ['Processoren',   {{ Processorenpercentage }}],
-                ['Moederborden',       {{ Moederbordenpercentage }}],
-                ['Grafische kaarten', {{ Grafischepercentage }}],
-                ['Harde schijven',    {{ Hardepercentage }}],
-                ['Optische drives',     {{ Dvdpercentage }}],
-                ['Koelingen',   {{ Koelingpercentage }}],
-                ['Geheugen',    {{ Geheugenpercentage }}],
-                ['Voeding',     {{ Voedingpercentage }}],
-                ['Behuizing',   {{ Behuizingenpercentage }}]
+                ['Processoren',   {% if Processorenpercentage > 0 %}{{ Processorenpercentage }}{% else %}1{% endif %}],
+                ['Moederborden',       {% if Moederbordenprecentage > 0 %}{{ Moederbordenprecentage }}{% else %}1{% endif %}],
+                ['Grafische kaarten', {% if Grafischepercentage > 0 %}{{ Grafischepercentage }}{% else %}1{% endif %}],
+                ['Harde schijven',    {% if Hardepercentage > 0 %}{{ Hardepercentage }}{% else %}1{% endif %}],
+                ['Optische drives',     {% if Dvdpercentage > 0 %}{{ Dvdpercentage }}{% else %}1{% endif %}],
+                ['Koelingen',   {% if Koelingpercentage > 0 %}{{ Koelingpercentage }}{% else %}1{% endif %}],
+                ['Geheugen',    {% if Geheugenpercentage > 0 %}{{ Geheugenpercentage }}{% else %}1{% endif %}],
+                ['Voeding',     {% if Voedingpercentage > 0 %}{{ Voedingpercentage }}{% else %}1{% endif %}],
+                ['Behuizing',   {% if Behuizingenpercentage > 0 %}{{ Behuizingenpercentage }}{% else %}1{% endif %}]
             ]
         }]//2
     });//1

@@ -104,7 +104,7 @@ def Viewers(productid, categorie, action, request):
                 if action == 'add':
                     aantal = float(views.Aantal)
                     viewss=Views.objects.get(Id=productid)
-                    nieuwAantal = aantal+0.5
+                    nieuwAantal = aantal+1.0
                     nieuwAantal = str(nieuwAantal)
                     viewss.Aantal = nieuwAantal
                     viewss.save()
@@ -124,7 +124,7 @@ def Viewers(productid, categorie, action, request):
     if gevonden == 0:
         if(action == 'add'):
             #zet views collectie de id als de id die is meegegeven het aantal op 15 (moet nog aan gewerkt worden)
-            weergaven = Views(Id=productid, Categorie=categorie, Aantal='0.5')
+            weergaven = Views(Id=productid, Categorie=categorie, Aantal='1.0')
             #slaat de weergaven op in de db
             weergaven.save()
         #return HttpResponse('Niks gevonden')
@@ -135,7 +135,10 @@ def Viewers(productid, categorie, action, request):
 def ViewsPerDag(action, request):
     ObjectenLijst = ViewsPerDatum.objects
     LaatsteObject = len(ObjectenLijst) - 1
-    lastone = ObjectenLijst[LaatsteObject].Datum
+    if(LaatsteObject >= 0):
+        lastone = ObjectenLijst[LaatsteObject].Datum
+    else:
+        lastone = "01/01/2014"
     datum = time.strftime("%d/%m/%Y")
     datumString = ""+lastone+""
     datumArray = []
@@ -297,6 +300,7 @@ def dashboard(request):
             geheugenperc = geheugenperc + int(float(percentage.Aantal));
         elif percentage.Categorie == 'koeling':
             koelingperc = koelingperc + int(float(percentage.Aantal));
+            print(koelingperc)
         elif percentage.Categorie == 'grafische':
             grafischeperc = grafischeperc + int(float(percentage.Aantal));
         elif percentage.Categorie == 'behuizingen':
