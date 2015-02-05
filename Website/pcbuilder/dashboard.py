@@ -24,40 +24,6 @@ def wijzigRechten(request):
     except Users.DoesNotExist:
         return HttpResponseRedirect('/dashboard/')
 
-<<<<<<< HEAD
-def login(request):
-
-    # if this is a POST request we need to process the form data
-    if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = Login(request.POST)
-        # check whether it's valid:
-        if form.is_valid():
-            email = form.cleaned_data['email']
-            wachtwoord = form.cleaned_data['wachtwoord']
-
-            try:
-                selectedEerder=Users.objects.get(Email=email, Wachtwoord=wachtwoord)
-                request.session['email'] = email;
-                request.session['Rechten'] = selectedEerder.Rechten
-                return HttpResponseRedirect('/')
-            except Users.DoesNotExist:
-                selectedEerder = None
-                form.errors[""] = ErrorList([u"Email of wachtwoord komen niet overeen!"])
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            
-
-    # if a GET (or any other method) we'll create a blank form
-    else:
-        form = Login()
-
-    return render_to_response('login.html',{'form': form},
-                              context_instance=RequestContext(request))
-=======
->>>>>>> Davey
-
 
 def Viewers(productid, categorie, action, request):
     #haalt de id uit de link
