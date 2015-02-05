@@ -1,6 +1,8 @@
 $(document).ready(function(){
 $('.list-group-item > div:first-child').each(function() {
-var ean = this.id;
+var eanOriginal = this.id;
+
+ean = eanOriginal.replace(/ /g , "+")
 
 var iURL = "http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=" + ean;
 
@@ -10,7 +12,8 @@ $.ajax({
     success: function(data) {
         var imgURL = data.responseData.results[0].tbUrl
         var img = "<img src='" + imgURL + "' alt='icon'/>"
-        $("#" + ean).html(img); 
+        selector = $("[id='"+eanOriginal+"']")
+        selector.html(img); 
     }
 });
 });
