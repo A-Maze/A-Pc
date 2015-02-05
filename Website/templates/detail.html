@@ -19,13 +19,6 @@
 $(document).ready(function(){
 var ean = {{component.ean.0}};
 
-ean = ean.toString()
-start = ean.substr(0, 1);
-
-if (start != "0") {
-    ean = "0" + ean
-}
-
 var iURL = "http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=" + ean;
 console.log(iURL)
 
