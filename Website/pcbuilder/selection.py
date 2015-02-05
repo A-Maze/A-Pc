@@ -99,7 +99,6 @@ def detail(request):
         categorieObject = Voeding
     elif (categorie == "behuizingen"):
         categorieObject = Behuizingen
-    categorieObject = dataFiltered[categorie.title()]
 
     Viewers(productid, categorie, 'add', request)
     ViewsPerDag('add', request)
