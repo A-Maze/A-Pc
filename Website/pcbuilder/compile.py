@@ -23,16 +23,12 @@ def buildpc(request):
 	for dataset in dataFiltered:
 		#filter based on given requirements
 		if "Processoren" in dataset:
-			print "Processoren"
 			(firstRequirement, secondRequirement) = (filteredDrops["#processorenSocket"],filteredDrops["#processorenCores"])
 			dataFiltered[dataset] = dataFiltered[dataset].filter(Q(Socket__icontains=firstRequirement) & Q(Aantal_cores__icontains=secondRequirement))
-			print dataFiltered[dataset]
 		elif "Moederborden" in dataset:
-			print "Moederborden"
 			(firstRequirement, secondRequirement) = (filteredDrops["#moederbordenSocket"],filteredDrops["#moederbordenChipset"])
 			dataFiltered[dataset] = dataFiltered[dataset].filter(Q(Socket__icontains=firstRequirement) & Q(Moederbordchipset__icontains=secondRequirement))
 		elif "Grafische" in dataset:
-			print "Grafische"
 			(firstRequirement, secondRequirement) = (filteredDrops["#grafischeChipFabrikant"],filteredDrops["#grafischeGeheugengrootte"])
 			dataFiltered[dataset] = dataFiltered[dataset].filter(Q(Videochipfabrikant__icontains=firstRequirement) & Q(Geheugengrootte__icontains=secondRequirement))
 		elif "Geheugen" in dataset:
@@ -51,7 +47,6 @@ def autoSelect(request,componentList):
 	if componentList:
 		componentList = compatibility(request, componentList)
 		categorie = componentList[0].categorie
-		print categorie
 		#get all the necesarry field names
 		productstring = categorie + "naam"
 		categorieprijs = categorie + "prijs"
@@ -75,5 +70,4 @@ def convert(prijzen,naam,herkomst):
 	merge = sorted(zip(prijzen,herkomst))
 	newprijzen = [x[0] for x in merge]
 	newherkomst = [x[1] for x in merge]
-	print newprijzen, naam, newherkomst
 	return newprijzen,naam,newherkomst

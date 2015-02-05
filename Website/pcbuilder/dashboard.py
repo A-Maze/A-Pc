@@ -49,9 +49,7 @@ def wijzigRechten(request):
         if(request.session['email'] == email):
             request.session['Rechten'] = rechten
     except Users.DoesNotExist:
-        print("fout!")
-
-    return HttpResponseRedirect('/dashboard/')
+        return HttpResponseRedirect('/dashboard/')
 
 def login(request):
 
@@ -63,7 +61,7 @@ def login(request):
         if form.is_valid():
             email = form.cleaned_data['email']
             wachtwoord = form.cleaned_data['wachtwoord']
-            print(email)
+
             try:
                 selectedEerder=Users.objects.get(Email=email, Wachtwoord=wachtwoord)
                 request.session['email'] = email;
@@ -300,7 +298,6 @@ def dashboard(request):
             geheugenperc = geheugenperc + int(float(percentage.Aantal));
         elif percentage.Categorie == 'koeling':
             koelingperc = koelingperc + int(float(percentage.Aantal));
-            print(koelingperc)
         elif percentage.Categorie == 'grafische':
             grafischeperc = grafischeperc + int(float(percentage.Aantal));
         elif percentage.Categorie == 'behuizingen':

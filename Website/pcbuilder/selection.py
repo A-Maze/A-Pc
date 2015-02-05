@@ -30,7 +30,6 @@ def select(request):
     productstring = categorie + "naam"
     categorieprijs = categorie + "prijs"
     categorieid = categorie + "id"
-    print categorieid
     categorieherkomst = categorie + "herkomst"
     categorielink = categorie + "link"
 
@@ -58,12 +57,7 @@ def deselect(request):
     productstring = categorie + "naam"
     productprijs = categorie + "prijs"
     productlink = categorie + "link"
-    print type(product)
-    print type(request.session[productstring])
-    print product
-    print request.session[productstring]
     if request.session[productstring] == product:
-        print "deselect called"
         del request.session[productid]
         del request.session[productstring]
         del request.session[productprijs]
@@ -82,6 +76,8 @@ def detail(request):
         existing = True
     except KeyError:
         existing = False
+
+
     
     if (categorie == "processoren"):
         categorieObject = Processoren
@@ -103,6 +99,7 @@ def detail(request):
         categorieObject = Voeding
     elif (categorie == "behuizingen"):
         categorieObject = Behuizingen
+    categorieObject = dataFiltered[categorie.title()]
 
     Viewers(productid, categorie, 'add', request)
     ViewsPerDag('add', request)
