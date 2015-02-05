@@ -31,7 +31,32 @@ for model in data:
 app = 15
 
 def bestellingen(request):
-    return render_to_response('bestellingen.html',{},
+    categorieen = ['Processoren', 'Moederborden', 'Grafische', 'Harde', 'Dvd', 'Koeling', 'Geheugen', 'Voeding', 'Behuizingen']
+    data = [Processoren,Moederborden,Koeling,Behuizingen,Grafische,Harde,Dvd,Geheugen,Voeding]
+
+    if 'email' in request.session:
+        email = request.session['email']
+    else:
+        return HttpResponseRedirect('/')
+    bestelling = Bestellingen.objects.get(Email=email)
+
+    mylist=[]
+    processorenlijst = []
+    j = 0
+    filteredModel = []
+
+    #dit nog te fixen!!!
+    '''for model in data:
+        categorieNaam = model.__name__
+        empty = unicode("")
+        filteredModel.extend(model.objects.filter(id__in=getattr(bestelling, categorieen[j])))
+        dataFiltered[categorieNaam] = filteredModel
+        j = j+1
+
+    views = listing(request, processorenlijst, 10)'''
+
+    #print(dataFiltered[Processoren].naam)
+    return render_to_response('bestellingen.html',{'bestelling':dataFiltered},
                              context_instance=RequestContext(request))
 
 def bestel(request):
