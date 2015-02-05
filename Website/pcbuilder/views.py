@@ -11,6 +11,7 @@ from pcbuilder.filters import *
 from pcbuilder.compile import *
 from pcbuilder.selection import *
 from pcbuilder.dashboard import *
+from pcbuilder.login import *
 import json as simplejson
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding, Views, Select, ViewsPerDatum
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding, Views, Select, ViewsPerDatum, Login, Users, Registreer, SearchQuery, Bestellingen
@@ -18,7 +19,6 @@ from itertools import chain
 from django.db.models import Max
 import json, time, sys
 from random import randint
-from django.forms.util import ErrorList
 
 data = [Processoren,Moederborden,Koeling,Behuizingen,Grafische,Harde,Dvd,Geheugen,Voeding]
 dataFiltered = {}
@@ -29,154 +29,6 @@ for model in data:
     dataFiltered[categorieNaam] = filteredModel
     
 app = 15
-
-def bestellingen(request):
-    categorieen = ['Processoren', 'Moederborden', 'Grafische', 'Harde', 'Dvd', 'Koeling', 'Geheugen', 'Voeding', 'Behuizingen']
-    data = [Processoren,Moederborden,Koeling,Behuizingen,Grafische,Harde,Dvd,Geheugen,Voeding]
-
-    if 'email' in request.session:
-        email = request.session['email']
-    else:
-        return HttpResponseRedirect('/')
-    bestelling = Bestellingen.objects.get(Email=email)
-
-    mylist=[]
-    processorenlijst = []
-    j = 0
-    filteredModel = []
-
-    #dit nog te fixen!!!
-    '''for model in data:
-        categorieNaam = model.__name__
-        empty = unicode("")
-        filteredModel.extend(model.objects.filter(id__in=getattr(bestelling, categorieen[j])))
-        dataFiltered[categorieNaam] = filteredModel
-        j = j+1
-
-    views = listing(request, processorenlijst, 10)'''
-
-    #print(dataFiltered[Processoren].naam)
-    return render_to_response('bestellingen.html',{'bestelling':dataFiltered},
-                             context_instance=RequestContext(request))
-
-def bestel(request):
-    categorieen = ['processoren', 'moederborden', 'grafische', 'harde', 'dvd', 'koeling', 'geheugen', 'voeding', 'behuizingen']
-    naam = []
-    naamlink = []
-
-    j = 0
-    for i in categorieen:
-        if i in request.session:
-            naam.insert(j, request.session[i+'id'])
-            naamlink.insert(j, request.session[i+'link'])
-        else:
-            naam.insert(j, ' ')
-            naamlink.insert(j, ' ')
-        j = j+1
-
-    if 'email' in request.session:
-        email = request.session['email']
-    else:
-        return HttpResponseRedirect('/')
-
-    try:
-        old_bestelling=Bestellingen.objects.get(Email=email)
-        old_bestelling.Processoren = naam[0]
-        old_bestelling.Moederborden = naam[1]
-        old_bestelling.Grafische = naam[2]
-        old_bestelling.Harde = naam[3]
-        old_bestelling.Dvd = naam[4]
-        old_bestelling.Koeling = naam[5]
-        old_bestelling.Geheugen = naam[6]
-        old_bestelling.Voeding = naam[7]
-        old_bestelling.Behuizingen = naam[8]
-        old_bestelling.ProcessorenLink = naamlink[0]
-        old_bestelling.MoederbordenLink = naamlink[1]
-        old_bestelling.GrafischeLink = naamlink[2]
-        old_bestelling.HardeLink = naamlink[3]
-        old_bestelling.DvdLink = naamlink[4]
-        old_bestelling.KoelingLink = naamlink[5]
-        old_bestelling.GeheugenLink = naamlink[6]
-        old_bestelling.VoedingLink = naamlink[7]
-        old_bestelling.BehuizingenLink = naamlink[8]
-        old_bestelling.save()
-    except Bestellingen.DoesNotExist:
-        new_bestelling=Bestellingen(Email=email, Processoren=naam[0], Moederborden=naam[1], Grafische=naam[2], Harde=naam[3],Dvd=naam[4],Koeling=naam[5],Geheugen=naam[6],Voeding=naam[7],Behuizingen=naam[8], ProcessorenLink=naamlink[0], MoederbordenLink=naamlink[1], GrafischeLink=naamlink[2], HardeLink=naamlink[3],DvdLink=naamlink[4],KoelingLink=naamlink[5],GeheugenLink=naamlink[6],VoedingLink=naamlink[7],BehuizingenLink=naamlink[8])
-        new_bestelling.save()
-
-    return HttpResponseRedirect('/bestellingen/')
-
-def registreer(request):
-    #user = Users(Voornaam='', Achternaam='', Email='', Wachtwoord='', Rechten='0')
-    #user.save()
-    if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        formregistreer = Registreer(request.POST)
-        # check whether it's valid:
-        if formregistreer.is_valid():
-            voornaam = formregistreer.cleaned_data['voornaam']
-            achternaam = formregistreer.cleaned_data['achternaam']
-            email = formregistreer.cleaned_data['email']
-            wachtwoord = formregistreer.cleaned_data['wachtwoord']
-            try:
-                selectedEerder=Users.objects.get(Email=email)
-                formregistreer.errors[""] = ErrorList([u"Het opgegeven email adres is al geregistreerd!"])
-            except Users.DoesNotExist:
-                if(formregistreer.cleaned_data['wachtwoord'] == formregistreer.cleaned_data['Herhaal_wachtwoord']):
-                    voeg_toe = Users(Voornaam=voornaam, Achternaam=achternaam, Email=email, Wachtwoord=wachtwoord, Rechten='0')
-                    voeg_toe.save()
-                    return HttpResponseRedirect('/login/')
-                else:
-                    formregistreer.errors[""] = ErrorList([u"De opgegeven wachtwoorden komen niet overeen!"])
-    else:
-        formregistreer = Registreer()
-    return render_to_response('registreer.html',{'registreer': formregistreer},
-                              context_instance=RequestContext(request))
-
-def wijzigRechten(request):
-    rechten = request.GET.get('rechten')
-    email = request.GET.get('email')
-    try:
-        selectedEerder=Users.objects.get(Email=email)
-        selectedEerder.Rechten = rechten
-        selectedEerder.save()
-        if(request.session['email'] == email):
-            request.session['Rechten'] = rechten
-    except Users.DoesNotExist:
-        print("fout!")
-
-    return HttpResponseRedirect('/dashboard/')
-
-def login(request):
-
-    # if this is a POST request we need to process the form data
-    if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = Login(request.POST)
-        # check whether it's valid:
-        if form.is_valid():
-            email = form.cleaned_data['email']
-            wachtwoord = form.cleaned_data['wachtwoord']
-            print(email)
-            try:
-                selectedEerder=Users.objects.get(Email=email, Wachtwoord=wachtwoord)
-                request.session['email'] = email;
-                request.session['Rechten'] = selectedEerder.Rechten
-                return HttpResponseRedirect('/')
-            except Users.DoesNotExist:
-                selectedEerder = None
-                form.errors[""] = ErrorList([u"Email of wachtwoord komen niet overeen!"])
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            
-
-    # if a GET (or any other method) we'll create a blank form
-    else:
-        form = Login()
-
-    return render_to_response('login.html',{'form': form},
-                              context_instance=RequestContext(request))
 
 
 
