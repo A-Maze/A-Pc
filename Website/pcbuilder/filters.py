@@ -136,7 +136,7 @@ def getMerken(request):
             "Gigabyte",
             "MSI",
         ]
-    elif categorie == "/gpu/":
+    elif categorie == "/grafische/":
         merken = [
             "Asus",
             "MSI",
@@ -144,7 +144,7 @@ def getMerken(request):
             "Gigabyte",
             "EVGA",
         ]
-    elif categorie == "/hardeschijven/":
+    elif categorie == "/harde/":
         merken = [
             "Hitachi",
             "Seagate",
@@ -155,14 +155,14 @@ def getMerken(request):
             "Kingston",
             "Transcend",
         ]
-    elif categorie == "/optischeschijven/":
+    elif categorie == "/dvd/":
         merken = [
             "Asus",
             "HP",
             "Samsung",
             "LG",
         ]
-    elif categorie == "/koelingen/":
+    elif categorie == "/koeling/":
         merken = [
             "Cooler Master",
             "Corsair",
@@ -177,7 +177,7 @@ def getMerken(request):
             "Transcend",
             "G.Skill",
         ]
-    elif categorie == "/voedingen/":
+    elif categorie == "/voeding/":
         merken = [
             "Antec",
             "be quiet",
