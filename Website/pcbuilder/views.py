@@ -55,7 +55,7 @@ def bestellingen(request):
 
     views = listing(request, processorenlijst, 10)'''
 
-    #print(dataFiltered[Processoren].naam)
+
     return render_to_response('bestellingen.html',{'bestelling':dataFiltered},
                              context_instance=RequestContext(request))
 
@@ -143,9 +143,7 @@ def wijzigRechten(request):
         if(request.session['email'] == email):
             request.session['Rechten'] = rechten
     except Users.DoesNotExist:
-        print("fout!")
-
-    return HttpResponseRedirect('/dashboard/')
+        return HttpResponseRedirect('/dashboard/')
 
 def login(request):
 
@@ -157,7 +155,6 @@ def login(request):
         if form.is_valid():
             email = form.cleaned_data['email']
             wachtwoord = form.cleaned_data['wachtwoord']
-            print(email)
             try:
                 selectedEerder=Users.objects.get(Email=email, Wachtwoord=wachtwoord)
                 request.session['email'] = email;
@@ -233,8 +230,6 @@ def search(request):
         searchDatabase(query, request)
         #componentenArray = [Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding]
 
-        print query
-
         filtert_Processoren = Processoren.objects.filter(naam__icontains=query)    
         filtert_Moederborden = Moederborden.objects.filter(naam__icontains=query)
         filtert_Koeling = Koeling.objects.filter(naam__icontains=query)
@@ -251,7 +246,7 @@ def search(request):
         filtert = list(chain(filtert_Processoren,filtert_Moederborden,filtert_Koeling,filtert_Behuizingen,filtert_Grafische,filtert_Harde,filtert_Dvd,filtert_Geheugen,filtert_Voeding))
         
         
-        print filtert
+
         filterComponents = listing(request, filtert, 15)
 
         bereik, diff, current_page = paginas(filtert, filterComponents)
@@ -272,7 +267,7 @@ def searchDatabase(query, request):
 
 
     for search in SearchQuery.objects:
-        print('aan het zoeken')
+
         if str(query) == str(search.Zoekwoord):
             aantal = int(search.Aantal)
             searchSet=SearchQuery.objects.get(Zoekwoord=query)
@@ -285,7 +280,7 @@ def searchDatabase(query, request):
         else:
             pass
 
-    print('klaar met zoeken')
+
     if gevonden == 0:
         #zet views collectie de id als de id die is meegegeven het aantal op 15 (moet nog aan gewerkt worden)
         searchNieuw = SearchQuery(Zoekwoord=query, Aantal='1')
@@ -321,7 +316,7 @@ def mail(request):
 def renderToTemplate(request):
     #gets the request path without /
     requestPath = request.path[1:-1]
-    print requestPath
+
     componentenLijst, merken = filters(request, dataFiltered[requestPath.title()])
     minPriceSliderValue, maxPriceSliderValue = getGrenzen(componentenLijst)
     componenten = listing(request, componentenLijst, 15)        

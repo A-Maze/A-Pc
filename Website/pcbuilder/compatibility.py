@@ -19,41 +19,34 @@ def compatibility(request, objectlijst):
 	return objectlijst
 
 def moederbordenComp(request,objectlijst):
-	print "help"
 	firstRequirement, secondRequirement, thirdRequirement, fourthRequirement= ("","","","")
 	if "processorenid" in request.session:
 		processor = Processoren.objects.get(id=request.session["processorenid"])
 		firstRequirement = [item.encode('UTF8') for item in processor.Socket]
 		firstRequirement = "".join(firstRequirement)
-		print firstRequirement
 	if "geheugenid" in request.session:
 		geheugen = Geheugen.objects.get(id=request.session["geheugenid"])
 		thirdRequirement = [item.encode('UTF8') for item in geheugen.Geheugentype]
 		thirdRequirement = "".join(thirdRequirement)
 		thirdRequirement = thirdRequirement[:4]
-		print thirdRequirement
 	if "hardeid" in request.session:
 		harde = Harde.objects.get(id=request.session["hardeid"])
 		fourthRequirement = [item.encode('UTF8') for item in harde.Hardeschijf_bus_intern]
 		fourthRequirement = "".join(fourthRequirement)
-		print fourthRequirement
 	objectlijst = objectlijst.filter(Q(Socket__icontains=firstRequirement) & Q(Geheugentype__icontains=thirdRequirement) & Q(Hardeschijf_bus__icontains=fourthRequirement))
 	return objectlijst
 
 def processorenComp(request,objectlijst):
-	print "processoren called"
 	firstRequirement = ""
 	if "moederbordenid" in request.session:
 		moederbord = Moederborden.objects.get(id=request.session["moederbordenid"])
 		firstRequirement = [item.encode('UTF8') for item in moederbord.Socket]
 		firstRequirement = firstRequirement[1:]
 		firstRequirement = "".join(firstRequirement)
-		print firstRequirement
 	objectlijst = objectlijst.filter(Socket__icontains=firstRequirement)
 	return objectlijst
 
 def geheugenComp(request,objectlijst):
-	print "geheugen called"
 	firstRequirement = ""
 	if "moederbordenid" in request.session:
 		moederbord = Moederborden.objects.get(id=request.session["moederbordenid"])
@@ -65,7 +58,6 @@ def geheugenComp(request,objectlijst):
 	return objectlijst
 
 def grafischeComp(request,objectlijst):
-	print "grafische called"
 	firstRequirement = ""
 	if "moederbordenid" in request.session:
 		moederbord = Moederborden.objects.get(id=request.session["moederbordenid"])
@@ -75,7 +67,6 @@ def grafischeComp(request,objectlijst):
 	return objectlijst
 
 def behuizingenComp(request,objectlijst):
-	print "behuizingen called"
 	firstRequirement = ""
 	if "moederbordenid" in request.session:
 		moederbord = Moederborden.objects.get(id=request.session["moederbordenid"])
