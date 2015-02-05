@@ -38,4 +38,7 @@ urlpatterns = patterns('',
     url(r'^contact$', 'pcbuilder.views.contact'),
     url(r'^contact/$', 'pcbuilder.views.contact', name='contact'),
     url(r'^compile/', 'pcbuilder.views.compile', name="compile"),
+
+    url(r'^cookiebeleid/', 'pcbuilder.legal.cookiebeleid'),
+    url(r'^disclaimer/', 'pcbuilder.legal.disclaimer'),
 )
