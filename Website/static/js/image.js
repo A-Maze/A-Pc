@@ -3,7 +3,6 @@ $('.list-group-item > div:first-child').each(function() {
 var ean = this.id;
 
 var iURL = "http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=" + ean;
-console.log(iURL)
 
 $.ajax({
     url: iURL,
