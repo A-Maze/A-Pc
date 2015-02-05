@@ -135,7 +135,10 @@ def Viewers(productid, categorie, action, request):
 def ViewsPerDag(action, request):
     ObjectenLijst = ViewsPerDatum.objects
     LaatsteObject = len(ObjectenLijst) - 1
-    lastone = ObjectenLijst[LaatsteObject].Datum
+    if(LaatsteObject >= 0):
+        lastone = ObjectenLijst[LaatsteObject].Datum
+    else:
+        lastone = "01/01/2014"
     datum = time.strftime("%d/%m/%Y")
     datumString = ""+lastone+""
     datumArray = []

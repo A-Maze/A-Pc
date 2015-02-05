@@ -104,7 +104,7 @@ def detail(request):
     elif (categorie == "behuizingen"):
         categorieObject = Behuizingen
 
-    #Viewers(productid, categorie, 'add', request)
+    Viewers(productid, categorie, 'add', request)
     ViewsPerDag('add', request)
 
     component = categorieObject.objects.get(id=productid)

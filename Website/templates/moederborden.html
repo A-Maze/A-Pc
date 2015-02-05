@@ -86,6 +86,9 @@ $('.slider').Link('upper').to($('#sliderMaxValue'));
             </div>
             {% endif %}
             {% endfor %}
+            {% if not Componenten %}
+                <h3>Helaas er zijn geen compatibiele componenten gekozen met de huidige samenvatting. Probeer een andere samenstelling. </h3>
+            {% endif %}
             </div>
 
             <script src='{% static "js/image.js" %}'></script>

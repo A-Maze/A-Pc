@@ -5,7 +5,7 @@ function showBestel(show) {
         $('#inComplete').show()
         $('#complete').hide();
     } else {
-        $('#inComplete').hid()
+        $('#inComplete').hide()
         $('#complete').show();
     }
 }
