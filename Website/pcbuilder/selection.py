@@ -1,12 +1,16 @@
 from django.shortcuts import render_to_response
-from django.template.loader import render_to_string
 from django.shortcuts import HttpResponseRedirect
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.template import RequestContext
-from django.template import loader
-from django.http import HttpResponse
 from dashboard import ViewsPerDag, Viewers, Selected
 from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding, Views, Select, ViewsPerDatum, Login, Users, Registreer, SearchQuery
+from mongoengine import Q
+
+data = [Processoren,Moederborden,Koeling,Behuizingen,Grafische,Harde,Dvd,Geheugen,Voeding]
+dataFiltered = {}
+for model in data:
+    categorieNaam = model.__name__
+    empty = unicode("")
+    filteredModel = model.objects.filter((Q(prijs__exists=True) & Q(naam__exists=True) & Q(stock__exists=True) & Q(link__exists=True) & Q(herkomst__exists=True)))
+    dataFiltered[categorieNaam] = filteredModel
 
 
 def select(request):
@@ -79,36 +83,19 @@ def detail(request):
 
 
     
-    if (categorie == "processoren"):
-        categorieObject = Processoren
-    elif (categorie == "moederborden"):
-        categorieObject = Moederborden
-    elif (categorie == "koeling"):
-        categorieObject = Koeling
-    elif (categorie == "grafische"):
-        categorieObject = Grafische
-    elif (categorie == "harde"):
-        categorieObject = Harde
-    elif (categorie == "dvd"):
-        categorieObject = Dvd
-    elif (categorie == "koeling"):
-        categorieObject = Koeling
-    elif (categorie == "geheugen"):
-        categorieObject = Geheugen
-    elif (categorie == "voeding"):
-        categorieObject = Voeding
-    elif (categorie == "behuizingen"):
-        categorieObject = Behuizingen
+    categorieObject = dataFiltered[categorie.title()]
 
     Viewers(productid, categorie, 'add', request)
     ViewsPerDag('add', request)
 
-    component = categorieObject.objects.get(id=productid)
+    component = categorieObject.get(id=productid)
 
 
 
     if(component.herkomst):
         ziplist = zip(component.herkomst, component.stock, component.link, component.prijs)
+    else:
+        print "help"
 
 
     #if currentproduct and currentherkomst exist render them to response as well

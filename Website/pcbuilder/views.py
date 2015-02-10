@@ -3,7 +3,6 @@ from django.template.loader import render_to_string
 from django.shortcuts import HttpResponseRedirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.template import RequestContext
-from django.template import loader
 from django.http import HttpResponse
 from bson.json_util import dumps
 from pcbuilder.compatibility import *
@@ -12,9 +11,7 @@ from pcbuilder.compile import *
 from pcbuilder.selection import *
 from pcbuilder.dashboard import *
 from pcbuilder.login import *
-import json as simplejson
-from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding, Views, Select, ViewsPerDatum
-from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding, Views, Select, ViewsPerDatum, Login, Users, Registreer, SearchQuery, Bestellingen
+from models import Processoren, Moederborden, Koeling, Behuizingen, Grafische, Harde, Dvd, Geheugen, Voeding, SearchQuery
 from itertools import chain
 from django.db.models import Max
 import json, time, sys
@@ -25,7 +22,7 @@ dataFiltered = {}
 for model in data:
     categorieNaam = model.__name__
     empty = unicode("")
-    filteredModel = model.objects.filter((Q(prijs__exists=True) & Q(naam__exists=True) & Q(stock__exists=True) & Q(link__exists=True)))
+    filteredModel = model.objects.filter((Q(prijs__exists=True) & Q(naam__exists=True) & Q(stock__exists=True) & Q(link__exists=True) & Q(herkomst__exists=True)))
     dataFiltered[categorieNaam] = filteredModel
     
 app = 15
