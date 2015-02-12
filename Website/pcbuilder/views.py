@@ -91,7 +91,6 @@ def search(request):
         filtert_Geheugen = Geheugen.objects.filter(naam__icontains=query)    
         filtert_Voeding = Voeding.objects.filter(naam__icontains=query) 
 
-        # querysets = [filtert_Processoren,filtert_Moederborden,filtert_Koeling,filtert_Behuizingen,filtert_Grafische,filtert_Harde,filtert_Dvd,filtert_Geheugen,filtert_Voeding]
 
         filtert = filtert_Processoren 
         filtert = list(chain(filtert_Processoren,filtert_Moederborden,filtert_Koeling,filtert_Behuizingen,filtert_Grafische,filtert_Harde,filtert_Dvd,filtert_Geheugen,filtert_Voeding))
@@ -137,7 +136,6 @@ def searchDatabase(query, request):
         searchNieuw = SearchQuery(Zoekwoord=query, Aantal='1')
         #slaat de weergaven op in de db
         searchNieuw.save()
-        #return HttpResponse('Niks gevonden')
 
     #je gaat weer terug naar de pagina
 
@@ -155,9 +153,7 @@ def mail(request):
             return HttpResponse('Invalid header found.')
         return HttpResponseRedirect('/contact/thanks/')
     else:
-        # In reality we'd use a form class
-        # to get proper validation errors.
-        return HttpResponse('Make sure all fields are entered and valid.')
+        return HttpResponse('Zorg voor valide velden.')
 
 
 
