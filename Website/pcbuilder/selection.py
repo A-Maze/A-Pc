@@ -23,9 +23,9 @@ def select(request):
     link = request.GET.get('link')
     prijs = float(prijs)
 
-    #Viewers(productid, categorie, 'delete', request)
+
     Selected(productid, categorie, 'add', request)
-    #ViewsPerDag('delete', request)
+
 
 
     categorie.replace(" ", "")
@@ -53,8 +53,7 @@ def deselect(request):
     categorie.replace(" ", "")
     productid = request.GET.get('productid')
     
-    #Viewers(productid, categorie, 'delete', request)
-    #ViewsPerDag('delete', request)
+
 
     del request.session[categorie]
     productid = categorie + "id"
@@ -85,8 +84,7 @@ def detail(request):
     
     categorieObject = dataFiltered[categorie.title()]
 
-    #Viewers(productid, categorie, 'add', request)
-    #ViewsPerDag('add', request)
+
 
     component = categorieObject.get(id=productid)
 
