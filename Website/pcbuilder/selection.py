@@ -9,7 +9,7 @@ dataFiltered = {}
 for model in data:
     categorieNaam = model.__name__
     empty = unicode("")
-    filteredModel = model.objects.filter((Q(prijs__exists=True) & Q(naam__exists=True) & Q(stock__exists=True) & Q(link__exists=True) & Q(herkomst__exists=True)))
+    filteredModel = model.objects.filter((Q(prijs__exists=True) & Q(naam__exists=True) & Q(stock__exists=True) & Q(link__exists=True) & Q(herkomst__exists=True) & Q(categorie__exists=True)))
     dataFiltered[categorieNaam] = filteredModel
 
 
